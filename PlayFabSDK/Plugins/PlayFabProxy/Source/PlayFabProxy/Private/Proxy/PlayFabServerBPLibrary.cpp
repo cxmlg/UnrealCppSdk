@@ -8,4885 +8,4962 @@
 // AdCampaignAttribution
 FBPServerAdCampaignAttribution UPFServerProxyLibrary::MakeBPServerAdCampaignAttribution(
     FDateTime InAttributedAt
-	, FString InCampaignId
-	, FString InPlatform
-    )
+    , FString InCampaignId
+    , FString InPlatform
+)
 {
     FBPServerAdCampaignAttribution Out = FBPServerAdCampaignAttribution();
     Out.Data.AttributedAt = InAttributedAt;
-	Out.Data.CampaignId = InCampaignId;
-	Out.Data.Platform = InPlatform;
-	
+    Out.Data.CampaignId = InCampaignId;
+    Out.Data.Platform = InPlatform;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerAdCampaignAttribution(
     const FBPServerAdCampaignAttribution& In
-	, FDateTime& OutAttributedAt
-	, FString& OutCampaignId
-	, FString& OutPlatform
- )
+    , FDateTime& OutAttributedAt
+    , FString& OutCampaignId
+    , FString& OutPlatform
+)
 {
     OutAttributedAt = In.Data.AttributedAt;
-	OutCampaignId = In.Data.CampaignId;
-	OutPlatform = In.Data.Platform;
-	
+    OutCampaignId = In.Data.CampaignId;
+    OutPlatform = In.Data.Platform;
+
 }
 
 // AdCampaignAttributionModel
 FBPServerAdCampaignAttributionModel UPFServerProxyLibrary::MakeBPServerAdCampaignAttributionModel(
     FDateTime InAttributedAt
-	, FString InCampaignId
-	, FString InPlatform
-    )
+    , FString InCampaignId
+    , FString InPlatform
+)
 {
     FBPServerAdCampaignAttributionModel Out = FBPServerAdCampaignAttributionModel();
     Out.Data.AttributedAt = InAttributedAt;
-	Out.Data.CampaignId = InCampaignId;
-	Out.Data.Platform = InPlatform;
-	
+    Out.Data.CampaignId = InCampaignId;
+    Out.Data.Platform = InPlatform;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerAdCampaignAttributionModel(
     const FBPServerAdCampaignAttributionModel& In
-	, FDateTime& OutAttributedAt
-	, FString& OutCampaignId
-	, FString& OutPlatform
- )
+    , FDateTime& OutAttributedAt
+    , FString& OutCampaignId
+    , FString& OutPlatform
+)
 {
     OutAttributedAt = In.Data.AttributedAt;
-	OutCampaignId = In.Data.CampaignId;
-	OutPlatform = In.Data.Platform;
-	
+    OutCampaignId = In.Data.CampaignId;
+    OutPlatform = In.Data.Platform;
+
 }
 
 // AddCharacterVirtualCurrencyRequest
 FBPServerAddCharacterVirtualCurrencyRequest UPFServerProxyLibrary::MakeBPServerAddCharacterVirtualCurrencyRequest(
     int32 InAmount
-	, FString InCharacterId
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-    )
+    , FString InCharacterId
+    , FString InPlayFabId
+    , FString InVirtualCurrency
+)
 {
     FBPServerAddCharacterVirtualCurrencyRequest Out = FBPServerAddCharacterVirtualCurrencyRequest();
     Out.Data.Amount = InAmount;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.VirtualCurrency = InVirtualCurrency;
-	
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.VirtualCurrency = InVirtualCurrency;
+
     return Out;
 }
 
 // AddFriendRequest
 FBPServerAddFriendRequest UPFServerProxyLibrary::MakeBPServerAddFriendRequest(
     FString InFriendEmail
-	, FString InFriendPlayFabId
-	, FString InFriendTitleDisplayName
-	, FString InFriendUsername
-	, FString InPlayFabId
-    )
+    , FString InFriendPlayFabId
+    , FString InFriendTitleDisplayName
+    , FString InFriendUsername
+    , FString InPlayFabId
+)
 {
     FBPServerAddFriendRequest Out = FBPServerAddFriendRequest();
     Out.Data.FriendEmail = InFriendEmail;
-	Out.Data.FriendPlayFabId = InFriendPlayFabId;
-	Out.Data.FriendTitleDisplayName = InFriendTitleDisplayName;
-	Out.Data.FriendUsername = InFriendUsername;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.FriendPlayFabId = InFriendPlayFabId;
+    Out.Data.FriendTitleDisplayName = InFriendTitleDisplayName;
+    Out.Data.FriendUsername = InFriendUsername;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // AddPlayerTagRequest
 FBPServerAddPlayerTagRequest UPFServerProxyLibrary::MakeBPServerAddPlayerTagRequest(
     FString InPlayFabId
-	, FString InTagName
-    )
+    , FString InTagName
+)
 {
     FBPServerAddPlayerTagRequest Out = FBPServerAddPlayerTagRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.TagName = InTagName;
-	
+    Out.Data.TagName = InTagName;
+
     return Out;
 }
 
 // AddPlayerTagResult
 void UPFServerProxyLibrary::BreakBPServerAddPlayerTagResult(
     const FBPServerAddPlayerTagResult& In
- )
+)
 {
-    
+
 }
 
 // AddSharedGroupMembersRequest
 FBPServerAddSharedGroupMembersRequest UPFServerProxyLibrary::MakeBPServerAddSharedGroupMembersRequest(
     TArray<FString> InPlayFabIds
-	, FString InSharedGroupId
-    )
+    , FString InSharedGroupId
+)
 {
     FBPServerAddSharedGroupMembersRequest Out = FBPServerAddSharedGroupMembersRequest();
     Out.Data.PlayFabIds = InPlayFabIds;
-	Out.Data.SharedGroupId = InSharedGroupId;
-	
+    Out.Data.SharedGroupId = InSharedGroupId;
+
     return Out;
 }
 
 // AddSharedGroupMembersResult
 void UPFServerProxyLibrary::BreakBPServerAddSharedGroupMembersResult(
     const FBPServerAddSharedGroupMembersResult& In
- )
+)
 {
-    
+
 }
 
 // AddUserVirtualCurrencyRequest
 FBPServerAddUserVirtualCurrencyRequest UPFServerProxyLibrary::MakeBPServerAddUserVirtualCurrencyRequest(
     int32 InAmount
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-    )
+    , FString InPlayFabId
+    , FString InVirtualCurrency
+)
 {
     FBPServerAddUserVirtualCurrencyRequest Out = FBPServerAddUserVirtualCurrencyRequest();
     Out.Data.Amount = InAmount;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.VirtualCurrency = InVirtualCurrency;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.VirtualCurrency = InVirtualCurrency;
+
     return Out;
 }
 
 // AdvancedPushPlatformMsg
 FBPServerAdvancedPushPlatformMsg UPFServerProxyLibrary::MakeBPServerAdvancedPushPlatformMsg(
     FString InJson
-	, EBPServerPushNotificationPlatform InPlatform
-    )
+    , EBPServerPushNotificationPlatform InPlatform
+)
 {
     FBPServerAdvancedPushPlatformMsg Out = FBPServerAdvancedPushPlatformMsg();
     Out.Data.Json = InJson;
-	Out.Data.Platform = static_cast<PlayFab::ServerModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
-	
+    Out.Data.Platform = static_cast<PlayFab::ServerModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerAdvancedPushPlatformMsg(
     const FBPServerAdvancedPushPlatformMsg& In
-	, FString& OutJson
-	, EBPServerPushNotificationPlatform& OutPlatform
- )
+    , FString& OutJson
+    , EBPServerPushNotificationPlatform& OutPlatform
+)
 {
     OutJson = In.Data.Json;
-	OutPlatform = static_cast<EBPServerPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform));
-	
+    OutPlatform = static_cast<EBPServerPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform));
+
 }
 
 // AuthenticateSessionTicketRequest
 FBPServerAuthenticateSessionTicketRequest UPFServerProxyLibrary::MakeBPServerAuthenticateSessionTicketRequest(
     FString InSessionTicket
-    )
+)
 {
     FBPServerAuthenticateSessionTicketRequest Out = FBPServerAuthenticateSessionTicketRequest();
     Out.Data.SessionTicket = InSessionTicket;
-	
+
     return Out;
 }
 
 // AuthenticateSessionTicketResult
 void UPFServerProxyLibrary::BreakBPServerAuthenticateSessionTicketResult(
     const FBPServerAuthenticateSessionTicketResult& In
-	, FBPServerUserAccountInfo& OutUserInfo
- )
+    , FBPServerUserAccountInfo& OutUserInfo
+)
 {
-    if (In.Data.UserInfo.IsValid()) {OutUserInfo.Data = *In.Data.UserInfo;}
-	
+    if (In.Data.UserInfo.IsValid()) { OutUserInfo.Data = *In.Data.UserInfo; }
+
 }
 
 // AwardSteamAchievementItem
 FBPServerAwardSteamAchievementItem UPFServerProxyLibrary::MakeBPServerAwardSteamAchievementItem(
     FString InAchievementName
-	, FString InPlayFabId
-	, bool InResult
-    )
+    , FString InPlayFabId
+    , bool InResult
+)
 {
     FBPServerAwardSteamAchievementItem Out = FBPServerAwardSteamAchievementItem();
     Out.Data.AchievementName = InAchievementName;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Result = InResult;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Result = InResult;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerAwardSteamAchievementItem(
     const FBPServerAwardSteamAchievementItem& In
-	, FString& OutAchievementName
-	, FString& OutPlayFabId
-	, bool& OutResult
- )
+    , FString& OutAchievementName
+    , FString& OutPlayFabId
+    , bool& OutResult
+)
 {
     OutAchievementName = In.Data.AchievementName;
-	OutPlayFabId = In.Data.PlayFabId;
-	OutResult = In.Data.Result;
-	
+    OutPlayFabId = In.Data.PlayFabId;
+    OutResult = In.Data.Result;
+
 }
 
 // AwardSteamAchievementRequest
 FBPServerAwardSteamAchievementRequest UPFServerProxyLibrary::MakeBPServerAwardSteamAchievementRequest(
     TArray<FBPServerAwardSteamAchievementItem> InAchievements
-    )
+)
 {
     FBPServerAwardSteamAchievementRequest Out = FBPServerAwardSteamAchievementRequest();
     for (const FBPServerAwardSteamAchievementItem& elem : InAchievements)
-	{
-		Out.Data.Achievements.Add(elem.Data);
-	}
-	
+    {
+        Out.Data.Achievements.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // AwardSteamAchievementResult
 void UPFServerProxyLibrary::BreakBPServerAwardSteamAchievementResult(
     const FBPServerAwardSteamAchievementResult& In
-	, TArray<FBPServerAwardSteamAchievementItem>& OutAchievementResults
- )
+    , TArray<FBPServerAwardSteamAchievementItem>& OutAchievementResults
+)
 {
     for (const PlayFab::ServerModels::FAwardSteamAchievementItem& elem : In.Data.AchievementResults)
-	{
-		OutAchievementResults.Add(FBPServerAwardSteamAchievementItem(elem));
-	}
-	
+    {
+        OutAchievementResults.Add(FBPServerAwardSteamAchievementItem(elem));
+    }
+
 }
 
 // BanInfo
 FBPServerBanInfo UPFServerProxyLibrary::MakeBPServerBanInfo(
     bool InActive
-	, FString InBanId
-	, FDateTime InCreated
-	, FDateTime InExpires
-	, FString InIPAddress
-	, FString InMACAddress
-	, FString InPlayFabId
-	, FString InReason
-    )
+    , FString InBanId
+    , FDateTime InCreated
+    , FDateTime InExpires
+    , FString InIPAddress
+    , FString InMACAddress
+    , FString InPlayFabId
+    , FString InReason
+)
 {
     FBPServerBanInfo Out = FBPServerBanInfo();
     Out.Data.Active = InActive;
-	Out.Data.BanId = InBanId;
-	Out.Data.Created = InCreated;
-	Out.Data.Expires = InExpires;
-	Out.Data.IPAddress = InIPAddress;
-	Out.Data.MACAddress = InMACAddress;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Reason = InReason;
-	
+    Out.Data.BanId = InBanId;
+    Out.Data.Created = InCreated;
+    Out.Data.Expires = InExpires;
+    Out.Data.IPAddress = InIPAddress;
+    Out.Data.MACAddress = InMACAddress;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Reason = InReason;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerBanInfo(
     const FBPServerBanInfo& In
-	, bool& OutActive
-	, FString& OutBanId
-	, FDateTime& OutCreated
-	, FDateTime& OutExpires
-	, FString& OutIPAddress
-	, FString& OutMACAddress
-	, FString& OutPlayFabId
-	, FString& OutReason
- )
+    , bool& OutActive
+    , FString& OutBanId
+    , FDateTime& OutCreated
+    , FDateTime& OutExpires
+    , FString& OutIPAddress
+    , FString& OutMACAddress
+    , FString& OutPlayFabId
+    , FString& OutReason
+)
 {
     OutActive = In.Data.Active;
-	OutBanId = In.Data.BanId;
-	OutCreated = In.Data.Created;
-	OutExpires = In.Data.Expires;
-	OutIPAddress = In.Data.IPAddress;
-	OutMACAddress = In.Data.MACAddress;
-	OutPlayFabId = In.Data.PlayFabId;
-	OutReason = In.Data.Reason;
-	
+    OutBanId = In.Data.BanId;
+    OutCreated = In.Data.Created;
+    OutExpires = In.Data.Expires;
+    OutIPAddress = In.Data.IPAddress;
+    OutMACAddress = In.Data.MACAddress;
+    OutPlayFabId = In.Data.PlayFabId;
+    OutReason = In.Data.Reason;
+
 }
 
 // BanRequest
 FBPServerBanRequest UPFServerProxyLibrary::MakeBPServerBanRequest(
     int32 InDurationInHours
-	, FString InIPAddress
-	, FString InMACAddress
-	, FString InPlayFabId
-	, FString InReason
-    )
+    , FString InIPAddress
+    , FString InMACAddress
+    , FString InPlayFabId
+    , FString InReason
+)
 {
     FBPServerBanRequest Out = FBPServerBanRequest();
     Out.Data.DurationInHours = InDurationInHours;
-	Out.Data.IPAddress = InIPAddress;
-	Out.Data.MACAddress = InMACAddress;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Reason = InReason;
-	
+    Out.Data.IPAddress = InIPAddress;
+    Out.Data.MACAddress = InMACAddress;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Reason = InReason;
+
     return Out;
 }
 
 // BanUsersRequest
 FBPServerBanUsersRequest UPFServerProxyLibrary::MakeBPServerBanUsersRequest(
     TArray<FBPServerBanRequest> InBans
-    )
+)
 {
     FBPServerBanUsersRequest Out = FBPServerBanUsersRequest();
     for (const FBPServerBanRequest& elem : InBans)
-	{
-		Out.Data.Bans.Add(elem.Data);
-	}
-	
+    {
+        Out.Data.Bans.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // BanUsersResult
 void UPFServerProxyLibrary::BreakBPServerBanUsersResult(
     const FBPServerBanUsersResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
- )
+    , TArray<FBPServerBanInfo>& OutBanData
+)
 {
     for (const PlayFab::ServerModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPServerBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPServerBanInfo(elem));
+    }
+
 }
 
 // CatalogItem
 FBPServerCatalogItem UPFServerProxyLibrary::MakeBPServerCatalogItem(
     FBPServerCatalogItemBundleInfo InBundle
-	, bool InCanBecomeCharacter
-	, FString InCatalogVersion
-	, FBPServerCatalogItemConsumableInfo InConsumable
-	, FBPServerCatalogItemContainerInfo InContainer
-	, FString InCustomData
-	, FString InDescription
-	, FString InDisplayName
-	, int32 InInitialLimitedEditionCount
-	, bool InIsLimitedEdition
-	, bool InIsStackable
-	, bool InIsTradable
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemImageUrl
-	, TMap<FString, int32> InRealCurrencyPrices
-	, TArray<FString> InTags
-	, TMap<FString, int32> InVirtualCurrencyPrices
-    )
+    , bool InCanBecomeCharacter
+    , FString InCatalogVersion
+    , FBPServerCatalogItemConsumableInfo InConsumable
+    , FBPServerCatalogItemContainerInfo InContainer
+    , FString InCustomData
+    , FString InDescription
+    , FString InDisplayName
+    , int32 InInitialLimitedEditionCount
+    , bool InIsLimitedEdition
+    , bool InIsStackable
+    , bool InIsTradable
+    , FString InItemClass
+    , FString InItemId
+    , FString InItemImageUrl
+    , TMap<FString, int32> InRealCurrencyPrices
+    , TArray<FString> InTags
+    , TMap<FString, int32> InVirtualCurrencyPrices
+)
 {
     FBPServerCatalogItem Out = FBPServerCatalogItem();
     Out.Data.Bundle = MakeShareable(new PlayFab::ServerModels::FCatalogItemBundleInfo(InBundle.Data));
-	Out.Data.CanBecomeCharacter = InCanBecomeCharacter;
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.Consumable = MakeShareable(new PlayFab::ServerModels::FCatalogItemConsumableInfo(InConsumable.Data));
-	Out.Data.Container = MakeShareable(new PlayFab::ServerModels::FCatalogItemContainerInfo(InContainer.Data));
-	Out.Data.CustomData = InCustomData;
-	Out.Data.Description = InDescription;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.InitialLimitedEditionCount = InInitialLimitedEditionCount;
-	Out.Data.IsLimitedEdition = InIsLimitedEdition;
-	Out.Data.IsStackable = InIsStackable;
-	Out.Data.IsTradable = InIsTradable;
-	Out.Data.ItemClass = InItemClass;
-	Out.Data.ItemId = InItemId;
-	Out.Data.ItemImageUrl = InItemImageUrl;
-	for (auto& elem : InRealCurrencyPrices)
-	{
-		const int32 value = elem.Value;
-		Out.Data.RealCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
-	}
-	Out.Data.Tags = InTags;
-	for (auto& elem : InVirtualCurrencyPrices)
-	{
-		const int32 value = elem.Value;
-		Out.Data.VirtualCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
-	}
-	
+    Out.Data.CanBecomeCharacter = InCanBecomeCharacter;
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.Consumable = MakeShareable(new PlayFab::ServerModels::FCatalogItemConsumableInfo(InConsumable.Data));
+    Out.Data.Container = MakeShareable(new PlayFab::ServerModels::FCatalogItemContainerInfo(InContainer.Data));
+    Out.Data.CustomData = InCustomData;
+    Out.Data.Description = InDescription;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.InitialLimitedEditionCount = InInitialLimitedEditionCount;
+    Out.Data.IsLimitedEdition = InIsLimitedEdition;
+    Out.Data.IsStackable = InIsStackable;
+    Out.Data.IsTradable = InIsTradable;
+    Out.Data.ItemClass = InItemClass;
+    Out.Data.ItemId = InItemId;
+    Out.Data.ItemImageUrl = InItemImageUrl;
+    for (auto& elem : InRealCurrencyPrices)
+    {
+        const int32 value = elem.Value;
+        Out.Data.RealCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
+    }
+    Out.Data.Tags = InTags;
+    for (auto& elem : InVirtualCurrencyPrices)
+    {
+        const int32 value = elem.Value;
+        Out.Data.VirtualCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
+    }
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerCatalogItem(
     const FBPServerCatalogItem& In
-	, FBPServerCatalogItemBundleInfo& OutBundle
-	, bool& OutCanBecomeCharacter
-	, FString& OutCatalogVersion
-	, FBPServerCatalogItemConsumableInfo& OutConsumable
-	, FBPServerCatalogItemContainerInfo& OutContainer
-	, FString& OutCustomData
-	, FString& OutDescription
-	, FString& OutDisplayName
-	, int32& OutInitialLimitedEditionCount
-	, bool& OutIsLimitedEdition
-	, bool& OutIsStackable
-	, bool& OutIsTradable
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemImageUrl
-	, TMap<FString, int32>& OutRealCurrencyPrices
-	, TArray<FString>& OutTags
-	, TMap<FString, int32>& OutVirtualCurrencyPrices
- )
+    , FBPServerCatalogItemBundleInfo& OutBundle
+    , bool& OutCanBecomeCharacter
+    , FString& OutCatalogVersion
+    , FBPServerCatalogItemConsumableInfo& OutConsumable
+    , FBPServerCatalogItemContainerInfo& OutContainer
+    , FString& OutCustomData
+    , FString& OutDescription
+    , FString& OutDisplayName
+    , int32& OutInitialLimitedEditionCount
+    , bool& OutIsLimitedEdition
+    , bool& OutIsStackable
+    , bool& OutIsTradable
+    , FString& OutItemClass
+    , FString& OutItemId
+    , FString& OutItemImageUrl
+    , TMap<FString, int32>& OutRealCurrencyPrices
+    , TArray<FString>& OutTags
+    , TMap<FString, int32>& OutVirtualCurrencyPrices
+)
 {
-    if (In.Data.Bundle.IsValid()) {OutBundle.Data = *In.Data.Bundle;}
-	OutCanBecomeCharacter = In.Data.CanBecomeCharacter;
-	OutCatalogVersion = In.Data.CatalogVersion;
-	if (In.Data.Consumable.IsValid()) {OutConsumable.Data = *In.Data.Consumable;}
-	if (In.Data.Container.IsValid()) {OutContainer.Data = *In.Data.Container;}
-	OutCustomData = In.Data.CustomData;
-	OutDescription = In.Data.Description;
-	OutDisplayName = In.Data.DisplayName;
-	OutInitialLimitedEditionCount = In.Data.InitialLimitedEditionCount;
-	OutIsLimitedEdition = In.Data.IsLimitedEdition;
-	OutIsStackable = In.Data.IsStackable;
-	OutIsTradable = In.Data.IsTradable;
-	OutItemClass = In.Data.ItemClass;
-	OutItemId = In.Data.ItemId;
-	OutItemImageUrl = In.Data.ItemImageUrl;
-	for (auto& elem : In.Data.RealCurrencyPrices)
-	{
-		const uint32 value = elem.Value;
-		OutRealCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
-	}
-	OutTags = In.Data.Tags;
-	for (auto& elem : In.Data.VirtualCurrencyPrices)
-	{
-		const uint32 value = elem.Value;
-		OutVirtualCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
-	}
-	
+    if (In.Data.Bundle.IsValid()) { OutBundle.Data = *In.Data.Bundle; }
+    OutCanBecomeCharacter = In.Data.CanBecomeCharacter;
+    OutCatalogVersion = In.Data.CatalogVersion;
+    if (In.Data.Consumable.IsValid()) { OutConsumable.Data = *In.Data.Consumable; }
+    if (In.Data.Container.IsValid()) { OutContainer.Data = *In.Data.Container; }
+    OutCustomData = In.Data.CustomData;
+    OutDescription = In.Data.Description;
+    OutDisplayName = In.Data.DisplayName;
+    OutInitialLimitedEditionCount = In.Data.InitialLimitedEditionCount;
+    OutIsLimitedEdition = In.Data.IsLimitedEdition;
+    OutIsStackable = In.Data.IsStackable;
+    OutIsTradable = In.Data.IsTradable;
+    OutItemClass = In.Data.ItemClass;
+    OutItemId = In.Data.ItemId;
+    OutItemImageUrl = In.Data.ItemImageUrl;
+    for (auto& elem : In.Data.RealCurrencyPrices)
+    {
+        const uint32 value = elem.Value;
+        OutRealCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
+    }
+    OutTags = In.Data.Tags;
+    for (auto& elem : In.Data.VirtualCurrencyPrices)
+    {
+        const uint32 value = elem.Value;
+        OutVirtualCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
+    }
+
 }
 
 // CatalogItemBundleInfo
 FBPServerCatalogItemBundleInfo UPFServerProxyLibrary::MakeBPServerCatalogItemBundleInfo(
     TArray<FString> InBundledItems
-	, TArray<FString> InBundledResultTables
-	, TMap<FString, int32> InBundledVirtualCurrencies
-    )
+    , TArray<FString> InBundledResultTables
+    , TMap<FString, int32> InBundledVirtualCurrencies
+)
 {
     FBPServerCatalogItemBundleInfo Out = FBPServerCatalogItemBundleInfo();
     Out.Data.BundledItems = InBundledItems;
-	Out.Data.BundledResultTables = InBundledResultTables;
-	for (auto& elem : InBundledVirtualCurrencies)
-	{
-		const int32 value = elem.Value;
-		Out.Data.BundledVirtualCurrencies.Add(elem.Key, static_cast<uint32>(value));
-	}
-	
+    Out.Data.BundledResultTables = InBundledResultTables;
+    for (auto& elem : InBundledVirtualCurrencies)
+    {
+        const int32 value = elem.Value;
+        Out.Data.BundledVirtualCurrencies.Add(elem.Key, static_cast<uint32>(value));
+    }
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerCatalogItemBundleInfo(
     const FBPServerCatalogItemBundleInfo& In
-	, TArray<FString>& OutBundledItems
-	, TArray<FString>& OutBundledResultTables
-	, TMap<FString, int32>& OutBundledVirtualCurrencies
- )
+    , TArray<FString>& OutBundledItems
+    , TArray<FString>& OutBundledResultTables
+    , TMap<FString, int32>& OutBundledVirtualCurrencies
+)
 {
     OutBundledItems = In.Data.BundledItems;
-	OutBundledResultTables = In.Data.BundledResultTables;
-	for (auto& elem : In.Data.BundledVirtualCurrencies)
-	{
-		const uint32 value = elem.Value;
-		OutBundledVirtualCurrencies.Add(elem.Key, static_cast<int32>(value));
-	}
-	
+    OutBundledResultTables = In.Data.BundledResultTables;
+    for (auto& elem : In.Data.BundledVirtualCurrencies)
+    {
+        const uint32 value = elem.Value;
+        OutBundledVirtualCurrencies.Add(elem.Key, static_cast<int32>(value));
+    }
+
 }
 
 // CatalogItemConsumableInfo
 FBPServerCatalogItemConsumableInfo UPFServerProxyLibrary::MakeBPServerCatalogItemConsumableInfo(
     int32 InUsageCount
-	, int32 InUsagePeriod
-	, FString InUsagePeriodGroup
-    )
+    , int32 InUsagePeriod
+    , FString InUsagePeriodGroup
+)
 {
     FBPServerCatalogItemConsumableInfo Out = FBPServerCatalogItemConsumableInfo();
     Out.Data.UsageCount = InUsageCount;
-	Out.Data.UsagePeriod = InUsagePeriod;
-	Out.Data.UsagePeriodGroup = InUsagePeriodGroup;
-	
+    Out.Data.UsagePeriod = InUsagePeriod;
+    Out.Data.UsagePeriodGroup = InUsagePeriodGroup;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerCatalogItemConsumableInfo(
     const FBPServerCatalogItemConsumableInfo& In
-	, int32& OutUsageCount
-	, int32& OutUsagePeriod
-	, FString& OutUsagePeriodGroup
- )
+    , int32& OutUsageCount
+    , int32& OutUsagePeriod
+    , FString& OutUsagePeriodGroup
+)
 {
     OutUsageCount = In.Data.UsageCount;
-	OutUsagePeriod = In.Data.UsagePeriod;
-	OutUsagePeriodGroup = In.Data.UsagePeriodGroup;
-	
+    OutUsagePeriod = In.Data.UsagePeriod;
+    OutUsagePeriodGroup = In.Data.UsagePeriodGroup;
+
 }
 
 // CatalogItemContainerInfo
 FBPServerCatalogItemContainerInfo UPFServerProxyLibrary::MakeBPServerCatalogItemContainerInfo(
     TArray<FString> InItemContents
-	, FString InKeyItemId
-	, TArray<FString> InResultTableContents
-	, TMap<FString, int32> InVirtualCurrencyContents
-    )
+    , FString InKeyItemId
+    , TArray<FString> InResultTableContents
+    , TMap<FString, int32> InVirtualCurrencyContents
+)
 {
     FBPServerCatalogItemContainerInfo Out = FBPServerCatalogItemContainerInfo();
     Out.Data.ItemContents = InItemContents;
-	Out.Data.KeyItemId = InKeyItemId;
-	Out.Data.ResultTableContents = InResultTableContents;
-	for (auto& elem : InVirtualCurrencyContents)
-	{
-		const int32 value = elem.Value;
-		Out.Data.VirtualCurrencyContents.Add(elem.Key, static_cast<uint32>(value));
-	}
-	
+    Out.Data.KeyItemId = InKeyItemId;
+    Out.Data.ResultTableContents = InResultTableContents;
+    for (auto& elem : InVirtualCurrencyContents)
+    {
+        const int32 value = elem.Value;
+        Out.Data.VirtualCurrencyContents.Add(elem.Key, static_cast<uint32>(value));
+    }
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerCatalogItemContainerInfo(
     const FBPServerCatalogItemContainerInfo& In
-	, TArray<FString>& OutItemContents
-	, FString& OutKeyItemId
-	, TArray<FString>& OutResultTableContents
-	, TMap<FString, int32>& OutVirtualCurrencyContents
- )
+    , TArray<FString>& OutItemContents
+    , FString& OutKeyItemId
+    , TArray<FString>& OutResultTableContents
+    , TMap<FString, int32>& OutVirtualCurrencyContents
+)
 {
     OutItemContents = In.Data.ItemContents;
-	OutKeyItemId = In.Data.KeyItemId;
-	OutResultTableContents = In.Data.ResultTableContents;
-	for (auto& elem : In.Data.VirtualCurrencyContents)
-	{
-		const uint32 value = elem.Value;
-		OutVirtualCurrencyContents.Add(elem.Key, static_cast<int32>(value));
-	}
-	
+    OutKeyItemId = In.Data.KeyItemId;
+    OutResultTableContents = In.Data.ResultTableContents;
+    for (auto& elem : In.Data.VirtualCurrencyContents)
+    {
+        const uint32 value = elem.Value;
+        OutVirtualCurrencyContents.Add(elem.Key, static_cast<int32>(value));
+    }
+
 }
 
 // CharacterInventory
 FBPServerCharacterInventory UPFServerProxyLibrary::MakeBPServerCharacterInventory(
     FString InCharacterId
-	, TArray<FBPServerItemInstance> InInventory
-    )
+    , TArray<FBPServerItemInstance> InInventory
+)
 {
     FBPServerCharacterInventory Out = FBPServerCharacterInventory();
     Out.Data.CharacterId = InCharacterId;
-	for (const FBPServerItemInstance& elem : InInventory)
-	{
-		Out.Data.Inventory.Add(elem.Data);
-	}
-	
+    for (const FBPServerItemInstance& elem : InInventory)
+    {
+        Out.Data.Inventory.Add(elem.Data);
+    }
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerCharacterInventory(
     const FBPServerCharacterInventory& In
-	, FString& OutCharacterId
-	, TArray<FBPServerItemInstance>& OutInventory
- )
+    , FString& OutCharacterId
+    , TArray<FBPServerItemInstance>& OutInventory
+)
 {
     OutCharacterId = In.Data.CharacterId;
-	for (const PlayFab::ServerModels::FItemInstance& elem : In.Data.Inventory)
-	{
-		OutInventory.Add(FBPServerItemInstance(elem));
-	}
-	
+    for (const PlayFab::ServerModels::FItemInstance& elem : In.Data.Inventory)
+    {
+        OutInventory.Add(FBPServerItemInstance(elem));
+    }
+
 }
 
 // CharacterLeaderboardEntry
 FBPServerCharacterLeaderboardEntry UPFServerProxyLibrary::MakeBPServerCharacterLeaderboardEntry(
     FString InCharacterId
-	, FString InCharacterName
-	, FString InCharacterType
-	, FString InDisplayName
-	, FString InPlayFabId
-	, int32 InPosition
-	, int32 InStatValue
-    )
+    , FString InCharacterName
+    , FString InCharacterType
+    , FString InDisplayName
+    , FString InPlayFabId
+    , int32 InPosition
+    , int32 InStatValue
+)
 {
     FBPServerCharacterLeaderboardEntry Out = FBPServerCharacterLeaderboardEntry();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.CharacterName = InCharacterName;
-	Out.Data.CharacterType = InCharacterType;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Position = InPosition;
-	Out.Data.StatValue = InStatValue;
-	
+    Out.Data.CharacterName = InCharacterName;
+    Out.Data.CharacterType = InCharacterType;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Position = InPosition;
+    Out.Data.StatValue = InStatValue;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerCharacterLeaderboardEntry(
     const FBPServerCharacterLeaderboardEntry& In
-	, FString& OutCharacterId
-	, FString& OutCharacterName
-	, FString& OutCharacterType
-	, FString& OutDisplayName
-	, FString& OutPlayFabId
-	, int32& OutPosition
-	, int32& OutStatValue
- )
+    , FString& OutCharacterId
+    , FString& OutCharacterName
+    , FString& OutCharacterType
+    , FString& OutDisplayName
+    , FString& OutPlayFabId
+    , int32& OutPosition
+    , int32& OutStatValue
+)
 {
     OutCharacterId = In.Data.CharacterId;
-	OutCharacterName = In.Data.CharacterName;
-	OutCharacterType = In.Data.CharacterType;
-	OutDisplayName = In.Data.DisplayName;
-	OutPlayFabId = In.Data.PlayFabId;
-	OutPosition = In.Data.Position;
-	OutStatValue = In.Data.StatValue;
-	
+    OutCharacterName = In.Data.CharacterName;
+    OutCharacterType = In.Data.CharacterType;
+    OutDisplayName = In.Data.DisplayName;
+    OutPlayFabId = In.Data.PlayFabId;
+    OutPosition = In.Data.Position;
+    OutStatValue = In.Data.StatValue;
+
 }
 
 // CharacterResult
 void UPFServerProxyLibrary::BreakBPServerCharacterResult(
     const FBPServerCharacterResult& In
-	, FString& OutCharacterId
-	, FString& OutCharacterName
-	, FString& OutCharacterType
- )
+    , FString& OutCharacterId
+    , FString& OutCharacterName
+    , FString& OutCharacterType
+)
 {
     OutCharacterId = In.Data.CharacterId;
-	OutCharacterName = In.Data.CharacterName;
-	OutCharacterType = In.Data.CharacterType;
-	
+    OutCharacterName = In.Data.CharacterName;
+    OutCharacterType = In.Data.CharacterType;
+
 }
 
 // ConsumeItemRequest
 FBPServerConsumeItemRequest UPFServerProxyLibrary::MakeBPServerConsumeItemRequest(
     FString InCharacterId
-	, int32 InConsumeCount
-	, FString InItemInstanceId
-	, FString InPlayFabId
-    )
+    , int32 InConsumeCount
+    , FString InItemInstanceId
+    , FString InPlayFabId
+)
 {
     FBPServerConsumeItemRequest Out = FBPServerConsumeItemRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.ConsumeCount = InConsumeCount;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.ConsumeCount = InConsumeCount;
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // ConsumeItemResult
 void UPFServerProxyLibrary::BreakBPServerConsumeItemResult(
     const FBPServerConsumeItemResult& In
-	, FString& OutItemInstanceId
-	, int32& OutRemainingUses
- )
+    , FString& OutItemInstanceId
+    , int32& OutRemainingUses
+)
 {
     OutItemInstanceId = In.Data.ItemInstanceId;
-	OutRemainingUses = In.Data.RemainingUses;
-	
+    OutRemainingUses = In.Data.RemainingUses;
+
 }
 
 // ContactEmailInfo
 FBPServerContactEmailInfo UPFServerProxyLibrary::MakeBPServerContactEmailInfo(
     FString InEmailAddress
-	, FString InName
-	, EBPServerEmailVerificationStatus InVerificationStatus
-    )
+    , FString InName
+    , EBPServerEmailVerificationStatus InVerificationStatus
+)
 {
     FBPServerContactEmailInfo Out = FBPServerContactEmailInfo();
     Out.Data.EmailAddress = InEmailAddress;
-	Out.Data.Name = InName;
-	Out.Data.VerificationStatus = static_cast<PlayFab::ServerModels::EmailVerificationStatus>(static_cast<uint8>(InVerificationStatus));
-	
+    Out.Data.Name = InName;
+    Out.Data.VerificationStatus = static_cast<PlayFab::ServerModels::EmailVerificationStatus>(static_cast<uint8>(InVerificationStatus));
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerContactEmailInfo(
     const FBPServerContactEmailInfo& In
-	, FString& OutEmailAddress
-	, FString& OutName
-	, EBPServerEmailVerificationStatus& OutVerificationStatus
- )
+    , FString& OutEmailAddress
+    , FString& OutName
+    , EBPServerEmailVerificationStatus& OutVerificationStatus
+)
 {
     OutEmailAddress = In.Data.EmailAddress;
-	OutName = In.Data.Name;
-	if (In.Data.VerificationStatus.notNull()) {OutVerificationStatus = static_cast<EBPServerEmailVerificationStatus>(static_cast<uint8>(In.Data.VerificationStatus.mValue));}
-	
+    OutName = In.Data.Name;
+    if (In.Data.VerificationStatus.notNull()) { OutVerificationStatus = static_cast<EBPServerEmailVerificationStatus>(static_cast<uint8>(In.Data.VerificationStatus.mValue)); }
+
 }
 
 // ContactEmailInfoModel
 FBPServerContactEmailInfoModel UPFServerProxyLibrary::MakeBPServerContactEmailInfoModel(
     FString InEmailAddress
-	, FString InName
-	, EBPServerEmailVerificationStatus InVerificationStatus
-    )
+    , FString InName
+    , EBPServerEmailVerificationStatus InVerificationStatus
+)
 {
     FBPServerContactEmailInfoModel Out = FBPServerContactEmailInfoModel();
     Out.Data.EmailAddress = InEmailAddress;
-	Out.Data.Name = InName;
-	Out.Data.VerificationStatus = static_cast<PlayFab::ServerModels::EmailVerificationStatus>(static_cast<uint8>(InVerificationStatus));
-	
+    Out.Data.Name = InName;
+    Out.Data.VerificationStatus = static_cast<PlayFab::ServerModels::EmailVerificationStatus>(static_cast<uint8>(InVerificationStatus));
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerContactEmailInfoModel(
     const FBPServerContactEmailInfoModel& In
-	, FString& OutEmailAddress
-	, FString& OutName
-	, EBPServerEmailVerificationStatus& OutVerificationStatus
- )
+    , FString& OutEmailAddress
+    , FString& OutName
+    , EBPServerEmailVerificationStatus& OutVerificationStatus
+)
 {
     OutEmailAddress = In.Data.EmailAddress;
-	OutName = In.Data.Name;
-	if (In.Data.VerificationStatus.notNull()) {OutVerificationStatus = static_cast<EBPServerEmailVerificationStatus>(static_cast<uint8>(In.Data.VerificationStatus.mValue));}
-	
+    OutName = In.Data.Name;
+    if (In.Data.VerificationStatus.notNull()) { OutVerificationStatus = static_cast<EBPServerEmailVerificationStatus>(static_cast<uint8>(In.Data.VerificationStatus.mValue)); }
+
 }
 
 // CreateSharedGroupRequest
 FBPServerCreateSharedGroupRequest UPFServerProxyLibrary::MakeBPServerCreateSharedGroupRequest(
     FString InSharedGroupId
-    )
+)
 {
     FBPServerCreateSharedGroupRequest Out = FBPServerCreateSharedGroupRequest();
     Out.Data.SharedGroupId = InSharedGroupId;
-	
+
     return Out;
 }
 
 // CreateSharedGroupResult
 void UPFServerProxyLibrary::BreakBPServerCreateSharedGroupResult(
     const FBPServerCreateSharedGroupResult& In
-	, FString& OutSharedGroupId
- )
+    , FString& OutSharedGroupId
+)
 {
     OutSharedGroupId = In.Data.SharedGroupId;
-	
+
 }
 
 // DeleteCharacterFromUserRequest
 FBPServerDeleteCharacterFromUserRequest UPFServerProxyLibrary::MakeBPServerDeleteCharacterFromUserRequest(
     FString InCharacterId
-	, FString InPlayFabId
-	, bool InSaveCharacterInventory
-    )
+    , FString InPlayFabId
+    , bool InSaveCharacterInventory
+)
 {
     FBPServerDeleteCharacterFromUserRequest Out = FBPServerDeleteCharacterFromUserRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.SaveCharacterInventory = InSaveCharacterInventory;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.SaveCharacterInventory = InSaveCharacterInventory;
+
     return Out;
 }
 
 // DeleteCharacterFromUserResult
 void UPFServerProxyLibrary::BreakBPServerDeleteCharacterFromUserResult(
     const FBPServerDeleteCharacterFromUserResult& In
- )
+)
 {
-    
+
 }
 
 // DeleteSharedGroupRequest
 FBPServerDeleteSharedGroupRequest UPFServerProxyLibrary::MakeBPServerDeleteSharedGroupRequest(
     FString InSharedGroupId
-    )
+)
 {
     FBPServerDeleteSharedGroupRequest Out = FBPServerDeleteSharedGroupRequest();
     Out.Data.SharedGroupId = InSharedGroupId;
-	
+
     return Out;
 }
 
 // DeleteUsersRequest
 FBPServerDeleteUsersRequest UPFServerProxyLibrary::MakeBPServerDeleteUsersRequest(
     TArray<FString> InPlayFabIds
-    )
+)
 {
     FBPServerDeleteUsersRequest Out = FBPServerDeleteUsersRequest();
     Out.Data.PlayFabIds = InPlayFabIds;
-	
+
     return Out;
 }
 
 // DeleteUsersResult
 void UPFServerProxyLibrary::BreakBPServerDeleteUsersResult(
     const FBPServerDeleteUsersResult& In
- )
+)
 {
-    
+
 }
 
 // DeregisterGameRequest
 FBPServerDeregisterGameRequest UPFServerProxyLibrary::MakeBPServerDeregisterGameRequest(
     FString InLobbyId
-    )
+)
 {
     FBPServerDeregisterGameRequest Out = FBPServerDeregisterGameRequest();
     Out.Data.LobbyId = InLobbyId;
-	
+
     return Out;
 }
 
 // DeregisterGameResponse
 void UPFServerProxyLibrary::BreakBPServerDeregisterGameResponse(
     const FBPServerDeregisterGameResponse& In
- )
+)
 {
-    
+
 }
 
 // EmptyResult
 void UPFServerProxyLibrary::BreakBPServerEmptyResult(
     const FBPServerEmptyResult& In
- )
+)
 {
-    
+
 }
 
 // EvaluateRandomResultTableRequest
 FBPServerEvaluateRandomResultTableRequest UPFServerProxyLibrary::MakeBPServerEvaluateRandomResultTableRequest(
     FString InCatalogVersion
-	, FString InTableId
-    )
+    , FString InTableId
+)
 {
     FBPServerEvaluateRandomResultTableRequest Out = FBPServerEvaluateRandomResultTableRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.TableId = InTableId;
-	
+    Out.Data.TableId = InTableId;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerEvaluateRandomResultTableRequest(
     const FBPServerEvaluateRandomResultTableRequest& In
-	, FString& OutCatalogVersion
-	, FString& OutTableId
- )
+    , FString& OutCatalogVersion
+    , FString& OutTableId
+)
 {
     OutCatalogVersion = In.Data.CatalogVersion;
-	OutTableId = In.Data.TableId;
-	
+    OutTableId = In.Data.TableId;
+
 }
 
 // EvaluateRandomResultTableResult
 void UPFServerProxyLibrary::BreakBPServerEvaluateRandomResultTableResult(
     const FBPServerEvaluateRandomResultTableResult& In
-	, FString& OutResultItemId
- )
+    , FString& OutResultItemId
+)
 {
     OutResultItemId = In.Data.ResultItemId;
-	
+
 }
 
 // ExecuteCloudScriptResult
 void UPFServerProxyLibrary::BreakBPServerExecuteCloudScriptResult(
     const FBPServerExecuteCloudScriptResult& In
-	, int32& OutAPIRequestsIssued
-	, FBPServerScriptExecutionError& OutError
-	, float& OutExecutionTimeSeconds
-	, FString& OutFunctionName
-	, UPlayFabJsonValue*& OutFunctionResult
-	, bool& OutFunctionResultTooLarge
-	, int32& OutHttpRequestsIssued
-	, TArray<FBPServerLogStatement>& OutLogs
-	, bool& OutLogsTooLarge
-	, int32& OutMemoryConsumedBytes
-	, float& OutProcessorTimeSeconds
-	, int32& OutRevision
- )
+    , int32& OutAPIRequestsIssued
+    , FBPServerScriptExecutionError& OutError
+    , float& OutExecutionTimeSeconds
+    , FString& OutFunctionName
+    , UPlayFabJsonValue*& OutFunctionResult
+    , bool& OutFunctionResultTooLarge
+    , int32& OutHttpRequestsIssued
+    , TArray<FBPServerLogStatement>& OutLogs
+    , bool& OutLogsTooLarge
+    , int32& OutMemoryConsumedBytes
+    , float& OutProcessorTimeSeconds
+    , int32& OutRevision
+)
 {
     OutAPIRequestsIssued = In.Data.APIRequestsIssued;
-	if (In.Data.Error.IsValid()) {OutError.Data = *In.Data.Error;}
-	OutExecutionTimeSeconds = In.Data.ExecutionTimeSeconds;
-	OutFunctionName = In.Data.FunctionName;
-	UPlayFabJsonValue* val = NewObject<UPlayFabJsonValue>();
-	val->SetRootValue(In.Data.FunctionResult.GetJsonValue());
-	OutFunctionResult = val;
-	OutFunctionResultTooLarge = In.Data.FunctionResultTooLarge;
-	OutHttpRequestsIssued = In.Data.HttpRequestsIssued;
-	for (const PlayFab::ServerModels::FLogStatement& elem : In.Data.Logs)
-	{
-		OutLogs.Add(FBPServerLogStatement(elem));
-	}
-	OutLogsTooLarge = In.Data.LogsTooLarge;
-	OutMemoryConsumedBytes = In.Data.MemoryConsumedBytes;
-	OutProcessorTimeSeconds = In.Data.ProcessorTimeSeconds;
-	OutRevision = In.Data.Revision;
-	
+    if (In.Data.Error.IsValid()) { OutError.Data = *In.Data.Error; }
+    OutExecutionTimeSeconds = In.Data.ExecutionTimeSeconds;
+    OutFunctionName = In.Data.FunctionName;
+    UPlayFabJsonValue* FunctionResultVal = NewObject<UPlayFabJsonValue>();
+    FunctionResultVal->SetRootValue(In.Data.FunctionResult.GetJsonValue());
+    OutFunctionResult = FunctionResultVal;
+    OutFunctionResultTooLarge = In.Data.FunctionResultTooLarge;
+    OutHttpRequestsIssued = In.Data.HttpRequestsIssued;
+    for (const PlayFab::ServerModels::FLogStatement& elem : In.Data.Logs)
+    {
+        OutLogs.Add(FBPServerLogStatement(elem));
+    }
+    OutLogsTooLarge = In.Data.LogsTooLarge;
+    OutMemoryConsumedBytes = In.Data.MemoryConsumedBytes;
+    OutProcessorTimeSeconds = In.Data.ProcessorTimeSeconds;
+    OutRevision = In.Data.Revision;
+
 }
 
 // ExecuteCloudScriptServerRequest
 FBPServerExecuteCloudScriptServerRequest UPFServerProxyLibrary::MakeBPServerExecuteCloudScriptServerRequest(
     FString InFunctionName
-	, UPlayFabJsonValue* InFunctionParameter
-	, bool InGeneratePlayStreamEvent
-	, FString InPlayFabId
-	, EBPServerCloudScriptRevisionOption InRevisionSelection
-	, int32 InSpecificRevision
-    )
+    , UPlayFabJsonValue* InFunctionParameter
+    , bool InGeneratePlayStreamEvent
+    , FString InPlayFabId
+    , EBPServerCloudScriptRevisionOption InRevisionSelection
+    , int32 InSpecificRevision
+)
 {
     FBPServerExecuteCloudScriptServerRequest Out = FBPServerExecuteCloudScriptServerRequest();
     Out.Data.FunctionName = InFunctionName;
-	Out.Data.FunctionParameter = InFunctionParameter->GetRootValue();
-	Out.Data.GeneratePlayStreamEvent = InGeneratePlayStreamEvent;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.RevisionSelection = static_cast<PlayFab::ServerModels::CloudScriptRevisionOption>(static_cast<uint8>(InRevisionSelection));
-	Out.Data.SpecificRevision = InSpecificRevision;
-	
+    Out.Data.FunctionParameter = InFunctionParameter->GetRootValue();
+    Out.Data.GeneratePlayStreamEvent = InGeneratePlayStreamEvent;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.RevisionSelection = static_cast<PlayFab::ServerModels::CloudScriptRevisionOption>(static_cast<uint8>(InRevisionSelection));
+    Out.Data.SpecificRevision = InSpecificRevision;
+
     return Out;
 }
 
 // FacebookPlayFabIdPair
 FBPServerFacebookPlayFabIdPair UPFServerProxyLibrary::MakeBPServerFacebookPlayFabIdPair(
     FString InFacebookId
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPServerFacebookPlayFabIdPair Out = FBPServerFacebookPlayFabIdPair();
     Out.Data.FacebookId = InFacebookId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerFacebookPlayFabIdPair(
     const FBPServerFacebookPlayFabIdPair& In
-	, FString& OutFacebookId
-	, FString& OutPlayFabId
- )
+    , FString& OutFacebookId
+    , FString& OutPlayFabId
+)
 {
     OutFacebookId = In.Data.FacebookId;
-	OutPlayFabId = In.Data.PlayFabId;
-	
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // FriendInfo
 FBPServerFriendInfo UPFServerProxyLibrary::MakeBPServerFriendInfo(
     FString InCurrentMatchmakerLobbyId
-	, FBPServerUserFacebookInfo InFacebookInfo
-	, FString InFriendPlayFabId
-	, FBPServerUserGameCenterInfo InGameCenterInfo
-	, FBPServerPlayerProfileModel InProfile
-	, FBPServerUserSteamInfo InSteamInfo
-	, TArray<FString> InTags
-	, FString InTitleDisplayName
-	, FString InUsername
-    )
+    , FBPServerUserFacebookInfo InFacebookInfo
+    , FString InFriendPlayFabId
+    , FBPServerUserGameCenterInfo InGameCenterInfo
+    , FBPServerPlayerProfileModel InProfile
+    , FBPServerUserSteamInfo InSteamInfo
+    , TArray<FString> InTags
+    , FString InTitleDisplayName
+    , FString InUsername
+)
 {
     FBPServerFriendInfo Out = FBPServerFriendInfo();
     Out.Data.CurrentMatchmakerLobbyId = InCurrentMatchmakerLobbyId;
-	Out.Data.FacebookInfo = MakeShareable(new PlayFab::ServerModels::FUserFacebookInfo(InFacebookInfo.Data));
-	Out.Data.FriendPlayFabId = InFriendPlayFabId;
-	Out.Data.GameCenterInfo = MakeShareable(new PlayFab::ServerModels::FUserGameCenterInfo(InGameCenterInfo.Data));
-	Out.Data.Profile = MakeShareable(new PlayFab::ServerModels::FPlayerProfileModel(InProfile.Data));
-	Out.Data.SteamInfo = MakeShareable(new PlayFab::ServerModels::FUserSteamInfo(InSteamInfo.Data));
-	Out.Data.Tags = InTags;
-	Out.Data.TitleDisplayName = InTitleDisplayName;
-	Out.Data.Username = InUsername;
-	
+    Out.Data.FacebookInfo = MakeShareable(new PlayFab::ServerModels::FUserFacebookInfo(InFacebookInfo.Data));
+    Out.Data.FriendPlayFabId = InFriendPlayFabId;
+    Out.Data.GameCenterInfo = MakeShareable(new PlayFab::ServerModels::FUserGameCenterInfo(InGameCenterInfo.Data));
+    Out.Data.Profile = MakeShareable(new PlayFab::ServerModels::FPlayerProfileModel(InProfile.Data));
+    Out.Data.SteamInfo = MakeShareable(new PlayFab::ServerModels::FUserSteamInfo(InSteamInfo.Data));
+    Out.Data.Tags = InTags;
+    Out.Data.TitleDisplayName = InTitleDisplayName;
+    Out.Data.Username = InUsername;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerFriendInfo(
     const FBPServerFriendInfo& In
-	, FString& OutCurrentMatchmakerLobbyId
-	, FBPServerUserFacebookInfo& OutFacebookInfo
-	, FString& OutFriendPlayFabId
-	, FBPServerUserGameCenterInfo& OutGameCenterInfo
-	, FBPServerPlayerProfileModel& OutProfile
-	, FBPServerUserSteamInfo& OutSteamInfo
-	, TArray<FString>& OutTags
-	, FString& OutTitleDisplayName
-	, FString& OutUsername
- )
+    , FString& OutCurrentMatchmakerLobbyId
+    , FBPServerUserFacebookInfo& OutFacebookInfo
+    , FString& OutFriendPlayFabId
+    , FBPServerUserGameCenterInfo& OutGameCenterInfo
+    , FBPServerPlayerProfileModel& OutProfile
+    , FBPServerUserSteamInfo& OutSteamInfo
+    , TArray<FString>& OutTags
+    , FString& OutTitleDisplayName
+    , FString& OutUsername
+)
 {
     OutCurrentMatchmakerLobbyId = In.Data.CurrentMatchmakerLobbyId;
-	if (In.Data.FacebookInfo.IsValid()) {OutFacebookInfo.Data = *In.Data.FacebookInfo;}
-	OutFriendPlayFabId = In.Data.FriendPlayFabId;
-	if (In.Data.GameCenterInfo.IsValid()) {OutGameCenterInfo.Data = *In.Data.GameCenterInfo;}
-	if (In.Data.Profile.IsValid()) {OutProfile.Data = *In.Data.Profile;}
-	if (In.Data.SteamInfo.IsValid()) {OutSteamInfo.Data = *In.Data.SteamInfo;}
-	OutTags = In.Data.Tags;
-	OutTitleDisplayName = In.Data.TitleDisplayName;
-	OutUsername = In.Data.Username;
-	
+    if (In.Data.FacebookInfo.IsValid()) { OutFacebookInfo.Data = *In.Data.FacebookInfo; }
+    OutFriendPlayFabId = In.Data.FriendPlayFabId;
+    if (In.Data.GameCenterInfo.IsValid()) { OutGameCenterInfo.Data = *In.Data.GameCenterInfo; }
+    if (In.Data.Profile.IsValid()) { OutProfile.Data = *In.Data.Profile; }
+    if (In.Data.SteamInfo.IsValid()) { OutSteamInfo.Data = *In.Data.SteamInfo; }
+    OutTags = In.Data.Tags;
+    OutTitleDisplayName = In.Data.TitleDisplayName;
+    OutUsername = In.Data.Username;
+
 }
 
 // GetAllSegmentsRequest
 FBPServerGetAllSegmentsRequest UPFServerProxyLibrary::MakeBPServerGetAllSegmentsRequest(
-        )
+)
 {
     FBPServerGetAllSegmentsRequest Out = FBPServerGetAllSegmentsRequest();
-    
+
     return Out;
 }
 
 // GetAllSegmentsResult
 void UPFServerProxyLibrary::BreakBPServerGetAllSegmentsResult(
     const FBPServerGetAllSegmentsResult& In
-	, TArray<FBPServerGetSegmentResult>& OutSegments
- )
+    , TArray<FBPServerGetSegmentResult>& OutSegments
+)
 {
     for (const PlayFab::ServerModels::FGetSegmentResult& elem : In.Data.Segments)
-	{
-		OutSegments.Add(FBPServerGetSegmentResult(elem));
-	}
-	
+    {
+        OutSegments.Add(FBPServerGetSegmentResult(elem));
+    }
+
 }
 
 // GetCatalogItemsRequest
 FBPServerGetCatalogItemsRequest UPFServerProxyLibrary::MakeBPServerGetCatalogItemsRequest(
     FString InCatalogVersion
-    )
+)
 {
     FBPServerGetCatalogItemsRequest Out = FBPServerGetCatalogItemsRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	
+
     return Out;
 }
 
 // GetCatalogItemsResult
 void UPFServerProxyLibrary::BreakBPServerGetCatalogItemsResult(
     const FBPServerGetCatalogItemsResult& In
-	, TArray<FBPServerCatalogItem>& OutCatalog
- )
+    , TArray<FBPServerCatalogItem>& OutCatalog
+)
 {
     for (const PlayFab::ServerModels::FCatalogItem& elem : In.Data.Catalog)
-	{
-		OutCatalog.Add(FBPServerCatalogItem(elem));
-	}
-	
+    {
+        OutCatalog.Add(FBPServerCatalogItem(elem));
+    }
+
 }
 
 // GetCharacterDataRequest
 FBPServerGetCharacterDataRequest UPFServerProxyLibrary::MakeBPServerGetCharacterDataRequest(
     FString InCharacterId
-	, int32 InIfChangedFromDataVersion
-	, TArray<FString> InKeys
-	, FString InPlayFabId
-    )
+    , int32 InIfChangedFromDataVersion
+    , TArray<FString> InKeys
+    , FString InPlayFabId
+)
 {
     FBPServerGetCharacterDataRequest Out = FBPServerGetCharacterDataRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.IfChangedFromDataVersion = InIfChangedFromDataVersion;
-	Out.Data.Keys = InKeys;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.IfChangedFromDataVersion = InIfChangedFromDataVersion;
+    Out.Data.Keys = InKeys;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GetCharacterDataResult
 void UPFServerProxyLibrary::BreakBPServerGetCharacterDataResult(
     const FBPServerGetCharacterDataResult& In
-	, FString& OutCharacterId
-	, TMap<FString, FBPServerUserDataRecord>& OutData
-	, int32& OutDataVersion
-	, FString& OutPlayFabId
- )
+    , FString& OutCharacterId
+    , TMap<FString, FBPServerUserDataRecord>& OutData
+    , int32& OutDataVersion
+    , FString& OutPlayFabId
+)
 {
     OutCharacterId = In.Data.CharacterId;
-	for (auto& elem : In.Data.Data)
-	{
-		const PlayFab::ServerModels::FUserDataRecord value = elem.Value;
-		OutData.Add(elem.Key, FBPServerUserDataRecord(value));
-	}
-	OutDataVersion = In.Data.DataVersion;
-	OutPlayFabId = In.Data.PlayFabId;
-	
+    for (auto& elem : In.Data.Data)
+    {
+        const PlayFab::ServerModels::FUserDataRecord value = elem.Value;
+        OutData.Add(elem.Key, FBPServerUserDataRecord(value));
+    }
+    OutDataVersion = In.Data.DataVersion;
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // GetCharacterInventoryRequest
 FBPServerGetCharacterInventoryRequest UPFServerProxyLibrary::MakeBPServerGetCharacterInventoryRequest(
     FString InCatalogVersion
-	, FString InCharacterId
-	, FString InPlayFabId
-    )
+    , FString InCharacterId
+    , FString InPlayFabId
+)
 {
     FBPServerGetCharacterInventoryRequest Out = FBPServerGetCharacterInventoryRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GetCharacterInventoryResult
 void UPFServerProxyLibrary::BreakBPServerGetCharacterInventoryResult(
     const FBPServerGetCharacterInventoryResult& In
-	, FString& OutCharacterId
-	, TArray<FBPServerItemInstance>& OutInventory
-	, FString& OutPlayFabId
-	, TMap<FString, int32>& OutVirtualCurrency
-	, TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
- )
+    , FString& OutCharacterId
+    , TArray<FBPServerItemInstance>& OutInventory
+    , FString& OutPlayFabId
+    , TMap<FString, int32>& OutVirtualCurrency
+    , TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
+)
 {
     OutCharacterId = In.Data.CharacterId;
-	for (const PlayFab::ServerModels::FItemInstance& elem : In.Data.Inventory)
-	{
-		OutInventory.Add(FBPServerItemInstance(elem));
-	}
-	OutPlayFabId = In.Data.PlayFabId;
-	OutVirtualCurrency = In.Data.VirtualCurrency;
-	for (auto& elem : In.Data.VirtualCurrencyRechargeTimes)
-	{
-		const PlayFab::ServerModels::FVirtualCurrencyRechargeTime value = elem.Value;
-		OutVirtualCurrencyRechargeTimes.Add(elem.Key, FBPServerVirtualCurrencyRechargeTime(value));
-	}
-	
+    for (const PlayFab::ServerModels::FItemInstance& elem : In.Data.Inventory)
+    {
+        OutInventory.Add(FBPServerItemInstance(elem));
+    }
+    OutPlayFabId = In.Data.PlayFabId;
+    OutVirtualCurrency = In.Data.VirtualCurrency;
+    for (auto& elem : In.Data.VirtualCurrencyRechargeTimes)
+    {
+        const PlayFab::ServerModels::FVirtualCurrencyRechargeTime value = elem.Value;
+        OutVirtualCurrencyRechargeTimes.Add(elem.Key, FBPServerVirtualCurrencyRechargeTime(value));
+    }
+
 }
 
 // GetCharacterLeaderboardRequest
 FBPServerGetCharacterLeaderboardRequest UPFServerProxyLibrary::MakeBPServerGetCharacterLeaderboardRequest(
     FString InCharacterId
-	, FString InCharacterType
-	, int32 InMaxResultsCount
-	, int32 InStartPosition
-	, FString InStatisticName
-    )
+    , FString InCharacterType
+    , int32 InMaxResultsCount
+    , int32 InStartPosition
+    , FString InStatisticName
+)
 {
     FBPServerGetCharacterLeaderboardRequest Out = FBPServerGetCharacterLeaderboardRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.CharacterType = InCharacterType;
-	Out.Data.MaxResultsCount = InMaxResultsCount;
-	Out.Data.StartPosition = InStartPosition;
-	Out.Data.StatisticName = InStatisticName;
-	
+    Out.Data.CharacterType = InCharacterType;
+    Out.Data.MaxResultsCount = InMaxResultsCount;
+    Out.Data.StartPosition = InStartPosition;
+    Out.Data.StatisticName = InStatisticName;
+
     return Out;
 }
 
 // GetCharacterLeaderboardResult
 void UPFServerProxyLibrary::BreakBPServerGetCharacterLeaderboardResult(
     const FBPServerGetCharacterLeaderboardResult& In
-	, TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
- )
+    , TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
+)
 {
     for (const PlayFab::ServerModels::FCharacterLeaderboardEntry& elem : In.Data.Leaderboard)
-	{
-		OutLeaderboard.Add(FBPServerCharacterLeaderboardEntry(elem));
-	}
-	
+    {
+        OutLeaderboard.Add(FBPServerCharacterLeaderboardEntry(elem));
+    }
+
 }
 
 // GetCharacterStatisticsRequest
 FBPServerGetCharacterStatisticsRequest UPFServerProxyLibrary::MakeBPServerGetCharacterStatisticsRequest(
     FString InCharacterId
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPServerGetCharacterStatisticsRequest Out = FBPServerGetCharacterStatisticsRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GetCharacterStatisticsResult
 void UPFServerProxyLibrary::BreakBPServerGetCharacterStatisticsResult(
     const FBPServerGetCharacterStatisticsResult& In
-	, FString& OutCharacterId
-	, TMap<FString, int32>& OutCharacterStatistics
-	, FString& OutPlayFabId
- )
+    , FString& OutCharacterId
+    , TMap<FString, int32>& OutCharacterStatistics
+    , FString& OutPlayFabId
+)
 {
     OutCharacterId = In.Data.CharacterId;
-	OutCharacterStatistics = In.Data.CharacterStatistics;
-	OutPlayFabId = In.Data.PlayFabId;
-	
+    OutCharacterStatistics = In.Data.CharacterStatistics;
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // GetContentDownloadUrlRequest
 FBPServerGetContentDownloadUrlRequest UPFServerProxyLibrary::MakeBPServerGetContentDownloadUrlRequest(
     FString InHttpMethod
-	, FString InKey
-	, bool InThruCDN
-    )
+    , FString InKey
+    , bool InThruCDN
+)
 {
     FBPServerGetContentDownloadUrlRequest Out = FBPServerGetContentDownloadUrlRequest();
     Out.Data.HttpMethod = InHttpMethod;
-	Out.Data.Key = InKey;
-	Out.Data.ThruCDN = InThruCDN;
-	
+    Out.Data.Key = InKey;
+    Out.Data.ThruCDN = InThruCDN;
+
     return Out;
 }
 
 // GetContentDownloadUrlResult
 void UPFServerProxyLibrary::BreakBPServerGetContentDownloadUrlResult(
     const FBPServerGetContentDownloadUrlResult& In
-	, FString& OutURL
- )
+    , FString& OutURL
+)
 {
     OutURL = In.Data.URL;
-	
+
 }
 
 // GetFriendLeaderboardRequest
 FBPServerGetFriendLeaderboardRequest UPFServerProxyLibrary::MakeBPServerGetFriendLeaderboardRequest(
     bool InIncludeFacebookFriends
-	, bool InIncludeSteamFriends
-	, int32 InMaxResultsCount
-	, FString InPlayFabId
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-	, int32 InStartPosition
-	, FString InStatisticName
-	, bool InUseSpecificVersion
-	, int32 InVersion
-    )
+    , bool InIncludeSteamFriends
+    , int32 InMaxResultsCount
+    , FString InPlayFabId
+    , FBPServerPlayerProfileViewConstraints InProfileConstraints
+    , int32 InStartPosition
+    , FString InStatisticName
+    , bool InUseSpecificVersion
+    , int32 InVersion
+)
 {
     FBPServerGetFriendLeaderboardRequest Out = FBPServerGetFriendLeaderboardRequest();
     Out.Data.IncludeFacebookFriends = InIncludeFacebookFriends;
-	Out.Data.IncludeSteamFriends = InIncludeSteamFriends;
-	Out.Data.MaxResultsCount = InMaxResultsCount;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
-	Out.Data.StartPosition = InStartPosition;
-	Out.Data.StatisticName = InStatisticName;
-	Out.Data.UseSpecificVersion = InUseSpecificVersion;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.IncludeSteamFriends = InIncludeSteamFriends;
+    Out.Data.MaxResultsCount = InMaxResultsCount;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
+    Out.Data.StartPosition = InStartPosition;
+    Out.Data.StatisticName = InStatisticName;
+    Out.Data.UseSpecificVersion = InUseSpecificVersion;
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 
 // GetFriendsListRequest
 FBPServerGetFriendsListRequest UPFServerProxyLibrary::MakeBPServerGetFriendsListRequest(
     bool InIncludeFacebookFriends
-	, bool InIncludeSteamFriends
-	, FString InPlayFabId
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-    )
+    , bool InIncludeSteamFriends
+    , FString InPlayFabId
+    , FBPServerPlayerProfileViewConstraints InProfileConstraints
+)
 {
     FBPServerGetFriendsListRequest Out = FBPServerGetFriendsListRequest();
     Out.Data.IncludeFacebookFriends = InIncludeFacebookFriends;
-	Out.Data.IncludeSteamFriends = InIncludeSteamFriends;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
-	
+    Out.Data.IncludeSteamFriends = InIncludeSteamFriends;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
+
     return Out;
 }
 
 // GetFriendsListResult
 void UPFServerProxyLibrary::BreakBPServerGetFriendsListResult(
     const FBPServerGetFriendsListResult& In
-	, TArray<FBPServerFriendInfo>& OutFriends
- )
+    , TArray<FBPServerFriendInfo>& OutFriends
+)
 {
     for (const PlayFab::ServerModels::FFriendInfo& elem : In.Data.Friends)
-	{
-		OutFriends.Add(FBPServerFriendInfo(elem));
-	}
-	
+    {
+        OutFriends.Add(FBPServerFriendInfo(elem));
+    }
+
 }
 
 // GetLeaderboardAroundCharacterRequest
 FBPServerGetLeaderboardAroundCharacterRequest UPFServerProxyLibrary::MakeBPServerGetLeaderboardAroundCharacterRequest(
     FString InCharacterId
-	, FString InCharacterType
-	, int32 InMaxResultsCount
-	, FString InPlayFabId
-	, FString InStatisticName
-    )
+    , FString InCharacterType
+    , int32 InMaxResultsCount
+    , FString InPlayFabId
+    , FString InStatisticName
+)
 {
     FBPServerGetLeaderboardAroundCharacterRequest Out = FBPServerGetLeaderboardAroundCharacterRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.CharacterType = InCharacterType;
-	Out.Data.MaxResultsCount = InMaxResultsCount;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.StatisticName = InStatisticName;
-	
+    Out.Data.CharacterType = InCharacterType;
+    Out.Data.MaxResultsCount = InMaxResultsCount;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.StatisticName = InStatisticName;
+
     return Out;
 }
 
 // GetLeaderboardAroundCharacterResult
 void UPFServerProxyLibrary::BreakBPServerGetLeaderboardAroundCharacterResult(
     const FBPServerGetLeaderboardAroundCharacterResult& In
-	, TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
- )
+    , TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
+)
 {
     for (const PlayFab::ServerModels::FCharacterLeaderboardEntry& elem : In.Data.Leaderboard)
-	{
-		OutLeaderboard.Add(FBPServerCharacterLeaderboardEntry(elem));
-	}
-	
+    {
+        OutLeaderboard.Add(FBPServerCharacterLeaderboardEntry(elem));
+    }
+
 }
 
 // GetLeaderboardAroundUserRequest
 FBPServerGetLeaderboardAroundUserRequest UPFServerProxyLibrary::MakeBPServerGetLeaderboardAroundUserRequest(
     int32 InMaxResultsCount
-	, FString InPlayFabId
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-	, FString InStatisticName
-	, bool InUseSpecificVersion
-	, int32 InVersion
-    )
+    , FString InPlayFabId
+    , FBPServerPlayerProfileViewConstraints InProfileConstraints
+    , FString InStatisticName
+    , bool InUseSpecificVersion
+    , int32 InVersion
+)
 {
     FBPServerGetLeaderboardAroundUserRequest Out = FBPServerGetLeaderboardAroundUserRequest();
     Out.Data.MaxResultsCount = InMaxResultsCount;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
-	Out.Data.StatisticName = InStatisticName;
-	Out.Data.UseSpecificVersion = InUseSpecificVersion;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
+    Out.Data.StatisticName = InStatisticName;
+    Out.Data.UseSpecificVersion = InUseSpecificVersion;
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 
 // GetLeaderboardAroundUserResult
 void UPFServerProxyLibrary::BreakBPServerGetLeaderboardAroundUserResult(
     const FBPServerGetLeaderboardAroundUserResult& In
-	, TArray<FBPServerPlayerLeaderboardEntry>& OutLeaderboard
-	, FDateTime& OutNextReset
-	, int32& OutVersion
- )
+    , TArray<FBPServerPlayerLeaderboardEntry>& OutLeaderboard
+    , FDateTime& OutNextReset
+    , int32& OutVersion
+)
 {
     for (const PlayFab::ServerModels::FPlayerLeaderboardEntry& elem : In.Data.Leaderboard)
-	{
-		OutLeaderboard.Add(FBPServerPlayerLeaderboardEntry(elem));
-	}
-	OutNextReset = In.Data.NextReset;
-	OutVersion = In.Data.Version;
-	
+    {
+        OutLeaderboard.Add(FBPServerPlayerLeaderboardEntry(elem));
+    }
+    OutNextReset = In.Data.NextReset;
+    OutVersion = In.Data.Version;
+
 }
 
 // GetLeaderboardForUsersCharactersRequest
 FBPServerGetLeaderboardForUsersCharactersRequest UPFServerProxyLibrary::MakeBPServerGetLeaderboardForUsersCharactersRequest(
     int32 InMaxResultsCount
-	, FString InPlayFabId
-	, FString InStatisticName
-    )
+    , FString InPlayFabId
+    , FString InStatisticName
+)
 {
     FBPServerGetLeaderboardForUsersCharactersRequest Out = FBPServerGetLeaderboardForUsersCharactersRequest();
     Out.Data.MaxResultsCount = InMaxResultsCount;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.StatisticName = InStatisticName;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.StatisticName = InStatisticName;
+
     return Out;
 }
 
 // GetLeaderboardForUsersCharactersResult
 void UPFServerProxyLibrary::BreakBPServerGetLeaderboardForUsersCharactersResult(
     const FBPServerGetLeaderboardForUsersCharactersResult& In
-	, TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
- )
+    , TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
+)
 {
     for (const PlayFab::ServerModels::FCharacterLeaderboardEntry& elem : In.Data.Leaderboard)
-	{
-		OutLeaderboard.Add(FBPServerCharacterLeaderboardEntry(elem));
-	}
-	
+    {
+        OutLeaderboard.Add(FBPServerCharacterLeaderboardEntry(elem));
+    }
+
 }
 
 // GetLeaderboardRequest
 FBPServerGetLeaderboardRequest UPFServerProxyLibrary::MakeBPServerGetLeaderboardRequest(
     int32 InMaxResultsCount
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-	, int32 InStartPosition
-	, FString InStatisticName
-	, bool InUseSpecificVersion
-	, int32 InVersion
-    )
+    , FBPServerPlayerProfileViewConstraints InProfileConstraints
+    , int32 InStartPosition
+    , FString InStatisticName
+    , bool InUseSpecificVersion
+    , int32 InVersion
+)
 {
     FBPServerGetLeaderboardRequest Out = FBPServerGetLeaderboardRequest();
     Out.Data.MaxResultsCount = InMaxResultsCount;
-	Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
-	Out.Data.StartPosition = InStartPosition;
-	Out.Data.StatisticName = InStatisticName;
-	Out.Data.UseSpecificVersion = InUseSpecificVersion;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
+    Out.Data.StartPosition = InStartPosition;
+    Out.Data.StatisticName = InStatisticName;
+    Out.Data.UseSpecificVersion = InUseSpecificVersion;
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 
 // GetLeaderboardResult
 void UPFServerProxyLibrary::BreakBPServerGetLeaderboardResult(
     const FBPServerGetLeaderboardResult& In
-	, TArray<FBPServerPlayerLeaderboardEntry>& OutLeaderboard
-	, FDateTime& OutNextReset
-	, int32& OutVersion
- )
+    , TArray<FBPServerPlayerLeaderboardEntry>& OutLeaderboard
+    , FDateTime& OutNextReset
+    , int32& OutVersion
+)
 {
     for (const PlayFab::ServerModels::FPlayerLeaderboardEntry& elem : In.Data.Leaderboard)
-	{
-		OutLeaderboard.Add(FBPServerPlayerLeaderboardEntry(elem));
-	}
-	OutNextReset = In.Data.NextReset;
-	OutVersion = In.Data.Version;
-	
+    {
+        OutLeaderboard.Add(FBPServerPlayerLeaderboardEntry(elem));
+    }
+    OutNextReset = In.Data.NextReset;
+    OutVersion = In.Data.Version;
+
 }
 
 // GetPlayerCombinedInfoRequest
 FBPServerGetPlayerCombinedInfoRequest UPFServerProxyLibrary::MakeBPServerGetPlayerCombinedInfoRequest(
     FBPServerGetPlayerCombinedInfoRequestParams InInfoRequestParameters
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPServerGetPlayerCombinedInfoRequest Out = FBPServerGetPlayerCombinedInfoRequest();
     Out.Data.InfoRequestParameters = InInfoRequestParameters.Data;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GetPlayerCombinedInfoRequestParams
 FBPServerGetPlayerCombinedInfoRequestParams UPFServerProxyLibrary::MakeBPServerGetPlayerCombinedInfoRequestParams(
     bool InGetCharacterInventories
-	, bool InGetCharacterList
-	, bool InGetPlayerProfile
-	, bool InGetPlayerStatistics
-	, bool InGetTitleData
-	, bool InGetUserAccountInfo
-	, bool InGetUserData
-	, bool InGetUserInventory
-	, bool InGetUserReadOnlyData
-	, bool InGetUserVirtualCurrency
-	, TArray<FString> InPlayerStatisticNames
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-	, TArray<FString> InTitleDataKeys
-	, TArray<FString> InUserDataKeys
-	, TArray<FString> InUserReadOnlyDataKeys
-    )
+    , bool InGetCharacterList
+    , bool InGetPlayerProfile
+    , bool InGetPlayerStatistics
+    , bool InGetTitleData
+    , bool InGetUserAccountInfo
+    , bool InGetUserData
+    , bool InGetUserInventory
+    , bool InGetUserReadOnlyData
+    , bool InGetUserVirtualCurrency
+    , TArray<FString> InPlayerStatisticNames
+    , FBPServerPlayerProfileViewConstraints InProfileConstraints
+    , TArray<FString> InTitleDataKeys
+    , TArray<FString> InUserDataKeys
+    , TArray<FString> InUserReadOnlyDataKeys
+)
 {
     FBPServerGetPlayerCombinedInfoRequestParams Out = FBPServerGetPlayerCombinedInfoRequestParams();
     Out.Data.GetCharacterInventories = InGetCharacterInventories;
-	Out.Data.GetCharacterList = InGetCharacterList;
-	Out.Data.GetPlayerProfile = InGetPlayerProfile;
-	Out.Data.GetPlayerStatistics = InGetPlayerStatistics;
-	Out.Data.GetTitleData = InGetTitleData;
-	Out.Data.GetUserAccountInfo = InGetUserAccountInfo;
-	Out.Data.GetUserData = InGetUserData;
-	Out.Data.GetUserInventory = InGetUserInventory;
-	Out.Data.GetUserReadOnlyData = InGetUserReadOnlyData;
-	Out.Data.GetUserVirtualCurrency = InGetUserVirtualCurrency;
-	Out.Data.PlayerStatisticNames = InPlayerStatisticNames;
-	Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
-	Out.Data.TitleDataKeys = InTitleDataKeys;
-	Out.Data.UserDataKeys = InUserDataKeys;
-	Out.Data.UserReadOnlyDataKeys = InUserReadOnlyDataKeys;
-	
+    Out.Data.GetCharacterList = InGetCharacterList;
+    Out.Data.GetPlayerProfile = InGetPlayerProfile;
+    Out.Data.GetPlayerStatistics = InGetPlayerStatistics;
+    Out.Data.GetTitleData = InGetTitleData;
+    Out.Data.GetUserAccountInfo = InGetUserAccountInfo;
+    Out.Data.GetUserData = InGetUserData;
+    Out.Data.GetUserInventory = InGetUserInventory;
+    Out.Data.GetUserReadOnlyData = InGetUserReadOnlyData;
+    Out.Data.GetUserVirtualCurrency = InGetUserVirtualCurrency;
+    Out.Data.PlayerStatisticNames = InPlayerStatisticNames;
+    Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
+    Out.Data.TitleDataKeys = InTitleDataKeys;
+    Out.Data.UserDataKeys = InUserDataKeys;
+    Out.Data.UserReadOnlyDataKeys = InUserReadOnlyDataKeys;
+
     return Out;
 }
 
 // GetPlayerCombinedInfoResult
 void UPFServerProxyLibrary::BreakBPServerGetPlayerCombinedInfoResult(
     const FBPServerGetPlayerCombinedInfoResult& In
-	, FBPServerGetPlayerCombinedInfoResultPayload& OutInfoResultPayload
-	, FString& OutPlayFabId
- )
+    , FBPServerGetPlayerCombinedInfoResultPayload& OutInfoResultPayload
+    , FString& OutPlayFabId
+)
 {
-    if (In.Data.InfoResultPayload.IsValid()) {OutInfoResultPayload.Data = *In.Data.InfoResultPayload;}
-	OutPlayFabId = In.Data.PlayFabId;
-	
+    if (In.Data.InfoResultPayload.IsValid()) { OutInfoResultPayload.Data = *In.Data.InfoResultPayload; }
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // GetPlayerCombinedInfoResultPayload
 void UPFServerProxyLibrary::BreakBPServerGetPlayerCombinedInfoResultPayload(
     const FBPServerGetPlayerCombinedInfoResultPayload& In
-	, FBPServerUserAccountInfo& OutAccountInfo
-	, TArray<FBPServerCharacterInventory>& OutCharacterInventories
-	, TArray<FBPServerCharacterResult>& OutCharacterList
-	, FBPServerPlayerProfileModel& OutPlayerProfile
-	, TArray<FBPServerStatisticValue>& OutPlayerStatistics
-	, TMap<FString, FString>& OutTitleData
-	, TMap<FString, FBPServerUserDataRecord>& OutUserData
-	, int32& OutUserDataVersion
-	, TArray<FBPServerItemInstance>& OutUserInventory
-	, TMap<FString, FBPServerUserDataRecord>& OutUserReadOnlyData
-	, int32& OutUserReadOnlyDataVersion
-	, TMap<FString, int32>& OutUserVirtualCurrency
-	, TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutUserVirtualCurrencyRechargeTimes
- )
+    , FBPServerUserAccountInfo& OutAccountInfo
+    , TArray<FBPServerCharacterInventory>& OutCharacterInventories
+    , TArray<FBPServerCharacterResult>& OutCharacterList
+    , FBPServerPlayerProfileModel& OutPlayerProfile
+    , TArray<FBPServerStatisticValue>& OutPlayerStatistics
+    , TMap<FString, FString>& OutTitleData
+    , TMap<FString, FBPServerUserDataRecord>& OutUserData
+    , int32& OutUserDataVersion
+    , TArray<FBPServerItemInstance>& OutUserInventory
+    , TMap<FString, FBPServerUserDataRecord>& OutUserReadOnlyData
+    , int32& OutUserReadOnlyDataVersion
+    , TMap<FString, int32>& OutUserVirtualCurrency
+    , TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutUserVirtualCurrencyRechargeTimes
+)
 {
-    if (In.Data.AccountInfo.IsValid()) {OutAccountInfo.Data = *In.Data.AccountInfo;}
-	for (const PlayFab::ServerModels::FCharacterInventory& elem : In.Data.CharacterInventories)
-	{
-		OutCharacterInventories.Add(FBPServerCharacterInventory(elem));
-	}
-	for (const PlayFab::ServerModels::FCharacterResult& elem : In.Data.CharacterList)
-	{
-		OutCharacterList.Add(FBPServerCharacterResult(elem));
-	}
-	if (In.Data.PlayerProfile.IsValid()) {OutPlayerProfile.Data = *In.Data.PlayerProfile;}
-	for (const PlayFab::ServerModels::FStatisticValue& elem : In.Data.PlayerStatistics)
-	{
-		OutPlayerStatistics.Add(FBPServerStatisticValue(elem));
-	}
-	OutTitleData = In.Data.TitleData;
-	for (auto& elem : In.Data.UserData)
-	{
-		const PlayFab::ServerModels::FUserDataRecord value = elem.Value;
-		OutUserData.Add(elem.Key, FBPServerUserDataRecord(value));
-	}
-	OutUserDataVersion = In.Data.UserDataVersion;
-	for (const PlayFab::ServerModels::FItemInstance& elem : In.Data.UserInventory)
-	{
-		OutUserInventory.Add(FBPServerItemInstance(elem));
-	}
-	for (auto& elem : In.Data.UserReadOnlyData)
-	{
-		const PlayFab::ServerModels::FUserDataRecord value = elem.Value;
-		OutUserReadOnlyData.Add(elem.Key, FBPServerUserDataRecord(value));
-	}
-	OutUserReadOnlyDataVersion = In.Data.UserReadOnlyDataVersion;
-	OutUserVirtualCurrency = In.Data.UserVirtualCurrency;
-	for (auto& elem : In.Data.UserVirtualCurrencyRechargeTimes)
-	{
-		const PlayFab::ServerModels::FVirtualCurrencyRechargeTime value = elem.Value;
-		OutUserVirtualCurrencyRechargeTimes.Add(elem.Key, FBPServerVirtualCurrencyRechargeTime(value));
-	}
-	
+    if (In.Data.AccountInfo.IsValid()) { OutAccountInfo.Data = *In.Data.AccountInfo; }
+    for (const PlayFab::ServerModels::FCharacterInventory& elem : In.Data.CharacterInventories)
+    {
+        OutCharacterInventories.Add(FBPServerCharacterInventory(elem));
+    }
+    for (const PlayFab::ServerModels::FCharacterResult& elem : In.Data.CharacterList)
+    {
+        OutCharacterList.Add(FBPServerCharacterResult(elem));
+    }
+    if (In.Data.PlayerProfile.IsValid()) { OutPlayerProfile.Data = *In.Data.PlayerProfile; }
+    for (const PlayFab::ServerModels::FStatisticValue& elem : In.Data.PlayerStatistics)
+    {
+        OutPlayerStatistics.Add(FBPServerStatisticValue(elem));
+    }
+    OutTitleData = In.Data.TitleData;
+    for (auto& elem : In.Data.UserData)
+    {
+        const PlayFab::ServerModels::FUserDataRecord value = elem.Value;
+        OutUserData.Add(elem.Key, FBPServerUserDataRecord(value));
+    }
+    OutUserDataVersion = In.Data.UserDataVersion;
+    for (const PlayFab::ServerModels::FItemInstance& elem : In.Data.UserInventory)
+    {
+        OutUserInventory.Add(FBPServerItemInstance(elem));
+    }
+    for (auto& elem : In.Data.UserReadOnlyData)
+    {
+        const PlayFab::ServerModels::FUserDataRecord value = elem.Value;
+        OutUserReadOnlyData.Add(elem.Key, FBPServerUserDataRecord(value));
+    }
+    OutUserReadOnlyDataVersion = In.Data.UserReadOnlyDataVersion;
+    OutUserVirtualCurrency = In.Data.UserVirtualCurrency;
+    for (auto& elem : In.Data.UserVirtualCurrencyRechargeTimes)
+    {
+        const PlayFab::ServerModels::FVirtualCurrencyRechargeTime value = elem.Value;
+        OutUserVirtualCurrencyRechargeTimes.Add(elem.Key, FBPServerVirtualCurrencyRechargeTime(value));
+    }
+
 }
 
 // GetPlayerProfileRequest
 FBPServerGetPlayerProfileRequest UPFServerProxyLibrary::MakeBPServerGetPlayerProfileRequest(
     FString InPlayFabId
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-    )
+    , FBPServerPlayerProfileViewConstraints InProfileConstraints
+)
 {
     FBPServerGetPlayerProfileRequest Out = FBPServerGetPlayerProfileRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
-	
+    Out.Data.ProfileConstraints = MakeShareable(new PlayFab::ServerModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
+
     return Out;
 }
 
 // GetPlayerProfileResult
 void UPFServerProxyLibrary::BreakBPServerGetPlayerProfileResult(
     const FBPServerGetPlayerProfileResult& In
-	, FBPServerPlayerProfileModel& OutPlayerProfile
- )
+    , FBPServerPlayerProfileModel& OutPlayerProfile
+)
 {
-    if (In.Data.PlayerProfile.IsValid()) {OutPlayerProfile.Data = *In.Data.PlayerProfile;}
-	
+    if (In.Data.PlayerProfile.IsValid()) { OutPlayerProfile.Data = *In.Data.PlayerProfile; }
+
 }
 
 // GetPlayerSegmentsResult
 void UPFServerProxyLibrary::BreakBPServerGetPlayerSegmentsResult(
     const FBPServerGetPlayerSegmentsResult& In
-	, TArray<FBPServerGetSegmentResult>& OutSegments
- )
+    , TArray<FBPServerGetSegmentResult>& OutSegments
+)
 {
     for (const PlayFab::ServerModels::FGetSegmentResult& elem : In.Data.Segments)
-	{
-		OutSegments.Add(FBPServerGetSegmentResult(elem));
-	}
-	
+    {
+        OutSegments.Add(FBPServerGetSegmentResult(elem));
+    }
+
 }
 
 // GetPlayersInSegmentRequest
 FBPServerGetPlayersInSegmentRequest UPFServerProxyLibrary::MakeBPServerGetPlayersInSegmentRequest(
     FString InContinuationToken
-	, int32 InMaxBatchSize
-	, int32 InSecondsToLive
-	, FString InSegmentId
-    )
+    , int32 InMaxBatchSize
+    , int32 InSecondsToLive
+    , FString InSegmentId
+)
 {
     FBPServerGetPlayersInSegmentRequest Out = FBPServerGetPlayersInSegmentRequest();
     Out.Data.ContinuationToken = InContinuationToken;
-	Out.Data.MaxBatchSize = InMaxBatchSize;
-	Out.Data.SecondsToLive = InSecondsToLive;
-	Out.Data.SegmentId = InSegmentId;
-	
+    Out.Data.MaxBatchSize = InMaxBatchSize;
+    Out.Data.SecondsToLive = InSecondsToLive;
+    Out.Data.SegmentId = InSegmentId;
+
     return Out;
 }
 
 // GetPlayersInSegmentResult
 void UPFServerProxyLibrary::BreakBPServerGetPlayersInSegmentResult(
     const FBPServerGetPlayersInSegmentResult& In
-	, FString& OutContinuationToken
-	, TArray<FBPServerPlayerProfile>& OutPlayerProfiles
-	, int32& OutProfilesInSegment
- )
+    , FString& OutContinuationToken
+    , TArray<FBPServerPlayerProfile>& OutPlayerProfiles
+    , int32& OutProfilesInSegment
+)
 {
     OutContinuationToken = In.Data.ContinuationToken;
-	for (const PlayFab::ServerModels::FPlayerProfile& elem : In.Data.PlayerProfiles)
-	{
-		OutPlayerProfiles.Add(FBPServerPlayerProfile(elem));
-	}
-	OutProfilesInSegment = In.Data.ProfilesInSegment;
-	
+    for (const PlayFab::ServerModels::FPlayerProfile& elem : In.Data.PlayerProfiles)
+    {
+        OutPlayerProfiles.Add(FBPServerPlayerProfile(elem));
+    }
+    OutProfilesInSegment = In.Data.ProfilesInSegment;
+
 }
 
 // GetPlayersSegmentsRequest
 FBPServerGetPlayersSegmentsRequest UPFServerProxyLibrary::MakeBPServerGetPlayersSegmentsRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPServerGetPlayersSegmentsRequest Out = FBPServerGetPlayersSegmentsRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // GetPlayerStatisticsRequest
 FBPServerGetPlayerStatisticsRequest UPFServerProxyLibrary::MakeBPServerGetPlayerStatisticsRequest(
     FString InPlayFabId
-	, TArray<FString> InStatisticNames
-	, TArray<FBPServerStatisticNameVersion> InStatisticNameVersions
-    )
+    , TArray<FString> InStatisticNames
+    , TArray<FBPServerStatisticNameVersion> InStatisticNameVersions
+)
 {
     FBPServerGetPlayerStatisticsRequest Out = FBPServerGetPlayerStatisticsRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.StatisticNames = InStatisticNames;
-	for (const FBPServerStatisticNameVersion& elem : InStatisticNameVersions)
-	{
-		Out.Data.StatisticNameVersions.Add(elem.Data);
-	}
-	
+    Out.Data.StatisticNames = InStatisticNames;
+    for (const FBPServerStatisticNameVersion& elem : InStatisticNameVersions)
+    {
+        Out.Data.StatisticNameVersions.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // GetPlayerStatisticsResult
 void UPFServerProxyLibrary::BreakBPServerGetPlayerStatisticsResult(
     const FBPServerGetPlayerStatisticsResult& In
-	, FString& OutPlayFabId
-	, TArray<FBPServerStatisticValue>& OutStatistics
- )
+    , FString& OutPlayFabId
+    , TArray<FBPServerStatisticValue>& OutStatistics
+)
 {
     OutPlayFabId = In.Data.PlayFabId;
-	for (const PlayFab::ServerModels::FStatisticValue& elem : In.Data.Statistics)
-	{
-		OutStatistics.Add(FBPServerStatisticValue(elem));
-	}
-	
+    for (const PlayFab::ServerModels::FStatisticValue& elem : In.Data.Statistics)
+    {
+        OutStatistics.Add(FBPServerStatisticValue(elem));
+    }
+
 }
 
 // GetPlayerStatisticVersionsRequest
 FBPServerGetPlayerStatisticVersionsRequest UPFServerProxyLibrary::MakeBPServerGetPlayerStatisticVersionsRequest(
     FString InStatisticName
-    )
+)
 {
     FBPServerGetPlayerStatisticVersionsRequest Out = FBPServerGetPlayerStatisticVersionsRequest();
     Out.Data.StatisticName = InStatisticName;
-	
+
     return Out;
 }
 
 // GetPlayerStatisticVersionsResult
 void UPFServerProxyLibrary::BreakBPServerGetPlayerStatisticVersionsResult(
     const FBPServerGetPlayerStatisticVersionsResult& In
-	, TArray<FBPServerPlayerStatisticVersion>& OutStatisticVersions
- )
+    , TArray<FBPServerPlayerStatisticVersion>& OutStatisticVersions
+)
 {
     for (const PlayFab::ServerModels::FPlayerStatisticVersion& elem : In.Data.StatisticVersions)
-	{
-		OutStatisticVersions.Add(FBPServerPlayerStatisticVersion(elem));
-	}
-	
+    {
+        OutStatisticVersions.Add(FBPServerPlayerStatisticVersion(elem));
+    }
+
 }
 
 // GetPlayerTagsRequest
 FBPServerGetPlayerTagsRequest UPFServerProxyLibrary::MakeBPServerGetPlayerTagsRequest(
     FString InNamespace
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPServerGetPlayerTagsRequest Out = FBPServerGetPlayerTagsRequest();
     Out.Data.Namespace = InNamespace;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GetPlayerTagsResult
 void UPFServerProxyLibrary::BreakBPServerGetPlayerTagsResult(
     const FBPServerGetPlayerTagsResult& In
-	, FString& OutPlayFabId
-	, TArray<FString>& OutTags
- )
+    , FString& OutPlayFabId
+    , TArray<FString>& OutTags
+)
 {
     OutPlayFabId = In.Data.PlayFabId;
-	OutTags = In.Data.Tags;
-	
+    OutTags = In.Data.Tags;
+
 }
 
 // GetPlayFabIDsFromFacebookIDsRequest
 FBPServerGetPlayFabIDsFromFacebookIDsRequest UPFServerProxyLibrary::MakeBPServerGetPlayFabIDsFromFacebookIDsRequest(
     TArray<FString> InFacebookIDs
-    )
+)
 {
     FBPServerGetPlayFabIDsFromFacebookIDsRequest Out = FBPServerGetPlayFabIDsFromFacebookIDsRequest();
     Out.Data.FacebookIDs = InFacebookIDs;
-	
+
     return Out;
 }
 
 // GetPlayFabIDsFromFacebookIDsResult
 void UPFServerProxyLibrary::BreakBPServerGetPlayFabIDsFromFacebookIDsResult(
     const FBPServerGetPlayFabIDsFromFacebookIDsResult& In
-	, TArray<FBPServerFacebookPlayFabIdPair>& OutData
- )
+    , TArray<FBPServerFacebookPlayFabIdPair>& OutData
+)
 {
     for (const PlayFab::ServerModels::FFacebookPlayFabIdPair& elem : In.Data.Data)
-	{
-		OutData.Add(FBPServerFacebookPlayFabIdPair(elem));
-	}
-	
+    {
+        OutData.Add(FBPServerFacebookPlayFabIdPair(elem));
+    }
+
 }
 
 // GetPlayFabIDsFromSteamIDsRequest
 FBPServerGetPlayFabIDsFromSteamIDsRequest UPFServerProxyLibrary::MakeBPServerGetPlayFabIDsFromSteamIDsRequest(
     TArray<FString> InSteamStringIDs
-    )
+)
 {
     FBPServerGetPlayFabIDsFromSteamIDsRequest Out = FBPServerGetPlayFabIDsFromSteamIDsRequest();
     Out.Data.SteamStringIDs = InSteamStringIDs;
-	
+
     return Out;
 }
 
 // GetPlayFabIDsFromSteamIDsResult
 void UPFServerProxyLibrary::BreakBPServerGetPlayFabIDsFromSteamIDsResult(
     const FBPServerGetPlayFabIDsFromSteamIDsResult& In
-	, TArray<FBPServerSteamPlayFabIdPair>& OutData
- )
+    , TArray<FBPServerSteamPlayFabIdPair>& OutData
+)
 {
     for (const PlayFab::ServerModels::FSteamPlayFabIdPair& elem : In.Data.Data)
-	{
-		OutData.Add(FBPServerSteamPlayFabIdPair(elem));
-	}
-	
+    {
+        OutData.Add(FBPServerSteamPlayFabIdPair(elem));
+    }
+
 }
 
 // GetPublisherDataRequest
 FBPServerGetPublisherDataRequest UPFServerProxyLibrary::MakeBPServerGetPublisherDataRequest(
     TArray<FString> InKeys
-    )
+)
 {
     FBPServerGetPublisherDataRequest Out = FBPServerGetPublisherDataRequest();
     Out.Data.Keys = InKeys;
-	
+
     return Out;
 }
 
 // GetPublisherDataResult
 void UPFServerProxyLibrary::BreakBPServerGetPublisherDataResult(
     const FBPServerGetPublisherDataResult& In
-	, TMap<FString, FString>& OutData
- )
+    , TMap<FString, FString>& OutData
+)
 {
     OutData = In.Data.Data;
-	
+
 }
 
 // GetRandomResultTablesRequest
 FBPServerGetRandomResultTablesRequest UPFServerProxyLibrary::MakeBPServerGetRandomResultTablesRequest(
     FString InCatalogVersion
-	, TArray<FString> InTableIDs
-    )
+    , TArray<FString> InTableIDs
+)
 {
     FBPServerGetRandomResultTablesRequest Out = FBPServerGetRandomResultTablesRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.TableIDs = InTableIDs;
-	
+    Out.Data.TableIDs = InTableIDs;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerGetRandomResultTablesRequest(
     const FBPServerGetRandomResultTablesRequest& In
-	, FString& OutCatalogVersion
-	, TArray<FString>& OutTableIDs
- )
+    , FString& OutCatalogVersion
+    , TArray<FString>& OutTableIDs
+)
 {
     OutCatalogVersion = In.Data.CatalogVersion;
-	OutTableIDs = In.Data.TableIDs;
-	
+    OutTableIDs = In.Data.TableIDs;
+
 }
 
 // GetRandomResultTablesResult
 void UPFServerProxyLibrary::BreakBPServerGetRandomResultTablesResult(
     const FBPServerGetRandomResultTablesResult& In
-	, TMap<FString, FBPServerRandomResultTableListing>& OutTables
- )
+    , TMap<FString, FBPServerRandomResultTableListing>& OutTables
+)
 {
     for (auto& elem : In.Data.Tables)
-	{
-		const PlayFab::ServerModels::FRandomResultTableListing value = elem.Value;
-		OutTables.Add(elem.Key, FBPServerRandomResultTableListing(value));
-	}
-	
+    {
+        const PlayFab::ServerModels::FRandomResultTableListing value = elem.Value;
+        OutTables.Add(elem.Key, FBPServerRandomResultTableListing(value));
+    }
+
 }
 
 // GetSegmentResult
 void UPFServerProxyLibrary::BreakBPServerGetSegmentResult(
     const FBPServerGetSegmentResult& In
-	, FString& OutABTestParent
-	, FString& OutId
-	, FString& OutName
- )
+    , FString& OutABTestParent
+    , FString& OutId
+    , FString& OutName
+)
 {
     OutABTestParent = In.Data.ABTestParent;
-	OutId = In.Data.Id;
-	OutName = In.Data.Name;
-	
+    OutId = In.Data.Id;
+    OutName = In.Data.Name;
+
 }
 
 // GetSharedGroupDataRequest
 FBPServerGetSharedGroupDataRequest UPFServerProxyLibrary::MakeBPServerGetSharedGroupDataRequest(
     bool InGetMembers
-	, TArray<FString> InKeys
-	, FString InSharedGroupId
-    )
+    , TArray<FString> InKeys
+    , FString InSharedGroupId
+)
 {
     FBPServerGetSharedGroupDataRequest Out = FBPServerGetSharedGroupDataRequest();
     Out.Data.GetMembers = InGetMembers;
-	Out.Data.Keys = InKeys;
-	Out.Data.SharedGroupId = InSharedGroupId;
-	
+    Out.Data.Keys = InKeys;
+    Out.Data.SharedGroupId = InSharedGroupId;
+
     return Out;
 }
 
 // GetSharedGroupDataResult
 void UPFServerProxyLibrary::BreakBPServerGetSharedGroupDataResult(
     const FBPServerGetSharedGroupDataResult& In
-	, TMap<FString, FBPServerSharedGroupDataRecord>& OutData
-	, TArray<FString>& OutMembers
- )
+    , TMap<FString, FBPServerSharedGroupDataRecord>& OutData
+    , TArray<FString>& OutMembers
+)
 {
     for (auto& elem : In.Data.Data)
-	{
-		const PlayFab::ServerModels::FSharedGroupDataRecord value = elem.Value;
-		OutData.Add(elem.Key, FBPServerSharedGroupDataRecord(value));
-	}
-	OutMembers = In.Data.Members;
-	
+    {
+        const PlayFab::ServerModels::FSharedGroupDataRecord value = elem.Value;
+        OutData.Add(elem.Key, FBPServerSharedGroupDataRecord(value));
+    }
+    OutMembers = In.Data.Members;
+
 }
 
 // GetTimeRequest
 FBPServerGetTimeRequest UPFServerProxyLibrary::MakeBPServerGetTimeRequest(
-        )
+)
 {
     FBPServerGetTimeRequest Out = FBPServerGetTimeRequest();
-    
+
     return Out;
 }
 
 // GetTimeResult
 void UPFServerProxyLibrary::BreakBPServerGetTimeResult(
     const FBPServerGetTimeResult& In
-	, FDateTime& OutTime
- )
+    , FDateTime& OutTime
+)
 {
     OutTime = In.Data.Time;
-	
+
 }
 
 // GetTitleDataRequest
 FBPServerGetTitleDataRequest UPFServerProxyLibrary::MakeBPServerGetTitleDataRequest(
     TArray<FString> InKeys
-    )
+)
 {
     FBPServerGetTitleDataRequest Out = FBPServerGetTitleDataRequest();
     Out.Data.Keys = InKeys;
-	
+
     return Out;
 }
 
 // GetTitleDataResult
 void UPFServerProxyLibrary::BreakBPServerGetTitleDataResult(
     const FBPServerGetTitleDataResult& In
-	, TMap<FString, FString>& OutData
- )
+    , TMap<FString, FString>& OutData
+)
 {
     OutData = In.Data.Data;
-	
+
 }
 
 // GetTitleNewsRequest
 FBPServerGetTitleNewsRequest UPFServerProxyLibrary::MakeBPServerGetTitleNewsRequest(
     int32 InCount
-    )
+)
 {
     FBPServerGetTitleNewsRequest Out = FBPServerGetTitleNewsRequest();
     Out.Data.Count = InCount;
-	
+
     return Out;
 }
 
 // GetTitleNewsResult
 void UPFServerProxyLibrary::BreakBPServerGetTitleNewsResult(
     const FBPServerGetTitleNewsResult& In
-	, TArray<FBPServerTitleNewsItem>& OutNews
- )
+    , TArray<FBPServerTitleNewsItem>& OutNews
+)
 {
     for (const PlayFab::ServerModels::FTitleNewsItem& elem : In.Data.News)
-	{
-		OutNews.Add(FBPServerTitleNewsItem(elem));
-	}
-	
+    {
+        OutNews.Add(FBPServerTitleNewsItem(elem));
+    }
+
 }
 
 // GetUserAccountInfoRequest
 FBPServerGetUserAccountInfoRequest UPFServerProxyLibrary::MakeBPServerGetUserAccountInfoRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPServerGetUserAccountInfoRequest Out = FBPServerGetUserAccountInfoRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // GetUserAccountInfoResult
 void UPFServerProxyLibrary::BreakBPServerGetUserAccountInfoResult(
     const FBPServerGetUserAccountInfoResult& In
-	, FBPServerUserAccountInfo& OutUserInfo
- )
+    , FBPServerUserAccountInfo& OutUserInfo
+)
 {
-    if (In.Data.UserInfo.IsValid()) {OutUserInfo.Data = *In.Data.UserInfo;}
-	
+    if (In.Data.UserInfo.IsValid()) { OutUserInfo.Data = *In.Data.UserInfo; }
+
 }
 
 // GetUserBansRequest
 FBPServerGetUserBansRequest UPFServerProxyLibrary::MakeBPServerGetUserBansRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPServerGetUserBansRequest Out = FBPServerGetUserBansRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // GetUserBansResult
 void UPFServerProxyLibrary::BreakBPServerGetUserBansResult(
     const FBPServerGetUserBansResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
- )
+    , TArray<FBPServerBanInfo>& OutBanData
+)
 {
     for (const PlayFab::ServerModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPServerBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPServerBanInfo(elem));
+    }
+
 }
 
 // GetUserDataRequest
 FBPServerGetUserDataRequest UPFServerProxyLibrary::MakeBPServerGetUserDataRequest(
     int32 InIfChangedFromDataVersion
-	, TArray<FString> InKeys
-	, FString InPlayFabId
-    )
+    , TArray<FString> InKeys
+    , FString InPlayFabId
+)
 {
     FBPServerGetUserDataRequest Out = FBPServerGetUserDataRequest();
     Out.Data.IfChangedFromDataVersion = InIfChangedFromDataVersion;
-	Out.Data.Keys = InKeys;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.Keys = InKeys;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GetUserDataResult
 void UPFServerProxyLibrary::BreakBPServerGetUserDataResult(
     const FBPServerGetUserDataResult& In
-	, TMap<FString, FBPServerUserDataRecord>& OutData
-	, int32& OutDataVersion
-	, FString& OutPlayFabId
- )
+    , TMap<FString, FBPServerUserDataRecord>& OutData
+    , int32& OutDataVersion
+    , FString& OutPlayFabId
+)
 {
     for (auto& elem : In.Data.Data)
-	{
-		const PlayFab::ServerModels::FUserDataRecord value = elem.Value;
-		OutData.Add(elem.Key, FBPServerUserDataRecord(value));
-	}
-	OutDataVersion = In.Data.DataVersion;
-	OutPlayFabId = In.Data.PlayFabId;
-	
+    {
+        const PlayFab::ServerModels::FUserDataRecord value = elem.Value;
+        OutData.Add(elem.Key, FBPServerUserDataRecord(value));
+    }
+    OutDataVersion = In.Data.DataVersion;
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // GetUserInventoryRequest
 FBPServerGetUserInventoryRequest UPFServerProxyLibrary::MakeBPServerGetUserInventoryRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPServerGetUserInventoryRequest Out = FBPServerGetUserInventoryRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // GetUserInventoryResult
 void UPFServerProxyLibrary::BreakBPServerGetUserInventoryResult(
     const FBPServerGetUserInventoryResult& In
-	, TArray<FBPServerItemInstance>& OutInventory
-	, FString& OutPlayFabId
-	, TMap<FString, int32>& OutVirtualCurrency
-	, TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
- )
+    , TArray<FBPServerItemInstance>& OutInventory
+    , FString& OutPlayFabId
+    , TMap<FString, int32>& OutVirtualCurrency
+    , TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
+)
 {
     for (const PlayFab::ServerModels::FItemInstance& elem : In.Data.Inventory)
-	{
-		OutInventory.Add(FBPServerItemInstance(elem));
-	}
-	OutPlayFabId = In.Data.PlayFabId;
-	OutVirtualCurrency = In.Data.VirtualCurrency;
-	for (auto& elem : In.Data.VirtualCurrencyRechargeTimes)
-	{
-		const PlayFab::ServerModels::FVirtualCurrencyRechargeTime value = elem.Value;
-		OutVirtualCurrencyRechargeTimes.Add(elem.Key, FBPServerVirtualCurrencyRechargeTime(value));
-	}
-	
+    {
+        OutInventory.Add(FBPServerItemInstance(elem));
+    }
+    OutPlayFabId = In.Data.PlayFabId;
+    OutVirtualCurrency = In.Data.VirtualCurrency;
+    for (auto& elem : In.Data.VirtualCurrencyRechargeTimes)
+    {
+        const PlayFab::ServerModels::FVirtualCurrencyRechargeTime value = elem.Value;
+        OutVirtualCurrencyRechargeTimes.Add(elem.Key, FBPServerVirtualCurrencyRechargeTime(value));
+    }
+
 }
 
 // GrantCharacterToUserRequest
 FBPServerGrantCharacterToUserRequest UPFServerProxyLibrary::MakeBPServerGrantCharacterToUserRequest(
     FString InCharacterName
-	, FString InCharacterType
-	, FString InPlayFabId
-    )
+    , FString InCharacterType
+    , FString InPlayFabId
+)
 {
     FBPServerGrantCharacterToUserRequest Out = FBPServerGrantCharacterToUserRequest();
     Out.Data.CharacterName = InCharacterName;
-	Out.Data.CharacterType = InCharacterType;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CharacterType = InCharacterType;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GrantCharacterToUserResult
 void UPFServerProxyLibrary::BreakBPServerGrantCharacterToUserResult(
     const FBPServerGrantCharacterToUserResult& In
-	, FString& OutCharacterId
- )
+    , FString& OutCharacterId
+)
 {
     OutCharacterId = In.Data.CharacterId;
-	
+
 }
 
 // GrantedItemInstance
 FBPServerGrantedItemInstance UPFServerProxyLibrary::MakeBPServerGrantedItemInstance(
     FString InAnnotation
-	, TArray<FString> InBundleContents
-	, FString InBundleParent
-	, FString InCatalogVersion
-	, FString InCharacterId
-	, TMap<FString, FString> InCustomData
-	, FString InDisplayName
-	, FDateTime InExpiration
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-	, FDateTime InPurchaseDate
-	, int32 InRemainingUses
-	, bool InResult
-	, FString InUnitCurrency
-	, int32 InUnitPrice
-	, int32 InUsesIncrementedBy
-    )
+    , TArray<FString> InBundleContents
+    , FString InBundleParent
+    , FString InCatalogVersion
+    , FString InCharacterId
+    , TMap<FString, FString> InCustomData
+    , FString InDisplayName
+    , FDateTime InExpiration
+    , FString InItemClass
+    , FString InItemId
+    , FString InItemInstanceId
+    , FString InPlayFabId
+    , FDateTime InPurchaseDate
+    , int32 InRemainingUses
+    , bool InResult
+    , FString InUnitCurrency
+    , int32 InUnitPrice
+    , int32 InUsesIncrementedBy
+)
 {
     FBPServerGrantedItemInstance Out = FBPServerGrantedItemInstance();
     Out.Data.Annotation = InAnnotation;
-	Out.Data.BundleContents = InBundleContents;
-	Out.Data.BundleParent = InBundleParent;
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.CustomData = InCustomData;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.Expiration = InExpiration;
-	Out.Data.ItemClass = InItemClass;
-	Out.Data.ItemId = InItemId;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.PurchaseDate = InPurchaseDate;
-	Out.Data.RemainingUses = InRemainingUses;
-	Out.Data.Result = InResult;
-	Out.Data.UnitCurrency = InUnitCurrency;
-	Out.Data.UnitPrice = InUnitPrice;
-	Out.Data.UsesIncrementedBy = InUsesIncrementedBy;
-	
+    Out.Data.BundleContents = InBundleContents;
+    Out.Data.BundleParent = InBundleParent;
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.CustomData = InCustomData;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.Expiration = InExpiration;
+    Out.Data.ItemClass = InItemClass;
+    Out.Data.ItemId = InItemId;
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.PurchaseDate = InPurchaseDate;
+    Out.Data.RemainingUses = InRemainingUses;
+    Out.Data.Result = InResult;
+    Out.Data.UnitCurrency = InUnitCurrency;
+    Out.Data.UnitPrice = InUnitPrice;
+    Out.Data.UsesIncrementedBy = InUsesIncrementedBy;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerGrantedItemInstance(
     const FBPServerGrantedItemInstance& In
-	, FString& OutAnnotation
-	, TArray<FString>& OutBundleContents
-	, FString& OutBundleParent
-	, FString& OutCatalogVersion
-	, FString& OutCharacterId
-	, TMap<FString, FString>& OutCustomData
-	, FString& OutDisplayName
-	, FDateTime& OutExpiration
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemInstanceId
-	, FString& OutPlayFabId
-	, FDateTime& OutPurchaseDate
-	, int32& OutRemainingUses
-	, bool& OutResult
-	, FString& OutUnitCurrency
-	, int32& OutUnitPrice
-	, int32& OutUsesIncrementedBy
- )
+    , FString& OutAnnotation
+    , TArray<FString>& OutBundleContents
+    , FString& OutBundleParent
+    , FString& OutCatalogVersion
+    , FString& OutCharacterId
+    , TMap<FString, FString>& OutCustomData
+    , FString& OutDisplayName
+    , FDateTime& OutExpiration
+    , FString& OutItemClass
+    , FString& OutItemId
+    , FString& OutItemInstanceId
+    , FString& OutPlayFabId
+    , FDateTime& OutPurchaseDate
+    , int32& OutRemainingUses
+    , bool& OutResult
+    , FString& OutUnitCurrency
+    , int32& OutUnitPrice
+    , int32& OutUsesIncrementedBy
+)
 {
     OutAnnotation = In.Data.Annotation;
-	OutBundleContents = In.Data.BundleContents;
-	OutBundleParent = In.Data.BundleParent;
-	OutCatalogVersion = In.Data.CatalogVersion;
-	OutCharacterId = In.Data.CharacterId;
-	OutCustomData = In.Data.CustomData;
-	OutDisplayName = In.Data.DisplayName;
-	OutExpiration = In.Data.Expiration;
-	OutItemClass = In.Data.ItemClass;
-	OutItemId = In.Data.ItemId;
-	OutItemInstanceId = In.Data.ItemInstanceId;
-	OutPlayFabId = In.Data.PlayFabId;
-	OutPurchaseDate = In.Data.PurchaseDate;
-	OutRemainingUses = In.Data.RemainingUses;
-	OutResult = In.Data.Result;
-	OutUnitCurrency = In.Data.UnitCurrency;
-	OutUnitPrice = In.Data.UnitPrice;
-	OutUsesIncrementedBy = In.Data.UsesIncrementedBy;
-	
+    OutBundleContents = In.Data.BundleContents;
+    OutBundleParent = In.Data.BundleParent;
+    OutCatalogVersion = In.Data.CatalogVersion;
+    OutCharacterId = In.Data.CharacterId;
+    OutCustomData = In.Data.CustomData;
+    OutDisplayName = In.Data.DisplayName;
+    OutExpiration = In.Data.Expiration;
+    OutItemClass = In.Data.ItemClass;
+    OutItemId = In.Data.ItemId;
+    OutItemInstanceId = In.Data.ItemInstanceId;
+    OutPlayFabId = In.Data.PlayFabId;
+    OutPurchaseDate = In.Data.PurchaseDate;
+    OutRemainingUses = In.Data.RemainingUses;
+    OutResult = In.Data.Result;
+    OutUnitCurrency = In.Data.UnitCurrency;
+    OutUnitPrice = In.Data.UnitPrice;
+    OutUsesIncrementedBy = In.Data.UsesIncrementedBy;
+
 }
 
 // GrantItemsToCharacterRequest
 FBPServerGrantItemsToCharacterRequest UPFServerProxyLibrary::MakeBPServerGrantItemsToCharacterRequest(
     FString InAnnotation
-	, FString InCatalogVersion
-	, FString InCharacterId
-	, TArray<FString> InItemIds
-	, FString InPlayFabId
-    )
+    , FString InCatalogVersion
+    , FString InCharacterId
+    , TArray<FString> InItemIds
+    , FString InPlayFabId
+)
 {
     FBPServerGrantItemsToCharacterRequest Out = FBPServerGrantItemsToCharacterRequest();
     Out.Data.Annotation = InAnnotation;
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.ItemIds = InItemIds;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.ItemIds = InItemIds;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GrantItemsToCharacterResult
 void UPFServerProxyLibrary::BreakBPServerGrantItemsToCharacterResult(
     const FBPServerGrantItemsToCharacterResult& In
-	, TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
- )
+    , TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
+)
 {
     for (const PlayFab::ServerModels::FGrantedItemInstance& elem : In.Data.ItemGrantResults)
-	{
-		OutItemGrantResults.Add(FBPServerGrantedItemInstance(elem));
-	}
-	
+    {
+        OutItemGrantResults.Add(FBPServerGrantedItemInstance(elem));
+    }
+
 }
 
 // GrantItemsToUserRequest
 FBPServerGrantItemsToUserRequest UPFServerProxyLibrary::MakeBPServerGrantItemsToUserRequest(
     FString InAnnotation
-	, FString InCatalogVersion
-	, TArray<FString> InItemIds
-	, FString InPlayFabId
-    )
+    , FString InCatalogVersion
+    , TArray<FString> InItemIds
+    , FString InPlayFabId
+)
 {
     FBPServerGrantItemsToUserRequest Out = FBPServerGrantItemsToUserRequest();
     Out.Data.Annotation = InAnnotation;
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.ItemIds = InItemIds;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.ItemIds = InItemIds;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GrantItemsToUserResult
 void UPFServerProxyLibrary::BreakBPServerGrantItemsToUserResult(
     const FBPServerGrantItemsToUserResult& In
-	, TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
- )
+    , TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
+)
 {
     for (const PlayFab::ServerModels::FGrantedItemInstance& elem : In.Data.ItemGrantResults)
-	{
-		OutItemGrantResults.Add(FBPServerGrantedItemInstance(elem));
-	}
-	
+    {
+        OutItemGrantResults.Add(FBPServerGrantedItemInstance(elem));
+    }
+
 }
 
 // GrantItemsToUsersRequest
 FBPServerGrantItemsToUsersRequest UPFServerProxyLibrary::MakeBPServerGrantItemsToUsersRequest(
     FString InCatalogVersion
-	, TArray<FBPServerItemGrant> InItemGrants
-    )
+    , TArray<FBPServerItemGrant> InItemGrants
+)
 {
     FBPServerGrantItemsToUsersRequest Out = FBPServerGrantItemsToUsersRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	for (const FBPServerItemGrant& elem : InItemGrants)
-	{
-		Out.Data.ItemGrants.Add(elem.Data);
-	}
-	
+    for (const FBPServerItemGrant& elem : InItemGrants)
+    {
+        Out.Data.ItemGrants.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // GrantItemsToUsersResult
 void UPFServerProxyLibrary::BreakBPServerGrantItemsToUsersResult(
     const FBPServerGrantItemsToUsersResult& In
-	, TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
- )
+    , TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
+)
 {
     for (const PlayFab::ServerModels::FGrantedItemInstance& elem : In.Data.ItemGrantResults)
-	{
-		OutItemGrantResults.Add(FBPServerGrantedItemInstance(elem));
-	}
-	
+    {
+        OutItemGrantResults.Add(FBPServerGrantedItemInstance(elem));
+    }
+
 }
 
 // ItemGrant
 FBPServerItemGrant UPFServerProxyLibrary::MakeBPServerItemGrant(
     FString InAnnotation
-	, FString InCharacterId
-	, TMap<FString, FString> InData
-	, FString InItemId
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-    )
+    , FString InCharacterId
+    , TMap<FString, FString> InData
+    , FString InItemId
+    , TArray<FString> InKeysToRemove
+    , FString InPlayFabId
+)
 {
     FBPServerItemGrant Out = FBPServerItemGrant();
     Out.Data.Annotation = InAnnotation;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.Data = InData;
-	Out.Data.ItemId = InItemId;
-	Out.Data.KeysToRemove = InKeysToRemove;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.Data = InData;
+    Out.Data.ItemId = InItemId;
+    Out.Data.KeysToRemove = InKeysToRemove;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerItemGrant(
     const FBPServerItemGrant& In
-	, FString& OutAnnotation
-	, FString& OutCharacterId
-	, TMap<FString, FString>& OutData
-	, FString& OutItemId
-	, TArray<FString>& OutKeysToRemove
-	, FString& OutPlayFabId
- )
+    , FString& OutAnnotation
+    , FString& OutCharacterId
+    , TMap<FString, FString>& OutData
+    , FString& OutItemId
+    , TArray<FString>& OutKeysToRemove
+    , FString& OutPlayFabId
+)
 {
     OutAnnotation = In.Data.Annotation;
-	OutCharacterId = In.Data.CharacterId;
-	OutData = In.Data.Data;
-	OutItemId = In.Data.ItemId;
-	OutKeysToRemove = In.Data.KeysToRemove;
-	OutPlayFabId = In.Data.PlayFabId;
-	
+    OutCharacterId = In.Data.CharacterId;
+    OutData = In.Data.Data;
+    OutItemId = In.Data.ItemId;
+    OutKeysToRemove = In.Data.KeysToRemove;
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // ItemInstance
 FBPServerItemInstance UPFServerProxyLibrary::MakeBPServerItemInstance(
     FString InAnnotation
-	, TArray<FString> InBundleContents
-	, FString InBundleParent
-	, FString InCatalogVersion
-	, TMap<FString, FString> InCustomData
-	, FString InDisplayName
-	, FDateTime InExpiration
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemInstanceId
-	, FDateTime InPurchaseDate
-	, int32 InRemainingUses
-	, FString InUnitCurrency
-	, int32 InUnitPrice
-	, int32 InUsesIncrementedBy
-    )
+    , TArray<FString> InBundleContents
+    , FString InBundleParent
+    , FString InCatalogVersion
+    , TMap<FString, FString> InCustomData
+    , FString InDisplayName
+    , FDateTime InExpiration
+    , FString InItemClass
+    , FString InItemId
+    , FString InItemInstanceId
+    , FDateTime InPurchaseDate
+    , int32 InRemainingUses
+    , FString InUnitCurrency
+    , int32 InUnitPrice
+    , int32 InUsesIncrementedBy
+)
 {
     FBPServerItemInstance Out = FBPServerItemInstance();
     Out.Data.Annotation = InAnnotation;
-	Out.Data.BundleContents = InBundleContents;
-	Out.Data.BundleParent = InBundleParent;
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.CustomData = InCustomData;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.Expiration = InExpiration;
-	Out.Data.ItemClass = InItemClass;
-	Out.Data.ItemId = InItemId;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PurchaseDate = InPurchaseDate;
-	Out.Data.RemainingUses = InRemainingUses;
-	Out.Data.UnitCurrency = InUnitCurrency;
-	Out.Data.UnitPrice = InUnitPrice;
-	Out.Data.UsesIncrementedBy = InUsesIncrementedBy;
-	
+    Out.Data.BundleContents = InBundleContents;
+    Out.Data.BundleParent = InBundleParent;
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.CustomData = InCustomData;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.Expiration = InExpiration;
+    Out.Data.ItemClass = InItemClass;
+    Out.Data.ItemId = InItemId;
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PurchaseDate = InPurchaseDate;
+    Out.Data.RemainingUses = InRemainingUses;
+    Out.Data.UnitCurrency = InUnitCurrency;
+    Out.Data.UnitPrice = InUnitPrice;
+    Out.Data.UsesIncrementedBy = InUsesIncrementedBy;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerItemInstance(
     const FBPServerItemInstance& In
-	, FString& OutAnnotation
-	, TArray<FString>& OutBundleContents
-	, FString& OutBundleParent
-	, FString& OutCatalogVersion
-	, TMap<FString, FString>& OutCustomData
-	, FString& OutDisplayName
-	, FDateTime& OutExpiration
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemInstanceId
-	, FDateTime& OutPurchaseDate
-	, int32& OutRemainingUses
-	, FString& OutUnitCurrency
-	, int32& OutUnitPrice
-	, int32& OutUsesIncrementedBy
- )
+    , FString& OutAnnotation
+    , TArray<FString>& OutBundleContents
+    , FString& OutBundleParent
+    , FString& OutCatalogVersion
+    , TMap<FString, FString>& OutCustomData
+    , FString& OutDisplayName
+    , FDateTime& OutExpiration
+    , FString& OutItemClass
+    , FString& OutItemId
+    , FString& OutItemInstanceId
+    , FDateTime& OutPurchaseDate
+    , int32& OutRemainingUses
+    , FString& OutUnitCurrency
+    , int32& OutUnitPrice
+    , int32& OutUsesIncrementedBy
+)
 {
     OutAnnotation = In.Data.Annotation;
-	OutBundleContents = In.Data.BundleContents;
-	OutBundleParent = In.Data.BundleParent;
-	OutCatalogVersion = In.Data.CatalogVersion;
-	OutCustomData = In.Data.CustomData;
-	OutDisplayName = In.Data.DisplayName;
-	OutExpiration = In.Data.Expiration;
-	OutItemClass = In.Data.ItemClass;
-	OutItemId = In.Data.ItemId;
-	OutItemInstanceId = In.Data.ItemInstanceId;
-	OutPurchaseDate = In.Data.PurchaseDate;
-	OutRemainingUses = In.Data.RemainingUses;
-	OutUnitCurrency = In.Data.UnitCurrency;
-	OutUnitPrice = In.Data.UnitPrice;
-	OutUsesIncrementedBy = In.Data.UsesIncrementedBy;
-	
+    OutBundleContents = In.Data.BundleContents;
+    OutBundleParent = In.Data.BundleParent;
+    OutCatalogVersion = In.Data.CatalogVersion;
+    OutCustomData = In.Data.CustomData;
+    OutDisplayName = In.Data.DisplayName;
+    OutExpiration = In.Data.Expiration;
+    OutItemClass = In.Data.ItemClass;
+    OutItemId = In.Data.ItemId;
+    OutItemInstanceId = In.Data.ItemInstanceId;
+    OutPurchaseDate = In.Data.PurchaseDate;
+    OutRemainingUses = In.Data.RemainingUses;
+    OutUnitCurrency = In.Data.UnitCurrency;
+    OutUnitPrice = In.Data.UnitPrice;
+    OutUsesIncrementedBy = In.Data.UsesIncrementedBy;
+
 }
 
 // LinkedPlatformAccountModel
 FBPServerLinkedPlatformAccountModel UPFServerProxyLibrary::MakeBPServerLinkedPlatformAccountModel(
     FString InEmail
-	, EBPServerLoginIdentityProvider InPlatform
-	, FString InPlatformUserId
-	, FString InUsername
-    )
+    , EBPServerLoginIdentityProvider InPlatform
+    , FString InPlatformUserId
+    , FString InUsername
+)
 {
     FBPServerLinkedPlatformAccountModel Out = FBPServerLinkedPlatformAccountModel();
     Out.Data.Email = InEmail;
-	Out.Data.Platform = static_cast<PlayFab::ServerModels::LoginIdentityProvider>(static_cast<uint8>(InPlatform));
-	Out.Data.PlatformUserId = InPlatformUserId;
-	Out.Data.Username = InUsername;
-	
+    Out.Data.Platform = static_cast<PlayFab::ServerModels::LoginIdentityProvider>(static_cast<uint8>(InPlatform));
+    Out.Data.PlatformUserId = InPlatformUserId;
+    Out.Data.Username = InUsername;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerLinkedPlatformAccountModel(
     const FBPServerLinkedPlatformAccountModel& In
-	, FString& OutEmail
-	, EBPServerLoginIdentityProvider& OutPlatform
-	, FString& OutPlatformUserId
-	, FString& OutUsername
- )
+    , FString& OutEmail
+    , EBPServerLoginIdentityProvider& OutPlatform
+    , FString& OutPlatformUserId
+    , FString& OutUsername
+)
 {
     OutEmail = In.Data.Email;
-	if (In.Data.Platform.notNull()) {OutPlatform = static_cast<EBPServerLoginIdentityProvider>(static_cast<uint8>(In.Data.Platform.mValue));}
-	OutPlatformUserId = In.Data.PlatformUserId;
-	OutUsername = In.Data.Username;
-	
+    if (In.Data.Platform.notNull()) { OutPlatform = static_cast<EBPServerLoginIdentityProvider>(static_cast<uint8>(In.Data.Platform.mValue)); }
+    OutPlatformUserId = In.Data.PlatformUserId;
+    OutUsername = In.Data.Username;
+
 }
 
 // ListUsersCharactersRequest
 FBPServerListUsersCharactersRequest UPFServerProxyLibrary::MakeBPServerListUsersCharactersRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPServerListUsersCharactersRequest Out = FBPServerListUsersCharactersRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // ListUsersCharactersResult
 void UPFServerProxyLibrary::BreakBPServerListUsersCharactersResult(
     const FBPServerListUsersCharactersResult& In
-	, TArray<FBPServerCharacterResult>& OutCharacters
- )
+    , TArray<FBPServerCharacterResult>& OutCharacters
+)
 {
     for (const PlayFab::ServerModels::FCharacterResult& elem : In.Data.Characters)
-	{
-		OutCharacters.Add(FBPServerCharacterResult(elem));
-	}
-	
+    {
+        OutCharacters.Add(FBPServerCharacterResult(elem));
+    }
+
 }
 
 // LocationModel
 FBPServerLocationModel UPFServerProxyLibrary::MakeBPServerLocationModel(
     FString InCity
-	, EBPServerContinentCode InContinentCode
-	, EBPServerCountryCode InCountryCode
-	, float InLatitude
-	, float InLongitude
-    )
+    , EBPServerContinentCode InContinentCode
+    , EBPServerCountryCode InCountryCode
+    , float InLatitude
+    , float InLongitude
+)
 {
     FBPServerLocationModel Out = FBPServerLocationModel();
     Out.Data.City = InCity;
-	Out.Data.pfContinentCode = static_cast<PlayFab::ServerModels::ContinentCode>(static_cast<uint8>(InContinentCode));
-	Out.Data.pfCountryCode = static_cast<PlayFab::ServerModels::CountryCode>(static_cast<uint8>(InCountryCode));
-	Out.Data.Latitude = InLatitude;
-	Out.Data.Longitude = InLongitude;
-	
+    Out.Data.pfContinentCode = static_cast<PlayFab::ServerModels::ContinentCode>(static_cast<uint8>(InContinentCode));
+    Out.Data.pfCountryCode = static_cast<PlayFab::ServerModels::CountryCode>(static_cast<uint8>(InCountryCode));
+    Out.Data.Latitude = InLatitude;
+    Out.Data.Longitude = InLongitude;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerLocationModel(
     const FBPServerLocationModel& In
-	, FString& OutCity
-	, EBPServerContinentCode& OutContinentCode
-	, EBPServerCountryCode& OutCountryCode
-	, float& OutLatitude
-	, float& OutLongitude
- )
+    , FString& OutCity
+    , EBPServerContinentCode& OutContinentCode
+    , EBPServerCountryCode& OutCountryCode
+    , float& OutLatitude
+    , float& OutLongitude
+)
 {
     OutCity = In.Data.City;
-	if (In.Data.pfContinentCode.notNull()) {OutContinentCode = static_cast<EBPServerContinentCode>(static_cast<uint8>(In.Data.pfContinentCode.mValue));}
-	if (In.Data.pfCountryCode.notNull()) {OutCountryCode = static_cast<EBPServerCountryCode>(static_cast<uint8>(In.Data.pfCountryCode.mValue));}
-	OutLatitude = In.Data.Latitude;
-	OutLongitude = In.Data.Longitude;
-	
+    if (In.Data.pfContinentCode.notNull()) { OutContinentCode = static_cast<EBPServerContinentCode>(static_cast<uint8>(In.Data.pfContinentCode.mValue)); }
+    if (In.Data.pfCountryCode.notNull()) { OutCountryCode = static_cast<EBPServerCountryCode>(static_cast<uint8>(In.Data.pfCountryCode.mValue)); }
+    OutLatitude = In.Data.Latitude;
+    OutLongitude = In.Data.Longitude;
+
 }
 
 // LogStatement
 FBPServerLogStatement UPFServerProxyLibrary::MakeBPServerLogStatement(
     UPlayFabJsonValue* InData
-	, FString InLevel
-	, FString InMessage
-    )
+    , FString InLevel
+    , FString InMessage
+)
 {
     FBPServerLogStatement Out = FBPServerLogStatement();
     Out.Data.Data = InData->GetRootValue();
-	Out.Data.Level = InLevel;
-	Out.Data.Message = InMessage;
-	
+    Out.Data.Level = InLevel;
+    Out.Data.Message = InMessage;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerLogStatement(
     const FBPServerLogStatement& In
-	, UPlayFabJsonValue*& OutData
-	, FString& OutLevel
-	, FString& OutMessage
- )
+    , UPlayFabJsonValue*& OutData
+    , FString& OutLevel
+    , FString& OutMessage
+)
 {
-    UPlayFabJsonValue* val = NewObject<UPlayFabJsonValue>();
-	val->SetRootValue(In.Data.Data.GetJsonValue());
-	OutData = val;
-	OutLevel = In.Data.Level;
-	OutMessage = In.Data.Message;
-	
+    UPlayFabJsonValue* DataVal = NewObject<UPlayFabJsonValue>();
+    DataVal->SetRootValue(In.Data.Data.GetJsonValue());
+    OutData = DataVal;
+    OutLevel = In.Data.Level;
+    OutMessage = In.Data.Message;
+
 }
 
 // MembershipModel
 FBPServerMembershipModel UPFServerProxyLibrary::MakeBPServerMembershipModel(
     bool InIsActive
-	, FDateTime InMembershipExpiration
-	, FString InMembershipId
-	, FDateTime InOverrideExpiration
-	, bool InOverrideIsSet
-	, TArray<FBPServerSubscriptionModel> InSubscriptions
-    )
+    , FDateTime InMembershipExpiration
+    , FString InMembershipId
+    , FDateTime InOverrideExpiration
+    , bool InOverrideIsSet
+    , TArray<FBPServerSubscriptionModel> InSubscriptions
+)
 {
     FBPServerMembershipModel Out = FBPServerMembershipModel();
     Out.Data.IsActive = InIsActive;
-	Out.Data.MembershipExpiration = InMembershipExpiration;
-	Out.Data.MembershipId = InMembershipId;
-	Out.Data.OverrideExpiration = InOverrideExpiration;
-	Out.Data.OverrideIsSet = InOverrideIsSet;
-	for (const FBPServerSubscriptionModel& elem : InSubscriptions)
-	{
-		Out.Data.Subscriptions.Add(elem.Data);
-	}
-	
+    Out.Data.MembershipExpiration = InMembershipExpiration;
+    Out.Data.MembershipId = InMembershipId;
+    Out.Data.OverrideExpiration = InOverrideExpiration;
+    Out.Data.OverrideIsSet = InOverrideIsSet;
+    for (const FBPServerSubscriptionModel& elem : InSubscriptions)
+    {
+        Out.Data.Subscriptions.Add(elem.Data);
+    }
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerMembershipModel(
     const FBPServerMembershipModel& In
-	, bool& OutIsActive
-	, FDateTime& OutMembershipExpiration
-	, FString& OutMembershipId
-	, FDateTime& OutOverrideExpiration
-	, bool& OutOverrideIsSet
-	, TArray<FBPServerSubscriptionModel>& OutSubscriptions
- )
+    , bool& OutIsActive
+    , FDateTime& OutMembershipExpiration
+    , FString& OutMembershipId
+    , FDateTime& OutOverrideExpiration
+    , bool& OutOverrideIsSet
+    , TArray<FBPServerSubscriptionModel>& OutSubscriptions
+)
 {
     OutIsActive = In.Data.IsActive;
-	OutMembershipExpiration = In.Data.MembershipExpiration;
-	OutMembershipId = In.Data.MembershipId;
-	OutOverrideExpiration = In.Data.OverrideExpiration;
-	OutOverrideIsSet = In.Data.OverrideIsSet;
-	for (const PlayFab::ServerModels::FSubscriptionModel& elem : In.Data.Subscriptions)
-	{
-		OutSubscriptions.Add(FBPServerSubscriptionModel(elem));
-	}
-	
+    OutMembershipExpiration = In.Data.MembershipExpiration;
+    OutMembershipId = In.Data.MembershipId;
+    OutOverrideExpiration = In.Data.OverrideExpiration;
+    OutOverrideIsSet = In.Data.OverrideIsSet;
+    for (const PlayFab::ServerModels::FSubscriptionModel& elem : In.Data.Subscriptions)
+    {
+        OutSubscriptions.Add(FBPServerSubscriptionModel(elem));
+    }
+
 }
 
 // ModifyCharacterVirtualCurrencyResult
 void UPFServerProxyLibrary::BreakBPServerModifyCharacterVirtualCurrencyResult(
     const FBPServerModifyCharacterVirtualCurrencyResult& In
-	, int32& OutBalance
-	, FString& OutVirtualCurrency
- )
+    , int32& OutBalance
+    , FString& OutVirtualCurrency
+)
 {
     OutBalance = In.Data.Balance;
-	OutVirtualCurrency = In.Data.VirtualCurrency;
-	
+    OutVirtualCurrency = In.Data.VirtualCurrency;
+
 }
 
 // ModifyItemUsesRequest
 FBPServerModifyItemUsesRequest UPFServerProxyLibrary::MakeBPServerModifyItemUsesRequest(
     FString InItemInstanceId
-	, FString InPlayFabId
-	, int32 InUsesToAdd
-    )
+    , FString InPlayFabId
+    , int32 InUsesToAdd
+)
 {
     FBPServerModifyItemUsesRequest Out = FBPServerModifyItemUsesRequest();
     Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.UsesToAdd = InUsesToAdd;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.UsesToAdd = InUsesToAdd;
+
     return Out;
 }
 
 // ModifyItemUsesResult
 void UPFServerProxyLibrary::BreakBPServerModifyItemUsesResult(
     const FBPServerModifyItemUsesResult& In
-	, FString& OutItemInstanceId
-	, int32& OutRemainingUses
- )
+    , FString& OutItemInstanceId
+    , int32& OutRemainingUses
+)
 {
     OutItemInstanceId = In.Data.ItemInstanceId;
-	OutRemainingUses = In.Data.RemainingUses;
-	
+    OutRemainingUses = In.Data.RemainingUses;
+
 }
 
 // ModifyUserVirtualCurrencyResult
 void UPFServerProxyLibrary::BreakBPServerModifyUserVirtualCurrencyResult(
     const FBPServerModifyUserVirtualCurrencyResult& In
-	, int32& OutBalance
-	, int32& OutBalanceChange
-	, FString& OutPlayFabId
-	, FString& OutVirtualCurrency
- )
+    , int32& OutBalance
+    , int32& OutBalanceChange
+    , FString& OutPlayFabId
+    , FString& OutVirtualCurrency
+)
 {
     OutBalance = In.Data.Balance;
-	OutBalanceChange = In.Data.BalanceChange;
-	OutPlayFabId = In.Data.PlayFabId;
-	OutVirtualCurrency = In.Data.VirtualCurrency;
-	
+    OutBalanceChange = In.Data.BalanceChange;
+    OutPlayFabId = In.Data.PlayFabId;
+    OutVirtualCurrency = In.Data.VirtualCurrency;
+
 }
 
 // MoveItemToCharacterFromCharacterRequest
 FBPServerMoveItemToCharacterFromCharacterRequest UPFServerProxyLibrary::MakeBPServerMoveItemToCharacterFromCharacterRequest(
     FString InGivingCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-	, FString InReceivingCharacterId
-    )
+    , FString InItemInstanceId
+    , FString InPlayFabId
+    , FString InReceivingCharacterId
+)
 {
     FBPServerMoveItemToCharacterFromCharacterRequest Out = FBPServerMoveItemToCharacterFromCharacterRequest();
     Out.Data.GivingCharacterId = InGivingCharacterId;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.ReceivingCharacterId = InReceivingCharacterId;
-	
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.ReceivingCharacterId = InReceivingCharacterId;
+
     return Out;
 }
 
 // MoveItemToCharacterFromCharacterResult
 void UPFServerProxyLibrary::BreakBPServerMoveItemToCharacterFromCharacterResult(
     const FBPServerMoveItemToCharacterFromCharacterResult& In
- )
+)
 {
-    
+
 }
 
 // MoveItemToCharacterFromUserRequest
 FBPServerMoveItemToCharacterFromUserRequest UPFServerProxyLibrary::MakeBPServerMoveItemToCharacterFromUserRequest(
     FString InCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-    )
+    , FString InItemInstanceId
+    , FString InPlayFabId
+)
 {
     FBPServerMoveItemToCharacterFromUserRequest Out = FBPServerMoveItemToCharacterFromUserRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // MoveItemToCharacterFromUserResult
 void UPFServerProxyLibrary::BreakBPServerMoveItemToCharacterFromUserResult(
     const FBPServerMoveItemToCharacterFromUserResult& In
- )
+)
 {
-    
+
 }
 
 // MoveItemToUserFromCharacterRequest
 FBPServerMoveItemToUserFromCharacterRequest UPFServerProxyLibrary::MakeBPServerMoveItemToUserFromCharacterRequest(
     FString InCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-    )
+    , FString InItemInstanceId
+    , FString InPlayFabId
+)
 {
     FBPServerMoveItemToUserFromCharacterRequest Out = FBPServerMoveItemToUserFromCharacterRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // MoveItemToUserFromCharacterResult
 void UPFServerProxyLibrary::BreakBPServerMoveItemToUserFromCharacterResult(
     const FBPServerMoveItemToUserFromCharacterResult& In
- )
+)
 {
-    
+
 }
 
 // NotifyMatchmakerPlayerLeftRequest
 FBPServerNotifyMatchmakerPlayerLeftRequest UPFServerProxyLibrary::MakeBPServerNotifyMatchmakerPlayerLeftRequest(
     FString InLobbyId
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPServerNotifyMatchmakerPlayerLeftRequest Out = FBPServerNotifyMatchmakerPlayerLeftRequest();
     Out.Data.LobbyId = InLobbyId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // NotifyMatchmakerPlayerLeftResult
 void UPFServerProxyLibrary::BreakBPServerNotifyMatchmakerPlayerLeftResult(
     const FBPServerNotifyMatchmakerPlayerLeftResult& In
-	, EBPServerPlayerConnectionState& OutPlayerState
- )
+    , EBPServerPlayerConnectionState& OutPlayerState
+)
 {
-    if (In.Data.PlayerState.notNull()) {OutPlayerState = static_cast<EBPServerPlayerConnectionState>(static_cast<uint8>(In.Data.PlayerState.mValue));}
-	
+    if (In.Data.PlayerState.notNull()) { OutPlayerState = static_cast<EBPServerPlayerConnectionState>(static_cast<uint8>(In.Data.PlayerState.mValue)); }
+
 }
 
 // PlayerLeaderboardEntry
 FBPServerPlayerLeaderboardEntry UPFServerProxyLibrary::MakeBPServerPlayerLeaderboardEntry(
     FString InDisplayName
-	, FString InPlayFabId
-	, int32 InPosition
-	, FBPServerPlayerProfileModel InProfile
-	, int32 InStatValue
-    )
+    , FString InPlayFabId
+    , int32 InPosition
+    , FBPServerPlayerProfileModel InProfile
+    , int32 InStatValue
+)
 {
     FBPServerPlayerLeaderboardEntry Out = FBPServerPlayerLeaderboardEntry();
     Out.Data.DisplayName = InDisplayName;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Position = InPosition;
-	Out.Data.Profile = MakeShareable(new PlayFab::ServerModels::FPlayerProfileModel(InProfile.Data));
-	Out.Data.StatValue = InStatValue;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Position = InPosition;
+    Out.Data.Profile = MakeShareable(new PlayFab::ServerModels::FPlayerProfileModel(InProfile.Data));
+    Out.Data.StatValue = InStatValue;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPlayerLeaderboardEntry(
     const FBPServerPlayerLeaderboardEntry& In
-	, FString& OutDisplayName
-	, FString& OutPlayFabId
-	, int32& OutPosition
-	, FBPServerPlayerProfileModel& OutProfile
-	, int32& OutStatValue
- )
+    , FString& OutDisplayName
+    , FString& OutPlayFabId
+    , int32& OutPosition
+    , FBPServerPlayerProfileModel& OutProfile
+    , int32& OutStatValue
+)
 {
     OutDisplayName = In.Data.DisplayName;
-	OutPlayFabId = In.Data.PlayFabId;
-	OutPosition = In.Data.Position;
-	if (In.Data.Profile.IsValid()) {OutProfile.Data = *In.Data.Profile;}
-	OutStatValue = In.Data.StatValue;
-	
+    OutPlayFabId = In.Data.PlayFabId;
+    OutPosition = In.Data.Position;
+    if (In.Data.Profile.IsValid()) { OutProfile.Data = *In.Data.Profile; }
+    OutStatValue = In.Data.StatValue;
+
 }
 
 // PlayerLinkedAccount
 FBPServerPlayerLinkedAccount UPFServerProxyLibrary::MakeBPServerPlayerLinkedAccount(
     FString InEmail
-	, EBPServerLoginIdentityProvider InPlatform
-	, FString InPlatformUserId
-	, FString InUsername
-    )
+    , EBPServerLoginIdentityProvider InPlatform
+    , FString InPlatformUserId
+    , FString InUsername
+)
 {
     FBPServerPlayerLinkedAccount Out = FBPServerPlayerLinkedAccount();
     Out.Data.Email = InEmail;
-	Out.Data.Platform = static_cast<PlayFab::ServerModels::LoginIdentityProvider>(static_cast<uint8>(InPlatform));
-	Out.Data.PlatformUserId = InPlatformUserId;
-	Out.Data.Username = InUsername;
-	
+    Out.Data.Platform = static_cast<PlayFab::ServerModels::LoginIdentityProvider>(static_cast<uint8>(InPlatform));
+    Out.Data.PlatformUserId = InPlatformUserId;
+    Out.Data.Username = InUsername;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPlayerLinkedAccount(
     const FBPServerPlayerLinkedAccount& In
-	, FString& OutEmail
-	, EBPServerLoginIdentityProvider& OutPlatform
-	, FString& OutPlatformUserId
-	, FString& OutUsername
- )
+    , FString& OutEmail
+    , EBPServerLoginIdentityProvider& OutPlatform
+    , FString& OutPlatformUserId
+    , FString& OutUsername
+)
 {
     OutEmail = In.Data.Email;
-	if (In.Data.Platform.notNull()) {OutPlatform = static_cast<EBPServerLoginIdentityProvider>(static_cast<uint8>(In.Data.Platform.mValue));}
-	OutPlatformUserId = In.Data.PlatformUserId;
-	OutUsername = In.Data.Username;
-	
+    if (In.Data.Platform.notNull()) { OutPlatform = static_cast<EBPServerLoginIdentityProvider>(static_cast<uint8>(In.Data.Platform.mValue)); }
+    OutPlatformUserId = In.Data.PlatformUserId;
+    OutUsername = In.Data.Username;
+
 }
 
 // PlayerLocation
 FBPServerPlayerLocation UPFServerProxyLibrary::MakeBPServerPlayerLocation(
     FString InCity
-	, EBPServerContinentCode InContinentCode
-	, EBPServerCountryCode InCountryCode
-	, float InLatitude
-	, float InLongitude
-    )
+    , EBPServerContinentCode InContinentCode
+    , EBPServerCountryCode InCountryCode
+    , float InLatitude
+    , float InLongitude
+)
 {
     FBPServerPlayerLocation Out = FBPServerPlayerLocation();
     Out.Data.City = InCity;
-	Out.Data.pfContinentCode = static_cast<PlayFab::ServerModels::ContinentCode>(static_cast<uint8>(InContinentCode));
-	Out.Data.pfCountryCode = static_cast<PlayFab::ServerModels::CountryCode>(static_cast<uint8>(InCountryCode));
-	Out.Data.Latitude = InLatitude;
-	Out.Data.Longitude = InLongitude;
-	
+    Out.Data.pfContinentCode = static_cast<PlayFab::ServerModels::ContinentCode>(static_cast<uint8>(InContinentCode));
+    Out.Data.pfCountryCode = static_cast<PlayFab::ServerModels::CountryCode>(static_cast<uint8>(InCountryCode));
+    Out.Data.Latitude = InLatitude;
+    Out.Data.Longitude = InLongitude;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPlayerLocation(
     const FBPServerPlayerLocation& In
-	, FString& OutCity
-	, EBPServerContinentCode& OutContinentCode
-	, EBPServerCountryCode& OutCountryCode
-	, float& OutLatitude
-	, float& OutLongitude
- )
+    , FString& OutCity
+    , EBPServerContinentCode& OutContinentCode
+    , EBPServerCountryCode& OutCountryCode
+    , float& OutLatitude
+    , float& OutLongitude
+)
 {
     OutCity = In.Data.City;
-	OutContinentCode = static_cast<EBPServerContinentCode>(static_cast<uint8>(In.Data.pfContinentCode));
-	OutCountryCode = static_cast<EBPServerCountryCode>(static_cast<uint8>(In.Data.pfCountryCode));
-	OutLatitude = In.Data.Latitude;
-	OutLongitude = In.Data.Longitude;
-	
+    OutContinentCode = static_cast<EBPServerContinentCode>(static_cast<uint8>(In.Data.pfContinentCode));
+    OutCountryCode = static_cast<EBPServerCountryCode>(static_cast<uint8>(In.Data.pfCountryCode));
+    OutLatitude = In.Data.Latitude;
+    OutLongitude = In.Data.Longitude;
+
 }
 
 // PlayerProfile
 FBPServerPlayerProfile UPFServerProxyLibrary::MakeBPServerPlayerProfile(
     TArray<FBPServerAdCampaignAttribution> InAdCampaignAttributions
-	, FString InAvatarUrl
-	, FDateTime InBannedUntil
-	, TArray<FBPServerContactEmailInfo> InContactEmailAddresses
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InLastLogin
-	, TArray<FBPServerPlayerLinkedAccount> InLinkedAccounts
-	, TMap<FString, FBPServerPlayerLocation> InLocations
-	, EBPServerLoginIdentityProvider InOrigination
-	, FString InPlayerId
-	, TArray<FBPServerPlayerStatistic> InPlayerStatistics
-	, FString InPublisherId
-	, TArray<FBPServerPushNotificationRegistration> InPushNotificationRegistrations
-	, TMap<FString, int32> InStatistics
-	, TArray<FString> InTags
-	, int32 InTotalValueToDateInUSD
-	, TMap<FString, int32> InValuesToDate
-	, TMap<FString, int32> InVirtualCurrencyBalances
-    )
+    , FString InAvatarUrl
+    , FDateTime InBannedUntil
+    , TArray<FBPServerContactEmailInfo> InContactEmailAddresses
+    , FDateTime InCreated
+    , FString InDisplayName
+    , FDateTime InLastLogin
+    , TArray<FBPServerPlayerLinkedAccount> InLinkedAccounts
+    , TMap<FString, FBPServerPlayerLocation> InLocations
+    , EBPServerLoginIdentityProvider InOrigination
+    , FString InPlayerId
+    , TArray<FBPServerPlayerStatistic> InPlayerStatistics
+    , FString InPublisherId
+    , TArray<FBPServerPushNotificationRegistration> InPushNotificationRegistrations
+    , TMap<FString, int32> InStatistics
+    , TArray<FString> InTags
+    , int32 InTotalValueToDateInUSD
+    , TMap<FString, int32> InValuesToDate
+    , TMap<FString, int32> InVirtualCurrencyBalances
+)
 {
     FBPServerPlayerProfile Out = FBPServerPlayerProfile();
     for (const FBPServerAdCampaignAttribution& elem : InAdCampaignAttributions)
-	{
-		Out.Data.AdCampaignAttributions.Add(elem.Data);
-	}
-	Out.Data.AvatarUrl = InAvatarUrl;
-	Out.Data.BannedUntil = InBannedUntil;
-	for (const FBPServerContactEmailInfo& elem : InContactEmailAddresses)
-	{
-		Out.Data.ContactEmailAddresses.Add(elem.Data);
-	}
-	Out.Data.Created = InCreated;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.LastLogin = InLastLogin;
-	for (const FBPServerPlayerLinkedAccount& elem : InLinkedAccounts)
-	{
-		Out.Data.LinkedAccounts.Add(elem.Data);
-	}
-	for (auto& elem : InLocations)
-	{
-		const FBPServerPlayerLocation value = elem.Value;
-		Out.Data.Locations.Add(elem.Key, value.Data);
-	}
-	Out.Data.Origination = static_cast<PlayFab::ServerModels::LoginIdentityProvider>(static_cast<uint8>(InOrigination));
-	Out.Data.PlayerId = InPlayerId;
-	for (const FBPServerPlayerStatistic& elem : InPlayerStatistics)
-	{
-		Out.Data.PlayerStatistics.Add(elem.Data);
-	}
-	Out.Data.PublisherId = InPublisherId;
-	for (const FBPServerPushNotificationRegistration& elem : InPushNotificationRegistrations)
-	{
-		Out.Data.PushNotificationRegistrations.Add(elem.Data);
-	}
-	Out.Data.Statistics = InStatistics;
-	Out.Data.Tags = InTags;
-	Out.Data.TotalValueToDateInUSD = InTotalValueToDateInUSD;
-	for (auto& elem : InValuesToDate)
-	{
-		const int32 value = elem.Value;
-		Out.Data.ValuesToDate.Add(elem.Key, static_cast<uint32>(value));
-	}
-	Out.Data.VirtualCurrencyBalances = InVirtualCurrencyBalances;
-	
+    {
+        Out.Data.AdCampaignAttributions.Add(elem.Data);
+    }
+    Out.Data.AvatarUrl = InAvatarUrl;
+    Out.Data.BannedUntil = InBannedUntil;
+    for (const FBPServerContactEmailInfo& elem : InContactEmailAddresses)
+    {
+        Out.Data.ContactEmailAddresses.Add(elem.Data);
+    }
+    Out.Data.Created = InCreated;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.LastLogin = InLastLogin;
+    for (const FBPServerPlayerLinkedAccount& elem : InLinkedAccounts)
+    {
+        Out.Data.LinkedAccounts.Add(elem.Data);
+    }
+    for (auto& elem : InLocations)
+    {
+        const FBPServerPlayerLocation value = elem.Value;
+        Out.Data.Locations.Add(elem.Key, value.Data);
+    }
+    Out.Data.Origination = static_cast<PlayFab::ServerModels::LoginIdentityProvider>(static_cast<uint8>(InOrigination));
+    Out.Data.PlayerId = InPlayerId;
+    for (const FBPServerPlayerStatistic& elem : InPlayerStatistics)
+    {
+        Out.Data.PlayerStatistics.Add(elem.Data);
+    }
+    Out.Data.PublisherId = InPublisherId;
+    for (const FBPServerPushNotificationRegistration& elem : InPushNotificationRegistrations)
+    {
+        Out.Data.PushNotificationRegistrations.Add(elem.Data);
+    }
+    Out.Data.Statistics = InStatistics;
+    Out.Data.Tags = InTags;
+    Out.Data.TotalValueToDateInUSD = InTotalValueToDateInUSD;
+    for (auto& elem : InValuesToDate)
+    {
+        const int32 value = elem.Value;
+        Out.Data.ValuesToDate.Add(elem.Key, static_cast<uint32>(value));
+    }
+    Out.Data.VirtualCurrencyBalances = InVirtualCurrencyBalances;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPlayerProfile(
     const FBPServerPlayerProfile& In
-	, TArray<FBPServerAdCampaignAttribution>& OutAdCampaignAttributions
-	, FString& OutAvatarUrl
-	, FDateTime& OutBannedUntil
-	, TArray<FBPServerContactEmailInfo>& OutContactEmailAddresses
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutLastLogin
-	, TArray<FBPServerPlayerLinkedAccount>& OutLinkedAccounts
-	, TMap<FString, FBPServerPlayerLocation>& OutLocations
-	, EBPServerLoginIdentityProvider& OutOrigination
-	, FString& OutPlayerId
-	, TArray<FBPServerPlayerStatistic>& OutPlayerStatistics
-	, FString& OutPublisherId
-	, TArray<FBPServerPushNotificationRegistration>& OutPushNotificationRegistrations
-	, TMap<FString, int32>& OutStatistics
-	, TArray<FString>& OutTags
-	, int32& OutTotalValueToDateInUSD
-	, TMap<FString, int32>& OutValuesToDate
-	, TMap<FString, int32>& OutVirtualCurrencyBalances
- )
+    , TArray<FBPServerAdCampaignAttribution>& OutAdCampaignAttributions
+    , FString& OutAvatarUrl
+    , FDateTime& OutBannedUntil
+    , TArray<FBPServerContactEmailInfo>& OutContactEmailAddresses
+    , FDateTime& OutCreated
+    , FString& OutDisplayName
+    , FDateTime& OutLastLogin
+    , TArray<FBPServerPlayerLinkedAccount>& OutLinkedAccounts
+    , TMap<FString, FBPServerPlayerLocation>& OutLocations
+    , EBPServerLoginIdentityProvider& OutOrigination
+    , FString& OutPlayerId
+    , TArray<FBPServerPlayerStatistic>& OutPlayerStatistics
+    , FString& OutPublisherId
+    , TArray<FBPServerPushNotificationRegistration>& OutPushNotificationRegistrations
+    , TMap<FString, int32>& OutStatistics
+    , TArray<FString>& OutTags
+    , int32& OutTotalValueToDateInUSD
+    , TMap<FString, int32>& OutValuesToDate
+    , TMap<FString, int32>& OutVirtualCurrencyBalances
+)
 {
     for (const PlayFab::ServerModels::FAdCampaignAttribution& elem : In.Data.AdCampaignAttributions)
-	{
-		OutAdCampaignAttributions.Add(FBPServerAdCampaignAttribution(elem));
-	}
-	OutAvatarUrl = In.Data.AvatarUrl;
-	OutBannedUntil = In.Data.BannedUntil;
-	for (const PlayFab::ServerModels::FContactEmailInfo& elem : In.Data.ContactEmailAddresses)
-	{
-		OutContactEmailAddresses.Add(FBPServerContactEmailInfo(elem));
-	}
-	OutCreated = In.Data.Created;
-	OutDisplayName = In.Data.DisplayName;
-	OutLastLogin = In.Data.LastLogin;
-	for (const PlayFab::ServerModels::FPlayerLinkedAccount& elem : In.Data.LinkedAccounts)
-	{
-		OutLinkedAccounts.Add(FBPServerPlayerLinkedAccount(elem));
-	}
-	for (auto& elem : In.Data.Locations)
-	{
-		const PlayFab::ServerModels::FPlayerLocation value = elem.Value;
-		OutLocations.Add(elem.Key, FBPServerPlayerLocation(value));
-	}
-	if (In.Data.Origination.notNull()) {OutOrigination = static_cast<EBPServerLoginIdentityProvider>(static_cast<uint8>(In.Data.Origination.mValue));}
-	OutPlayerId = In.Data.PlayerId;
-	for (const PlayFab::ServerModels::FPlayerStatistic& elem : In.Data.PlayerStatistics)
-	{
-		OutPlayerStatistics.Add(FBPServerPlayerStatistic(elem));
-	}
-	OutPublisherId = In.Data.PublisherId;
-	for (const PlayFab::ServerModels::FPushNotificationRegistration& elem : In.Data.PushNotificationRegistrations)
-	{
-		OutPushNotificationRegistrations.Add(FBPServerPushNotificationRegistration(elem));
-	}
-	OutStatistics = In.Data.Statistics;
-	OutTags = In.Data.Tags;
-	OutTotalValueToDateInUSD = In.Data.TotalValueToDateInUSD;
-	for (auto& elem : In.Data.ValuesToDate)
-	{
-		const uint32 value = elem.Value;
-		OutValuesToDate.Add(elem.Key, static_cast<int32>(value));
-	}
-	OutVirtualCurrencyBalances = In.Data.VirtualCurrencyBalances;
-	
+    {
+        OutAdCampaignAttributions.Add(FBPServerAdCampaignAttribution(elem));
+    }
+    OutAvatarUrl = In.Data.AvatarUrl;
+    OutBannedUntil = In.Data.BannedUntil;
+    for (const PlayFab::ServerModels::FContactEmailInfo& elem : In.Data.ContactEmailAddresses)
+    {
+        OutContactEmailAddresses.Add(FBPServerContactEmailInfo(elem));
+    }
+    OutCreated = In.Data.Created;
+    OutDisplayName = In.Data.DisplayName;
+    OutLastLogin = In.Data.LastLogin;
+    for (const PlayFab::ServerModels::FPlayerLinkedAccount& elem : In.Data.LinkedAccounts)
+    {
+        OutLinkedAccounts.Add(FBPServerPlayerLinkedAccount(elem));
+    }
+    for (auto& elem : In.Data.Locations)
+    {
+        const PlayFab::ServerModels::FPlayerLocation value = elem.Value;
+        OutLocations.Add(elem.Key, FBPServerPlayerLocation(value));
+    }
+    if (In.Data.Origination.notNull()) { OutOrigination = static_cast<EBPServerLoginIdentityProvider>(static_cast<uint8>(In.Data.Origination.mValue)); }
+    OutPlayerId = In.Data.PlayerId;
+    for (const PlayFab::ServerModels::FPlayerStatistic& elem : In.Data.PlayerStatistics)
+    {
+        OutPlayerStatistics.Add(FBPServerPlayerStatistic(elem));
+    }
+    OutPublisherId = In.Data.PublisherId;
+    for (const PlayFab::ServerModels::FPushNotificationRegistration& elem : In.Data.PushNotificationRegistrations)
+    {
+        OutPushNotificationRegistrations.Add(FBPServerPushNotificationRegistration(elem));
+    }
+    OutStatistics = In.Data.Statistics;
+    OutTags = In.Data.Tags;
+    OutTotalValueToDateInUSD = In.Data.TotalValueToDateInUSD;
+    for (auto& elem : In.Data.ValuesToDate)
+    {
+        const uint32 value = elem.Value;
+        OutValuesToDate.Add(elem.Key, static_cast<int32>(value));
+    }
+    OutVirtualCurrencyBalances = In.Data.VirtualCurrencyBalances;
+
 }
 
 // PlayerProfileModel
 FBPServerPlayerProfileModel UPFServerProxyLibrary::MakeBPServerPlayerProfileModel(
     TArray<FBPServerAdCampaignAttributionModel> InAdCampaignAttributions
-	, FString InAvatarUrl
-	, FDateTime InBannedUntil
-	, TArray<FBPServerContactEmailInfoModel> InContactEmailAddresses
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InLastLogin
-	, TArray<FBPServerLinkedPlatformAccountModel> InLinkedAccounts
-	, TArray<FBPServerLocationModel> InLocations
-	, TArray<FBPServerMembershipModel> InMemberships
-	, EBPServerLoginIdentityProvider InOrigination
-	, FString InPlayerId
-	, FString InPublisherId
-	, TArray<FBPServerPushNotificationRegistrationModel> InPushNotificationRegistrations
-	, TArray<FBPServerStatisticModel> InStatistics
-	, TArray<FBPServerTagModel> InTags
-	, int32 InTotalValueToDateInUSD
-	, TArray<FBPServerValueToDateModel> InValuesToDate
-    )
+    , FString InAvatarUrl
+    , FDateTime InBannedUntil
+    , TArray<FBPServerContactEmailInfoModel> InContactEmailAddresses
+    , FDateTime InCreated
+    , FString InDisplayName
+    , FDateTime InLastLogin
+    , TArray<FBPServerLinkedPlatformAccountModel> InLinkedAccounts
+    , TArray<FBPServerLocationModel> InLocations
+    , TArray<FBPServerMembershipModel> InMemberships
+    , EBPServerLoginIdentityProvider InOrigination
+    , FString InPlayerId
+    , FString InPublisherId
+    , TArray<FBPServerPushNotificationRegistrationModel> InPushNotificationRegistrations
+    , TArray<FBPServerStatisticModel> InStatistics
+    , TArray<FBPServerTagModel> InTags
+    , int32 InTotalValueToDateInUSD
+    , TArray<FBPServerValueToDateModel> InValuesToDate
+)
 {
     FBPServerPlayerProfileModel Out = FBPServerPlayerProfileModel();
     for (const FBPServerAdCampaignAttributionModel& elem : InAdCampaignAttributions)
-	{
-		Out.Data.AdCampaignAttributions.Add(elem.Data);
-	}
-	Out.Data.AvatarUrl = InAvatarUrl;
-	Out.Data.BannedUntil = InBannedUntil;
-	for (const FBPServerContactEmailInfoModel& elem : InContactEmailAddresses)
-	{
-		Out.Data.ContactEmailAddresses.Add(elem.Data);
-	}
-	Out.Data.Created = InCreated;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.LastLogin = InLastLogin;
-	for (const FBPServerLinkedPlatformAccountModel& elem : InLinkedAccounts)
-	{
-		Out.Data.LinkedAccounts.Add(elem.Data);
-	}
-	for (const FBPServerLocationModel& elem : InLocations)
-	{
-		Out.Data.Locations.Add(elem.Data);
-	}
-	for (const FBPServerMembershipModel& elem : InMemberships)
-	{
-		Out.Data.Memberships.Add(elem.Data);
-	}
-	Out.Data.Origination = static_cast<PlayFab::ServerModels::LoginIdentityProvider>(static_cast<uint8>(InOrigination));
-	Out.Data.PlayerId = InPlayerId;
-	Out.Data.PublisherId = InPublisherId;
-	for (const FBPServerPushNotificationRegistrationModel& elem : InPushNotificationRegistrations)
-	{
-		Out.Data.PushNotificationRegistrations.Add(elem.Data);
-	}
-	for (const FBPServerStatisticModel& elem : InStatistics)
-	{
-		Out.Data.Statistics.Add(elem.Data);
-	}
-	for (const FBPServerTagModel& elem : InTags)
-	{
-		Out.Data.Tags.Add(elem.Data);
-	}
-	Out.Data.TotalValueToDateInUSD = InTotalValueToDateInUSD;
-	for (const FBPServerValueToDateModel& elem : InValuesToDate)
-	{
-		Out.Data.ValuesToDate.Add(elem.Data);
-	}
-	
+    {
+        Out.Data.AdCampaignAttributions.Add(elem.Data);
+    }
+    Out.Data.AvatarUrl = InAvatarUrl;
+    Out.Data.BannedUntil = InBannedUntil;
+    for (const FBPServerContactEmailInfoModel& elem : InContactEmailAddresses)
+    {
+        Out.Data.ContactEmailAddresses.Add(elem.Data);
+    }
+    Out.Data.Created = InCreated;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.LastLogin = InLastLogin;
+    for (const FBPServerLinkedPlatformAccountModel& elem : InLinkedAccounts)
+    {
+        Out.Data.LinkedAccounts.Add(elem.Data);
+    }
+    for (const FBPServerLocationModel& elem : InLocations)
+    {
+        Out.Data.Locations.Add(elem.Data);
+    }
+    for (const FBPServerMembershipModel& elem : InMemberships)
+    {
+        Out.Data.Memberships.Add(elem.Data);
+    }
+    Out.Data.Origination = static_cast<PlayFab::ServerModels::LoginIdentityProvider>(static_cast<uint8>(InOrigination));
+    Out.Data.PlayerId = InPlayerId;
+    Out.Data.PublisherId = InPublisherId;
+    for (const FBPServerPushNotificationRegistrationModel& elem : InPushNotificationRegistrations)
+    {
+        Out.Data.PushNotificationRegistrations.Add(elem.Data);
+    }
+    for (const FBPServerStatisticModel& elem : InStatistics)
+    {
+        Out.Data.Statistics.Add(elem.Data);
+    }
+    for (const FBPServerTagModel& elem : InTags)
+    {
+        Out.Data.Tags.Add(elem.Data);
+    }
+    Out.Data.TotalValueToDateInUSD = InTotalValueToDateInUSD;
+    for (const FBPServerValueToDateModel& elem : InValuesToDate)
+    {
+        Out.Data.ValuesToDate.Add(elem.Data);
+    }
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPlayerProfileModel(
     const FBPServerPlayerProfileModel& In
-	, TArray<FBPServerAdCampaignAttributionModel>& OutAdCampaignAttributions
-	, FString& OutAvatarUrl
-	, FDateTime& OutBannedUntil
-	, TArray<FBPServerContactEmailInfoModel>& OutContactEmailAddresses
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutLastLogin
-	, TArray<FBPServerLinkedPlatformAccountModel>& OutLinkedAccounts
-	, TArray<FBPServerLocationModel>& OutLocations
-	, TArray<FBPServerMembershipModel>& OutMemberships
-	, EBPServerLoginIdentityProvider& OutOrigination
-	, FString& OutPlayerId
-	, FString& OutPublisherId
-	, TArray<FBPServerPushNotificationRegistrationModel>& OutPushNotificationRegistrations
-	, TArray<FBPServerStatisticModel>& OutStatistics
-	, TArray<FBPServerTagModel>& OutTags
-	, int32& OutTotalValueToDateInUSD
-	, TArray<FBPServerValueToDateModel>& OutValuesToDate
- )
+    , TArray<FBPServerAdCampaignAttributionModel>& OutAdCampaignAttributions
+    , FString& OutAvatarUrl
+    , FDateTime& OutBannedUntil
+    , TArray<FBPServerContactEmailInfoModel>& OutContactEmailAddresses
+    , FDateTime& OutCreated
+    , FString& OutDisplayName
+    , FDateTime& OutLastLogin
+    , TArray<FBPServerLinkedPlatformAccountModel>& OutLinkedAccounts
+    , TArray<FBPServerLocationModel>& OutLocations
+    , TArray<FBPServerMembershipModel>& OutMemberships
+    , EBPServerLoginIdentityProvider& OutOrigination
+    , FString& OutPlayerId
+    , FString& OutPublisherId
+    , TArray<FBPServerPushNotificationRegistrationModel>& OutPushNotificationRegistrations
+    , TArray<FBPServerStatisticModel>& OutStatistics
+    , TArray<FBPServerTagModel>& OutTags
+    , int32& OutTotalValueToDateInUSD
+    , TArray<FBPServerValueToDateModel>& OutValuesToDate
+)
 {
     for (const PlayFab::ServerModels::FAdCampaignAttributionModel& elem : In.Data.AdCampaignAttributions)
-	{
-		OutAdCampaignAttributions.Add(FBPServerAdCampaignAttributionModel(elem));
-	}
-	OutAvatarUrl = In.Data.AvatarUrl;
-	OutBannedUntil = In.Data.BannedUntil;
-	for (const PlayFab::ServerModels::FContactEmailInfoModel& elem : In.Data.ContactEmailAddresses)
-	{
-		OutContactEmailAddresses.Add(FBPServerContactEmailInfoModel(elem));
-	}
-	OutCreated = In.Data.Created;
-	OutDisplayName = In.Data.DisplayName;
-	OutLastLogin = In.Data.LastLogin;
-	for (const PlayFab::ServerModels::FLinkedPlatformAccountModel& elem : In.Data.LinkedAccounts)
-	{
-		OutLinkedAccounts.Add(FBPServerLinkedPlatformAccountModel(elem));
-	}
-	for (const PlayFab::ServerModels::FLocationModel& elem : In.Data.Locations)
-	{
-		OutLocations.Add(FBPServerLocationModel(elem));
-	}
-	for (const PlayFab::ServerModels::FMembershipModel& elem : In.Data.Memberships)
-	{
-		OutMemberships.Add(FBPServerMembershipModel(elem));
-	}
-	if (In.Data.Origination.notNull()) {OutOrigination = static_cast<EBPServerLoginIdentityProvider>(static_cast<uint8>(In.Data.Origination.mValue));}
-	OutPlayerId = In.Data.PlayerId;
-	OutPublisherId = In.Data.PublisherId;
-	for (const PlayFab::ServerModels::FPushNotificationRegistrationModel& elem : In.Data.PushNotificationRegistrations)
-	{
-		OutPushNotificationRegistrations.Add(FBPServerPushNotificationRegistrationModel(elem));
-	}
-	for (const PlayFab::ServerModels::FStatisticModel& elem : In.Data.Statistics)
-	{
-		OutStatistics.Add(FBPServerStatisticModel(elem));
-	}
-	for (const PlayFab::ServerModels::FTagModel& elem : In.Data.Tags)
-	{
-		OutTags.Add(FBPServerTagModel(elem));
-	}
-	OutTotalValueToDateInUSD = In.Data.TotalValueToDateInUSD;
-	for (const PlayFab::ServerModels::FValueToDateModel& elem : In.Data.ValuesToDate)
-	{
-		OutValuesToDate.Add(FBPServerValueToDateModel(elem));
-	}
-	
+    {
+        OutAdCampaignAttributions.Add(FBPServerAdCampaignAttributionModel(elem));
+    }
+    OutAvatarUrl = In.Data.AvatarUrl;
+    OutBannedUntil = In.Data.BannedUntil;
+    for (const PlayFab::ServerModels::FContactEmailInfoModel& elem : In.Data.ContactEmailAddresses)
+    {
+        OutContactEmailAddresses.Add(FBPServerContactEmailInfoModel(elem));
+    }
+    OutCreated = In.Data.Created;
+    OutDisplayName = In.Data.DisplayName;
+    OutLastLogin = In.Data.LastLogin;
+    for (const PlayFab::ServerModels::FLinkedPlatformAccountModel& elem : In.Data.LinkedAccounts)
+    {
+        OutLinkedAccounts.Add(FBPServerLinkedPlatformAccountModel(elem));
+    }
+    for (const PlayFab::ServerModels::FLocationModel& elem : In.Data.Locations)
+    {
+        OutLocations.Add(FBPServerLocationModel(elem));
+    }
+    for (const PlayFab::ServerModels::FMembershipModel& elem : In.Data.Memberships)
+    {
+        OutMemberships.Add(FBPServerMembershipModel(elem));
+    }
+    if (In.Data.Origination.notNull()) { OutOrigination = static_cast<EBPServerLoginIdentityProvider>(static_cast<uint8>(In.Data.Origination.mValue)); }
+    OutPlayerId = In.Data.PlayerId;
+    OutPublisherId = In.Data.PublisherId;
+    for (const PlayFab::ServerModels::FPushNotificationRegistrationModel& elem : In.Data.PushNotificationRegistrations)
+    {
+        OutPushNotificationRegistrations.Add(FBPServerPushNotificationRegistrationModel(elem));
+    }
+    for (const PlayFab::ServerModels::FStatisticModel& elem : In.Data.Statistics)
+    {
+        OutStatistics.Add(FBPServerStatisticModel(elem));
+    }
+    for (const PlayFab::ServerModels::FTagModel& elem : In.Data.Tags)
+    {
+        OutTags.Add(FBPServerTagModel(elem));
+    }
+    OutTotalValueToDateInUSD = In.Data.TotalValueToDateInUSD;
+    for (const PlayFab::ServerModels::FValueToDateModel& elem : In.Data.ValuesToDate)
+    {
+        OutValuesToDate.Add(FBPServerValueToDateModel(elem));
+    }
+
 }
 
 // PlayerProfileViewConstraints
 FBPServerPlayerProfileViewConstraints UPFServerProxyLibrary::MakeBPServerPlayerProfileViewConstraints(
     bool InShowAvatarUrl
-	, bool InShowBannedUntil
-	, bool InShowCampaignAttributions
-	, bool InShowContactEmailAddresses
-	, bool InShowCreated
-	, bool InShowDisplayName
-	, bool InShowLastLogin
-	, bool InShowLinkedAccounts
-	, bool InShowLocations
-	, bool InShowMemberships
-	, bool InShowOrigination
-	, bool InShowPushNotificationRegistrations
-	, bool InShowStatistics
-	, bool InShowTags
-	, bool InShowTotalValueToDateInUsd
-	, bool InShowValuesToDate
-    )
+    , bool InShowBannedUntil
+    , bool InShowCampaignAttributions
+    , bool InShowContactEmailAddresses
+    , bool InShowCreated
+    , bool InShowDisplayName
+    , bool InShowLastLogin
+    , bool InShowLinkedAccounts
+    , bool InShowLocations
+    , bool InShowMemberships
+    , bool InShowOrigination
+    , bool InShowPushNotificationRegistrations
+    , bool InShowStatistics
+    , bool InShowTags
+    , bool InShowTotalValueToDateInUsd
+    , bool InShowValuesToDate
+)
 {
     FBPServerPlayerProfileViewConstraints Out = FBPServerPlayerProfileViewConstraints();
     Out.Data.ShowAvatarUrl = InShowAvatarUrl;
-	Out.Data.ShowBannedUntil = InShowBannedUntil;
-	Out.Data.ShowCampaignAttributions = InShowCampaignAttributions;
-	Out.Data.ShowContactEmailAddresses = InShowContactEmailAddresses;
-	Out.Data.ShowCreated = InShowCreated;
-	Out.Data.ShowDisplayName = InShowDisplayName;
-	Out.Data.ShowLastLogin = InShowLastLogin;
-	Out.Data.ShowLinkedAccounts = InShowLinkedAccounts;
-	Out.Data.ShowLocations = InShowLocations;
-	Out.Data.ShowMemberships = InShowMemberships;
-	Out.Data.ShowOrigination = InShowOrigination;
-	Out.Data.ShowPushNotificationRegistrations = InShowPushNotificationRegistrations;
-	Out.Data.ShowStatistics = InShowStatistics;
-	Out.Data.ShowTags = InShowTags;
-	Out.Data.ShowTotalValueToDateInUsd = InShowTotalValueToDateInUsd;
-	Out.Data.ShowValuesToDate = InShowValuesToDate;
-	
+    Out.Data.ShowBannedUntil = InShowBannedUntil;
+    Out.Data.ShowCampaignAttributions = InShowCampaignAttributions;
+    Out.Data.ShowContactEmailAddresses = InShowContactEmailAddresses;
+    Out.Data.ShowCreated = InShowCreated;
+    Out.Data.ShowDisplayName = InShowDisplayName;
+    Out.Data.ShowLastLogin = InShowLastLogin;
+    Out.Data.ShowLinkedAccounts = InShowLinkedAccounts;
+    Out.Data.ShowLocations = InShowLocations;
+    Out.Data.ShowMemberships = InShowMemberships;
+    Out.Data.ShowOrigination = InShowOrigination;
+    Out.Data.ShowPushNotificationRegistrations = InShowPushNotificationRegistrations;
+    Out.Data.ShowStatistics = InShowStatistics;
+    Out.Data.ShowTags = InShowTags;
+    Out.Data.ShowTotalValueToDateInUsd = InShowTotalValueToDateInUsd;
+    Out.Data.ShowValuesToDate = InShowValuesToDate;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPlayerProfileViewConstraints(
     const FBPServerPlayerProfileViewConstraints& In
-	, bool& OutShowAvatarUrl
-	, bool& OutShowBannedUntil
-	, bool& OutShowCampaignAttributions
-	, bool& OutShowContactEmailAddresses
-	, bool& OutShowCreated
-	, bool& OutShowDisplayName
-	, bool& OutShowLastLogin
-	, bool& OutShowLinkedAccounts
-	, bool& OutShowLocations
-	, bool& OutShowMemberships
-	, bool& OutShowOrigination
-	, bool& OutShowPushNotificationRegistrations
-	, bool& OutShowStatistics
-	, bool& OutShowTags
-	, bool& OutShowTotalValueToDateInUsd
-	, bool& OutShowValuesToDate
- )
+    , bool& OutShowAvatarUrl
+    , bool& OutShowBannedUntil
+    , bool& OutShowCampaignAttributions
+    , bool& OutShowContactEmailAddresses
+    , bool& OutShowCreated
+    , bool& OutShowDisplayName
+    , bool& OutShowLastLogin
+    , bool& OutShowLinkedAccounts
+    , bool& OutShowLocations
+    , bool& OutShowMemberships
+    , bool& OutShowOrigination
+    , bool& OutShowPushNotificationRegistrations
+    , bool& OutShowStatistics
+    , bool& OutShowTags
+    , bool& OutShowTotalValueToDateInUsd
+    , bool& OutShowValuesToDate
+)
 {
     OutShowAvatarUrl = In.Data.ShowAvatarUrl;
-	OutShowBannedUntil = In.Data.ShowBannedUntil;
-	OutShowCampaignAttributions = In.Data.ShowCampaignAttributions;
-	OutShowContactEmailAddresses = In.Data.ShowContactEmailAddresses;
-	OutShowCreated = In.Data.ShowCreated;
-	OutShowDisplayName = In.Data.ShowDisplayName;
-	OutShowLastLogin = In.Data.ShowLastLogin;
-	OutShowLinkedAccounts = In.Data.ShowLinkedAccounts;
-	OutShowLocations = In.Data.ShowLocations;
-	OutShowMemberships = In.Data.ShowMemberships;
-	OutShowOrigination = In.Data.ShowOrigination;
-	OutShowPushNotificationRegistrations = In.Data.ShowPushNotificationRegistrations;
-	OutShowStatistics = In.Data.ShowStatistics;
-	OutShowTags = In.Data.ShowTags;
-	OutShowTotalValueToDateInUsd = In.Data.ShowTotalValueToDateInUsd;
-	OutShowValuesToDate = In.Data.ShowValuesToDate;
-	
+    OutShowBannedUntil = In.Data.ShowBannedUntil;
+    OutShowCampaignAttributions = In.Data.ShowCampaignAttributions;
+    OutShowContactEmailAddresses = In.Data.ShowContactEmailAddresses;
+    OutShowCreated = In.Data.ShowCreated;
+    OutShowDisplayName = In.Data.ShowDisplayName;
+    OutShowLastLogin = In.Data.ShowLastLogin;
+    OutShowLinkedAccounts = In.Data.ShowLinkedAccounts;
+    OutShowLocations = In.Data.ShowLocations;
+    OutShowMemberships = In.Data.ShowMemberships;
+    OutShowOrigination = In.Data.ShowOrigination;
+    OutShowPushNotificationRegistrations = In.Data.ShowPushNotificationRegistrations;
+    OutShowStatistics = In.Data.ShowStatistics;
+    OutShowTags = In.Data.ShowTags;
+    OutShowTotalValueToDateInUsd = In.Data.ShowTotalValueToDateInUsd;
+    OutShowValuesToDate = In.Data.ShowValuesToDate;
+
 }
 
 // PlayerStatistic
 FBPServerPlayerStatistic UPFServerProxyLibrary::MakeBPServerPlayerStatistic(
     FString InId
-	, FString InName
-	, int32 InStatisticValue
-	, int32 InStatisticVersion
-    )
+    , FString InName
+    , int32 InStatisticValue
+    , int32 InStatisticVersion
+)
 {
     FBPServerPlayerStatistic Out = FBPServerPlayerStatistic();
     Out.Data.Id = InId;
-	Out.Data.Name = InName;
-	Out.Data.StatisticValue = InStatisticValue;
-	Out.Data.StatisticVersion = InStatisticVersion;
-	
+    Out.Data.Name = InName;
+    Out.Data.StatisticValue = InStatisticValue;
+    Out.Data.StatisticVersion = InStatisticVersion;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPlayerStatistic(
     const FBPServerPlayerStatistic& In
-	, FString& OutId
-	, FString& OutName
-	, int32& OutStatisticValue
-	, int32& OutStatisticVersion
- )
+    , FString& OutId
+    , FString& OutName
+    , int32& OutStatisticValue
+    , int32& OutStatisticVersion
+)
 {
     OutId = In.Data.Id;
-	OutName = In.Data.Name;
-	OutStatisticValue = In.Data.StatisticValue;
-	OutStatisticVersion = In.Data.StatisticVersion;
-	
+    OutName = In.Data.Name;
+    OutStatisticValue = In.Data.StatisticValue;
+    OutStatisticVersion = In.Data.StatisticVersion;
+
 }
 
 // PlayerStatisticVersion
 FBPServerPlayerStatisticVersion UPFServerProxyLibrary::MakeBPServerPlayerStatisticVersion(
     FDateTime InActivationTime
-	, FDateTime InDeactivationTime
-	, FDateTime InScheduledActivationTime
-	, FDateTime InScheduledDeactivationTime
-	, FString InStatisticName
-	, int32 InVersion
-    )
+    , FDateTime InDeactivationTime
+    , FDateTime InScheduledActivationTime
+    , FDateTime InScheduledDeactivationTime
+    , FString InStatisticName
+    , int32 InVersion
+)
 {
     FBPServerPlayerStatisticVersion Out = FBPServerPlayerStatisticVersion();
     Out.Data.ActivationTime = InActivationTime;
-	Out.Data.DeactivationTime = InDeactivationTime;
-	Out.Data.ScheduledActivationTime = InScheduledActivationTime;
-	Out.Data.ScheduledDeactivationTime = InScheduledDeactivationTime;
-	Out.Data.StatisticName = InStatisticName;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.DeactivationTime = InDeactivationTime;
+    Out.Data.ScheduledActivationTime = InScheduledActivationTime;
+    Out.Data.ScheduledDeactivationTime = InScheduledDeactivationTime;
+    Out.Data.StatisticName = InStatisticName;
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPlayerStatisticVersion(
     const FBPServerPlayerStatisticVersion& In
-	, FDateTime& OutActivationTime
-	, FDateTime& OutDeactivationTime
-	, FDateTime& OutScheduledActivationTime
-	, FDateTime& OutScheduledDeactivationTime
-	, FString& OutStatisticName
-	, int32& OutVersion
- )
+    , FDateTime& OutActivationTime
+    , FDateTime& OutDeactivationTime
+    , FDateTime& OutScheduledActivationTime
+    , FDateTime& OutScheduledDeactivationTime
+    , FString& OutStatisticName
+    , int32& OutVersion
+)
 {
     OutActivationTime = In.Data.ActivationTime;
-	OutDeactivationTime = In.Data.DeactivationTime;
-	OutScheduledActivationTime = In.Data.ScheduledActivationTime;
-	OutScheduledDeactivationTime = In.Data.ScheduledDeactivationTime;
-	OutStatisticName = In.Data.StatisticName;
-	OutVersion = In.Data.Version;
-	
+    OutDeactivationTime = In.Data.DeactivationTime;
+    OutScheduledActivationTime = In.Data.ScheduledActivationTime;
+    OutScheduledDeactivationTime = In.Data.ScheduledDeactivationTime;
+    OutStatisticName = In.Data.StatisticName;
+    OutVersion = In.Data.Version;
+
 }
 
 // PushNotificationPackage
 FBPServerPushNotificationPackage UPFServerProxyLibrary::MakeBPServerPushNotificationPackage(
     int32 InBadge
-	, FString InCustomData
-	, FString InIcon
-	, FString InMessage
-	, FString InSound
-	, FString InTitle
-    )
+    , FString InCustomData
+    , FString InIcon
+    , FString InMessage
+    , FString InSound
+    , FString InTitle
+)
 {
     FBPServerPushNotificationPackage Out = FBPServerPushNotificationPackage();
     Out.Data.Badge = InBadge;
-	Out.Data.CustomData = InCustomData;
-	Out.Data.Icon = InIcon;
-	Out.Data.Message = InMessage;
-	Out.Data.Sound = InSound;
-	Out.Data.Title = InTitle;
-	
+    Out.Data.CustomData = InCustomData;
+    Out.Data.Icon = InIcon;
+    Out.Data.Message = InMessage;
+    Out.Data.Sound = InSound;
+    Out.Data.Title = InTitle;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPushNotificationPackage(
     const FBPServerPushNotificationPackage& In
-	, int32& OutBadge
-	, FString& OutCustomData
-	, FString& OutIcon
-	, FString& OutMessage
-	, FString& OutSound
-	, FString& OutTitle
- )
+    , int32& OutBadge
+    , FString& OutCustomData
+    , FString& OutIcon
+    , FString& OutMessage
+    , FString& OutSound
+    , FString& OutTitle
+)
 {
     OutBadge = In.Data.Badge;
-	OutCustomData = In.Data.CustomData;
-	OutIcon = In.Data.Icon;
-	OutMessage = In.Data.Message;
-	OutSound = In.Data.Sound;
-	OutTitle = In.Data.Title;
-	
+    OutCustomData = In.Data.CustomData;
+    OutIcon = In.Data.Icon;
+    OutMessage = In.Data.Message;
+    OutSound = In.Data.Sound;
+    OutTitle = In.Data.Title;
+
 }
 
 // PushNotificationRegistration
 FBPServerPushNotificationRegistration UPFServerProxyLibrary::MakeBPServerPushNotificationRegistration(
     FString InNotificationEndpointARN
-	, EBPServerPushNotificationPlatform InPlatform
-    )
+    , EBPServerPushNotificationPlatform InPlatform
+)
 {
     FBPServerPushNotificationRegistration Out = FBPServerPushNotificationRegistration();
     Out.Data.NotificationEndpointARN = InNotificationEndpointARN;
-	Out.Data.Platform = static_cast<PlayFab::ServerModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
-	
+    Out.Data.Platform = static_cast<PlayFab::ServerModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPushNotificationRegistration(
     const FBPServerPushNotificationRegistration& In
-	, FString& OutNotificationEndpointARN
-	, EBPServerPushNotificationPlatform& OutPlatform
- )
+    , FString& OutNotificationEndpointARN
+    , EBPServerPushNotificationPlatform& OutPlatform
+)
 {
     OutNotificationEndpointARN = In.Data.NotificationEndpointARN;
-	if (In.Data.Platform.notNull()) {OutPlatform = static_cast<EBPServerPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform.mValue));}
-	
+    if (In.Data.Platform.notNull()) { OutPlatform = static_cast<EBPServerPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform.mValue)); }
+
 }
 
 // PushNotificationRegistrationModel
 FBPServerPushNotificationRegistrationModel UPFServerProxyLibrary::MakeBPServerPushNotificationRegistrationModel(
     FString InNotificationEndpointARN
-	, EBPServerPushNotificationPlatform InPlatform
-    )
+    , EBPServerPushNotificationPlatform InPlatform
+)
 {
     FBPServerPushNotificationRegistrationModel Out = FBPServerPushNotificationRegistrationModel();
     Out.Data.NotificationEndpointARN = InNotificationEndpointARN;
-	Out.Data.Platform = static_cast<PlayFab::ServerModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
-	
+    Out.Data.Platform = static_cast<PlayFab::ServerModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerPushNotificationRegistrationModel(
     const FBPServerPushNotificationRegistrationModel& In
-	, FString& OutNotificationEndpointARN
-	, EBPServerPushNotificationPlatform& OutPlatform
- )
+    , FString& OutNotificationEndpointARN
+    , EBPServerPushNotificationPlatform& OutPlatform
+)
 {
     OutNotificationEndpointARN = In.Data.NotificationEndpointARN;
-	if (In.Data.Platform.notNull()) {OutPlatform = static_cast<EBPServerPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform.mValue));}
-	
+    if (In.Data.Platform.notNull()) { OutPlatform = static_cast<EBPServerPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform.mValue)); }
+
 }
 
 // RandomResultTableListing
 void UPFServerProxyLibrary::BreakBPServerRandomResultTableListing(
     const FBPServerRandomResultTableListing& In
-	, FString& OutCatalogVersion
-	, TArray<FBPServerResultTableNode>& OutNodes
-	, FString& OutTableId
- )
+    , FString& OutCatalogVersion
+    , TArray<FBPServerResultTableNode>& OutNodes
+    , FString& OutTableId
+)
 {
     OutCatalogVersion = In.Data.CatalogVersion;
-	for (const PlayFab::ServerModels::FResultTableNode& elem : In.Data.Nodes)
-	{
-		OutNodes.Add(FBPServerResultTableNode(elem));
-	}
-	OutTableId = In.Data.TableId;
-	
+    for (const PlayFab::ServerModels::FResultTableNode& elem : In.Data.Nodes)
+    {
+        OutNodes.Add(FBPServerResultTableNode(elem));
+    }
+    OutTableId = In.Data.TableId;
+
 }
 
 // RedeemCouponRequest
 FBPServerRedeemCouponRequest UPFServerProxyLibrary::MakeBPServerRedeemCouponRequest(
     FString InCatalogVersion
-	, FString InCharacterId
-	, FString InCouponCode
-	, FString InPlayFabId
-    )
+    , FString InCharacterId
+    , FString InCouponCode
+    , FString InPlayFabId
+)
 {
     FBPServerRedeemCouponRequest Out = FBPServerRedeemCouponRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.CouponCode = InCouponCode;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.CouponCode = InCouponCode;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // RedeemCouponResult
 void UPFServerProxyLibrary::BreakBPServerRedeemCouponResult(
     const FBPServerRedeemCouponResult& In
-	, TArray<FBPServerItemInstance>& OutGrantedItems
- )
+    , TArray<FBPServerItemInstance>& OutGrantedItems
+)
 {
     for (const PlayFab::ServerModels::FItemInstance& elem : In.Data.GrantedItems)
-	{
-		OutGrantedItems.Add(FBPServerItemInstance(elem));
-	}
-	
+    {
+        OutGrantedItems.Add(FBPServerItemInstance(elem));
+    }
+
 }
 
 // RedeemMatchmakerTicketRequest
 FBPServerRedeemMatchmakerTicketRequest UPFServerProxyLibrary::MakeBPServerRedeemMatchmakerTicketRequest(
     FString InLobbyId
-	, FString InTicket
-    )
+    , FString InTicket
+)
 {
     FBPServerRedeemMatchmakerTicketRequest Out = FBPServerRedeemMatchmakerTicketRequest();
     Out.Data.LobbyId = InLobbyId;
-	Out.Data.Ticket = InTicket;
-	
+    Out.Data.Ticket = InTicket;
+
     return Out;
 }
 
 // RedeemMatchmakerTicketResult
 void UPFServerProxyLibrary::BreakBPServerRedeemMatchmakerTicketResult(
     const FBPServerRedeemMatchmakerTicketResult& In
-	, FString& OutError
-	, bool& OutTicketIsValid
-	, FBPServerUserAccountInfo& OutUserInfo
- )
+    , FString& OutError
+    , bool& OutTicketIsValid
+    , FBPServerUserAccountInfo& OutUserInfo
+)
 {
     OutError = In.Data.Error;
-	OutTicketIsValid = In.Data.TicketIsValid;
-	if (In.Data.UserInfo.IsValid()) {OutUserInfo.Data = *In.Data.UserInfo;}
-	
+    OutTicketIsValid = In.Data.TicketIsValid;
+    if (In.Data.UserInfo.IsValid()) { OutUserInfo.Data = *In.Data.UserInfo; }
+
 }
 
 // RefreshGameServerInstanceHeartbeatRequest
 FBPServerRefreshGameServerInstanceHeartbeatRequest UPFServerProxyLibrary::MakeBPServerRefreshGameServerInstanceHeartbeatRequest(
     FString InLobbyId
-    )
+)
 {
     FBPServerRefreshGameServerInstanceHeartbeatRequest Out = FBPServerRefreshGameServerInstanceHeartbeatRequest();
     Out.Data.LobbyId = InLobbyId;
-	
+
     return Out;
 }
 
 // RefreshGameServerInstanceHeartbeatResult
 void UPFServerProxyLibrary::BreakBPServerRefreshGameServerInstanceHeartbeatResult(
     const FBPServerRefreshGameServerInstanceHeartbeatResult& In
- )
+)
 {
-    
+
 }
 
 // RegisterGameRequest
 FBPServerRegisterGameRequest UPFServerProxyLibrary::MakeBPServerRegisterGameRequest(
     FString InBuild
-	, FString InGameMode
-	, FString InLobbyId
-	, EBPServerRegion InRegion
-	, FString InServerHost
-	, FString InServerIPV6Address
-	, FString InServerPort
-	, TMap<FString, FString> InTags
-    )
+    , FString InGameMode
+    , FString InLobbyId
+    , EBPServerRegion InRegion
+    , FString InServerHost
+    , FString InServerIPV6Address
+    , FString InServerPort
+    , TMap<FString, FString> InTags
+)
 {
     FBPServerRegisterGameRequest Out = FBPServerRegisterGameRequest();
     Out.Data.Build = InBuild;
-	Out.Data.GameMode = InGameMode;
-	Out.Data.LobbyId = InLobbyId;
-	Out.Data.pfRegion = static_cast<PlayFab::ServerModels::Region>(static_cast<uint8>(InRegion));
-	Out.Data.ServerHost = InServerHost;
-	Out.Data.ServerIPV6Address = InServerIPV6Address;
-	Out.Data.ServerPort = InServerPort;
-	Out.Data.Tags = InTags;
-	
+    Out.Data.GameMode = InGameMode;
+    Out.Data.LobbyId = InLobbyId;
+    Out.Data.pfRegion = static_cast<PlayFab::ServerModels::Region>(static_cast<uint8>(InRegion));
+    Out.Data.ServerHost = InServerHost;
+    Out.Data.ServerIPV6Address = InServerIPV6Address;
+    Out.Data.ServerPort = InServerPort;
+    Out.Data.Tags = InTags;
+
     return Out;
 }
 
 // RegisterGameResponse
 void UPFServerProxyLibrary::BreakBPServerRegisterGameResponse(
     const FBPServerRegisterGameResponse& In
-	, FString& OutLobbyId
- )
+    , FString& OutLobbyId
+)
 {
     OutLobbyId = In.Data.LobbyId;
-	
+
 }
 
 // RemoveFriendRequest
 FBPServerRemoveFriendRequest UPFServerProxyLibrary::MakeBPServerRemoveFriendRequest(
     FString InFriendPlayFabId
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPServerRemoveFriendRequest Out = FBPServerRemoveFriendRequest();
     Out.Data.FriendPlayFabId = InFriendPlayFabId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // RemovePlayerTagRequest
 FBPServerRemovePlayerTagRequest UPFServerProxyLibrary::MakeBPServerRemovePlayerTagRequest(
     FString InPlayFabId
-	, FString InTagName
-    )
+    , FString InTagName
+)
 {
     FBPServerRemovePlayerTagRequest Out = FBPServerRemovePlayerTagRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.TagName = InTagName;
-	
+    Out.Data.TagName = InTagName;
+
     return Out;
 }
 
 // RemovePlayerTagResult
 void UPFServerProxyLibrary::BreakBPServerRemovePlayerTagResult(
     const FBPServerRemovePlayerTagResult& In
- )
+)
 {
-    
+
 }
 
 // RemoveSharedGroupMembersRequest
 FBPServerRemoveSharedGroupMembersRequest UPFServerProxyLibrary::MakeBPServerRemoveSharedGroupMembersRequest(
     TArray<FString> InPlayFabIds
-	, FString InSharedGroupId
-    )
+    , FString InSharedGroupId
+)
 {
     FBPServerRemoveSharedGroupMembersRequest Out = FBPServerRemoveSharedGroupMembersRequest();
     Out.Data.PlayFabIds = InPlayFabIds;
-	Out.Data.SharedGroupId = InSharedGroupId;
-	
+    Out.Data.SharedGroupId = InSharedGroupId;
+
     return Out;
 }
 
 // RemoveSharedGroupMembersResult
 void UPFServerProxyLibrary::BreakBPServerRemoveSharedGroupMembersResult(
     const FBPServerRemoveSharedGroupMembersResult& In
- )
+)
 {
-    
+
 }
 
 // ReportPlayerServerRequest
 FBPServerReportPlayerServerRequest UPFServerProxyLibrary::MakeBPServerReportPlayerServerRequest(
     FString InComment
-	, FString InReporteeId
-	, FString InReporterId
-    )
+    , FString InReporteeId
+    , FString InReporterId
+)
 {
     FBPServerReportPlayerServerRequest Out = FBPServerReportPlayerServerRequest();
     Out.Data.Comment = InComment;
-	Out.Data.ReporteeId = InReporteeId;
-	Out.Data.ReporterId = InReporterId;
-	
+    Out.Data.ReporteeId = InReporteeId;
+    Out.Data.ReporterId = InReporterId;
+
     return Out;
 }
 
 // ReportPlayerServerResult
 void UPFServerProxyLibrary::BreakBPServerReportPlayerServerResult(
     const FBPServerReportPlayerServerResult& In
-	, int32& OutSubmissionsRemaining
- )
+    , int32& OutSubmissionsRemaining
+)
 {
     OutSubmissionsRemaining = In.Data.SubmissionsRemaining;
-	
+
 }
 
 // ResultTableNode
 void UPFServerProxyLibrary::BreakBPServerResultTableNode(
     const FBPServerResultTableNode& In
-	, FString& OutResultItem
-	, EBPServerResultTableNodeType& OutResultItemType
-	, int32& OutWeight
- )
+    , FString& OutResultItem
+    , EBPServerResultTableNodeType& OutResultItemType
+    , int32& OutWeight
+)
 {
     OutResultItem = In.Data.ResultItem;
-	OutResultItemType = static_cast<EBPServerResultTableNodeType>(static_cast<uint8>(In.Data.ResultItemType));
-	OutWeight = In.Data.Weight;
-	
+    OutResultItemType = static_cast<EBPServerResultTableNodeType>(static_cast<uint8>(In.Data.ResultItemType));
+    OutWeight = In.Data.Weight;
+
 }
 
 // RevokeAllBansForUserRequest
 FBPServerRevokeAllBansForUserRequest UPFServerProxyLibrary::MakeBPServerRevokeAllBansForUserRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPServerRevokeAllBansForUserRequest Out = FBPServerRevokeAllBansForUserRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // RevokeAllBansForUserResult
 void UPFServerProxyLibrary::BreakBPServerRevokeAllBansForUserResult(
     const FBPServerRevokeAllBansForUserResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
- )
+    , TArray<FBPServerBanInfo>& OutBanData
+)
 {
     for (const PlayFab::ServerModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPServerBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPServerBanInfo(elem));
+    }
+
 }
 
 // RevokeBansRequest
 FBPServerRevokeBansRequest UPFServerProxyLibrary::MakeBPServerRevokeBansRequest(
     TArray<FString> InBanIds
-    )
+)
 {
     FBPServerRevokeBansRequest Out = FBPServerRevokeBansRequest();
     Out.Data.BanIds = InBanIds;
-	
+
     return Out;
 }
 
 // RevokeBansResult
 void UPFServerProxyLibrary::BreakBPServerRevokeBansResult(
     const FBPServerRevokeBansResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
- )
+    , TArray<FBPServerBanInfo>& OutBanData
+)
 {
     for (const PlayFab::ServerModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPServerBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPServerBanInfo(elem));
+    }
+
+}
+
+// RevokeInventoryItem
+FBPServerRevokeInventoryItem UPFServerProxyLibrary::MakeBPServerRevokeInventoryItem(
+    FString InCharacterId
+    , FString InItemInstanceId
+    , FString InPlayFabId
+)
+{
+    FBPServerRevokeInventoryItem Out = FBPServerRevokeInventoryItem();
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+
+    return Out;
+}
+void UPFServerProxyLibrary::BreakBPServerRevokeInventoryItem(
+    const FBPServerRevokeInventoryItem& In
+    , FString& OutCharacterId
+    , FString& OutItemInstanceId
+    , FString& OutPlayFabId
+)
+{
+    OutCharacterId = In.Data.CharacterId;
+    OutItemInstanceId = In.Data.ItemInstanceId;
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // RevokeInventoryItemRequest
 FBPServerRevokeInventoryItemRequest UPFServerProxyLibrary::MakeBPServerRevokeInventoryItemRequest(
     FString InCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-    )
+    , FString InItemInstanceId
+    , FString InPlayFabId
+)
 {
     FBPServerRevokeInventoryItemRequest Out = FBPServerRevokeInventoryItemRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
+}
+
+// RevokeInventoryItemsRequest
+FBPServerRevokeInventoryItemsRequest UPFServerProxyLibrary::MakeBPServerRevokeInventoryItemsRequest(
+    TArray<FBPServerRevokeInventoryItem> InItems
+)
+{
+    FBPServerRevokeInventoryItemsRequest Out = FBPServerRevokeInventoryItemsRequest();
+    for (const FBPServerRevokeInventoryItem& elem : InItems)
+    {
+        Out.Data.Items.Add(elem.Data);
+    }
+
+    return Out;
+}
+
+// RevokeInventoryItemsResult
+void UPFServerProxyLibrary::BreakBPServerRevokeInventoryItemsResult(
+    const FBPServerRevokeInventoryItemsResult& In
+    , TArray<FBPServerRevokeItemError>& OutErrors
+)
+{
+    for (const PlayFab::ServerModels::FRevokeItemError& elem : In.Data.Errors)
+    {
+        OutErrors.Add(FBPServerRevokeItemError(elem));
+    }
+
 }
 
 // RevokeInventoryResult
 void UPFServerProxyLibrary::BreakBPServerRevokeInventoryResult(
     const FBPServerRevokeInventoryResult& In
- )
+)
 {
-    
+
+}
+
+// RevokeItemError
+FBPServerRevokeItemError UPFServerProxyLibrary::MakeBPServerRevokeItemError(
+    FString InError
+    , FBPServerRevokeInventoryItem InItem
+)
+{
+    FBPServerRevokeItemError Out = FBPServerRevokeItemError();
+    Out.Data.Error = InError;
+    Out.Data.Item = MakeShareable(new PlayFab::ServerModels::FRevokeInventoryItem(InItem.Data));
+
+    return Out;
+}
+void UPFServerProxyLibrary::BreakBPServerRevokeItemError(
+    const FBPServerRevokeItemError& In
+    , FString& OutError
+    , FBPServerRevokeInventoryItem& OutItem
+)
+{
+    OutError = In.Data.Error;
+    if (In.Data.Item.IsValid()) { OutItem.Data = *In.Data.Item; }
+
 }
 
 // ScriptExecutionError
 FBPServerScriptExecutionError UPFServerProxyLibrary::MakeBPServerScriptExecutionError(
     FString InError
-	, FString InMessage
-	, FString InStackTrace
-    )
+    , FString InMessage
+    , FString InStackTrace
+)
 {
     FBPServerScriptExecutionError Out = FBPServerScriptExecutionError();
     Out.Data.Error = InError;
-	Out.Data.Message = InMessage;
-	Out.Data.StackTrace = InStackTrace;
-	
+    Out.Data.Message = InMessage;
+    Out.Data.StackTrace = InStackTrace;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerScriptExecutionError(
     const FBPServerScriptExecutionError& In
-	, FString& OutError
-	, FString& OutMessage
-	, FString& OutStackTrace
- )
+    , FString& OutError
+    , FString& OutMessage
+    , FString& OutStackTrace
+)
 {
     OutError = In.Data.Error;
-	OutMessage = In.Data.Message;
-	OutStackTrace = In.Data.StackTrace;
-	
+    OutMessage = In.Data.Message;
+    OutStackTrace = In.Data.StackTrace;
+
 }
 
 // SendCustomAccountRecoveryEmailRequest
 FBPServerSendCustomAccountRecoveryEmailRequest UPFServerProxyLibrary::MakeBPServerSendCustomAccountRecoveryEmailRequest(
     FString InEmail
-	, FString InEmailTemplateId
-	, FString InUsername
-    )
+    , FString InEmailTemplateId
+    , FString InUsername
+)
 {
     FBPServerSendCustomAccountRecoveryEmailRequest Out = FBPServerSendCustomAccountRecoveryEmailRequest();
     Out.Data.Email = InEmail;
-	Out.Data.EmailTemplateId = InEmailTemplateId;
-	Out.Data.Username = InUsername;
-	
+    Out.Data.EmailTemplateId = InEmailTemplateId;
+    Out.Data.Username = InUsername;
+
     return Out;
 }
 
 // SendCustomAccountRecoveryEmailResult
 void UPFServerProxyLibrary::BreakBPServerSendCustomAccountRecoveryEmailResult(
     const FBPServerSendCustomAccountRecoveryEmailResult& In
- )
+)
 {
-    
+
 }
 
 // SendEmailFromTemplateRequest
 FBPServerSendEmailFromTemplateRequest UPFServerProxyLibrary::MakeBPServerSendEmailFromTemplateRequest(
     FString InEmailTemplateId
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPServerSendEmailFromTemplateRequest Out = FBPServerSendEmailFromTemplateRequest();
     Out.Data.EmailTemplateId = InEmailTemplateId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // SendEmailFromTemplateResult
 void UPFServerProxyLibrary::BreakBPServerSendEmailFromTemplateResult(
     const FBPServerSendEmailFromTemplateResult& In
- )
+)
 {
-    
+
 }
 
 // SendPushNotificationRequest
 FBPServerSendPushNotificationRequest UPFServerProxyLibrary::MakeBPServerSendPushNotificationRequest(
     TArray<FBPServerAdvancedPushPlatformMsg> InAdvancedPlatformDelivery
-	, FString InMessage
-	, FBPServerPushNotificationPackage InPackage
-	, FString InRecipient
-	, FString InSubject
-	, TArray<EBPServerPushNotificationPlatform> InTargetPlatforms
-    )
+    , FString InMessage
+    , FBPServerPushNotificationPackage InPackage
+    , FString InRecipient
+    , FString InSubject
+    , TArray<EBPServerPushNotificationPlatform> InTargetPlatforms
+)
 {
     FBPServerSendPushNotificationRequest Out = FBPServerSendPushNotificationRequest();
     for (const FBPServerAdvancedPushPlatformMsg& elem : InAdvancedPlatformDelivery)
-	{
-		Out.Data.AdvancedPlatformDelivery.Add(elem.Data);
-	}
-	Out.Data.Message = InMessage;
-	Out.Data.Package = MakeShareable(new PlayFab::ServerModels::FPushNotificationPackage(InPackage.Data));
-	Out.Data.Recipient = InRecipient;
-	Out.Data.Subject = InSubject;
-	for (const EBPServerPushNotificationPlatform& elem : InTargetPlatforms)
-	{
-		Out.Data.TargetPlatforms.Add(static_cast<PlayFab::ServerModels::PushNotificationPlatform>(static_cast<uint8>(elem)));
-	}
-	
+    {
+        Out.Data.AdvancedPlatformDelivery.Add(elem.Data);
+    }
+    Out.Data.Message = InMessage;
+    Out.Data.Package = MakeShareable(new PlayFab::ServerModels::FPushNotificationPackage(InPackage.Data));
+    Out.Data.Recipient = InRecipient;
+    Out.Data.Subject = InSubject;
+    for (const EBPServerPushNotificationPlatform& elem : InTargetPlatforms)
+    {
+        Out.Data.TargetPlatforms.Add(static_cast<PlayFab::ServerModels::PushNotificationPlatform>(static_cast<uint8>(elem)));
+    }
+
     return Out;
 }
 
 // SendPushNotificationResult
 void UPFServerProxyLibrary::BreakBPServerSendPushNotificationResult(
     const FBPServerSendPushNotificationResult& In
- )
+)
 {
-    
+
 }
 
 // SetFriendTagsRequest
 FBPServerSetFriendTagsRequest UPFServerProxyLibrary::MakeBPServerSetFriendTagsRequest(
     FString InFriendPlayFabId
-	, FString InPlayFabId
-	, TArray<FString> InTags
-    )
+    , FString InPlayFabId
+    , TArray<FString> InTags
+)
 {
     FBPServerSetFriendTagsRequest Out = FBPServerSetFriendTagsRequest();
     Out.Data.FriendPlayFabId = InFriendPlayFabId;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Tags = InTags;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Tags = InTags;
+
     return Out;
 }
 
 // SetGameServerInstanceDataRequest
 FBPServerSetGameServerInstanceDataRequest UPFServerProxyLibrary::MakeBPServerSetGameServerInstanceDataRequest(
     FString InGameServerData
-	, FString InLobbyId
-    )
+    , FString InLobbyId
+)
 {
     FBPServerSetGameServerInstanceDataRequest Out = FBPServerSetGameServerInstanceDataRequest();
     Out.Data.GameServerData = InGameServerData;
-	Out.Data.LobbyId = InLobbyId;
-	
+    Out.Data.LobbyId = InLobbyId;
+
     return Out;
 }
 
 // SetGameServerInstanceDataResult
 void UPFServerProxyLibrary::BreakBPServerSetGameServerInstanceDataResult(
     const FBPServerSetGameServerInstanceDataResult& In
- )
+)
 {
-    
+
 }
 
 // SetGameServerInstanceStateRequest
 FBPServerSetGameServerInstanceStateRequest UPFServerProxyLibrary::MakeBPServerSetGameServerInstanceStateRequest(
     FString InLobbyId
-	, EBPServerGameInstanceState InState
-    )
+    , EBPServerGameInstanceState InState
+)
 {
     FBPServerSetGameServerInstanceStateRequest Out = FBPServerSetGameServerInstanceStateRequest();
     Out.Data.LobbyId = InLobbyId;
-	Out.Data.State = static_cast<PlayFab::ServerModels::GameInstanceState>(static_cast<uint8>(InState));
-	
+    Out.Data.State = static_cast<PlayFab::ServerModels::GameInstanceState>(static_cast<uint8>(InState));
+
     return Out;
 }
 
 // SetGameServerInstanceStateResult
 void UPFServerProxyLibrary::BreakBPServerSetGameServerInstanceStateResult(
     const FBPServerSetGameServerInstanceStateResult& In
- )
+)
 {
-    
+
 }
 
 // SetGameServerInstanceTagsRequest
 FBPServerSetGameServerInstanceTagsRequest UPFServerProxyLibrary::MakeBPServerSetGameServerInstanceTagsRequest(
     FString InLobbyId
-	, TMap<FString, FString> InTags
-    )
+    , TMap<FString, FString> InTags
+)
 {
     FBPServerSetGameServerInstanceTagsRequest Out = FBPServerSetGameServerInstanceTagsRequest();
     Out.Data.LobbyId = InLobbyId;
-	Out.Data.Tags = InTags;
-	
+    Out.Data.Tags = InTags;
+
     return Out;
 }
 
 // SetGameServerInstanceTagsResult
 void UPFServerProxyLibrary::BreakBPServerSetGameServerInstanceTagsResult(
     const FBPServerSetGameServerInstanceTagsResult& In
- )
+)
 {
-    
+
 }
 
 // SetPlayerSecretRequest
 FBPServerSetPlayerSecretRequest UPFServerProxyLibrary::MakeBPServerSetPlayerSecretRequest(
     FString InPlayerSecret
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPServerSetPlayerSecretRequest Out = FBPServerSetPlayerSecretRequest();
     Out.Data.PlayerSecret = InPlayerSecret;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // SetPlayerSecretResult
 void UPFServerProxyLibrary::BreakBPServerSetPlayerSecretResult(
     const FBPServerSetPlayerSecretResult& In
- )
+)
 {
-    
+
 }
 
 // SetPublisherDataRequest
 FBPServerSetPublisherDataRequest UPFServerProxyLibrary::MakeBPServerSetPublisherDataRequest(
     FString InKey
-	, FString InValue
-    )
+    , FString InValue
+)
 {
     FBPServerSetPublisherDataRequest Out = FBPServerSetPublisherDataRequest();
     Out.Data.Key = InKey;
-	Out.Data.Value = InValue;
-	
+    Out.Data.Value = InValue;
+
     return Out;
 }
 
 // SetPublisherDataResult
 void UPFServerProxyLibrary::BreakBPServerSetPublisherDataResult(
     const FBPServerSetPublisherDataResult& In
- )
+)
 {
-    
+
 }
 
 // SetTitleDataRequest
 FBPServerSetTitleDataRequest UPFServerProxyLibrary::MakeBPServerSetTitleDataRequest(
     FString InKey
-	, FString InValue
-    )
+    , FString InValue
+)
 {
     FBPServerSetTitleDataRequest Out = FBPServerSetTitleDataRequest();
     Out.Data.Key = InKey;
-	Out.Data.Value = InValue;
-	
+    Out.Data.Value = InValue;
+
     return Out;
 }
 
 // SetTitleDataResult
 void UPFServerProxyLibrary::BreakBPServerSetTitleDataResult(
     const FBPServerSetTitleDataResult& In
- )
+)
 {
-    
+
 }
 
 // SharedGroupDataRecord
 FBPServerSharedGroupDataRecord UPFServerProxyLibrary::MakeBPServerSharedGroupDataRecord(
     FDateTime InLastUpdated
-	, FString InLastUpdatedBy
-	, EBPServerUserDataPermission InPermission
-	, FString InValue
-    )
+    , FString InLastUpdatedBy
+    , EBPServerUserDataPermission InPermission
+    , FString InValue
+)
 {
     FBPServerSharedGroupDataRecord Out = FBPServerSharedGroupDataRecord();
     Out.Data.LastUpdated = InLastUpdated;
-	Out.Data.LastUpdatedBy = InLastUpdatedBy;
-	Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
-	Out.Data.Value = InValue;
-	
+    Out.Data.LastUpdatedBy = InLastUpdatedBy;
+    Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
+    Out.Data.Value = InValue;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerSharedGroupDataRecord(
     const FBPServerSharedGroupDataRecord& In
-	, FDateTime& OutLastUpdated
-	, FString& OutLastUpdatedBy
-	, EBPServerUserDataPermission& OutPermission
-	, FString& OutValue
- )
+    , FDateTime& OutLastUpdated
+    , FString& OutLastUpdatedBy
+    , EBPServerUserDataPermission& OutPermission
+    , FString& OutValue
+)
 {
     OutLastUpdated = In.Data.LastUpdated;
-	OutLastUpdatedBy = In.Data.LastUpdatedBy;
-	if (In.Data.Permission.notNull()) {OutPermission = static_cast<EBPServerUserDataPermission>(static_cast<uint8>(In.Data.Permission.mValue));}
-	OutValue = In.Data.Value;
-	
+    OutLastUpdatedBy = In.Data.LastUpdatedBy;
+    if (In.Data.Permission.notNull()) { OutPermission = static_cast<EBPServerUserDataPermission>(static_cast<uint8>(In.Data.Permission.mValue)); }
+    OutValue = In.Data.Value;
+
 }
 
 // StatisticModel
 FBPServerStatisticModel UPFServerProxyLibrary::MakeBPServerStatisticModel(
     FString InName
-	, int32 InValue
-	, int32 InVersion
-    )
+    , int32 InValue
+    , int32 InVersion
+)
 {
     FBPServerStatisticModel Out = FBPServerStatisticModel();
     Out.Data.Name = InName;
-	Out.Data.Value = InValue;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.Value = InValue;
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerStatisticModel(
     const FBPServerStatisticModel& In
-	, FString& OutName
-	, int32& OutValue
-	, int32& OutVersion
- )
+    , FString& OutName
+    , int32& OutValue
+    , int32& OutVersion
+)
 {
     OutName = In.Data.Name;
-	OutValue = In.Data.Value;
-	OutVersion = In.Data.Version;
-	
+    OutValue = In.Data.Value;
+    OutVersion = In.Data.Version;
+
 }
 
 // StatisticNameVersion
 FBPServerStatisticNameVersion UPFServerProxyLibrary::MakeBPServerStatisticNameVersion(
     FString InStatisticName
-	, int32 InVersion
-    )
+    , int32 InVersion
+)
 {
     FBPServerStatisticNameVersion Out = FBPServerStatisticNameVersion();
     Out.Data.StatisticName = InStatisticName;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerStatisticNameVersion(
     const FBPServerStatisticNameVersion& In
-	, FString& OutStatisticName
-	, int32& OutVersion
- )
+    , FString& OutStatisticName
+    , int32& OutVersion
+)
 {
     OutStatisticName = In.Data.StatisticName;
-	OutVersion = In.Data.Version;
-	
+    OutVersion = In.Data.Version;
+
 }
 
 // StatisticUpdate
 FBPServerStatisticUpdate UPFServerProxyLibrary::MakeBPServerStatisticUpdate(
     FString InStatisticName
-	, int32 InValue
-	, int32 InVersion
-    )
+    , int32 InValue
+    , int32 InVersion
+)
 {
     FBPServerStatisticUpdate Out = FBPServerStatisticUpdate();
     Out.Data.StatisticName = InStatisticName;
-	Out.Data.Value = InValue;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.Value = InValue;
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerStatisticUpdate(
     const FBPServerStatisticUpdate& In
-	, FString& OutStatisticName
-	, int32& OutValue
-	, int32& OutVersion
- )
+    , FString& OutStatisticName
+    , int32& OutValue
+    , int32& OutVersion
+)
 {
     OutStatisticName = In.Data.StatisticName;
-	OutValue = In.Data.Value;
-	OutVersion = In.Data.Version;
-	
+    OutValue = In.Data.Value;
+    OutVersion = In.Data.Version;
+
 }
 
 // StatisticValue
 FBPServerStatisticValue UPFServerProxyLibrary::MakeBPServerStatisticValue(
     FString InStatisticName
-	, int32 InValue
-	, int32 InVersion
-    )
+    , int32 InValue
+    , int32 InVersion
+)
 {
     FBPServerStatisticValue Out = FBPServerStatisticValue();
     Out.Data.StatisticName = InStatisticName;
-	Out.Data.Value = InValue;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.Value = InValue;
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerStatisticValue(
     const FBPServerStatisticValue& In
-	, FString& OutStatisticName
-	, int32& OutValue
-	, int32& OutVersion
- )
+    , FString& OutStatisticName
+    , int32& OutValue
+    , int32& OutVersion
+)
 {
     OutStatisticName = In.Data.StatisticName;
-	OutValue = In.Data.Value;
-	OutVersion = In.Data.Version;
-	
+    OutValue = In.Data.Value;
+    OutVersion = In.Data.Version;
+
 }
 
 // SteamPlayFabIdPair
 FBPServerSteamPlayFabIdPair UPFServerProxyLibrary::MakeBPServerSteamPlayFabIdPair(
     FString InPlayFabId
-	, FString InSteamStringId
-    )
+    , FString InSteamStringId
+)
 {
     FBPServerSteamPlayFabIdPair Out = FBPServerSteamPlayFabIdPair();
     Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.SteamStringId = InSteamStringId;
-	
+    Out.Data.SteamStringId = InSteamStringId;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerSteamPlayFabIdPair(
     const FBPServerSteamPlayFabIdPair& In
-	, FString& OutPlayFabId
-	, FString& OutSteamStringId
- )
+    , FString& OutPlayFabId
+    , FString& OutSteamStringId
+)
 {
     OutPlayFabId = In.Data.PlayFabId;
-	OutSteamStringId = In.Data.SteamStringId;
-	
+    OutSteamStringId = In.Data.SteamStringId;
+
 }
 
 // SubscriptionModel
 FBPServerSubscriptionModel UPFServerProxyLibrary::MakeBPServerSubscriptionModel(
     FDateTime InExpiration
-	, FDateTime InInitialSubscriptionTime
-	, bool InIsActive
-	, EBPServerSubscriptionProviderStatus InStatus
-	, FString InSubscriptionId
-	, FString InSubscriptionItemId
-	, FString InSubscriptionProvider
-    )
+    , FDateTime InInitialSubscriptionTime
+    , bool InIsActive
+    , EBPServerSubscriptionProviderStatus InStatus
+    , FString InSubscriptionId
+    , FString InSubscriptionItemId
+    , FString InSubscriptionProvider
+)
 {
     FBPServerSubscriptionModel Out = FBPServerSubscriptionModel();
     Out.Data.Expiration = InExpiration;
-	Out.Data.InitialSubscriptionTime = InInitialSubscriptionTime;
-	Out.Data.IsActive = InIsActive;
-	Out.Data.Status = static_cast<PlayFab::ServerModels::SubscriptionProviderStatus>(static_cast<uint8>(InStatus));
-	Out.Data.SubscriptionId = InSubscriptionId;
-	Out.Data.SubscriptionItemId = InSubscriptionItemId;
-	Out.Data.SubscriptionProvider = InSubscriptionProvider;
-	
+    Out.Data.InitialSubscriptionTime = InInitialSubscriptionTime;
+    Out.Data.IsActive = InIsActive;
+    Out.Data.Status = static_cast<PlayFab::ServerModels::SubscriptionProviderStatus>(static_cast<uint8>(InStatus));
+    Out.Data.SubscriptionId = InSubscriptionId;
+    Out.Data.SubscriptionItemId = InSubscriptionItemId;
+    Out.Data.SubscriptionProvider = InSubscriptionProvider;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerSubscriptionModel(
     const FBPServerSubscriptionModel& In
-	, FDateTime& OutExpiration
-	, FDateTime& OutInitialSubscriptionTime
-	, bool& OutIsActive
-	, EBPServerSubscriptionProviderStatus& OutStatus
-	, FString& OutSubscriptionId
-	, FString& OutSubscriptionItemId
-	, FString& OutSubscriptionProvider
- )
+    , FDateTime& OutExpiration
+    , FDateTime& OutInitialSubscriptionTime
+    , bool& OutIsActive
+    , EBPServerSubscriptionProviderStatus& OutStatus
+    , FString& OutSubscriptionId
+    , FString& OutSubscriptionItemId
+    , FString& OutSubscriptionProvider
+)
 {
     OutExpiration = In.Data.Expiration;
-	OutInitialSubscriptionTime = In.Data.InitialSubscriptionTime;
-	OutIsActive = In.Data.IsActive;
-	if (In.Data.Status.notNull()) {OutStatus = static_cast<EBPServerSubscriptionProviderStatus>(static_cast<uint8>(In.Data.Status.mValue));}
-	OutSubscriptionId = In.Data.SubscriptionId;
-	OutSubscriptionItemId = In.Data.SubscriptionItemId;
-	OutSubscriptionProvider = In.Data.SubscriptionProvider;
-	
+    OutInitialSubscriptionTime = In.Data.InitialSubscriptionTime;
+    OutIsActive = In.Data.IsActive;
+    if (In.Data.Status.notNull()) { OutStatus = static_cast<EBPServerSubscriptionProviderStatus>(static_cast<uint8>(In.Data.Status.mValue)); }
+    OutSubscriptionId = In.Data.SubscriptionId;
+    OutSubscriptionItemId = In.Data.SubscriptionItemId;
+    OutSubscriptionProvider = In.Data.SubscriptionProvider;
+
 }
 
 // SubtractCharacterVirtualCurrencyRequest
 FBPServerSubtractCharacterVirtualCurrencyRequest UPFServerProxyLibrary::MakeBPServerSubtractCharacterVirtualCurrencyRequest(
     int32 InAmount
-	, FString InCharacterId
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-    )
+    , FString InCharacterId
+    , FString InPlayFabId
+    , FString InVirtualCurrency
+)
 {
     FBPServerSubtractCharacterVirtualCurrencyRequest Out = FBPServerSubtractCharacterVirtualCurrencyRequest();
     Out.Data.Amount = InAmount;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.VirtualCurrency = InVirtualCurrency;
-	
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.VirtualCurrency = InVirtualCurrency;
+
     return Out;
 }
 
 // SubtractUserVirtualCurrencyRequest
 FBPServerSubtractUserVirtualCurrencyRequest UPFServerProxyLibrary::MakeBPServerSubtractUserVirtualCurrencyRequest(
     int32 InAmount
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-    )
+    , FString InPlayFabId
+    , FString InVirtualCurrency
+)
 {
     FBPServerSubtractUserVirtualCurrencyRequest Out = FBPServerSubtractUserVirtualCurrencyRequest();
     Out.Data.Amount = InAmount;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.VirtualCurrency = InVirtualCurrency;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.VirtualCurrency = InVirtualCurrency;
+
     return Out;
 }
 
 // TagModel
 FBPServerTagModel UPFServerProxyLibrary::MakeBPServerTagModel(
     FString InTagValue
-    )
+)
 {
     FBPServerTagModel Out = FBPServerTagModel();
     Out.Data.TagValue = InTagValue;
-	
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerTagModel(
     const FBPServerTagModel& In
-	, FString& OutTagValue
- )
+    , FString& OutTagValue
+)
 {
     OutTagValue = In.Data.TagValue;
-	
+
 }
 
 // TitleNewsItem
 FBPServerTitleNewsItem UPFServerProxyLibrary::MakeBPServerTitleNewsItem(
     FString InBody
-	, FString InNewsId
-	, FDateTime InTimestamp
-	, FString InTitle
-    )
+    , FString InNewsId
+    , FDateTime InTimestamp
+    , FString InTitle
+)
 {
     FBPServerTitleNewsItem Out = FBPServerTitleNewsItem();
     Out.Data.Body = InBody;
-	Out.Data.NewsId = InNewsId;
-	Out.Data.Timestamp = InTimestamp;
-	Out.Data.Title = InTitle;
-	
+    Out.Data.NewsId = InNewsId;
+    Out.Data.Timestamp = InTimestamp;
+    Out.Data.Title = InTitle;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerTitleNewsItem(
     const FBPServerTitleNewsItem& In
-	, FString& OutBody
-	, FString& OutNewsId
-	, FDateTime& OutTimestamp
-	, FString& OutTitle
- )
+    , FString& OutBody
+    , FString& OutNewsId
+    , FDateTime& OutTimestamp
+    , FString& OutTitle
+)
 {
     OutBody = In.Data.Body;
-	OutNewsId = In.Data.NewsId;
-	OutTimestamp = In.Data.Timestamp;
-	OutTitle = In.Data.Title;
-	
+    OutNewsId = In.Data.NewsId;
+    OutTimestamp = In.Data.Timestamp;
+    OutTitle = In.Data.Title;
+
 }
 
 // UnlockContainerInstanceRequest
 FBPServerUnlockContainerInstanceRequest UPFServerProxyLibrary::MakeBPServerUnlockContainerInstanceRequest(
     FString InCatalogVersion
-	, FString InCharacterId
-	, FString InContainerItemInstanceId
-	, FString InKeyItemInstanceId
-	, FString InPlayFabId
-    )
+    , FString InCharacterId
+    , FString InContainerItemInstanceId
+    , FString InKeyItemInstanceId
+    , FString InPlayFabId
+)
 {
     FBPServerUnlockContainerInstanceRequest Out = FBPServerUnlockContainerInstanceRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.ContainerItemInstanceId = InContainerItemInstanceId;
-	Out.Data.KeyItemInstanceId = InKeyItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.ContainerItemInstanceId = InContainerItemInstanceId;
+    Out.Data.KeyItemInstanceId = InKeyItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UnlockContainerItemRequest
 FBPServerUnlockContainerItemRequest UPFServerProxyLibrary::MakeBPServerUnlockContainerItemRequest(
     FString InCatalogVersion
-	, FString InCharacterId
-	, FString InContainerItemId
-	, FString InPlayFabId
-    )
+    , FString InCharacterId
+    , FString InContainerItemId
+    , FString InPlayFabId
+)
 {
     FBPServerUnlockContainerItemRequest Out = FBPServerUnlockContainerItemRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.ContainerItemId = InContainerItemId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.ContainerItemId = InContainerItemId;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UnlockContainerItemResult
 void UPFServerProxyLibrary::BreakBPServerUnlockContainerItemResult(
     const FBPServerUnlockContainerItemResult& In
-	, TArray<FBPServerItemInstance>& OutGrantedItems
-	, FString& OutUnlockedItemInstanceId
-	, FString& OutUnlockedWithItemInstanceId
-	, TMap<FString, int32>& OutVirtualCurrency
- )
+    , TArray<FBPServerItemInstance>& OutGrantedItems
+    , FString& OutUnlockedItemInstanceId
+    , FString& OutUnlockedWithItemInstanceId
+    , TMap<FString, int32>& OutVirtualCurrency
+)
 {
     for (const PlayFab::ServerModels::FItemInstance& elem : In.Data.GrantedItems)
-	{
-		OutGrantedItems.Add(FBPServerItemInstance(elem));
-	}
-	OutUnlockedItemInstanceId = In.Data.UnlockedItemInstanceId;
-	OutUnlockedWithItemInstanceId = In.Data.UnlockedWithItemInstanceId;
-	for (auto& elem : In.Data.VirtualCurrency)
-	{
-		const uint32 value = elem.Value;
-		OutVirtualCurrency.Add(elem.Key, static_cast<int32>(value));
-	}
-	
+    {
+        OutGrantedItems.Add(FBPServerItemInstance(elem));
+    }
+    OutUnlockedItemInstanceId = In.Data.UnlockedItemInstanceId;
+    OutUnlockedWithItemInstanceId = In.Data.UnlockedWithItemInstanceId;
+    for (auto& elem : In.Data.VirtualCurrency)
+    {
+        const uint32 value = elem.Value;
+        OutVirtualCurrency.Add(elem.Key, static_cast<int32>(value));
+    }
+
 }
 
 // UpdateAvatarUrlRequest
 FBPServerUpdateAvatarUrlRequest UPFServerProxyLibrary::MakeBPServerUpdateAvatarUrlRequest(
     FString InImageUrl
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPServerUpdateAvatarUrlRequest Out = FBPServerUpdateAvatarUrlRequest();
     Out.Data.ImageUrl = InImageUrl;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UpdateBanRequest
 FBPServerUpdateBanRequest UPFServerProxyLibrary::MakeBPServerUpdateBanRequest(
     bool InActive
-	, FString InBanId
-	, FDateTime InExpires
-	, FString InIPAddress
-	, FString InMACAddress
-	, bool InPermanent
-	, FString InReason
-    )
+    , FString InBanId
+    , FDateTime InExpires
+    , FString InIPAddress
+    , FString InMACAddress
+    , bool InPermanent
+    , FString InReason
+)
 {
     FBPServerUpdateBanRequest Out = FBPServerUpdateBanRequest();
     Out.Data.Active = InActive;
-	Out.Data.BanId = InBanId;
-	Out.Data.Expires = InExpires;
-	Out.Data.IPAddress = InIPAddress;
-	Out.Data.MACAddress = InMACAddress;
-	Out.Data.Permanent = InPermanent;
-	Out.Data.Reason = InReason;
-	
+    Out.Data.BanId = InBanId;
+    Out.Data.Expires = InExpires;
+    Out.Data.IPAddress = InIPAddress;
+    Out.Data.MACAddress = InMACAddress;
+    Out.Data.Permanent = InPermanent;
+    Out.Data.Reason = InReason;
+
     return Out;
 }
 
 // UpdateBansRequest
 FBPServerUpdateBansRequest UPFServerProxyLibrary::MakeBPServerUpdateBansRequest(
     TArray<FBPServerUpdateBanRequest> InBans
-    )
+)
 {
     FBPServerUpdateBansRequest Out = FBPServerUpdateBansRequest();
     for (const FBPServerUpdateBanRequest& elem : InBans)
-	{
-		Out.Data.Bans.Add(elem.Data);
-	}
-	
+    {
+        Out.Data.Bans.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // UpdateBansResult
 void UPFServerProxyLibrary::BreakBPServerUpdateBansResult(
     const FBPServerUpdateBansResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
- )
+    , TArray<FBPServerBanInfo>& OutBanData
+)
 {
     for (const PlayFab::ServerModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPServerBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPServerBanInfo(elem));
+    }
+
 }
 
 // UpdateCharacterDataRequest
 FBPServerUpdateCharacterDataRequest UPFServerProxyLibrary::MakeBPServerUpdateCharacterDataRequest(
     FString InCharacterId
-	, TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, EBPServerUserDataPermission InPermission
-	, FString InPlayFabId
-    )
+    , TMap<FString, FString> InData
+    , TArray<FString> InKeysToRemove
+    , EBPServerUserDataPermission InPermission
+    , FString InPlayFabId
+)
 {
     FBPServerUpdateCharacterDataRequest Out = FBPServerUpdateCharacterDataRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.Data = InData;
-	Out.Data.KeysToRemove = InKeysToRemove;
-	Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.Data = InData;
+    Out.Data.KeysToRemove = InKeysToRemove;
+    Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UpdateCharacterDataResult
 void UPFServerProxyLibrary::BreakBPServerUpdateCharacterDataResult(
     const FBPServerUpdateCharacterDataResult& In
-	, int32& OutDataVersion
- )
+    , int32& OutDataVersion
+)
 {
     OutDataVersion = In.Data.DataVersion;
-	
+
 }
 
 // UpdateCharacterStatisticsRequest
 FBPServerUpdateCharacterStatisticsRequest UPFServerProxyLibrary::MakeBPServerUpdateCharacterStatisticsRequest(
     FString InCharacterId
-	, TMap<FString, int32> InCharacterStatistics
-	, FString InPlayFabId
-    )
+    , TMap<FString, int32> InCharacterStatistics
+    , FString InPlayFabId
+)
 {
     FBPServerUpdateCharacterStatisticsRequest Out = FBPServerUpdateCharacterStatisticsRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.CharacterStatistics = InCharacterStatistics;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CharacterStatistics = InCharacterStatistics;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UpdateCharacterStatisticsResult
 void UPFServerProxyLibrary::BreakBPServerUpdateCharacterStatisticsResult(
     const FBPServerUpdateCharacterStatisticsResult& In
- )
+)
 {
-    
+
 }
 
 // UpdatePlayerStatisticsRequest
 FBPServerUpdatePlayerStatisticsRequest UPFServerProxyLibrary::MakeBPServerUpdatePlayerStatisticsRequest(
     bool InForceUpdate
-	, FString InPlayFabId
-	, TArray<FBPServerStatisticUpdate> InStatistics
-    )
+    , FString InPlayFabId
+    , TArray<FBPServerStatisticUpdate> InStatistics
+)
 {
     FBPServerUpdatePlayerStatisticsRequest Out = FBPServerUpdatePlayerStatisticsRequest();
     Out.Data.ForceUpdate = InForceUpdate;
-	Out.Data.PlayFabId = InPlayFabId;
-	for (const FBPServerStatisticUpdate& elem : InStatistics)
-	{
-		Out.Data.Statistics.Add(elem.Data);
-	}
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    for (const FBPServerStatisticUpdate& elem : InStatistics)
+    {
+        Out.Data.Statistics.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // UpdatePlayerStatisticsResult
 void UPFServerProxyLibrary::BreakBPServerUpdatePlayerStatisticsResult(
     const FBPServerUpdatePlayerStatisticsResult& In
- )
+)
 {
-    
+
 }
 
 // UpdateSharedGroupDataRequest
 FBPServerUpdateSharedGroupDataRequest UPFServerProxyLibrary::MakeBPServerUpdateSharedGroupDataRequest(
     TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, EBPServerUserDataPermission InPermission
-	, FString InSharedGroupId
-    )
+    , TArray<FString> InKeysToRemove
+    , EBPServerUserDataPermission InPermission
+    , FString InSharedGroupId
+)
 {
     FBPServerUpdateSharedGroupDataRequest Out = FBPServerUpdateSharedGroupDataRequest();
     Out.Data.Data = InData;
-	Out.Data.KeysToRemove = InKeysToRemove;
-	Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
-	Out.Data.SharedGroupId = InSharedGroupId;
-	
+    Out.Data.KeysToRemove = InKeysToRemove;
+    Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
+    Out.Data.SharedGroupId = InSharedGroupId;
+
     return Out;
 }
 
 // UpdateSharedGroupDataResult
 void UPFServerProxyLibrary::BreakBPServerUpdateSharedGroupDataResult(
     const FBPServerUpdateSharedGroupDataResult& In
- )
+)
 {
-    
+
 }
 
 // UpdateUserDataRequest
 FBPServerUpdateUserDataRequest UPFServerProxyLibrary::MakeBPServerUpdateUserDataRequest(
     TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, EBPServerUserDataPermission InPermission
-	, FString InPlayFabId
-    )
+    , TArray<FString> InKeysToRemove
+    , EBPServerUserDataPermission InPermission
+    , FString InPlayFabId
+)
 {
     FBPServerUpdateUserDataRequest Out = FBPServerUpdateUserDataRequest();
     Out.Data.Data = InData;
-	Out.Data.KeysToRemove = InKeysToRemove;
-	Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.KeysToRemove = InKeysToRemove;
+    Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UpdateUserDataResult
 void UPFServerProxyLibrary::BreakBPServerUpdateUserDataResult(
     const FBPServerUpdateUserDataResult& In
-	, int32& OutDataVersion
- )
+    , int32& OutDataVersion
+)
 {
     OutDataVersion = In.Data.DataVersion;
-	
+
 }
 
 // UpdateUserInternalDataRequest
 FBPServerUpdateUserInternalDataRequest UPFServerProxyLibrary::MakeBPServerUpdateUserInternalDataRequest(
     TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-    )
+    , TArray<FString> InKeysToRemove
+    , FString InPlayFabId
+)
 {
     FBPServerUpdateUserInternalDataRequest Out = FBPServerUpdateUserInternalDataRequest();
     Out.Data.Data = InData;
-	Out.Data.KeysToRemove = InKeysToRemove;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.KeysToRemove = InKeysToRemove;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UpdateUserInventoryItemDataRequest
 FBPServerUpdateUserInventoryItemDataRequest UPFServerProxyLibrary::MakeBPServerUpdateUserInventoryItemDataRequest(
     FString InCharacterId
-	, TMap<FString, FString> InData
-	, FString InItemInstanceId
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-    )
+    , TMap<FString, FString> InData
+    , FString InItemInstanceId
+    , TArray<FString> InKeysToRemove
+    , FString InPlayFabId
+)
 {
     FBPServerUpdateUserInventoryItemDataRequest Out = FBPServerUpdateUserInventoryItemDataRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.Data = InData;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.KeysToRemove = InKeysToRemove;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.Data = InData;
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.KeysToRemove = InKeysToRemove;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UserAccountInfo
 FBPServerUserAccountInfo UPFServerProxyLibrary::MakeBPServerUserAccountInfo(
     FBPServerUserAndroidDeviceInfo InAndroidDeviceInfo
-	, FDateTime InCreated
-	, FBPServerUserCustomIdInfo InCustomIdInfo
-	, FBPServerUserFacebookInfo InFacebookInfo
-	, FBPServerUserGameCenterInfo InGameCenterInfo
-	, FBPServerUserGoogleInfo InGoogleInfo
-	, FBPServerUserIosDeviceInfo InIosDeviceInfo
-	, FBPServerUserKongregateInfo InKongregateInfo
-	, FString InPlayFabId
-	, FBPServerUserPrivateAccountInfo InPrivateInfo
-	, FBPServerUserPsnInfo InPsnInfo
-	, FBPServerUserSteamInfo InSteamInfo
-	, FBPServerUserTitleInfo InTitleInfo
-	, FBPServerUserTwitchInfo InTwitchInfo
-	, FString InUsername
-	, FBPServerUserXboxInfo InXboxInfo
-    )
+    , FDateTime InCreated
+    , FBPServerUserCustomIdInfo InCustomIdInfo
+    , FBPServerUserFacebookInfo InFacebookInfo
+    , FBPServerUserGameCenterInfo InGameCenterInfo
+    , FBPServerUserGoogleInfo InGoogleInfo
+    , FBPServerUserIosDeviceInfo InIosDeviceInfo
+    , FBPServerUserKongregateInfo InKongregateInfo
+    , FString InPlayFabId
+    , FBPServerUserPrivateAccountInfo InPrivateInfo
+    , FBPServerUserPsnInfo InPsnInfo
+    , FBPServerUserSteamInfo InSteamInfo
+    , FBPServerUserTitleInfo InTitleInfo
+    , FBPServerUserTwitchInfo InTwitchInfo
+    , FString InUsername
+    , FBPServerUserXboxInfo InXboxInfo
+)
 {
     FBPServerUserAccountInfo Out = FBPServerUserAccountInfo();
     Out.Data.AndroidDeviceInfo = MakeShareable(new PlayFab::ServerModels::FUserAndroidDeviceInfo(InAndroidDeviceInfo.Data));
-	Out.Data.Created = InCreated;
-	Out.Data.CustomIdInfo = MakeShareable(new PlayFab::ServerModels::FUserCustomIdInfo(InCustomIdInfo.Data));
-	Out.Data.FacebookInfo = MakeShareable(new PlayFab::ServerModels::FUserFacebookInfo(InFacebookInfo.Data));
-	Out.Data.GameCenterInfo = MakeShareable(new PlayFab::ServerModels::FUserGameCenterInfo(InGameCenterInfo.Data));
-	Out.Data.GoogleInfo = MakeShareable(new PlayFab::ServerModels::FUserGoogleInfo(InGoogleInfo.Data));
-	Out.Data.IosDeviceInfo = MakeShareable(new PlayFab::ServerModels::FUserIosDeviceInfo(InIosDeviceInfo.Data));
-	Out.Data.KongregateInfo = MakeShareable(new PlayFab::ServerModels::FUserKongregateInfo(InKongregateInfo.Data));
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.PrivateInfo = MakeShareable(new PlayFab::ServerModels::FUserPrivateAccountInfo(InPrivateInfo.Data));
-	Out.Data.PsnInfo = MakeShareable(new PlayFab::ServerModels::FUserPsnInfo(InPsnInfo.Data));
-	Out.Data.SteamInfo = MakeShareable(new PlayFab::ServerModels::FUserSteamInfo(InSteamInfo.Data));
-	Out.Data.TitleInfo = MakeShareable(new PlayFab::ServerModels::FUserTitleInfo(InTitleInfo.Data));
-	Out.Data.TwitchInfo = MakeShareable(new PlayFab::ServerModels::FUserTwitchInfo(InTwitchInfo.Data));
-	Out.Data.Username = InUsername;
-	Out.Data.XboxInfo = MakeShareable(new PlayFab::ServerModels::FUserXboxInfo(InXboxInfo.Data));
-	
+    Out.Data.Created = InCreated;
+    Out.Data.CustomIdInfo = MakeShareable(new PlayFab::ServerModels::FUserCustomIdInfo(InCustomIdInfo.Data));
+    Out.Data.FacebookInfo = MakeShareable(new PlayFab::ServerModels::FUserFacebookInfo(InFacebookInfo.Data));
+    Out.Data.GameCenterInfo = MakeShareable(new PlayFab::ServerModels::FUserGameCenterInfo(InGameCenterInfo.Data));
+    Out.Data.GoogleInfo = MakeShareable(new PlayFab::ServerModels::FUserGoogleInfo(InGoogleInfo.Data));
+    Out.Data.IosDeviceInfo = MakeShareable(new PlayFab::ServerModels::FUserIosDeviceInfo(InIosDeviceInfo.Data));
+    Out.Data.KongregateInfo = MakeShareable(new PlayFab::ServerModels::FUserKongregateInfo(InKongregateInfo.Data));
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.PrivateInfo = MakeShareable(new PlayFab::ServerModels::FUserPrivateAccountInfo(InPrivateInfo.Data));
+    Out.Data.PsnInfo = MakeShareable(new PlayFab::ServerModels::FUserPsnInfo(InPsnInfo.Data));
+    Out.Data.SteamInfo = MakeShareable(new PlayFab::ServerModels::FUserSteamInfo(InSteamInfo.Data));
+    Out.Data.TitleInfo = MakeShareable(new PlayFab::ServerModels::FUserTitleInfo(InTitleInfo.Data));
+    Out.Data.TwitchInfo = MakeShareable(new PlayFab::ServerModels::FUserTwitchInfo(InTwitchInfo.Data));
+    Out.Data.Username = InUsername;
+    Out.Data.XboxInfo = MakeShareable(new PlayFab::ServerModels::FUserXboxInfo(InXboxInfo.Data));
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserAccountInfo(
     const FBPServerUserAccountInfo& In
-	, FBPServerUserAndroidDeviceInfo& OutAndroidDeviceInfo
-	, FDateTime& OutCreated
-	, FBPServerUserCustomIdInfo& OutCustomIdInfo
-	, FBPServerUserFacebookInfo& OutFacebookInfo
-	, FBPServerUserGameCenterInfo& OutGameCenterInfo
-	, FBPServerUserGoogleInfo& OutGoogleInfo
-	, FBPServerUserIosDeviceInfo& OutIosDeviceInfo
-	, FBPServerUserKongregateInfo& OutKongregateInfo
-	, FString& OutPlayFabId
-	, FBPServerUserPrivateAccountInfo& OutPrivateInfo
-	, FBPServerUserPsnInfo& OutPsnInfo
-	, FBPServerUserSteamInfo& OutSteamInfo
-	, FBPServerUserTitleInfo& OutTitleInfo
-	, FBPServerUserTwitchInfo& OutTwitchInfo
-	, FString& OutUsername
-	, FBPServerUserXboxInfo& OutXboxInfo
- )
+    , FBPServerUserAndroidDeviceInfo& OutAndroidDeviceInfo
+    , FDateTime& OutCreated
+    , FBPServerUserCustomIdInfo& OutCustomIdInfo
+    , FBPServerUserFacebookInfo& OutFacebookInfo
+    , FBPServerUserGameCenterInfo& OutGameCenterInfo
+    , FBPServerUserGoogleInfo& OutGoogleInfo
+    , FBPServerUserIosDeviceInfo& OutIosDeviceInfo
+    , FBPServerUserKongregateInfo& OutKongregateInfo
+    , FString& OutPlayFabId
+    , FBPServerUserPrivateAccountInfo& OutPrivateInfo
+    , FBPServerUserPsnInfo& OutPsnInfo
+    , FBPServerUserSteamInfo& OutSteamInfo
+    , FBPServerUserTitleInfo& OutTitleInfo
+    , FBPServerUserTwitchInfo& OutTwitchInfo
+    , FString& OutUsername
+    , FBPServerUserXboxInfo& OutXboxInfo
+)
 {
-    if (In.Data.AndroidDeviceInfo.IsValid()) {OutAndroidDeviceInfo.Data = *In.Data.AndroidDeviceInfo;}
-	OutCreated = In.Data.Created;
-	if (In.Data.CustomIdInfo.IsValid()) {OutCustomIdInfo.Data = *In.Data.CustomIdInfo;}
-	if (In.Data.FacebookInfo.IsValid()) {OutFacebookInfo.Data = *In.Data.FacebookInfo;}
-	if (In.Data.GameCenterInfo.IsValid()) {OutGameCenterInfo.Data = *In.Data.GameCenterInfo;}
-	if (In.Data.GoogleInfo.IsValid()) {OutGoogleInfo.Data = *In.Data.GoogleInfo;}
-	if (In.Data.IosDeviceInfo.IsValid()) {OutIosDeviceInfo.Data = *In.Data.IosDeviceInfo;}
-	if (In.Data.KongregateInfo.IsValid()) {OutKongregateInfo.Data = *In.Data.KongregateInfo;}
-	OutPlayFabId = In.Data.PlayFabId;
-	if (In.Data.PrivateInfo.IsValid()) {OutPrivateInfo.Data = *In.Data.PrivateInfo;}
-	if (In.Data.PsnInfo.IsValid()) {OutPsnInfo.Data = *In.Data.PsnInfo;}
-	if (In.Data.SteamInfo.IsValid()) {OutSteamInfo.Data = *In.Data.SteamInfo;}
-	if (In.Data.TitleInfo.IsValid()) {OutTitleInfo.Data = *In.Data.TitleInfo;}
-	if (In.Data.TwitchInfo.IsValid()) {OutTwitchInfo.Data = *In.Data.TwitchInfo;}
-	OutUsername = In.Data.Username;
-	if (In.Data.XboxInfo.IsValid()) {OutXboxInfo.Data = *In.Data.XboxInfo;}
-	
+    if (In.Data.AndroidDeviceInfo.IsValid()) { OutAndroidDeviceInfo.Data = *In.Data.AndroidDeviceInfo; }
+    OutCreated = In.Data.Created;
+    if (In.Data.CustomIdInfo.IsValid()) { OutCustomIdInfo.Data = *In.Data.CustomIdInfo; }
+    if (In.Data.FacebookInfo.IsValid()) { OutFacebookInfo.Data = *In.Data.FacebookInfo; }
+    if (In.Data.GameCenterInfo.IsValid()) { OutGameCenterInfo.Data = *In.Data.GameCenterInfo; }
+    if (In.Data.GoogleInfo.IsValid()) { OutGoogleInfo.Data = *In.Data.GoogleInfo; }
+    if (In.Data.IosDeviceInfo.IsValid()) { OutIosDeviceInfo.Data = *In.Data.IosDeviceInfo; }
+    if (In.Data.KongregateInfo.IsValid()) { OutKongregateInfo.Data = *In.Data.KongregateInfo; }
+    OutPlayFabId = In.Data.PlayFabId;
+    if (In.Data.PrivateInfo.IsValid()) { OutPrivateInfo.Data = *In.Data.PrivateInfo; }
+    if (In.Data.PsnInfo.IsValid()) { OutPsnInfo.Data = *In.Data.PsnInfo; }
+    if (In.Data.SteamInfo.IsValid()) { OutSteamInfo.Data = *In.Data.SteamInfo; }
+    if (In.Data.TitleInfo.IsValid()) { OutTitleInfo.Data = *In.Data.TitleInfo; }
+    if (In.Data.TwitchInfo.IsValid()) { OutTwitchInfo.Data = *In.Data.TwitchInfo; }
+    OutUsername = In.Data.Username;
+    if (In.Data.XboxInfo.IsValid()) { OutXboxInfo.Data = *In.Data.XboxInfo; }
+
 }
 
 // UserAndroidDeviceInfo
 FBPServerUserAndroidDeviceInfo UPFServerProxyLibrary::MakeBPServerUserAndroidDeviceInfo(
     FString InAndroidDeviceId
-    )
+)
 {
     FBPServerUserAndroidDeviceInfo Out = FBPServerUserAndroidDeviceInfo();
     Out.Data.AndroidDeviceId = InAndroidDeviceId;
-	
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserAndroidDeviceInfo(
     const FBPServerUserAndroidDeviceInfo& In
-	, FString& OutAndroidDeviceId
- )
+    , FString& OutAndroidDeviceId
+)
 {
     OutAndroidDeviceId = In.Data.AndroidDeviceId;
-	
+
 }
 
 // UserCustomIdInfo
 FBPServerUserCustomIdInfo UPFServerProxyLibrary::MakeBPServerUserCustomIdInfo(
     FString InCustomId
-    )
+)
 {
     FBPServerUserCustomIdInfo Out = FBPServerUserCustomIdInfo();
     Out.Data.CustomId = InCustomId;
-	
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserCustomIdInfo(
     const FBPServerUserCustomIdInfo& In
-	, FString& OutCustomId
- )
+    , FString& OutCustomId
+)
 {
     OutCustomId = In.Data.CustomId;
-	
+
 }
 
 // UserDataRecord
 FBPServerUserDataRecord UPFServerProxyLibrary::MakeBPServerUserDataRecord(
     FDateTime InLastUpdated
-	, EBPServerUserDataPermission InPermission
-	, FString InValue
-    )
+    , EBPServerUserDataPermission InPermission
+    , FString InValue
+)
 {
     FBPServerUserDataRecord Out = FBPServerUserDataRecord();
     Out.Data.LastUpdated = InLastUpdated;
-	Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
-	Out.Data.Value = InValue;
-	
+    Out.Data.Permission = static_cast<PlayFab::ServerModels::UserDataPermission>(static_cast<uint8>(InPermission));
+    Out.Data.Value = InValue;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserDataRecord(
     const FBPServerUserDataRecord& In
-	, FDateTime& OutLastUpdated
-	, EBPServerUserDataPermission& OutPermission
-	, FString& OutValue
- )
+    , FDateTime& OutLastUpdated
+    , EBPServerUserDataPermission& OutPermission
+    , FString& OutValue
+)
 {
     OutLastUpdated = In.Data.LastUpdated;
-	if (In.Data.Permission.notNull()) {OutPermission = static_cast<EBPServerUserDataPermission>(static_cast<uint8>(In.Data.Permission.mValue));}
-	OutValue = In.Data.Value;
-	
+    if (In.Data.Permission.notNull()) { OutPermission = static_cast<EBPServerUserDataPermission>(static_cast<uint8>(In.Data.Permission.mValue)); }
+    OutValue = In.Data.Value;
+
 }
 
 // UserFacebookInfo
 FBPServerUserFacebookInfo UPFServerProxyLibrary::MakeBPServerUserFacebookInfo(
     FString InFacebookId
-	, FString InFullName
-    )
+    , FString InFullName
+)
 {
     FBPServerUserFacebookInfo Out = FBPServerUserFacebookInfo();
     Out.Data.FacebookId = InFacebookId;
-	Out.Data.FullName = InFullName;
-	
+    Out.Data.FullName = InFullName;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserFacebookInfo(
     const FBPServerUserFacebookInfo& In
-	, FString& OutFacebookId
-	, FString& OutFullName
- )
+    , FString& OutFacebookId
+    , FString& OutFullName
+)
 {
     OutFacebookId = In.Data.FacebookId;
-	OutFullName = In.Data.FullName;
-	
+    OutFullName = In.Data.FullName;
+
 }
 
 // UserGameCenterInfo
 FBPServerUserGameCenterInfo UPFServerProxyLibrary::MakeBPServerUserGameCenterInfo(
     FString InGameCenterId
-    )
+)
 {
     FBPServerUserGameCenterInfo Out = FBPServerUserGameCenterInfo();
     Out.Data.GameCenterId = InGameCenterId;
-	
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserGameCenterInfo(
     const FBPServerUserGameCenterInfo& In
-	, FString& OutGameCenterId
- )
+    , FString& OutGameCenterId
+)
 {
     OutGameCenterId = In.Data.GameCenterId;
-	
+
 }
 
 // UserGoogleInfo
 FBPServerUserGoogleInfo UPFServerProxyLibrary::MakeBPServerUserGoogleInfo(
     FString InGoogleEmail
-	, FString InGoogleGender
-	, FString InGoogleId
-	, FString InGoogleLocale
-    )
+    , FString InGoogleGender
+    , FString InGoogleId
+    , FString InGoogleLocale
+)
 {
     FBPServerUserGoogleInfo Out = FBPServerUserGoogleInfo();
     Out.Data.GoogleEmail = InGoogleEmail;
-	Out.Data.GoogleGender = InGoogleGender;
-	Out.Data.GoogleId = InGoogleId;
-	Out.Data.GoogleLocale = InGoogleLocale;
-	
+    Out.Data.GoogleGender = InGoogleGender;
+    Out.Data.GoogleId = InGoogleId;
+    Out.Data.GoogleLocale = InGoogleLocale;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserGoogleInfo(
     const FBPServerUserGoogleInfo& In
-	, FString& OutGoogleEmail
-	, FString& OutGoogleGender
-	, FString& OutGoogleId
-	, FString& OutGoogleLocale
- )
+    , FString& OutGoogleEmail
+    , FString& OutGoogleGender
+    , FString& OutGoogleId
+    , FString& OutGoogleLocale
+)
 {
     OutGoogleEmail = In.Data.GoogleEmail;
-	OutGoogleGender = In.Data.GoogleGender;
-	OutGoogleId = In.Data.GoogleId;
-	OutGoogleLocale = In.Data.GoogleLocale;
-	
+    OutGoogleGender = In.Data.GoogleGender;
+    OutGoogleId = In.Data.GoogleId;
+    OutGoogleLocale = In.Data.GoogleLocale;
+
 }
 
 // UserIosDeviceInfo
 FBPServerUserIosDeviceInfo UPFServerProxyLibrary::MakeBPServerUserIosDeviceInfo(
     FString InIosDeviceId
-    )
+)
 {
     FBPServerUserIosDeviceInfo Out = FBPServerUserIosDeviceInfo();
     Out.Data.IosDeviceId = InIosDeviceId;
-	
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserIosDeviceInfo(
     const FBPServerUserIosDeviceInfo& In
-	, FString& OutIosDeviceId
- )
+    , FString& OutIosDeviceId
+)
 {
     OutIosDeviceId = In.Data.IosDeviceId;
-	
+
 }
 
 // UserKongregateInfo
 FBPServerUserKongregateInfo UPFServerProxyLibrary::MakeBPServerUserKongregateInfo(
     FString InKongregateId
-	, FString InKongregateName
-    )
+    , FString InKongregateName
+)
 {
     FBPServerUserKongregateInfo Out = FBPServerUserKongregateInfo();
     Out.Data.KongregateId = InKongregateId;
-	Out.Data.KongregateName = InKongregateName;
-	
+    Out.Data.KongregateName = InKongregateName;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserKongregateInfo(
     const FBPServerUserKongregateInfo& In
-	, FString& OutKongregateId
-	, FString& OutKongregateName
- )
+    , FString& OutKongregateId
+    , FString& OutKongregateName
+)
 {
     OutKongregateId = In.Data.KongregateId;
-	OutKongregateName = In.Data.KongregateName;
-	
+    OutKongregateName = In.Data.KongregateName;
+
 }
 
 // UserPrivateAccountInfo
 FBPServerUserPrivateAccountInfo UPFServerProxyLibrary::MakeBPServerUserPrivateAccountInfo(
     FString InEmail
-    )
+)
 {
     FBPServerUserPrivateAccountInfo Out = FBPServerUserPrivateAccountInfo();
     Out.Data.Email = InEmail;
-	
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserPrivateAccountInfo(
     const FBPServerUserPrivateAccountInfo& In
-	, FString& OutEmail
- )
+    , FString& OutEmail
+)
 {
     OutEmail = In.Data.Email;
-	
+
 }
 
 // UserPsnInfo
 FBPServerUserPsnInfo UPFServerProxyLibrary::MakeBPServerUserPsnInfo(
     FString InPsnAccountId
-	, FString InPsnOnlineId
-    )
+    , FString InPsnOnlineId
+)
 {
     FBPServerUserPsnInfo Out = FBPServerUserPsnInfo();
     Out.Data.PsnAccountId = InPsnAccountId;
-	Out.Data.PsnOnlineId = InPsnOnlineId;
-	
+    Out.Data.PsnOnlineId = InPsnOnlineId;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserPsnInfo(
     const FBPServerUserPsnInfo& In
-	, FString& OutPsnAccountId
-	, FString& OutPsnOnlineId
- )
+    , FString& OutPsnAccountId
+    , FString& OutPsnOnlineId
+)
 {
     OutPsnAccountId = In.Data.PsnAccountId;
-	OutPsnOnlineId = In.Data.PsnOnlineId;
-	
+    OutPsnOnlineId = In.Data.PsnOnlineId;
+
 }
 
 // UserSteamInfo
 FBPServerUserSteamInfo UPFServerProxyLibrary::MakeBPServerUserSteamInfo(
     EBPServerTitleActivationStatus InSteamActivationStatus
-	, FString InSteamCountry
-	, EBPServerCurrency InSteamCurrency
-	, FString InSteamId
-    )
+    , FString InSteamCountry
+    , EBPServerCurrency InSteamCurrency
+    , FString InSteamId
+)
 {
     FBPServerUserSteamInfo Out = FBPServerUserSteamInfo();
     Out.Data.SteamActivationStatus = static_cast<PlayFab::ServerModels::TitleActivationStatus>(static_cast<uint8>(InSteamActivationStatus));
-	Out.Data.SteamCountry = InSteamCountry;
-	Out.Data.SteamCurrency = static_cast<PlayFab::ServerModels::Currency>(static_cast<uint8>(InSteamCurrency));
-	Out.Data.SteamId = InSteamId;
-	
+    Out.Data.SteamCountry = InSteamCountry;
+    Out.Data.SteamCurrency = static_cast<PlayFab::ServerModels::Currency>(static_cast<uint8>(InSteamCurrency));
+    Out.Data.SteamId = InSteamId;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserSteamInfo(
     const FBPServerUserSteamInfo& In
-	, EBPServerTitleActivationStatus& OutSteamActivationStatus
-	, FString& OutSteamCountry
-	, EBPServerCurrency& OutSteamCurrency
-	, FString& OutSteamId
- )
+    , EBPServerTitleActivationStatus& OutSteamActivationStatus
+    , FString& OutSteamCountry
+    , EBPServerCurrency& OutSteamCurrency
+    , FString& OutSteamId
+)
 {
-    if (In.Data.SteamActivationStatus.notNull()) {OutSteamActivationStatus = static_cast<EBPServerTitleActivationStatus>(static_cast<uint8>(In.Data.SteamActivationStatus.mValue));}
-	OutSteamCountry = In.Data.SteamCountry;
-	if (In.Data.SteamCurrency.notNull()) {OutSteamCurrency = static_cast<EBPServerCurrency>(static_cast<uint8>(In.Data.SteamCurrency.mValue));}
-	OutSteamId = In.Data.SteamId;
-	
+    if (In.Data.SteamActivationStatus.notNull()) { OutSteamActivationStatus = static_cast<EBPServerTitleActivationStatus>(static_cast<uint8>(In.Data.SteamActivationStatus.mValue)); }
+    OutSteamCountry = In.Data.SteamCountry;
+    if (In.Data.SteamCurrency.notNull()) { OutSteamCurrency = static_cast<EBPServerCurrency>(static_cast<uint8>(In.Data.SteamCurrency.mValue)); }
+    OutSteamId = In.Data.SteamId;
+
 }
 
 // UserTitleInfo
 FBPServerUserTitleInfo UPFServerProxyLibrary::MakeBPServerUserTitleInfo(
     FString InAvatarUrl
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InFirstLogin
-	, bool InisBanned
-	, FDateTime InLastLogin
-	, EBPServerUserOrigination InOrigination
-    )
+    , FDateTime InCreated
+    , FString InDisplayName
+    , FDateTime InFirstLogin
+    , bool InisBanned
+    , FDateTime InLastLogin
+    , EBPServerUserOrigination InOrigination
+)
 {
     FBPServerUserTitleInfo Out = FBPServerUserTitleInfo();
     Out.Data.AvatarUrl = InAvatarUrl;
-	Out.Data.Created = InCreated;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.FirstLogin = InFirstLogin;
-	Out.Data.isBanned = InisBanned;
-	Out.Data.LastLogin = InLastLogin;
-	Out.Data.Origination = static_cast<PlayFab::ServerModels::UserOrigination>(static_cast<uint8>(InOrigination));
-	
+    Out.Data.Created = InCreated;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.FirstLogin = InFirstLogin;
+    Out.Data.isBanned = InisBanned;
+    Out.Data.LastLogin = InLastLogin;
+    Out.Data.Origination = static_cast<PlayFab::ServerModels::UserOrigination>(static_cast<uint8>(InOrigination));
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserTitleInfo(
     const FBPServerUserTitleInfo& In
-	, FString& OutAvatarUrl
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutFirstLogin
-	, bool& OutisBanned
-	, FDateTime& OutLastLogin
-	, EBPServerUserOrigination& OutOrigination
- )
+    , FString& OutAvatarUrl
+    , FDateTime& OutCreated
+    , FString& OutDisplayName
+    , FDateTime& OutFirstLogin
+    , bool& OutisBanned
+    , FDateTime& OutLastLogin
+    , EBPServerUserOrigination& OutOrigination
+)
 {
     OutAvatarUrl = In.Data.AvatarUrl;
-	OutCreated = In.Data.Created;
-	OutDisplayName = In.Data.DisplayName;
-	OutFirstLogin = In.Data.FirstLogin;
-	OutisBanned = In.Data.isBanned;
-	OutLastLogin = In.Data.LastLogin;
-	if (In.Data.Origination.notNull()) {OutOrigination = static_cast<EBPServerUserOrigination>(static_cast<uint8>(In.Data.Origination.mValue));}
-	
+    OutCreated = In.Data.Created;
+    OutDisplayName = In.Data.DisplayName;
+    OutFirstLogin = In.Data.FirstLogin;
+    OutisBanned = In.Data.isBanned;
+    OutLastLogin = In.Data.LastLogin;
+    if (In.Data.Origination.notNull()) { OutOrigination = static_cast<EBPServerUserOrigination>(static_cast<uint8>(In.Data.Origination.mValue)); }
+
 }
 
 // UserTwitchInfo
 FBPServerUserTwitchInfo UPFServerProxyLibrary::MakeBPServerUserTwitchInfo(
     FString InTwitchId
-	, FString InTwitchUserName
-    )
+    , FString InTwitchUserName
+)
 {
     FBPServerUserTwitchInfo Out = FBPServerUserTwitchInfo();
     Out.Data.TwitchId = InTwitchId;
-	Out.Data.TwitchUserName = InTwitchUserName;
-	
+    Out.Data.TwitchUserName = InTwitchUserName;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserTwitchInfo(
     const FBPServerUserTwitchInfo& In
-	, FString& OutTwitchId
-	, FString& OutTwitchUserName
- )
+    , FString& OutTwitchId
+    , FString& OutTwitchUserName
+)
 {
     OutTwitchId = In.Data.TwitchId;
-	OutTwitchUserName = In.Data.TwitchUserName;
-	
+    OutTwitchUserName = In.Data.TwitchUserName;
+
 }
 
 // UserXboxInfo
 FBPServerUserXboxInfo UPFServerProxyLibrary::MakeBPServerUserXboxInfo(
     FString InXboxUserId
-    )
+)
 {
     FBPServerUserXboxInfo Out = FBPServerUserXboxInfo();
     Out.Data.XboxUserId = InXboxUserId;
-	
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerUserXboxInfo(
     const FBPServerUserXboxInfo& In
-	, FString& OutXboxUserId
- )
+    , FString& OutXboxUserId
+)
 {
     OutXboxUserId = In.Data.XboxUserId;
-	
+
 }
 
 // ValueToDateModel
 FBPServerValueToDateModel UPFServerProxyLibrary::MakeBPServerValueToDateModel(
     FString InCurrency
-	, int32 InTotalValue
-	, FString InTotalValueAsDecimal
-    )
+    , int32 InTotalValue
+    , FString InTotalValueAsDecimal
+)
 {
     FBPServerValueToDateModel Out = FBPServerValueToDateModel();
     Out.Data.Currency = InCurrency;
-	Out.Data.TotalValue = InTotalValue;
-	Out.Data.TotalValueAsDecimal = InTotalValueAsDecimal;
-	
+    Out.Data.TotalValue = InTotalValue;
+    Out.Data.TotalValueAsDecimal = InTotalValueAsDecimal;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerValueToDateModel(
     const FBPServerValueToDateModel& In
-	, FString& OutCurrency
-	, int32& OutTotalValue
-	, FString& OutTotalValueAsDecimal
- )
+    , FString& OutCurrency
+    , int32& OutTotalValue
+    , FString& OutTotalValueAsDecimal
+)
 {
     OutCurrency = In.Data.Currency;
-	OutTotalValue = In.Data.TotalValue;
-	OutTotalValueAsDecimal = In.Data.TotalValueAsDecimal;
-	
+    OutTotalValue = In.Data.TotalValue;
+    OutTotalValueAsDecimal = In.Data.TotalValueAsDecimal;
+
 }
 
 // VirtualCurrencyRechargeTime
 FBPServerVirtualCurrencyRechargeTime UPFServerProxyLibrary::MakeBPServerVirtualCurrencyRechargeTime(
     int32 InRechargeMax
-	, FDateTime InRechargeTime
-	, int32 InSecondsToRecharge
-    )
+    , FDateTime InRechargeTime
+    , int32 InSecondsToRecharge
+)
 {
     FBPServerVirtualCurrencyRechargeTime Out = FBPServerVirtualCurrencyRechargeTime();
     Out.Data.RechargeMax = InRechargeMax;
-	Out.Data.RechargeTime = InRechargeTime;
-	Out.Data.SecondsToRecharge = InSecondsToRecharge;
-	
+    Out.Data.RechargeTime = InRechargeTime;
+    Out.Data.SecondsToRecharge = InSecondsToRecharge;
+
     return Out;
 }
 void UPFServerProxyLibrary::BreakBPServerVirtualCurrencyRechargeTime(
     const FBPServerVirtualCurrencyRechargeTime& In
-	, int32& OutRechargeMax
-	, FDateTime& OutRechargeTime
-	, int32& OutSecondsToRecharge
- )
+    , int32& OutRechargeMax
+    , FDateTime& OutRechargeTime
+    , int32& OutSecondsToRecharge
+)
 {
     OutRechargeMax = In.Data.RechargeMax;
-	OutRechargeTime = In.Data.RechargeTime;
-	OutSecondsToRecharge = In.Data.SecondsToRecharge;
-	
+    OutRechargeTime = In.Data.RechargeTime;
+    OutSecondsToRecharge = In.Data.SecondsToRecharge;
+
 }
 
 // WriteEventResponse
 void UPFServerProxyLibrary::BreakBPServerWriteEventResponse(
     const FBPServerWriteEventResponse& In
-	, FString& OutEventId
- )
+    , FString& OutEventId
+)
 {
     OutEventId = In.Data.EventId;
-	
+
 }
 
 // WriteServerCharacterEventRequest
 FBPServerWriteServerCharacterEventRequest UPFServerProxyLibrary::MakeBPServerWriteServerCharacterEventRequest(
     TMap<FString, UPlayFabJsonValue*> InBody
-	, FString InCharacterId
-	, FString InEventName
-	, FString InPlayFabId
-	, FDateTime InTimestamp
-    )
+    , FString InCharacterId
+    , FString InEventName
+    , FString InPlayFabId
+    , FDateTime InTimestamp
+)
 {
     FBPServerWriteServerCharacterEventRequest Out = FBPServerWriteServerCharacterEventRequest();
     for (auto& elem : InBody)
-	{
-		const UPlayFabJsonValue* value = elem.Value;
-		Out.Data.Body.Add(elem.Key, value->GetRootValue());
-	}
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.EventName = InEventName;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Timestamp = InTimestamp;
-	
+    {
+        const UPlayFabJsonValue* value = elem.Value;
+        Out.Data.Body.Add(elem.Key, value->GetRootValue());
+    }
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.EventName = InEventName;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Timestamp = InTimestamp;
+
     return Out;
 }
 
 // WriteServerPlayerEventRequest
 FBPServerWriteServerPlayerEventRequest UPFServerProxyLibrary::MakeBPServerWriteServerPlayerEventRequest(
     TMap<FString, UPlayFabJsonValue*> InBody
-	, FString InEventName
-	, FString InPlayFabId
-	, FDateTime InTimestamp
-    )
+    , FString InEventName
+    , FString InPlayFabId
+    , FDateTime InTimestamp
+)
 {
     FBPServerWriteServerPlayerEventRequest Out = FBPServerWriteServerPlayerEventRequest();
     for (auto& elem : InBody)
-	{
-		const UPlayFabJsonValue* value = elem.Value;
-		Out.Data.Body.Add(elem.Key, value->GetRootValue());
-	}
-	Out.Data.EventName = InEventName;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Timestamp = InTimestamp;
-	
+    {
+        const UPlayFabJsonValue* value = elem.Value;
+        Out.Data.Body.Add(elem.Key, value->GetRootValue());
+    }
+    Out.Data.EventName = InEventName;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Timestamp = InTimestamp;
+
     return Out;
 }
 
 // WriteTitleEventRequest
 FBPServerWriteTitleEventRequest UPFServerProxyLibrary::MakeBPServerWriteTitleEventRequest(
     TMap<FString, UPlayFabJsonValue*> InBody
-	, FString InEventName
-	, FDateTime InTimestamp
-    )
+    , FString InEventName
+    , FDateTime InTimestamp
+)
 {
     FBPServerWriteTitleEventRequest Out = FBPServerWriteTitleEventRequest();
     for (auto& elem : InBody)
-	{
-		const UPlayFabJsonValue* value = elem.Value;
-		Out.Data.Body.Add(elem.Key, value->GetRootValue());
-	}
-	Out.Data.EventName = InEventName;
-	Out.Data.Timestamp = InTimestamp;
-	
+    {
+        const UPlayFabJsonValue* value = elem.Value;
+        Out.Data.Body.Add(elem.Key, value->GetRootValue());
+    }
+    Out.Data.EventName = InEventName;
+    Out.Data.Timestamp = InTimestamp;
+
     return Out;
 }
 

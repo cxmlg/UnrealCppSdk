@@ -11337,6 +11337,52 @@ bool PlayFab::AdminModels::FRevokeBansResult::readFromValue(const TSharedPtr<FJs
     return HasSucceeded;
 }
 
+PlayFab::AdminModels::FRevokeInventoryItem::~FRevokeInventoryItem()
+{
+
+}
+
+void PlayFab::AdminModels::FRevokeInventoryItem::writeJSON(JsonWriter& writer) const
+{
+    writer->WriteObjectStart();
+
+    if (CharacterId.IsEmpty() == false) { writer->WriteIdentifierPrefix(TEXT("CharacterId")); writer->WriteValue(CharacterId); }
+
+    writer->WriteIdentifierPrefix(TEXT("ItemInstanceId")); writer->WriteValue(ItemInstanceId);
+
+    writer->WriteIdentifierPrefix(TEXT("PlayFabId")); writer->WriteValue(PlayFabId);
+
+    writer->WriteObjectEnd();
+}
+
+bool PlayFab::AdminModels::FRevokeInventoryItem::readFromValue(const TSharedPtr<FJsonObject>& obj)
+{
+    bool HasSucceeded = true;
+
+    const TSharedPtr<FJsonValue> CharacterIdValue = obj->TryGetField(TEXT("CharacterId"));
+    if (CharacterIdValue.IsValid() && !CharacterIdValue->IsNull())
+    {
+        FString TmpValue;
+        if (CharacterIdValue->TryGetString(TmpValue)) { CharacterId = TmpValue; }
+    }
+
+    const TSharedPtr<FJsonValue> ItemInstanceIdValue = obj->TryGetField(TEXT("ItemInstanceId"));
+    if (ItemInstanceIdValue.IsValid() && !ItemInstanceIdValue->IsNull())
+    {
+        FString TmpValue;
+        if (ItemInstanceIdValue->TryGetString(TmpValue)) { ItemInstanceId = TmpValue; }
+    }
+
+    const TSharedPtr<FJsonValue> PlayFabIdValue = obj->TryGetField(TEXT("PlayFabId"));
+    if (PlayFabIdValue.IsValid() && !PlayFabIdValue->IsNull())
+    {
+        FString TmpValue;
+        if (PlayFabIdValue->TryGetString(TmpValue)) { PlayFabId = TmpValue; }
+    }
+
+    return HasSucceeded;
+}
+
 PlayFab::AdminModels::FRevokeInventoryItemRequest::~FRevokeInventoryItemRequest()
 {
 
@@ -11379,6 +11425,112 @@ bool PlayFab::AdminModels::FRevokeInventoryItemRequest::readFromValue(const TSha
         FString TmpValue;
         if (PlayFabIdValue->TryGetString(TmpValue)) { PlayFabId = TmpValue; }
     }
+
+    return HasSucceeded;
+}
+
+PlayFab::AdminModels::FRevokeInventoryItemsRequest::~FRevokeInventoryItemsRequest()
+{
+
+}
+
+void PlayFab::AdminModels::FRevokeInventoryItemsRequest::writeJSON(JsonWriter& writer) const
+{
+    writer->WriteObjectStart();
+
+    writer->WriteArrayStart(TEXT("Items"));
+    for (const FRevokeInventoryItem& item : Items)
+        item.writeJSON(writer);
+    writer->WriteArrayEnd();
+
+
+    writer->WriteObjectEnd();
+}
+
+bool PlayFab::AdminModels::FRevokeInventoryItemsRequest::readFromValue(const TSharedPtr<FJsonObject>& obj)
+{
+    bool HasSucceeded = true;
+
+    const TArray<TSharedPtr<FJsonValue>>&ItemsArray = FPlayFabJsonHelpers::ReadArray(obj, TEXT("Items"));
+    for (int32 Idx = 0; Idx < ItemsArray.Num(); Idx++)
+    {
+        TSharedPtr<FJsonValue> CurrentItem = ItemsArray[Idx];
+        Items.Add(FRevokeInventoryItem(CurrentItem->AsObject()));
+    }
+
+
+    return HasSucceeded;
+}
+
+PlayFab::AdminModels::FRevokeItemError::~FRevokeItemError()
+{
+    //if (Item != nullptr) delete Item;
+
+}
+
+void PlayFab::AdminModels::FRevokeItemError::writeJSON(JsonWriter& writer) const
+{
+    writer->WriteObjectStart();
+
+    if (Error.IsEmpty() == false) { writer->WriteIdentifierPrefix(TEXT("Error")); writer->WriteValue(Error); }
+
+    if (Item.IsValid()) { writer->WriteIdentifierPrefix(TEXT("Item")); Item->writeJSON(writer); }
+
+    writer->WriteObjectEnd();
+}
+
+bool PlayFab::AdminModels::FRevokeItemError::readFromValue(const TSharedPtr<FJsonObject>& obj)
+{
+    bool HasSucceeded = true;
+
+    const TSharedPtr<FJsonValue> ErrorValue = obj->TryGetField(TEXT("Error"));
+    if (ErrorValue.IsValid() && !ErrorValue->IsNull())
+    {
+        FString TmpValue;
+        if (ErrorValue->TryGetString(TmpValue)) { Error = TmpValue; }
+    }
+
+    const TSharedPtr<FJsonValue> ItemValue = obj->TryGetField(TEXT("Item"));
+    if (ItemValue.IsValid() && !ItemValue->IsNull())
+    {
+        Item = MakeShareable(new FRevokeInventoryItem(ItemValue->AsObject()));
+    }
+
+    return HasSucceeded;
+}
+
+PlayFab::AdminModels::FRevokeInventoryItemsResult::~FRevokeInventoryItemsResult()
+{
+
+}
+
+void PlayFab::AdminModels::FRevokeInventoryItemsResult::writeJSON(JsonWriter& writer) const
+{
+    writer->WriteObjectStart();
+
+    if (Errors.Num() != 0)
+    {
+        writer->WriteArrayStart(TEXT("Errors"));
+        for (const FRevokeItemError& item : Errors)
+            item.writeJSON(writer);
+        writer->WriteArrayEnd();
+    }
+
+
+    writer->WriteObjectEnd();
+}
+
+bool PlayFab::AdminModels::FRevokeInventoryItemsResult::readFromValue(const TSharedPtr<FJsonObject>& obj)
+{
+    bool HasSucceeded = true;
+
+    const TArray<TSharedPtr<FJsonValue>>&ErrorsArray = FPlayFabJsonHelpers::ReadArray(obj, TEXT("Errors"));
+    for (int32 Idx = 0; Idx < ErrorsArray.Num(); Idx++)
+    {
+        TSharedPtr<FJsonValue> CurrentItem = ErrorsArray[Idx];
+        Errors.Add(FRevokeItemError(CurrentItem->AsObject()));
+    }
+
 
     return HasSucceeded;
 }

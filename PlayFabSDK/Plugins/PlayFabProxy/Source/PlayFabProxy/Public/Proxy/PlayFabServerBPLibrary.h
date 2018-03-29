@@ -17,2597 +17,2638 @@ public:
     
     // AdCampaignAttribution
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAdCampaignAttribution MakeBPServerAdCampaignAttribution(
-    FDateTime InAttributedAt
-	, FString InCampaignId
-	, FString InPlatform
-);
+        static FBPServerAdCampaignAttribution MakeBPServerAdCampaignAttribution(
+            FDateTime InAttributedAt
+            , FString InCampaignId
+            , FString InPlatform
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerAdCampaignAttribution(
-    const FBPServerAdCampaignAttribution& In
-	, FDateTime& OutAttributedAt
-	, FString& OutCampaignId
-	, FString& OutPlatform
+        static void BreakBPServerAdCampaignAttribution(
+            const FBPServerAdCampaignAttribution& In
+            , FDateTime& OutAttributedAt
+            , FString& OutCampaignId
+            , FString& OutPlatform
 );
 
     // AdCampaignAttributionModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAdCampaignAttributionModel MakeBPServerAdCampaignAttributionModel(
-    FDateTime InAttributedAt
-	, FString InCampaignId
-	, FString InPlatform
-);
+        static FBPServerAdCampaignAttributionModel MakeBPServerAdCampaignAttributionModel(
+            FDateTime InAttributedAt
+            , FString InCampaignId
+            , FString InPlatform
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerAdCampaignAttributionModel(
-    const FBPServerAdCampaignAttributionModel& In
-	, FDateTime& OutAttributedAt
-	, FString& OutCampaignId
-	, FString& OutPlatform
+        static void BreakBPServerAdCampaignAttributionModel(
+            const FBPServerAdCampaignAttributionModel& In
+            , FDateTime& OutAttributedAt
+            , FString& OutCampaignId
+            , FString& OutPlatform
 );
 
     // AddCharacterVirtualCurrencyRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAddCharacterVirtualCurrencyRequest MakeBPServerAddCharacterVirtualCurrencyRequest(
-    int32 InAmount
-	, FString InCharacterId
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-);
+        static FBPServerAddCharacterVirtualCurrencyRequest MakeBPServerAddCharacterVirtualCurrencyRequest(
+            int32 InAmount
+            , FString InCharacterId
+            , FString InPlayFabId
+            , FString InVirtualCurrency
+        );
 
     // AddFriendRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAddFriendRequest MakeBPServerAddFriendRequest(
-    FString InFriendEmail
-	, FString InFriendPlayFabId
-	, FString InFriendTitleDisplayName
-	, FString InFriendUsername
-	, FString InPlayFabId
-);
+        static FBPServerAddFriendRequest MakeBPServerAddFriendRequest(
+            FString InFriendEmail
+            , FString InFriendPlayFabId
+            , FString InFriendTitleDisplayName
+            , FString InFriendUsername
+            , FString InPlayFabId
+        );
 
     // AddPlayerTagRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAddPlayerTagRequest MakeBPServerAddPlayerTagRequest(
-    FString InPlayFabId
-	, FString InTagName
-);
+        static FBPServerAddPlayerTagRequest MakeBPServerAddPlayerTagRequest(
+            FString InPlayFabId
+            , FString InTagName
+        );
 
     // AddPlayerTagResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerAddPlayerTagResult(
-    const FBPServerAddPlayerTagResult& In
+        static void BreakBPServerAddPlayerTagResult(
+            const FBPServerAddPlayerTagResult& In
 );
 
     // AddSharedGroupMembersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAddSharedGroupMembersRequest MakeBPServerAddSharedGroupMembersRequest(
-    TArray<FString> InPlayFabIds
-	, FString InSharedGroupId
-);
+        static FBPServerAddSharedGroupMembersRequest MakeBPServerAddSharedGroupMembersRequest(
+            TArray<FString> InPlayFabIds
+            , FString InSharedGroupId
+        );
 
     // AddSharedGroupMembersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerAddSharedGroupMembersResult(
-    const FBPServerAddSharedGroupMembersResult& In
+        static void BreakBPServerAddSharedGroupMembersResult(
+            const FBPServerAddSharedGroupMembersResult& In
 );
 
     // AddUserVirtualCurrencyRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAddUserVirtualCurrencyRequest MakeBPServerAddUserVirtualCurrencyRequest(
-    int32 InAmount
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-);
+        static FBPServerAddUserVirtualCurrencyRequest MakeBPServerAddUserVirtualCurrencyRequest(
+            int32 InAmount
+            , FString InPlayFabId
+            , FString InVirtualCurrency
+        );
 
     // AdvancedPushPlatformMsg
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAdvancedPushPlatformMsg MakeBPServerAdvancedPushPlatformMsg(
-    FString InJson
-	, EBPServerPushNotificationPlatform InPlatform
-);
+        static FBPServerAdvancedPushPlatformMsg MakeBPServerAdvancedPushPlatformMsg(
+            FString InJson
+            , EBPServerPushNotificationPlatform InPlatform
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerAdvancedPushPlatformMsg(
-    const FBPServerAdvancedPushPlatformMsg& In
-	, FString& OutJson
-	, EBPServerPushNotificationPlatform& OutPlatform
+        static void BreakBPServerAdvancedPushPlatformMsg(
+            const FBPServerAdvancedPushPlatformMsg& In
+            , FString& OutJson
+            , EBPServerPushNotificationPlatform& OutPlatform
 );
 
     // AuthenticateSessionTicketRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAuthenticateSessionTicketRequest MakeBPServerAuthenticateSessionTicketRequest(
-    FString InSessionTicket
-);
+        static FBPServerAuthenticateSessionTicketRequest MakeBPServerAuthenticateSessionTicketRequest(
+            FString InSessionTicket
+        );
 
     // AuthenticateSessionTicketResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerAuthenticateSessionTicketResult(
-    const FBPServerAuthenticateSessionTicketResult& In
-	, FBPServerUserAccountInfo& OutUserInfo
+        static void BreakBPServerAuthenticateSessionTicketResult(
+            const FBPServerAuthenticateSessionTicketResult& In
+            , FBPServerUserAccountInfo& OutUserInfo
 );
 
     // AwardSteamAchievementItem
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAwardSteamAchievementItem MakeBPServerAwardSteamAchievementItem(
-    FString InAchievementName
-	, FString InPlayFabId
-	, bool InResult
-);
+        static FBPServerAwardSteamAchievementItem MakeBPServerAwardSteamAchievementItem(
+            FString InAchievementName
+            , FString InPlayFabId
+            , bool InResult
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerAwardSteamAchievementItem(
-    const FBPServerAwardSteamAchievementItem& In
-	, FString& OutAchievementName
-	, FString& OutPlayFabId
-	, bool& OutResult
+        static void BreakBPServerAwardSteamAchievementItem(
+            const FBPServerAwardSteamAchievementItem& In
+            , FString& OutAchievementName
+            , FString& OutPlayFabId
+            , bool& OutResult
 );
 
     // AwardSteamAchievementRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerAwardSteamAchievementRequest MakeBPServerAwardSteamAchievementRequest(
-    TArray<FBPServerAwardSteamAchievementItem> InAchievements
-);
+        static FBPServerAwardSteamAchievementRequest MakeBPServerAwardSteamAchievementRequest(
+            TArray<FBPServerAwardSteamAchievementItem> InAchievements
+        );
 
     // AwardSteamAchievementResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerAwardSteamAchievementResult(
-    const FBPServerAwardSteamAchievementResult& In
-	, TArray<FBPServerAwardSteamAchievementItem>& OutAchievementResults
+        static void BreakBPServerAwardSteamAchievementResult(
+            const FBPServerAwardSteamAchievementResult& In
+            , TArray<FBPServerAwardSteamAchievementItem>& OutAchievementResults
 );
 
     // BanInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerBanInfo MakeBPServerBanInfo(
-    bool InActive
-	, FString InBanId
-	, FDateTime InCreated
-	, FDateTime InExpires
-	, FString InIPAddress
-	, FString InMACAddress
-	, FString InPlayFabId
-	, FString InReason
-);
+        static FBPServerBanInfo MakeBPServerBanInfo(
+            bool InActive
+            , FString InBanId
+            , FDateTime InCreated
+            , FDateTime InExpires
+            , FString InIPAddress
+            , FString InMACAddress
+            , FString InPlayFabId
+            , FString InReason
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerBanInfo(
-    const FBPServerBanInfo& In
-	, bool& OutActive
-	, FString& OutBanId
-	, FDateTime& OutCreated
-	, FDateTime& OutExpires
-	, FString& OutIPAddress
-	, FString& OutMACAddress
-	, FString& OutPlayFabId
-	, FString& OutReason
+        static void BreakBPServerBanInfo(
+            const FBPServerBanInfo& In
+            , bool& OutActive
+            , FString& OutBanId
+            , FDateTime& OutCreated
+            , FDateTime& OutExpires
+            , FString& OutIPAddress
+            , FString& OutMACAddress
+            , FString& OutPlayFabId
+            , FString& OutReason
 );
 
     // BanRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerBanRequest MakeBPServerBanRequest(
-    int32 InDurationInHours
-	, FString InIPAddress
-	, FString InMACAddress
-	, FString InPlayFabId
-	, FString InReason
-);
+        static FBPServerBanRequest MakeBPServerBanRequest(
+            int32 InDurationInHours
+            , FString InIPAddress
+            , FString InMACAddress
+            , FString InPlayFabId
+            , FString InReason
+        );
 
     // BanUsersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerBanUsersRequest MakeBPServerBanUsersRequest(
-    TArray<FBPServerBanRequest> InBans
-);
+        static FBPServerBanUsersRequest MakeBPServerBanUsersRequest(
+            TArray<FBPServerBanRequest> InBans
+        );
 
     // BanUsersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerBanUsersResult(
-    const FBPServerBanUsersResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
+        static void BreakBPServerBanUsersResult(
+            const FBPServerBanUsersResult& In
+            , TArray<FBPServerBanInfo>& OutBanData
 );
 
     // CatalogItem
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerCatalogItem MakeBPServerCatalogItem(
-    FBPServerCatalogItemBundleInfo InBundle
-	, bool InCanBecomeCharacter
-	, FString InCatalogVersion
-	, FBPServerCatalogItemConsumableInfo InConsumable
-	, FBPServerCatalogItemContainerInfo InContainer
-	, FString InCustomData
-	, FString InDescription
-	, FString InDisplayName
-	, int32 InInitialLimitedEditionCount
-	, bool InIsLimitedEdition
-	, bool InIsStackable
-	, bool InIsTradable
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemImageUrl
-	, TMap<FString, int32> InRealCurrencyPrices
-	, TArray<FString> InTags
-	, TMap<FString, int32> InVirtualCurrencyPrices
-);
+        static FBPServerCatalogItem MakeBPServerCatalogItem(
+            FBPServerCatalogItemBundleInfo InBundle
+            , bool InCanBecomeCharacter
+            , FString InCatalogVersion
+            , FBPServerCatalogItemConsumableInfo InConsumable
+            , FBPServerCatalogItemContainerInfo InContainer
+            , FString InCustomData
+            , FString InDescription
+            , FString InDisplayName
+            , int32 InInitialLimitedEditionCount
+            , bool InIsLimitedEdition
+            , bool InIsStackable
+            , bool InIsTradable
+            , FString InItemClass
+            , FString InItemId
+            , FString InItemImageUrl
+            , TMap<FString, int32> InRealCurrencyPrices
+            , TArray<FString> InTags
+            , TMap<FString, int32> InVirtualCurrencyPrices
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerCatalogItem(
-    const FBPServerCatalogItem& In
-	, FBPServerCatalogItemBundleInfo& OutBundle
-	, bool& OutCanBecomeCharacter
-	, FString& OutCatalogVersion
-	, FBPServerCatalogItemConsumableInfo& OutConsumable
-	, FBPServerCatalogItemContainerInfo& OutContainer
-	, FString& OutCustomData
-	, FString& OutDescription
-	, FString& OutDisplayName
-	, int32& OutInitialLimitedEditionCount
-	, bool& OutIsLimitedEdition
-	, bool& OutIsStackable
-	, bool& OutIsTradable
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemImageUrl
-	, TMap<FString, int32>& OutRealCurrencyPrices
-	, TArray<FString>& OutTags
-	, TMap<FString, int32>& OutVirtualCurrencyPrices
+        static void BreakBPServerCatalogItem(
+            const FBPServerCatalogItem& In
+            , FBPServerCatalogItemBundleInfo& OutBundle
+            , bool& OutCanBecomeCharacter
+            , FString& OutCatalogVersion
+            , FBPServerCatalogItemConsumableInfo& OutConsumable
+            , FBPServerCatalogItemContainerInfo& OutContainer
+            , FString& OutCustomData
+            , FString& OutDescription
+            , FString& OutDisplayName
+            , int32& OutInitialLimitedEditionCount
+            , bool& OutIsLimitedEdition
+            , bool& OutIsStackable
+            , bool& OutIsTradable
+            , FString& OutItemClass
+            , FString& OutItemId
+            , FString& OutItemImageUrl
+            , TMap<FString, int32>& OutRealCurrencyPrices
+            , TArray<FString>& OutTags
+            , TMap<FString, int32>& OutVirtualCurrencyPrices
 );
 
     // CatalogItemBundleInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerCatalogItemBundleInfo MakeBPServerCatalogItemBundleInfo(
-    TArray<FString> InBundledItems
-	, TArray<FString> InBundledResultTables
-	, TMap<FString, int32> InBundledVirtualCurrencies
-);
+        static FBPServerCatalogItemBundleInfo MakeBPServerCatalogItemBundleInfo(
+            TArray<FString> InBundledItems
+            , TArray<FString> InBundledResultTables
+            , TMap<FString, int32> InBundledVirtualCurrencies
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerCatalogItemBundleInfo(
-    const FBPServerCatalogItemBundleInfo& In
-	, TArray<FString>& OutBundledItems
-	, TArray<FString>& OutBundledResultTables
-	, TMap<FString, int32>& OutBundledVirtualCurrencies
+        static void BreakBPServerCatalogItemBundleInfo(
+            const FBPServerCatalogItemBundleInfo& In
+            , TArray<FString>& OutBundledItems
+            , TArray<FString>& OutBundledResultTables
+            , TMap<FString, int32>& OutBundledVirtualCurrencies
 );
 
     // CatalogItemConsumableInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerCatalogItemConsumableInfo MakeBPServerCatalogItemConsumableInfo(
-    int32 InUsageCount
-	, int32 InUsagePeriod
-	, FString InUsagePeriodGroup
-);
+        static FBPServerCatalogItemConsumableInfo MakeBPServerCatalogItemConsumableInfo(
+            int32 InUsageCount
+            , int32 InUsagePeriod
+            , FString InUsagePeriodGroup
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerCatalogItemConsumableInfo(
-    const FBPServerCatalogItemConsumableInfo& In
-	, int32& OutUsageCount
-	, int32& OutUsagePeriod
-	, FString& OutUsagePeriodGroup
+        static void BreakBPServerCatalogItemConsumableInfo(
+            const FBPServerCatalogItemConsumableInfo& In
+            , int32& OutUsageCount
+            , int32& OutUsagePeriod
+            , FString& OutUsagePeriodGroup
 );
 
     // CatalogItemContainerInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerCatalogItemContainerInfo MakeBPServerCatalogItemContainerInfo(
-    TArray<FString> InItemContents
-	, FString InKeyItemId
-	, TArray<FString> InResultTableContents
-	, TMap<FString, int32> InVirtualCurrencyContents
-);
+        static FBPServerCatalogItemContainerInfo MakeBPServerCatalogItemContainerInfo(
+            TArray<FString> InItemContents
+            , FString InKeyItemId
+            , TArray<FString> InResultTableContents
+            , TMap<FString, int32> InVirtualCurrencyContents
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerCatalogItemContainerInfo(
-    const FBPServerCatalogItemContainerInfo& In
-	, TArray<FString>& OutItemContents
-	, FString& OutKeyItemId
-	, TArray<FString>& OutResultTableContents
-	, TMap<FString, int32>& OutVirtualCurrencyContents
+        static void BreakBPServerCatalogItemContainerInfo(
+            const FBPServerCatalogItemContainerInfo& In
+            , TArray<FString>& OutItemContents
+            , FString& OutKeyItemId
+            , TArray<FString>& OutResultTableContents
+            , TMap<FString, int32>& OutVirtualCurrencyContents
 );
 
     // CharacterInventory
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerCharacterInventory MakeBPServerCharacterInventory(
-    FString InCharacterId
-	, TArray<FBPServerItemInstance> InInventory
-);
+        static FBPServerCharacterInventory MakeBPServerCharacterInventory(
+            FString InCharacterId
+            , TArray<FBPServerItemInstance> InInventory
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerCharacterInventory(
-    const FBPServerCharacterInventory& In
-	, FString& OutCharacterId
-	, TArray<FBPServerItemInstance>& OutInventory
+        static void BreakBPServerCharacterInventory(
+            const FBPServerCharacterInventory& In
+            , FString& OutCharacterId
+            , TArray<FBPServerItemInstance>& OutInventory
 );
 
     // CharacterLeaderboardEntry
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerCharacterLeaderboardEntry MakeBPServerCharacterLeaderboardEntry(
-    FString InCharacterId
-	, FString InCharacterName
-	, FString InCharacterType
-	, FString InDisplayName
-	, FString InPlayFabId
-	, int32 InPosition
-	, int32 InStatValue
-);
+        static FBPServerCharacterLeaderboardEntry MakeBPServerCharacterLeaderboardEntry(
+            FString InCharacterId
+            , FString InCharacterName
+            , FString InCharacterType
+            , FString InDisplayName
+            , FString InPlayFabId
+            , int32 InPosition
+            , int32 InStatValue
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerCharacterLeaderboardEntry(
-    const FBPServerCharacterLeaderboardEntry& In
-	, FString& OutCharacterId
-	, FString& OutCharacterName
-	, FString& OutCharacterType
-	, FString& OutDisplayName
-	, FString& OutPlayFabId
-	, int32& OutPosition
-	, int32& OutStatValue
+        static void BreakBPServerCharacterLeaderboardEntry(
+            const FBPServerCharacterLeaderboardEntry& In
+            , FString& OutCharacterId
+            , FString& OutCharacterName
+            , FString& OutCharacterType
+            , FString& OutDisplayName
+            , FString& OutPlayFabId
+            , int32& OutPosition
+            , int32& OutStatValue
 );
 
     // CharacterResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerCharacterResult(
-    const FBPServerCharacterResult& In
-	, FString& OutCharacterId
-	, FString& OutCharacterName
-	, FString& OutCharacterType
+        static void BreakBPServerCharacterResult(
+            const FBPServerCharacterResult& In
+            , FString& OutCharacterId
+            , FString& OutCharacterName
+            , FString& OutCharacterType
 );
 
     // ConsumeItemRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerConsumeItemRequest MakeBPServerConsumeItemRequest(
-    FString InCharacterId
-	, int32 InConsumeCount
-	, FString InItemInstanceId
-	, FString InPlayFabId
-);
+        static FBPServerConsumeItemRequest MakeBPServerConsumeItemRequest(
+            FString InCharacterId
+            , int32 InConsumeCount
+            , FString InItemInstanceId
+            , FString InPlayFabId
+        );
 
     // ConsumeItemResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerConsumeItemResult(
-    const FBPServerConsumeItemResult& In
-	, FString& OutItemInstanceId
-	, int32& OutRemainingUses
+        static void BreakBPServerConsumeItemResult(
+            const FBPServerConsumeItemResult& In
+            , FString& OutItemInstanceId
+            , int32& OutRemainingUses
 );
 
     // ContactEmailInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerContactEmailInfo MakeBPServerContactEmailInfo(
-    FString InEmailAddress
-	, FString InName
-	, EBPServerEmailVerificationStatus InVerificationStatus
-);
+        static FBPServerContactEmailInfo MakeBPServerContactEmailInfo(
+            FString InEmailAddress
+            , FString InName
+            , EBPServerEmailVerificationStatus InVerificationStatus
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerContactEmailInfo(
-    const FBPServerContactEmailInfo& In
-	, FString& OutEmailAddress
-	, FString& OutName
-	, EBPServerEmailVerificationStatus& OutVerificationStatus
+        static void BreakBPServerContactEmailInfo(
+            const FBPServerContactEmailInfo& In
+            , FString& OutEmailAddress
+            , FString& OutName
+            , EBPServerEmailVerificationStatus& OutVerificationStatus
 );
 
     // ContactEmailInfoModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerContactEmailInfoModel MakeBPServerContactEmailInfoModel(
-    FString InEmailAddress
-	, FString InName
-	, EBPServerEmailVerificationStatus InVerificationStatus
-);
+        static FBPServerContactEmailInfoModel MakeBPServerContactEmailInfoModel(
+            FString InEmailAddress
+            , FString InName
+            , EBPServerEmailVerificationStatus InVerificationStatus
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerContactEmailInfoModel(
-    const FBPServerContactEmailInfoModel& In
-	, FString& OutEmailAddress
-	, FString& OutName
-	, EBPServerEmailVerificationStatus& OutVerificationStatus
+        static void BreakBPServerContactEmailInfoModel(
+            const FBPServerContactEmailInfoModel& In
+            , FString& OutEmailAddress
+            , FString& OutName
+            , EBPServerEmailVerificationStatus& OutVerificationStatus
 );
 
     // CreateSharedGroupRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerCreateSharedGroupRequest MakeBPServerCreateSharedGroupRequest(
-    FString InSharedGroupId
-);
+        static FBPServerCreateSharedGroupRequest MakeBPServerCreateSharedGroupRequest(
+            FString InSharedGroupId
+        );
 
     // CreateSharedGroupResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerCreateSharedGroupResult(
-    const FBPServerCreateSharedGroupResult& In
-	, FString& OutSharedGroupId
+        static void BreakBPServerCreateSharedGroupResult(
+            const FBPServerCreateSharedGroupResult& In
+            , FString& OutSharedGroupId
 );
 
     // DeleteCharacterFromUserRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerDeleteCharacterFromUserRequest MakeBPServerDeleteCharacterFromUserRequest(
-    FString InCharacterId
-	, FString InPlayFabId
-	, bool InSaveCharacterInventory
-);
+        static FBPServerDeleteCharacterFromUserRequest MakeBPServerDeleteCharacterFromUserRequest(
+            FString InCharacterId
+            , FString InPlayFabId
+            , bool InSaveCharacterInventory
+        );
 
     // DeleteCharacterFromUserResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerDeleteCharacterFromUserResult(
-    const FBPServerDeleteCharacterFromUserResult& In
+        static void BreakBPServerDeleteCharacterFromUserResult(
+            const FBPServerDeleteCharacterFromUserResult& In
 );
 
     // DeleteSharedGroupRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerDeleteSharedGroupRequest MakeBPServerDeleteSharedGroupRequest(
-    FString InSharedGroupId
-);
+        static FBPServerDeleteSharedGroupRequest MakeBPServerDeleteSharedGroupRequest(
+            FString InSharedGroupId
+        );
 
     // DeleteUsersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerDeleteUsersRequest MakeBPServerDeleteUsersRequest(
-    TArray<FString> InPlayFabIds
-);
+        static FBPServerDeleteUsersRequest MakeBPServerDeleteUsersRequest(
+            TArray<FString> InPlayFabIds
+        );
 
     // DeleteUsersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerDeleteUsersResult(
-    const FBPServerDeleteUsersResult& In
+        static void BreakBPServerDeleteUsersResult(
+            const FBPServerDeleteUsersResult& In
 );
 
     // DeregisterGameRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerDeregisterGameRequest MakeBPServerDeregisterGameRequest(
-    FString InLobbyId
-);
+        static FBPServerDeregisterGameRequest MakeBPServerDeregisterGameRequest(
+            FString InLobbyId
+        );
 
     // DeregisterGameResponse
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerDeregisterGameResponse(
-    const FBPServerDeregisterGameResponse& In
+        static void BreakBPServerDeregisterGameResponse(
+            const FBPServerDeregisterGameResponse& In
 );
 
     // EmptyResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerEmptyResult(
-    const FBPServerEmptyResult& In
+        static void BreakBPServerEmptyResult(
+            const FBPServerEmptyResult& In
 );
 
     // EvaluateRandomResultTableRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerEvaluateRandomResultTableRequest MakeBPServerEvaluateRandomResultTableRequest(
-    FString InCatalogVersion
-	, FString InTableId
-);
+        static FBPServerEvaluateRandomResultTableRequest MakeBPServerEvaluateRandomResultTableRequest(
+            FString InCatalogVersion
+            , FString InTableId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerEvaluateRandomResultTableRequest(
-    const FBPServerEvaluateRandomResultTableRequest& In
-	, FString& OutCatalogVersion
-	, FString& OutTableId
+        static void BreakBPServerEvaluateRandomResultTableRequest(
+            const FBPServerEvaluateRandomResultTableRequest& In
+            , FString& OutCatalogVersion
+            , FString& OutTableId
 );
 
     // EvaluateRandomResultTableResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerEvaluateRandomResultTableResult(
-    const FBPServerEvaluateRandomResultTableResult& In
-	, FString& OutResultItemId
+        static void BreakBPServerEvaluateRandomResultTableResult(
+            const FBPServerEvaluateRandomResultTableResult& In
+            , FString& OutResultItemId
 );
 
     // ExecuteCloudScriptResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerExecuteCloudScriptResult(
-    const FBPServerExecuteCloudScriptResult& In
-	, int32& OutAPIRequestsIssued
-	, FBPServerScriptExecutionError& OutError
-	, float& OutExecutionTimeSeconds
-	, FString& OutFunctionName
-	, UPlayFabJsonValue*& OutFunctionResult
-	, bool& OutFunctionResultTooLarge
-	, int32& OutHttpRequestsIssued
-	, TArray<FBPServerLogStatement>& OutLogs
-	, bool& OutLogsTooLarge
-	, int32& OutMemoryConsumedBytes
-	, float& OutProcessorTimeSeconds
-	, int32& OutRevision
+        static void BreakBPServerExecuteCloudScriptResult(
+            const FBPServerExecuteCloudScriptResult& In
+            , int32& OutAPIRequestsIssued
+            , FBPServerScriptExecutionError& OutError
+            , float& OutExecutionTimeSeconds
+            , FString& OutFunctionName
+            , UPlayFabJsonValue*& OutFunctionResult
+            , bool& OutFunctionResultTooLarge
+            , int32& OutHttpRequestsIssued
+            , TArray<FBPServerLogStatement>& OutLogs
+            , bool& OutLogsTooLarge
+            , int32& OutMemoryConsumedBytes
+            , float& OutProcessorTimeSeconds
+            , int32& OutRevision
 );
 
     // ExecuteCloudScriptServerRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerExecuteCloudScriptServerRequest MakeBPServerExecuteCloudScriptServerRequest(
-    FString InFunctionName
-	, UPlayFabJsonValue* InFunctionParameter
-	, bool InGeneratePlayStreamEvent
-	, FString InPlayFabId
-	, EBPServerCloudScriptRevisionOption InRevisionSelection
-	, int32 InSpecificRevision
-);
+        static FBPServerExecuteCloudScriptServerRequest MakeBPServerExecuteCloudScriptServerRequest(
+            FString InFunctionName
+            , UPlayFabJsonValue* InFunctionParameter
+            , bool InGeneratePlayStreamEvent
+            , FString InPlayFabId
+            , EBPServerCloudScriptRevisionOption InRevisionSelection
+            , int32 InSpecificRevision
+        );
 
     // FacebookPlayFabIdPair
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerFacebookPlayFabIdPair MakeBPServerFacebookPlayFabIdPair(
-    FString InFacebookId
-	, FString InPlayFabId
-);
+        static FBPServerFacebookPlayFabIdPair MakeBPServerFacebookPlayFabIdPair(
+            FString InFacebookId
+            , FString InPlayFabId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerFacebookPlayFabIdPair(
-    const FBPServerFacebookPlayFabIdPair& In
-	, FString& OutFacebookId
-	, FString& OutPlayFabId
+        static void BreakBPServerFacebookPlayFabIdPair(
+            const FBPServerFacebookPlayFabIdPair& In
+            , FString& OutFacebookId
+            , FString& OutPlayFabId
 );
 
     // FriendInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerFriendInfo MakeBPServerFriendInfo(
-    FString InCurrentMatchmakerLobbyId
-	, FBPServerUserFacebookInfo InFacebookInfo
-	, FString InFriendPlayFabId
-	, FBPServerUserGameCenterInfo InGameCenterInfo
-	, FBPServerPlayerProfileModel InProfile
-	, FBPServerUserSteamInfo InSteamInfo
-	, TArray<FString> InTags
-	, FString InTitleDisplayName
-	, FString InUsername
-);
+        static FBPServerFriendInfo MakeBPServerFriendInfo(
+            FString InCurrentMatchmakerLobbyId
+            , FBPServerUserFacebookInfo InFacebookInfo
+            , FString InFriendPlayFabId
+            , FBPServerUserGameCenterInfo InGameCenterInfo
+            , FBPServerPlayerProfileModel InProfile
+            , FBPServerUserSteamInfo InSteamInfo
+            , TArray<FString> InTags
+            , FString InTitleDisplayName
+            , FString InUsername
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerFriendInfo(
-    const FBPServerFriendInfo& In
-	, FString& OutCurrentMatchmakerLobbyId
-	, FBPServerUserFacebookInfo& OutFacebookInfo
-	, FString& OutFriendPlayFabId
-	, FBPServerUserGameCenterInfo& OutGameCenterInfo
-	, FBPServerPlayerProfileModel& OutProfile
-	, FBPServerUserSteamInfo& OutSteamInfo
-	, TArray<FString>& OutTags
-	, FString& OutTitleDisplayName
-	, FString& OutUsername
+        static void BreakBPServerFriendInfo(
+            const FBPServerFriendInfo& In
+            , FString& OutCurrentMatchmakerLobbyId
+            , FBPServerUserFacebookInfo& OutFacebookInfo
+            , FString& OutFriendPlayFabId
+            , FBPServerUserGameCenterInfo& OutGameCenterInfo
+            , FBPServerPlayerProfileModel& OutProfile
+            , FBPServerUserSteamInfo& OutSteamInfo
+            , TArray<FString>& OutTags
+            , FString& OutTitleDisplayName
+            , FString& OutUsername
 );
 
     // GetAllSegmentsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetAllSegmentsRequest MakeBPServerGetAllSegmentsRequest(
-    );
+        static FBPServerGetAllSegmentsRequest MakeBPServerGetAllSegmentsRequest(
+        );
 
     // GetAllSegmentsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetAllSegmentsResult(
-    const FBPServerGetAllSegmentsResult& In
-	, TArray<FBPServerGetSegmentResult>& OutSegments
+        static void BreakBPServerGetAllSegmentsResult(
+            const FBPServerGetAllSegmentsResult& In
+            , TArray<FBPServerGetSegmentResult>& OutSegments
 );
 
     // GetCatalogItemsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetCatalogItemsRequest MakeBPServerGetCatalogItemsRequest(
-    FString InCatalogVersion
-);
+        static FBPServerGetCatalogItemsRequest MakeBPServerGetCatalogItemsRequest(
+            FString InCatalogVersion
+        );
 
     // GetCatalogItemsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetCatalogItemsResult(
-    const FBPServerGetCatalogItemsResult& In
-	, TArray<FBPServerCatalogItem>& OutCatalog
+        static void BreakBPServerGetCatalogItemsResult(
+            const FBPServerGetCatalogItemsResult& In
+            , TArray<FBPServerCatalogItem>& OutCatalog
 );
 
     // GetCharacterDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetCharacterDataRequest MakeBPServerGetCharacterDataRequest(
-    FString InCharacterId
-	, int32 InIfChangedFromDataVersion
-	, TArray<FString> InKeys
-	, FString InPlayFabId
-);
+        static FBPServerGetCharacterDataRequest MakeBPServerGetCharacterDataRequest(
+            FString InCharacterId
+            , int32 InIfChangedFromDataVersion
+            , TArray<FString> InKeys
+            , FString InPlayFabId
+        );
 
     // GetCharacterDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetCharacterDataResult(
-    const FBPServerGetCharacterDataResult& In
-	, FString& OutCharacterId
-	, TMap<FString, FBPServerUserDataRecord>& OutData
-	, int32& OutDataVersion
-	, FString& OutPlayFabId
+        static void BreakBPServerGetCharacterDataResult(
+            const FBPServerGetCharacterDataResult& In
+            , FString& OutCharacterId
+            , TMap<FString, FBPServerUserDataRecord>& OutData
+            , int32& OutDataVersion
+            , FString& OutPlayFabId
 );
 
     // GetCharacterInventoryRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetCharacterInventoryRequest MakeBPServerGetCharacterInventoryRequest(
-    FString InCatalogVersion
-	, FString InCharacterId
-	, FString InPlayFabId
-);
+        static FBPServerGetCharacterInventoryRequest MakeBPServerGetCharacterInventoryRequest(
+            FString InCatalogVersion
+            , FString InCharacterId
+            , FString InPlayFabId
+        );
 
     // GetCharacterInventoryResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetCharacterInventoryResult(
-    const FBPServerGetCharacterInventoryResult& In
-	, FString& OutCharacterId
-	, TArray<FBPServerItemInstance>& OutInventory
-	, FString& OutPlayFabId
-	, TMap<FString, int32>& OutVirtualCurrency
-	, TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
+        static void BreakBPServerGetCharacterInventoryResult(
+            const FBPServerGetCharacterInventoryResult& In
+            , FString& OutCharacterId
+            , TArray<FBPServerItemInstance>& OutInventory
+            , FString& OutPlayFabId
+            , TMap<FString, int32>& OutVirtualCurrency
+            , TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
 );
 
     // GetCharacterLeaderboardRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetCharacterLeaderboardRequest MakeBPServerGetCharacterLeaderboardRequest(
-    FString InCharacterId
-	, FString InCharacterType
-	, int32 InMaxResultsCount
-	, int32 InStartPosition
-	, FString InStatisticName
-);
+        static FBPServerGetCharacterLeaderboardRequest MakeBPServerGetCharacterLeaderboardRequest(
+            FString InCharacterId
+            , FString InCharacterType
+            , int32 InMaxResultsCount
+            , int32 InStartPosition
+            , FString InStatisticName
+        );
 
     // GetCharacterLeaderboardResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetCharacterLeaderboardResult(
-    const FBPServerGetCharacterLeaderboardResult& In
-	, TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
+        static void BreakBPServerGetCharacterLeaderboardResult(
+            const FBPServerGetCharacterLeaderboardResult& In
+            , TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
 );
 
     // GetCharacterStatisticsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetCharacterStatisticsRequest MakeBPServerGetCharacterStatisticsRequest(
-    FString InCharacterId
-	, FString InPlayFabId
-);
+        static FBPServerGetCharacterStatisticsRequest MakeBPServerGetCharacterStatisticsRequest(
+            FString InCharacterId
+            , FString InPlayFabId
+        );
 
     // GetCharacterStatisticsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetCharacterStatisticsResult(
-    const FBPServerGetCharacterStatisticsResult& In
-	, FString& OutCharacterId
-	, TMap<FString, int32>& OutCharacterStatistics
-	, FString& OutPlayFabId
+        static void BreakBPServerGetCharacterStatisticsResult(
+            const FBPServerGetCharacterStatisticsResult& In
+            , FString& OutCharacterId
+            , TMap<FString, int32>& OutCharacterStatistics
+            , FString& OutPlayFabId
 );
 
     // GetContentDownloadUrlRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetContentDownloadUrlRequest MakeBPServerGetContentDownloadUrlRequest(
-    FString InHttpMethod
-	, FString InKey
-	, bool InThruCDN
-);
+        static FBPServerGetContentDownloadUrlRequest MakeBPServerGetContentDownloadUrlRequest(
+            FString InHttpMethod
+            , FString InKey
+            , bool InThruCDN
+        );
 
     // GetContentDownloadUrlResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetContentDownloadUrlResult(
-    const FBPServerGetContentDownloadUrlResult& In
-	, FString& OutURL
+        static void BreakBPServerGetContentDownloadUrlResult(
+            const FBPServerGetContentDownloadUrlResult& In
+            , FString& OutURL
 );
 
     // GetFriendLeaderboardRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetFriendLeaderboardRequest MakeBPServerGetFriendLeaderboardRequest(
-    bool InIncludeFacebookFriends
-	, bool InIncludeSteamFriends
-	, int32 InMaxResultsCount
-	, FString InPlayFabId
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-	, int32 InStartPosition
-	, FString InStatisticName
-	, bool InUseSpecificVersion
-	, int32 InVersion
-);
+        static FBPServerGetFriendLeaderboardRequest MakeBPServerGetFriendLeaderboardRequest(
+            bool InIncludeFacebookFriends
+            , bool InIncludeSteamFriends
+            , int32 InMaxResultsCount
+            , FString InPlayFabId
+            , FBPServerPlayerProfileViewConstraints InProfileConstraints
+            , int32 InStartPosition
+            , FString InStatisticName
+            , bool InUseSpecificVersion
+            , int32 InVersion
+        );
 
     // GetFriendsListRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetFriendsListRequest MakeBPServerGetFriendsListRequest(
-    bool InIncludeFacebookFriends
-	, bool InIncludeSteamFriends
-	, FString InPlayFabId
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-);
+        static FBPServerGetFriendsListRequest MakeBPServerGetFriendsListRequest(
+            bool InIncludeFacebookFriends
+            , bool InIncludeSteamFriends
+            , FString InPlayFabId
+            , FBPServerPlayerProfileViewConstraints InProfileConstraints
+        );
 
     // GetFriendsListResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetFriendsListResult(
-    const FBPServerGetFriendsListResult& In
-	, TArray<FBPServerFriendInfo>& OutFriends
+        static void BreakBPServerGetFriendsListResult(
+            const FBPServerGetFriendsListResult& In
+            , TArray<FBPServerFriendInfo>& OutFriends
 );
 
     // GetLeaderboardAroundCharacterRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetLeaderboardAroundCharacterRequest MakeBPServerGetLeaderboardAroundCharacterRequest(
-    FString InCharacterId
-	, FString InCharacterType
-	, int32 InMaxResultsCount
-	, FString InPlayFabId
-	, FString InStatisticName
-);
+        static FBPServerGetLeaderboardAroundCharacterRequest MakeBPServerGetLeaderboardAroundCharacterRequest(
+            FString InCharacterId
+            , FString InCharacterType
+            , int32 InMaxResultsCount
+            , FString InPlayFabId
+            , FString InStatisticName
+        );
 
     // GetLeaderboardAroundCharacterResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetLeaderboardAroundCharacterResult(
-    const FBPServerGetLeaderboardAroundCharacterResult& In
-	, TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
+        static void BreakBPServerGetLeaderboardAroundCharacterResult(
+            const FBPServerGetLeaderboardAroundCharacterResult& In
+            , TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
 );
 
     // GetLeaderboardAroundUserRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetLeaderboardAroundUserRequest MakeBPServerGetLeaderboardAroundUserRequest(
-    int32 InMaxResultsCount
-	, FString InPlayFabId
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-	, FString InStatisticName
-	, bool InUseSpecificVersion
-	, int32 InVersion
-);
+        static FBPServerGetLeaderboardAroundUserRequest MakeBPServerGetLeaderboardAroundUserRequest(
+            int32 InMaxResultsCount
+            , FString InPlayFabId
+            , FBPServerPlayerProfileViewConstraints InProfileConstraints
+            , FString InStatisticName
+            , bool InUseSpecificVersion
+            , int32 InVersion
+        );
 
     // GetLeaderboardAroundUserResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetLeaderboardAroundUserResult(
-    const FBPServerGetLeaderboardAroundUserResult& In
-	, TArray<FBPServerPlayerLeaderboardEntry>& OutLeaderboard
-	, FDateTime& OutNextReset
-	, int32& OutVersion
+        static void BreakBPServerGetLeaderboardAroundUserResult(
+            const FBPServerGetLeaderboardAroundUserResult& In
+            , TArray<FBPServerPlayerLeaderboardEntry>& OutLeaderboard
+            , FDateTime& OutNextReset
+            , int32& OutVersion
 );
 
     // GetLeaderboardForUsersCharactersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetLeaderboardForUsersCharactersRequest MakeBPServerGetLeaderboardForUsersCharactersRequest(
-    int32 InMaxResultsCount
-	, FString InPlayFabId
-	, FString InStatisticName
-);
+        static FBPServerGetLeaderboardForUsersCharactersRequest MakeBPServerGetLeaderboardForUsersCharactersRequest(
+            int32 InMaxResultsCount
+            , FString InPlayFabId
+            , FString InStatisticName
+        );
 
     // GetLeaderboardForUsersCharactersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetLeaderboardForUsersCharactersResult(
-    const FBPServerGetLeaderboardForUsersCharactersResult& In
-	, TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
+        static void BreakBPServerGetLeaderboardForUsersCharactersResult(
+            const FBPServerGetLeaderboardForUsersCharactersResult& In
+            , TArray<FBPServerCharacterLeaderboardEntry>& OutLeaderboard
 );
 
     // GetLeaderboardRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetLeaderboardRequest MakeBPServerGetLeaderboardRequest(
-    int32 InMaxResultsCount
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-	, int32 InStartPosition
-	, FString InStatisticName
-	, bool InUseSpecificVersion
-	, int32 InVersion
-);
+        static FBPServerGetLeaderboardRequest MakeBPServerGetLeaderboardRequest(
+            int32 InMaxResultsCount
+            , FBPServerPlayerProfileViewConstraints InProfileConstraints
+            , int32 InStartPosition
+            , FString InStatisticName
+            , bool InUseSpecificVersion
+            , int32 InVersion
+        );
 
     // GetLeaderboardResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetLeaderboardResult(
-    const FBPServerGetLeaderboardResult& In
-	, TArray<FBPServerPlayerLeaderboardEntry>& OutLeaderboard
-	, FDateTime& OutNextReset
-	, int32& OutVersion
+        static void BreakBPServerGetLeaderboardResult(
+            const FBPServerGetLeaderboardResult& In
+            , TArray<FBPServerPlayerLeaderboardEntry>& OutLeaderboard
+            , FDateTime& OutNextReset
+            , int32& OutVersion
 );
 
     // GetPlayerCombinedInfoRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayerCombinedInfoRequest MakeBPServerGetPlayerCombinedInfoRequest(
-    FBPServerGetPlayerCombinedInfoRequestParams InInfoRequestParameters
-	, FString InPlayFabId
-);
+        static FBPServerGetPlayerCombinedInfoRequest MakeBPServerGetPlayerCombinedInfoRequest(
+            FBPServerGetPlayerCombinedInfoRequestParams InInfoRequestParameters
+            , FString InPlayFabId
+        );
 
     // GetPlayerCombinedInfoRequestParams
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayerCombinedInfoRequestParams MakeBPServerGetPlayerCombinedInfoRequestParams(
-    bool InGetCharacterInventories
-	, bool InGetCharacterList
-	, bool InGetPlayerProfile
-	, bool InGetPlayerStatistics
-	, bool InGetTitleData
-	, bool InGetUserAccountInfo
-	, bool InGetUserData
-	, bool InGetUserInventory
-	, bool InGetUserReadOnlyData
-	, bool InGetUserVirtualCurrency
-	, TArray<FString> InPlayerStatisticNames
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-	, TArray<FString> InTitleDataKeys
-	, TArray<FString> InUserDataKeys
-	, TArray<FString> InUserReadOnlyDataKeys
-);
+        static FBPServerGetPlayerCombinedInfoRequestParams MakeBPServerGetPlayerCombinedInfoRequestParams(
+            bool InGetCharacterInventories
+            , bool InGetCharacterList
+            , bool InGetPlayerProfile
+            , bool InGetPlayerStatistics
+            , bool InGetTitleData
+            , bool InGetUserAccountInfo
+            , bool InGetUserData
+            , bool InGetUserInventory
+            , bool InGetUserReadOnlyData
+            , bool InGetUserVirtualCurrency
+            , TArray<FString> InPlayerStatisticNames
+            , FBPServerPlayerProfileViewConstraints InProfileConstraints
+            , TArray<FString> InTitleDataKeys
+            , TArray<FString> InUserDataKeys
+            , TArray<FString> InUserReadOnlyDataKeys
+        );
 
     // GetPlayerCombinedInfoResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayerCombinedInfoResult(
-    const FBPServerGetPlayerCombinedInfoResult& In
-	, FBPServerGetPlayerCombinedInfoResultPayload& OutInfoResultPayload
-	, FString& OutPlayFabId
+        static void BreakBPServerGetPlayerCombinedInfoResult(
+            const FBPServerGetPlayerCombinedInfoResult& In
+            , FBPServerGetPlayerCombinedInfoResultPayload& OutInfoResultPayload
+            , FString& OutPlayFabId
 );
 
     // GetPlayerCombinedInfoResultPayload
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayerCombinedInfoResultPayload(
-    const FBPServerGetPlayerCombinedInfoResultPayload& In
-	, FBPServerUserAccountInfo& OutAccountInfo
-	, TArray<FBPServerCharacterInventory>& OutCharacterInventories
-	, TArray<FBPServerCharacterResult>& OutCharacterList
-	, FBPServerPlayerProfileModel& OutPlayerProfile
-	, TArray<FBPServerStatisticValue>& OutPlayerStatistics
-	, TMap<FString, FString>& OutTitleData
-	, TMap<FString, FBPServerUserDataRecord>& OutUserData
-	, int32& OutUserDataVersion
-	, TArray<FBPServerItemInstance>& OutUserInventory
-	, TMap<FString, FBPServerUserDataRecord>& OutUserReadOnlyData
-	, int32& OutUserReadOnlyDataVersion
-	, TMap<FString, int32>& OutUserVirtualCurrency
-	, TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutUserVirtualCurrencyRechargeTimes
+        static void BreakBPServerGetPlayerCombinedInfoResultPayload(
+            const FBPServerGetPlayerCombinedInfoResultPayload& In
+            , FBPServerUserAccountInfo& OutAccountInfo
+            , TArray<FBPServerCharacterInventory>& OutCharacterInventories
+            , TArray<FBPServerCharacterResult>& OutCharacterList
+            , FBPServerPlayerProfileModel& OutPlayerProfile
+            , TArray<FBPServerStatisticValue>& OutPlayerStatistics
+            , TMap<FString, FString>& OutTitleData
+            , TMap<FString, FBPServerUserDataRecord>& OutUserData
+            , int32& OutUserDataVersion
+            , TArray<FBPServerItemInstance>& OutUserInventory
+            , TMap<FString, FBPServerUserDataRecord>& OutUserReadOnlyData
+            , int32& OutUserReadOnlyDataVersion
+            , TMap<FString, int32>& OutUserVirtualCurrency
+            , TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutUserVirtualCurrencyRechargeTimes
 );
 
     // GetPlayerProfileRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayerProfileRequest MakeBPServerGetPlayerProfileRequest(
-    FString InPlayFabId
-	, FBPServerPlayerProfileViewConstraints InProfileConstraints
-);
+        static FBPServerGetPlayerProfileRequest MakeBPServerGetPlayerProfileRequest(
+            FString InPlayFabId
+            , FBPServerPlayerProfileViewConstraints InProfileConstraints
+        );
 
     // GetPlayerProfileResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayerProfileResult(
-    const FBPServerGetPlayerProfileResult& In
-	, FBPServerPlayerProfileModel& OutPlayerProfile
+        static void BreakBPServerGetPlayerProfileResult(
+            const FBPServerGetPlayerProfileResult& In
+            , FBPServerPlayerProfileModel& OutPlayerProfile
 );
 
     // GetPlayerSegmentsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayerSegmentsResult(
-    const FBPServerGetPlayerSegmentsResult& In
-	, TArray<FBPServerGetSegmentResult>& OutSegments
+        static void BreakBPServerGetPlayerSegmentsResult(
+            const FBPServerGetPlayerSegmentsResult& In
+            , TArray<FBPServerGetSegmentResult>& OutSegments
 );
 
     // GetPlayersInSegmentRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayersInSegmentRequest MakeBPServerGetPlayersInSegmentRequest(
-    FString InContinuationToken
-	, int32 InMaxBatchSize
-	, int32 InSecondsToLive
-	, FString InSegmentId
-);
+        static FBPServerGetPlayersInSegmentRequest MakeBPServerGetPlayersInSegmentRequest(
+            FString InContinuationToken
+            , int32 InMaxBatchSize
+            , int32 InSecondsToLive
+            , FString InSegmentId
+        );
 
     // GetPlayersInSegmentResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayersInSegmentResult(
-    const FBPServerGetPlayersInSegmentResult& In
-	, FString& OutContinuationToken
-	, TArray<FBPServerPlayerProfile>& OutPlayerProfiles
-	, int32& OutProfilesInSegment
+        static void BreakBPServerGetPlayersInSegmentResult(
+            const FBPServerGetPlayersInSegmentResult& In
+            , FString& OutContinuationToken
+            , TArray<FBPServerPlayerProfile>& OutPlayerProfiles
+            , int32& OutProfilesInSegment
 );
 
     // GetPlayersSegmentsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayersSegmentsRequest MakeBPServerGetPlayersSegmentsRequest(
-    FString InPlayFabId
-);
+        static FBPServerGetPlayersSegmentsRequest MakeBPServerGetPlayersSegmentsRequest(
+            FString InPlayFabId
+        );
 
     // GetPlayerStatisticsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayerStatisticsRequest MakeBPServerGetPlayerStatisticsRequest(
-    FString InPlayFabId
-	, TArray<FString> InStatisticNames
-	, TArray<FBPServerStatisticNameVersion> InStatisticNameVersions
-);
+        static FBPServerGetPlayerStatisticsRequest MakeBPServerGetPlayerStatisticsRequest(
+            FString InPlayFabId
+            , TArray<FString> InStatisticNames
+            , TArray<FBPServerStatisticNameVersion> InStatisticNameVersions
+        );
 
     // GetPlayerStatisticsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayerStatisticsResult(
-    const FBPServerGetPlayerStatisticsResult& In
-	, FString& OutPlayFabId
-	, TArray<FBPServerStatisticValue>& OutStatistics
+        static void BreakBPServerGetPlayerStatisticsResult(
+            const FBPServerGetPlayerStatisticsResult& In
+            , FString& OutPlayFabId
+            , TArray<FBPServerStatisticValue>& OutStatistics
 );
 
     // GetPlayerStatisticVersionsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayerStatisticVersionsRequest MakeBPServerGetPlayerStatisticVersionsRequest(
-    FString InStatisticName
-);
+        static FBPServerGetPlayerStatisticVersionsRequest MakeBPServerGetPlayerStatisticVersionsRequest(
+            FString InStatisticName
+        );
 
     // GetPlayerStatisticVersionsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayerStatisticVersionsResult(
-    const FBPServerGetPlayerStatisticVersionsResult& In
-	, TArray<FBPServerPlayerStatisticVersion>& OutStatisticVersions
+        static void BreakBPServerGetPlayerStatisticVersionsResult(
+            const FBPServerGetPlayerStatisticVersionsResult& In
+            , TArray<FBPServerPlayerStatisticVersion>& OutStatisticVersions
 );
 
     // GetPlayerTagsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayerTagsRequest MakeBPServerGetPlayerTagsRequest(
-    FString InNamespace
-	, FString InPlayFabId
-);
+        static FBPServerGetPlayerTagsRequest MakeBPServerGetPlayerTagsRequest(
+            FString InNamespace
+            , FString InPlayFabId
+        );
 
     // GetPlayerTagsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayerTagsResult(
-    const FBPServerGetPlayerTagsResult& In
-	, FString& OutPlayFabId
-	, TArray<FString>& OutTags
+        static void BreakBPServerGetPlayerTagsResult(
+            const FBPServerGetPlayerTagsResult& In
+            , FString& OutPlayFabId
+            , TArray<FString>& OutTags
 );
 
     // GetPlayFabIDsFromFacebookIDsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayFabIDsFromFacebookIDsRequest MakeBPServerGetPlayFabIDsFromFacebookIDsRequest(
-    TArray<FString> InFacebookIDs
-);
+        static FBPServerGetPlayFabIDsFromFacebookIDsRequest MakeBPServerGetPlayFabIDsFromFacebookIDsRequest(
+            TArray<FString> InFacebookIDs
+        );
 
     // GetPlayFabIDsFromFacebookIDsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayFabIDsFromFacebookIDsResult(
-    const FBPServerGetPlayFabIDsFromFacebookIDsResult& In
-	, TArray<FBPServerFacebookPlayFabIdPair>& OutData
+        static void BreakBPServerGetPlayFabIDsFromFacebookIDsResult(
+            const FBPServerGetPlayFabIDsFromFacebookIDsResult& In
+            , TArray<FBPServerFacebookPlayFabIdPair>& OutData
 );
 
     // GetPlayFabIDsFromSteamIDsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPlayFabIDsFromSteamIDsRequest MakeBPServerGetPlayFabIDsFromSteamIDsRequest(
-    TArray<FString> InSteamStringIDs
-);
+        static FBPServerGetPlayFabIDsFromSteamIDsRequest MakeBPServerGetPlayFabIDsFromSteamIDsRequest(
+            TArray<FString> InSteamStringIDs
+        );
 
     // GetPlayFabIDsFromSteamIDsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPlayFabIDsFromSteamIDsResult(
-    const FBPServerGetPlayFabIDsFromSteamIDsResult& In
-	, TArray<FBPServerSteamPlayFabIdPair>& OutData
+        static void BreakBPServerGetPlayFabIDsFromSteamIDsResult(
+            const FBPServerGetPlayFabIDsFromSteamIDsResult& In
+            , TArray<FBPServerSteamPlayFabIdPair>& OutData
 );
 
     // GetPublisherDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetPublisherDataRequest MakeBPServerGetPublisherDataRequest(
-    TArray<FString> InKeys
-);
+        static FBPServerGetPublisherDataRequest MakeBPServerGetPublisherDataRequest(
+            TArray<FString> InKeys
+        );
 
     // GetPublisherDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetPublisherDataResult(
-    const FBPServerGetPublisherDataResult& In
-	, TMap<FString, FString>& OutData
+        static void BreakBPServerGetPublisherDataResult(
+            const FBPServerGetPublisherDataResult& In
+            , TMap<FString, FString>& OutData
 );
 
     // GetRandomResultTablesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetRandomResultTablesRequest MakeBPServerGetRandomResultTablesRequest(
-    FString InCatalogVersion
-	, TArray<FString> InTableIDs
-);
+        static FBPServerGetRandomResultTablesRequest MakeBPServerGetRandomResultTablesRequest(
+            FString InCatalogVersion
+            , TArray<FString> InTableIDs
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetRandomResultTablesRequest(
-    const FBPServerGetRandomResultTablesRequest& In
-	, FString& OutCatalogVersion
-	, TArray<FString>& OutTableIDs
+        static void BreakBPServerGetRandomResultTablesRequest(
+            const FBPServerGetRandomResultTablesRequest& In
+            , FString& OutCatalogVersion
+            , TArray<FString>& OutTableIDs
 );
 
     // GetRandomResultTablesResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetRandomResultTablesResult(
-    const FBPServerGetRandomResultTablesResult& In
-	, TMap<FString, FBPServerRandomResultTableListing>& OutTables
+        static void BreakBPServerGetRandomResultTablesResult(
+            const FBPServerGetRandomResultTablesResult& In
+            , TMap<FString, FBPServerRandomResultTableListing>& OutTables
 );
 
     // GetSegmentResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetSegmentResult(
-    const FBPServerGetSegmentResult& In
-	, FString& OutABTestParent
-	, FString& OutId
-	, FString& OutName
+        static void BreakBPServerGetSegmentResult(
+            const FBPServerGetSegmentResult& In
+            , FString& OutABTestParent
+            , FString& OutId
+            , FString& OutName
 );
 
     // GetSharedGroupDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetSharedGroupDataRequest MakeBPServerGetSharedGroupDataRequest(
-    bool InGetMembers
-	, TArray<FString> InKeys
-	, FString InSharedGroupId
-);
+        static FBPServerGetSharedGroupDataRequest MakeBPServerGetSharedGroupDataRequest(
+            bool InGetMembers
+            , TArray<FString> InKeys
+            , FString InSharedGroupId
+        );
 
     // GetSharedGroupDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetSharedGroupDataResult(
-    const FBPServerGetSharedGroupDataResult& In
-	, TMap<FString, FBPServerSharedGroupDataRecord>& OutData
-	, TArray<FString>& OutMembers
+        static void BreakBPServerGetSharedGroupDataResult(
+            const FBPServerGetSharedGroupDataResult& In
+            , TMap<FString, FBPServerSharedGroupDataRecord>& OutData
+            , TArray<FString>& OutMembers
 );
 
     // GetTimeRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetTimeRequest MakeBPServerGetTimeRequest(
-    );
+        static FBPServerGetTimeRequest MakeBPServerGetTimeRequest(
+        );
 
     // GetTimeResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetTimeResult(
-    const FBPServerGetTimeResult& In
-	, FDateTime& OutTime
+        static void BreakBPServerGetTimeResult(
+            const FBPServerGetTimeResult& In
+            , FDateTime& OutTime
 );
 
     // GetTitleDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetTitleDataRequest MakeBPServerGetTitleDataRequest(
-    TArray<FString> InKeys
-);
+        static FBPServerGetTitleDataRequest MakeBPServerGetTitleDataRequest(
+            TArray<FString> InKeys
+        );
 
     // GetTitleDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetTitleDataResult(
-    const FBPServerGetTitleDataResult& In
-	, TMap<FString, FString>& OutData
+        static void BreakBPServerGetTitleDataResult(
+            const FBPServerGetTitleDataResult& In
+            , TMap<FString, FString>& OutData
 );
 
     // GetTitleNewsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetTitleNewsRequest MakeBPServerGetTitleNewsRequest(
-    int32 InCount
-);
+        static FBPServerGetTitleNewsRequest MakeBPServerGetTitleNewsRequest(
+            int32 InCount
+        );
 
     // GetTitleNewsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetTitleNewsResult(
-    const FBPServerGetTitleNewsResult& In
-	, TArray<FBPServerTitleNewsItem>& OutNews
+        static void BreakBPServerGetTitleNewsResult(
+            const FBPServerGetTitleNewsResult& In
+            , TArray<FBPServerTitleNewsItem>& OutNews
 );
 
     // GetUserAccountInfoRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetUserAccountInfoRequest MakeBPServerGetUserAccountInfoRequest(
-    FString InPlayFabId
-);
+        static FBPServerGetUserAccountInfoRequest MakeBPServerGetUserAccountInfoRequest(
+            FString InPlayFabId
+        );
 
     // GetUserAccountInfoResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetUserAccountInfoResult(
-    const FBPServerGetUserAccountInfoResult& In
-	, FBPServerUserAccountInfo& OutUserInfo
+        static void BreakBPServerGetUserAccountInfoResult(
+            const FBPServerGetUserAccountInfoResult& In
+            , FBPServerUserAccountInfo& OutUserInfo
 );
 
     // GetUserBansRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetUserBansRequest MakeBPServerGetUserBansRequest(
-    FString InPlayFabId
-);
+        static FBPServerGetUserBansRequest MakeBPServerGetUserBansRequest(
+            FString InPlayFabId
+        );
 
     // GetUserBansResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetUserBansResult(
-    const FBPServerGetUserBansResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
+        static void BreakBPServerGetUserBansResult(
+            const FBPServerGetUserBansResult& In
+            , TArray<FBPServerBanInfo>& OutBanData
 );
 
     // GetUserDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetUserDataRequest MakeBPServerGetUserDataRequest(
-    int32 InIfChangedFromDataVersion
-	, TArray<FString> InKeys
-	, FString InPlayFabId
-);
+        static FBPServerGetUserDataRequest MakeBPServerGetUserDataRequest(
+            int32 InIfChangedFromDataVersion
+            , TArray<FString> InKeys
+            , FString InPlayFabId
+        );
 
     // GetUserDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetUserDataResult(
-    const FBPServerGetUserDataResult& In
-	, TMap<FString, FBPServerUserDataRecord>& OutData
-	, int32& OutDataVersion
-	, FString& OutPlayFabId
+        static void BreakBPServerGetUserDataResult(
+            const FBPServerGetUserDataResult& In
+            , TMap<FString, FBPServerUserDataRecord>& OutData
+            , int32& OutDataVersion
+            , FString& OutPlayFabId
 );
 
     // GetUserInventoryRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGetUserInventoryRequest MakeBPServerGetUserInventoryRequest(
-    FString InPlayFabId
-);
+        static FBPServerGetUserInventoryRequest MakeBPServerGetUserInventoryRequest(
+            FString InPlayFabId
+        );
 
     // GetUserInventoryResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGetUserInventoryResult(
-    const FBPServerGetUserInventoryResult& In
-	, TArray<FBPServerItemInstance>& OutInventory
-	, FString& OutPlayFabId
-	, TMap<FString, int32>& OutVirtualCurrency
-	, TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
+        static void BreakBPServerGetUserInventoryResult(
+            const FBPServerGetUserInventoryResult& In
+            , TArray<FBPServerItemInstance>& OutInventory
+            , FString& OutPlayFabId
+            , TMap<FString, int32>& OutVirtualCurrency
+            , TMap<FString, FBPServerVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
 );
 
     // GrantCharacterToUserRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGrantCharacterToUserRequest MakeBPServerGrantCharacterToUserRequest(
-    FString InCharacterName
-	, FString InCharacterType
-	, FString InPlayFabId
-);
+        static FBPServerGrantCharacterToUserRequest MakeBPServerGrantCharacterToUserRequest(
+            FString InCharacterName
+            , FString InCharacterType
+            , FString InPlayFabId
+        );
 
     // GrantCharacterToUserResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGrantCharacterToUserResult(
-    const FBPServerGrantCharacterToUserResult& In
-	, FString& OutCharacterId
+        static void BreakBPServerGrantCharacterToUserResult(
+            const FBPServerGrantCharacterToUserResult& In
+            , FString& OutCharacterId
 );
 
     // GrantedItemInstance
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGrantedItemInstance MakeBPServerGrantedItemInstance(
-    FString InAnnotation
-	, TArray<FString> InBundleContents
-	, FString InBundleParent
-	, FString InCatalogVersion
-	, FString InCharacterId
-	, TMap<FString, FString> InCustomData
-	, FString InDisplayName
-	, FDateTime InExpiration
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-	, FDateTime InPurchaseDate
-	, int32 InRemainingUses
-	, bool InResult
-	, FString InUnitCurrency
-	, int32 InUnitPrice
-	, int32 InUsesIncrementedBy
-);
+        static FBPServerGrantedItemInstance MakeBPServerGrantedItemInstance(
+            FString InAnnotation
+            , TArray<FString> InBundleContents
+            , FString InBundleParent
+            , FString InCatalogVersion
+            , FString InCharacterId
+            , TMap<FString, FString> InCustomData
+            , FString InDisplayName
+            , FDateTime InExpiration
+            , FString InItemClass
+            , FString InItemId
+            , FString InItemInstanceId
+            , FString InPlayFabId
+            , FDateTime InPurchaseDate
+            , int32 InRemainingUses
+            , bool InResult
+            , FString InUnitCurrency
+            , int32 InUnitPrice
+            , int32 InUsesIncrementedBy
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGrantedItemInstance(
-    const FBPServerGrantedItemInstance& In
-	, FString& OutAnnotation
-	, TArray<FString>& OutBundleContents
-	, FString& OutBundleParent
-	, FString& OutCatalogVersion
-	, FString& OutCharacterId
-	, TMap<FString, FString>& OutCustomData
-	, FString& OutDisplayName
-	, FDateTime& OutExpiration
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemInstanceId
-	, FString& OutPlayFabId
-	, FDateTime& OutPurchaseDate
-	, int32& OutRemainingUses
-	, bool& OutResult
-	, FString& OutUnitCurrency
-	, int32& OutUnitPrice
-	, int32& OutUsesIncrementedBy
+        static void BreakBPServerGrantedItemInstance(
+            const FBPServerGrantedItemInstance& In
+            , FString& OutAnnotation
+            , TArray<FString>& OutBundleContents
+            , FString& OutBundleParent
+            , FString& OutCatalogVersion
+            , FString& OutCharacterId
+            , TMap<FString, FString>& OutCustomData
+            , FString& OutDisplayName
+            , FDateTime& OutExpiration
+            , FString& OutItemClass
+            , FString& OutItemId
+            , FString& OutItemInstanceId
+            , FString& OutPlayFabId
+            , FDateTime& OutPurchaseDate
+            , int32& OutRemainingUses
+            , bool& OutResult
+            , FString& OutUnitCurrency
+            , int32& OutUnitPrice
+            , int32& OutUsesIncrementedBy
 );
 
     // GrantItemsToCharacterRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGrantItemsToCharacterRequest MakeBPServerGrantItemsToCharacterRequest(
-    FString InAnnotation
-	, FString InCatalogVersion
-	, FString InCharacterId
-	, TArray<FString> InItemIds
-	, FString InPlayFabId
-);
+        static FBPServerGrantItemsToCharacterRequest MakeBPServerGrantItemsToCharacterRequest(
+            FString InAnnotation
+            , FString InCatalogVersion
+            , FString InCharacterId
+            , TArray<FString> InItemIds
+            , FString InPlayFabId
+        );
 
     // GrantItemsToCharacterResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGrantItemsToCharacterResult(
-    const FBPServerGrantItemsToCharacterResult& In
-	, TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
+        static void BreakBPServerGrantItemsToCharacterResult(
+            const FBPServerGrantItemsToCharacterResult& In
+            , TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
 );
 
     // GrantItemsToUserRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGrantItemsToUserRequest MakeBPServerGrantItemsToUserRequest(
-    FString InAnnotation
-	, FString InCatalogVersion
-	, TArray<FString> InItemIds
-	, FString InPlayFabId
-);
+        static FBPServerGrantItemsToUserRequest MakeBPServerGrantItemsToUserRequest(
+            FString InAnnotation
+            , FString InCatalogVersion
+            , TArray<FString> InItemIds
+            , FString InPlayFabId
+        );
 
     // GrantItemsToUserResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGrantItemsToUserResult(
-    const FBPServerGrantItemsToUserResult& In
-	, TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
+        static void BreakBPServerGrantItemsToUserResult(
+            const FBPServerGrantItemsToUserResult& In
+            , TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
 );
 
     // GrantItemsToUsersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerGrantItemsToUsersRequest MakeBPServerGrantItemsToUsersRequest(
-    FString InCatalogVersion
-	, TArray<FBPServerItemGrant> InItemGrants
-);
+        static FBPServerGrantItemsToUsersRequest MakeBPServerGrantItemsToUsersRequest(
+            FString InCatalogVersion
+            , TArray<FBPServerItemGrant> InItemGrants
+        );
 
     // GrantItemsToUsersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerGrantItemsToUsersResult(
-    const FBPServerGrantItemsToUsersResult& In
-	, TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
+        static void BreakBPServerGrantItemsToUsersResult(
+            const FBPServerGrantItemsToUsersResult& In
+            , TArray<FBPServerGrantedItemInstance>& OutItemGrantResults
 );
 
     // ItemGrant
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerItemGrant MakeBPServerItemGrant(
-    FString InAnnotation
-	, FString InCharacterId
-	, TMap<FString, FString> InData
-	, FString InItemId
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-);
+        static FBPServerItemGrant MakeBPServerItemGrant(
+            FString InAnnotation
+            , FString InCharacterId
+            , TMap<FString, FString> InData
+            , FString InItemId
+            , TArray<FString> InKeysToRemove
+            , FString InPlayFabId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerItemGrant(
-    const FBPServerItemGrant& In
-	, FString& OutAnnotation
-	, FString& OutCharacterId
-	, TMap<FString, FString>& OutData
-	, FString& OutItemId
-	, TArray<FString>& OutKeysToRemove
-	, FString& OutPlayFabId
+        static void BreakBPServerItemGrant(
+            const FBPServerItemGrant& In
+            , FString& OutAnnotation
+            , FString& OutCharacterId
+            , TMap<FString, FString>& OutData
+            , FString& OutItemId
+            , TArray<FString>& OutKeysToRemove
+            , FString& OutPlayFabId
 );
 
     // ItemInstance
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerItemInstance MakeBPServerItemInstance(
-    FString InAnnotation
-	, TArray<FString> InBundleContents
-	, FString InBundleParent
-	, FString InCatalogVersion
-	, TMap<FString, FString> InCustomData
-	, FString InDisplayName
-	, FDateTime InExpiration
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemInstanceId
-	, FDateTime InPurchaseDate
-	, int32 InRemainingUses
-	, FString InUnitCurrency
-	, int32 InUnitPrice
-	, int32 InUsesIncrementedBy
-);
+        static FBPServerItemInstance MakeBPServerItemInstance(
+            FString InAnnotation
+            , TArray<FString> InBundleContents
+            , FString InBundleParent
+            , FString InCatalogVersion
+            , TMap<FString, FString> InCustomData
+            , FString InDisplayName
+            , FDateTime InExpiration
+            , FString InItemClass
+            , FString InItemId
+            , FString InItemInstanceId
+            , FDateTime InPurchaseDate
+            , int32 InRemainingUses
+            , FString InUnitCurrency
+            , int32 InUnitPrice
+            , int32 InUsesIncrementedBy
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerItemInstance(
-    const FBPServerItemInstance& In
-	, FString& OutAnnotation
-	, TArray<FString>& OutBundleContents
-	, FString& OutBundleParent
-	, FString& OutCatalogVersion
-	, TMap<FString, FString>& OutCustomData
-	, FString& OutDisplayName
-	, FDateTime& OutExpiration
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemInstanceId
-	, FDateTime& OutPurchaseDate
-	, int32& OutRemainingUses
-	, FString& OutUnitCurrency
-	, int32& OutUnitPrice
-	, int32& OutUsesIncrementedBy
+        static void BreakBPServerItemInstance(
+            const FBPServerItemInstance& In
+            , FString& OutAnnotation
+            , TArray<FString>& OutBundleContents
+            , FString& OutBundleParent
+            , FString& OutCatalogVersion
+            , TMap<FString, FString>& OutCustomData
+            , FString& OutDisplayName
+            , FDateTime& OutExpiration
+            , FString& OutItemClass
+            , FString& OutItemId
+            , FString& OutItemInstanceId
+            , FDateTime& OutPurchaseDate
+            , int32& OutRemainingUses
+            , FString& OutUnitCurrency
+            , int32& OutUnitPrice
+            , int32& OutUsesIncrementedBy
 );
 
     // LinkedPlatformAccountModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerLinkedPlatformAccountModel MakeBPServerLinkedPlatformAccountModel(
-    FString InEmail
-	, EBPServerLoginIdentityProvider InPlatform
-	, FString InPlatformUserId
-	, FString InUsername
-);
+        static FBPServerLinkedPlatformAccountModel MakeBPServerLinkedPlatformAccountModel(
+            FString InEmail
+            , EBPServerLoginIdentityProvider InPlatform
+            , FString InPlatformUserId
+            , FString InUsername
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerLinkedPlatformAccountModel(
-    const FBPServerLinkedPlatformAccountModel& In
-	, FString& OutEmail
-	, EBPServerLoginIdentityProvider& OutPlatform
-	, FString& OutPlatformUserId
-	, FString& OutUsername
+        static void BreakBPServerLinkedPlatformAccountModel(
+            const FBPServerLinkedPlatformAccountModel& In
+            , FString& OutEmail
+            , EBPServerLoginIdentityProvider& OutPlatform
+            , FString& OutPlatformUserId
+            , FString& OutUsername
 );
 
     // ListUsersCharactersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerListUsersCharactersRequest MakeBPServerListUsersCharactersRequest(
-    FString InPlayFabId
-);
+        static FBPServerListUsersCharactersRequest MakeBPServerListUsersCharactersRequest(
+            FString InPlayFabId
+        );
 
     // ListUsersCharactersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerListUsersCharactersResult(
-    const FBPServerListUsersCharactersResult& In
-	, TArray<FBPServerCharacterResult>& OutCharacters
+        static void BreakBPServerListUsersCharactersResult(
+            const FBPServerListUsersCharactersResult& In
+            , TArray<FBPServerCharacterResult>& OutCharacters
 );
 
     // LocationModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerLocationModel MakeBPServerLocationModel(
-    FString InCity
-	, EBPServerContinentCode InContinentCode
-	, EBPServerCountryCode InCountryCode
-	, float InLatitude
-	, float InLongitude
-);
+        static FBPServerLocationModel MakeBPServerLocationModel(
+            FString InCity
+            , EBPServerContinentCode InContinentCode
+            , EBPServerCountryCode InCountryCode
+            , float InLatitude
+            , float InLongitude
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerLocationModel(
-    const FBPServerLocationModel& In
-	, FString& OutCity
-	, EBPServerContinentCode& OutContinentCode
-	, EBPServerCountryCode& OutCountryCode
-	, float& OutLatitude
-	, float& OutLongitude
+        static void BreakBPServerLocationModel(
+            const FBPServerLocationModel& In
+            , FString& OutCity
+            , EBPServerContinentCode& OutContinentCode
+            , EBPServerCountryCode& OutCountryCode
+            , float& OutLatitude
+            , float& OutLongitude
 );
 
     // LogStatement
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerLogStatement MakeBPServerLogStatement(
-    UPlayFabJsonValue* InData
-	, FString InLevel
-	, FString InMessage
-);
+        static FBPServerLogStatement MakeBPServerLogStatement(
+            UPlayFabJsonValue* InData
+            , FString InLevel
+            , FString InMessage
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerLogStatement(
-    const FBPServerLogStatement& In
-	, UPlayFabJsonValue*& OutData
-	, FString& OutLevel
-	, FString& OutMessage
+        static void BreakBPServerLogStatement(
+            const FBPServerLogStatement& In
+            , UPlayFabJsonValue*& OutData
+            , FString& OutLevel
+            , FString& OutMessage
 );
 
     // MembershipModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerMembershipModel MakeBPServerMembershipModel(
-    bool InIsActive
-	, FDateTime InMembershipExpiration
-	, FString InMembershipId
-	, FDateTime InOverrideExpiration
-	, bool InOverrideIsSet
-	, TArray<FBPServerSubscriptionModel> InSubscriptions
-);
+        static FBPServerMembershipModel MakeBPServerMembershipModel(
+            bool InIsActive
+            , FDateTime InMembershipExpiration
+            , FString InMembershipId
+            , FDateTime InOverrideExpiration
+            , bool InOverrideIsSet
+            , TArray<FBPServerSubscriptionModel> InSubscriptions
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerMembershipModel(
-    const FBPServerMembershipModel& In
-	, bool& OutIsActive
-	, FDateTime& OutMembershipExpiration
-	, FString& OutMembershipId
-	, FDateTime& OutOverrideExpiration
-	, bool& OutOverrideIsSet
-	, TArray<FBPServerSubscriptionModel>& OutSubscriptions
+        static void BreakBPServerMembershipModel(
+            const FBPServerMembershipModel& In
+            , bool& OutIsActive
+            , FDateTime& OutMembershipExpiration
+            , FString& OutMembershipId
+            , FDateTime& OutOverrideExpiration
+            , bool& OutOverrideIsSet
+            , TArray<FBPServerSubscriptionModel>& OutSubscriptions
 );
 
     // ModifyCharacterVirtualCurrencyResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerModifyCharacterVirtualCurrencyResult(
-    const FBPServerModifyCharacterVirtualCurrencyResult& In
-	, int32& OutBalance
-	, FString& OutVirtualCurrency
+        static void BreakBPServerModifyCharacterVirtualCurrencyResult(
+            const FBPServerModifyCharacterVirtualCurrencyResult& In
+            , int32& OutBalance
+            , FString& OutVirtualCurrency
 );
 
     // ModifyItemUsesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerModifyItemUsesRequest MakeBPServerModifyItemUsesRequest(
-    FString InItemInstanceId
-	, FString InPlayFabId
-	, int32 InUsesToAdd
-);
+        static FBPServerModifyItemUsesRequest MakeBPServerModifyItemUsesRequest(
+            FString InItemInstanceId
+            , FString InPlayFabId
+            , int32 InUsesToAdd
+        );
 
     // ModifyItemUsesResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerModifyItemUsesResult(
-    const FBPServerModifyItemUsesResult& In
-	, FString& OutItemInstanceId
-	, int32& OutRemainingUses
+        static void BreakBPServerModifyItemUsesResult(
+            const FBPServerModifyItemUsesResult& In
+            , FString& OutItemInstanceId
+            , int32& OutRemainingUses
 );
 
     // ModifyUserVirtualCurrencyResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerModifyUserVirtualCurrencyResult(
-    const FBPServerModifyUserVirtualCurrencyResult& In
-	, int32& OutBalance
-	, int32& OutBalanceChange
-	, FString& OutPlayFabId
-	, FString& OutVirtualCurrency
+        static void BreakBPServerModifyUserVirtualCurrencyResult(
+            const FBPServerModifyUserVirtualCurrencyResult& In
+            , int32& OutBalance
+            , int32& OutBalanceChange
+            , FString& OutPlayFabId
+            , FString& OutVirtualCurrency
 );
 
     // MoveItemToCharacterFromCharacterRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerMoveItemToCharacterFromCharacterRequest MakeBPServerMoveItemToCharacterFromCharacterRequest(
-    FString InGivingCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-	, FString InReceivingCharacterId
-);
+        static FBPServerMoveItemToCharacterFromCharacterRequest MakeBPServerMoveItemToCharacterFromCharacterRequest(
+            FString InGivingCharacterId
+            , FString InItemInstanceId
+            , FString InPlayFabId
+            , FString InReceivingCharacterId
+        );
 
     // MoveItemToCharacterFromCharacterResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerMoveItemToCharacterFromCharacterResult(
-    const FBPServerMoveItemToCharacterFromCharacterResult& In
+        static void BreakBPServerMoveItemToCharacterFromCharacterResult(
+            const FBPServerMoveItemToCharacterFromCharacterResult& In
 );
 
     // MoveItemToCharacterFromUserRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerMoveItemToCharacterFromUserRequest MakeBPServerMoveItemToCharacterFromUserRequest(
-    FString InCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-);
+        static FBPServerMoveItemToCharacterFromUserRequest MakeBPServerMoveItemToCharacterFromUserRequest(
+            FString InCharacterId
+            , FString InItemInstanceId
+            , FString InPlayFabId
+        );
 
     // MoveItemToCharacterFromUserResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerMoveItemToCharacterFromUserResult(
-    const FBPServerMoveItemToCharacterFromUserResult& In
+        static void BreakBPServerMoveItemToCharacterFromUserResult(
+            const FBPServerMoveItemToCharacterFromUserResult& In
 );
 
     // MoveItemToUserFromCharacterRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerMoveItemToUserFromCharacterRequest MakeBPServerMoveItemToUserFromCharacterRequest(
-    FString InCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-);
+        static FBPServerMoveItemToUserFromCharacterRequest MakeBPServerMoveItemToUserFromCharacterRequest(
+            FString InCharacterId
+            , FString InItemInstanceId
+            , FString InPlayFabId
+        );
 
     // MoveItemToUserFromCharacterResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerMoveItemToUserFromCharacterResult(
-    const FBPServerMoveItemToUserFromCharacterResult& In
+        static void BreakBPServerMoveItemToUserFromCharacterResult(
+            const FBPServerMoveItemToUserFromCharacterResult& In
 );
 
     // NotifyMatchmakerPlayerLeftRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerNotifyMatchmakerPlayerLeftRequest MakeBPServerNotifyMatchmakerPlayerLeftRequest(
-    FString InLobbyId
-	, FString InPlayFabId
-);
+        static FBPServerNotifyMatchmakerPlayerLeftRequest MakeBPServerNotifyMatchmakerPlayerLeftRequest(
+            FString InLobbyId
+            , FString InPlayFabId
+        );
 
     // NotifyMatchmakerPlayerLeftResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerNotifyMatchmakerPlayerLeftResult(
-    const FBPServerNotifyMatchmakerPlayerLeftResult& In
-	, EBPServerPlayerConnectionState& OutPlayerState
+        static void BreakBPServerNotifyMatchmakerPlayerLeftResult(
+            const FBPServerNotifyMatchmakerPlayerLeftResult& In
+            , EBPServerPlayerConnectionState& OutPlayerState
 );
 
     // PlayerLeaderboardEntry
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPlayerLeaderboardEntry MakeBPServerPlayerLeaderboardEntry(
-    FString InDisplayName
-	, FString InPlayFabId
-	, int32 InPosition
-	, FBPServerPlayerProfileModel InProfile
-	, int32 InStatValue
-);
+        static FBPServerPlayerLeaderboardEntry MakeBPServerPlayerLeaderboardEntry(
+            FString InDisplayName
+            , FString InPlayFabId
+            , int32 InPosition
+            , FBPServerPlayerProfileModel InProfile
+            , int32 InStatValue
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPlayerLeaderboardEntry(
-    const FBPServerPlayerLeaderboardEntry& In
-	, FString& OutDisplayName
-	, FString& OutPlayFabId
-	, int32& OutPosition
-	, FBPServerPlayerProfileModel& OutProfile
-	, int32& OutStatValue
+        static void BreakBPServerPlayerLeaderboardEntry(
+            const FBPServerPlayerLeaderboardEntry& In
+            , FString& OutDisplayName
+            , FString& OutPlayFabId
+            , int32& OutPosition
+            , FBPServerPlayerProfileModel& OutProfile
+            , int32& OutStatValue
 );
 
     // PlayerLinkedAccount
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPlayerLinkedAccount MakeBPServerPlayerLinkedAccount(
-    FString InEmail
-	, EBPServerLoginIdentityProvider InPlatform
-	, FString InPlatformUserId
-	, FString InUsername
-);
+        static FBPServerPlayerLinkedAccount MakeBPServerPlayerLinkedAccount(
+            FString InEmail
+            , EBPServerLoginIdentityProvider InPlatform
+            , FString InPlatformUserId
+            , FString InUsername
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPlayerLinkedAccount(
-    const FBPServerPlayerLinkedAccount& In
-	, FString& OutEmail
-	, EBPServerLoginIdentityProvider& OutPlatform
-	, FString& OutPlatformUserId
-	, FString& OutUsername
+        static void BreakBPServerPlayerLinkedAccount(
+            const FBPServerPlayerLinkedAccount& In
+            , FString& OutEmail
+            , EBPServerLoginIdentityProvider& OutPlatform
+            , FString& OutPlatformUserId
+            , FString& OutUsername
 );
 
     // PlayerLocation
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPlayerLocation MakeBPServerPlayerLocation(
-    FString InCity
-	, EBPServerContinentCode InContinentCode
-	, EBPServerCountryCode InCountryCode
-	, float InLatitude
-	, float InLongitude
-);
+        static FBPServerPlayerLocation MakeBPServerPlayerLocation(
+            FString InCity
+            , EBPServerContinentCode InContinentCode
+            , EBPServerCountryCode InCountryCode
+            , float InLatitude
+            , float InLongitude
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPlayerLocation(
-    const FBPServerPlayerLocation& In
-	, FString& OutCity
-	, EBPServerContinentCode& OutContinentCode
-	, EBPServerCountryCode& OutCountryCode
-	, float& OutLatitude
-	, float& OutLongitude
+        static void BreakBPServerPlayerLocation(
+            const FBPServerPlayerLocation& In
+            , FString& OutCity
+            , EBPServerContinentCode& OutContinentCode
+            , EBPServerCountryCode& OutCountryCode
+            , float& OutLatitude
+            , float& OutLongitude
 );
 
     // PlayerProfile
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPlayerProfile MakeBPServerPlayerProfile(
-    TArray<FBPServerAdCampaignAttribution> InAdCampaignAttributions
-	, FString InAvatarUrl
-	, FDateTime InBannedUntil
-	, TArray<FBPServerContactEmailInfo> InContactEmailAddresses
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InLastLogin
-	, TArray<FBPServerPlayerLinkedAccount> InLinkedAccounts
-	, TMap<FString, FBPServerPlayerLocation> InLocations
-	, EBPServerLoginIdentityProvider InOrigination
-	, FString InPlayerId
-	, TArray<FBPServerPlayerStatistic> InPlayerStatistics
-	, FString InPublisherId
-	, TArray<FBPServerPushNotificationRegistration> InPushNotificationRegistrations
-	, TMap<FString, int32> InStatistics
-	, TArray<FString> InTags
-	, int32 InTotalValueToDateInUSD
-	, TMap<FString, int32> InValuesToDate
-	, TMap<FString, int32> InVirtualCurrencyBalances
-);
+        static FBPServerPlayerProfile MakeBPServerPlayerProfile(
+            TArray<FBPServerAdCampaignAttribution> InAdCampaignAttributions
+            , FString InAvatarUrl
+            , FDateTime InBannedUntil
+            , TArray<FBPServerContactEmailInfo> InContactEmailAddresses
+            , FDateTime InCreated
+            , FString InDisplayName
+            , FDateTime InLastLogin
+            , TArray<FBPServerPlayerLinkedAccount> InLinkedAccounts
+            , TMap<FString, FBPServerPlayerLocation> InLocations
+            , EBPServerLoginIdentityProvider InOrigination
+            , FString InPlayerId
+            , TArray<FBPServerPlayerStatistic> InPlayerStatistics
+            , FString InPublisherId
+            , TArray<FBPServerPushNotificationRegistration> InPushNotificationRegistrations
+            , TMap<FString, int32> InStatistics
+            , TArray<FString> InTags
+            , int32 InTotalValueToDateInUSD
+            , TMap<FString, int32> InValuesToDate
+            , TMap<FString, int32> InVirtualCurrencyBalances
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPlayerProfile(
-    const FBPServerPlayerProfile& In
-	, TArray<FBPServerAdCampaignAttribution>& OutAdCampaignAttributions
-	, FString& OutAvatarUrl
-	, FDateTime& OutBannedUntil
-	, TArray<FBPServerContactEmailInfo>& OutContactEmailAddresses
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutLastLogin
-	, TArray<FBPServerPlayerLinkedAccount>& OutLinkedAccounts
-	, TMap<FString, FBPServerPlayerLocation>& OutLocations
-	, EBPServerLoginIdentityProvider& OutOrigination
-	, FString& OutPlayerId
-	, TArray<FBPServerPlayerStatistic>& OutPlayerStatistics
-	, FString& OutPublisherId
-	, TArray<FBPServerPushNotificationRegistration>& OutPushNotificationRegistrations
-	, TMap<FString, int32>& OutStatistics
-	, TArray<FString>& OutTags
-	, int32& OutTotalValueToDateInUSD
-	, TMap<FString, int32>& OutValuesToDate
-	, TMap<FString, int32>& OutVirtualCurrencyBalances
+        static void BreakBPServerPlayerProfile(
+            const FBPServerPlayerProfile& In
+            , TArray<FBPServerAdCampaignAttribution>& OutAdCampaignAttributions
+            , FString& OutAvatarUrl
+            , FDateTime& OutBannedUntil
+            , TArray<FBPServerContactEmailInfo>& OutContactEmailAddresses
+            , FDateTime& OutCreated
+            , FString& OutDisplayName
+            , FDateTime& OutLastLogin
+            , TArray<FBPServerPlayerLinkedAccount>& OutLinkedAccounts
+            , TMap<FString, FBPServerPlayerLocation>& OutLocations
+            , EBPServerLoginIdentityProvider& OutOrigination
+            , FString& OutPlayerId
+            , TArray<FBPServerPlayerStatistic>& OutPlayerStatistics
+            , FString& OutPublisherId
+            , TArray<FBPServerPushNotificationRegistration>& OutPushNotificationRegistrations
+            , TMap<FString, int32>& OutStatistics
+            , TArray<FString>& OutTags
+            , int32& OutTotalValueToDateInUSD
+            , TMap<FString, int32>& OutValuesToDate
+            , TMap<FString, int32>& OutVirtualCurrencyBalances
 );
 
     // PlayerProfileModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPlayerProfileModel MakeBPServerPlayerProfileModel(
-    TArray<FBPServerAdCampaignAttributionModel> InAdCampaignAttributions
-	, FString InAvatarUrl
-	, FDateTime InBannedUntil
-	, TArray<FBPServerContactEmailInfoModel> InContactEmailAddresses
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InLastLogin
-	, TArray<FBPServerLinkedPlatformAccountModel> InLinkedAccounts
-	, TArray<FBPServerLocationModel> InLocations
-	, TArray<FBPServerMembershipModel> InMemberships
-	, EBPServerLoginIdentityProvider InOrigination
-	, FString InPlayerId
-	, FString InPublisherId
-	, TArray<FBPServerPushNotificationRegistrationModel> InPushNotificationRegistrations
-	, TArray<FBPServerStatisticModel> InStatistics
-	, TArray<FBPServerTagModel> InTags
-	, int32 InTotalValueToDateInUSD
-	, TArray<FBPServerValueToDateModel> InValuesToDate
-);
+        static FBPServerPlayerProfileModel MakeBPServerPlayerProfileModel(
+            TArray<FBPServerAdCampaignAttributionModel> InAdCampaignAttributions
+            , FString InAvatarUrl
+            , FDateTime InBannedUntil
+            , TArray<FBPServerContactEmailInfoModel> InContactEmailAddresses
+            , FDateTime InCreated
+            , FString InDisplayName
+            , FDateTime InLastLogin
+            , TArray<FBPServerLinkedPlatformAccountModel> InLinkedAccounts
+            , TArray<FBPServerLocationModel> InLocations
+            , TArray<FBPServerMembershipModel> InMemberships
+            , EBPServerLoginIdentityProvider InOrigination
+            , FString InPlayerId
+            , FString InPublisherId
+            , TArray<FBPServerPushNotificationRegistrationModel> InPushNotificationRegistrations
+            , TArray<FBPServerStatisticModel> InStatistics
+            , TArray<FBPServerTagModel> InTags
+            , int32 InTotalValueToDateInUSD
+            , TArray<FBPServerValueToDateModel> InValuesToDate
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPlayerProfileModel(
-    const FBPServerPlayerProfileModel& In
-	, TArray<FBPServerAdCampaignAttributionModel>& OutAdCampaignAttributions
-	, FString& OutAvatarUrl
-	, FDateTime& OutBannedUntil
-	, TArray<FBPServerContactEmailInfoModel>& OutContactEmailAddresses
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutLastLogin
-	, TArray<FBPServerLinkedPlatformAccountModel>& OutLinkedAccounts
-	, TArray<FBPServerLocationModel>& OutLocations
-	, TArray<FBPServerMembershipModel>& OutMemberships
-	, EBPServerLoginIdentityProvider& OutOrigination
-	, FString& OutPlayerId
-	, FString& OutPublisherId
-	, TArray<FBPServerPushNotificationRegistrationModel>& OutPushNotificationRegistrations
-	, TArray<FBPServerStatisticModel>& OutStatistics
-	, TArray<FBPServerTagModel>& OutTags
-	, int32& OutTotalValueToDateInUSD
-	, TArray<FBPServerValueToDateModel>& OutValuesToDate
+        static void BreakBPServerPlayerProfileModel(
+            const FBPServerPlayerProfileModel& In
+            , TArray<FBPServerAdCampaignAttributionModel>& OutAdCampaignAttributions
+            , FString& OutAvatarUrl
+            , FDateTime& OutBannedUntil
+            , TArray<FBPServerContactEmailInfoModel>& OutContactEmailAddresses
+            , FDateTime& OutCreated
+            , FString& OutDisplayName
+            , FDateTime& OutLastLogin
+            , TArray<FBPServerLinkedPlatformAccountModel>& OutLinkedAccounts
+            , TArray<FBPServerLocationModel>& OutLocations
+            , TArray<FBPServerMembershipModel>& OutMemberships
+            , EBPServerLoginIdentityProvider& OutOrigination
+            , FString& OutPlayerId
+            , FString& OutPublisherId
+            , TArray<FBPServerPushNotificationRegistrationModel>& OutPushNotificationRegistrations
+            , TArray<FBPServerStatisticModel>& OutStatistics
+            , TArray<FBPServerTagModel>& OutTags
+            , int32& OutTotalValueToDateInUSD
+            , TArray<FBPServerValueToDateModel>& OutValuesToDate
 );
 
     // PlayerProfileViewConstraints
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPlayerProfileViewConstraints MakeBPServerPlayerProfileViewConstraints(
-    bool InShowAvatarUrl
-	, bool InShowBannedUntil
-	, bool InShowCampaignAttributions
-	, bool InShowContactEmailAddresses
-	, bool InShowCreated
-	, bool InShowDisplayName
-	, bool InShowLastLogin
-	, bool InShowLinkedAccounts
-	, bool InShowLocations
-	, bool InShowMemberships
-	, bool InShowOrigination
-	, bool InShowPushNotificationRegistrations
-	, bool InShowStatistics
-	, bool InShowTags
-	, bool InShowTotalValueToDateInUsd
-	, bool InShowValuesToDate
-);
+        static FBPServerPlayerProfileViewConstraints MakeBPServerPlayerProfileViewConstraints(
+            bool InShowAvatarUrl
+            , bool InShowBannedUntil
+            , bool InShowCampaignAttributions
+            , bool InShowContactEmailAddresses
+            , bool InShowCreated
+            , bool InShowDisplayName
+            , bool InShowLastLogin
+            , bool InShowLinkedAccounts
+            , bool InShowLocations
+            , bool InShowMemberships
+            , bool InShowOrigination
+            , bool InShowPushNotificationRegistrations
+            , bool InShowStatistics
+            , bool InShowTags
+            , bool InShowTotalValueToDateInUsd
+            , bool InShowValuesToDate
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPlayerProfileViewConstraints(
-    const FBPServerPlayerProfileViewConstraints& In
-	, bool& OutShowAvatarUrl
-	, bool& OutShowBannedUntil
-	, bool& OutShowCampaignAttributions
-	, bool& OutShowContactEmailAddresses
-	, bool& OutShowCreated
-	, bool& OutShowDisplayName
-	, bool& OutShowLastLogin
-	, bool& OutShowLinkedAccounts
-	, bool& OutShowLocations
-	, bool& OutShowMemberships
-	, bool& OutShowOrigination
-	, bool& OutShowPushNotificationRegistrations
-	, bool& OutShowStatistics
-	, bool& OutShowTags
-	, bool& OutShowTotalValueToDateInUsd
-	, bool& OutShowValuesToDate
+        static void BreakBPServerPlayerProfileViewConstraints(
+            const FBPServerPlayerProfileViewConstraints& In
+            , bool& OutShowAvatarUrl
+            , bool& OutShowBannedUntil
+            , bool& OutShowCampaignAttributions
+            , bool& OutShowContactEmailAddresses
+            , bool& OutShowCreated
+            , bool& OutShowDisplayName
+            , bool& OutShowLastLogin
+            , bool& OutShowLinkedAccounts
+            , bool& OutShowLocations
+            , bool& OutShowMemberships
+            , bool& OutShowOrigination
+            , bool& OutShowPushNotificationRegistrations
+            , bool& OutShowStatistics
+            , bool& OutShowTags
+            , bool& OutShowTotalValueToDateInUsd
+            , bool& OutShowValuesToDate
 );
 
     // PlayerStatistic
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPlayerStatistic MakeBPServerPlayerStatistic(
-    FString InId
-	, FString InName
-	, int32 InStatisticValue
-	, int32 InStatisticVersion
-);
+        static FBPServerPlayerStatistic MakeBPServerPlayerStatistic(
+            FString InId
+            , FString InName
+            , int32 InStatisticValue
+            , int32 InStatisticVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPlayerStatistic(
-    const FBPServerPlayerStatistic& In
-	, FString& OutId
-	, FString& OutName
-	, int32& OutStatisticValue
-	, int32& OutStatisticVersion
+        static void BreakBPServerPlayerStatistic(
+            const FBPServerPlayerStatistic& In
+            , FString& OutId
+            , FString& OutName
+            , int32& OutStatisticValue
+            , int32& OutStatisticVersion
 );
 
     // PlayerStatisticVersion
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPlayerStatisticVersion MakeBPServerPlayerStatisticVersion(
-    FDateTime InActivationTime
-	, FDateTime InDeactivationTime
-	, FDateTime InScheduledActivationTime
-	, FDateTime InScheduledDeactivationTime
-	, FString InStatisticName
-	, int32 InVersion
-);
+        static FBPServerPlayerStatisticVersion MakeBPServerPlayerStatisticVersion(
+            FDateTime InActivationTime
+            , FDateTime InDeactivationTime
+            , FDateTime InScheduledActivationTime
+            , FDateTime InScheduledDeactivationTime
+            , FString InStatisticName
+            , int32 InVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPlayerStatisticVersion(
-    const FBPServerPlayerStatisticVersion& In
-	, FDateTime& OutActivationTime
-	, FDateTime& OutDeactivationTime
-	, FDateTime& OutScheduledActivationTime
-	, FDateTime& OutScheduledDeactivationTime
-	, FString& OutStatisticName
-	, int32& OutVersion
+        static void BreakBPServerPlayerStatisticVersion(
+            const FBPServerPlayerStatisticVersion& In
+            , FDateTime& OutActivationTime
+            , FDateTime& OutDeactivationTime
+            , FDateTime& OutScheduledActivationTime
+            , FDateTime& OutScheduledDeactivationTime
+            , FString& OutStatisticName
+            , int32& OutVersion
 );
 
     // PushNotificationPackage
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPushNotificationPackage MakeBPServerPushNotificationPackage(
-    int32 InBadge
-	, FString InCustomData
-	, FString InIcon
-	, FString InMessage
-	, FString InSound
-	, FString InTitle
-);
+        static FBPServerPushNotificationPackage MakeBPServerPushNotificationPackage(
+            int32 InBadge
+            , FString InCustomData
+            , FString InIcon
+            , FString InMessage
+            , FString InSound
+            , FString InTitle
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPushNotificationPackage(
-    const FBPServerPushNotificationPackage& In
-	, int32& OutBadge
-	, FString& OutCustomData
-	, FString& OutIcon
-	, FString& OutMessage
-	, FString& OutSound
-	, FString& OutTitle
+        static void BreakBPServerPushNotificationPackage(
+            const FBPServerPushNotificationPackage& In
+            , int32& OutBadge
+            , FString& OutCustomData
+            , FString& OutIcon
+            , FString& OutMessage
+            , FString& OutSound
+            , FString& OutTitle
 );
 
     // PushNotificationRegistration
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPushNotificationRegistration MakeBPServerPushNotificationRegistration(
-    FString InNotificationEndpointARN
-	, EBPServerPushNotificationPlatform InPlatform
-);
+        static FBPServerPushNotificationRegistration MakeBPServerPushNotificationRegistration(
+            FString InNotificationEndpointARN
+            , EBPServerPushNotificationPlatform InPlatform
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPushNotificationRegistration(
-    const FBPServerPushNotificationRegistration& In
-	, FString& OutNotificationEndpointARN
-	, EBPServerPushNotificationPlatform& OutPlatform
+        static void BreakBPServerPushNotificationRegistration(
+            const FBPServerPushNotificationRegistration& In
+            , FString& OutNotificationEndpointARN
+            , EBPServerPushNotificationPlatform& OutPlatform
 );
 
     // PushNotificationRegistrationModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerPushNotificationRegistrationModel MakeBPServerPushNotificationRegistrationModel(
-    FString InNotificationEndpointARN
-	, EBPServerPushNotificationPlatform InPlatform
-);
+        static FBPServerPushNotificationRegistrationModel MakeBPServerPushNotificationRegistrationModel(
+            FString InNotificationEndpointARN
+            , EBPServerPushNotificationPlatform InPlatform
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerPushNotificationRegistrationModel(
-    const FBPServerPushNotificationRegistrationModel& In
-	, FString& OutNotificationEndpointARN
-	, EBPServerPushNotificationPlatform& OutPlatform
+        static void BreakBPServerPushNotificationRegistrationModel(
+            const FBPServerPushNotificationRegistrationModel& In
+            , FString& OutNotificationEndpointARN
+            , EBPServerPushNotificationPlatform& OutPlatform
 );
 
     // RandomResultTableListing
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRandomResultTableListing(
-    const FBPServerRandomResultTableListing& In
-	, FString& OutCatalogVersion
-	, TArray<FBPServerResultTableNode>& OutNodes
-	, FString& OutTableId
+        static void BreakBPServerRandomResultTableListing(
+            const FBPServerRandomResultTableListing& In
+            , FString& OutCatalogVersion
+            , TArray<FBPServerResultTableNode>& OutNodes
+            , FString& OutTableId
 );
 
     // RedeemCouponRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRedeemCouponRequest MakeBPServerRedeemCouponRequest(
-    FString InCatalogVersion
-	, FString InCharacterId
-	, FString InCouponCode
-	, FString InPlayFabId
-);
+        static FBPServerRedeemCouponRequest MakeBPServerRedeemCouponRequest(
+            FString InCatalogVersion
+            , FString InCharacterId
+            , FString InCouponCode
+            , FString InPlayFabId
+        );
 
     // RedeemCouponResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRedeemCouponResult(
-    const FBPServerRedeemCouponResult& In
-	, TArray<FBPServerItemInstance>& OutGrantedItems
+        static void BreakBPServerRedeemCouponResult(
+            const FBPServerRedeemCouponResult& In
+            , TArray<FBPServerItemInstance>& OutGrantedItems
 );
 
     // RedeemMatchmakerTicketRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRedeemMatchmakerTicketRequest MakeBPServerRedeemMatchmakerTicketRequest(
-    FString InLobbyId
-	, FString InTicket
-);
+        static FBPServerRedeemMatchmakerTicketRequest MakeBPServerRedeemMatchmakerTicketRequest(
+            FString InLobbyId
+            , FString InTicket
+        );
 
     // RedeemMatchmakerTicketResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRedeemMatchmakerTicketResult(
-    const FBPServerRedeemMatchmakerTicketResult& In
-	, FString& OutError
-	, bool& OutTicketIsValid
-	, FBPServerUserAccountInfo& OutUserInfo
+        static void BreakBPServerRedeemMatchmakerTicketResult(
+            const FBPServerRedeemMatchmakerTicketResult& In
+            , FString& OutError
+            , bool& OutTicketIsValid
+            , FBPServerUserAccountInfo& OutUserInfo
 );
 
     // RefreshGameServerInstanceHeartbeatRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRefreshGameServerInstanceHeartbeatRequest MakeBPServerRefreshGameServerInstanceHeartbeatRequest(
-    FString InLobbyId
-);
+        static FBPServerRefreshGameServerInstanceHeartbeatRequest MakeBPServerRefreshGameServerInstanceHeartbeatRequest(
+            FString InLobbyId
+        );
 
     // RefreshGameServerInstanceHeartbeatResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRefreshGameServerInstanceHeartbeatResult(
-    const FBPServerRefreshGameServerInstanceHeartbeatResult& In
+        static void BreakBPServerRefreshGameServerInstanceHeartbeatResult(
+            const FBPServerRefreshGameServerInstanceHeartbeatResult& In
 );
 
     // RegisterGameRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRegisterGameRequest MakeBPServerRegisterGameRequest(
-    FString InBuild
-	, FString InGameMode
-	, FString InLobbyId
-	, EBPServerRegion InRegion
-	, FString InServerHost
-	, FString InServerIPV6Address
-	, FString InServerPort
-	, TMap<FString, FString> InTags
-);
+        static FBPServerRegisterGameRequest MakeBPServerRegisterGameRequest(
+            FString InBuild
+            , FString InGameMode
+            , FString InLobbyId
+            , EBPServerRegion InRegion
+            , FString InServerHost
+            , FString InServerIPV6Address
+            , FString InServerPort
+            , TMap<FString, FString> InTags
+        );
 
     // RegisterGameResponse
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRegisterGameResponse(
-    const FBPServerRegisterGameResponse& In
-	, FString& OutLobbyId
+        static void BreakBPServerRegisterGameResponse(
+            const FBPServerRegisterGameResponse& In
+            , FString& OutLobbyId
 );
 
     // RemoveFriendRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRemoveFriendRequest MakeBPServerRemoveFriendRequest(
-    FString InFriendPlayFabId
-	, FString InPlayFabId
-);
+        static FBPServerRemoveFriendRequest MakeBPServerRemoveFriendRequest(
+            FString InFriendPlayFabId
+            , FString InPlayFabId
+        );
 
     // RemovePlayerTagRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRemovePlayerTagRequest MakeBPServerRemovePlayerTagRequest(
-    FString InPlayFabId
-	, FString InTagName
-);
+        static FBPServerRemovePlayerTagRequest MakeBPServerRemovePlayerTagRequest(
+            FString InPlayFabId
+            , FString InTagName
+        );
 
     // RemovePlayerTagResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRemovePlayerTagResult(
-    const FBPServerRemovePlayerTagResult& In
+        static void BreakBPServerRemovePlayerTagResult(
+            const FBPServerRemovePlayerTagResult& In
 );
 
     // RemoveSharedGroupMembersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRemoveSharedGroupMembersRequest MakeBPServerRemoveSharedGroupMembersRequest(
-    TArray<FString> InPlayFabIds
-	, FString InSharedGroupId
-);
+        static FBPServerRemoveSharedGroupMembersRequest MakeBPServerRemoveSharedGroupMembersRequest(
+            TArray<FString> InPlayFabIds
+            , FString InSharedGroupId
+        );
 
     // RemoveSharedGroupMembersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRemoveSharedGroupMembersResult(
-    const FBPServerRemoveSharedGroupMembersResult& In
+        static void BreakBPServerRemoveSharedGroupMembersResult(
+            const FBPServerRemoveSharedGroupMembersResult& In
 );
 
     // ReportPlayerServerRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerReportPlayerServerRequest MakeBPServerReportPlayerServerRequest(
-    FString InComment
-	, FString InReporteeId
-	, FString InReporterId
-);
+        static FBPServerReportPlayerServerRequest MakeBPServerReportPlayerServerRequest(
+            FString InComment
+            , FString InReporteeId
+            , FString InReporterId
+        );
 
     // ReportPlayerServerResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerReportPlayerServerResult(
-    const FBPServerReportPlayerServerResult& In
-	, int32& OutSubmissionsRemaining
+        static void BreakBPServerReportPlayerServerResult(
+            const FBPServerReportPlayerServerResult& In
+            , int32& OutSubmissionsRemaining
 );
 
     // ResultTableNode
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerResultTableNode(
-    const FBPServerResultTableNode& In
-	, FString& OutResultItem
-	, EBPServerResultTableNodeType& OutResultItemType
-	, int32& OutWeight
+        static void BreakBPServerResultTableNode(
+            const FBPServerResultTableNode& In
+            , FString& OutResultItem
+            , EBPServerResultTableNodeType& OutResultItemType
+            , int32& OutWeight
 );
 
     // RevokeAllBansForUserRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRevokeAllBansForUserRequest MakeBPServerRevokeAllBansForUserRequest(
-    FString InPlayFabId
-);
+        static FBPServerRevokeAllBansForUserRequest MakeBPServerRevokeAllBansForUserRequest(
+            FString InPlayFabId
+        );
 
     // RevokeAllBansForUserResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRevokeAllBansForUserResult(
-    const FBPServerRevokeAllBansForUserResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
+        static void BreakBPServerRevokeAllBansForUserResult(
+            const FBPServerRevokeAllBansForUserResult& In
+            , TArray<FBPServerBanInfo>& OutBanData
 );
 
     // RevokeBansRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRevokeBansRequest MakeBPServerRevokeBansRequest(
-    TArray<FString> InBanIds
-);
+        static FBPServerRevokeBansRequest MakeBPServerRevokeBansRequest(
+            TArray<FString> InBanIds
+        );
 
     // RevokeBansResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRevokeBansResult(
-    const FBPServerRevokeBansResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
+        static void BreakBPServerRevokeBansResult(
+            const FBPServerRevokeBansResult& In
+            , TArray<FBPServerBanInfo>& OutBanData
+);
+
+    // RevokeInventoryItem
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
+        static FBPServerRevokeInventoryItem MakeBPServerRevokeInventoryItem(
+            FString InCharacterId
+            , FString InItemInstanceId
+            , FString InPlayFabId
+        );
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
+        static void BreakBPServerRevokeInventoryItem(
+            const FBPServerRevokeInventoryItem& In
+            , FString& OutCharacterId
+            , FString& OutItemInstanceId
+            , FString& OutPlayFabId
 );
 
     // RevokeInventoryItemRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerRevokeInventoryItemRequest MakeBPServerRevokeInventoryItemRequest(
-    FString InCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
+        static FBPServerRevokeInventoryItemRequest MakeBPServerRevokeInventoryItemRequest(
+            FString InCharacterId
+            , FString InItemInstanceId
+            , FString InPlayFabId
+        );
+
+    // RevokeInventoryItemsRequest
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
+        static FBPServerRevokeInventoryItemsRequest MakeBPServerRevokeInventoryItemsRequest(
+            TArray<FBPServerRevokeInventoryItem> InItems
+        );
+
+    // RevokeInventoryItemsResult
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
+        static void BreakBPServerRevokeInventoryItemsResult(
+            const FBPServerRevokeInventoryItemsResult& In
+            , TArray<FBPServerRevokeItemError>& OutErrors
 );
 
     // RevokeInventoryResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerRevokeInventoryResult(
-    const FBPServerRevokeInventoryResult& In
+        static void BreakBPServerRevokeInventoryResult(
+            const FBPServerRevokeInventoryResult& In
+);
+
+    // RevokeItemError
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
+        static FBPServerRevokeItemError MakeBPServerRevokeItemError(
+            FString InError
+            , FBPServerRevokeInventoryItem InItem
+        );
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
+        static void BreakBPServerRevokeItemError(
+            const FBPServerRevokeItemError& In
+            , FString& OutError
+            , FBPServerRevokeInventoryItem& OutItem
 );
 
     // ScriptExecutionError
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerScriptExecutionError MakeBPServerScriptExecutionError(
-    FString InError
-	, FString InMessage
-	, FString InStackTrace
-);
+        static FBPServerScriptExecutionError MakeBPServerScriptExecutionError(
+            FString InError
+            , FString InMessage
+            , FString InStackTrace
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerScriptExecutionError(
-    const FBPServerScriptExecutionError& In
-	, FString& OutError
-	, FString& OutMessage
-	, FString& OutStackTrace
+        static void BreakBPServerScriptExecutionError(
+            const FBPServerScriptExecutionError& In
+            , FString& OutError
+            , FString& OutMessage
+            , FString& OutStackTrace
 );
 
     // SendCustomAccountRecoveryEmailRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSendCustomAccountRecoveryEmailRequest MakeBPServerSendCustomAccountRecoveryEmailRequest(
-    FString InEmail
-	, FString InEmailTemplateId
-	, FString InUsername
-);
+        static FBPServerSendCustomAccountRecoveryEmailRequest MakeBPServerSendCustomAccountRecoveryEmailRequest(
+            FString InEmail
+            , FString InEmailTemplateId
+            , FString InUsername
+        );
 
     // SendCustomAccountRecoveryEmailResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSendCustomAccountRecoveryEmailResult(
-    const FBPServerSendCustomAccountRecoveryEmailResult& In
+        static void BreakBPServerSendCustomAccountRecoveryEmailResult(
+            const FBPServerSendCustomAccountRecoveryEmailResult& In
 );
 
     // SendEmailFromTemplateRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSendEmailFromTemplateRequest MakeBPServerSendEmailFromTemplateRequest(
-    FString InEmailTemplateId
-	, FString InPlayFabId
-);
+        static FBPServerSendEmailFromTemplateRequest MakeBPServerSendEmailFromTemplateRequest(
+            FString InEmailTemplateId
+            , FString InPlayFabId
+        );
 
     // SendEmailFromTemplateResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSendEmailFromTemplateResult(
-    const FBPServerSendEmailFromTemplateResult& In
+        static void BreakBPServerSendEmailFromTemplateResult(
+            const FBPServerSendEmailFromTemplateResult& In
 );
 
     // SendPushNotificationRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSendPushNotificationRequest MakeBPServerSendPushNotificationRequest(
-    TArray<FBPServerAdvancedPushPlatformMsg> InAdvancedPlatformDelivery
-	, FString InMessage
-	, FBPServerPushNotificationPackage InPackage
-	, FString InRecipient
-	, FString InSubject
-	, TArray<EBPServerPushNotificationPlatform> InTargetPlatforms
-);
+        static FBPServerSendPushNotificationRequest MakeBPServerSendPushNotificationRequest(
+            TArray<FBPServerAdvancedPushPlatformMsg> InAdvancedPlatformDelivery
+            , FString InMessage
+            , FBPServerPushNotificationPackage InPackage
+            , FString InRecipient
+            , FString InSubject
+            , TArray<EBPServerPushNotificationPlatform> InTargetPlatforms
+        );
 
     // SendPushNotificationResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSendPushNotificationResult(
-    const FBPServerSendPushNotificationResult& In
+        static void BreakBPServerSendPushNotificationResult(
+            const FBPServerSendPushNotificationResult& In
 );
 
     // SetFriendTagsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSetFriendTagsRequest MakeBPServerSetFriendTagsRequest(
-    FString InFriendPlayFabId
-	, FString InPlayFabId
-	, TArray<FString> InTags
-);
+        static FBPServerSetFriendTagsRequest MakeBPServerSetFriendTagsRequest(
+            FString InFriendPlayFabId
+            , FString InPlayFabId
+            , TArray<FString> InTags
+        );
 
     // SetGameServerInstanceDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSetGameServerInstanceDataRequest MakeBPServerSetGameServerInstanceDataRequest(
-    FString InGameServerData
-	, FString InLobbyId
-);
+        static FBPServerSetGameServerInstanceDataRequest MakeBPServerSetGameServerInstanceDataRequest(
+            FString InGameServerData
+            , FString InLobbyId
+        );
 
     // SetGameServerInstanceDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSetGameServerInstanceDataResult(
-    const FBPServerSetGameServerInstanceDataResult& In
+        static void BreakBPServerSetGameServerInstanceDataResult(
+            const FBPServerSetGameServerInstanceDataResult& In
 );
 
     // SetGameServerInstanceStateRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSetGameServerInstanceStateRequest MakeBPServerSetGameServerInstanceStateRequest(
-    FString InLobbyId
-	, EBPServerGameInstanceState InState
-);
+        static FBPServerSetGameServerInstanceStateRequest MakeBPServerSetGameServerInstanceStateRequest(
+            FString InLobbyId
+            , EBPServerGameInstanceState InState
+        );
 
     // SetGameServerInstanceStateResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSetGameServerInstanceStateResult(
-    const FBPServerSetGameServerInstanceStateResult& In
+        static void BreakBPServerSetGameServerInstanceStateResult(
+            const FBPServerSetGameServerInstanceStateResult& In
 );
 
     // SetGameServerInstanceTagsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSetGameServerInstanceTagsRequest MakeBPServerSetGameServerInstanceTagsRequest(
-    FString InLobbyId
-	, TMap<FString, FString> InTags
-);
+        static FBPServerSetGameServerInstanceTagsRequest MakeBPServerSetGameServerInstanceTagsRequest(
+            FString InLobbyId
+            , TMap<FString, FString> InTags
+        );
 
     // SetGameServerInstanceTagsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSetGameServerInstanceTagsResult(
-    const FBPServerSetGameServerInstanceTagsResult& In
+        static void BreakBPServerSetGameServerInstanceTagsResult(
+            const FBPServerSetGameServerInstanceTagsResult& In
 );
 
     // SetPlayerSecretRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSetPlayerSecretRequest MakeBPServerSetPlayerSecretRequest(
-    FString InPlayerSecret
-	, FString InPlayFabId
-);
+        static FBPServerSetPlayerSecretRequest MakeBPServerSetPlayerSecretRequest(
+            FString InPlayerSecret
+            , FString InPlayFabId
+        );
 
     // SetPlayerSecretResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSetPlayerSecretResult(
-    const FBPServerSetPlayerSecretResult& In
+        static void BreakBPServerSetPlayerSecretResult(
+            const FBPServerSetPlayerSecretResult& In
 );
 
     // SetPublisherDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSetPublisherDataRequest MakeBPServerSetPublisherDataRequest(
-    FString InKey
-	, FString InValue
-);
+        static FBPServerSetPublisherDataRequest MakeBPServerSetPublisherDataRequest(
+            FString InKey
+            , FString InValue
+        );
 
     // SetPublisherDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSetPublisherDataResult(
-    const FBPServerSetPublisherDataResult& In
+        static void BreakBPServerSetPublisherDataResult(
+            const FBPServerSetPublisherDataResult& In
 );
 
     // SetTitleDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSetTitleDataRequest MakeBPServerSetTitleDataRequest(
-    FString InKey
-	, FString InValue
-);
+        static FBPServerSetTitleDataRequest MakeBPServerSetTitleDataRequest(
+            FString InKey
+            , FString InValue
+        );
 
     // SetTitleDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSetTitleDataResult(
-    const FBPServerSetTitleDataResult& In
+        static void BreakBPServerSetTitleDataResult(
+            const FBPServerSetTitleDataResult& In
 );
 
     // SharedGroupDataRecord
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSharedGroupDataRecord MakeBPServerSharedGroupDataRecord(
-    FDateTime InLastUpdated
-	, FString InLastUpdatedBy
-	, EBPServerUserDataPermission InPermission
-	, FString InValue
-);
+        static FBPServerSharedGroupDataRecord MakeBPServerSharedGroupDataRecord(
+            FDateTime InLastUpdated
+            , FString InLastUpdatedBy
+            , EBPServerUserDataPermission InPermission
+            , FString InValue
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSharedGroupDataRecord(
-    const FBPServerSharedGroupDataRecord& In
-	, FDateTime& OutLastUpdated
-	, FString& OutLastUpdatedBy
-	, EBPServerUserDataPermission& OutPermission
-	, FString& OutValue
+        static void BreakBPServerSharedGroupDataRecord(
+            const FBPServerSharedGroupDataRecord& In
+            , FDateTime& OutLastUpdated
+            , FString& OutLastUpdatedBy
+            , EBPServerUserDataPermission& OutPermission
+            , FString& OutValue
 );
 
     // StatisticModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerStatisticModel MakeBPServerStatisticModel(
-    FString InName
-	, int32 InValue
-	, int32 InVersion
-);
+        static FBPServerStatisticModel MakeBPServerStatisticModel(
+            FString InName
+            , int32 InValue
+            , int32 InVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerStatisticModel(
-    const FBPServerStatisticModel& In
-	, FString& OutName
-	, int32& OutValue
-	, int32& OutVersion
+        static void BreakBPServerStatisticModel(
+            const FBPServerStatisticModel& In
+            , FString& OutName
+            , int32& OutValue
+            , int32& OutVersion
 );
 
     // StatisticNameVersion
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerStatisticNameVersion MakeBPServerStatisticNameVersion(
-    FString InStatisticName
-	, int32 InVersion
-);
+        static FBPServerStatisticNameVersion MakeBPServerStatisticNameVersion(
+            FString InStatisticName
+            , int32 InVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerStatisticNameVersion(
-    const FBPServerStatisticNameVersion& In
-	, FString& OutStatisticName
-	, int32& OutVersion
+        static void BreakBPServerStatisticNameVersion(
+            const FBPServerStatisticNameVersion& In
+            , FString& OutStatisticName
+            , int32& OutVersion
 );
 
     // StatisticUpdate
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerStatisticUpdate MakeBPServerStatisticUpdate(
-    FString InStatisticName
-	, int32 InValue
-	, int32 InVersion
-);
+        static FBPServerStatisticUpdate MakeBPServerStatisticUpdate(
+            FString InStatisticName
+            , int32 InValue
+            , int32 InVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerStatisticUpdate(
-    const FBPServerStatisticUpdate& In
-	, FString& OutStatisticName
-	, int32& OutValue
-	, int32& OutVersion
+        static void BreakBPServerStatisticUpdate(
+            const FBPServerStatisticUpdate& In
+            , FString& OutStatisticName
+            , int32& OutValue
+            , int32& OutVersion
 );
 
     // StatisticValue
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerStatisticValue MakeBPServerStatisticValue(
-    FString InStatisticName
-	, int32 InValue
-	, int32 InVersion
-);
+        static FBPServerStatisticValue MakeBPServerStatisticValue(
+            FString InStatisticName
+            , int32 InValue
+            , int32 InVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerStatisticValue(
-    const FBPServerStatisticValue& In
-	, FString& OutStatisticName
-	, int32& OutValue
-	, int32& OutVersion
+        static void BreakBPServerStatisticValue(
+            const FBPServerStatisticValue& In
+            , FString& OutStatisticName
+            , int32& OutValue
+            , int32& OutVersion
 );
 
     // SteamPlayFabIdPair
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSteamPlayFabIdPair MakeBPServerSteamPlayFabIdPair(
-    FString InPlayFabId
-	, FString InSteamStringId
-);
+        static FBPServerSteamPlayFabIdPair MakeBPServerSteamPlayFabIdPair(
+            FString InPlayFabId
+            , FString InSteamStringId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSteamPlayFabIdPair(
-    const FBPServerSteamPlayFabIdPair& In
-	, FString& OutPlayFabId
-	, FString& OutSteamStringId
+        static void BreakBPServerSteamPlayFabIdPair(
+            const FBPServerSteamPlayFabIdPair& In
+            , FString& OutPlayFabId
+            , FString& OutSteamStringId
 );
 
     // SubscriptionModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSubscriptionModel MakeBPServerSubscriptionModel(
-    FDateTime InExpiration
-	, FDateTime InInitialSubscriptionTime
-	, bool InIsActive
-	, EBPServerSubscriptionProviderStatus InStatus
-	, FString InSubscriptionId
-	, FString InSubscriptionItemId
-	, FString InSubscriptionProvider
-);
+        static FBPServerSubscriptionModel MakeBPServerSubscriptionModel(
+            FDateTime InExpiration
+            , FDateTime InInitialSubscriptionTime
+            , bool InIsActive
+            , EBPServerSubscriptionProviderStatus InStatus
+            , FString InSubscriptionId
+            , FString InSubscriptionItemId
+            , FString InSubscriptionProvider
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerSubscriptionModel(
-    const FBPServerSubscriptionModel& In
-	, FDateTime& OutExpiration
-	, FDateTime& OutInitialSubscriptionTime
-	, bool& OutIsActive
-	, EBPServerSubscriptionProviderStatus& OutStatus
-	, FString& OutSubscriptionId
-	, FString& OutSubscriptionItemId
-	, FString& OutSubscriptionProvider
+        static void BreakBPServerSubscriptionModel(
+            const FBPServerSubscriptionModel& In
+            , FDateTime& OutExpiration
+            , FDateTime& OutInitialSubscriptionTime
+            , bool& OutIsActive
+            , EBPServerSubscriptionProviderStatus& OutStatus
+            , FString& OutSubscriptionId
+            , FString& OutSubscriptionItemId
+            , FString& OutSubscriptionProvider
 );
 
     // SubtractCharacterVirtualCurrencyRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSubtractCharacterVirtualCurrencyRequest MakeBPServerSubtractCharacterVirtualCurrencyRequest(
-    int32 InAmount
-	, FString InCharacterId
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-);
+        static FBPServerSubtractCharacterVirtualCurrencyRequest MakeBPServerSubtractCharacterVirtualCurrencyRequest(
+            int32 InAmount
+            , FString InCharacterId
+            , FString InPlayFabId
+            , FString InVirtualCurrency
+        );
 
     // SubtractUserVirtualCurrencyRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerSubtractUserVirtualCurrencyRequest MakeBPServerSubtractUserVirtualCurrencyRequest(
-    int32 InAmount
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-);
+        static FBPServerSubtractUserVirtualCurrencyRequest MakeBPServerSubtractUserVirtualCurrencyRequest(
+            int32 InAmount
+            , FString InPlayFabId
+            , FString InVirtualCurrency
+        );
 
     // TagModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerTagModel MakeBPServerTagModel(
-    FString InTagValue
-);
+        static FBPServerTagModel MakeBPServerTagModel(
+            FString InTagValue
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerTagModel(
-    const FBPServerTagModel& In
-	, FString& OutTagValue
+        static void BreakBPServerTagModel(
+            const FBPServerTagModel& In
+            , FString& OutTagValue
 );
 
     // TitleNewsItem
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerTitleNewsItem MakeBPServerTitleNewsItem(
-    FString InBody
-	, FString InNewsId
-	, FDateTime InTimestamp
-	, FString InTitle
-);
+        static FBPServerTitleNewsItem MakeBPServerTitleNewsItem(
+            FString InBody
+            , FString InNewsId
+            , FDateTime InTimestamp
+            , FString InTitle
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerTitleNewsItem(
-    const FBPServerTitleNewsItem& In
-	, FString& OutBody
-	, FString& OutNewsId
-	, FDateTime& OutTimestamp
-	, FString& OutTitle
+        static void BreakBPServerTitleNewsItem(
+            const FBPServerTitleNewsItem& In
+            , FString& OutBody
+            , FString& OutNewsId
+            , FDateTime& OutTimestamp
+            , FString& OutTitle
 );
 
     // UnlockContainerInstanceRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUnlockContainerInstanceRequest MakeBPServerUnlockContainerInstanceRequest(
-    FString InCatalogVersion
-	, FString InCharacterId
-	, FString InContainerItemInstanceId
-	, FString InKeyItemInstanceId
-	, FString InPlayFabId
-);
+        static FBPServerUnlockContainerInstanceRequest MakeBPServerUnlockContainerInstanceRequest(
+            FString InCatalogVersion
+            , FString InCharacterId
+            , FString InContainerItemInstanceId
+            , FString InKeyItemInstanceId
+            , FString InPlayFabId
+        );
 
     // UnlockContainerItemRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUnlockContainerItemRequest MakeBPServerUnlockContainerItemRequest(
-    FString InCatalogVersion
-	, FString InCharacterId
-	, FString InContainerItemId
-	, FString InPlayFabId
-);
+        static FBPServerUnlockContainerItemRequest MakeBPServerUnlockContainerItemRequest(
+            FString InCatalogVersion
+            , FString InCharacterId
+            , FString InContainerItemId
+            , FString InPlayFabId
+        );
 
     // UnlockContainerItemResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUnlockContainerItemResult(
-    const FBPServerUnlockContainerItemResult& In
-	, TArray<FBPServerItemInstance>& OutGrantedItems
-	, FString& OutUnlockedItemInstanceId
-	, FString& OutUnlockedWithItemInstanceId
-	, TMap<FString, int32>& OutVirtualCurrency
+        static void BreakBPServerUnlockContainerItemResult(
+            const FBPServerUnlockContainerItemResult& In
+            , TArray<FBPServerItemInstance>& OutGrantedItems
+            , FString& OutUnlockedItemInstanceId
+            , FString& OutUnlockedWithItemInstanceId
+            , TMap<FString, int32>& OutVirtualCurrency
 );
 
     // UpdateAvatarUrlRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdateAvatarUrlRequest MakeBPServerUpdateAvatarUrlRequest(
-    FString InImageUrl
-	, FString InPlayFabId
-);
+        static FBPServerUpdateAvatarUrlRequest MakeBPServerUpdateAvatarUrlRequest(
+            FString InImageUrl
+            , FString InPlayFabId
+        );
 
     // UpdateBanRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdateBanRequest MakeBPServerUpdateBanRequest(
-    bool InActive
-	, FString InBanId
-	, FDateTime InExpires
-	, FString InIPAddress
-	, FString InMACAddress
-	, bool InPermanent
-	, FString InReason
-);
+        static FBPServerUpdateBanRequest MakeBPServerUpdateBanRequest(
+            bool InActive
+            , FString InBanId
+            , FDateTime InExpires
+            , FString InIPAddress
+            , FString InMACAddress
+            , bool InPermanent
+            , FString InReason
+        );
 
     // UpdateBansRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdateBansRequest MakeBPServerUpdateBansRequest(
-    TArray<FBPServerUpdateBanRequest> InBans
-);
+        static FBPServerUpdateBansRequest MakeBPServerUpdateBansRequest(
+            TArray<FBPServerUpdateBanRequest> InBans
+        );
 
     // UpdateBansResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUpdateBansResult(
-    const FBPServerUpdateBansResult& In
-	, TArray<FBPServerBanInfo>& OutBanData
+        static void BreakBPServerUpdateBansResult(
+            const FBPServerUpdateBansResult& In
+            , TArray<FBPServerBanInfo>& OutBanData
 );
 
     // UpdateCharacterDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdateCharacterDataRequest MakeBPServerUpdateCharacterDataRequest(
-    FString InCharacterId
-	, TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, EBPServerUserDataPermission InPermission
-	, FString InPlayFabId
-);
+        static FBPServerUpdateCharacterDataRequest MakeBPServerUpdateCharacterDataRequest(
+            FString InCharacterId
+            , TMap<FString, FString> InData
+            , TArray<FString> InKeysToRemove
+            , EBPServerUserDataPermission InPermission
+            , FString InPlayFabId
+        );
 
     // UpdateCharacterDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUpdateCharacterDataResult(
-    const FBPServerUpdateCharacterDataResult& In
-	, int32& OutDataVersion
+        static void BreakBPServerUpdateCharacterDataResult(
+            const FBPServerUpdateCharacterDataResult& In
+            , int32& OutDataVersion
 );
 
     // UpdateCharacterStatisticsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdateCharacterStatisticsRequest MakeBPServerUpdateCharacterStatisticsRequest(
-    FString InCharacterId
-	, TMap<FString, int32> InCharacterStatistics
-	, FString InPlayFabId
-);
+        static FBPServerUpdateCharacterStatisticsRequest MakeBPServerUpdateCharacterStatisticsRequest(
+            FString InCharacterId
+            , TMap<FString, int32> InCharacterStatistics
+            , FString InPlayFabId
+        );
 
     // UpdateCharacterStatisticsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUpdateCharacterStatisticsResult(
-    const FBPServerUpdateCharacterStatisticsResult& In
+        static void BreakBPServerUpdateCharacterStatisticsResult(
+            const FBPServerUpdateCharacterStatisticsResult& In
 );
 
     // UpdatePlayerStatisticsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdatePlayerStatisticsRequest MakeBPServerUpdatePlayerStatisticsRequest(
-    bool InForceUpdate
-	, FString InPlayFabId
-	, TArray<FBPServerStatisticUpdate> InStatistics
-);
+        static FBPServerUpdatePlayerStatisticsRequest MakeBPServerUpdatePlayerStatisticsRequest(
+            bool InForceUpdate
+            , FString InPlayFabId
+            , TArray<FBPServerStatisticUpdate> InStatistics
+        );
 
     // UpdatePlayerStatisticsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUpdatePlayerStatisticsResult(
-    const FBPServerUpdatePlayerStatisticsResult& In
+        static void BreakBPServerUpdatePlayerStatisticsResult(
+            const FBPServerUpdatePlayerStatisticsResult& In
 );
 
     // UpdateSharedGroupDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdateSharedGroupDataRequest MakeBPServerUpdateSharedGroupDataRequest(
-    TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, EBPServerUserDataPermission InPermission
-	, FString InSharedGroupId
-);
+        static FBPServerUpdateSharedGroupDataRequest MakeBPServerUpdateSharedGroupDataRequest(
+            TMap<FString, FString> InData
+            , TArray<FString> InKeysToRemove
+            , EBPServerUserDataPermission InPermission
+            , FString InSharedGroupId
+        );
 
     // UpdateSharedGroupDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUpdateSharedGroupDataResult(
-    const FBPServerUpdateSharedGroupDataResult& In
+        static void BreakBPServerUpdateSharedGroupDataResult(
+            const FBPServerUpdateSharedGroupDataResult& In
 );
 
     // UpdateUserDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdateUserDataRequest MakeBPServerUpdateUserDataRequest(
-    TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, EBPServerUserDataPermission InPermission
-	, FString InPlayFabId
-);
+        static FBPServerUpdateUserDataRequest MakeBPServerUpdateUserDataRequest(
+            TMap<FString, FString> InData
+            , TArray<FString> InKeysToRemove
+            , EBPServerUserDataPermission InPermission
+            , FString InPlayFabId
+        );
 
     // UpdateUserDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUpdateUserDataResult(
-    const FBPServerUpdateUserDataResult& In
-	, int32& OutDataVersion
+        static void BreakBPServerUpdateUserDataResult(
+            const FBPServerUpdateUserDataResult& In
+            , int32& OutDataVersion
 );
 
     // UpdateUserInternalDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdateUserInternalDataRequest MakeBPServerUpdateUserInternalDataRequest(
-    TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-);
+        static FBPServerUpdateUserInternalDataRequest MakeBPServerUpdateUserInternalDataRequest(
+            TMap<FString, FString> InData
+            , TArray<FString> InKeysToRemove
+            , FString InPlayFabId
+        );
 
     // UpdateUserInventoryItemDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUpdateUserInventoryItemDataRequest MakeBPServerUpdateUserInventoryItemDataRequest(
-    FString InCharacterId
-	, TMap<FString, FString> InData
-	, FString InItemInstanceId
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-);
+        static FBPServerUpdateUserInventoryItemDataRequest MakeBPServerUpdateUserInventoryItemDataRequest(
+            FString InCharacterId
+            , TMap<FString, FString> InData
+            , FString InItemInstanceId
+            , TArray<FString> InKeysToRemove
+            , FString InPlayFabId
+        );
 
     // UserAccountInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserAccountInfo MakeBPServerUserAccountInfo(
-    FBPServerUserAndroidDeviceInfo InAndroidDeviceInfo
-	, FDateTime InCreated
-	, FBPServerUserCustomIdInfo InCustomIdInfo
-	, FBPServerUserFacebookInfo InFacebookInfo
-	, FBPServerUserGameCenterInfo InGameCenterInfo
-	, FBPServerUserGoogleInfo InGoogleInfo
-	, FBPServerUserIosDeviceInfo InIosDeviceInfo
-	, FBPServerUserKongregateInfo InKongregateInfo
-	, FString InPlayFabId
-	, FBPServerUserPrivateAccountInfo InPrivateInfo
-	, FBPServerUserPsnInfo InPsnInfo
-	, FBPServerUserSteamInfo InSteamInfo
-	, FBPServerUserTitleInfo InTitleInfo
-	, FBPServerUserTwitchInfo InTwitchInfo
-	, FString InUsername
-	, FBPServerUserXboxInfo InXboxInfo
-);
+        static FBPServerUserAccountInfo MakeBPServerUserAccountInfo(
+            FBPServerUserAndroidDeviceInfo InAndroidDeviceInfo
+            , FDateTime InCreated
+            , FBPServerUserCustomIdInfo InCustomIdInfo
+            , FBPServerUserFacebookInfo InFacebookInfo
+            , FBPServerUserGameCenterInfo InGameCenterInfo
+            , FBPServerUserGoogleInfo InGoogleInfo
+            , FBPServerUserIosDeviceInfo InIosDeviceInfo
+            , FBPServerUserKongregateInfo InKongregateInfo
+            , FString InPlayFabId
+            , FBPServerUserPrivateAccountInfo InPrivateInfo
+            , FBPServerUserPsnInfo InPsnInfo
+            , FBPServerUserSteamInfo InSteamInfo
+            , FBPServerUserTitleInfo InTitleInfo
+            , FBPServerUserTwitchInfo InTwitchInfo
+            , FString InUsername
+            , FBPServerUserXboxInfo InXboxInfo
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserAccountInfo(
-    const FBPServerUserAccountInfo& In
-	, FBPServerUserAndroidDeviceInfo& OutAndroidDeviceInfo
-	, FDateTime& OutCreated
-	, FBPServerUserCustomIdInfo& OutCustomIdInfo
-	, FBPServerUserFacebookInfo& OutFacebookInfo
-	, FBPServerUserGameCenterInfo& OutGameCenterInfo
-	, FBPServerUserGoogleInfo& OutGoogleInfo
-	, FBPServerUserIosDeviceInfo& OutIosDeviceInfo
-	, FBPServerUserKongregateInfo& OutKongregateInfo
-	, FString& OutPlayFabId
-	, FBPServerUserPrivateAccountInfo& OutPrivateInfo
-	, FBPServerUserPsnInfo& OutPsnInfo
-	, FBPServerUserSteamInfo& OutSteamInfo
-	, FBPServerUserTitleInfo& OutTitleInfo
-	, FBPServerUserTwitchInfo& OutTwitchInfo
-	, FString& OutUsername
-	, FBPServerUserXboxInfo& OutXboxInfo
+        static void BreakBPServerUserAccountInfo(
+            const FBPServerUserAccountInfo& In
+            , FBPServerUserAndroidDeviceInfo& OutAndroidDeviceInfo
+            , FDateTime& OutCreated
+            , FBPServerUserCustomIdInfo& OutCustomIdInfo
+            , FBPServerUserFacebookInfo& OutFacebookInfo
+            , FBPServerUserGameCenterInfo& OutGameCenterInfo
+            , FBPServerUserGoogleInfo& OutGoogleInfo
+            , FBPServerUserIosDeviceInfo& OutIosDeviceInfo
+            , FBPServerUserKongregateInfo& OutKongregateInfo
+            , FString& OutPlayFabId
+            , FBPServerUserPrivateAccountInfo& OutPrivateInfo
+            , FBPServerUserPsnInfo& OutPsnInfo
+            , FBPServerUserSteamInfo& OutSteamInfo
+            , FBPServerUserTitleInfo& OutTitleInfo
+            , FBPServerUserTwitchInfo& OutTwitchInfo
+            , FString& OutUsername
+            , FBPServerUserXboxInfo& OutXboxInfo
 );
 
     // UserAndroidDeviceInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserAndroidDeviceInfo MakeBPServerUserAndroidDeviceInfo(
-    FString InAndroidDeviceId
-);
+        static FBPServerUserAndroidDeviceInfo MakeBPServerUserAndroidDeviceInfo(
+            FString InAndroidDeviceId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserAndroidDeviceInfo(
-    const FBPServerUserAndroidDeviceInfo& In
-	, FString& OutAndroidDeviceId
+        static void BreakBPServerUserAndroidDeviceInfo(
+            const FBPServerUserAndroidDeviceInfo& In
+            , FString& OutAndroidDeviceId
 );
 
     // UserCustomIdInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserCustomIdInfo MakeBPServerUserCustomIdInfo(
-    FString InCustomId
-);
+        static FBPServerUserCustomIdInfo MakeBPServerUserCustomIdInfo(
+            FString InCustomId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserCustomIdInfo(
-    const FBPServerUserCustomIdInfo& In
-	, FString& OutCustomId
+        static void BreakBPServerUserCustomIdInfo(
+            const FBPServerUserCustomIdInfo& In
+            , FString& OutCustomId
 );
 
     // UserDataRecord
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserDataRecord MakeBPServerUserDataRecord(
-    FDateTime InLastUpdated
-	, EBPServerUserDataPermission InPermission
-	, FString InValue
-);
+        static FBPServerUserDataRecord MakeBPServerUserDataRecord(
+            FDateTime InLastUpdated
+            , EBPServerUserDataPermission InPermission
+            , FString InValue
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserDataRecord(
-    const FBPServerUserDataRecord& In
-	, FDateTime& OutLastUpdated
-	, EBPServerUserDataPermission& OutPermission
-	, FString& OutValue
+        static void BreakBPServerUserDataRecord(
+            const FBPServerUserDataRecord& In
+            , FDateTime& OutLastUpdated
+            , EBPServerUserDataPermission& OutPermission
+            , FString& OutValue
 );
 
     // UserFacebookInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserFacebookInfo MakeBPServerUserFacebookInfo(
-    FString InFacebookId
-	, FString InFullName
-);
+        static FBPServerUserFacebookInfo MakeBPServerUserFacebookInfo(
+            FString InFacebookId
+            , FString InFullName
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserFacebookInfo(
-    const FBPServerUserFacebookInfo& In
-	, FString& OutFacebookId
-	, FString& OutFullName
+        static void BreakBPServerUserFacebookInfo(
+            const FBPServerUserFacebookInfo& In
+            , FString& OutFacebookId
+            , FString& OutFullName
 );
 
     // UserGameCenterInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserGameCenterInfo MakeBPServerUserGameCenterInfo(
-    FString InGameCenterId
-);
+        static FBPServerUserGameCenterInfo MakeBPServerUserGameCenterInfo(
+            FString InGameCenterId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserGameCenterInfo(
-    const FBPServerUserGameCenterInfo& In
-	, FString& OutGameCenterId
+        static void BreakBPServerUserGameCenterInfo(
+            const FBPServerUserGameCenterInfo& In
+            , FString& OutGameCenterId
 );
 
     // UserGoogleInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserGoogleInfo MakeBPServerUserGoogleInfo(
-    FString InGoogleEmail
-	, FString InGoogleGender
-	, FString InGoogleId
-	, FString InGoogleLocale
-);
+        static FBPServerUserGoogleInfo MakeBPServerUserGoogleInfo(
+            FString InGoogleEmail
+            , FString InGoogleGender
+            , FString InGoogleId
+            , FString InGoogleLocale
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserGoogleInfo(
-    const FBPServerUserGoogleInfo& In
-	, FString& OutGoogleEmail
-	, FString& OutGoogleGender
-	, FString& OutGoogleId
-	, FString& OutGoogleLocale
+        static void BreakBPServerUserGoogleInfo(
+            const FBPServerUserGoogleInfo& In
+            , FString& OutGoogleEmail
+            , FString& OutGoogleGender
+            , FString& OutGoogleId
+            , FString& OutGoogleLocale
 );
 
     // UserIosDeviceInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserIosDeviceInfo MakeBPServerUserIosDeviceInfo(
-    FString InIosDeviceId
-);
+        static FBPServerUserIosDeviceInfo MakeBPServerUserIosDeviceInfo(
+            FString InIosDeviceId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserIosDeviceInfo(
-    const FBPServerUserIosDeviceInfo& In
-	, FString& OutIosDeviceId
+        static void BreakBPServerUserIosDeviceInfo(
+            const FBPServerUserIosDeviceInfo& In
+            , FString& OutIosDeviceId
 );
 
     // UserKongregateInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserKongregateInfo MakeBPServerUserKongregateInfo(
-    FString InKongregateId
-	, FString InKongregateName
-);
+        static FBPServerUserKongregateInfo MakeBPServerUserKongregateInfo(
+            FString InKongregateId
+            , FString InKongregateName
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserKongregateInfo(
-    const FBPServerUserKongregateInfo& In
-	, FString& OutKongregateId
-	, FString& OutKongregateName
+        static void BreakBPServerUserKongregateInfo(
+            const FBPServerUserKongregateInfo& In
+            , FString& OutKongregateId
+            , FString& OutKongregateName
 );
 
     // UserPrivateAccountInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserPrivateAccountInfo MakeBPServerUserPrivateAccountInfo(
-    FString InEmail
-);
+        static FBPServerUserPrivateAccountInfo MakeBPServerUserPrivateAccountInfo(
+            FString InEmail
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserPrivateAccountInfo(
-    const FBPServerUserPrivateAccountInfo& In
-	, FString& OutEmail
+        static void BreakBPServerUserPrivateAccountInfo(
+            const FBPServerUserPrivateAccountInfo& In
+            , FString& OutEmail
 );
 
     // UserPsnInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserPsnInfo MakeBPServerUserPsnInfo(
-    FString InPsnAccountId
-	, FString InPsnOnlineId
-);
+        static FBPServerUserPsnInfo MakeBPServerUserPsnInfo(
+            FString InPsnAccountId
+            , FString InPsnOnlineId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserPsnInfo(
-    const FBPServerUserPsnInfo& In
-	, FString& OutPsnAccountId
-	, FString& OutPsnOnlineId
+        static void BreakBPServerUserPsnInfo(
+            const FBPServerUserPsnInfo& In
+            , FString& OutPsnAccountId
+            , FString& OutPsnOnlineId
 );
 
     // UserSteamInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserSteamInfo MakeBPServerUserSteamInfo(
-    EBPServerTitleActivationStatus InSteamActivationStatus
-	, FString InSteamCountry
-	, EBPServerCurrency InSteamCurrency
-	, FString InSteamId
-);
+        static FBPServerUserSteamInfo MakeBPServerUserSteamInfo(
+            EBPServerTitleActivationStatus InSteamActivationStatus
+            , FString InSteamCountry
+            , EBPServerCurrency InSteamCurrency
+            , FString InSteamId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserSteamInfo(
-    const FBPServerUserSteamInfo& In
-	, EBPServerTitleActivationStatus& OutSteamActivationStatus
-	, FString& OutSteamCountry
-	, EBPServerCurrency& OutSteamCurrency
-	, FString& OutSteamId
+        static void BreakBPServerUserSteamInfo(
+            const FBPServerUserSteamInfo& In
+            , EBPServerTitleActivationStatus& OutSteamActivationStatus
+            , FString& OutSteamCountry
+            , EBPServerCurrency& OutSteamCurrency
+            , FString& OutSteamId
 );
 
     // UserTitleInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserTitleInfo MakeBPServerUserTitleInfo(
-    FString InAvatarUrl
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InFirstLogin
-	, bool InisBanned
-	, FDateTime InLastLogin
-	, EBPServerUserOrigination InOrigination
-);
+        static FBPServerUserTitleInfo MakeBPServerUserTitleInfo(
+            FString InAvatarUrl
+            , FDateTime InCreated
+            , FString InDisplayName
+            , FDateTime InFirstLogin
+            , bool InisBanned
+            , FDateTime InLastLogin
+            , EBPServerUserOrigination InOrigination
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserTitleInfo(
-    const FBPServerUserTitleInfo& In
-	, FString& OutAvatarUrl
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutFirstLogin
-	, bool& OutisBanned
-	, FDateTime& OutLastLogin
-	, EBPServerUserOrigination& OutOrigination
+        static void BreakBPServerUserTitleInfo(
+            const FBPServerUserTitleInfo& In
+            , FString& OutAvatarUrl
+            , FDateTime& OutCreated
+            , FString& OutDisplayName
+            , FDateTime& OutFirstLogin
+            , bool& OutisBanned
+            , FDateTime& OutLastLogin
+            , EBPServerUserOrigination& OutOrigination
 );
 
     // UserTwitchInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserTwitchInfo MakeBPServerUserTwitchInfo(
-    FString InTwitchId
-	, FString InTwitchUserName
-);
+        static FBPServerUserTwitchInfo MakeBPServerUserTwitchInfo(
+            FString InTwitchId
+            , FString InTwitchUserName
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserTwitchInfo(
-    const FBPServerUserTwitchInfo& In
-	, FString& OutTwitchId
-	, FString& OutTwitchUserName
+        static void BreakBPServerUserTwitchInfo(
+            const FBPServerUserTwitchInfo& In
+            , FString& OutTwitchId
+            , FString& OutTwitchUserName
 );
 
     // UserXboxInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerUserXboxInfo MakeBPServerUserXboxInfo(
-    FString InXboxUserId
-);
+        static FBPServerUserXboxInfo MakeBPServerUserXboxInfo(
+            FString InXboxUserId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerUserXboxInfo(
-    const FBPServerUserXboxInfo& In
-	, FString& OutXboxUserId
+        static void BreakBPServerUserXboxInfo(
+            const FBPServerUserXboxInfo& In
+            , FString& OutXboxUserId
 );
 
     // ValueToDateModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerValueToDateModel MakeBPServerValueToDateModel(
-    FString InCurrency
-	, int32 InTotalValue
-	, FString InTotalValueAsDecimal
-);
+        static FBPServerValueToDateModel MakeBPServerValueToDateModel(
+            FString InCurrency
+            , int32 InTotalValue
+            , FString InTotalValueAsDecimal
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerValueToDateModel(
-    const FBPServerValueToDateModel& In
-	, FString& OutCurrency
-	, int32& OutTotalValue
-	, FString& OutTotalValueAsDecimal
+        static void BreakBPServerValueToDateModel(
+            const FBPServerValueToDateModel& In
+            , FString& OutCurrency
+            , int32& OutTotalValue
+            , FString& OutTotalValueAsDecimal
 );
 
     // VirtualCurrencyRechargeTime
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerVirtualCurrencyRechargeTime MakeBPServerVirtualCurrencyRechargeTime(
-    int32 InRechargeMax
-	, FDateTime InRechargeTime
-	, int32 InSecondsToRecharge
-);
+        static FBPServerVirtualCurrencyRechargeTime MakeBPServerVirtualCurrencyRechargeTime(
+            int32 InRechargeMax
+            , FDateTime InRechargeTime
+            , int32 InSecondsToRecharge
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerVirtualCurrencyRechargeTime(
-    const FBPServerVirtualCurrencyRechargeTime& In
-	, int32& OutRechargeMax
-	, FDateTime& OutRechargeTime
-	, int32& OutSecondsToRecharge
+        static void BreakBPServerVirtualCurrencyRechargeTime(
+            const FBPServerVirtualCurrencyRechargeTime& In
+            , int32& OutRechargeMax
+            , FDateTime& OutRechargeTime
+            , int32& OutSecondsToRecharge
 );
 
     // WriteEventResponse
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
-    static void BreakBPServerWriteEventResponse(
-    const FBPServerWriteEventResponse& In
-	, FString& OutEventId
+        static void BreakBPServerWriteEventResponse(
+            const FBPServerWriteEventResponse& In
+            , FString& OutEventId
 );
 
     // WriteServerCharacterEventRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerWriteServerCharacterEventRequest MakeBPServerWriteServerCharacterEventRequest(
-    TMap<FString, UPlayFabJsonValue*> InBody
-	, FString InCharacterId
-	, FString InEventName
-	, FString InPlayFabId
-	, FDateTime InTimestamp
-);
+        static FBPServerWriteServerCharacterEventRequest MakeBPServerWriteServerCharacterEventRequest(
+            TMap<FString, UPlayFabJsonValue*> InBody
+            , FString InCharacterId
+            , FString InEventName
+            , FString InPlayFabId
+            , FDateTime InTimestamp
+        );
 
     // WriteServerPlayerEventRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerWriteServerPlayerEventRequest MakeBPServerWriteServerPlayerEventRequest(
-    TMap<FString, UPlayFabJsonValue*> InBody
-	, FString InEventName
-	, FString InPlayFabId
-	, FDateTime InTimestamp
-);
+        static FBPServerWriteServerPlayerEventRequest MakeBPServerWriteServerPlayerEventRequest(
+            TMap<FString, UPlayFabJsonValue*> InBody
+            , FString InEventName
+            , FString InPlayFabId
+            , FDateTime InTimestamp
+        );
 
     // WriteTitleEventRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
-    static FBPServerWriteTitleEventRequest MakeBPServerWriteTitleEventRequest(
-    TMap<FString, UPlayFabJsonValue*> InBody
-	, FString InEventName
-	, FDateTime InTimestamp
-);
+        static FBPServerWriteTitleEventRequest MakeBPServerWriteTitleEventRequest(
+            TMap<FString, UPlayFabJsonValue*> InBody
+            , FString InEventName
+            , FDateTime InTimestamp
+        );
 
 };

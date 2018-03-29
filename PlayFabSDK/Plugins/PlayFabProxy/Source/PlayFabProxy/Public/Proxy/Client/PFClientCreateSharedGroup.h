@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPClientCreateSharedGroupResultDelegate OnSuccess;
 
-    // Requests the creation of a shared group object, containing key/value pairs which may be updated by  all members of the group. Upon creation, the current user will be the only member of the group. Shared Groups are designed  for sharing data between a very small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
+    // Requests the creation of a shared group object, containing key/value pairs which may be updated by all members of the group. Upon creation, the current user will be the only member of the group. Shared Groups are designed for sharing data between a very small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Client|Shared Group Data")
         static UPFClientCreateSharedGroup* CreateSharedGroup(class APlayerController* PlayerController, const FBPClientCreateSharedGroupRequest& InCreateSharedGroupRequest);
 

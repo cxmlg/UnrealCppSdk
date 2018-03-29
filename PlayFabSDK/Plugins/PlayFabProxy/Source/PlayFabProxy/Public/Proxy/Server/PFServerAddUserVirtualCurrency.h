@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPServerModifyUserVirtualCurrencyResultDelegate OnSuccess;
 
-    // Increments  the user's balance of the specified virtual currency by the stated amount
+    // Increments the user's balance of the specified virtual currency by the stated amount
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Server|Player Item Management")
         static UPFServerAddUserVirtualCurrency* AddUserVirtualCurrency(class APlayerController* PlayerController, const FBPServerAddUserVirtualCurrencyRequest& InAddUserVirtualCurrencyRequest);
 

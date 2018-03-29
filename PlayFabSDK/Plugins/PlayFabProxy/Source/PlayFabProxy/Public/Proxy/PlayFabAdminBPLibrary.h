@@ -17,2562 +17,2603 @@ public:
     
     // AbortTaskInstanceRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminAbortTaskInstanceRequest MakeBPAdminAbortTaskInstanceRequest(
-    FString InTaskInstanceId
-);
+        static FBPAdminAbortTaskInstanceRequest MakeBPAdminAbortTaskInstanceRequest(
+            FString InTaskInstanceId
+        );
 
     // ActionsOnPlayersInSegmentTaskParameter
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminActionsOnPlayersInSegmentTaskParameter MakeBPAdminActionsOnPlayersInSegmentTaskParameter(
-    FString InActionId
-	, FString InSegmentId
-);
+        static FBPAdminActionsOnPlayersInSegmentTaskParameter MakeBPAdminActionsOnPlayersInSegmentTaskParameter(
+            FString InActionId
+            , FString InSegmentId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminActionsOnPlayersInSegmentTaskParameter(
-    const FBPAdminActionsOnPlayersInSegmentTaskParameter& In
-	, FString& OutActionId
-	, FString& OutSegmentId
+        static void BreakBPAdminActionsOnPlayersInSegmentTaskParameter(
+            const FBPAdminActionsOnPlayersInSegmentTaskParameter& In
+            , FString& OutActionId
+            , FString& OutSegmentId
 );
 
     // ActionsOnPlayersInSegmentTaskSummary
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminActionsOnPlayersInSegmentTaskSummary MakeBPAdminActionsOnPlayersInSegmentTaskSummary(
-    FDateTime InCompletedAt
-	, FString InErrorMessage
-	, bool InErrorWasFatal
-	, float InEstimatedSecondsRemaining
-	, float InPercentComplete
-	, FString InScheduledByUserId
-	, FDateTime InStartedAt
-	, EBPAdminTaskInstanceStatus InStatus
-	, FBPAdminNameIdentifier InTaskIdentifier
-	, FString InTaskInstanceId
-	, int32 InTotalPlayersInSegment
-	, int32 InTotalPlayersProcessed
-);
+        static FBPAdminActionsOnPlayersInSegmentTaskSummary MakeBPAdminActionsOnPlayersInSegmentTaskSummary(
+            FDateTime InCompletedAt
+            , FString InErrorMessage
+            , bool InErrorWasFatal
+            , float InEstimatedSecondsRemaining
+            , float InPercentComplete
+            , FString InScheduledByUserId
+            , FDateTime InStartedAt
+            , EBPAdminTaskInstanceStatus InStatus
+            , FBPAdminNameIdentifier InTaskIdentifier
+            , FString InTaskInstanceId
+            , int32 InTotalPlayersInSegment
+            , int32 InTotalPlayersProcessed
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminActionsOnPlayersInSegmentTaskSummary(
-    const FBPAdminActionsOnPlayersInSegmentTaskSummary& In
-	, FDateTime& OutCompletedAt
-	, FString& OutErrorMessage
-	, bool& OutErrorWasFatal
-	, float& OutEstimatedSecondsRemaining
-	, float& OutPercentComplete
-	, FString& OutScheduledByUserId
-	, FDateTime& OutStartedAt
-	, EBPAdminTaskInstanceStatus& OutStatus
-	, FBPAdminNameIdentifier& OutTaskIdentifier
-	, FString& OutTaskInstanceId
-	, int32& OutTotalPlayersInSegment
-	, int32& OutTotalPlayersProcessed
+        static void BreakBPAdminActionsOnPlayersInSegmentTaskSummary(
+            const FBPAdminActionsOnPlayersInSegmentTaskSummary& In
+            , FDateTime& OutCompletedAt
+            , FString& OutErrorMessage
+            , bool& OutErrorWasFatal
+            , float& OutEstimatedSecondsRemaining
+            , float& OutPercentComplete
+            , FString& OutScheduledByUserId
+            , FDateTime& OutStartedAt
+            , EBPAdminTaskInstanceStatus& OutStatus
+            , FBPAdminNameIdentifier& OutTaskIdentifier
+            , FString& OutTaskInstanceId
+            , int32& OutTotalPlayersInSegment
+            , int32& OutTotalPlayersProcessed
 );
 
     // AdCampaignAttribution
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminAdCampaignAttribution MakeBPAdminAdCampaignAttribution(
-    FDateTime InAttributedAt
-	, FString InCampaignId
-	, FString InPlatform
-);
+        static FBPAdminAdCampaignAttribution MakeBPAdminAdCampaignAttribution(
+            FDateTime InAttributedAt
+            , FString InCampaignId
+            , FString InPlatform
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminAdCampaignAttribution(
-    const FBPAdminAdCampaignAttribution& In
-	, FDateTime& OutAttributedAt
-	, FString& OutCampaignId
-	, FString& OutPlatform
+        static void BreakBPAdminAdCampaignAttribution(
+            const FBPAdminAdCampaignAttribution& In
+            , FDateTime& OutAttributedAt
+            , FString& OutCampaignId
+            , FString& OutPlatform
 );
 
     // AdCampaignAttributionModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminAdCampaignAttributionModel MakeBPAdminAdCampaignAttributionModel(
-    FDateTime InAttributedAt
-	, FString InCampaignId
-	, FString InPlatform
-);
+        static FBPAdminAdCampaignAttributionModel MakeBPAdminAdCampaignAttributionModel(
+            FDateTime InAttributedAt
+            , FString InCampaignId
+            , FString InPlatform
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminAdCampaignAttributionModel(
-    const FBPAdminAdCampaignAttributionModel& In
-	, FDateTime& OutAttributedAt
-	, FString& OutCampaignId
-	, FString& OutPlatform
+        static void BreakBPAdminAdCampaignAttributionModel(
+            const FBPAdminAdCampaignAttributionModel& In
+            , FDateTime& OutAttributedAt
+            , FString& OutCampaignId
+            , FString& OutPlatform
 );
 
     // AddNewsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminAddNewsRequest MakeBPAdminAddNewsRequest(
-    FString InBody
-	, FDateTime InTimestamp
-	, FString InTitle
-);
+        static FBPAdminAddNewsRequest MakeBPAdminAddNewsRequest(
+            FString InBody
+            , FDateTime InTimestamp
+            , FString InTitle
+        );
 
     // AddNewsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminAddNewsResult(
-    const FBPAdminAddNewsResult& In
-	, FString& OutNewsId
+        static void BreakBPAdminAddNewsResult(
+            const FBPAdminAddNewsResult& In
+            , FString& OutNewsId
 );
 
     // AddPlayerTagRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminAddPlayerTagRequest MakeBPAdminAddPlayerTagRequest(
-    FString InPlayFabId
-	, FString InTagName
-);
+        static FBPAdminAddPlayerTagRequest MakeBPAdminAddPlayerTagRequest(
+            FString InPlayFabId
+            , FString InTagName
+        );
 
     // AddPlayerTagResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminAddPlayerTagResult(
-    const FBPAdminAddPlayerTagResult& In
+        static void BreakBPAdminAddPlayerTagResult(
+            const FBPAdminAddPlayerTagResult& In
 );
 
     // AddServerBuildRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminAddServerBuildRequest MakeBPAdminAddServerBuildRequest(
-    TArray<EBPAdminRegion> InActiveRegions
-	, FString InBuildId
-	, FString InCommandLineTemplate
-	, FString InComment
-	, FString InExecutablePath
-	, int32 InMaxGamesPerHost
-	, int32 InMinFreeGameSlots
-);
+        static FBPAdminAddServerBuildRequest MakeBPAdminAddServerBuildRequest(
+            TArray<EBPAdminRegion> InActiveRegions
+            , FString InBuildId
+            , FString InCommandLineTemplate
+            , FString InComment
+            , FString InExecutablePath
+            , int32 InMaxGamesPerHost
+            , int32 InMinFreeGameSlots
+        );
 
     // AddServerBuildResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminAddServerBuildResult(
-    const FBPAdminAddServerBuildResult& In
-	, TArray<EBPAdminRegion>& OutActiveRegions
-	, FString& OutBuildId
-	, FString& OutCommandLineTemplate
-	, FString& OutComment
-	, FString& OutExecutablePath
-	, int32& OutMaxGamesPerHost
-	, int32& OutMinFreeGameSlots
-	, EBPAdminGameBuildStatus& OutStatus
-	, FDateTime& OutTimestamp
+        static void BreakBPAdminAddServerBuildResult(
+            const FBPAdminAddServerBuildResult& In
+            , TArray<EBPAdminRegion>& OutActiveRegions
+            , FString& OutBuildId
+            , FString& OutCommandLineTemplate
+            , FString& OutComment
+            , FString& OutExecutablePath
+            , int32& OutMaxGamesPerHost
+            , int32& OutMinFreeGameSlots
+            , EBPAdminGameBuildStatus& OutStatus
+            , FDateTime& OutTimestamp
 );
 
     // AddUserVirtualCurrencyRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminAddUserVirtualCurrencyRequest MakeBPAdminAddUserVirtualCurrencyRequest(
-    int32 InAmount
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-);
+        static FBPAdminAddUserVirtualCurrencyRequest MakeBPAdminAddUserVirtualCurrencyRequest(
+            int32 InAmount
+            , FString InPlayFabId
+            , FString InVirtualCurrency
+        );
 
     // AddVirtualCurrencyTypesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminAddVirtualCurrencyTypesRequest MakeBPAdminAddVirtualCurrencyTypesRequest(
-    TArray<FBPAdminVirtualCurrencyData> InVirtualCurrencies
-);
+        static FBPAdminAddVirtualCurrencyTypesRequest MakeBPAdminAddVirtualCurrencyTypesRequest(
+            TArray<FBPAdminVirtualCurrencyData> InVirtualCurrencies
+        );
 
     // ApiCondition
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminApiCondition MakeBPAdminApiCondition(
-    EBPAdminConditionals InHasSignatureOrEncryption
-);
+        static FBPAdminApiCondition MakeBPAdminApiCondition(
+            EBPAdminConditionals InHasSignatureOrEncryption
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminApiCondition(
-    const FBPAdminApiCondition& In
-	, EBPAdminConditionals& OutHasSignatureOrEncryption
+        static void BreakBPAdminApiCondition(
+            const FBPAdminApiCondition& In
+            , EBPAdminConditionals& OutHasSignatureOrEncryption
 );
 
     // BanInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminBanInfo MakeBPAdminBanInfo(
-    bool InActive
-	, FString InBanId
-	, FDateTime InCreated
-	, FDateTime InExpires
-	, FString InIPAddress
-	, FString InMACAddress
-	, FString InPlayFabId
-	, FString InReason
-);
+        static FBPAdminBanInfo MakeBPAdminBanInfo(
+            bool InActive
+            , FString InBanId
+            , FDateTime InCreated
+            , FDateTime InExpires
+            , FString InIPAddress
+            , FString InMACAddress
+            , FString InPlayFabId
+            , FString InReason
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminBanInfo(
-    const FBPAdminBanInfo& In
-	, bool& OutActive
-	, FString& OutBanId
-	, FDateTime& OutCreated
-	, FDateTime& OutExpires
-	, FString& OutIPAddress
-	, FString& OutMACAddress
-	, FString& OutPlayFabId
-	, FString& OutReason
+        static void BreakBPAdminBanInfo(
+            const FBPAdminBanInfo& In
+            , bool& OutActive
+            , FString& OutBanId
+            , FDateTime& OutCreated
+            , FDateTime& OutExpires
+            , FString& OutIPAddress
+            , FString& OutMACAddress
+            , FString& OutPlayFabId
+            , FString& OutReason
 );
 
     // BanRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminBanRequest MakeBPAdminBanRequest(
-    int32 InDurationInHours
-	, FString InIPAddress
-	, FString InMACAddress
-	, FString InPlayFabId
-	, FString InReason
-);
+        static FBPAdminBanRequest MakeBPAdminBanRequest(
+            int32 InDurationInHours
+            , FString InIPAddress
+            , FString InMACAddress
+            , FString InPlayFabId
+            , FString InReason
+        );
 
     // BanUsersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminBanUsersRequest MakeBPAdminBanUsersRequest(
-    TArray<FBPAdminBanRequest> InBans
-);
+        static FBPAdminBanUsersRequest MakeBPAdminBanUsersRequest(
+            TArray<FBPAdminBanRequest> InBans
+        );
 
     // BanUsersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminBanUsersResult(
-    const FBPAdminBanUsersResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
+        static void BreakBPAdminBanUsersResult(
+            const FBPAdminBanUsersResult& In
+            , TArray<FBPAdminBanInfo>& OutBanData
 );
 
     // BlankResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminBlankResult(
-    const FBPAdminBlankResult& In
+        static void BreakBPAdminBlankResult(
+            const FBPAdminBlankResult& In
 );
 
     // CatalogItem
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCatalogItem MakeBPAdminCatalogItem(
-    FBPAdminCatalogItemBundleInfo InBundle
-	, bool InCanBecomeCharacter
-	, FString InCatalogVersion
-	, FBPAdminCatalogItemConsumableInfo InConsumable
-	, FBPAdminCatalogItemContainerInfo InContainer
-	, FString InCustomData
-	, FString InDescription
-	, FString InDisplayName
-	, int32 InInitialLimitedEditionCount
-	, bool InIsLimitedEdition
-	, bool InIsStackable
-	, bool InIsTradable
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemImageUrl
-	, TMap<FString, int32> InRealCurrencyPrices
-	, TArray<FString> InTags
-	, TMap<FString, int32> InVirtualCurrencyPrices
-);
+        static FBPAdminCatalogItem MakeBPAdminCatalogItem(
+            FBPAdminCatalogItemBundleInfo InBundle
+            , bool InCanBecomeCharacter
+            , FString InCatalogVersion
+            , FBPAdminCatalogItemConsumableInfo InConsumable
+            , FBPAdminCatalogItemContainerInfo InContainer
+            , FString InCustomData
+            , FString InDescription
+            , FString InDisplayName
+            , int32 InInitialLimitedEditionCount
+            , bool InIsLimitedEdition
+            , bool InIsStackable
+            , bool InIsTradable
+            , FString InItemClass
+            , FString InItemId
+            , FString InItemImageUrl
+            , TMap<FString, int32> InRealCurrencyPrices
+            , TArray<FString> InTags
+            , TMap<FString, int32> InVirtualCurrencyPrices
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCatalogItem(
-    const FBPAdminCatalogItem& In
-	, FBPAdminCatalogItemBundleInfo& OutBundle
-	, bool& OutCanBecomeCharacter
-	, FString& OutCatalogVersion
-	, FBPAdminCatalogItemConsumableInfo& OutConsumable
-	, FBPAdminCatalogItemContainerInfo& OutContainer
-	, FString& OutCustomData
-	, FString& OutDescription
-	, FString& OutDisplayName
-	, int32& OutInitialLimitedEditionCount
-	, bool& OutIsLimitedEdition
-	, bool& OutIsStackable
-	, bool& OutIsTradable
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemImageUrl
-	, TMap<FString, int32>& OutRealCurrencyPrices
-	, TArray<FString>& OutTags
-	, TMap<FString, int32>& OutVirtualCurrencyPrices
+        static void BreakBPAdminCatalogItem(
+            const FBPAdminCatalogItem& In
+            , FBPAdminCatalogItemBundleInfo& OutBundle
+            , bool& OutCanBecomeCharacter
+            , FString& OutCatalogVersion
+            , FBPAdminCatalogItemConsumableInfo& OutConsumable
+            , FBPAdminCatalogItemContainerInfo& OutContainer
+            , FString& OutCustomData
+            , FString& OutDescription
+            , FString& OutDisplayName
+            , int32& OutInitialLimitedEditionCount
+            , bool& OutIsLimitedEdition
+            , bool& OutIsStackable
+            , bool& OutIsTradable
+            , FString& OutItemClass
+            , FString& OutItemId
+            , FString& OutItemImageUrl
+            , TMap<FString, int32>& OutRealCurrencyPrices
+            , TArray<FString>& OutTags
+            , TMap<FString, int32>& OutVirtualCurrencyPrices
 );
 
     // CatalogItemBundleInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCatalogItemBundleInfo MakeBPAdminCatalogItemBundleInfo(
-    TArray<FString> InBundledItems
-	, TArray<FString> InBundledResultTables
-	, TMap<FString, int32> InBundledVirtualCurrencies
-);
+        static FBPAdminCatalogItemBundleInfo MakeBPAdminCatalogItemBundleInfo(
+            TArray<FString> InBundledItems
+            , TArray<FString> InBundledResultTables
+            , TMap<FString, int32> InBundledVirtualCurrencies
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCatalogItemBundleInfo(
-    const FBPAdminCatalogItemBundleInfo& In
-	, TArray<FString>& OutBundledItems
-	, TArray<FString>& OutBundledResultTables
-	, TMap<FString, int32>& OutBundledVirtualCurrencies
+        static void BreakBPAdminCatalogItemBundleInfo(
+            const FBPAdminCatalogItemBundleInfo& In
+            , TArray<FString>& OutBundledItems
+            , TArray<FString>& OutBundledResultTables
+            , TMap<FString, int32>& OutBundledVirtualCurrencies
 );
 
     // CatalogItemConsumableInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCatalogItemConsumableInfo MakeBPAdminCatalogItemConsumableInfo(
-    int32 InUsageCount
-	, int32 InUsagePeriod
-	, FString InUsagePeriodGroup
-);
+        static FBPAdminCatalogItemConsumableInfo MakeBPAdminCatalogItemConsumableInfo(
+            int32 InUsageCount
+            , int32 InUsagePeriod
+            , FString InUsagePeriodGroup
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCatalogItemConsumableInfo(
-    const FBPAdminCatalogItemConsumableInfo& In
-	, int32& OutUsageCount
-	, int32& OutUsagePeriod
-	, FString& OutUsagePeriodGroup
+        static void BreakBPAdminCatalogItemConsumableInfo(
+            const FBPAdminCatalogItemConsumableInfo& In
+            , int32& OutUsageCount
+            , int32& OutUsagePeriod
+            , FString& OutUsagePeriodGroup
 );
 
     // CatalogItemContainerInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCatalogItemContainerInfo MakeBPAdminCatalogItemContainerInfo(
-    TArray<FString> InItemContents
-	, FString InKeyItemId
-	, TArray<FString> InResultTableContents
-	, TMap<FString, int32> InVirtualCurrencyContents
-);
+        static FBPAdminCatalogItemContainerInfo MakeBPAdminCatalogItemContainerInfo(
+            TArray<FString> InItemContents
+            , FString InKeyItemId
+            , TArray<FString> InResultTableContents
+            , TMap<FString, int32> InVirtualCurrencyContents
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCatalogItemContainerInfo(
-    const FBPAdminCatalogItemContainerInfo& In
-	, TArray<FString>& OutItemContents
-	, FString& OutKeyItemId
-	, TArray<FString>& OutResultTableContents
-	, TMap<FString, int32>& OutVirtualCurrencyContents
+        static void BreakBPAdminCatalogItemContainerInfo(
+            const FBPAdminCatalogItemContainerInfo& In
+            , TArray<FString>& OutItemContents
+            , FString& OutKeyItemId
+            , TArray<FString>& OutResultTableContents
+            , TMap<FString, int32>& OutVirtualCurrencyContents
 );
 
     // CheckLimitedEditionItemAvailabilityRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCheckLimitedEditionItemAvailabilityRequest MakeBPAdminCheckLimitedEditionItemAvailabilityRequest(
-    FString InCatalogVersion
-	, FString InItemId
-);
+        static FBPAdminCheckLimitedEditionItemAvailabilityRequest MakeBPAdminCheckLimitedEditionItemAvailabilityRequest(
+            FString InCatalogVersion
+            , FString InItemId
+        );
 
     // CheckLimitedEditionItemAvailabilityResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCheckLimitedEditionItemAvailabilityResult(
-    const FBPAdminCheckLimitedEditionItemAvailabilityResult& In
-	, int32& OutAmount
+        static void BreakBPAdminCheckLimitedEditionItemAvailabilityResult(
+            const FBPAdminCheckLimitedEditionItemAvailabilityResult& In
+            , int32& OutAmount
 );
 
     // CloudScriptFile
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCloudScriptFile MakeBPAdminCloudScriptFile(
-    FString InFileContents
-	, FString InFilename
-);
+        static FBPAdminCloudScriptFile MakeBPAdminCloudScriptFile(
+            FString InFileContents
+            , FString InFilename
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCloudScriptFile(
-    const FBPAdminCloudScriptFile& In
-	, FString& OutFileContents
-	, FString& OutFilename
+        static void BreakBPAdminCloudScriptFile(
+            const FBPAdminCloudScriptFile& In
+            , FString& OutFileContents
+            , FString& OutFilename
 );
 
     // CloudScriptTaskParameter
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCloudScriptTaskParameter MakeBPAdminCloudScriptTaskParameter(
-    UPlayFabJsonValue* InArgument
-	, FString InFunctionName
-);
+        static FBPAdminCloudScriptTaskParameter MakeBPAdminCloudScriptTaskParameter(
+            UPlayFabJsonValue* InArgument
+            , FString InFunctionName
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCloudScriptTaskParameter(
-    const FBPAdminCloudScriptTaskParameter& In
-	, UPlayFabJsonValue*& OutArgument
-	, FString& OutFunctionName
+        static void BreakBPAdminCloudScriptTaskParameter(
+            const FBPAdminCloudScriptTaskParameter& In
+            , UPlayFabJsonValue*& OutArgument
+            , FString& OutFunctionName
 );
 
     // CloudScriptTaskSummary
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCloudScriptTaskSummary MakeBPAdminCloudScriptTaskSummary(
-    FDateTime InCompletedAt
-	, float InEstimatedSecondsRemaining
-	, float InPercentComplete
-	, FBPAdminExecuteCloudScriptResult InResult
-	, FString InScheduledByUserId
-	, FDateTime InStartedAt
-	, EBPAdminTaskInstanceStatus InStatus
-	, FBPAdminNameIdentifier InTaskIdentifier
-	, FString InTaskInstanceId
-);
+        static FBPAdminCloudScriptTaskSummary MakeBPAdminCloudScriptTaskSummary(
+            FDateTime InCompletedAt
+            , float InEstimatedSecondsRemaining
+            , float InPercentComplete
+            , FBPAdminExecuteCloudScriptResult InResult
+            , FString InScheduledByUserId
+            , FDateTime InStartedAt
+            , EBPAdminTaskInstanceStatus InStatus
+            , FBPAdminNameIdentifier InTaskIdentifier
+            , FString InTaskInstanceId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCloudScriptTaskSummary(
-    const FBPAdminCloudScriptTaskSummary& In
-	, FDateTime& OutCompletedAt
-	, float& OutEstimatedSecondsRemaining
-	, float& OutPercentComplete
-	, FBPAdminExecuteCloudScriptResult& OutResult
-	, FString& OutScheduledByUserId
-	, FDateTime& OutStartedAt
-	, EBPAdminTaskInstanceStatus& OutStatus
-	, FBPAdminNameIdentifier& OutTaskIdentifier
-	, FString& OutTaskInstanceId
+        static void BreakBPAdminCloudScriptTaskSummary(
+            const FBPAdminCloudScriptTaskSummary& In
+            , FDateTime& OutCompletedAt
+            , float& OutEstimatedSecondsRemaining
+            , float& OutPercentComplete
+            , FBPAdminExecuteCloudScriptResult& OutResult
+            , FString& OutScheduledByUserId
+            , FDateTime& OutStartedAt
+            , EBPAdminTaskInstanceStatus& OutStatus
+            , FBPAdminNameIdentifier& OutTaskIdentifier
+            , FString& OutTaskInstanceId
 );
 
     // CloudScriptVersionStatus
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCloudScriptVersionStatus MakeBPAdminCloudScriptVersionStatus(
-    int32 InLatestRevision
-	, int32 InPublishedRevision
-	, int32 InVersion
-);
+        static FBPAdminCloudScriptVersionStatus MakeBPAdminCloudScriptVersionStatus(
+            int32 InLatestRevision
+            , int32 InPublishedRevision
+            , int32 InVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCloudScriptVersionStatus(
-    const FBPAdminCloudScriptVersionStatus& In
-	, int32& OutLatestRevision
-	, int32& OutPublishedRevision
-	, int32& OutVersion
+        static void BreakBPAdminCloudScriptVersionStatus(
+            const FBPAdminCloudScriptVersionStatus& In
+            , int32& OutLatestRevision
+            , int32& OutPublishedRevision
+            , int32& OutVersion
 );
 
     // ContactEmailInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminContactEmailInfo MakeBPAdminContactEmailInfo(
-    FString InEmailAddress
-	, FString InName
-	, EBPAdminEmailVerificationStatus InVerificationStatus
-);
+        static FBPAdminContactEmailInfo MakeBPAdminContactEmailInfo(
+            FString InEmailAddress
+            , FString InName
+            , EBPAdminEmailVerificationStatus InVerificationStatus
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminContactEmailInfo(
-    const FBPAdminContactEmailInfo& In
-	, FString& OutEmailAddress
-	, FString& OutName
-	, EBPAdminEmailVerificationStatus& OutVerificationStatus
+        static void BreakBPAdminContactEmailInfo(
+            const FBPAdminContactEmailInfo& In
+            , FString& OutEmailAddress
+            , FString& OutName
+            , EBPAdminEmailVerificationStatus& OutVerificationStatus
 );
 
     // ContactEmailInfoModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminContactEmailInfoModel MakeBPAdminContactEmailInfoModel(
-    FString InEmailAddress
-	, FString InName
-	, EBPAdminEmailVerificationStatus InVerificationStatus
-);
+        static FBPAdminContactEmailInfoModel MakeBPAdminContactEmailInfoModel(
+            FString InEmailAddress
+            , FString InName
+            , EBPAdminEmailVerificationStatus InVerificationStatus
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminContactEmailInfoModel(
-    const FBPAdminContactEmailInfoModel& In
-	, FString& OutEmailAddress
-	, FString& OutName
-	, EBPAdminEmailVerificationStatus& OutVerificationStatus
+        static void BreakBPAdminContactEmailInfoModel(
+            const FBPAdminContactEmailInfoModel& In
+            , FString& OutEmailAddress
+            , FString& OutName
+            , EBPAdminEmailVerificationStatus& OutVerificationStatus
 );
 
     // ContentInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminContentInfo MakeBPAdminContentInfo(
-    FString InKey
-	, FDateTime InLastModified
-	, int32 InSize
-);
+        static FBPAdminContentInfo MakeBPAdminContentInfo(
+            FString InKey
+            , FDateTime InLastModified
+            , int32 InSize
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminContentInfo(
-    const FBPAdminContentInfo& In
-	, FString& OutKey
-	, FDateTime& OutLastModified
-	, int32& OutSize
+        static void BreakBPAdminContentInfo(
+            const FBPAdminContentInfo& In
+            , FString& OutKey
+            , FDateTime& OutLastModified
+            , int32& OutSize
 );
 
     // CreateActionsOnPlayerSegmentTaskRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCreateActionsOnPlayerSegmentTaskRequest MakeBPAdminCreateActionsOnPlayerSegmentTaskRequest(
-    FString InDescription
-	, bool InIsActive
-	, FString InName
-	, FBPAdminActionsOnPlayersInSegmentTaskParameter InParameter
-	, FString InSchedule
-);
+        static FBPAdminCreateActionsOnPlayerSegmentTaskRequest MakeBPAdminCreateActionsOnPlayerSegmentTaskRequest(
+            FString InDescription
+            , bool InIsActive
+            , FString InName
+            , FBPAdminActionsOnPlayersInSegmentTaskParameter InParameter
+            , FString InSchedule
+        );
 
     // CreateCloudScriptTaskRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCreateCloudScriptTaskRequest MakeBPAdminCreateCloudScriptTaskRequest(
-    FString InDescription
-	, bool InIsActive
-	, FString InName
-	, FBPAdminCloudScriptTaskParameter InParameter
-	, FString InSchedule
-);
+        static FBPAdminCreateCloudScriptTaskRequest MakeBPAdminCreateCloudScriptTaskRequest(
+            FString InDescription
+            , bool InIsActive
+            , FString InName
+            , FBPAdminCloudScriptTaskParameter InParameter
+            , FString InSchedule
+        );
 
     // CreatePlayerSharedSecretRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCreatePlayerSharedSecretRequest MakeBPAdminCreatePlayerSharedSecretRequest(
-    FString InFriendlyName
-);
+        static FBPAdminCreatePlayerSharedSecretRequest MakeBPAdminCreatePlayerSharedSecretRequest(
+            FString InFriendlyName
+        );
 
     // CreatePlayerSharedSecretResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCreatePlayerSharedSecretResult(
-    const FBPAdminCreatePlayerSharedSecretResult& In
-	, FString& OutSecretKey
+        static void BreakBPAdminCreatePlayerSharedSecretResult(
+            const FBPAdminCreatePlayerSharedSecretResult& In
+            , FString& OutSecretKey
 );
 
     // CreatePlayerStatisticDefinitionRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminCreatePlayerStatisticDefinitionRequest MakeBPAdminCreatePlayerStatisticDefinitionRequest(
-    EBPAdminStatisticAggregationMethod InAggregationMethod
-	, FString InStatisticName
-	, EBPAdminStatisticResetIntervalOption InVersionChangeInterval
-);
+        static FBPAdminCreatePlayerStatisticDefinitionRequest MakeBPAdminCreatePlayerStatisticDefinitionRequest(
+            EBPAdminStatisticAggregationMethod InAggregationMethod
+            , FString InStatisticName
+            , EBPAdminStatisticResetIntervalOption InVersionChangeInterval
+        );
 
     // CreatePlayerStatisticDefinitionResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCreatePlayerStatisticDefinitionResult(
-    const FBPAdminCreatePlayerStatisticDefinitionResult& In
-	, FBPAdminPlayerStatisticDefinition& OutStatistic
+        static void BreakBPAdminCreatePlayerStatisticDefinitionResult(
+            const FBPAdminCreatePlayerStatisticDefinitionResult& In
+            , FBPAdminPlayerStatisticDefinition& OutStatistic
 );
 
     // CreateTaskResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminCreateTaskResult(
-    const FBPAdminCreateTaskResult& In
-	, FString& OutTaskId
+        static void BreakBPAdminCreateTaskResult(
+            const FBPAdminCreateTaskResult& In
+            , FString& OutTaskId
 );
 
     // DeleteContentRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminDeleteContentRequest MakeBPAdminDeleteContentRequest(
-    FString InKey
-);
+        static FBPAdminDeleteContentRequest MakeBPAdminDeleteContentRequest(
+            FString InKey
+        );
 
     // DeletePlayerRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminDeletePlayerRequest MakeBPAdminDeletePlayerRequest(
-    FString InPlayFabId
-);
+        static FBPAdminDeletePlayerRequest MakeBPAdminDeletePlayerRequest(
+            FString InPlayFabId
+        );
 
     // DeletePlayerResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminDeletePlayerResult(
-    const FBPAdminDeletePlayerResult& In
+        static void BreakBPAdminDeletePlayerResult(
+            const FBPAdminDeletePlayerResult& In
 );
 
     // DeletePlayerSharedSecretRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminDeletePlayerSharedSecretRequest MakeBPAdminDeletePlayerSharedSecretRequest(
-    FString InSecretKey
-);
+        static FBPAdminDeletePlayerSharedSecretRequest MakeBPAdminDeletePlayerSharedSecretRequest(
+            FString InSecretKey
+        );
 
     // DeletePlayerSharedSecretResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminDeletePlayerSharedSecretResult(
-    const FBPAdminDeletePlayerSharedSecretResult& In
+        static void BreakBPAdminDeletePlayerSharedSecretResult(
+            const FBPAdminDeletePlayerSharedSecretResult& In
 );
 
     // DeleteStoreRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminDeleteStoreRequest MakeBPAdminDeleteStoreRequest(
-    FString InCatalogVersion
-	, FString InStoreId
-);
+        static FBPAdminDeleteStoreRequest MakeBPAdminDeleteStoreRequest(
+            FString InCatalogVersion
+            , FString InStoreId
+        );
 
     // DeleteStoreResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminDeleteStoreResult(
-    const FBPAdminDeleteStoreResult& In
+        static void BreakBPAdminDeleteStoreResult(
+            const FBPAdminDeleteStoreResult& In
 );
 
     // DeleteTaskRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminDeleteTaskRequest MakeBPAdminDeleteTaskRequest(
-    FBPAdminNameIdentifier InIdentifier
-);
+        static FBPAdminDeleteTaskRequest MakeBPAdminDeleteTaskRequest(
+            FBPAdminNameIdentifier InIdentifier
+        );
 
     // DeleteTitleRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminDeleteTitleRequest MakeBPAdminDeleteTitleRequest(
-    );
+        static FBPAdminDeleteTitleRequest MakeBPAdminDeleteTitleRequest(
+        );
 
     // DeleteTitleResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminDeleteTitleResult(
-    const FBPAdminDeleteTitleResult& In
+        static void BreakBPAdminDeleteTitleResult(
+            const FBPAdminDeleteTitleResult& In
 );
 
     // DeleteUsersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminDeleteUsersRequest MakeBPAdminDeleteUsersRequest(
-    TArray<FString> InPlayFabIds
-);
+        static FBPAdminDeleteUsersRequest MakeBPAdminDeleteUsersRequest(
+            TArray<FString> InPlayFabIds
+        );
 
     // DeleteUsersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminDeleteUsersResult(
-    const FBPAdminDeleteUsersResult& In
+        static void BreakBPAdminDeleteUsersResult(
+            const FBPAdminDeleteUsersResult& In
 );
 
     // EmptyResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminEmptyResult(
-    const FBPAdminEmptyResult& In
+        static void BreakBPAdminEmptyResult(
+            const FBPAdminEmptyResult& In
 );
 
     // ExecuteCloudScriptResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminExecuteCloudScriptResult(
-    const FBPAdminExecuteCloudScriptResult& In
-	, int32& OutAPIRequestsIssued
-	, FBPAdminScriptExecutionError& OutError
-	, float& OutExecutionTimeSeconds
-	, FString& OutFunctionName
-	, UPlayFabJsonValue*& OutFunctionResult
-	, bool& OutFunctionResultTooLarge
-	, int32& OutHttpRequestsIssued
-	, TArray<FBPAdminLogStatement>& OutLogs
-	, bool& OutLogsTooLarge
-	, int32& OutMemoryConsumedBytes
-	, float& OutProcessorTimeSeconds
-	, int32& OutRevision
+        static void BreakBPAdminExecuteCloudScriptResult(
+            const FBPAdminExecuteCloudScriptResult& In
+            , int32& OutAPIRequestsIssued
+            , FBPAdminScriptExecutionError& OutError
+            , float& OutExecutionTimeSeconds
+            , FString& OutFunctionName
+            , UPlayFabJsonValue*& OutFunctionResult
+            , bool& OutFunctionResultTooLarge
+            , int32& OutHttpRequestsIssued
+            , TArray<FBPAdminLogStatement>& OutLogs
+            , bool& OutLogsTooLarge
+            , int32& OutMemoryConsumedBytes
+            , float& OutProcessorTimeSeconds
+            , int32& OutRevision
 );
 
     // GameModeInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGameModeInfo MakeBPAdminGameModeInfo(
-    FString InGamemode
-	, int32 InMaxPlayerCount
-	, int32 InMinPlayerCount
-	, bool InStartOpen
-);
+        static FBPAdminGameModeInfo MakeBPAdminGameModeInfo(
+            FString InGamemode
+            , int32 InMaxPlayerCount
+            , int32 InMinPlayerCount
+            , bool InStartOpen
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGameModeInfo(
-    const FBPAdminGameModeInfo& In
-	, FString& OutGamemode
-	, int32& OutMaxPlayerCount
-	, int32& OutMinPlayerCount
-	, bool& OutStartOpen
+        static void BreakBPAdminGameModeInfo(
+            const FBPAdminGameModeInfo& In
+            , FString& OutGamemode
+            , int32& OutMaxPlayerCount
+            , int32& OutMinPlayerCount
+            , bool& OutStartOpen
 );
 
     // GetActionsOnPlayersInSegmentTaskInstanceResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetActionsOnPlayersInSegmentTaskInstanceResult(
-    const FBPAdminGetActionsOnPlayersInSegmentTaskInstanceResult& In
-	, FBPAdminActionsOnPlayersInSegmentTaskParameter& OutParameter
-	, FBPAdminActionsOnPlayersInSegmentTaskSummary& OutSummary
+        static void BreakBPAdminGetActionsOnPlayersInSegmentTaskInstanceResult(
+            const FBPAdminGetActionsOnPlayersInSegmentTaskInstanceResult& In
+            , FBPAdminActionsOnPlayersInSegmentTaskParameter& OutParameter
+            , FBPAdminActionsOnPlayersInSegmentTaskSummary& OutSummary
 );
 
     // GetAllSegmentsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetAllSegmentsRequest MakeBPAdminGetAllSegmentsRequest(
-    );
+        static FBPAdminGetAllSegmentsRequest MakeBPAdminGetAllSegmentsRequest(
+        );
 
     // GetAllSegmentsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetAllSegmentsResult(
-    const FBPAdminGetAllSegmentsResult& In
-	, TArray<FBPAdminGetSegmentResult>& OutSegments
+        static void BreakBPAdminGetAllSegmentsResult(
+            const FBPAdminGetAllSegmentsResult& In
+            , TArray<FBPAdminGetSegmentResult>& OutSegments
 );
 
     // GetCatalogItemsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetCatalogItemsRequest MakeBPAdminGetCatalogItemsRequest(
-    FString InCatalogVersion
-);
+        static FBPAdminGetCatalogItemsRequest MakeBPAdminGetCatalogItemsRequest(
+            FString InCatalogVersion
+        );
 
     // GetCatalogItemsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetCatalogItemsResult(
-    const FBPAdminGetCatalogItemsResult& In
-	, TArray<FBPAdminCatalogItem>& OutCatalog
+        static void BreakBPAdminGetCatalogItemsResult(
+            const FBPAdminGetCatalogItemsResult& In
+            , TArray<FBPAdminCatalogItem>& OutCatalog
 );
 
     // GetCloudScriptRevisionRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetCloudScriptRevisionRequest MakeBPAdminGetCloudScriptRevisionRequest(
-    int32 InRevision
-	, int32 InVersion
-);
+        static FBPAdminGetCloudScriptRevisionRequest MakeBPAdminGetCloudScriptRevisionRequest(
+            int32 InRevision
+            , int32 InVersion
+        );
 
     // GetCloudScriptRevisionResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetCloudScriptRevisionResult(
-    const FBPAdminGetCloudScriptRevisionResult& In
-	, FDateTime& OutCreatedAt
-	, TArray<FBPAdminCloudScriptFile>& OutFiles
-	, bool& OutIsPublished
-	, int32& OutRevision
-	, int32& OutVersion
+        static void BreakBPAdminGetCloudScriptRevisionResult(
+            const FBPAdminGetCloudScriptRevisionResult& In
+            , FDateTime& OutCreatedAt
+            , TArray<FBPAdminCloudScriptFile>& OutFiles
+            , bool& OutIsPublished
+            , int32& OutRevision
+            , int32& OutVersion
 );
 
     // GetCloudScriptTaskInstanceResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetCloudScriptTaskInstanceResult(
-    const FBPAdminGetCloudScriptTaskInstanceResult& In
-	, FBPAdminCloudScriptTaskParameter& OutParameter
-	, FBPAdminCloudScriptTaskSummary& OutSummary
+        static void BreakBPAdminGetCloudScriptTaskInstanceResult(
+            const FBPAdminGetCloudScriptTaskInstanceResult& In
+            , FBPAdminCloudScriptTaskParameter& OutParameter
+            , FBPAdminCloudScriptTaskSummary& OutSummary
 );
 
     // GetCloudScriptVersionsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetCloudScriptVersionsRequest MakeBPAdminGetCloudScriptVersionsRequest(
-    );
+        static FBPAdminGetCloudScriptVersionsRequest MakeBPAdminGetCloudScriptVersionsRequest(
+        );
 
     // GetCloudScriptVersionsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetCloudScriptVersionsResult(
-    const FBPAdminGetCloudScriptVersionsResult& In
-	, TArray<FBPAdminCloudScriptVersionStatus>& OutVersions
+        static void BreakBPAdminGetCloudScriptVersionsResult(
+            const FBPAdminGetCloudScriptVersionsResult& In
+            , TArray<FBPAdminCloudScriptVersionStatus>& OutVersions
 );
 
     // GetContentListRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetContentListRequest MakeBPAdminGetContentListRequest(
-    FString InPrefix
-);
+        static FBPAdminGetContentListRequest MakeBPAdminGetContentListRequest(
+            FString InPrefix
+        );
 
     // GetContentListResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetContentListResult(
-    const FBPAdminGetContentListResult& In
-	, TArray<FBPAdminContentInfo>& OutContents
-	, int32& OutItemCount
-	, int32& OutTotalSize
+        static void BreakBPAdminGetContentListResult(
+            const FBPAdminGetContentListResult& In
+            , TArray<FBPAdminContentInfo>& OutContents
+            , int32& OutItemCount
+            , int32& OutTotalSize
 );
 
     // GetContentUploadUrlRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetContentUploadUrlRequest MakeBPAdminGetContentUploadUrlRequest(
-    FString InContentType
-	, FString InKey
-);
+        static FBPAdminGetContentUploadUrlRequest MakeBPAdminGetContentUploadUrlRequest(
+            FString InContentType
+            , FString InKey
+        );
 
     // GetContentUploadUrlResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetContentUploadUrlResult(
-    const FBPAdminGetContentUploadUrlResult& In
-	, FString& OutURL
+        static void BreakBPAdminGetContentUploadUrlResult(
+            const FBPAdminGetContentUploadUrlResult& In
+            , FString& OutURL
 );
 
     // GetDataReportRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetDataReportRequest MakeBPAdminGetDataReportRequest(
-    int32 InDay
-	, int32 InMonth
-	, FString InReportName
-	, int32 InYear
-);
+        static FBPAdminGetDataReportRequest MakeBPAdminGetDataReportRequest(
+            int32 InDay
+            , int32 InMonth
+            , FString InReportName
+            , int32 InYear
+        );
 
     // GetDataReportResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetDataReportResult(
-    const FBPAdminGetDataReportResult& In
-	, FString& OutDownloadUrl
+        static void BreakBPAdminGetDataReportResult(
+            const FBPAdminGetDataReportResult& In
+            , FString& OutDownloadUrl
 );
 
     // GetMatchmakerGameInfoRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetMatchmakerGameInfoRequest MakeBPAdminGetMatchmakerGameInfoRequest(
-    FString InLobbyId
-);
+        static FBPAdminGetMatchmakerGameInfoRequest MakeBPAdminGetMatchmakerGameInfoRequest(
+            FString InLobbyId
+        );
 
     // GetMatchmakerGameInfoResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetMatchmakerGameInfoResult(
-    const FBPAdminGetMatchmakerGameInfoResult& In
-	, FString& OutBuildVersion
-	, FDateTime& OutEndTime
-	, FString& OutLobbyId
-	, FString& OutMode
-	, TArray<FString>& OutPlayers
-	, EBPAdminRegion& OutRegion
-	, FString& OutServerAddress
-	, int32& OutServerPort
-	, FDateTime& OutStartTime
+        static void BreakBPAdminGetMatchmakerGameInfoResult(
+            const FBPAdminGetMatchmakerGameInfoResult& In
+            , FString& OutBuildVersion
+            , FDateTime& OutEndTime
+            , FString& OutLobbyId
+            , FString& OutMode
+            , TArray<FString>& OutPlayers
+            , EBPAdminRegion& OutRegion
+            , FString& OutServerAddress
+            , int32& OutServerPort
+            , FDateTime& OutStartTime
 );
 
     // GetMatchmakerGameModesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetMatchmakerGameModesRequest MakeBPAdminGetMatchmakerGameModesRequest(
-    FString InBuildVersion
-);
+        static FBPAdminGetMatchmakerGameModesRequest MakeBPAdminGetMatchmakerGameModesRequest(
+            FString InBuildVersion
+        );
 
     // GetMatchmakerGameModesResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetMatchmakerGameModesResult(
-    const FBPAdminGetMatchmakerGameModesResult& In
-	, TArray<FBPAdminGameModeInfo>& OutGameModes
+        static void BreakBPAdminGetMatchmakerGameModesResult(
+            const FBPAdminGetMatchmakerGameModesResult& In
+            , TArray<FBPAdminGameModeInfo>& OutGameModes
 );
 
     // GetPlayerIdFromAuthTokenRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPlayerIdFromAuthTokenRequest MakeBPAdminGetPlayerIdFromAuthTokenRequest(
-    FString InToken
-	, EBPAdminAuthTokenType InTokenType
-);
+        static FBPAdminGetPlayerIdFromAuthTokenRequest MakeBPAdminGetPlayerIdFromAuthTokenRequest(
+            FString InToken
+            , EBPAdminAuthTokenType InTokenType
+        );
 
     // GetPlayerIdFromAuthTokenResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPlayerIdFromAuthTokenResult(
-    const FBPAdminGetPlayerIdFromAuthTokenResult& In
-	, FString& OutPlayFabId
+        static void BreakBPAdminGetPlayerIdFromAuthTokenResult(
+            const FBPAdminGetPlayerIdFromAuthTokenResult& In
+            , FString& OutPlayFabId
 );
 
     // GetPlayerProfileRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPlayerProfileRequest MakeBPAdminGetPlayerProfileRequest(
-    FString InPlayFabId
-	, FBPAdminPlayerProfileViewConstraints InProfileConstraints
-);
+        static FBPAdminGetPlayerProfileRequest MakeBPAdminGetPlayerProfileRequest(
+            FString InPlayFabId
+            , FBPAdminPlayerProfileViewConstraints InProfileConstraints
+        );
 
     // GetPlayerProfileResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPlayerProfileResult(
-    const FBPAdminGetPlayerProfileResult& In
-	, FBPAdminPlayerProfileModel& OutPlayerProfile
+        static void BreakBPAdminGetPlayerProfileResult(
+            const FBPAdminGetPlayerProfileResult& In
+            , FBPAdminPlayerProfileModel& OutPlayerProfile
 );
 
     // GetPlayerSegmentsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPlayerSegmentsResult(
-    const FBPAdminGetPlayerSegmentsResult& In
-	, TArray<FBPAdminGetSegmentResult>& OutSegments
+        static void BreakBPAdminGetPlayerSegmentsResult(
+            const FBPAdminGetPlayerSegmentsResult& In
+            , TArray<FBPAdminGetSegmentResult>& OutSegments
 );
 
     // GetPlayerSharedSecretsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPlayerSharedSecretsRequest MakeBPAdminGetPlayerSharedSecretsRequest(
-    );
+        static FBPAdminGetPlayerSharedSecretsRequest MakeBPAdminGetPlayerSharedSecretsRequest(
+        );
 
     // GetPlayerSharedSecretsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPlayerSharedSecretsResult(
-    const FBPAdminGetPlayerSharedSecretsResult& In
-	, TArray<FBPAdminSharedSecret>& OutSharedSecrets
+        static void BreakBPAdminGetPlayerSharedSecretsResult(
+            const FBPAdminGetPlayerSharedSecretsResult& In
+            , TArray<FBPAdminSharedSecret>& OutSharedSecrets
 );
 
     // GetPlayersInSegmentRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPlayersInSegmentRequest MakeBPAdminGetPlayersInSegmentRequest(
-    FString InContinuationToken
-	, int32 InMaxBatchSize
-	, int32 InSecondsToLive
-	, FString InSegmentId
-);
+        static FBPAdminGetPlayersInSegmentRequest MakeBPAdminGetPlayersInSegmentRequest(
+            FString InContinuationToken
+            , int32 InMaxBatchSize
+            , int32 InSecondsToLive
+            , FString InSegmentId
+        );
 
     // GetPlayersInSegmentResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPlayersInSegmentResult(
-    const FBPAdminGetPlayersInSegmentResult& In
-	, FString& OutContinuationToken
-	, TArray<FBPAdminPlayerProfile>& OutPlayerProfiles
-	, int32& OutProfilesInSegment
+        static void BreakBPAdminGetPlayersInSegmentResult(
+            const FBPAdminGetPlayersInSegmentResult& In
+            , FString& OutContinuationToken
+            , TArray<FBPAdminPlayerProfile>& OutPlayerProfiles
+            , int32& OutProfilesInSegment
 );
 
     // GetPlayersSegmentsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPlayersSegmentsRequest MakeBPAdminGetPlayersSegmentsRequest(
-    FString InPlayFabId
-);
+        static FBPAdminGetPlayersSegmentsRequest MakeBPAdminGetPlayersSegmentsRequest(
+            FString InPlayFabId
+        );
 
     // GetPlayerStatisticDefinitionsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPlayerStatisticDefinitionsRequest MakeBPAdminGetPlayerStatisticDefinitionsRequest(
-    );
+        static FBPAdminGetPlayerStatisticDefinitionsRequest MakeBPAdminGetPlayerStatisticDefinitionsRequest(
+        );
 
     // GetPlayerStatisticDefinitionsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPlayerStatisticDefinitionsResult(
-    const FBPAdminGetPlayerStatisticDefinitionsResult& In
-	, TArray<FBPAdminPlayerStatisticDefinition>& OutStatistics
+        static void BreakBPAdminGetPlayerStatisticDefinitionsResult(
+            const FBPAdminGetPlayerStatisticDefinitionsResult& In
+            , TArray<FBPAdminPlayerStatisticDefinition>& OutStatistics
 );
 
     // GetPlayerStatisticVersionsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPlayerStatisticVersionsRequest MakeBPAdminGetPlayerStatisticVersionsRequest(
-    FString InStatisticName
-);
+        static FBPAdminGetPlayerStatisticVersionsRequest MakeBPAdminGetPlayerStatisticVersionsRequest(
+            FString InStatisticName
+        );
 
     // GetPlayerStatisticVersionsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPlayerStatisticVersionsResult(
-    const FBPAdminGetPlayerStatisticVersionsResult& In
-	, TArray<FBPAdminPlayerStatisticVersion>& OutStatisticVersions
+        static void BreakBPAdminGetPlayerStatisticVersionsResult(
+            const FBPAdminGetPlayerStatisticVersionsResult& In
+            , TArray<FBPAdminPlayerStatisticVersion>& OutStatisticVersions
 );
 
     // GetPlayerTagsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPlayerTagsRequest MakeBPAdminGetPlayerTagsRequest(
-    FString InNamespace
-	, FString InPlayFabId
-);
+        static FBPAdminGetPlayerTagsRequest MakeBPAdminGetPlayerTagsRequest(
+            FString InNamespace
+            , FString InPlayFabId
+        );
 
     // GetPlayerTagsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPlayerTagsResult(
-    const FBPAdminGetPlayerTagsResult& In
-	, FString& OutPlayFabId
-	, TArray<FString>& OutTags
+        static void BreakBPAdminGetPlayerTagsResult(
+            const FBPAdminGetPlayerTagsResult& In
+            , FString& OutPlayFabId
+            , TArray<FString>& OutTags
 );
 
     // GetPolicyRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPolicyRequest MakeBPAdminGetPolicyRequest(
-    FString InPolicyName
-);
+        static FBPAdminGetPolicyRequest MakeBPAdminGetPolicyRequest(
+            FString InPolicyName
+        );
 
     // GetPolicyResponse
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPolicyResponse(
-    const FBPAdminGetPolicyResponse& In
-	, FString& OutPolicyName
-	, TArray<FBPAdminPermissionStatement>& OutStatements
+        static void BreakBPAdminGetPolicyResponse(
+            const FBPAdminGetPolicyResponse& In
+            , FString& OutPolicyName
+            , TArray<FBPAdminPermissionStatement>& OutStatements
 );
 
     // GetPublisherDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetPublisherDataRequest MakeBPAdminGetPublisherDataRequest(
-    TArray<FString> InKeys
-);
+        static FBPAdminGetPublisherDataRequest MakeBPAdminGetPublisherDataRequest(
+            TArray<FString> InKeys
+        );
 
     // GetPublisherDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetPublisherDataResult(
-    const FBPAdminGetPublisherDataResult& In
-	, TMap<FString, FString>& OutData
+        static void BreakBPAdminGetPublisherDataResult(
+            const FBPAdminGetPublisherDataResult& In
+            , TMap<FString, FString>& OutData
 );
 
     // GetRandomResultTablesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetRandomResultTablesRequest MakeBPAdminGetRandomResultTablesRequest(
-    FString InCatalogVersion
-);
+        static FBPAdminGetRandomResultTablesRequest MakeBPAdminGetRandomResultTablesRequest(
+            FString InCatalogVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetRandomResultTablesRequest(
-    const FBPAdminGetRandomResultTablesRequest& In
-	, FString& OutCatalogVersion
+        static void BreakBPAdminGetRandomResultTablesRequest(
+            const FBPAdminGetRandomResultTablesRequest& In
+            , FString& OutCatalogVersion
 );
 
     // GetRandomResultTablesResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetRandomResultTablesResult(
-    const FBPAdminGetRandomResultTablesResult& In
-	, TMap<FString, FBPAdminRandomResultTableListing>& OutTables
+        static void BreakBPAdminGetRandomResultTablesResult(
+            const FBPAdminGetRandomResultTablesResult& In
+            , TMap<FString, FBPAdminRandomResultTableListing>& OutTables
 );
 
     // GetSegmentResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetSegmentResult(
-    const FBPAdminGetSegmentResult& In
-	, FString& OutABTestParent
-	, FString& OutId
-	, FString& OutName
+        static void BreakBPAdminGetSegmentResult(
+            const FBPAdminGetSegmentResult& In
+            , FString& OutABTestParent
+            , FString& OutId
+            , FString& OutName
 );
 
     // GetServerBuildInfoRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetServerBuildInfoRequest MakeBPAdminGetServerBuildInfoRequest(
-    FString InBuildId
-);
+        static FBPAdminGetServerBuildInfoRequest MakeBPAdminGetServerBuildInfoRequest(
+            FString InBuildId
+        );
 
     // GetServerBuildInfoResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetServerBuildInfoResult(
-    const FBPAdminGetServerBuildInfoResult& In
-	, TArray<EBPAdminRegion>& OutActiveRegions
-	, FString& OutBuildId
-	, FString& OutComment
-	, FString& OutErrorMessage
-	, int32& OutMaxGamesPerHost
-	, int32& OutMinFreeGameSlots
-	, EBPAdminGameBuildStatus& OutStatus
-	, FDateTime& OutTimestamp
+        static void BreakBPAdminGetServerBuildInfoResult(
+            const FBPAdminGetServerBuildInfoResult& In
+            , TArray<EBPAdminRegion>& OutActiveRegions
+            , FString& OutBuildId
+            , FString& OutComment
+            , FString& OutErrorMessage
+            , int32& OutMaxGamesPerHost
+            , int32& OutMinFreeGameSlots
+            , EBPAdminGameBuildStatus& OutStatus
+            , FDateTime& OutTimestamp
 );
 
     // GetServerBuildUploadURLRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetServerBuildUploadURLRequest MakeBPAdminGetServerBuildUploadURLRequest(
-    FString InBuildId
-);
+        static FBPAdminGetServerBuildUploadURLRequest MakeBPAdminGetServerBuildUploadURLRequest(
+            FString InBuildId
+        );
 
     // GetServerBuildUploadURLResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetServerBuildUploadURLResult(
-    const FBPAdminGetServerBuildUploadURLResult& In
-	, FString& OutURL
+        static void BreakBPAdminGetServerBuildUploadURLResult(
+            const FBPAdminGetServerBuildUploadURLResult& In
+            , FString& OutURL
 );
 
     // GetStoreItemsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetStoreItemsRequest MakeBPAdminGetStoreItemsRequest(
-    FString InCatalogVersion
-	, FString InStoreId
-);
+        static FBPAdminGetStoreItemsRequest MakeBPAdminGetStoreItemsRequest(
+            FString InCatalogVersion
+            , FString InStoreId
+        );
 
     // GetStoreItemsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetStoreItemsResult(
-    const FBPAdminGetStoreItemsResult& In
-	, FString& OutCatalogVersion
-	, FBPAdminStoreMarketingModel& OutMarketingData
-	, EBPAdminSourceType& OutSource
-	, TArray<FBPAdminStoreItem>& OutStore
-	, FString& OutStoreId
+        static void BreakBPAdminGetStoreItemsResult(
+            const FBPAdminGetStoreItemsResult& In
+            , FString& OutCatalogVersion
+            , FBPAdminStoreMarketingModel& OutMarketingData
+            , EBPAdminSourceType& OutSource
+            , TArray<FBPAdminStoreItem>& OutStore
+            , FString& OutStoreId
 );
 
     // GetTaskInstanceRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetTaskInstanceRequest MakeBPAdminGetTaskInstanceRequest(
-    FString InTaskInstanceId
-);
+        static FBPAdminGetTaskInstanceRequest MakeBPAdminGetTaskInstanceRequest(
+            FString InTaskInstanceId
+        );
 
     // GetTaskInstancesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetTaskInstancesRequest MakeBPAdminGetTaskInstancesRequest(
-    FDateTime InStartedAtRangeFrom
-	, FDateTime InStartedAtRangeTo
-	, EBPAdminTaskInstanceStatus InStatusFilter
-	, FBPAdminNameIdentifier InTaskIdentifier
-);
+        static FBPAdminGetTaskInstancesRequest MakeBPAdminGetTaskInstancesRequest(
+            FDateTime InStartedAtRangeFrom
+            , FDateTime InStartedAtRangeTo
+            , EBPAdminTaskInstanceStatus InStatusFilter
+            , FBPAdminNameIdentifier InTaskIdentifier
+        );
 
     // GetTaskInstancesResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetTaskInstancesResult(
-    const FBPAdminGetTaskInstancesResult& In
-	, TArray<FBPAdminTaskInstanceBasicSummary>& OutSummaries
+        static void BreakBPAdminGetTaskInstancesResult(
+            const FBPAdminGetTaskInstancesResult& In
+            , TArray<FBPAdminTaskInstanceBasicSummary>& OutSummaries
 );
 
     // GetTasksRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetTasksRequest MakeBPAdminGetTasksRequest(
-    FBPAdminNameIdentifier InIdentifier
-);
+        static FBPAdminGetTasksRequest MakeBPAdminGetTasksRequest(
+            FBPAdminNameIdentifier InIdentifier
+        );
 
     // GetTasksResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetTasksResult(
-    const FBPAdminGetTasksResult& In
-	, TArray<FBPAdminScheduledTask>& OutTasks
+        static void BreakBPAdminGetTasksResult(
+            const FBPAdminGetTasksResult& In
+            , TArray<FBPAdminScheduledTask>& OutTasks
 );
 
     // GetTitleDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetTitleDataRequest MakeBPAdminGetTitleDataRequest(
-    TArray<FString> InKeys
-);
+        static FBPAdminGetTitleDataRequest MakeBPAdminGetTitleDataRequest(
+            TArray<FString> InKeys
+        );
 
     // GetTitleDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetTitleDataResult(
-    const FBPAdminGetTitleDataResult& In
-	, TMap<FString, FString>& OutData
+        static void BreakBPAdminGetTitleDataResult(
+            const FBPAdminGetTitleDataResult& In
+            , TMap<FString, FString>& OutData
 );
 
     // GetUserBansRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetUserBansRequest MakeBPAdminGetUserBansRequest(
-    FString InPlayFabId
-);
+        static FBPAdminGetUserBansRequest MakeBPAdminGetUserBansRequest(
+            FString InPlayFabId
+        );
 
     // GetUserBansResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetUserBansResult(
-    const FBPAdminGetUserBansResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
+        static void BreakBPAdminGetUserBansResult(
+            const FBPAdminGetUserBansResult& In
+            , TArray<FBPAdminBanInfo>& OutBanData
 );
 
     // GetUserDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetUserDataRequest MakeBPAdminGetUserDataRequest(
-    int32 InIfChangedFromDataVersion
-	, TArray<FString> InKeys
-	, FString InPlayFabId
-);
+        static FBPAdminGetUserDataRequest MakeBPAdminGetUserDataRequest(
+            int32 InIfChangedFromDataVersion
+            , TArray<FString> InKeys
+            , FString InPlayFabId
+        );
 
     // GetUserDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetUserDataResult(
-    const FBPAdminGetUserDataResult& In
-	, TMap<FString, FBPAdminUserDataRecord>& OutData
-	, int32& OutDataVersion
-	, FString& OutPlayFabId
+        static void BreakBPAdminGetUserDataResult(
+            const FBPAdminGetUserDataResult& In
+            , TMap<FString, FBPAdminUserDataRecord>& OutData
+            , int32& OutDataVersion
+            , FString& OutPlayFabId
 );
 
     // GetUserInventoryRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGetUserInventoryRequest MakeBPAdminGetUserInventoryRequest(
-    FString InPlayFabId
-);
+        static FBPAdminGetUserInventoryRequest MakeBPAdminGetUserInventoryRequest(
+            FString InPlayFabId
+        );
 
     // GetUserInventoryResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGetUserInventoryResult(
-    const FBPAdminGetUserInventoryResult& In
-	, TArray<FBPAdminItemInstance>& OutInventory
-	, FString& OutPlayFabId
-	, TMap<FString, int32>& OutVirtualCurrency
-	, TMap<FString, FBPAdminVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
+        static void BreakBPAdminGetUserInventoryResult(
+            const FBPAdminGetUserInventoryResult& In
+            , TArray<FBPAdminItemInstance>& OutInventory
+            , FString& OutPlayFabId
+            , TMap<FString, int32>& OutVirtualCurrency
+            , TMap<FString, FBPAdminVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
 );
 
     // GrantedItemInstance
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGrantedItemInstance MakeBPAdminGrantedItemInstance(
-    FString InAnnotation
-	, TArray<FString> InBundleContents
-	, FString InBundleParent
-	, FString InCatalogVersion
-	, FString InCharacterId
-	, TMap<FString, FString> InCustomData
-	, FString InDisplayName
-	, FDateTime InExpiration
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-	, FDateTime InPurchaseDate
-	, int32 InRemainingUses
-	, bool InResult
-	, FString InUnitCurrency
-	, int32 InUnitPrice
-	, int32 InUsesIncrementedBy
-);
+        static FBPAdminGrantedItemInstance MakeBPAdminGrantedItemInstance(
+            FString InAnnotation
+            , TArray<FString> InBundleContents
+            , FString InBundleParent
+            , FString InCatalogVersion
+            , FString InCharacterId
+            , TMap<FString, FString> InCustomData
+            , FString InDisplayName
+            , FDateTime InExpiration
+            , FString InItemClass
+            , FString InItemId
+            , FString InItemInstanceId
+            , FString InPlayFabId
+            , FDateTime InPurchaseDate
+            , int32 InRemainingUses
+            , bool InResult
+            , FString InUnitCurrency
+            , int32 InUnitPrice
+            , int32 InUsesIncrementedBy
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGrantedItemInstance(
-    const FBPAdminGrantedItemInstance& In
-	, FString& OutAnnotation
-	, TArray<FString>& OutBundleContents
-	, FString& OutBundleParent
-	, FString& OutCatalogVersion
-	, FString& OutCharacterId
-	, TMap<FString, FString>& OutCustomData
-	, FString& OutDisplayName
-	, FDateTime& OutExpiration
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemInstanceId
-	, FString& OutPlayFabId
-	, FDateTime& OutPurchaseDate
-	, int32& OutRemainingUses
-	, bool& OutResult
-	, FString& OutUnitCurrency
-	, int32& OutUnitPrice
-	, int32& OutUsesIncrementedBy
+        static void BreakBPAdminGrantedItemInstance(
+            const FBPAdminGrantedItemInstance& In
+            , FString& OutAnnotation
+            , TArray<FString>& OutBundleContents
+            , FString& OutBundleParent
+            , FString& OutCatalogVersion
+            , FString& OutCharacterId
+            , TMap<FString, FString>& OutCustomData
+            , FString& OutDisplayName
+            , FDateTime& OutExpiration
+            , FString& OutItemClass
+            , FString& OutItemId
+            , FString& OutItemInstanceId
+            , FString& OutPlayFabId
+            , FDateTime& OutPurchaseDate
+            , int32& OutRemainingUses
+            , bool& OutResult
+            , FString& OutUnitCurrency
+            , int32& OutUnitPrice
+            , int32& OutUsesIncrementedBy
 );
 
     // GrantItemsToUsersRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminGrantItemsToUsersRequest MakeBPAdminGrantItemsToUsersRequest(
-    FString InCatalogVersion
-	, TArray<FBPAdminItemGrant> InItemGrants
-);
+        static FBPAdminGrantItemsToUsersRequest MakeBPAdminGrantItemsToUsersRequest(
+            FString InCatalogVersion
+            , TArray<FBPAdminItemGrant> InItemGrants
+        );
 
     // GrantItemsToUsersResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminGrantItemsToUsersResult(
-    const FBPAdminGrantItemsToUsersResult& In
-	, TArray<FBPAdminGrantedItemInstance>& OutItemGrantResults
+        static void BreakBPAdminGrantItemsToUsersResult(
+            const FBPAdminGrantItemsToUsersResult& In
+            , TArray<FBPAdminGrantedItemInstance>& OutItemGrantResults
 );
 
     // IncrementLimitedEditionItemAvailabilityRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminIncrementLimitedEditionItemAvailabilityRequest MakeBPAdminIncrementLimitedEditionItemAvailabilityRequest(
-    int32 InAmount
-	, FString InCatalogVersion
-	, FString InItemId
-);
+        static FBPAdminIncrementLimitedEditionItemAvailabilityRequest MakeBPAdminIncrementLimitedEditionItemAvailabilityRequest(
+            int32 InAmount
+            , FString InCatalogVersion
+            , FString InItemId
+        );
 
     // IncrementLimitedEditionItemAvailabilityResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminIncrementLimitedEditionItemAvailabilityResult(
-    const FBPAdminIncrementLimitedEditionItemAvailabilityResult& In
+        static void BreakBPAdminIncrementLimitedEditionItemAvailabilityResult(
+            const FBPAdminIncrementLimitedEditionItemAvailabilityResult& In
 );
 
     // IncrementPlayerStatisticVersionRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminIncrementPlayerStatisticVersionRequest MakeBPAdminIncrementPlayerStatisticVersionRequest(
-    FString InStatisticName
-);
+        static FBPAdminIncrementPlayerStatisticVersionRequest MakeBPAdminIncrementPlayerStatisticVersionRequest(
+            FString InStatisticName
+        );
 
     // IncrementPlayerStatisticVersionResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminIncrementPlayerStatisticVersionResult(
-    const FBPAdminIncrementPlayerStatisticVersionResult& In
-	, FBPAdminPlayerStatisticVersion& OutStatisticVersion
+        static void BreakBPAdminIncrementPlayerStatisticVersionResult(
+            const FBPAdminIncrementPlayerStatisticVersionResult& In
+            , FBPAdminPlayerStatisticVersion& OutStatisticVersion
 );
 
     // ItemGrant
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminItemGrant MakeBPAdminItemGrant(
-    FString InAnnotation
-	, FString InCharacterId
-	, TMap<FString, FString> InData
-	, FString InItemId
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-);
+        static FBPAdminItemGrant MakeBPAdminItemGrant(
+            FString InAnnotation
+            , FString InCharacterId
+            , TMap<FString, FString> InData
+            , FString InItemId
+            , TArray<FString> InKeysToRemove
+            , FString InPlayFabId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminItemGrant(
-    const FBPAdminItemGrant& In
-	, FString& OutAnnotation
-	, FString& OutCharacterId
-	, TMap<FString, FString>& OutData
-	, FString& OutItemId
-	, TArray<FString>& OutKeysToRemove
-	, FString& OutPlayFabId
+        static void BreakBPAdminItemGrant(
+            const FBPAdminItemGrant& In
+            , FString& OutAnnotation
+            , FString& OutCharacterId
+            , TMap<FString, FString>& OutData
+            , FString& OutItemId
+            , TArray<FString>& OutKeysToRemove
+            , FString& OutPlayFabId
 );
 
     // ItemInstance
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminItemInstance MakeBPAdminItemInstance(
-    FString InAnnotation
-	, TArray<FString> InBundleContents
-	, FString InBundleParent
-	, FString InCatalogVersion
-	, TMap<FString, FString> InCustomData
-	, FString InDisplayName
-	, FDateTime InExpiration
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemInstanceId
-	, FDateTime InPurchaseDate
-	, int32 InRemainingUses
-	, FString InUnitCurrency
-	, int32 InUnitPrice
-	, int32 InUsesIncrementedBy
-);
+        static FBPAdminItemInstance MakeBPAdminItemInstance(
+            FString InAnnotation
+            , TArray<FString> InBundleContents
+            , FString InBundleParent
+            , FString InCatalogVersion
+            , TMap<FString, FString> InCustomData
+            , FString InDisplayName
+            , FDateTime InExpiration
+            , FString InItemClass
+            , FString InItemId
+            , FString InItemInstanceId
+            , FDateTime InPurchaseDate
+            , int32 InRemainingUses
+            , FString InUnitCurrency
+            , int32 InUnitPrice
+            , int32 InUsesIncrementedBy
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminItemInstance(
-    const FBPAdminItemInstance& In
-	, FString& OutAnnotation
-	, TArray<FString>& OutBundleContents
-	, FString& OutBundleParent
-	, FString& OutCatalogVersion
-	, TMap<FString, FString>& OutCustomData
-	, FString& OutDisplayName
-	, FDateTime& OutExpiration
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemInstanceId
-	, FDateTime& OutPurchaseDate
-	, int32& OutRemainingUses
-	, FString& OutUnitCurrency
-	, int32& OutUnitPrice
-	, int32& OutUsesIncrementedBy
+        static void BreakBPAdminItemInstance(
+            const FBPAdminItemInstance& In
+            , FString& OutAnnotation
+            , TArray<FString>& OutBundleContents
+            , FString& OutBundleParent
+            , FString& OutCatalogVersion
+            , TMap<FString, FString>& OutCustomData
+            , FString& OutDisplayName
+            , FDateTime& OutExpiration
+            , FString& OutItemClass
+            , FString& OutItemId
+            , FString& OutItemInstanceId
+            , FDateTime& OutPurchaseDate
+            , int32& OutRemainingUses
+            , FString& OutUnitCurrency
+            , int32& OutUnitPrice
+            , int32& OutUsesIncrementedBy
 );
 
     // LinkedPlatformAccountModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminLinkedPlatformAccountModel MakeBPAdminLinkedPlatformAccountModel(
-    FString InEmail
-	, EBPAdminLoginIdentityProvider InPlatform
-	, FString InPlatformUserId
-	, FString InUsername
-);
+        static FBPAdminLinkedPlatformAccountModel MakeBPAdminLinkedPlatformAccountModel(
+            FString InEmail
+            , EBPAdminLoginIdentityProvider InPlatform
+            , FString InPlatformUserId
+            , FString InUsername
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminLinkedPlatformAccountModel(
-    const FBPAdminLinkedPlatformAccountModel& In
-	, FString& OutEmail
-	, EBPAdminLoginIdentityProvider& OutPlatform
-	, FString& OutPlatformUserId
-	, FString& OutUsername
+        static void BreakBPAdminLinkedPlatformAccountModel(
+            const FBPAdminLinkedPlatformAccountModel& In
+            , FString& OutEmail
+            , EBPAdminLoginIdentityProvider& OutPlatform
+            , FString& OutPlatformUserId
+            , FString& OutUsername
 );
 
     // ListBuildsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminListBuildsRequest MakeBPAdminListBuildsRequest(
-    );
+        static FBPAdminListBuildsRequest MakeBPAdminListBuildsRequest(
+        );
 
     // ListBuildsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminListBuildsResult(
-    const FBPAdminListBuildsResult& In
-	, TArray<FBPAdminGetServerBuildInfoResult>& OutBuilds
+        static void BreakBPAdminListBuildsResult(
+            const FBPAdminListBuildsResult& In
+            , TArray<FBPAdminGetServerBuildInfoResult>& OutBuilds
 );
 
     // ListVirtualCurrencyTypesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminListVirtualCurrencyTypesRequest MakeBPAdminListVirtualCurrencyTypesRequest(
-    );
+        static FBPAdminListVirtualCurrencyTypesRequest MakeBPAdminListVirtualCurrencyTypesRequest(
+        );
 
     // ListVirtualCurrencyTypesResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminListVirtualCurrencyTypesResult(
-    const FBPAdminListVirtualCurrencyTypesResult& In
-	, TArray<FBPAdminVirtualCurrencyData>& OutVirtualCurrencies
+        static void BreakBPAdminListVirtualCurrencyTypesResult(
+            const FBPAdminListVirtualCurrencyTypesResult& In
+            , TArray<FBPAdminVirtualCurrencyData>& OutVirtualCurrencies
 );
 
     // LocationModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminLocationModel MakeBPAdminLocationModel(
-    FString InCity
-	, EBPAdminContinentCode InContinentCode
-	, EBPAdminCountryCode InCountryCode
-	, float InLatitude
-	, float InLongitude
-);
+        static FBPAdminLocationModel MakeBPAdminLocationModel(
+            FString InCity
+            , EBPAdminContinentCode InContinentCode
+            , EBPAdminCountryCode InCountryCode
+            , float InLatitude
+            , float InLongitude
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminLocationModel(
-    const FBPAdminLocationModel& In
-	, FString& OutCity
-	, EBPAdminContinentCode& OutContinentCode
-	, EBPAdminCountryCode& OutCountryCode
-	, float& OutLatitude
-	, float& OutLongitude
+        static void BreakBPAdminLocationModel(
+            const FBPAdminLocationModel& In
+            , FString& OutCity
+            , EBPAdminContinentCode& OutContinentCode
+            , EBPAdminCountryCode& OutCountryCode
+            , float& OutLatitude
+            , float& OutLongitude
 );
 
     // LogStatement
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminLogStatement MakeBPAdminLogStatement(
-    UPlayFabJsonValue* InData
-	, FString InLevel
-	, FString InMessage
-);
+        static FBPAdminLogStatement MakeBPAdminLogStatement(
+            UPlayFabJsonValue* InData
+            , FString InLevel
+            , FString InMessage
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminLogStatement(
-    const FBPAdminLogStatement& In
-	, UPlayFabJsonValue*& OutData
-	, FString& OutLevel
-	, FString& OutMessage
+        static void BreakBPAdminLogStatement(
+            const FBPAdminLogStatement& In
+            , UPlayFabJsonValue*& OutData
+            , FString& OutLevel
+            , FString& OutMessage
 );
 
     // LookupUserAccountInfoRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminLookupUserAccountInfoRequest MakeBPAdminLookupUserAccountInfoRequest(
-    FString InEmail
-	, FString InPlayFabId
-	, FString InTitleDisplayName
-	, FString InUsername
-);
+        static FBPAdminLookupUserAccountInfoRequest MakeBPAdminLookupUserAccountInfoRequest(
+            FString InEmail
+            , FString InPlayFabId
+            , FString InTitleDisplayName
+            , FString InUsername
+        );
 
     // LookupUserAccountInfoResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminLookupUserAccountInfoResult(
-    const FBPAdminLookupUserAccountInfoResult& In
-	, FBPAdminUserAccountInfo& OutUserInfo
+        static void BreakBPAdminLookupUserAccountInfoResult(
+            const FBPAdminLookupUserAccountInfoResult& In
+            , FBPAdminUserAccountInfo& OutUserInfo
 );
 
     // MembershipModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminMembershipModel MakeBPAdminMembershipModel(
-    bool InIsActive
-	, FDateTime InMembershipExpiration
-	, FString InMembershipId
-	, FDateTime InOverrideExpiration
-	, bool InOverrideIsSet
-	, TArray<FBPAdminSubscriptionModel> InSubscriptions
-);
+        static FBPAdminMembershipModel MakeBPAdminMembershipModel(
+            bool InIsActive
+            , FDateTime InMembershipExpiration
+            , FString InMembershipId
+            , FDateTime InOverrideExpiration
+            , bool InOverrideIsSet
+            , TArray<FBPAdminSubscriptionModel> InSubscriptions
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminMembershipModel(
-    const FBPAdminMembershipModel& In
-	, bool& OutIsActive
-	, FDateTime& OutMembershipExpiration
-	, FString& OutMembershipId
-	, FDateTime& OutOverrideExpiration
-	, bool& OutOverrideIsSet
-	, TArray<FBPAdminSubscriptionModel>& OutSubscriptions
+        static void BreakBPAdminMembershipModel(
+            const FBPAdminMembershipModel& In
+            , bool& OutIsActive
+            , FDateTime& OutMembershipExpiration
+            , FString& OutMembershipId
+            , FDateTime& OutOverrideExpiration
+            , bool& OutOverrideIsSet
+            , TArray<FBPAdminSubscriptionModel>& OutSubscriptions
 );
 
     // ModifyMatchmakerGameModesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminModifyMatchmakerGameModesRequest MakeBPAdminModifyMatchmakerGameModesRequest(
-    FString InBuildVersion
-	, TArray<FBPAdminGameModeInfo> InGameModes
-);
+        static FBPAdminModifyMatchmakerGameModesRequest MakeBPAdminModifyMatchmakerGameModesRequest(
+            FString InBuildVersion
+            , TArray<FBPAdminGameModeInfo> InGameModes
+        );
 
     // ModifyMatchmakerGameModesResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminModifyMatchmakerGameModesResult(
-    const FBPAdminModifyMatchmakerGameModesResult& In
+        static void BreakBPAdminModifyMatchmakerGameModesResult(
+            const FBPAdminModifyMatchmakerGameModesResult& In
 );
 
     // ModifyServerBuildRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminModifyServerBuildRequest MakeBPAdminModifyServerBuildRequest(
-    TArray<EBPAdminRegion> InActiveRegions
-	, FString InBuildId
-	, FString InCommandLineTemplate
-	, FString InComment
-	, FString InExecutablePath
-	, int32 InMaxGamesPerHost
-	, int32 InMinFreeGameSlots
-	, FDateTime InTimestamp
-);
+        static FBPAdminModifyServerBuildRequest MakeBPAdminModifyServerBuildRequest(
+            TArray<EBPAdminRegion> InActiveRegions
+            , FString InBuildId
+            , FString InCommandLineTemplate
+            , FString InComment
+            , FString InExecutablePath
+            , int32 InMaxGamesPerHost
+            , int32 InMinFreeGameSlots
+            , FDateTime InTimestamp
+        );
 
     // ModifyServerBuildResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminModifyServerBuildResult(
-    const FBPAdminModifyServerBuildResult& In
-	, TArray<EBPAdminRegion>& OutActiveRegions
-	, FString& OutBuildId
-	, FString& OutCommandLineTemplate
-	, FString& OutComment
-	, FString& OutExecutablePath
-	, int32& OutMaxGamesPerHost
-	, int32& OutMinFreeGameSlots
-	, EBPAdminGameBuildStatus& OutStatus
-	, FDateTime& OutTimestamp
+        static void BreakBPAdminModifyServerBuildResult(
+            const FBPAdminModifyServerBuildResult& In
+            , TArray<EBPAdminRegion>& OutActiveRegions
+            , FString& OutBuildId
+            , FString& OutCommandLineTemplate
+            , FString& OutComment
+            , FString& OutExecutablePath
+            , int32& OutMaxGamesPerHost
+            , int32& OutMinFreeGameSlots
+            , EBPAdminGameBuildStatus& OutStatus
+            , FDateTime& OutTimestamp
 );
 
     // ModifyUserVirtualCurrencyResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminModifyUserVirtualCurrencyResult(
-    const FBPAdminModifyUserVirtualCurrencyResult& In
-	, int32& OutBalance
-	, int32& OutBalanceChange
-	, FString& OutPlayFabId
-	, FString& OutVirtualCurrency
+        static void BreakBPAdminModifyUserVirtualCurrencyResult(
+            const FBPAdminModifyUserVirtualCurrencyResult& In
+            , int32& OutBalance
+            , int32& OutBalanceChange
+            , FString& OutPlayFabId
+            , FString& OutVirtualCurrency
 );
 
     // NameIdentifier
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminNameIdentifier MakeBPAdminNameIdentifier(
-    FString InId
-	, FString InName
-);
+        static FBPAdminNameIdentifier MakeBPAdminNameIdentifier(
+            FString InId
+            , FString InName
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminNameIdentifier(
-    const FBPAdminNameIdentifier& In
-	, FString& OutId
-	, FString& OutName
+        static void BreakBPAdminNameIdentifier(
+            const FBPAdminNameIdentifier& In
+            , FString& OutId
+            , FString& OutName
 );
 
     // PermissionStatement
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPermissionStatement MakeBPAdminPermissionStatement(
-    FString InAction
-	, FBPAdminApiCondition InApiConditions
-	, FString InComment
-	, EBPAdminEffectType InEffect
-	, FString InPrincipal
-	, FString InResource
-);
+        static FBPAdminPermissionStatement MakeBPAdminPermissionStatement(
+            FString InAction
+            , FBPAdminApiCondition InApiConditions
+            , FString InComment
+            , EBPAdminEffectType InEffect
+            , FString InPrincipal
+            , FString InResource
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPermissionStatement(
-    const FBPAdminPermissionStatement& In
-	, FString& OutAction
-	, FBPAdminApiCondition& OutApiConditions
-	, FString& OutComment
-	, EBPAdminEffectType& OutEffect
-	, FString& OutPrincipal
-	, FString& OutResource
+        static void BreakBPAdminPermissionStatement(
+            const FBPAdminPermissionStatement& In
+            , FString& OutAction
+            , FBPAdminApiCondition& OutApiConditions
+            , FString& OutComment
+            , EBPAdminEffectType& OutEffect
+            , FString& OutPrincipal
+            , FString& OutResource
 );
 
     // PlayerLinkedAccount
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPlayerLinkedAccount MakeBPAdminPlayerLinkedAccount(
-    FString InEmail
-	, EBPAdminLoginIdentityProvider InPlatform
-	, FString InPlatformUserId
-	, FString InUsername
-);
+        static FBPAdminPlayerLinkedAccount MakeBPAdminPlayerLinkedAccount(
+            FString InEmail
+            , EBPAdminLoginIdentityProvider InPlatform
+            , FString InPlatformUserId
+            , FString InUsername
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPlayerLinkedAccount(
-    const FBPAdminPlayerLinkedAccount& In
-	, FString& OutEmail
-	, EBPAdminLoginIdentityProvider& OutPlatform
-	, FString& OutPlatformUserId
-	, FString& OutUsername
+        static void BreakBPAdminPlayerLinkedAccount(
+            const FBPAdminPlayerLinkedAccount& In
+            , FString& OutEmail
+            , EBPAdminLoginIdentityProvider& OutPlatform
+            , FString& OutPlatformUserId
+            , FString& OutUsername
 );
 
     // PlayerLocation
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPlayerLocation MakeBPAdminPlayerLocation(
-    FString InCity
-	, EBPAdminContinentCode InContinentCode
-	, EBPAdminCountryCode InCountryCode
-	, float InLatitude
-	, float InLongitude
-);
+        static FBPAdminPlayerLocation MakeBPAdminPlayerLocation(
+            FString InCity
+            , EBPAdminContinentCode InContinentCode
+            , EBPAdminCountryCode InCountryCode
+            , float InLatitude
+            , float InLongitude
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPlayerLocation(
-    const FBPAdminPlayerLocation& In
-	, FString& OutCity
-	, EBPAdminContinentCode& OutContinentCode
-	, EBPAdminCountryCode& OutCountryCode
-	, float& OutLatitude
-	, float& OutLongitude
+        static void BreakBPAdminPlayerLocation(
+            const FBPAdminPlayerLocation& In
+            , FString& OutCity
+            , EBPAdminContinentCode& OutContinentCode
+            , EBPAdminCountryCode& OutCountryCode
+            , float& OutLatitude
+            , float& OutLongitude
 );
 
     // PlayerProfile
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPlayerProfile MakeBPAdminPlayerProfile(
-    TArray<FBPAdminAdCampaignAttribution> InAdCampaignAttributions
-	, FString InAvatarUrl
-	, FDateTime InBannedUntil
-	, TArray<FBPAdminContactEmailInfo> InContactEmailAddresses
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InLastLogin
-	, TArray<FBPAdminPlayerLinkedAccount> InLinkedAccounts
-	, TMap<FString, FBPAdminPlayerLocation> InLocations
-	, EBPAdminLoginIdentityProvider InOrigination
-	, FString InPlayerId
-	, TArray<FBPAdminPlayerStatistic> InPlayerStatistics
-	, FString InPublisherId
-	, TArray<FBPAdminPushNotificationRegistration> InPushNotificationRegistrations
-	, TMap<FString, int32> InStatistics
-	, TArray<FString> InTags
-	, int32 InTotalValueToDateInUSD
-	, TMap<FString, int32> InValuesToDate
-	, TMap<FString, int32> InVirtualCurrencyBalances
-);
+        static FBPAdminPlayerProfile MakeBPAdminPlayerProfile(
+            TArray<FBPAdminAdCampaignAttribution> InAdCampaignAttributions
+            , FString InAvatarUrl
+            , FDateTime InBannedUntil
+            , TArray<FBPAdminContactEmailInfo> InContactEmailAddresses
+            , FDateTime InCreated
+            , FString InDisplayName
+            , FDateTime InLastLogin
+            , TArray<FBPAdminPlayerLinkedAccount> InLinkedAccounts
+            , TMap<FString, FBPAdminPlayerLocation> InLocations
+            , EBPAdminLoginIdentityProvider InOrigination
+            , FString InPlayerId
+            , TArray<FBPAdminPlayerStatistic> InPlayerStatistics
+            , FString InPublisherId
+            , TArray<FBPAdminPushNotificationRegistration> InPushNotificationRegistrations
+            , TMap<FString, int32> InStatistics
+            , TArray<FString> InTags
+            , int32 InTotalValueToDateInUSD
+            , TMap<FString, int32> InValuesToDate
+            , TMap<FString, int32> InVirtualCurrencyBalances
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPlayerProfile(
-    const FBPAdminPlayerProfile& In
-	, TArray<FBPAdminAdCampaignAttribution>& OutAdCampaignAttributions
-	, FString& OutAvatarUrl
-	, FDateTime& OutBannedUntil
-	, TArray<FBPAdminContactEmailInfo>& OutContactEmailAddresses
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutLastLogin
-	, TArray<FBPAdminPlayerLinkedAccount>& OutLinkedAccounts
-	, TMap<FString, FBPAdminPlayerLocation>& OutLocations
-	, EBPAdminLoginIdentityProvider& OutOrigination
-	, FString& OutPlayerId
-	, TArray<FBPAdminPlayerStatistic>& OutPlayerStatistics
-	, FString& OutPublisherId
-	, TArray<FBPAdminPushNotificationRegistration>& OutPushNotificationRegistrations
-	, TMap<FString, int32>& OutStatistics
-	, TArray<FString>& OutTags
-	, int32& OutTotalValueToDateInUSD
-	, TMap<FString, int32>& OutValuesToDate
-	, TMap<FString, int32>& OutVirtualCurrencyBalances
+        static void BreakBPAdminPlayerProfile(
+            const FBPAdminPlayerProfile& In
+            , TArray<FBPAdminAdCampaignAttribution>& OutAdCampaignAttributions
+            , FString& OutAvatarUrl
+            , FDateTime& OutBannedUntil
+            , TArray<FBPAdminContactEmailInfo>& OutContactEmailAddresses
+            , FDateTime& OutCreated
+            , FString& OutDisplayName
+            , FDateTime& OutLastLogin
+            , TArray<FBPAdminPlayerLinkedAccount>& OutLinkedAccounts
+            , TMap<FString, FBPAdminPlayerLocation>& OutLocations
+            , EBPAdminLoginIdentityProvider& OutOrigination
+            , FString& OutPlayerId
+            , TArray<FBPAdminPlayerStatistic>& OutPlayerStatistics
+            , FString& OutPublisherId
+            , TArray<FBPAdminPushNotificationRegistration>& OutPushNotificationRegistrations
+            , TMap<FString, int32>& OutStatistics
+            , TArray<FString>& OutTags
+            , int32& OutTotalValueToDateInUSD
+            , TMap<FString, int32>& OutValuesToDate
+            , TMap<FString, int32>& OutVirtualCurrencyBalances
 );
 
     // PlayerProfileModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPlayerProfileModel MakeBPAdminPlayerProfileModel(
-    TArray<FBPAdminAdCampaignAttributionModel> InAdCampaignAttributions
-	, FString InAvatarUrl
-	, FDateTime InBannedUntil
-	, TArray<FBPAdminContactEmailInfoModel> InContactEmailAddresses
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InLastLogin
-	, TArray<FBPAdminLinkedPlatformAccountModel> InLinkedAccounts
-	, TArray<FBPAdminLocationModel> InLocations
-	, TArray<FBPAdminMembershipModel> InMemberships
-	, EBPAdminLoginIdentityProvider InOrigination
-	, FString InPlayerId
-	, FString InPublisherId
-	, TArray<FBPAdminPushNotificationRegistrationModel> InPushNotificationRegistrations
-	, TArray<FBPAdminStatisticModel> InStatistics
-	, TArray<FBPAdminTagModel> InTags
-	, int32 InTotalValueToDateInUSD
-	, TArray<FBPAdminValueToDateModel> InValuesToDate
-);
+        static FBPAdminPlayerProfileModel MakeBPAdminPlayerProfileModel(
+            TArray<FBPAdminAdCampaignAttributionModel> InAdCampaignAttributions
+            , FString InAvatarUrl
+            , FDateTime InBannedUntil
+            , TArray<FBPAdminContactEmailInfoModel> InContactEmailAddresses
+            , FDateTime InCreated
+            , FString InDisplayName
+            , FDateTime InLastLogin
+            , TArray<FBPAdminLinkedPlatformAccountModel> InLinkedAccounts
+            , TArray<FBPAdminLocationModel> InLocations
+            , TArray<FBPAdminMembershipModel> InMemberships
+            , EBPAdminLoginIdentityProvider InOrigination
+            , FString InPlayerId
+            , FString InPublisherId
+            , TArray<FBPAdminPushNotificationRegistrationModel> InPushNotificationRegistrations
+            , TArray<FBPAdminStatisticModel> InStatistics
+            , TArray<FBPAdminTagModel> InTags
+            , int32 InTotalValueToDateInUSD
+            , TArray<FBPAdminValueToDateModel> InValuesToDate
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPlayerProfileModel(
-    const FBPAdminPlayerProfileModel& In
-	, TArray<FBPAdminAdCampaignAttributionModel>& OutAdCampaignAttributions
-	, FString& OutAvatarUrl
-	, FDateTime& OutBannedUntil
-	, TArray<FBPAdminContactEmailInfoModel>& OutContactEmailAddresses
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutLastLogin
-	, TArray<FBPAdminLinkedPlatformAccountModel>& OutLinkedAccounts
-	, TArray<FBPAdminLocationModel>& OutLocations
-	, TArray<FBPAdminMembershipModel>& OutMemberships
-	, EBPAdminLoginIdentityProvider& OutOrigination
-	, FString& OutPlayerId
-	, FString& OutPublisherId
-	, TArray<FBPAdminPushNotificationRegistrationModel>& OutPushNotificationRegistrations
-	, TArray<FBPAdminStatisticModel>& OutStatistics
-	, TArray<FBPAdminTagModel>& OutTags
-	, int32& OutTotalValueToDateInUSD
-	, TArray<FBPAdminValueToDateModel>& OutValuesToDate
+        static void BreakBPAdminPlayerProfileModel(
+            const FBPAdminPlayerProfileModel& In
+            , TArray<FBPAdminAdCampaignAttributionModel>& OutAdCampaignAttributions
+            , FString& OutAvatarUrl
+            , FDateTime& OutBannedUntil
+            , TArray<FBPAdminContactEmailInfoModel>& OutContactEmailAddresses
+            , FDateTime& OutCreated
+            , FString& OutDisplayName
+            , FDateTime& OutLastLogin
+            , TArray<FBPAdminLinkedPlatformAccountModel>& OutLinkedAccounts
+            , TArray<FBPAdminLocationModel>& OutLocations
+            , TArray<FBPAdminMembershipModel>& OutMemberships
+            , EBPAdminLoginIdentityProvider& OutOrigination
+            , FString& OutPlayerId
+            , FString& OutPublisherId
+            , TArray<FBPAdminPushNotificationRegistrationModel>& OutPushNotificationRegistrations
+            , TArray<FBPAdminStatisticModel>& OutStatistics
+            , TArray<FBPAdminTagModel>& OutTags
+            , int32& OutTotalValueToDateInUSD
+            , TArray<FBPAdminValueToDateModel>& OutValuesToDate
 );
 
     // PlayerProfileViewConstraints
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPlayerProfileViewConstraints MakeBPAdminPlayerProfileViewConstraints(
-    bool InShowAvatarUrl
-	, bool InShowBannedUntil
-	, bool InShowCampaignAttributions
-	, bool InShowContactEmailAddresses
-	, bool InShowCreated
-	, bool InShowDisplayName
-	, bool InShowLastLogin
-	, bool InShowLinkedAccounts
-	, bool InShowLocations
-	, bool InShowMemberships
-	, bool InShowOrigination
-	, bool InShowPushNotificationRegistrations
-	, bool InShowStatistics
-	, bool InShowTags
-	, bool InShowTotalValueToDateInUsd
-	, bool InShowValuesToDate
-);
+        static FBPAdminPlayerProfileViewConstraints MakeBPAdminPlayerProfileViewConstraints(
+            bool InShowAvatarUrl
+            , bool InShowBannedUntil
+            , bool InShowCampaignAttributions
+            , bool InShowContactEmailAddresses
+            , bool InShowCreated
+            , bool InShowDisplayName
+            , bool InShowLastLogin
+            , bool InShowLinkedAccounts
+            , bool InShowLocations
+            , bool InShowMemberships
+            , bool InShowOrigination
+            , bool InShowPushNotificationRegistrations
+            , bool InShowStatistics
+            , bool InShowTags
+            , bool InShowTotalValueToDateInUsd
+            , bool InShowValuesToDate
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPlayerProfileViewConstraints(
-    const FBPAdminPlayerProfileViewConstraints& In
-	, bool& OutShowAvatarUrl
-	, bool& OutShowBannedUntil
-	, bool& OutShowCampaignAttributions
-	, bool& OutShowContactEmailAddresses
-	, bool& OutShowCreated
-	, bool& OutShowDisplayName
-	, bool& OutShowLastLogin
-	, bool& OutShowLinkedAccounts
-	, bool& OutShowLocations
-	, bool& OutShowMemberships
-	, bool& OutShowOrigination
-	, bool& OutShowPushNotificationRegistrations
-	, bool& OutShowStatistics
-	, bool& OutShowTags
-	, bool& OutShowTotalValueToDateInUsd
-	, bool& OutShowValuesToDate
+        static void BreakBPAdminPlayerProfileViewConstraints(
+            const FBPAdminPlayerProfileViewConstraints& In
+            , bool& OutShowAvatarUrl
+            , bool& OutShowBannedUntil
+            , bool& OutShowCampaignAttributions
+            , bool& OutShowContactEmailAddresses
+            , bool& OutShowCreated
+            , bool& OutShowDisplayName
+            , bool& OutShowLastLogin
+            , bool& OutShowLinkedAccounts
+            , bool& OutShowLocations
+            , bool& OutShowMemberships
+            , bool& OutShowOrigination
+            , bool& OutShowPushNotificationRegistrations
+            , bool& OutShowStatistics
+            , bool& OutShowTags
+            , bool& OutShowTotalValueToDateInUsd
+            , bool& OutShowValuesToDate
 );
 
     // PlayerStatistic
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPlayerStatistic MakeBPAdminPlayerStatistic(
-    FString InId
-	, FString InName
-	, int32 InStatisticValue
-	, int32 InStatisticVersion
-);
+        static FBPAdminPlayerStatistic MakeBPAdminPlayerStatistic(
+            FString InId
+            , FString InName
+            , int32 InStatisticValue
+            , int32 InStatisticVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPlayerStatistic(
-    const FBPAdminPlayerStatistic& In
-	, FString& OutId
-	, FString& OutName
-	, int32& OutStatisticValue
-	, int32& OutStatisticVersion
+        static void BreakBPAdminPlayerStatistic(
+            const FBPAdminPlayerStatistic& In
+            , FString& OutId
+            , FString& OutName
+            , int32& OutStatisticValue
+            , int32& OutStatisticVersion
 );
 
     // PlayerStatisticDefinition
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPlayerStatisticDefinition MakeBPAdminPlayerStatisticDefinition(
-    EBPAdminStatisticAggregationMethod InAggregationMethod
-	, int32 InCurrentVersion
-	, FString InStatisticName
-	, EBPAdminStatisticResetIntervalOption InVersionChangeInterval
-);
+        static FBPAdminPlayerStatisticDefinition MakeBPAdminPlayerStatisticDefinition(
+            EBPAdminStatisticAggregationMethod InAggregationMethod
+            , int32 InCurrentVersion
+            , FString InStatisticName
+            , EBPAdminStatisticResetIntervalOption InVersionChangeInterval
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPlayerStatisticDefinition(
-    const FBPAdminPlayerStatisticDefinition& In
-	, EBPAdminStatisticAggregationMethod& OutAggregationMethod
-	, int32& OutCurrentVersion
-	, FString& OutStatisticName
-	, EBPAdminStatisticResetIntervalOption& OutVersionChangeInterval
+        static void BreakBPAdminPlayerStatisticDefinition(
+            const FBPAdminPlayerStatisticDefinition& In
+            , EBPAdminStatisticAggregationMethod& OutAggregationMethod
+            , int32& OutCurrentVersion
+            , FString& OutStatisticName
+            , EBPAdminStatisticResetIntervalOption& OutVersionChangeInterval
 );
 
     // PlayerStatisticVersion
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPlayerStatisticVersion MakeBPAdminPlayerStatisticVersion(
-    FDateTime InActivationTime
-	, FString InArchiveDownloadUrl
-	, FDateTime InDeactivationTime
-	, FDateTime InScheduledActivationTime
-	, FDateTime InScheduledDeactivationTime
-	, FString InStatisticName
-	, EBPAdminStatisticVersionStatus InStatus
-	, int32 InVersion
-);
+        static FBPAdminPlayerStatisticVersion MakeBPAdminPlayerStatisticVersion(
+            FDateTime InActivationTime
+            , FString InArchiveDownloadUrl
+            , FDateTime InDeactivationTime
+            , FDateTime InScheduledActivationTime
+            , FDateTime InScheduledDeactivationTime
+            , FString InStatisticName
+            , EBPAdminStatisticVersionStatus InStatus
+            , int32 InVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPlayerStatisticVersion(
-    const FBPAdminPlayerStatisticVersion& In
-	, FDateTime& OutActivationTime
-	, FString& OutArchiveDownloadUrl
-	, FDateTime& OutDeactivationTime
-	, FDateTime& OutScheduledActivationTime
-	, FDateTime& OutScheduledDeactivationTime
-	, FString& OutStatisticName
-	, EBPAdminStatisticVersionStatus& OutStatus
-	, int32& OutVersion
+        static void BreakBPAdminPlayerStatisticVersion(
+            const FBPAdminPlayerStatisticVersion& In
+            , FDateTime& OutActivationTime
+            , FString& OutArchiveDownloadUrl
+            , FDateTime& OutDeactivationTime
+            , FDateTime& OutScheduledActivationTime
+            , FDateTime& OutScheduledDeactivationTime
+            , FString& OutStatisticName
+            , EBPAdminStatisticVersionStatus& OutStatus
+            , int32& OutVersion
 );
 
     // PushNotificationRegistration
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPushNotificationRegistration MakeBPAdminPushNotificationRegistration(
-    FString InNotificationEndpointARN
-	, EBPAdminPushNotificationPlatform InPlatform
-);
+        static FBPAdminPushNotificationRegistration MakeBPAdminPushNotificationRegistration(
+            FString InNotificationEndpointARN
+            , EBPAdminPushNotificationPlatform InPlatform
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPushNotificationRegistration(
-    const FBPAdminPushNotificationRegistration& In
-	, FString& OutNotificationEndpointARN
-	, EBPAdminPushNotificationPlatform& OutPlatform
+        static void BreakBPAdminPushNotificationRegistration(
+            const FBPAdminPushNotificationRegistration& In
+            , FString& OutNotificationEndpointARN
+            , EBPAdminPushNotificationPlatform& OutPlatform
 );
 
     // PushNotificationRegistrationModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminPushNotificationRegistrationModel MakeBPAdminPushNotificationRegistrationModel(
-    FString InNotificationEndpointARN
-	, EBPAdminPushNotificationPlatform InPlatform
-);
+        static FBPAdminPushNotificationRegistrationModel MakeBPAdminPushNotificationRegistrationModel(
+            FString InNotificationEndpointARN
+            , EBPAdminPushNotificationPlatform InPlatform
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminPushNotificationRegistrationModel(
-    const FBPAdminPushNotificationRegistrationModel& In
-	, FString& OutNotificationEndpointARN
-	, EBPAdminPushNotificationPlatform& OutPlatform
+        static void BreakBPAdminPushNotificationRegistrationModel(
+            const FBPAdminPushNotificationRegistrationModel& In
+            , FString& OutNotificationEndpointARN
+            , EBPAdminPushNotificationPlatform& OutPlatform
 );
 
     // RandomResultTable
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminRandomResultTable(
-    const FBPAdminRandomResultTable& In
-	, TArray<FBPAdminResultTableNode>& OutNodes
-	, FString& OutTableId
+        static void BreakBPAdminRandomResultTable(
+            const FBPAdminRandomResultTable& In
+            , TArray<FBPAdminResultTableNode>& OutNodes
+            , FString& OutTableId
 );
 
     // RandomResultTableListing
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminRandomResultTableListing(
-    const FBPAdminRandomResultTableListing& In
-	, FString& OutCatalogVersion
-	, TArray<FBPAdminResultTableNode>& OutNodes
-	, FString& OutTableId
+        static void BreakBPAdminRandomResultTableListing(
+            const FBPAdminRandomResultTableListing& In
+            , FString& OutCatalogVersion
+            , TArray<FBPAdminResultTableNode>& OutNodes
+            , FString& OutTableId
 );
 
     // RefundPurchaseRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminRefundPurchaseRequest MakeBPAdminRefundPurchaseRequest(
-    FString InOrderId
-	, FString InPlayFabId
-	, FString InReason
-);
+        static FBPAdminRefundPurchaseRequest MakeBPAdminRefundPurchaseRequest(
+            FString InOrderId
+            , FString InPlayFabId
+            , FString InReason
+        );
 
     // RefundPurchaseResponse
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminRefundPurchaseResponse(
-    const FBPAdminRefundPurchaseResponse& In
-	, FString& OutPurchaseStatus
+        static void BreakBPAdminRefundPurchaseResponse(
+            const FBPAdminRefundPurchaseResponse& In
+            , FString& OutPurchaseStatus
 );
 
     // RemovePlayerTagRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminRemovePlayerTagRequest MakeBPAdminRemovePlayerTagRequest(
-    FString InPlayFabId
-	, FString InTagName
-);
+        static FBPAdminRemovePlayerTagRequest MakeBPAdminRemovePlayerTagRequest(
+            FString InPlayFabId
+            , FString InTagName
+        );
 
     // RemovePlayerTagResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminRemovePlayerTagResult(
-    const FBPAdminRemovePlayerTagResult& In
+        static void BreakBPAdminRemovePlayerTagResult(
+            const FBPAdminRemovePlayerTagResult& In
 );
 
     // RemoveServerBuildRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminRemoveServerBuildRequest MakeBPAdminRemoveServerBuildRequest(
-    FString InBuildId
-);
+        static FBPAdminRemoveServerBuildRequest MakeBPAdminRemoveServerBuildRequest(
+            FString InBuildId
+        );
 
     // RemoveServerBuildResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminRemoveServerBuildResult(
-    const FBPAdminRemoveServerBuildResult& In
+        static void BreakBPAdminRemoveServerBuildResult(
+            const FBPAdminRemoveServerBuildResult& In
 );
 
     // RemoveVirtualCurrencyTypesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminRemoveVirtualCurrencyTypesRequest MakeBPAdminRemoveVirtualCurrencyTypesRequest(
-    TArray<FBPAdminVirtualCurrencyData> InVirtualCurrencies
-);
+        static FBPAdminRemoveVirtualCurrencyTypesRequest MakeBPAdminRemoveVirtualCurrencyTypesRequest(
+            TArray<FBPAdminVirtualCurrencyData> InVirtualCurrencies
+        );
 
     // ResetCharacterStatisticsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminResetCharacterStatisticsRequest MakeBPAdminResetCharacterStatisticsRequest(
-    FString InCharacterId
-	, FString InPlayFabId
-);
+        static FBPAdminResetCharacterStatisticsRequest MakeBPAdminResetCharacterStatisticsRequest(
+            FString InCharacterId
+            , FString InPlayFabId
+        );
 
     // ResetCharacterStatisticsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminResetCharacterStatisticsResult(
-    const FBPAdminResetCharacterStatisticsResult& In
+        static void BreakBPAdminResetCharacterStatisticsResult(
+            const FBPAdminResetCharacterStatisticsResult& In
 );
 
     // ResetPasswordRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminResetPasswordRequest MakeBPAdminResetPasswordRequest(
-    FString InPassword
-	, FString InToken
-);
+        static FBPAdminResetPasswordRequest MakeBPAdminResetPasswordRequest(
+            FString InPassword
+            , FString InToken
+        );
 
     // ResetPasswordResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminResetPasswordResult(
-    const FBPAdminResetPasswordResult& In
+        static void BreakBPAdminResetPasswordResult(
+            const FBPAdminResetPasswordResult& In
 );
 
     // ResetUserStatisticsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminResetUserStatisticsRequest MakeBPAdminResetUserStatisticsRequest(
-    FString InPlayFabId
-);
+        static FBPAdminResetUserStatisticsRequest MakeBPAdminResetUserStatisticsRequest(
+            FString InPlayFabId
+        );
 
     // ResetUserStatisticsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminResetUserStatisticsResult(
-    const FBPAdminResetUserStatisticsResult& In
+        static void BreakBPAdminResetUserStatisticsResult(
+            const FBPAdminResetUserStatisticsResult& In
 );
 
     // ResolvePurchaseDisputeRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminResolvePurchaseDisputeRequest MakeBPAdminResolvePurchaseDisputeRequest(
-    FString InOrderId
-	, EBPAdminResolutionOutcome InOutcome
-	, FString InPlayFabId
-	, FString InReason
-);
+        static FBPAdminResolvePurchaseDisputeRequest MakeBPAdminResolvePurchaseDisputeRequest(
+            FString InOrderId
+            , EBPAdminResolutionOutcome InOutcome
+            , FString InPlayFabId
+            , FString InReason
+        );
 
     // ResolvePurchaseDisputeResponse
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminResolvePurchaseDisputeResponse(
-    const FBPAdminResolvePurchaseDisputeResponse& In
-	, FString& OutPurchaseStatus
+        static void BreakBPAdminResolvePurchaseDisputeResponse(
+            const FBPAdminResolvePurchaseDisputeResponse& In
+            , FString& OutPurchaseStatus
 );
 
     // ResultTableNode
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminResultTableNode(
-    const FBPAdminResultTableNode& In
-	, FString& OutResultItem
-	, EBPAdminResultTableNodeType& OutResultItemType
-	, int32& OutWeight
+        static void BreakBPAdminResultTableNode(
+            const FBPAdminResultTableNode& In
+            , FString& OutResultItem
+            , EBPAdminResultTableNodeType& OutResultItemType
+            , int32& OutWeight
 );
 
     // RevokeAllBansForUserRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminRevokeAllBansForUserRequest MakeBPAdminRevokeAllBansForUserRequest(
-    FString InPlayFabId
-);
+        static FBPAdminRevokeAllBansForUserRequest MakeBPAdminRevokeAllBansForUserRequest(
+            FString InPlayFabId
+        );
 
     // RevokeAllBansForUserResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminRevokeAllBansForUserResult(
-    const FBPAdminRevokeAllBansForUserResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
+        static void BreakBPAdminRevokeAllBansForUserResult(
+            const FBPAdminRevokeAllBansForUserResult& In
+            , TArray<FBPAdminBanInfo>& OutBanData
 );
 
     // RevokeBansRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminRevokeBansRequest MakeBPAdminRevokeBansRequest(
-    TArray<FString> InBanIds
-);
+        static FBPAdminRevokeBansRequest MakeBPAdminRevokeBansRequest(
+            TArray<FString> InBanIds
+        );
 
     // RevokeBansResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminRevokeBansResult(
-    const FBPAdminRevokeBansResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
+        static void BreakBPAdminRevokeBansResult(
+            const FBPAdminRevokeBansResult& In
+            , TArray<FBPAdminBanInfo>& OutBanData
+);
+
+    // RevokeInventoryItem
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
+        static FBPAdminRevokeInventoryItem MakeBPAdminRevokeInventoryItem(
+            FString InCharacterId
+            , FString InItemInstanceId
+            , FString InPlayFabId
+        );
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
+        static void BreakBPAdminRevokeInventoryItem(
+            const FBPAdminRevokeInventoryItem& In
+            , FString& OutCharacterId
+            , FString& OutItemInstanceId
+            , FString& OutPlayFabId
 );
 
     // RevokeInventoryItemRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminRevokeInventoryItemRequest MakeBPAdminRevokeInventoryItemRequest(
-    FString InCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
+        static FBPAdminRevokeInventoryItemRequest MakeBPAdminRevokeInventoryItemRequest(
+            FString InCharacterId
+            , FString InItemInstanceId
+            , FString InPlayFabId
+        );
+
+    // RevokeInventoryItemsRequest
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
+        static FBPAdminRevokeInventoryItemsRequest MakeBPAdminRevokeInventoryItemsRequest(
+            TArray<FBPAdminRevokeInventoryItem> InItems
+        );
+
+    // RevokeInventoryItemsResult
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
+        static void BreakBPAdminRevokeInventoryItemsResult(
+            const FBPAdminRevokeInventoryItemsResult& In
+            , TArray<FBPAdminRevokeItemError>& OutErrors
 );
 
     // RevokeInventoryResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminRevokeInventoryResult(
-    const FBPAdminRevokeInventoryResult& In
+        static void BreakBPAdminRevokeInventoryResult(
+            const FBPAdminRevokeInventoryResult& In
+);
+
+    // RevokeItemError
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
+        static FBPAdminRevokeItemError MakeBPAdminRevokeItemError(
+            FString InError
+            , FBPAdminRevokeInventoryItem InItem
+        );
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
+        static void BreakBPAdminRevokeItemError(
+            const FBPAdminRevokeItemError& In
+            , FString& OutError
+            , FBPAdminRevokeInventoryItem& OutItem
 );
 
     // RunTaskRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminRunTaskRequest MakeBPAdminRunTaskRequest(
-    FBPAdminNameIdentifier InIdentifier
-);
+        static FBPAdminRunTaskRequest MakeBPAdminRunTaskRequest(
+            FBPAdminNameIdentifier InIdentifier
+        );
 
     // RunTaskResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminRunTaskResult(
-    const FBPAdminRunTaskResult& In
-	, FString& OutTaskInstanceId
+        static void BreakBPAdminRunTaskResult(
+            const FBPAdminRunTaskResult& In
+            , FString& OutTaskInstanceId
 );
 
     // ScheduledTask
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminScheduledTask MakeBPAdminScheduledTask(
-    FString InDescription
-	, bool InIsActive
-	, FDateTime InLastRunTime
-	, FString InName
-	, FDateTime InNextRunTime
-	, UPlayFabJsonValue* InParameter
-	, FString InSchedule
-	, FString InTaskId
-	, EBPAdminScheduledTaskType InType
-);
+        static FBPAdminScheduledTask MakeBPAdminScheduledTask(
+            FString InDescription
+            , bool InIsActive
+            , FDateTime InLastRunTime
+            , FString InName
+            , FDateTime InNextRunTime
+            , UPlayFabJsonValue* InParameter
+            , FString InSchedule
+            , FString InTaskId
+            , EBPAdminScheduledTaskType InType
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminScheduledTask(
-    const FBPAdminScheduledTask& In
-	, FString& OutDescription
-	, bool& OutIsActive
-	, FDateTime& OutLastRunTime
-	, FString& OutName
-	, FDateTime& OutNextRunTime
-	, UPlayFabJsonValue*& OutParameter
-	, FString& OutSchedule
-	, FString& OutTaskId
-	, EBPAdminScheduledTaskType& OutType
+        static void BreakBPAdminScheduledTask(
+            const FBPAdminScheduledTask& In
+            , FString& OutDescription
+            , bool& OutIsActive
+            , FDateTime& OutLastRunTime
+            , FString& OutName
+            , FDateTime& OutNextRunTime
+            , UPlayFabJsonValue*& OutParameter
+            , FString& OutSchedule
+            , FString& OutTaskId
+            , EBPAdminScheduledTaskType& OutType
 );
 
     // ScriptExecutionError
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminScriptExecutionError MakeBPAdminScriptExecutionError(
-    FString InError
-	, FString InMessage
-	, FString InStackTrace
-);
+        static FBPAdminScriptExecutionError MakeBPAdminScriptExecutionError(
+            FString InError
+            , FString InMessage
+            , FString InStackTrace
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminScriptExecutionError(
-    const FBPAdminScriptExecutionError& In
-	, FString& OutError
-	, FString& OutMessage
-	, FString& OutStackTrace
+        static void BreakBPAdminScriptExecutionError(
+            const FBPAdminScriptExecutionError& In
+            , FString& OutError
+            , FString& OutMessage
+            , FString& OutStackTrace
 );
 
     // SendAccountRecoveryEmailRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminSendAccountRecoveryEmailRequest MakeBPAdminSendAccountRecoveryEmailRequest(
-    FString InEmail
-	, FString InEmailTemplateId
-);
+        static FBPAdminSendAccountRecoveryEmailRequest MakeBPAdminSendAccountRecoveryEmailRequest(
+            FString InEmail
+            , FString InEmailTemplateId
+        );
 
     // SendAccountRecoveryEmailResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminSendAccountRecoveryEmailResult(
-    const FBPAdminSendAccountRecoveryEmailResult& In
+        static void BreakBPAdminSendAccountRecoveryEmailResult(
+            const FBPAdminSendAccountRecoveryEmailResult& In
 );
 
     // SetPlayerSecretRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminSetPlayerSecretRequest MakeBPAdminSetPlayerSecretRequest(
-    FString InPlayerSecret
-	, FString InPlayFabId
-);
+        static FBPAdminSetPlayerSecretRequest MakeBPAdminSetPlayerSecretRequest(
+            FString InPlayerSecret
+            , FString InPlayFabId
+        );
 
     // SetPlayerSecretResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminSetPlayerSecretResult(
-    const FBPAdminSetPlayerSecretResult& In
+        static void BreakBPAdminSetPlayerSecretResult(
+            const FBPAdminSetPlayerSecretResult& In
 );
 
     // SetPublishedRevisionRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminSetPublishedRevisionRequest MakeBPAdminSetPublishedRevisionRequest(
-    int32 InRevision
-	, int32 InVersion
-);
+        static FBPAdminSetPublishedRevisionRequest MakeBPAdminSetPublishedRevisionRequest(
+            int32 InRevision
+            , int32 InVersion
+        );
 
     // SetPublishedRevisionResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminSetPublishedRevisionResult(
-    const FBPAdminSetPublishedRevisionResult& In
+        static void BreakBPAdminSetPublishedRevisionResult(
+            const FBPAdminSetPublishedRevisionResult& In
 );
 
     // SetPublisherDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminSetPublisherDataRequest MakeBPAdminSetPublisherDataRequest(
-    FString InKey
-	, FString InValue
-);
+        static FBPAdminSetPublisherDataRequest MakeBPAdminSetPublisherDataRequest(
+            FString InKey
+            , FString InValue
+        );
 
     // SetPublisherDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminSetPublisherDataResult(
-    const FBPAdminSetPublisherDataResult& In
+        static void BreakBPAdminSetPublisherDataResult(
+            const FBPAdminSetPublisherDataResult& In
 );
 
     // SetTitleDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminSetTitleDataRequest MakeBPAdminSetTitleDataRequest(
-    FString InKey
-	, FString InValue
-);
+        static FBPAdminSetTitleDataRequest MakeBPAdminSetTitleDataRequest(
+            FString InKey
+            , FString InValue
+        );
 
     // SetTitleDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminSetTitleDataResult(
-    const FBPAdminSetTitleDataResult& In
+        static void BreakBPAdminSetTitleDataResult(
+            const FBPAdminSetTitleDataResult& In
 );
 
     // SetupPushNotificationRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminSetupPushNotificationRequest MakeBPAdminSetupPushNotificationRequest(
-    FString InCredential
-	, FString InKey
-	, FString InName
-	, bool InOverwriteOldARN
-	, EBPAdminPushSetupPlatform InPlatform
-);
+        static FBPAdminSetupPushNotificationRequest MakeBPAdminSetupPushNotificationRequest(
+            FString InCredential
+            , FString InKey
+            , FString InName
+            , bool InOverwriteOldARN
+            , EBPAdminPushSetupPlatform InPlatform
+        );
 
     // SetupPushNotificationResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminSetupPushNotificationResult(
-    const FBPAdminSetupPushNotificationResult& In
-	, FString& OutARN
+        static void BreakBPAdminSetupPushNotificationResult(
+            const FBPAdminSetupPushNotificationResult& In
+            , FString& OutARN
 );
 
     // SharedSecret
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminSharedSecret MakeBPAdminSharedSecret(
-    bool InDisabled
-	, FString InFriendlyName
-	, FString InSecretKey
-);
+        static FBPAdminSharedSecret MakeBPAdminSharedSecret(
+            bool InDisabled
+            , FString InFriendlyName
+            , FString InSecretKey
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminSharedSecret(
-    const FBPAdminSharedSecret& In
-	, bool& OutDisabled
-	, FString& OutFriendlyName
-	, FString& OutSecretKey
+        static void BreakBPAdminSharedSecret(
+            const FBPAdminSharedSecret& In
+            , bool& OutDisabled
+            , FString& OutFriendlyName
+            , FString& OutSecretKey
 );
 
     // StatisticModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminStatisticModel MakeBPAdminStatisticModel(
-    FString InName
-	, int32 InValue
-	, int32 InVersion
-);
+        static FBPAdminStatisticModel MakeBPAdminStatisticModel(
+            FString InName
+            , int32 InValue
+            , int32 InVersion
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminStatisticModel(
-    const FBPAdminStatisticModel& In
-	, FString& OutName
-	, int32& OutValue
-	, int32& OutVersion
+        static void BreakBPAdminStatisticModel(
+            const FBPAdminStatisticModel& In
+            , FString& OutName
+            , int32& OutValue
+            , int32& OutVersion
 );
 
     // StoreItem
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminStoreItem MakeBPAdminStoreItem(
-    UPlayFabJsonValue* InCustomData
-	, int32 InDisplayPosition
-	, FString InItemId
-	, TMap<FString, int32> InRealCurrencyPrices
-	, TMap<FString, int32> InVirtualCurrencyPrices
-);
+        static FBPAdminStoreItem MakeBPAdminStoreItem(
+            UPlayFabJsonValue* InCustomData
+            , int32 InDisplayPosition
+            , FString InItemId
+            , TMap<FString, int32> InRealCurrencyPrices
+            , TMap<FString, int32> InVirtualCurrencyPrices
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminStoreItem(
-    const FBPAdminStoreItem& In
-	, UPlayFabJsonValue*& OutCustomData
-	, int32& OutDisplayPosition
-	, FString& OutItemId
-	, TMap<FString, int32>& OutRealCurrencyPrices
-	, TMap<FString, int32>& OutVirtualCurrencyPrices
+        static void BreakBPAdminStoreItem(
+            const FBPAdminStoreItem& In
+            , UPlayFabJsonValue*& OutCustomData
+            , int32& OutDisplayPosition
+            , FString& OutItemId
+            , TMap<FString, int32>& OutRealCurrencyPrices
+            , TMap<FString, int32>& OutVirtualCurrencyPrices
 );
 
     // StoreMarketingModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminStoreMarketingModel MakeBPAdminStoreMarketingModel(
-    FString InDescription
-	, FString InDisplayName
-	, UPlayFabJsonValue* InMetadata
-);
+        static FBPAdminStoreMarketingModel MakeBPAdminStoreMarketingModel(
+            FString InDescription
+            , FString InDisplayName
+            , UPlayFabJsonValue* InMetadata
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminStoreMarketingModel(
-    const FBPAdminStoreMarketingModel& In
-	, FString& OutDescription
-	, FString& OutDisplayName
-	, UPlayFabJsonValue*& OutMetadata
+        static void BreakBPAdminStoreMarketingModel(
+            const FBPAdminStoreMarketingModel& In
+            , FString& OutDescription
+            , FString& OutDisplayName
+            , UPlayFabJsonValue*& OutMetadata
 );
 
     // SubscriptionModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminSubscriptionModel MakeBPAdminSubscriptionModel(
-    FDateTime InExpiration
-	, FDateTime InInitialSubscriptionTime
-	, bool InIsActive
-	, EBPAdminSubscriptionProviderStatus InStatus
-	, FString InSubscriptionId
-	, FString InSubscriptionItemId
-	, FString InSubscriptionProvider
-);
+        static FBPAdminSubscriptionModel MakeBPAdminSubscriptionModel(
+            FDateTime InExpiration
+            , FDateTime InInitialSubscriptionTime
+            , bool InIsActive
+            , EBPAdminSubscriptionProviderStatus InStatus
+            , FString InSubscriptionId
+            , FString InSubscriptionItemId
+            , FString InSubscriptionProvider
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminSubscriptionModel(
-    const FBPAdminSubscriptionModel& In
-	, FDateTime& OutExpiration
-	, FDateTime& OutInitialSubscriptionTime
-	, bool& OutIsActive
-	, EBPAdminSubscriptionProviderStatus& OutStatus
-	, FString& OutSubscriptionId
-	, FString& OutSubscriptionItemId
-	, FString& OutSubscriptionProvider
+        static void BreakBPAdminSubscriptionModel(
+            const FBPAdminSubscriptionModel& In
+            , FDateTime& OutExpiration
+            , FDateTime& OutInitialSubscriptionTime
+            , bool& OutIsActive
+            , EBPAdminSubscriptionProviderStatus& OutStatus
+            , FString& OutSubscriptionId
+            , FString& OutSubscriptionItemId
+            , FString& OutSubscriptionProvider
 );
 
     // SubtractUserVirtualCurrencyRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminSubtractUserVirtualCurrencyRequest MakeBPAdminSubtractUserVirtualCurrencyRequest(
-    int32 InAmount
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-);
+        static FBPAdminSubtractUserVirtualCurrencyRequest MakeBPAdminSubtractUserVirtualCurrencyRequest(
+            int32 InAmount
+            , FString InPlayFabId
+            , FString InVirtualCurrency
+        );
 
     // TagModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminTagModel MakeBPAdminTagModel(
-    FString InTagValue
-);
+        static FBPAdminTagModel MakeBPAdminTagModel(
+            FString InTagValue
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminTagModel(
-    const FBPAdminTagModel& In
-	, FString& OutTagValue
+        static void BreakBPAdminTagModel(
+            const FBPAdminTagModel& In
+            , FString& OutTagValue
 );
 
     // TaskInstanceBasicSummary
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminTaskInstanceBasicSummary MakeBPAdminTaskInstanceBasicSummary(
-    FDateTime InCompletedAt
-	, float InEstimatedSecondsRemaining
-	, float InPercentComplete
-	, FString InScheduledByUserId
-	, FDateTime InStartedAt
-	, EBPAdminTaskInstanceStatus InStatus
-	, FBPAdminNameIdentifier InTaskIdentifier
-	, FString InTaskInstanceId
-	, EBPAdminScheduledTaskType InType
-);
+        static FBPAdminTaskInstanceBasicSummary MakeBPAdminTaskInstanceBasicSummary(
+            FDateTime InCompletedAt
+            , float InEstimatedSecondsRemaining
+            , float InPercentComplete
+            , FString InScheduledByUserId
+            , FDateTime InStartedAt
+            , EBPAdminTaskInstanceStatus InStatus
+            , FBPAdminNameIdentifier InTaskIdentifier
+            , FString InTaskInstanceId
+            , EBPAdminScheduledTaskType InType
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminTaskInstanceBasicSummary(
-    const FBPAdminTaskInstanceBasicSummary& In
-	, FDateTime& OutCompletedAt
-	, float& OutEstimatedSecondsRemaining
-	, float& OutPercentComplete
-	, FString& OutScheduledByUserId
-	, FDateTime& OutStartedAt
-	, EBPAdminTaskInstanceStatus& OutStatus
-	, FBPAdminNameIdentifier& OutTaskIdentifier
-	, FString& OutTaskInstanceId
-	, EBPAdminScheduledTaskType& OutType
+        static void BreakBPAdminTaskInstanceBasicSummary(
+            const FBPAdminTaskInstanceBasicSummary& In
+            , FDateTime& OutCompletedAt
+            , float& OutEstimatedSecondsRemaining
+            , float& OutPercentComplete
+            , FString& OutScheduledByUserId
+            , FDateTime& OutStartedAt
+            , EBPAdminTaskInstanceStatus& OutStatus
+            , FBPAdminNameIdentifier& OutTaskIdentifier
+            , FString& OutTaskInstanceId
+            , EBPAdminScheduledTaskType& OutType
 );
 
     // UpdateBanRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateBanRequest MakeBPAdminUpdateBanRequest(
-    bool InActive
-	, FString InBanId
-	, FDateTime InExpires
-	, FString InIPAddress
-	, FString InMACAddress
-	, bool InPermanent
-	, FString InReason
-);
+        static FBPAdminUpdateBanRequest MakeBPAdminUpdateBanRequest(
+            bool InActive
+            , FString InBanId
+            , FDateTime InExpires
+            , FString InIPAddress
+            , FString InMACAddress
+            , bool InPermanent
+            , FString InReason
+        );
 
     // UpdateBansRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateBansRequest MakeBPAdminUpdateBansRequest(
-    TArray<FBPAdminUpdateBanRequest> InBans
-);
+        static FBPAdminUpdateBansRequest MakeBPAdminUpdateBansRequest(
+            TArray<FBPAdminUpdateBanRequest> InBans
+        );
 
     // UpdateBansResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdateBansResult(
-    const FBPAdminUpdateBansResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
+        static void BreakBPAdminUpdateBansResult(
+            const FBPAdminUpdateBansResult& In
+            , TArray<FBPAdminBanInfo>& OutBanData
 );
 
     // UpdateCatalogItemsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateCatalogItemsRequest MakeBPAdminUpdateCatalogItemsRequest(
-    TArray<FBPAdminCatalogItem> InCatalog
-	, FString InCatalogVersion
-	, bool InSetAsDefaultCatalog
-);
+        static FBPAdminUpdateCatalogItemsRequest MakeBPAdminUpdateCatalogItemsRequest(
+            TArray<FBPAdminCatalogItem> InCatalog
+            , FString InCatalogVersion
+            , bool InSetAsDefaultCatalog
+        );
 
     // UpdateCatalogItemsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdateCatalogItemsResult(
-    const FBPAdminUpdateCatalogItemsResult& In
+        static void BreakBPAdminUpdateCatalogItemsResult(
+            const FBPAdminUpdateCatalogItemsResult& In
 );
 
     // UpdateCloudScriptRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateCloudScriptRequest MakeBPAdminUpdateCloudScriptRequest(
-    FString InDeveloperPlayFabId
-	, TArray<FBPAdminCloudScriptFile> InFiles
-	, bool InPublish
-);
+        static FBPAdminUpdateCloudScriptRequest MakeBPAdminUpdateCloudScriptRequest(
+            FString InDeveloperPlayFabId
+            , TArray<FBPAdminCloudScriptFile> InFiles
+            , bool InPublish
+        );
 
     // UpdateCloudScriptResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdateCloudScriptResult(
-    const FBPAdminUpdateCloudScriptResult& In
-	, int32& OutRevision
-	, int32& OutVersion
+        static void BreakBPAdminUpdateCloudScriptResult(
+            const FBPAdminUpdateCloudScriptResult& In
+            , int32& OutRevision
+            , int32& OutVersion
 );
 
     // UpdatePlayerSharedSecretRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdatePlayerSharedSecretRequest MakeBPAdminUpdatePlayerSharedSecretRequest(
-    bool InDisabled
-	, FString InFriendlyName
-	, FString InSecretKey
-);
+        static FBPAdminUpdatePlayerSharedSecretRequest MakeBPAdminUpdatePlayerSharedSecretRequest(
+            bool InDisabled
+            , FString InFriendlyName
+            , FString InSecretKey
+        );
 
     // UpdatePlayerSharedSecretResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdatePlayerSharedSecretResult(
-    const FBPAdminUpdatePlayerSharedSecretResult& In
+        static void BreakBPAdminUpdatePlayerSharedSecretResult(
+            const FBPAdminUpdatePlayerSharedSecretResult& In
 );
 
     // UpdatePlayerStatisticDefinitionRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdatePlayerStatisticDefinitionRequest MakeBPAdminUpdatePlayerStatisticDefinitionRequest(
-    EBPAdminStatisticAggregationMethod InAggregationMethod
-	, FString InStatisticName
-	, EBPAdminStatisticResetIntervalOption InVersionChangeInterval
-);
+        static FBPAdminUpdatePlayerStatisticDefinitionRequest MakeBPAdminUpdatePlayerStatisticDefinitionRequest(
+            EBPAdminStatisticAggregationMethod InAggregationMethod
+            , FString InStatisticName
+            , EBPAdminStatisticResetIntervalOption InVersionChangeInterval
+        );
 
     // UpdatePlayerStatisticDefinitionResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdatePlayerStatisticDefinitionResult(
-    const FBPAdminUpdatePlayerStatisticDefinitionResult& In
-	, FBPAdminPlayerStatisticDefinition& OutStatistic
+        static void BreakBPAdminUpdatePlayerStatisticDefinitionResult(
+            const FBPAdminUpdatePlayerStatisticDefinitionResult& In
+            , FBPAdminPlayerStatisticDefinition& OutStatistic
 );
 
     // UpdatePolicyRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdatePolicyRequest MakeBPAdminUpdatePolicyRequest(
-    bool InOverwritePolicy
-	, FString InPolicyName
-	, TArray<FBPAdminPermissionStatement> InStatements
-);
+        static FBPAdminUpdatePolicyRequest MakeBPAdminUpdatePolicyRequest(
+            bool InOverwritePolicy
+            , FString InPolicyName
+            , TArray<FBPAdminPermissionStatement> InStatements
+        );
 
     // UpdatePolicyResponse
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdatePolicyResponse(
-    const FBPAdminUpdatePolicyResponse& In
-	, FString& OutPolicyName
-	, TArray<FBPAdminPermissionStatement>& OutStatements
+        static void BreakBPAdminUpdatePolicyResponse(
+            const FBPAdminUpdatePolicyResponse& In
+            , FString& OutPolicyName
+            , TArray<FBPAdminPermissionStatement>& OutStatements
 );
 
     // UpdateRandomResultTablesRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateRandomResultTablesRequest MakeBPAdminUpdateRandomResultTablesRequest(
-    FString InCatalogVersion
-	, TArray<FBPAdminRandomResultTable> InTables
-);
+        static FBPAdminUpdateRandomResultTablesRequest MakeBPAdminUpdateRandomResultTablesRequest(
+            FString InCatalogVersion
+            , TArray<FBPAdminRandomResultTable> InTables
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdateRandomResultTablesRequest(
-    const FBPAdminUpdateRandomResultTablesRequest& In
-	, FString& OutCatalogVersion
-	, TArray<FBPAdminRandomResultTable>& OutTables
+        static void BreakBPAdminUpdateRandomResultTablesRequest(
+            const FBPAdminUpdateRandomResultTablesRequest& In
+            , FString& OutCatalogVersion
+            , TArray<FBPAdminRandomResultTable>& OutTables
 );
 
     // UpdateRandomResultTablesResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdateRandomResultTablesResult(
-    const FBPAdminUpdateRandomResultTablesResult& In
+        static void BreakBPAdminUpdateRandomResultTablesResult(
+            const FBPAdminUpdateRandomResultTablesResult& In
 );
 
     // UpdateStoreItemsRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateStoreItemsRequest MakeBPAdminUpdateStoreItemsRequest(
-    FString InCatalogVersion
-	, FBPAdminStoreMarketingModel InMarketingData
-	, TArray<FBPAdminStoreItem> InStore
-	, FString InStoreId
-);
+        static FBPAdminUpdateStoreItemsRequest MakeBPAdminUpdateStoreItemsRequest(
+            FString InCatalogVersion
+            , FBPAdminStoreMarketingModel InMarketingData
+            , TArray<FBPAdminStoreItem> InStore
+            , FString InStoreId
+        );
 
     // UpdateStoreItemsResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdateStoreItemsResult(
-    const FBPAdminUpdateStoreItemsResult& In
+        static void BreakBPAdminUpdateStoreItemsResult(
+            const FBPAdminUpdateStoreItemsResult& In
 );
 
     // UpdateTaskRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateTaskRequest MakeBPAdminUpdateTaskRequest(
-    FString InDescription
-	, FBPAdminNameIdentifier InIdentifier
-	, bool InIsActive
-	, FString InName
-	, UPlayFabJsonValue* InParameter
-	, FString InSchedule
-	, EBPAdminScheduledTaskType InType
-);
+        static FBPAdminUpdateTaskRequest MakeBPAdminUpdateTaskRequest(
+            FString InDescription
+            , FBPAdminNameIdentifier InIdentifier
+            , bool InIsActive
+            , FString InName
+            , UPlayFabJsonValue* InParameter
+            , FString InSchedule
+            , EBPAdminScheduledTaskType InType
+        );
 
     // UpdateUserDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateUserDataRequest MakeBPAdminUpdateUserDataRequest(
-    TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, EBPAdminUserDataPermission InPermission
-	, FString InPlayFabId
-);
+        static FBPAdminUpdateUserDataRequest MakeBPAdminUpdateUserDataRequest(
+            TMap<FString, FString> InData
+            , TArray<FString> InKeysToRemove
+            , EBPAdminUserDataPermission InPermission
+            , FString InPlayFabId
+        );
 
     // UpdateUserDataResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdateUserDataResult(
-    const FBPAdminUpdateUserDataResult& In
-	, int32& OutDataVersion
+        static void BreakBPAdminUpdateUserDataResult(
+            const FBPAdminUpdateUserDataResult& In
+            , int32& OutDataVersion
 );
 
     // UpdateUserInternalDataRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateUserInternalDataRequest MakeBPAdminUpdateUserInternalDataRequest(
-    TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-);
+        static FBPAdminUpdateUserInternalDataRequest MakeBPAdminUpdateUserInternalDataRequest(
+            TMap<FString, FString> InData
+            , TArray<FString> InKeysToRemove
+            , FString InPlayFabId
+        );
 
     // UpdateUserTitleDisplayNameRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUpdateUserTitleDisplayNameRequest MakeBPAdminUpdateUserTitleDisplayNameRequest(
-    FString InDisplayName
-	, FString InPlayFabId
-);
+        static FBPAdminUpdateUserTitleDisplayNameRequest MakeBPAdminUpdateUserTitleDisplayNameRequest(
+            FString InDisplayName
+            , FString InPlayFabId
+        );
 
     // UpdateUserTitleDisplayNameResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUpdateUserTitleDisplayNameResult(
-    const FBPAdminUpdateUserTitleDisplayNameResult& In
-	, FString& OutDisplayName
+        static void BreakBPAdminUpdateUserTitleDisplayNameResult(
+            const FBPAdminUpdateUserTitleDisplayNameResult& In
+            , FString& OutDisplayName
 );
 
     // UserAccountInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserAccountInfo MakeBPAdminUserAccountInfo(
-    FBPAdminUserAndroidDeviceInfo InAndroidDeviceInfo
-	, FDateTime InCreated
-	, FBPAdminUserCustomIdInfo InCustomIdInfo
-	, FBPAdminUserFacebookInfo InFacebookInfo
-	, FBPAdminUserGameCenterInfo InGameCenterInfo
-	, FBPAdminUserGoogleInfo InGoogleInfo
-	, FBPAdminUserIosDeviceInfo InIosDeviceInfo
-	, FBPAdminUserKongregateInfo InKongregateInfo
-	, FString InPlayFabId
-	, FBPAdminUserPrivateAccountInfo InPrivateInfo
-	, FBPAdminUserPsnInfo InPsnInfo
-	, FBPAdminUserSteamInfo InSteamInfo
-	, FBPAdminUserTitleInfo InTitleInfo
-	, FBPAdminUserTwitchInfo InTwitchInfo
-	, FString InUsername
-	, FBPAdminUserXboxInfo InXboxInfo
-);
+        static FBPAdminUserAccountInfo MakeBPAdminUserAccountInfo(
+            FBPAdminUserAndroidDeviceInfo InAndroidDeviceInfo
+            , FDateTime InCreated
+            , FBPAdminUserCustomIdInfo InCustomIdInfo
+            , FBPAdminUserFacebookInfo InFacebookInfo
+            , FBPAdminUserGameCenterInfo InGameCenterInfo
+            , FBPAdminUserGoogleInfo InGoogleInfo
+            , FBPAdminUserIosDeviceInfo InIosDeviceInfo
+            , FBPAdminUserKongregateInfo InKongregateInfo
+            , FString InPlayFabId
+            , FBPAdminUserPrivateAccountInfo InPrivateInfo
+            , FBPAdminUserPsnInfo InPsnInfo
+            , FBPAdminUserSteamInfo InSteamInfo
+            , FBPAdminUserTitleInfo InTitleInfo
+            , FBPAdminUserTwitchInfo InTwitchInfo
+            , FString InUsername
+            , FBPAdminUserXboxInfo InXboxInfo
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserAccountInfo(
-    const FBPAdminUserAccountInfo& In
-	, FBPAdminUserAndroidDeviceInfo& OutAndroidDeviceInfo
-	, FDateTime& OutCreated
-	, FBPAdminUserCustomIdInfo& OutCustomIdInfo
-	, FBPAdminUserFacebookInfo& OutFacebookInfo
-	, FBPAdminUserGameCenterInfo& OutGameCenterInfo
-	, FBPAdminUserGoogleInfo& OutGoogleInfo
-	, FBPAdminUserIosDeviceInfo& OutIosDeviceInfo
-	, FBPAdminUserKongregateInfo& OutKongregateInfo
-	, FString& OutPlayFabId
-	, FBPAdminUserPrivateAccountInfo& OutPrivateInfo
-	, FBPAdminUserPsnInfo& OutPsnInfo
-	, FBPAdminUserSteamInfo& OutSteamInfo
-	, FBPAdminUserTitleInfo& OutTitleInfo
-	, FBPAdminUserTwitchInfo& OutTwitchInfo
-	, FString& OutUsername
-	, FBPAdminUserXboxInfo& OutXboxInfo
+        static void BreakBPAdminUserAccountInfo(
+            const FBPAdminUserAccountInfo& In
+            , FBPAdminUserAndroidDeviceInfo& OutAndroidDeviceInfo
+            , FDateTime& OutCreated
+            , FBPAdminUserCustomIdInfo& OutCustomIdInfo
+            , FBPAdminUserFacebookInfo& OutFacebookInfo
+            , FBPAdminUserGameCenterInfo& OutGameCenterInfo
+            , FBPAdminUserGoogleInfo& OutGoogleInfo
+            , FBPAdminUserIosDeviceInfo& OutIosDeviceInfo
+            , FBPAdminUserKongregateInfo& OutKongregateInfo
+            , FString& OutPlayFabId
+            , FBPAdminUserPrivateAccountInfo& OutPrivateInfo
+            , FBPAdminUserPsnInfo& OutPsnInfo
+            , FBPAdminUserSteamInfo& OutSteamInfo
+            , FBPAdminUserTitleInfo& OutTitleInfo
+            , FBPAdminUserTwitchInfo& OutTwitchInfo
+            , FString& OutUsername
+            , FBPAdminUserXboxInfo& OutXboxInfo
 );
 
     // UserAndroidDeviceInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserAndroidDeviceInfo MakeBPAdminUserAndroidDeviceInfo(
-    FString InAndroidDeviceId
-);
+        static FBPAdminUserAndroidDeviceInfo MakeBPAdminUserAndroidDeviceInfo(
+            FString InAndroidDeviceId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserAndroidDeviceInfo(
-    const FBPAdminUserAndroidDeviceInfo& In
-	, FString& OutAndroidDeviceId
+        static void BreakBPAdminUserAndroidDeviceInfo(
+            const FBPAdminUserAndroidDeviceInfo& In
+            , FString& OutAndroidDeviceId
 );
 
     // UserCustomIdInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserCustomIdInfo MakeBPAdminUserCustomIdInfo(
-    FString InCustomId
-);
+        static FBPAdminUserCustomIdInfo MakeBPAdminUserCustomIdInfo(
+            FString InCustomId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserCustomIdInfo(
-    const FBPAdminUserCustomIdInfo& In
-	, FString& OutCustomId
+        static void BreakBPAdminUserCustomIdInfo(
+            const FBPAdminUserCustomIdInfo& In
+            , FString& OutCustomId
 );
 
     // UserDataRecord
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserDataRecord MakeBPAdminUserDataRecord(
-    FDateTime InLastUpdated
-	, EBPAdminUserDataPermission InPermission
-	, FString InValue
-);
+        static FBPAdminUserDataRecord MakeBPAdminUserDataRecord(
+            FDateTime InLastUpdated
+            , EBPAdminUserDataPermission InPermission
+            , FString InValue
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserDataRecord(
-    const FBPAdminUserDataRecord& In
-	, FDateTime& OutLastUpdated
-	, EBPAdminUserDataPermission& OutPermission
-	, FString& OutValue
+        static void BreakBPAdminUserDataRecord(
+            const FBPAdminUserDataRecord& In
+            , FDateTime& OutLastUpdated
+            , EBPAdminUserDataPermission& OutPermission
+            , FString& OutValue
 );
 
     // UserFacebookInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserFacebookInfo MakeBPAdminUserFacebookInfo(
-    FString InFacebookId
-	, FString InFullName
-);
+        static FBPAdminUserFacebookInfo MakeBPAdminUserFacebookInfo(
+            FString InFacebookId
+            , FString InFullName
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserFacebookInfo(
-    const FBPAdminUserFacebookInfo& In
-	, FString& OutFacebookId
-	, FString& OutFullName
+        static void BreakBPAdminUserFacebookInfo(
+            const FBPAdminUserFacebookInfo& In
+            , FString& OutFacebookId
+            , FString& OutFullName
 );
 
     // UserGameCenterInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserGameCenterInfo MakeBPAdminUserGameCenterInfo(
-    FString InGameCenterId
-);
+        static FBPAdminUserGameCenterInfo MakeBPAdminUserGameCenterInfo(
+            FString InGameCenterId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserGameCenterInfo(
-    const FBPAdminUserGameCenterInfo& In
-	, FString& OutGameCenterId
+        static void BreakBPAdminUserGameCenterInfo(
+            const FBPAdminUserGameCenterInfo& In
+            , FString& OutGameCenterId
 );
 
     // UserGoogleInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserGoogleInfo MakeBPAdminUserGoogleInfo(
-    FString InGoogleEmail
-	, FString InGoogleGender
-	, FString InGoogleId
-	, FString InGoogleLocale
-);
+        static FBPAdminUserGoogleInfo MakeBPAdminUserGoogleInfo(
+            FString InGoogleEmail
+            , FString InGoogleGender
+            , FString InGoogleId
+            , FString InGoogleLocale
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserGoogleInfo(
-    const FBPAdminUserGoogleInfo& In
-	, FString& OutGoogleEmail
-	, FString& OutGoogleGender
-	, FString& OutGoogleId
-	, FString& OutGoogleLocale
+        static void BreakBPAdminUserGoogleInfo(
+            const FBPAdminUserGoogleInfo& In
+            , FString& OutGoogleEmail
+            , FString& OutGoogleGender
+            , FString& OutGoogleId
+            , FString& OutGoogleLocale
 );
 
     // UserIosDeviceInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserIosDeviceInfo MakeBPAdminUserIosDeviceInfo(
-    FString InIosDeviceId
-);
+        static FBPAdminUserIosDeviceInfo MakeBPAdminUserIosDeviceInfo(
+            FString InIosDeviceId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserIosDeviceInfo(
-    const FBPAdminUserIosDeviceInfo& In
-	, FString& OutIosDeviceId
+        static void BreakBPAdminUserIosDeviceInfo(
+            const FBPAdminUserIosDeviceInfo& In
+            , FString& OutIosDeviceId
 );
 
     // UserKongregateInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserKongregateInfo MakeBPAdminUserKongregateInfo(
-    FString InKongregateId
-	, FString InKongregateName
-);
+        static FBPAdminUserKongregateInfo MakeBPAdminUserKongregateInfo(
+            FString InKongregateId
+            , FString InKongregateName
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserKongregateInfo(
-    const FBPAdminUserKongregateInfo& In
-	, FString& OutKongregateId
-	, FString& OutKongregateName
+        static void BreakBPAdminUserKongregateInfo(
+            const FBPAdminUserKongregateInfo& In
+            , FString& OutKongregateId
+            , FString& OutKongregateName
 );
 
     // UserPrivateAccountInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserPrivateAccountInfo MakeBPAdminUserPrivateAccountInfo(
-    FString InEmail
-);
+        static FBPAdminUserPrivateAccountInfo MakeBPAdminUserPrivateAccountInfo(
+            FString InEmail
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserPrivateAccountInfo(
-    const FBPAdminUserPrivateAccountInfo& In
-	, FString& OutEmail
+        static void BreakBPAdminUserPrivateAccountInfo(
+            const FBPAdminUserPrivateAccountInfo& In
+            , FString& OutEmail
 );
 
     // UserPsnInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserPsnInfo MakeBPAdminUserPsnInfo(
-    FString InPsnAccountId
-	, FString InPsnOnlineId
-);
+        static FBPAdminUserPsnInfo MakeBPAdminUserPsnInfo(
+            FString InPsnAccountId
+            , FString InPsnOnlineId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserPsnInfo(
-    const FBPAdminUserPsnInfo& In
-	, FString& OutPsnAccountId
-	, FString& OutPsnOnlineId
+        static void BreakBPAdminUserPsnInfo(
+            const FBPAdminUserPsnInfo& In
+            , FString& OutPsnAccountId
+            , FString& OutPsnOnlineId
 );
 
     // UserSteamInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserSteamInfo MakeBPAdminUserSteamInfo(
-    EBPAdminTitleActivationStatus InSteamActivationStatus
-	, FString InSteamCountry
-	, EBPAdminCurrency InSteamCurrency
-	, FString InSteamId
-);
+        static FBPAdminUserSteamInfo MakeBPAdminUserSteamInfo(
+            EBPAdminTitleActivationStatus InSteamActivationStatus
+            , FString InSteamCountry
+            , EBPAdminCurrency InSteamCurrency
+            , FString InSteamId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserSteamInfo(
-    const FBPAdminUserSteamInfo& In
-	, EBPAdminTitleActivationStatus& OutSteamActivationStatus
-	, FString& OutSteamCountry
-	, EBPAdminCurrency& OutSteamCurrency
-	, FString& OutSteamId
+        static void BreakBPAdminUserSteamInfo(
+            const FBPAdminUserSteamInfo& In
+            , EBPAdminTitleActivationStatus& OutSteamActivationStatus
+            , FString& OutSteamCountry
+            , EBPAdminCurrency& OutSteamCurrency
+            , FString& OutSteamId
 );
 
     // UserTitleInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserTitleInfo MakeBPAdminUserTitleInfo(
-    FString InAvatarUrl
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InFirstLogin
-	, bool InisBanned
-	, FDateTime InLastLogin
-	, EBPAdminUserOrigination InOrigination
-);
+        static FBPAdminUserTitleInfo MakeBPAdminUserTitleInfo(
+            FString InAvatarUrl
+            , FDateTime InCreated
+            , FString InDisplayName
+            , FDateTime InFirstLogin
+            , bool InisBanned
+            , FDateTime InLastLogin
+            , EBPAdminUserOrigination InOrigination
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserTitleInfo(
-    const FBPAdminUserTitleInfo& In
-	, FString& OutAvatarUrl
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutFirstLogin
-	, bool& OutisBanned
-	, FDateTime& OutLastLogin
-	, EBPAdminUserOrigination& OutOrigination
+        static void BreakBPAdminUserTitleInfo(
+            const FBPAdminUserTitleInfo& In
+            , FString& OutAvatarUrl
+            , FDateTime& OutCreated
+            , FString& OutDisplayName
+            , FDateTime& OutFirstLogin
+            , bool& OutisBanned
+            , FDateTime& OutLastLogin
+            , EBPAdminUserOrigination& OutOrigination
 );
 
     // UserTwitchInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserTwitchInfo MakeBPAdminUserTwitchInfo(
-    FString InTwitchId
-	, FString InTwitchUserName
-);
+        static FBPAdminUserTwitchInfo MakeBPAdminUserTwitchInfo(
+            FString InTwitchId
+            , FString InTwitchUserName
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserTwitchInfo(
-    const FBPAdminUserTwitchInfo& In
-	, FString& OutTwitchId
-	, FString& OutTwitchUserName
+        static void BreakBPAdminUserTwitchInfo(
+            const FBPAdminUserTwitchInfo& In
+            , FString& OutTwitchId
+            , FString& OutTwitchUserName
 );
 
     // UserXboxInfo
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminUserXboxInfo MakeBPAdminUserXboxInfo(
-    FString InXboxUserId
-);
+        static FBPAdminUserXboxInfo MakeBPAdminUserXboxInfo(
+            FString InXboxUserId
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminUserXboxInfo(
-    const FBPAdminUserXboxInfo& In
-	, FString& OutXboxUserId
+        static void BreakBPAdminUserXboxInfo(
+            const FBPAdminUserXboxInfo& In
+            , FString& OutXboxUserId
 );
 
     // ValueToDateModel
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminValueToDateModel MakeBPAdminValueToDateModel(
-    FString InCurrency
-	, int32 InTotalValue
-	, FString InTotalValueAsDecimal
-);
+        static FBPAdminValueToDateModel MakeBPAdminValueToDateModel(
+            FString InCurrency
+            , int32 InTotalValue
+            , FString InTotalValueAsDecimal
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminValueToDateModel(
-    const FBPAdminValueToDateModel& In
-	, FString& OutCurrency
-	, int32& OutTotalValue
-	, FString& OutTotalValueAsDecimal
+        static void BreakBPAdminValueToDateModel(
+            const FBPAdminValueToDateModel& In
+            , FString& OutCurrency
+            , int32& OutTotalValue
+            , FString& OutTotalValueAsDecimal
 );
 
     // VirtualCurrencyData
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminVirtualCurrencyData MakeBPAdminVirtualCurrencyData(
-    FString InCurrencyCode
-	, FString InDisplayName
-	, int32 InInitialDeposit
-	, int32 InRechargeMax
-	, int32 InRechargeRate
-);
+        static FBPAdminVirtualCurrencyData MakeBPAdminVirtualCurrencyData(
+            FString InCurrencyCode
+            , FString InDisplayName
+            , int32 InInitialDeposit
+            , int32 InRechargeMax
+            , int32 InRechargeRate
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminVirtualCurrencyData(
-    const FBPAdminVirtualCurrencyData& In
-	, FString& OutCurrencyCode
-	, FString& OutDisplayName
-	, int32& OutInitialDeposit
-	, int32& OutRechargeMax
-	, int32& OutRechargeRate
+        static void BreakBPAdminVirtualCurrencyData(
+            const FBPAdminVirtualCurrencyData& In
+            , FString& OutCurrencyCode
+            , FString& OutDisplayName
+            , int32& OutInitialDeposit
+            , int32& OutRechargeMax
+            , int32& OutRechargeRate
 );
 
     // VirtualCurrencyRechargeTime
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
-    static FBPAdminVirtualCurrencyRechargeTime MakeBPAdminVirtualCurrencyRechargeTime(
-    int32 InRechargeMax
-	, FDateTime InRechargeTime
-	, int32 InSecondsToRecharge
-);
+        static FBPAdminVirtualCurrencyRechargeTime MakeBPAdminVirtualCurrencyRechargeTime(
+            int32 InRechargeMax
+            , FDateTime InRechargeTime
+            , int32 InSecondsToRecharge
+        );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
-    static void BreakBPAdminVirtualCurrencyRechargeTime(
-    const FBPAdminVirtualCurrencyRechargeTime& In
-	, int32& OutRechargeMax
-	, FDateTime& OutRechargeTime
-	, int32& OutSecondsToRecharge
+        static void BreakBPAdminVirtualCurrencyRechargeTime(
+            const FBPAdminVirtualCurrencyRechargeTime& In
+            , int32& OutRechargeMax
+            , FDateTime& OutRechargeTime
+            , int32& OutSecondsToRecharge
 );
 
 };

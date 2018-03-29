@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPClientLoginResultDelegate OnSuccess;
 
-    // Registers a new PlayFab user account using Windows Hello authentication, returning a session ticket  that can subsequently be used for API calls which require an authenticated user
+    // Registers a new PlayFab user account using Windows Hello authentication, returning a session ticket that can subsequently be used for API calls which require an authenticated user
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Client|Authentication")
         static UPFClientRegisterWithWindowsHello* RegisterWithWindowsHello(class APlayerController* PlayerController, const FBPClientRegisterWithWindowsHelloRequest& InRegisterWithWindowsHelloRequest);
 

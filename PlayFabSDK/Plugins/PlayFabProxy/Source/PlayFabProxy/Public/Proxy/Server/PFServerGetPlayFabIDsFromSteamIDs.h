@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPServerGetPlayFabIDsFromSteamIDsResultDelegate OnSuccess;
 
-    // Retrieves the unique PlayFab identifiers for the given set of Steam identifiers. The Steam identifiers  are the profile IDs for the user accounts, available as SteamId in the Steamworks Community API calls.
+    // Retrieves the unique PlayFab identifiers for the given set of Steam identifiers. The Steam identifiers are the profile IDs for the user accounts, available as SteamId in the Steamworks Community API calls.
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Server|Account Management")
         static UPFServerGetPlayFabIDsFromSteamIDs* GetPlayFabIDsFromSteamIDs(class APlayerController* PlayerController, const FBPServerGetPlayFabIDsFromSteamIDsRequest& InGetPlayFabIDsFromSteamIDsRequest);
 

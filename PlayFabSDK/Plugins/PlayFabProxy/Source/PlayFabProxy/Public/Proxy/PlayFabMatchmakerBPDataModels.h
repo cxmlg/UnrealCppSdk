@@ -6,7 +6,6 @@
 #include "Core/PlayFabMatchmakerDataModels.h"
 #include "PlayFabMatchmakerBPDataModels.generated.h"
 
-
 USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFMatchmakerProxyLibrary.MakeBPMatchmakerAuthUserRequest"))
 struct FBPMatchmakerAuthUserRequest
 {

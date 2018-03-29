@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPServerUpdateCharacterDataResultDelegate OnSuccess;
 
-    // Updates the title-specific custom data for the user's character which cannot  be accessed by the client
+    // Updates the title-specific custom data for the user's character which cannot be accessed by the client
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Server|Character Data")
         static UPFServerUpdateCharacterInternalData* UpdateCharacterInternalData(class APlayerController* PlayerController, const FBPServerUpdateCharacterDataRequest& InUpdateCharacterDataRequest);
 

@@ -9,14 +9,16 @@ namespace PlayFab
 namespace ClientModels
 {
 
-    
     struct PLAYFAB_API FAcceptTradeRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] Items from the accepting player's inventory in exchange for the offered items in the trade. In the case of a gift, this will be null.
+        /**
+         * [optional] Items from the accepting player's inventory in exchange for the offered items in the trade. In the case of a gift, this
+         * will be null.
+         */
         TArray<FString> AcceptedInventoryInstanceIds;
         // Player who opened the trade.
         FString OfferingPlayerId;
+
         // Trade identifier.
         FString TradeId;
 
@@ -44,7 +46,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum TradeStatus
     {
         TradeStatusInvalid,
@@ -60,34 +62,39 @@ namespace ClientModels
     PLAYFAB_API TradeStatus readTradeStatusFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API TradeStatus readTradeStatusFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FTradeInfo : public FPlayFabBaseModel
     {
-        
         // [optional] Item instances from the accepting player that are used to fulfill the trade. If null, no one has accepted the trade.
         TArray<FString> AcceptedInventoryInstanceIds;
         // [optional] The PlayFab ID of the player who accepted the trade. If null, no one has accepted the trade.
         FString AcceptedPlayerId;
-        // [optional] An optional list of players allowed to complete this trade.  If null, anybody can complete the trade.
+
+        // [optional] An optional list of players allowed to complete this trade. If null, anybody can complete the trade.
         TArray<FString> AllowedPlayerIds;
         // [optional] If set, The UTC time when this trade was canceled.
         Boxed<FDateTime> CancelledAt;
+
         // [optional] If set, The UTC time when this trade was fulfilled.
         Boxed<FDateTime> FilledAt;
+
         // [optional] If set, The UTC time when this trade was made invalid.
         Boxed<FDateTime> InvalidatedAt;
+
         // [optional] The catalogItem Ids of the item instances being offered.
         TArray<FString> OfferedCatalogItemIds;
         // [optional] The itemInstance Ids that are being offered.
         TArray<FString> OfferedInventoryInstanceIds;
         // [optional] The PlayFabId for the offering player.
         FString OfferingPlayerId;
+
         // [optional] The UTC time when this trade was created.
         Boxed<FDateTime> OpenedAt;
+
         // [optional] The catalogItem Ids requested in exchange.
         TArray<FString> RequestedCatalogItemIds;
         // [optional] Describes the current state of this trade.
         Boxed<TradeStatus> Status;
+
         // [optional] The identifier for this trade.
         FString TradeId;
 
@@ -135,10 +142,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAcceptTradeResponse : public FPlayFabBaseModel
     {
-        
         // [optional] Details about trade which was just accepted.
         TSharedPtr<FTradeInfo> Trade;
 
@@ -162,14 +168,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAdCampaignAttributionModel : public FPlayFabBaseModel
     {
-        
         // UTC time stamp of attribution
         FDateTime AttributedAt;
+
         // [optional] Attribution campaign identifier
         FString CampaignId;
+
         // [optional] Attribution network name
         FString Platform;
 
@@ -197,16 +204,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddFriendRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Email address of the user to attempt to add to the local user's friend list.
         FString FriendEmail;
+
         // [optional] PlayFab identifier of the user to attempt to add to the local user's friend list.
         FString FriendPlayFabId;
+
         // [optional] Title-specific display name of the user to attempt to add to the local user's friend list.
         FString FriendTitleDisplayName;
+
         // [optional] PlayFab username of the user to attempt to add to the local user's friend list.
         FString FriendUsername;
 
@@ -236,10 +245,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddFriendResult : public FPlayFabBaseModel
     {
-        
         // True if the friend request was processed successfully.
         bool Created;
 
@@ -263,12 +271,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGenericServiceId : public FPlayFabBaseModel
     {
-        
         // Name of the service for which the player has a unique identifier.
         FString ServiceName;
+
         // Unique identifier of the player in that service.
         FString UserId;
 
@@ -294,10 +302,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddGenericIDRequest : public FPlayFabBaseModel
     {
-        
         // Generic service identifier to add to the player account.
         FGenericServiceId GenericId;
 
@@ -321,11 +328,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddGenericIDResult : public FPlayFabBaseModel
     {
-        
-
         FAddGenericIDResult() :
             FPlayFabBaseModel()
             {}
@@ -344,10 +349,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddOrUpdateContactEmailRequest : public FPlayFabBaseModel
     {
-        
         // The new contact email to associate with the player.
         FString EmailAddress;
 
@@ -371,11 +375,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddOrUpdateContactEmailResult : public FPlayFabBaseModel
     {
-        
-
         FAddOrUpdateContactEmailResult() :
             FPlayFabBaseModel()
             {}
@@ -394,10 +396,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddSharedGroupMembersRequest : public FPlayFabBaseModel
     {
-        
         // An array of unique PlayFab assigned ID of the user on whom the operation will be performed.
         TArray<FString> PlayFabIds;
         // Unique identifier for the shared group.
@@ -425,11 +426,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddSharedGroupMembersResult : public FPlayFabBaseModel
     {
-        
-
         FAddSharedGroupMembersResult() :
             FPlayFabBaseModel()
             {}
@@ -448,14 +447,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddUsernamePasswordRequest : public FPlayFabBaseModel
     {
-        
         // User email address attached to their account
         FString Email;
+
         // Password for the PlayFab account (6-100 characters)
         FString Password;
+
         // PlayFab username for the account (3-20 characters)
         FString Username;
 
@@ -483,10 +483,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddUsernamePasswordResult : public FPlayFabBaseModel
     {
-        
         // [optional] PlayFab unique user name.
         FString Username;
 
@@ -510,12 +509,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAddUserVirtualCurrencyRequest : public FPlayFabBaseModel
     {
-        
         // Amount to be added to the user balance of the specified virtual currency.
         int32 Amount;
+
         // Name of the virtual currency which is to be incremented.
         FString VirtualCurrency;
 
@@ -541,14 +540,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAndroidDevicePushNotificationRegistrationRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Message to display when confirming push notification.
         FString ConfirmationMessage;
-        // Registration ID provided by the Google Cloud Messaging service when the title registered to receive push notifications (see the GCM documentation, here: http://developer.android.com/google/gcm/client.html).
+
+        /**
+         * Registration ID provided by the Google Cloud Messaging service when the title registered to receive push notifications
+         * (see the GCM documentation, here: http://developer.android.com/google/gcm/client.html).
+         */
         FString DeviceToken;
+
         // [optional] If true, send a test push message immediately after sucessful registration. Defaults to false.
         Boxed<bool> SendPushNotificationConfirmation;
 
@@ -576,11 +579,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAndroidDevicePushNotificationRegistrationResult : public FPlayFabBaseModel
     {
-        
-
         FAndroidDevicePushNotificationRegistrationResult() :
             FPlayFabBaseModel()
             {}
@@ -599,12 +600,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAttributeInstallRequest : public FPlayFabBaseModel
     {
-        
         // [optional] The adid for this device.
         FString Adid;
+
         // [optional] The IdentifierForAdvertisers for iOS Devices.
         FString Idfa;
 
@@ -630,11 +631,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FAttributeInstallResult : public FPlayFabBaseModel
     {
-        
-
         FAttributeInstallResult() :
             FPlayFabBaseModel()
             {}
@@ -653,10 +652,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCancelTradeRequest : public FPlayFabBaseModel
     {
-        
         // Trade identifier.
         FString TradeId;
 
@@ -680,10 +678,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCancelTradeResponse : public FPlayFabBaseModel
     {
-        
         // [optional] Details about trade which was just canceled.
         TSharedPtr<FTradeInfo> Trade;
 
@@ -707,27 +704,30 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCartItem : public FPlayFabBaseModel
     {
-        
         // [optional] Description of the catalog item.
         FString Description;
+
         // [optional] Display name for the catalog item.
         FString DisplayName;
+
         // [optional] Class name to which catalog item belongs.
         FString ItemClass;
+
         // [optional] Unique identifier for the catalog item.
         FString ItemId;
+
         // [optional] Unique instance identifier for this catalog item.
         FString ItemInstanceId;
+
         // [optional] Cost of the catalog item for each applicable real world currency.
         TMap<FString, uint32> RealCurrencyPrices;
         // [optional] Amount of each applicable virtual currency which will be received as a result of purchasing this catalog item.
         TMap<FString, uint32> VCAmount;
         // [optional] Cost of the catalog item for each applicable virtual currency.
         TMap<FString, uint32> VirtualCurrencyPrices;
-
         FCartItem() :
             FPlayFabBaseModel(),
             Description(),
@@ -762,17 +762,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCatalogItemBundleInfo : public FPlayFabBaseModel
     {
-        
         // [optional] unique ItemId values for all items which will be added to the player inventory when the bundle is added
         TArray<FString> BundledItems;
-        // [optional] unique TableId values for all RandomResultTable objects which are part of the bundle (random tables will be resolved and add the relevant items to the player inventory when the bundle is added)
+        /**
+         * [optional] unique TableId values for all RandomResultTable objects which are part of the bundle (random tables will be resolved and
+         * add the relevant items to the player inventory when the bundle is added)
+         */
         TArray<FString> BundledResultTables;
         // [optional] virtual currency types and balances which will be added to the player inventory when the bundle is added
         TMap<FString, uint32> BundledVirtualCurrencies;
-
         FCatalogItemBundleInfo() :
             FPlayFabBaseModel(),
             BundledItems(),
@@ -797,15 +798,23 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCatalogItemConsumableInfo : public FPlayFabBaseModel
     {
-        
         // [optional] number of times this object can be used, after which it will be removed from the player inventory
         Boxed<uint32> UsageCount;
-        // [optional] duration in seconds for how long the item will remain in the player inventory - once elapsed, the item will be removed (recommended minimum value is 5 seconds, as lower values can cause the item to expire before operations depending on this item's details have completed)
+
+        /**
+         * [optional] duration in seconds for how long the item will remain in the player inventory - once elapsed, the item will be removed
+         * (recommended minimum value is 5 seconds, as lower values can cause the item to expire before operations depending on
+         * this item's details have completed)
+         */
         Boxed<uint32> UsagePeriod;
-        // [optional] all inventory item instances in the player inventory sharing a non-null UsagePeriodGroup have their UsagePeriod values added together, and share the result - when that period has elapsed, all the items in the group will be removed
+
+        /**
+         * [optional] all inventory item instances in the player inventory sharing a non-null UsagePeriodGroup have their UsagePeriod values
+         * added together, and share the result - when that period has elapsed, all the items in the group will be removed
+         */
         FString UsagePeriodGroup;
 
         FCatalogItemConsumableInfo() :
@@ -832,19 +841,24 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCatalogItemContainerInfo : public FPlayFabBaseModel
     {
-        
         // [optional] unique ItemId values for all items which will be added to the player inventory, once the container has been unlocked
         TArray<FString> ItemContents;
-        // [optional] ItemId for the catalog item used to unlock the container, if any (if not specified, a call to UnlockContainerItem will open the container, adding the contents to the player inventory and currency balances)
+        /**
+         * [optional] ItemId for the catalog item used to unlock the container, if any (if not specified, a call to UnlockContainerItem will
+         * open the container, adding the contents to the player inventory and currency balances)
+         */
         FString KeyItemId;
-        // [optional] unique TableId values for all RandomResultTable objects which are part of the container (once unlocked, random tables will be resolved and add the relevant items to the player inventory)
+
+        /**
+         * [optional] unique TableId values for all RandomResultTable objects which are part of the container (once unlocked, random tables
+         * will be resolved and add the relevant items to the player inventory)
+         */
         TArray<FString> ResultTableContents;
         // [optional] virtual currency types and balances which will be added to the player inventory when the container is unlocked
         TMap<FString, uint32> VirtualCurrencyContents;
-
         FCatalogItemContainerInfo() :
             FPlayFabBaseModel(),
             ItemContents(),
@@ -871,47 +885,78 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCatalogItem : public FPlayFabBaseModel
     {
-        
-        // [optional] defines the bundle properties for the item - bundles are items which contain other items, including random drop tables and virtual currencies
+        /**
+         * [optional] defines the bundle properties for the item - bundles are items which contain other items, including random drop tables
+         * and virtual currencies
+         */
         TSharedPtr<FCatalogItemBundleInfo> Bundle;
+
         // if true, then an item instance of this type can be used to grant a character to a user.
         bool CanBecomeCharacter;
+
         // [optional] catalog version for this item
         FString CatalogVersion;
+
         // [optional] defines the consumable properties (number of uses, timeout) for the item
         TSharedPtr<FCatalogItemConsumableInfo> Consumable;
-        // [optional] defines the container properties for the item - what items it contains, including random drop tables and virtual currencies, and what item (if any) is required to open it via the UnlockContainerItem API
+
+        /**
+         * [optional] defines the container properties for the item - what items it contains, including random drop tables and virtual
+         * currencies, and what item (if any) is required to open it via the UnlockContainerItem API
+         */
         TSharedPtr<FCatalogItemContainerInfo> Container;
+
         // [optional] game specific custom data
         FString CustomData;
+
         // [optional] text description of item, to show in-game
         FString Description;
+
         // [optional] text name for the item, to show in-game
         FString DisplayName;
-        // If the item has IsLImitedEdition set to true, and this is the first time this ItemId has been defined as a limited edition item, this value determines the total number of instances to allocate for the title. Once this limit has been reached, no more instances of this ItemId can be created, and attempts to purchase or grant it will return a Result of false for that ItemId. If the item has already been defined to have a limited edition count, or if this value is less than zero, it will be ignored.
+
+        /**
+         * If the item has IsLImitedEdition set to true, and this is the first time this ItemId has been defined as a limited
+         * edition item, this value determines the total number of instances to allocate for the title. Once this limit has been
+         * reached, no more instances of this ItemId can be created, and attempts to purchase or grant it will return a Result of
+         * false for that ItemId. If the item has already been defined to have a limited edition count, or if this value is less
+         * than zero, it will be ignored.
+         */
         int32 InitialLimitedEditionCount;
+
         // BETA: If true, then only a fixed number can ever be granted.
         bool IsLimitedEdition;
-        // if true, then only one item instance of this type will exist and its remaininguses will be incremented instead. RemainingUses will cap out at Int32.Max (2,147,483,647). All subsequent increases will be discarded
+
+        /**
+         * if true, then only one item instance of this type will exist and its remaininguses will be incremented instead.
+         * RemainingUses will cap out at Int32.Max (2,147,483,647). All subsequent increases will be discarded
+         */
         bool IsStackable;
+
         // if true, then an item instance of this type can be traded between players using the trading APIs
         bool IsTradable;
+
         // [optional] class to which the item belongs
         FString ItemClass;
+
         // unique identifier for this item
         FString ItemId;
-        // [optional] URL to the item image. For Facebook purchase to display the image on the item purchase page, this must be set to an HTTP URL.
+
+        /**
+         * [optional] URL to the item image. For Facebook purchase to display the image on the item purchase page, this must be set to an HTTP
+         * URL.
+         */
         FString ItemImageUrl;
+
         // [optional] override prices for this item for specific currencies
         TMap<FString, uint32> RealCurrencyPrices;
         // [optional] list of item tags
         TArray<FString> Tags;
         // [optional] price of this item in virtual currencies and "RM" (the base Real Money purchase price, in USD pennies)
         TMap<FString, uint32> VirtualCurrencyPrices;
-
         FCatalogItem() :
             FPlayFabBaseModel(),
             Bundle(nullptr),
@@ -966,38 +1011,52 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FItemInstance : public FPlayFabBaseModel
     {
-        
         // [optional] Game specific comment associated with this instance when it was added to the user inventory.
         FString Annotation;
+
         // [optional] Array of unique items that were awarded when this catalog item was purchased.
         TArray<FString> BundleContents;
-        // [optional] Unique identifier for the parent inventory item, as defined in the catalog, for object which were added from a bundle or container.
+        /**
+         * [optional] Unique identifier for the parent inventory item, as defined in the catalog, for object which were added from a bundle or
+         * container.
+         */
         FString BundleParent;
+
         // [optional] Catalog version for the inventory item, when this instance was created.
         FString CatalogVersion;
+
         // [optional] A set of custom key-value pairs on the inventory item.
         TMap<FString, FString> CustomData;
         // [optional] CatalogItem.DisplayName at the time this item was purchased.
         FString DisplayName;
+
         // [optional] Timestamp for when this instance will expire.
         Boxed<FDateTime> Expiration;
+
         // [optional] Class name for the inventory item, as defined in the catalog.
         FString ItemClass;
+
         // [optional] Unique identifier for the inventory item, as defined in the catalog.
         FString ItemId;
+
         // [optional] Unique item identifier for this specific instance of the item.
         FString ItemInstanceId;
+
         // [optional] Timestamp for when this instance was purchased.
         Boxed<FDateTime> PurchaseDate;
+
         // [optional] Total number of remaining uses, if this is a consumable item.
         Boxed<int32> RemainingUses;
+
         // [optional] Currency type for the cost of the catalog item.
         FString UnitCurrency;
+
         // Cost of the catalog item in the given currency.
         uint32 UnitPrice;
+
         // [optional] The number of uses that were added or removed to this item in this call.
         Boxed<int32> UsesIncrementedBy;
 
@@ -1049,15 +1108,14 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCharacterInventory : public FPlayFabBaseModel
     {
-        
         // [optional] The id of this character.
         FString CharacterId;
+
         // [optional] The inventory of this character.
         TArray<FItemInstance> Inventory;
-
         FCharacterInventory() :
             FPlayFabBaseModel(),
             CharacterId(),
@@ -1080,22 +1138,27 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCharacterLeaderboardEntry : public FPlayFabBaseModel
     {
-        
         // [optional] PlayFab unique identifier of the character that belongs to the user for this leaderboard entry.
         FString CharacterId;
+
         // [optional] Title-specific display name of the character for this leaderboard entry.
         FString CharacterName;
+
         // [optional] Name of the character class for this entry.
         FString CharacterType;
+
         // [optional] Title-specific display name of the user for this leaderboard entry.
         FString DisplayName;
+
         // [optional] PlayFab unique identifier of the user for this leaderboard entry.
         FString PlayFabId;
+
         // User's overall position in the leaderboard.
         int32 Position;
+
         // Specific value of the user's statistic.
         int32 StatValue;
 
@@ -1131,14 +1194,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCharacterResult : public FPlayFabBaseModel
     {
-        
         // [optional] The id for this character on this player.
         FString CharacterId;
+
         // [optional] The name of this character.
         FString CharacterName;
+
         // [optional] The type-string that was given to this character on creation.
         FString CharacterType;
 
@@ -1166,7 +1230,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum CloudScriptRevisionOption
     {
         CloudScriptRevisionOptionLive,
@@ -1178,13 +1242,10 @@ namespace ClientModels
     PLAYFAB_API CloudScriptRevisionOption readCloudScriptRevisionOptionFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API CloudScriptRevisionOption readCloudScriptRevisionOptionFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FContainer_Dictionary_String_String : public FPlayFabBaseModel
     {
-        
         // [optional] Content of data
         TMap<FString, FString> Data;
-
         FContainer_Dictionary_String_String() :
             FPlayFabBaseModel(),
             Data()
@@ -1205,15 +1266,16 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCollectionFilter : public FPlayFabBaseModel
     {
-        
         // [optional] List of Exclude rules, with any of which if a collection matches, it is excluded by the filter.
         TArray<FContainer_Dictionary_String_String> Excludes;
-        // [optional] List of Include rules, with any of which if a collection matches, it is included by the filter, unless it is excluded by one of the Exclude rule
+        /**
+         * [optional] List of Include rules, with any of which if a collection matches, it is included by the filter, unless it is excluded by
+         * one of the Exclude rule
+         */
         TArray<FContainer_Dictionary_String_String> Includes;
-
         FCollectionFilter() :
             FPlayFabBaseModel(),
             Excludes(),
@@ -1236,10 +1298,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FConfirmPurchaseRequest : public FPlayFabBaseModel
     {
-        
         // Purchase order identifier returned from StartPurchase.
         FString OrderId;
 
@@ -1263,14 +1324,14 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FConfirmPurchaseResult : public FPlayFabBaseModel
     {
-        
         // [optional] Array of items purchased.
         TArray<FItemInstance> Items;
         // [optional] Purchase order identifier.
         FString OrderId;
+
         // Date and time of the purchase.
         FDateTime PurchaseDate;
 
@@ -1298,14 +1359,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FConsumeItemRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
+
         // Number of uses to consume from the item.
         int32 ConsumeCount;
+
         // Unique instance identifier of the item to be consumed.
         FString ItemInstanceId;
 
@@ -1333,12 +1395,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FConsumeItemResult : public FPlayFabBaseModel
     {
-        
         // [optional] Unique instance identifier of the item with uses consumed.
         FString ItemInstanceId;
+
         // Number of uses remaining on the item.
         int32 RemainingUses;
 
@@ -1364,7 +1426,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum EmailVerificationStatus
     {
         EmailVerificationStatusUnverified,
@@ -1376,14 +1438,14 @@ namespace ClientModels
     PLAYFAB_API EmailVerificationStatus readEmailVerificationStatusFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API EmailVerificationStatus readEmailVerificationStatusFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FContactEmailInfoModel : public FPlayFabBaseModel
     {
-        
         // [optional] The email address
         FString EmailAddress;
+
         // [optional] The name of the email info data
         FString Name;
+
         // [optional] The verification status of the email
         Boxed<EmailVerificationStatus> VerificationStatus;
 
@@ -1411,7 +1473,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum ContinentCode
     {
         ContinentCodeAF,
@@ -1427,7 +1489,6 @@ namespace ClientModels
     PLAYFAB_API ContinentCode readContinentCodeFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API ContinentCode readContinentCodeFromValue(const FString& value);
 
-    
     enum CountryCode
     {
         CountryCodeAF,
@@ -1685,10 +1746,8 @@ namespace ClientModels
     PLAYFAB_API CountryCode readCountryCodeFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API CountryCode readCountryCodeFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FCreateSharedGroupRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Unique identifier for the shared group (a random identifier will be assigned, if one is not specified).
         FString SharedGroupId;
 
@@ -1712,10 +1771,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCreateSharedGroupResult : public FPlayFabBaseModel
     {
-        
         // [optional] Unique identifier for the shared group.
         FString SharedGroupId;
 
@@ -1739,7 +1797,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum Currency
     {
         CurrencyAED,
@@ -1910,7 +1968,6 @@ namespace ClientModels
     PLAYFAB_API Currency readCurrencyFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API Currency readCurrencyFromValue(const FString& value);
 
-    
     enum Region
     {
         RegionUSCentral,
@@ -1926,18 +1983,20 @@ namespace ClientModels
     PLAYFAB_API Region readRegionFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API Region readRegionFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FCurrentGamesRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Build to match against.
         FString BuildVersion;
+
         // [optional] Game mode to look for.
         FString GameMode;
+
         // [optional] Region to check for Game Server Instances.
         Boxed<Region> pfRegion;
+
         // [optional] Statistic name to find statistic-based matches.
         FString StatisticName;
+
         // [optional] Filter to include and/or exclude Game Server Instances associated with certain tags.
         TSharedPtr<FCollectionFilter> TagFilter;
 
@@ -1969,7 +2028,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum GameInstanceState
     {
         GameInstanceStateOpen,
@@ -1980,41 +2039,51 @@ namespace ClientModels
     PLAYFAB_API GameInstanceState readGameInstanceStateFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API GameInstanceState readGameInstanceStateFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FGameInfo : public FPlayFabBaseModel
     {
-        
         // [optional] build version this server is running
         FString BuildVersion;
+
         // [optional] game mode this server is running
         FString GameMode;
+
         // [optional] game session custom data
         FString GameServerData;
+
         // [optional] game specific string denoting server configuration
         Boxed<GameInstanceState> GameServerStateEnum;
+
         // [optional] last heartbeat of the game server instance, used in external game server provider mode
         Boxed<FDateTime> LastHeartbeat;
+
         // [optional] unique lobby identifier for this game server
         FString LobbyID;
+
         // [optional] maximum players this server can support
         Boxed<int32> MaxPlayers;
+
         // [optional] array of current player IDs on this server
         TArray<FString> PlayerUserIds;
         // [optional] region to which this server is associated
         Boxed<Region> pfRegion;
+
         // duration in seconds this server has been running
         uint32 RunTime;
+
         // [optional] IPV4 address of the server
         FString ServerHostname;
+
         // [optional] IPV6 address of the server
         FString ServerIPV6Address;
+
         // [optional] port number to use for non-http communications with the server
         Boxed<int32> ServerPort;
+
         // [optional] stastic used to match this game in player statistic matchmaking
         FString StatisticName;
+
         // [optional] game session tags
         TMap<FString, FString> Tags;
-
         FGameInfo() :
             FPlayFabBaseModel(),
             BuildVersion(),
@@ -2063,12 +2132,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FCurrentGamesResult : public FPlayFabBaseModel
     {
-        
         // number of games running
         int32 GameCount;
+
         // [optional] array of games found
         TArray<FGameInfo> Games;
         // total number of players across all servers
@@ -2098,13 +2167,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FDeviceInfoRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Information posted to the PlayStream Event. Currently arbitrary, and specific to the environment sending it.
         TMap<FString, FJsonKeeper> Info;
-
         FDeviceInfoRequest() :
             FPlayFabBaseModel(),
             Info()
@@ -2125,11 +2192,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FEmptyResult : public FPlayFabBaseModel
     {
-        
-
         FEmptyResult() :
             FPlayFabBaseModel()
             {}
@@ -2148,32 +2213,78 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
+    enum EntityTypes
+    {
+        EntityTypestitle,
+        EntityTypesmaster_player_account,
+        EntityTypestitle_player_account,
+        EntityTypescharacter,
+        EntityTypesgroup
+    };
+
+    PLAYFAB_API void writeEntityTypesEnumJSON(EntityTypes enumVal, JsonWriter& writer);
+    PLAYFAB_API EntityTypes readEntityTypesFromValue(const TSharedPtr<FJsonValue>& value);
+    PLAYFAB_API EntityTypes readEntityTypesFromValue(const FString& value);
+
+    struct PLAYFAB_API FEntityKey : public FPlayFabBaseModel
+    {
+        // Entity profile ID.
+        FString Id;
+
+        // [optional] Entity type. Optional to be used but one of EntityType or EntityTypeString must be set.
+        Boxed<EntityTypes> Type;
+
+        // [optional] Entity type. Optional to be used but one of EntityType or EntityTypeString must be set.
+        FString TypeString;
+
+        FEntityKey() :
+            FPlayFabBaseModel(),
+            Id(),
+            Type(),
+            TypeString()
+            {}
+
+        FEntityKey(const FEntityKey& src) :
+            FPlayFabBaseModel(),
+            Id(src.Id),
+            Type(src.Type),
+            TypeString(src.TypeString)
+            {}
+
+        FEntityKey(const TSharedPtr<FJsonObject>& obj) : FEntityKey()
+        {
+            readFromValue(obj);
+        }
+
+        ~FEntityKey();
+
+        void writeJSON(JsonWriter& writer) const override;
+        bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
+    };
+
     struct PLAYFAB_API FEntityTokenResponse : public FPlayFabBaseModel
     {
-        
-        // [optional] The identifier of the entity the token was issued for.
-        FString EntityId;
+        // [optional] The entity id and type.
+        TSharedPtr<FEntityKey> Entity;
+
         // [optional] The token used to set X-EntityToken for all entity based API calls.
         FString EntityToken;
-        // [optional] The type of entity the token was issued for.
-        FString EntityType;
+
         // [optional] The time the token will expire, if it is an expiring token, in UTC.
         Boxed<FDateTime> TokenExpiration;
 
         FEntityTokenResponse() :
             FPlayFabBaseModel(),
-            EntityId(),
+            Entity(nullptr),
             EntityToken(),
-            EntityType(),
             TokenExpiration()
             {}
 
         FEntityTokenResponse(const FEntityTokenResponse& src) :
             FPlayFabBaseModel(),
-            EntityId(src.EntityId),
+            Entity(src.Entity.IsValid() ? MakeShareable(new FEntityKey(*src.Entity)) : nullptr),
             EntityToken(src.EntityToken),
-            EntityType(src.EntityType),
             TokenExpiration(src.TokenExpiration)
             {}
 
@@ -2187,18 +2298,28 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FExecuteCloudScriptRequest : public FPlayFabBaseModel
     {
-        
         // The name of the CloudScript function to execute
         FString FunctionName;
+
         // [optional] Object that is passed in to the function as the first argument
         FJsonKeeper FunctionParameter;
-        // [optional] Generate a 'player_executed_cloudscript' PlayStream event containing the results of the function execution and other contextual information. This event will show up in the PlayStream debugger console for the player in Game Manager.
+
+        /**
+         * [optional] Generate a 'player_executed_cloudscript' PlayStream event containing the results of the function execution and other
+         * contextual information. This event will show up in the PlayStream debugger console for the player in Game Manager.
+         */
         Boxed<bool> GeneratePlayStreamEvent;
-        // [optional] Option for which revision of the CloudScript to execute. 'Latest' executes the most recently created revision, 'Live' executes the current live, published revision, and 'Specific' executes the specified revision. The default value is 'Specific', if the SpeificRevision parameter is specified, otherwise it is 'Live'.
+
+        /**
+         * [optional] Option for which revision of the CloudScript to execute. 'Latest' executes the most recently created revision, 'Live'
+         * executes the current live, published revision, and 'Specific' executes the specified revision. The default value is
+         * 'Specific', if the SpeificRevision parameter is specified, otherwise it is 'Live'.
+         */
         Boxed<CloudScriptRevisionOption> RevisionSelection;
+
         // [optional] The specivic revision to execute, when RevisionSelection is set to 'Specific'
         Boxed<int32> SpecificRevision;
 
@@ -2230,14 +2351,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FScriptExecutionError : public FPlayFabBaseModel
     {
-        
-        // [optional] Error code, such as CloudScriptNotFound, JavascriptException, CloudScriptFunctionArgumentSizeExceeded, CloudScriptAPIRequestCountExceeded, CloudScriptAPIRequestError, or CloudScriptHTTPRequestError
+        /**
+         * [optional] Error code, such as CloudScriptNotFound, JavascriptException, CloudScriptFunctionArgumentSizeExceeded,
+         * CloudScriptAPIRequestCountExceeded, CloudScriptAPIRequestError, or CloudScriptHTTPRequestError
+         */
         FString Error;
+
         // [optional] Details about the error
         FString Message;
+
         // [optional] Point during the execution of the script at which the error occurred, if any
         FString StackTrace;
 
@@ -2265,14 +2390,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLogStatement : public FPlayFabBaseModel
     {
-        
         // [optional] Optional object accompanying the message as contextual information
         FJsonKeeper Data;
+
         // [optional] 'Debug', 'Info', or 'Error'
         FString Level;
+
         // [optional] undefined
         FString Message;
 
@@ -2300,32 +2426,51 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FExecuteCloudScriptResult : public FPlayFabBaseModel
     {
-        
         // Number of PlayFab API requests issued by the CloudScript function
         int32 APIRequestsIssued;
+
         // [optional] Information about the error, if any, that occurred during execution
         TSharedPtr<FScriptExecutionError> Error;
-        // undefined
+
         double ExecutionTimeSeconds;
+
         // [optional] The name of the function that executed
         FString FunctionName;
+
         // [optional] The object returned from the CloudScript function, if any
         FJsonKeeper FunctionResult;
-        // [optional] Flag indicating if the FunctionResult was too large and was subsequently dropped from this event. This only occurs if the total event size is larger than 350KB.
+
+        /**
+         * [optional] Flag indicating if the FunctionResult was too large and was subsequently dropped from this event. This only occurs if
+         * the total event size is larger than 350KB.
+         */
         Boxed<bool> FunctionResultTooLarge;
+
         // Number of external HTTP requests issued by the CloudScript function
         int32 HttpRequestsIssued;
-        // [optional] Entries logged during the function execution. These include both entries logged in the function code using log.info() and log.error() and error entries for API and HTTP request failures.
+
+        /**
+         * [optional] Entries logged during the function execution. These include both entries logged in the function code using log.info()
+         * and log.error() and error entries for API and HTTP request failures.
+         */
         TArray<FLogStatement> Logs;
-        // [optional] Flag indicating if the logs were too large and were subsequently dropped from this event. This only occurs if the total event size is larger than 350KB after the FunctionResult was removed.
+        /**
+         * [optional] Flag indicating if the logs were too large and were subsequently dropped from this event. This only occurs if the total
+         * event size is larger than 350KB after the FunctionResult was removed.
+         */
         Boxed<bool> LogsTooLarge;
-        // undefined
+
         uint32 MemoryConsumedBytes;
-        // Processor time consumed while executing the function. This does not include time spent waiting on API calls or HTTP requests.
+
+        /**
+         * Processor time consumed while executing the function. This does not include time spent waiting on API calls or HTTP
+         * requests.
+         */
         double ProcessorTimeSeconds;
+
         // The revision of the CloudScript that executed
         int32 Revision;
 
@@ -2371,12 +2516,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FFacebookPlayFabIdPair : public FPlayFabBaseModel
     {
-        
         // [optional] Unique Facebook identifier for a user.
         FString FacebookId;
+
         // [optional] Unique PlayFab identifier for a user, or null if no PlayFab account is linked to the Facebook identifier.
         FString PlayFabId;
 
@@ -2402,12 +2547,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserFacebookInfo : public FPlayFabBaseModel
     {
-        
         // [optional] Facebook identifier
         FString FacebookId;
+
         // [optional] Facebook full name
         FString FullName;
 
@@ -2433,10 +2578,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserGameCenterInfo : public FPlayFabBaseModel
     {
-        
         // [optional] Gamecenter identifier
         FString GameCenterId;
 
@@ -2460,7 +2604,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum LoginIdentityProvider
     {
         LoginIdentityProviderUnknown,
@@ -2483,16 +2627,17 @@ namespace ClientModels
     PLAYFAB_API LoginIdentityProvider readLoginIdentityProviderFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API LoginIdentityProvider readLoginIdentityProviderFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FLinkedPlatformAccountModel : public FPlayFabBaseModel
     {
-        
         // [optional] Linked account email of the user on the platform, if available
         FString Email;
+
         // [optional] Authentication platform
         Boxed<LoginIdentityProvider> Platform;
+
         // [optional] Unique account identifier of the user on the platform
         FString PlatformUserId;
+
         // [optional] Linked account username of the user on the platform, if available
         FString Username;
 
@@ -2522,18 +2667,21 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLocationModel : public FPlayFabBaseModel
     {
-        
         // [optional] City name.
         FString City;
+
         // [optional] The two-character continent code for this location
         Boxed<ContinentCode> pfContinentCode;
+
         // [optional] The two-character ISO 3166-1 country code for the country associated with the location
         Boxed<CountryCode> pfCountryCode;
+
         // [optional] Latitude coordinate of the geographic location.
         Boxed<double> Latitude;
+
         // [optional] Longitude coordinate of the geographic location.
         Boxed<double> Longitude;
 
@@ -2565,7 +2713,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum SubscriptionProviderStatus
     {
         SubscriptionProviderStatusNoError,
@@ -2582,22 +2730,26 @@ namespace ClientModels
     PLAYFAB_API SubscriptionProviderStatus readSubscriptionProviderStatusFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API SubscriptionProviderStatus readSubscriptionProviderStatusFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FSubscriptionModel : public FPlayFabBaseModel
     {
-        
         // When this subscription expires.
         FDateTime Expiration;
+
         // The time the subscription was orignially purchased
         FDateTime InitialSubscriptionTime;
+
         // Whether this subscription is currently active. That is, if Expiration > now.
         bool IsActive;
+
         // [optional] The status of this subscription, according to the subscription provider.
         Boxed<SubscriptionProviderStatus> Status;
+
         // [optional] The id for this subscription
         FString SubscriptionId;
+
         // [optional] The item id for this subscription from the primary catalog
         FString SubscriptionItemId;
+
         // [optional] The provider for this subscription. Apple or Google Play are supported today.
         FString SubscriptionProvider;
 
@@ -2633,23 +2785,29 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FMembershipModel : public FPlayFabBaseModel
     {
-        
         // Whether this membership is active. That is, whether the MembershipExpiration time has been reached.
         bool IsActive;
+
         // The time this membership expires
         FDateTime MembershipExpiration;
+
         // [optional] The id of the membership
         FString MembershipId;
-        // [optional] Membership expirations can be explicitly overridden (via game manager or the admin api). If this membership has been overridden, this will be the new expiration time.
+
+        /**
+         * [optional] Membership expirations can be explicitly overridden (via game manager or the admin api). If this membership has been
+         * overridden, this will be the new expiration time.
+         */
         Boxed<FDateTime> OverrideExpiration;
+
         // [optional] Whether the override expiration is set.
         Boxed<bool> OverrideIsSet;
+
         // [optional] The list of subscriptions that this player has for this membership
         TArray<FSubscriptionModel> Subscriptions;
-
         FMembershipModel() :
             FPlayFabBaseModel(),
             IsActive(false),
@@ -2680,7 +2838,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum PushNotificationPlatform
     {
         PushNotificationPlatformApplePushNotificationService,
@@ -2691,12 +2849,11 @@ namespace ClientModels
     PLAYFAB_API PushNotificationPlatform readPushNotificationPlatformFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API PushNotificationPlatform readPushNotificationPlatformFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FPushNotificationRegistrationModel : public FPlayFabBaseModel
     {
-        
         // [optional] Notification configured endpoint
         FString NotificationEndpointARN;
+
         // [optional] Push notification platform
         Boxed<PushNotificationPlatform> Platform;
 
@@ -2722,14 +2879,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FStatisticModel : public FPlayFabBaseModel
     {
-        
         // [optional] Statistic name
         FString Name;
+
         // Statistic value
         int32 Value;
+
         // Statistic version (0 if not a versioned statistic)
         int32 Version;
 
@@ -2757,10 +2915,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FTagModel : public FPlayFabBaseModel
     {
-        
         // [optional] Full value of the tag, including namespace
         FString TagValue;
 
@@ -2784,15 +2941,22 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FValueToDateModel : public FPlayFabBaseModel
     {
-        
         // [optional] ISO 4217 code of the currency used in the purchases
         FString Currency;
-        // Total value of the purchases in a whole number of 1/100 monetary units. For example, 999 indicates nine dollars and ninety-nine cents when Currency is 'USD')
+
+        /**
+         * Total value of the purchases in a whole number of 1/100 monetary units. For example, 999 indicates nine dollars and
+         * ninety-nine cents when Currency is 'USD')
+         */
         uint32 TotalValue;
-        // [optional] Total value of the purchases in a string representation of decimal monetary units. For example, '9.99' indicates nine dollars and ninety-nine cents when Currency is 'USD'.
+
+        /**
+         * [optional] Total value of the purchases in a string representation of decimal monetary units. For example, '9.99' indicates nine
+         * dollars and ninety-nine cents when Currency is 'USD'.
+         */
         FString TotalValueAsDecimal;
 
         FValueToDateModel() :
@@ -2819,24 +2983,28 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FPlayerProfileModel : public FPlayFabBaseModel
     {
-        
         // [optional] List of advertising campaigns the player has been attributed to
         TArray<FAdCampaignAttributionModel> AdCampaignAttributions;
         // [optional] URL of the player's avatar image
         FString AvatarUrl;
+
         // [optional] If the player is currently banned, the UTC Date when the ban expires
         Boxed<FDateTime> BannedUntil;
+
         // [optional] List of all contact email info associated with the player account
         TArray<FContactEmailInfoModel> ContactEmailAddresses;
         // [optional] Player record created
         Boxed<FDateTime> Created;
+
         // [optional] Player display name
         FString DisplayName;
+
         // [optional] UTC time when the player most recently logged in to the title
         Boxed<FDateTime> LastLogin;
+
         // [optional] List of all authentication systems linked to this player account
         TArray<FLinkedPlatformAccountModel> LinkedAccounts;
         // [optional] List of geographic locations from which the player has logged in to the title
@@ -2845,10 +3013,13 @@ namespace ClientModels
         TArray<FMembershipModel> Memberships;
         // [optional] Player account origination
         Boxed<LoginIdentityProvider> Origination;
+
         // [optional] PlayFab player account unique identifier
         FString PlayerId;
+
         // [optional] Publisher this player belongs to
         FString PublisherId;
+
         // [optional] List of configured end points registered for sending the player push notifications
         TArray<FPushNotificationRegistrationModel> PushNotificationRegistrations;
         // [optional] List of leaderboard statistic values for the player
@@ -2857,11 +3028,15 @@ namespace ClientModels
         TArray<FTagModel> Tags;
         // [optional] Title ID this player profile applies to
         FString TitleId;
-        // [optional] Sum of the player's purchases made with real-money currencies, converted to US dollars equivalent and represented as a whole number of cents (1/100 USD).              For example, 999 indicates nine dollars and ninety-nine cents.
+
+        /**
+         * [optional] Sum of the player's purchases made with real-money currencies, converted to US dollars equivalent and represented as a
+         * whole number of cents (1/100 USD).       For example, 999 indicates nine dollars and ninety-nine cents.
+         */
         Boxed<uint32> TotalValueToDateInUSD;
+
         // [optional] List of the player's lifetime purchase totals, summed by real-money currency
         TArray<FValueToDateModel> ValuesToDate;
-
         FPlayerProfileModel() :
             FPlayFabBaseModel(),
             AdCampaignAttributions(),
@@ -2918,7 +3093,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum TitleActivationStatus
     {
         TitleActivationStatusNone,
@@ -2932,16 +3107,17 @@ namespace ClientModels
     PLAYFAB_API TitleActivationStatus readTitleActivationStatusFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API TitleActivationStatus readTitleActivationStatusFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FUserSteamInfo : public FPlayFabBaseModel
     {
-        
         // [optional] what stage of game ownership the user is listed as being in, from Steam
         Boxed<TitleActivationStatus> SteamActivationStatus;
+
         // [optional] the country in which the player resides, from Steam data
         FString SteamCountry;
+
         // [optional] currency type set in the user Steam account
         Boxed<Currency> SteamCurrency;
+
         // [optional] Steam identifier
         FString SteamId;
 
@@ -2971,26 +3147,32 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FFriendInfo : public FPlayFabBaseModel
     {
-        
         // [optional] Unique lobby identifier of the Game Server Instance to which this player is currently connected.
         FString CurrentMatchmakerLobbyId;
+
         // [optional] Available Facebook information (if the user and PlayFab friend are also connected in Facebook).
         TSharedPtr<FUserFacebookInfo> FacebookInfo;
+
         // [optional] PlayFab unique identifier for this friend.
         FString FriendPlayFabId;
+
         // [optional] Available Game Center information (if the user and PlayFab friend are also connected in Game Center).
         TSharedPtr<FUserGameCenterInfo> GameCenterInfo;
+
         // [optional] The profile of the user, if requested.
         TSharedPtr<FPlayerProfileModel> Profile;
+
         // [optional] Available Steam information (if the user and PlayFab friend are also connected in Steam).
         TSharedPtr<FUserSteamInfo> SteamInfo;
+
         // [optional] Tags which have been associated with this friend.
         TArray<FString> Tags;
         // [optional] Title-specific display name for this friend.
         FString TitleDisplayName;
+
         // [optional] PlayFab unique username for this friend.
         FString Username;
 
@@ -3030,12 +3212,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGameCenterPlayFabIdPair : public FPlayFabBaseModel
     {
-        
         // [optional] Unique Game Center identifier for a user.
         FString GameCenterId;
+
         // [optional] Unique PlayFab identifier for a user, or null if no PlayFab account is linked to the Game Center identifier.
         FString PlayFabId;
 
@@ -3061,13 +3243,16 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGameServerRegionsRequest : public FPlayFabBaseModel
     {
-        
         // version of game server for which stats are being requested
         FString BuildVersion;
-        // [optional] Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * [optional] Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FGameServerRegionsRequest() :
@@ -3092,16 +3277,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRegionInfo : public FPlayFabBaseModel
     {
-        
         // indicates whether the server specified is available in this region
         bool Available;
+
         // [optional] name of the region
         FString Name;
+
         // [optional] url to ping to get roundtrip time
         FString PingUrl;
+
         // [optional] unique identifier for the region
         Boxed<Region> pfRegion;
 
@@ -3131,13 +3318,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGameServerRegionsResult : public FPlayFabBaseModel
     {
-        
         // [optional] array of regions found matching the request parameters
         TArray<FRegionInfo> Regions;
-
         FGameServerRegionsResult() :
             FPlayFabBaseModel(),
             Regions()
@@ -3158,12 +3343,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGenericPlayFabIdPair : public FPlayFabBaseModel
     {
-        
         // [optional] Unique generic service identifier for a user.
         TSharedPtr<FGenericServiceId> GenericId;
+
         // [optional] Unique PlayFab identifier for a user, or null if no PlayFab account is linked to the given generic identifier.
         FString PlayFabId;
 
@@ -3189,16 +3374,24 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetAccountInfoRequest : public FPlayFabBaseModel
     {
-        
         // [optional] User email address for the account to find (if no Username is specified).
         FString Email;
-        // [optional] Unique PlayFab identifier of the user whose info is being requested. Optional, defaults to the authenticated user if no other lookup identifier set.
+
+        /**
+         * [optional] Unique PlayFab identifier of the user whose info is being requested. Optional, defaults to the authenticated user if no
+         * other lookup identifier set.
+         */
         FString PlayFabId;
-        // [optional] Title-specific username for the account to find (if no Email is set). Note that if the non-unique Title Display Names option is enabled for the title, attempts to look up users by Title Display Name will always return AccountNotFound.
+
+        /**
+         * [optional] Title-specific username for the account to find (if no Email is set). Note that if the non-unique Title Display Names
+         * option is enabled for the title, attempts to look up users by Title Display Name will always return AccountNotFound.
+         */
         FString TitleDisplayName;
+
         // [optional] PlayFab Username for the account to find (if no PlayFabId is specified).
         FString Username;
 
@@ -3228,10 +3421,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserAndroidDeviceInfo : public FPlayFabBaseModel
     {
-        
         // [optional] Android device ID
         FString AndroidDeviceId;
 
@@ -3255,10 +3447,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserCustomIdInfo : public FPlayFabBaseModel
     {
-        
         // [optional] Custom ID
         FString CustomId;
 
@@ -3282,16 +3473,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserGoogleInfo : public FPlayFabBaseModel
     {
-        
         // [optional] Email address of the Google account
         FString GoogleEmail;
+
         // [optional] Gender information of the Google account
         FString GoogleGender;
+
         // [optional] Google ID
         FString GoogleId;
+
         // [optional] Locale of the Google account
         FString GoogleLocale;
 
@@ -3321,10 +3514,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserIosDeviceInfo : public FPlayFabBaseModel
     {
-        
         // [optional] iOS device ID
         FString IosDeviceId;
 
@@ -3348,12 +3540,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserKongregateInfo : public FPlayFabBaseModel
     {
-        
         // [optional] Kongregate ID
         FString KongregateId;
+
         // [optional] Kongregate Username
         FString KongregateName;
 
@@ -3379,10 +3571,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserPrivateAccountInfo : public FPlayFabBaseModel
     {
-        
         // [optional] user email address
         FString Email;
 
@@ -3406,12 +3597,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserPsnInfo : public FPlayFabBaseModel
     {
-        
         // [optional] PSN account ID
         FString PsnAccountId;
+
         // [optional] PSN online ID
         FString PsnOnlineId;
 
@@ -3437,7 +3628,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum UserOrigination
     {
         UserOriginationOrganic,
@@ -3464,22 +3655,32 @@ namespace ClientModels
     PLAYFAB_API UserOrigination readUserOriginationFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API UserOrigination readUserOriginationFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FUserTitleInfo : public FPlayFabBaseModel
     {
-        
         // [optional] URL to the player's avatar.
         FString AvatarUrl;
-        // timestamp indicating when the user was first associated with this game (this can differ significantly from when the user first registered with PlayFab)
+
+        /**
+         * timestamp indicating when the user was first associated with this game (this can differ significantly from when the user
+         * first registered with PlayFab)
+         */
         FDateTime Created;
+
         // [optional] name of the user, as it is displayed in-game
         FString DisplayName;
-        // [optional] timestamp indicating when the user first signed into this game (this can differ from the Created timestamp, as other events, such as issuing a beta key to the user, can associate the title to the user)
+
+        /**
+         * [optional] timestamp indicating when the user first signed into this game (this can differ from the Created timestamp, as other
+         * events, such as issuing a beta key to the user, can associate the title to the user)
+         */
         Boxed<FDateTime> FirstLogin;
+
         // [optional] boolean indicating whether or not the user is currently banned for a title
         Boxed<bool> isBanned;
+
         // [optional] timestamp for the last user login for this title
         Boxed<FDateTime> LastLogin;
+
         // [optional] source by which the user first joined the game, if known
         Boxed<UserOrigination> Origination;
 
@@ -3515,12 +3716,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserTwitchInfo : public FPlayFabBaseModel
     {
-        
         // [optional] Twitch ID
         FString TwitchId;
+
         // [optional] Twitch Username
         FString TwitchUserName;
 
@@ -3546,10 +3747,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserXboxInfo : public FPlayFabBaseModel
     {
-        
         // [optional] XBox user ID
         FString XboxUserId;
 
@@ -3573,40 +3773,54 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserAccountInfo : public FPlayFabBaseModel
     {
-        
         // [optional] User Android device information, if an Android device has been linked
         TSharedPtr<FUserAndroidDeviceInfo> AndroidDeviceInfo;
+
         // Timestamp indicating when the user account was created
         FDateTime Created;
+
         // [optional] Custom ID information, if a custom ID has been assigned
         TSharedPtr<FUserCustomIdInfo> CustomIdInfo;
+
         // [optional] User Facebook information, if a Facebook account has been linked
         TSharedPtr<FUserFacebookInfo> FacebookInfo;
+
         // [optional] User Gamecenter information, if a Gamecenter account has been linked
         TSharedPtr<FUserGameCenterInfo> GameCenterInfo;
+
         // [optional] User Google account information, if a Google account has been linked
         TSharedPtr<FUserGoogleInfo> GoogleInfo;
+
         // [optional] User iOS device information, if an iOS device has been linked
         TSharedPtr<FUserIosDeviceInfo> IosDeviceInfo;
+
         // [optional] User Kongregate account information, if a Kongregate account has been linked
         TSharedPtr<FUserKongregateInfo> KongregateInfo;
+
         // [optional] Unique identifier for the user account
         FString PlayFabId;
+
         // [optional] Personal information for the user which is considered more sensitive
         TSharedPtr<FUserPrivateAccountInfo> PrivateInfo;
+
         // [optional] User PSN account information, if a PSN account has been linked
         TSharedPtr<FUserPsnInfo> PsnInfo;
+
         // [optional] User Steam information, if a Steam account has been linked
         TSharedPtr<FUserSteamInfo> SteamInfo;
+
         // [optional] Title-specific information for the user account
         TSharedPtr<FUserTitleInfo> TitleInfo;
+
         // [optional] User Twitch account information, if a Twitch account has been linked
         TSharedPtr<FUserTwitchInfo> TwitchInfo;
+
         // [optional] User account name in the PlayFab service
         FString Username;
+
         // [optional] User XBox account information, if a XBox account has been linked
         TSharedPtr<FUserXboxInfo> XboxInfo;
 
@@ -3660,10 +3874,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetAccountInfoResult : public FPlayFabBaseModel
     {
-        
         // [optional] Account information for the local user.
         TSharedPtr<FUserAccountInfo> AccountInfo;
 
@@ -3687,10 +3900,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCatalogItemsRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Which catalog is being requested. If null, uses the default catalog.
         FString CatalogVersion;
 
@@ -3714,13 +3926,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCatalogItemsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Array of items which can be purchased.
         TArray<FCatalogItem> Catalog;
-
         FGetCatalogItemsResult() :
             FPlayFabBaseModel(),
             Catalog()
@@ -3741,14 +3951,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCharacterDataRequest : public FPlayFabBaseModel
     {
-        
         // Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
-        // [optional] The version that currently exists according to the caller. The call will return the data for all of the keys if the version in the system is greater than this.
+
+        /**
+         * [optional] The version that currently exists according to the caller. The call will return the data for all of the keys if the
+         * version in the system is greater than this.
+         */
         Boxed<uint32> IfChangedFromDataVersion;
+
         // [optional] Specific keys to search for in the custom user data.
         TArray<FString> Keys;
         // [optional] Unique PlayFab identifier of the user to load data for. Optional, defaults to yourself if not set.
@@ -3780,7 +3994,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum UserDataPermission
     {
         UserDataPermissionPrivate,
@@ -3791,14 +4005,17 @@ namespace ClientModels
     PLAYFAB_API UserDataPermission readUserDataPermissionFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API UserDataPermission readUserDataPermissionFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FUserDataRecord : public FPlayFabBaseModel
     {
-        
         // Timestamp for when this data was last updated.
         FDateTime LastUpdated;
-        // [optional] Indicates whether this data can be read by all users (public) or only the user (private). This is used for GetUserData requests being made by one player about another player.
+
+        /**
+         * [optional] Indicates whether this data can be read by all users (public) or only the user (private). This is used for GetUserData
+         * requests being made by one player about another player.
+         */
         Boxed<UserDataPermission> Permission;
+
         // [optional] Data stored for the specified user data key.
         FString Value;
 
@@ -3826,15 +4043,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCharacterDataResult : public FPlayFabBaseModel
     {
-        
         // [optional] Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
+
         // [optional] User specific data for this title.
         TMap<FString, FUserDataRecord> Data;
-        // Indicates the current version of the data that has been set. This is incremented with every set call for that type of data (read-only, internal, etc). This version can be provided in Get calls to find updated data.
+        /**
+         * Indicates the current version of the data that has been set. This is incremented with every set call for that type of
+         * data (read-only, internal, etc). This version can be provided in Get calls to find updated data.
+         */
         uint32 DataVersion;
 
         FGetCharacterDataResult() :
@@ -3861,12 +4081,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCharacterInventoryRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Used to limit results to only those from a specific catalog version.
         FString CatalogVersion;
+
         // Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
 
@@ -3892,14 +4112,19 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FVirtualCurrencyRechargeTime : public FPlayFabBaseModel
     {
-        
-        // Maximum value to which the regenerating currency will automatically increment. Note that it can exceed this value through use of the AddUserVirtualCurrency API call. However, it will not regenerate automatically until it has fallen below this value.
+        /**
+         * Maximum value to which the regenerating currency will automatically increment. Note that it can exceed this value
+         * through use of the AddUserVirtualCurrency API call. However, it will not regenerate automatically until it has fallen
+         * below this value.
+         */
         int32 RechargeMax;
+
         // Server timestamp in UTC indicating the next time the virtual currency will be incremented.
         FDateTime RechargeTime;
+
         // Time remaining (in seconds) before the next recharge increment of the virtual currency.
         int32 SecondsToRecharge;
 
@@ -3927,19 +4152,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCharacterInventoryResult : public FPlayFabBaseModel
     {
-        
         // [optional] Unique identifier of the character for this inventory.
         FString CharacterId;
+
         // [optional] Array of inventory items belonging to the character.
         TArray<FItemInstance> Inventory;
         // [optional] Array of virtual currency balance(s) belonging to the character.
         TMap<FString, int32> VirtualCurrency;
         // [optional] Array of remaining times and timestamps for virtual currencies.
         TMap<FString, FVirtualCurrencyRechargeTime> VirtualCurrencyRechargeTimes;
-
         FGetCharacterInventoryResult() :
             FPlayFabBaseModel(),
             CharacterId(),
@@ -3966,16 +4190,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCharacterLeaderboardRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Optional character type on which to filter the leaderboard entries.
         FString CharacterType;
+
         // [optional] Maximum number of entries to retrieve. Default 10, maximum 100.
         Boxed<int32> MaxResultsCount;
+
         // First entry in the leaderboard to be retrieved.
         int32 StartPosition;
+
         // Unique identifier for the title-specific statistic for the leaderboard.
         FString StatisticName;
 
@@ -4005,13 +4231,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCharacterLeaderboardResult : public FPlayFabBaseModel
     {
-        
         // [optional] Ordered list of leaderboard entries.
         TArray<FCharacterLeaderboardEntry> Leaderboard;
-
         FGetCharacterLeaderboardResult() :
             FPlayFabBaseModel(),
             Leaderboard()
@@ -4032,10 +4256,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCharacterStatisticsRequest : public FPlayFabBaseModel
     {
-        
         // Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
 
@@ -4059,13 +4282,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetCharacterStatisticsResult : public FPlayFabBaseModel
     {
-        
         // [optional] The requested character statistics.
         TMap<FString, int32> CharacterStatistics;
-
         FGetCharacterStatisticsResult() :
             FPlayFabBaseModel(),
             CharacterStatistics()
@@ -4086,15 +4307,19 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetContentDownloadUrlRequest : public FPlayFabBaseModel
     {
-        
         // [optional] HTTP method to fetch item - GET or HEAD. Use HEAD when only fetching metadata. Default is GET.
         FString HttpMethod;
+
         // Key of the content item to fetch, usually formatted as a path, e.g. images/a.png
         FString Key;
-        // [optional] True to download through CDN. CDN provides higher download bandwidth and lower latency. However, if you want the latest, non-cached version of the content during development, set this to false. Default is true.
+
+        /**
+         * [optional] True to download through CDN. CDN provides higher download bandwidth and lower latency. However, if you want the latest,
+         * non-cached version of the content during development, set this to false. Default is true.
+         */
         Boxed<bool> ThruCDN;
 
         FGetContentDownloadUrlRequest() :
@@ -4121,10 +4346,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetContentDownloadUrlResult : public FPlayFabBaseModel
     {
-        
         // [optional] URL for downloading content via HTTP GET or HEAD method. The URL will expire in approximately one hour.
         FString URL;
 
@@ -4148,40 +4372,54 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FPlayerProfileViewConstraints : public FPlayFabBaseModel
     {
-        
         // Whether to show player's avatar URL. Defaults to false
         bool ShowAvatarUrl;
+
         // Whether to show the banned until time. Defaults to false
         bool ShowBannedUntil;
+
         // Whether to show campaign attributions. Defaults to false
         bool ShowCampaignAttributions;
+
         // Whether to show contact email addresses. Defaults to false
         bool ShowContactEmailAddresses;
+
         // Whether to show the created date. Defaults to false
         bool ShowCreated;
+
         // Whether to show the display name. Defaults to false
         bool ShowDisplayName;
+
         // Whether to show the last login time. Defaults to false
         bool ShowLastLogin;
+
         // Whether to show the linked accounts. Defaults to false
         bool ShowLinkedAccounts;
+
         // Whether to show player's locations. Defaults to false
         bool ShowLocations;
+
         // Whether to show player's membership information. Defaults to false
         bool ShowMemberships;
+
         // Whether to show origination. Defaults to false
         bool ShowOrigination;
+
         // Whether to show push notification registrations. Defaults to false
         bool ShowPushNotificationRegistrations;
+
         // Reserved for future development
         bool ShowStatistics;
+
         // Whether to show tags. Defaults to false
         bool ShowTags;
+
         // Whether to show the total value to date in usd. Defaults to false
         bool ShowTotalValueToDateInUsd;
+
         // Whether to show the values to date. Defaults to false
         bool ShowValuesToDate;
 
@@ -4235,24 +4473,34 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetFriendLeaderboardAroundPlayerRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Indicates whether Facebook friends should be included in the response. Default is true.
         Boxed<bool> IncludeFacebookFriends;
+
         // [optional] Indicates whether Steam service friends should be included in the response. Default is true.
         Boxed<bool> IncludeSteamFriends;
+
         // [optional] Maximum number of entries to retrieve. Default 10, maximum 100.
         Boxed<int32> MaxResultsCount;
+
         // [optional] PlayFab unique identifier of the user to center the leaderboard around. If null will center on the logged in user.
         FString PlayFabId;
-        // [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client, only the allowed client profile properties for the title may be requested. These allowed properties are configured in the Game Manager "Client Profile Options" tab in the "Settings" section.
+
+        /**
+         * [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client,
+         * only the allowed client profile properties for the title may be requested. These allowed properties are configured in
+         * the Game Manager "Client Profile Options" tab in the "Settings" section.
+         */
         TSharedPtr<FPlayerProfileViewConstraints> ProfileConstraints;
+
         // Statistic used to rank players for this leaderboard.
         FString StatisticName;
+
         // [optional] If set to false, Version is considered null. If true, uses the specified Version
         Boxed<bool> UseSpecificVersion;
+
         // [optional] The version of the leaderboard to get.
         Boxed<int32> Version;
 
@@ -4290,18 +4538,21 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FPlayerLeaderboardEntry : public FPlayFabBaseModel
     {
-        
         // [optional] Title-specific display name of the user for this leaderboard entry.
         FString DisplayName;
+
         // [optional] PlayFab unique identifier of the user for this leaderboard entry.
         FString PlayFabId;
+
         // User's overall position in the leaderboard.
         int32 Position;
+
         // [optional] The profile of the user, if requested.
         TSharedPtr<FPlayerProfileModel> Profile;
+
         // Specific value of the user's statistic.
         int32 StatValue;
 
@@ -4333,14 +4584,14 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetFriendLeaderboardAroundPlayerResult : public FPlayFabBaseModel
     {
-        
         // [optional] Ordered listing of users and their positions in the requested leaderboard.
         TArray<FPlayerLeaderboardEntry> Leaderboard;
         // [optional] The time the next scheduled reset will occur. Null if the leaderboard does not reset on a schedule.
         Boxed<FDateTime> NextReset;
+
         // The version of the leaderboard returned.
         int32 Version;
 
@@ -4368,24 +4619,34 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetFriendLeaderboardRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Indicates whether Facebook friends should be included in the response. Default is true.
         Boxed<bool> IncludeFacebookFriends;
+
         // [optional] Indicates whether Steam service friends should be included in the response. Default is true.
         Boxed<bool> IncludeSteamFriends;
+
         // [optional] Maximum number of entries to retrieve. Default 10, maximum 100.
         Boxed<int32> MaxResultsCount;
-        // [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client, only the allowed client profile properties for the title may be requested. These allowed properties are configured in the Game Manager "Client Profile Options" tab in the "Settings" section.
+
+        /**
+         * [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client,
+         * only the allowed client profile properties for the title may be requested. These allowed properties are configured in
+         * the Game Manager "Client Profile Options" tab in the "Settings" section.
+         */
         TSharedPtr<FPlayerProfileViewConstraints> ProfileConstraints;
+
         // Position in the leaderboard to start this listing (defaults to the first entry).
         int32 StartPosition;
+
         // Statistic used to rank friends for this leaderboard.
         FString StatisticName;
+
         // [optional] If set to false, Version is considered null. If true, uses the specified Version
         Boxed<bool> UseSpecificVersion;
+
         // [optional] The version of the leaderboard to get.
         Boxed<int32> Version;
 
@@ -4423,15 +4684,20 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetFriendsListRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Indicates whether Facebook friends should be included in the response. Default is true.
         Boxed<bool> IncludeFacebookFriends;
+
         // [optional] Indicates whether Steam service friends should be included in the response. Default is true.
         Boxed<bool> IncludeSteamFriends;
-        // [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client, only the allowed client profile properties for the title may be requested. These allowed properties are configured in the Game Manager "Client Profile Options" tab in the "Settings" section.
+
+        /**
+         * [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client,
+         * only the allowed client profile properties for the title may be requested. These allowed properties are configured in
+         * the Game Manager "Client Profile Options" tab in the "Settings" section.
+         */
         TSharedPtr<FPlayerProfileViewConstraints> ProfileConstraints;
 
         FGetFriendsListRequest() :
@@ -4458,13 +4724,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetFriendsListResult : public FPlayFabBaseModel
     {
-        
         // [optional] Array of friends found.
         TArray<FFriendInfo> Friends;
-
         FGetFriendsListResult() :
             FPlayFabBaseModel(),
             Friends()
@@ -4485,16 +4749,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetLeaderboardAroundCharacterRequest : public FPlayFabBaseModel
     {
-        
         // Unique PlayFab assigned ID for a specific character on which to center the leaderboard.
         FString CharacterId;
+
         // [optional] Optional character type on which to filter the leaderboard entries.
         FString CharacterType;
+
         // [optional] Maximum number of entries to retrieve. Default 10, maximum 100.
         Boxed<int32> MaxResultsCount;
+
         // Unique identifier for the title-specific statistic for the leaderboard.
         FString StatisticName;
 
@@ -4524,13 +4790,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetLeaderboardAroundCharacterResult : public FPlayFabBaseModel
     {
-        
         // [optional] Ordered list of leaderboard entries.
         TArray<FCharacterLeaderboardEntry> Leaderboard;
-
         FGetLeaderboardAroundCharacterResult() :
             FPlayFabBaseModel(),
             Leaderboard()
@@ -4551,20 +4815,28 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetLeaderboardAroundPlayerRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Maximum number of entries to retrieve. Default 10, maximum 100.
         Boxed<int32> MaxResultsCount;
+
         // [optional] PlayFab unique identifier of the user to center the leaderboard around. If null will center on the logged in user.
         FString PlayFabId;
-        // [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client, only the allowed client profile properties for the title may be requested. These allowed properties are configured in the Game Manager "Client Profile Options" tab in the "Settings" section.
+
+        /**
+         * [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client,
+         * only the allowed client profile properties for the title may be requested. These allowed properties are configured in
+         * the Game Manager "Client Profile Options" tab in the "Settings" section.
+         */
         TSharedPtr<FPlayerProfileViewConstraints> ProfileConstraints;
+
         // Statistic used to rank players for this leaderboard.
         FString StatisticName;
+
         // [optional] If set to false, Version is considered null. If true, uses the specified Version
         Boxed<bool> UseSpecificVersion;
+
         // [optional] The version of the leaderboard to get.
         Boxed<int32> Version;
 
@@ -4598,14 +4870,14 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetLeaderboardAroundPlayerResult : public FPlayFabBaseModel
     {
-        
         // [optional] Ordered listing of users and their positions in the requested leaderboard.
         TArray<FPlayerLeaderboardEntry> Leaderboard;
         // [optional] The time the next scheduled reset will occur. Null if the leaderboard does not reset on a schedule.
         Boxed<FDateTime> NextReset;
+
         // The version of the leaderboard returned.
         int32 Version;
 
@@ -4633,12 +4905,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetLeaderboardForUsersCharactersRequest : public FPlayFabBaseModel
     {
-        
         // Maximum number of entries to retrieve.
         int32 MaxResultsCount;
+
         // Unique identifier for the title-specific statistic for the leaderboard.
         FString StatisticName;
 
@@ -4664,13 +4936,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetLeaderboardForUsersCharactersResult : public FPlayFabBaseModel
     {
-        
         // [optional] Ordered list of leaderboard entries.
         TArray<FCharacterLeaderboardEntry> Leaderboard;
-
         FGetLeaderboardForUsersCharactersResult() :
             FPlayFabBaseModel(),
             Leaderboard()
@@ -4691,20 +4961,28 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetLeaderboardRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Maximum number of entries to retrieve. Default 10, maximum 100.
         Boxed<int32> MaxResultsCount;
-        // [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client, only the allowed client profile properties for the title may be requested. These allowed properties are configured in the Game Manager "Client Profile Options" tab in the "Settings" section.
+
+        /**
+         * [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client,
+         * only the allowed client profile properties for the title may be requested. These allowed properties are configured in
+         * the Game Manager "Client Profile Options" tab in the "Settings" section.
+         */
         TSharedPtr<FPlayerProfileViewConstraints> ProfileConstraints;
+
         // Position in the leaderboard to start this listing (defaults to the first entry).
         int32 StartPosition;
+
         // Statistic used to rank players for this leaderboard.
         FString StatisticName;
+
         // [optional] If set to false, Version is considered null. If true, uses the specified Version
         Boxed<bool> UseSpecificVersion;
+
         // [optional] The version of the leaderboard to get.
         Boxed<int32> Version;
 
@@ -4738,14 +5016,14 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetLeaderboardResult : public FPlayFabBaseModel
     {
-        
         // [optional] Ordered listing of users and their positions in the requested leaderboard.
         TArray<FPlayerLeaderboardEntry> Leaderboard;
         // [optional] The time the next scheduled reset will occur. Null if the leaderboard does not reset on a schedule.
         Boxed<FDateTime> NextReset;
+
         // The version of the leaderboard returned.
         int32 Version;
 
@@ -4773,10 +5051,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPaymentTokenRequest : public FPlayFabBaseModel
     {
-        
         // The name of service to provide the payment token. Allowed Values are: xsolla
         FString TokenProvider;
 
@@ -4800,12 +5077,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPaymentTokenResult : public FPlayFabBaseModel
     {
-        
         // [optional] PlayFab's purchase order identifier.
         FString OrderId;
+
         // [optional] The token from provider.
         FString ProviderToken;
 
@@ -4831,10 +5108,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPhotonAuthenticationTokenRequest : public FPlayFabBaseModel
     {
-        
         // The Photon applicationId for the game you wish to log into.
         FString PhotonApplicationId;
 
@@ -4858,10 +5134,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPhotonAuthenticationTokenResult : public FPlayFabBaseModel
     {
-        
         // [optional] The Photon authentication token for this game-session.
         FString PhotonCustomAuthenticationToken;
 
@@ -4885,41 +5160,53 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerCombinedInfoRequestParams : public FPlayFabBaseModel
     {
-        
         // Whether to get character inventories. Defaults to false.
         bool GetCharacterInventories;
+
         // Whether to get the list of characters. Defaults to false.
         bool GetCharacterList;
+
         // Whether to get player profile. Defaults to false.
         bool GetPlayerProfile;
+
         // Whether to get player statistics. Defaults to false.
         bool GetPlayerStatistics;
+
         // Whether to get title data. Defaults to false.
         bool GetTitleData;
+
         // Whether to get the player's account Info. Defaults to false
         bool GetUserAccountInfo;
+
         // Whether to get the player's custom data. Defaults to false
         bool GetUserData;
+
         // Whether to get the player's inventory. Defaults to false
         bool GetUserInventory;
+
         // Whether to get the player's read only data. Defaults to false
         bool GetUserReadOnlyData;
+
         // Whether to get the player's virtual currency balances. Defaults to false
         bool GetUserVirtualCurrency;
+
         // [optional] Specific statistics to retrieve. Leave null to get all keys. Has no effect if GetPlayerStatistics is false
         TArray<FString> PlayerStatisticNames;
         // [optional] Specifies the properties to return from the player profile. Defaults to returning the player's display name.
         TSharedPtr<FPlayerProfileViewConstraints> ProfileConstraints;
+
         // [optional] Specific keys to search for in the custom data. Leave null to get all keys. Has no effect if GetTitleData is false
         TArray<FString> TitleDataKeys;
         // [optional] Specific keys to search for in the custom data. Leave null to get all keys. Has no effect if GetUserData is false
         TArray<FString> UserDataKeys;
-        // [optional] Specific keys to search for in the custom data. Leave null to get all keys. Has no effect if GetUserReadOnlyData is false
+        /**
+         * [optional] Specific keys to search for in the custom data. Leave null to get all keys. Has no effect if GetUserReadOnlyData is
+         * false
+         */
         TArray<FString> UserReadOnlyDataKeys;
-
         FGetPlayerCombinedInfoRequestParams() :
             FPlayFabBaseModel(),
             GetCharacterInventories(false),
@@ -4968,13 +5255,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerCombinedInfoRequest : public FPlayFabBaseModel
     {
-        
         // Flags for which pieces of info to return for the user.
         FGetPlayerCombinedInfoRequestParams InfoRequestParameters;
-        // [optional] PlayFabId of the user whose data will be returned. If not filled included, we return the data for the calling player. 
+
+        // [optional] PlayFabId of the user whose data will be returned. If not filled included, we return the data for the calling player.
         FString PlayFabId;
 
         FGetPlayerCombinedInfoRequest() :
@@ -4999,14 +5286,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FStatisticValue : public FPlayFabBaseModel
     {
-        
         // [optional] unique name of the statistic
         FString StatisticName;
+
         // statistic value for the player
         int32 Value;
+
         // for updates to an existing statistic value for a player, the version of the statistic when it was loaded
         uint32 Version;
 
@@ -5034,18 +5322,22 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerCombinedInfoResultPayload : public FPlayFabBaseModel
     {
-        
         // [optional] Account information for the user. This is always retrieved.
         TSharedPtr<FUserAccountInfo> AccountInfo;
+
         // [optional] Inventories for each character for the user.
         TArray<FCharacterInventory> CharacterInventories;
         // [optional] List of characters for the user.
         TArray<FCharacterResult> CharacterList;
-        // [optional] The profile of the players. This profile is not guaranteed to be up-to-date. For a new player, this profile will not exist.
+        /**
+         * [optional] The profile of the players. This profile is not guaranteed to be up-to-date. For a new player, this profile will not
+         * exist.
+         */
         TSharedPtr<FPlayerProfileModel> PlayerProfile;
+
         // [optional] List of statistics for this player.
         TArray<FStatisticValue> PlayerStatistics;
         // [optional] Title data for this title.
@@ -5054,17 +5346,18 @@ namespace ClientModels
         TMap<FString, FUserDataRecord> UserData;
         // The version of the UserData that was returned.
         uint32 UserDataVersion;
+
         // [optional] Array of inventory items in the user's current inventory.
         TArray<FItemInstance> UserInventory;
         // [optional] User specific read-only data.
         TMap<FString, FUserDataRecord> UserReadOnlyData;
         // The version of the Read-Only UserData that was returned.
         uint32 UserReadOnlyDataVersion;
+
         // [optional] Dictionary of virtual currency balance(s) belonging to the user.
         TMap<FString, int32> UserVirtualCurrency;
         // [optional] Dictionary of remaining times and timestamps for virtual currencies.
         TMap<FString, FVirtualCurrencyRechargeTime> UserVirtualCurrencyRechargeTimes;
-
         FGetPlayerCombinedInfoResultPayload() :
             FPlayFabBaseModel(),
             AccountInfo(nullptr),
@@ -5109,12 +5402,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerCombinedInfoResult : public FPlayFabBaseModel
     {
-        
         // [optional] Results for requested info.
         TSharedPtr<FGetPlayerCombinedInfoResultPayload> InfoResultPayload;
+
         // [optional] Unique PlayFab assigned ID of the user on whom the operation will be performed.
         FString PlayFabId;
 
@@ -5140,13 +5433,17 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerProfileRequest : public FPlayFabBaseModel
     {
-        
         // Unique PlayFab assigned ID of the user on whom the operation will be performed.
         FString PlayFabId;
-        // [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client, only the allowed client profile properties for the title may be requested. These allowed properties are configured in the Game Manager "Client Profile Options" tab in the "Settings" section.
+
+        /**
+         * [optional] If non-null, this determines which properties of the resulting player profiles to return. For API calls from the client,
+         * only the allowed client profile properties for the title may be requested. These allowed properties are configured in
+         * the Game Manager "Client Profile Options" tab in the "Settings" section.
+         */
         TSharedPtr<FPlayerProfileViewConstraints> ProfileConstraints;
 
         FGetPlayerProfileRequest() :
@@ -5171,11 +5468,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerProfileResult : public FPlayFabBaseModel
     {
-        
-        // [optional] The profile of the player. This profile is not guaranteed to be up-to-date. For a new player, this profile will not exist.
+        /**
+         * [optional] The profile of the player. This profile is not guaranteed to be up-to-date. For a new player, this profile will not
+         * exist.
+         */
         TSharedPtr<FPlayerProfileModel> PlayerProfile;
 
         FGetPlayerProfileResult() :
@@ -5198,11 +5497,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerSegmentsRequest : public FPlayFabBaseModel
     {
-        
-
         FGetPlayerSegmentsRequest() :
             FPlayFabBaseModel()
             {}
@@ -5221,14 +5518,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetSegmentResult : public FPlayFabBaseModel
     {
-        
         // [optional] Identifier of the segments AB Test, if it is attached to one.
         FString ABTestParent;
+
         // Unique identifier for this segment.
         FString Id;
+
         // [optional] Segment name.
         FString Name;
 
@@ -5256,13 +5554,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerSegmentsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Array of segments the requested player currently belongs to.
         TArray<FGetSegmentResult> Segments;
-
         FGetPlayerSegmentsResult() :
             FPlayFabBaseModel(),
             Segments()
@@ -5283,12 +5579,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FStatisticNameVersion : public FPlayFabBaseModel
     {
-        
         // unique name of the statistic
         FString StatisticName;
+
         // the version of the statistic to be returned
         uint32 Version;
 
@@ -5314,15 +5610,16 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerStatisticsRequest : public FPlayFabBaseModel
     {
-        
         // [optional] statistics to return (current version will be returned for each)
         TArray<FString> StatisticNames;
-        // [optional] statistics to return, if StatisticNames is not set (only statistics which have a version matching that provided will be returned)
+        /**
+         * [optional] statistics to return, if StatisticNames is not set (only statistics which have a version matching that provided will be
+         * returned)
+         */
         TArray<FStatisticNameVersion> StatisticNameVersions;
-
         FGetPlayerStatisticsRequest() :
             FPlayFabBaseModel(),
             StatisticNames(),
@@ -5345,13 +5642,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerStatisticsResult : public FPlayFabBaseModel
     {
-        
         // [optional] User statistics for the requested user.
         TArray<FStatisticValue> Statistics;
-
         FGetPlayerStatisticsResult() :
             FPlayFabBaseModel(),
             Statistics()
@@ -5372,10 +5667,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerStatisticVersionsRequest : public FPlayFabBaseModel
     {
-        
         // [optional] unique name of the statistic
         FString StatisticName;
 
@@ -5399,20 +5693,24 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FPlayerStatisticVersion : public FPlayFabBaseModel
     {
-        
         // time when the statistic version became active
         FDateTime ActivationTime;
+
         // [optional] time when the statistic version became inactive due to statistic version incrementing
         Boxed<FDateTime> DeactivationTime;
+
         // [optional] time at which the statistic version was scheduled to become active, based on the configured ResetInterval
         Boxed<FDateTime> ScheduledActivationTime;
+
         // [optional] time at which the statistic version was scheduled to become inactive, based on the configured ResetInterval
         Boxed<FDateTime> ScheduledDeactivationTime;
+
         // [optional] name of the statistic when the version became active
         FString StatisticName;
+
         // version of the statistic
         uint32 Version;
 
@@ -5446,13 +5744,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerStatisticVersionsResult : public FPlayFabBaseModel
     {
-        
         // [optional] version change history of the statistic
         TArray<FPlayerStatisticVersion> StatisticVersions;
-
         FGetPlayerStatisticVersionsResult() :
             FPlayFabBaseModel(),
             StatisticVersions()
@@ -5473,12 +5769,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerTagsRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Optional namespace to filter results by
         FString Namespace;
+
         // Unique PlayFab assigned ID of the user on whom the operation will be performed.
         FString PlayFabId;
 
@@ -5504,15 +5800,14 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerTagsResult : public FPlayFabBaseModel
     {
-        
         // Unique PlayFab assigned ID of the user on whom the operation will be performed.
         FString PlayFabId;
+
         // Canonical tags (including namespace and tag's name) for the requested user
         TArray<FString> Tags;
-
         FGetPlayerTagsResult() :
             FPlayFabBaseModel(),
             PlayFabId(),
@@ -5535,10 +5830,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerTradesRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Returns only trades with the given status. If null, returns all trades.
         Boxed<TradeStatus> StatusFilter;
 
@@ -5562,15 +5856,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayerTradesResponse : public FPlayFabBaseModel
     {
-        
         // [optional] History of trades which this player has accepted.
         TArray<FTradeInfo> AcceptedTrades;
         // [optional] The trades for this player which are currently available to be accepted.
         TArray<FTradeInfo> OpenedTrades;
-
         FGetPlayerTradesResponse() :
             FPlayFabBaseModel(),
             AcceptedTrades(),
@@ -5593,13 +5885,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromFacebookIDsRequest : public FPlayFabBaseModel
     {
-        
         // Array of unique Facebook identifiers for which the title needs to get PlayFab identifiers.
         TArray<FString> FacebookIDs;
-
         FGetPlayFabIDsFromFacebookIDsRequest() :
             FPlayFabBaseModel(),
             FacebookIDs()
@@ -5620,13 +5910,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromFacebookIDsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Mapping of Facebook identifiers to PlayFab identifiers.
         TArray<FFacebookPlayFabIdPair> Data;
-
         FGetPlayFabIDsFromFacebookIDsResult() :
             FPlayFabBaseModel(),
             Data()
@@ -5647,13 +5935,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromGameCenterIDsRequest : public FPlayFabBaseModel
     {
-        
         // Array of unique Game Center identifiers (the Player Identifier) for which the title needs to get PlayFab identifiers.
         TArray<FString> GameCenterIDs;
-
         FGetPlayFabIDsFromGameCenterIDsRequest() :
             FPlayFabBaseModel(),
             GameCenterIDs()
@@ -5674,13 +5960,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromGameCenterIDsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Mapping of Game Center identifiers to PlayFab identifiers.
         TArray<FGameCenterPlayFabIdPair> Data;
-
         FGetPlayFabIDsFromGameCenterIDsResult() :
             FPlayFabBaseModel(),
             Data()
@@ -5701,13 +5985,14 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromGenericIDsRequest : public FPlayFabBaseModel
     {
-        
-        // Array of unique generic service identifiers for which the title needs to get PlayFab identifiers. Currently limited to a maximum of 10 in a single request.
+        /**
+         * Array of unique generic service identifiers for which the title needs to get PlayFab identifiers. Currently limited to a
+         * maximum of 10 in a single request.
+         */
         TArray<FGenericServiceId> GenericIDs;
-
         FGetPlayFabIDsFromGenericIDsRequest() :
             FPlayFabBaseModel(),
             GenericIDs()
@@ -5728,13 +6013,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromGenericIDsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Mapping of generic service identifiers to PlayFab identifiers.
         TArray<FGenericPlayFabIdPair> Data;
-
         FGetPlayFabIDsFromGenericIDsResult() :
             FPlayFabBaseModel(),
             Data()
@@ -5755,13 +6038,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromGoogleIDsRequest : public FPlayFabBaseModel
     {
-        
         // Array of unique Google identifiers (Google+ user IDs) for which the title needs to get PlayFab identifiers.
         TArray<FString> GoogleIDs;
-
         FGetPlayFabIDsFromGoogleIDsRequest() :
             FPlayFabBaseModel(),
             GoogleIDs()
@@ -5782,12 +6063,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGooglePlayFabIdPair : public FPlayFabBaseModel
     {
-        
         // [optional] Unique Google identifier for a user.
         FString GoogleId;
+
         // [optional] Unique PlayFab identifier for a user, or null if no PlayFab account is linked to the Google identifier.
         FString PlayFabId;
 
@@ -5813,13 +6094,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromGoogleIDsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Mapping of Google identifiers to PlayFab identifiers.
         TArray<FGooglePlayFabIdPair> Data;
-
         FGetPlayFabIDsFromGoogleIDsResult() :
             FPlayFabBaseModel(),
             Data()
@@ -5840,13 +6119,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromKongregateIDsRequest : public FPlayFabBaseModel
     {
-        
         // Array of unique Kongregate identifiers (Kongregate's user_id) for which the title needs to get PlayFab identifiers.
         TArray<FString> KongregateIDs;
-
         FGetPlayFabIDsFromKongregateIDsRequest() :
             FPlayFabBaseModel(),
             KongregateIDs()
@@ -5867,12 +6144,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FKongregatePlayFabIdPair : public FPlayFabBaseModel
     {
-        
         // [optional] Unique Kongregate identifier for a user.
         FString KongregateId;
+
         // [optional] Unique PlayFab identifier for a user, or null if no PlayFab account is linked to the Kongregate identifier.
         FString PlayFabId;
 
@@ -5898,13 +6175,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromKongregateIDsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Mapping of Kongregate identifiers to PlayFab identifiers.
         TArray<FKongregatePlayFabIdPair> Data;
-
         FGetPlayFabIDsFromKongregateIDsResult() :
             FPlayFabBaseModel(),
             Data()
@@ -5925,13 +6200,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromSteamIDsRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Array of unique Steam identifiers (Steam profile IDs) for which the title needs to get PlayFab identifiers.
         TArray<FString> SteamStringIDs;
-
         FGetPlayFabIDsFromSteamIDsRequest() :
             FPlayFabBaseModel(),
             SteamStringIDs()
@@ -5952,12 +6225,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FSteamPlayFabIdPair : public FPlayFabBaseModel
     {
-        
         // [optional] Unique PlayFab identifier for a user, or null if no PlayFab account is linked to the Steam identifier.
         FString PlayFabId;
+
         // [optional] Unique Steam identifier for a user.
         FString SteamStringId;
 
@@ -5983,13 +6256,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromSteamIDsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Mapping of Steam identifiers to PlayFab identifiers.
         TArray<FSteamPlayFabIdPair> Data;
-
         FGetPlayFabIDsFromSteamIDsResult() :
             FPlayFabBaseModel(),
             Data()
@@ -6010,13 +6281,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromTwitchIDsRequest : public FPlayFabBaseModel
     {
-        
         // Array of unique Twitch identifiers (Twitch's _id) for which the title needs to get PlayFab identifiers.
         TArray<FString> TwitchIds;
-
         FGetPlayFabIDsFromTwitchIDsRequest() :
             FPlayFabBaseModel(),
             TwitchIds()
@@ -6037,12 +6306,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FTwitchPlayFabIdPair : public FPlayFabBaseModel
     {
-        
         // [optional] Unique PlayFab identifier for a user, or null if no PlayFab account is linked to the Twitch identifier.
         FString PlayFabId;
+
         // [optional] Unique Twitch identifier for a user.
         FString TwitchId;
 
@@ -6068,13 +6337,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPlayFabIDsFromTwitchIDsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Mapping of Twitch identifiers to PlayFab identifiers.
         TArray<FTwitchPlayFabIdPair> Data;
-
         FGetPlayFabIDsFromTwitchIDsResult() :
             FPlayFabBaseModel(),
             Data()
@@ -6095,13 +6362,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPublisherDataRequest : public FPlayFabBaseModel
     {
-        
-        //  array of keys to get back data from the Publisher data blob, set by the admin tools
+        // array of keys to get back data from the Publisher data blob, set by the admin tools
         TArray<FString> Keys;
-
         FGetPublisherDataRequest() :
             FPlayFabBaseModel(),
             Keys()
@@ -6122,13 +6387,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPublisherDataResult : public FPlayFabBaseModel
     {
-        
         // [optional] a dictionary object of key / value pairs
         TMap<FString, FString> Data;
-
         FGetPublisherDataResult() :
             FPlayFabBaseModel(),
             Data()
@@ -6149,10 +6412,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPurchaseRequest : public FPlayFabBaseModel
     {
-        
         // Purchase order identifier.
         FString OrderId;
 
@@ -6176,18 +6438,21 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetPurchaseResult : public FPlayFabBaseModel
     {
-        
         // [optional] Purchase order identifier.
         FString OrderId;
+
         // [optional] Payment provider used for transaction (If not VC)
         FString PaymentProvider;
+
         // Date and time of the purchase.
         FDateTime PurchaseDate;
+
         // [optional] Provider transaction ID (If not VC)
         FString TransactionId;
+
         // [optional] PlayFab transaction status
         FString TransactionStatus;
 
@@ -6219,13 +6484,16 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetSharedGroupDataRequest : public FPlayFabBaseModel
     {
-        
         // [optional] If true, return the list of all members of the shared group.
         Boxed<bool> GetMembers;
-        // [optional] Specific keys to retrieve from the shared group (if not specified, all keys will be returned, while an empty array indicates that no keys should be returned).
+
+        /**
+         * [optional] Specific keys to retrieve from the shared group (if not specified, all keys will be returned, while an empty array
+         * indicates that no keys should be returned).
+         */
         TArray<FString> Keys;
         // Unique identifier for the shared group.
         FString SharedGroupId;
@@ -6254,16 +6522,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FSharedGroupDataRecord : public FPlayFabBaseModel
     {
-        
         // Timestamp for when this data was last updated.
         FDateTime LastUpdated;
+
         // [optional] Unique PlayFab identifier of the user to last update this value.
         FString LastUpdatedBy;
+
         // [optional] Indicates whether this data can be read by all users (public) or only members of the group (private).
         Boxed<UserDataPermission> Permission;
+
         // [optional] Data stored for the specified group data key.
         FString Value;
 
@@ -6293,15 +6563,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetSharedGroupDataResult : public FPlayFabBaseModel
     {
-        
         // [optional] Data for the requested keys.
         TMap<FString, FSharedGroupDataRecord> Data;
         // [optional] List of PlayFabId identifiers for the members of this group, if requested.
         TArray<FString> Members;
-
         FGetSharedGroupDataResult() :
             FPlayFabBaseModel(),
             Data(),
@@ -6324,12 +6592,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetStoreItemsRequest : public FPlayFabBaseModel
     {
-        
         // [optional] catalog version to store items from. Use default catalog version if null
         FString CatalogVersion;
+
         // Unqiue identifier for the store which is being requested.
         FString StoreId;
 
@@ -6355,14 +6623,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FStoreMarketingModel : public FPlayFabBaseModel
     {
-        
         // [optional] Tagline for a store.
         FString Description;
+
         // [optional] Display name of a store as it will appear to users.
         FString DisplayName;
+
         // [optional] Custom data about a store.
         FJsonKeeper Metadata;
 
@@ -6390,7 +6659,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum SourceType
     {
         SourceTypeAdmin,
@@ -6404,21 +6673,24 @@ namespace ClientModels
     PLAYFAB_API SourceType readSourceTypeFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API SourceType readSourceTypeFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FStoreItem : public FPlayFabBaseModel
     {
-        
         // [optional] Store specific custom data. The data only exists as part of this store; it is not transferred to item instances
         FJsonKeeper CustomData;
+
         // [optional] Intended display position for this item. Note that 0 is the first position
         Boxed<uint32> DisplayPosition;
-        // Unique identifier of the item as it exists in the catalog - note that this must exactly match the ItemId from the catalog
+
+        /**
+         * Unique identifier of the item as it exists in the catalog - note that this must exactly match the ItemId from the
+         * catalog
+         */
         FString ItemId;
+
         // [optional] Override prices for this item for specific currencies
         TMap<FString, uint32> RealCurrencyPrices;
         // [optional] Override prices for this item in virtual currencies and "RM" (the base Real Money purchase price, in USD pennies)
         TMap<FString, uint32> VirtualCurrencyPrices;
-
         FStoreItem() :
             FPlayFabBaseModel(),
             CustomData(),
@@ -6447,16 +6719,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetStoreItemsResult : public FPlayFabBaseModel
     {
-        
         // [optional] The base catalog that this store is a part of.
         FString CatalogVersion;
+
         // [optional] Additional data about the store.
         TSharedPtr<FStoreMarketingModel> MarketingData;
+
         // [optional] How the store was last updated (Admin or a third party).
         Boxed<SourceType> Source;
+
         // [optional] Array of items which can be purchased from this store.
         TArray<FStoreItem> Store;
         // [optional] The ID of this store.
@@ -6490,11 +6764,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTimeRequest : public FPlayFabBaseModel
     {
-        
-
         FGetTimeRequest() :
             FPlayFabBaseModel()
             {}
@@ -6513,10 +6785,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTimeResult : public FPlayFabBaseModel
     {
-        
         // Current server time when the request was received, in UTC
         FDateTime Time;
 
@@ -6540,13 +6811,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTitleDataRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Specific keys to search for in the title data (leave null to get all keys)
         TArray<FString> Keys;
-
         FGetTitleDataRequest() :
             FPlayFabBaseModel(),
             Keys()
@@ -6567,13 +6836,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTitleDataResult : public FPlayFabBaseModel
     {
-        
         // [optional] a dictionary object of key / value pairs
         TMap<FString, FString> Data;
-
         FGetTitleDataResult() :
             FPlayFabBaseModel(),
             Data()
@@ -6594,10 +6861,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTitleNewsRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Limits the results to the last n entries. Defaults to 10 if not set.
         Boxed<int32> Count;
 
@@ -6621,16 +6887,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FTitleNewsItem : public FPlayFabBaseModel
     {
-        
         // [optional] News item text.
         FString Body;
+
         // [optional] Unique identifier of news item.
         FString NewsId;
+
         // Date and time when the news items was posted.
         FDateTime Timestamp;
+
         // [optional] Title of the news item.
         FString Title;
 
@@ -6660,13 +6928,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTitleNewsResult : public FPlayFabBaseModel
     {
-        
         // [optional] Array of news items.
         TArray<FTitleNewsItem> News;
-
         FGetTitleNewsResult() :
             FPlayFabBaseModel(),
             News()
@@ -6687,12 +6953,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTitlePublicKeyRequest : public FPlayFabBaseModel
     {
-        
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
+
         // The shared secret key for this title
         FString TitleSharedSecret;
 
@@ -6718,10 +6987,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTitlePublicKeyResult : public FPlayFabBaseModel
     {
-        
         // [optional] Base64 encoded RSA CSP byte array blob containing the title's public RSA key
         FString RSAPublicKey;
 
@@ -6745,12 +7013,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTradeStatusRequest : public FPlayFabBaseModel
     {
-        
         // Player who opened trade.
         FString OfferingPlayerId;
+
         // Trade identifier as returned by OpenTradeOffer.
         FString TradeId;
 
@@ -6776,10 +7044,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetTradeStatusResponse : public FPlayFabBaseModel
     {
-        
         // [optional] Information about the requested trade.
         TSharedPtr<FTradeInfo> Trade;
 
@@ -6803,15 +7070,21 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetUserDataRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] The version that currently exists according to the caller. The call will return the data for all of the keys if the version in the system is greater than this.
+        /**
+         * [optional] The version that currently exists according to the caller. The call will return the data for all of the keys if the
+         * version in the system is greater than this.
+         */
         Boxed<uint32> IfChangedFromDataVersion;
-        // [optional] Specific keys to search for in the custom data. Leave null to get all keys.
+
+        // [optional] List of unique keys to load from.
         TArray<FString> Keys;
-        // [optional] Unique PlayFab identifier of the user to load data for. Optional, defaults to yourself if not set. When specified to a PlayFab id of another player, then this will only return public keys for that account.
+        /**
+         * [optional] Unique PlayFab identifier of the user to load data for. Optional, defaults to yourself if not set. When specified to a
+         * PlayFab id of another player, then this will only return public keys for that account.
+         */
         FString PlayFabId;
 
         FGetUserDataRequest() :
@@ -6838,13 +7111,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetUserDataResult : public FPlayFabBaseModel
     {
-        
         // [optional] User specific data for this title.
         TMap<FString, FUserDataRecord> Data;
-        // Indicates the current version of the data that has been set. This is incremented with every set call for that type of data (read-only, internal, etc). This version can be provided in Get calls to find updated data.
+        /**
+         * Indicates the current version of the data that has been set. This is incremented with every set call for that type of
+         * data (read-only, internal, etc). This version can be provided in Get calls to find updated data.
+         */
         uint32 DataVersion;
 
         FGetUserDataResult() :
@@ -6869,11 +7144,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetUserInventoryRequest : public FPlayFabBaseModel
     {
-        
-
         FGetUserInventoryRequest() :
             FPlayFabBaseModel()
             {}
@@ -6892,17 +7165,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetUserInventoryResult : public FPlayFabBaseModel
     {
-        
         // [optional] Array of inventory items belonging to the user.
         TArray<FItemInstance> Inventory;
         // [optional] Array of virtual currency balance(s) belonging to the user.
         TMap<FString, int32> VirtualCurrency;
         // [optional] Array of remaining times and timestamps for virtual currencies.
         TMap<FString, FVirtualCurrencyRechargeTime> VirtualCurrencyRechargeTimes;
-
         FGetUserInventoryResult() :
             FPlayFabBaseModel(),
             Inventory(),
@@ -6927,13 +7198,16 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetWindowsHelloChallengeRequest : public FPlayFabBaseModel
     {
-        
         // SHA256 hash of the PublicKey generated by Windows Hello.
         FString PublicKeyHint;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FGetWindowsHelloChallengeRequest() :
@@ -6958,10 +7232,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGetWindowsHelloChallengeResponse : public FPlayFabBaseModel
     {
-        
         // [optional] Server generated challenge to be signed by the user.
         FString Challenge;
 
@@ -6985,15 +7258,19 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGrantCharacterToUserRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Catalog version from which items are to be granted.
         FString CatalogVersion;
+
         // Non-unique display name of the character being granted (1-20 characters in length).
         FString CharacterName;
-        // Catalog item identifier of the item in the user's inventory that corresponds to the character in the catalog to be created.
+
+        /**
+         * Catalog item identifier of the item in the user's inventory that corresponds to the character in the catalog to be
+         * created.
+         */
         FString ItemId;
 
         FGrantCharacterToUserRequest() :
@@ -7020,14 +7297,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FGrantCharacterToUserResult : public FPlayFabBaseModel
     {
-        
         // [optional] Unique identifier tagged to this character.
         FString CharacterId;
+
         // [optional] Type of character that was created.
         FString CharacterType;
+
         // Indicates whether this character was created successfully.
         bool Result;
 
@@ -7055,19 +7333,20 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FItemPurchaseRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Title-specific text concerning this purchase.
         FString Annotation;
+
         // Unique ItemId of the item to purchase.
         FString ItemId;
+
         // How many of this item to purchase.
         uint32 Quantity;
+
         // [optional] Items to be upgraded as a result of this purchase (upgraded items are hidden, as they are "replaced" by the new items).
         TArray<FString> UpgradeFromItems;
-
         FItemPurchaseRequest() :
             FPlayFabBaseModel(),
             Annotation(),
@@ -7094,16 +7373,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkAndroidDeviceIDRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Specific model of the user's device.
         FString AndroidDevice;
+
         // Android device identifier for the user's device.
         FString AndroidDeviceId;
+
         // [optional] If another user is already linked to the device, unlink the other user and re-link.
         Boxed<bool> ForceLink;
+
         // [optional] Specific Operating System version for the user's device.
         FString OS;
 
@@ -7133,11 +7414,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkAndroidDeviceIDResult : public FPlayFabBaseModel
     {
-        
-
         FLinkAndroidDeviceIDResult() :
             FPlayFabBaseModel()
             {}
@@ -7156,12 +7435,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkCustomIDRequest : public FPlayFabBaseModel
     {
-        
         // Custom unique identifier for the user, generated by the title.
         FString CustomId;
+
         // [optional] If another user is already linked to the custom ID, unlink the other user and re-link.
         Boxed<bool> ForceLink;
 
@@ -7187,11 +7466,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkCustomIDResult : public FPlayFabBaseModel
     {
-        
-
         FLinkCustomIDResult() :
             FPlayFabBaseModel()
             {}
@@ -7210,12 +7487,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkFacebookAccountRequest : public FPlayFabBaseModel
     {
-        
         // Unique identifier from Facebook for the user.
         FString AccessToken;
+
         // [optional] If another user is already linked to the account, unlink the other user and re-link.
         Boxed<bool> ForceLink;
 
@@ -7241,11 +7518,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkFacebookAccountResult : public FPlayFabBaseModel
     {
-        
-
         FLinkFacebookAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -7264,12 +7539,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkGameCenterAccountRequest : public FPlayFabBaseModel
     {
-        
         // [optional] If another user is already linked to the account, unlink the other user and re-link.
         Boxed<bool> ForceLink;
+
         // Game Center identifier for the player account to be linked.
         FString GameCenterId;
 
@@ -7295,11 +7570,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkGameCenterAccountResult : public FPlayFabBaseModel
     {
-        
-
         FLinkGameCenterAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -7318,13 +7591,16 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkGoogleAccountRequest : public FPlayFabBaseModel
     {
-        
         // [optional] If another user is already linked to the account, unlink the other user and re-link.
         Boxed<bool> ForceLink;
-        // [optional] Server authentication code obtained on the client by calling getServerAuthCode() (https://developers.google.com/identity/sign-in/android/offline-access) from Google Play for the user.
+
+        /**
+         * [optional] Server authentication code obtained on the client by calling getServerAuthCode()
+         * (https://developers.google.com/identity/sign-in/android/offline-access) from Google Play for the user.
+         */
         FString ServerAuthCode;
 
         FLinkGoogleAccountRequest() :
@@ -7349,11 +7625,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkGoogleAccountResult : public FPlayFabBaseModel
     {
-        
-
         FLinkGoogleAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -7372,16 +7646,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkIOSDeviceIDRequest : public FPlayFabBaseModel
     {
-        
         // Vendor-specific iOS identifier for the user's device.
         FString DeviceId;
+
         // [optional] Specific model of the user's device.
         FString DeviceModel;
+
         // [optional] If another user is already linked to the device, unlink the other user and re-link.
         Boxed<bool> ForceLink;
+
         // [optional] Specific Operating System version for the user's device.
         FString OS;
 
@@ -7411,11 +7687,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkIOSDeviceIDResult : public FPlayFabBaseModel
     {
-        
-
         FLinkIOSDeviceIDResult() :
             FPlayFabBaseModel()
             {}
@@ -7434,14 +7708,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkKongregateAccountRequest : public FPlayFabBaseModel
     {
-        
         // Valid session auth ticket issued by Kongregate
         FString AuthTicket;
+
         // [optional] If another user is already linked to the account, unlink the other user and re-link.
         Boxed<bool> ForceLink;
+
         // Numeric user ID assigned by Kongregate
         FString KongregateId;
 
@@ -7469,11 +7744,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkKongregateAccountResult : public FPlayFabBaseModel
     {
-        
-
         FLinkKongregateAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -7492,13 +7765,16 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkSteamAccountRequest : public FPlayFabBaseModel
     {
-        
         // [optional] If another user is already linked to the account, unlink the other user and re-link.
         Boxed<bool> ForceLink;
-        // Authentication token for the user, returned as a byte array from Steam, and converted to a string (for example, the byte 0x08 should become "08").
+
+        /**
+         * Authentication token for the user, returned as a byte array from Steam, and converted to a string (for example, the byte
+         * 0x08 should become "08").
+         */
         FString SteamTicket;
 
         FLinkSteamAccountRequest() :
@@ -7523,11 +7799,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkSteamAccountResult : public FPlayFabBaseModel
     {
-        
-
         FLinkSteamAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -7546,12 +7820,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkTwitchAccountRequest : public FPlayFabBaseModel
     {
-        
         // Valid token issued by Twitch
         FString AccessToken;
+
         // [optional] If another user is already linked to the account, unlink the other user and re-link.
         Boxed<bool> ForceLink;
 
@@ -7577,11 +7851,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkTwitchAccountResult : public FPlayFabBaseModel
     {
-        
-
         FLinkTwitchAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -7600,16 +7872,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkWindowsHelloAccountRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Device name.
         FString DeviceName;
+
         // [optional] If another user is already linked to the account, unlink the other user and re-link.
         Boxed<bool> ForceLink;
+
         // PublicKey generated by Windows Hello.
         FString PublicKey;
+
         // Player's user named used by Windows Hello.
         FString UserName;
 
@@ -7639,11 +7913,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLinkWindowsHelloAccountResponse : public FPlayFabBaseModel
     {
-        
-
         FLinkWindowsHelloAccountResponse() :
             FPlayFabBaseModel()
             {}
@@ -7662,10 +7934,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FListUsersCharactersRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Unique PlayFab assigned ID of the user on whom the operation will be performed.
         FString PlayFabId;
 
@@ -7689,13 +7960,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FListUsersCharactersResult : public FPlayFabBaseModel
     {
-        
         // [optional] The requested list of characters.
         TArray<FCharacterResult> Characters;
-
         FListUsersCharactersResult() :
             FPlayFabBaseModel(),
             Characters()
@@ -7716,12 +7985,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUserSettings : public FPlayFabBaseModel
     {
-        
         // Boolean for whether this player is eligible for gathering device info.
         bool GatherDeviceInfo;
+
         // Boolean for whether this player is eligible for ad tracking.
         bool NeedsAttribution;
 
@@ -7747,22 +8016,30 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginResult : public FPlayFabBaseModel
     {
-        
-        // [optional] If LoginTitlePlayerAccountEntity flag is set on the login request the title_player_account will also be logged in and returned.
+        /**
+         * [optional] If LoginTitlePlayerAccountEntity flag is set on the login request the title_player_account will also be logged in and
+         * returned.
+         */
         TSharedPtr<FEntityTokenResponse> EntityToken;
+
         // [optional] Results for requested info.
         TSharedPtr<FGetPlayerCombinedInfoResultPayload> InfoResultPayload;
+
         // [optional] The time of this user's previous login. If there was no previous login, then it's DateTime.MinValue
         Boxed<FDateTime> LastLoginTime;
+
         // True if the account was newly created on this login.
         bool NewlyCreated;
+
         // [optional] Player's unique PlayFabId.
         FString PlayFabId;
+
         // [optional] Unique token authorizing the user and game at the server level, for the current session.
         FString SessionTicket;
+
         // [optional] Settings specific to this user.
         TSharedPtr<FUserSettings> SettingsForUser;
 
@@ -7798,27 +8075,37 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithAndroidDeviceIDRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Specific model of the user's device.
         FString AndroidDevice;
+
         // [optional] Android device identifier for the user's device.
         FString AndroidDeviceId;
+
         // [optional] Automatically create a PlayFab account if one is not currently linked to this ID.
         Boxed<bool> CreateAccount;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Specific Operating System version for the user's device.
         FString OS;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithAndroidDeviceIDRequest() :
@@ -7857,23 +8144,31 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithCustomIDRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Automatically create a PlayFab account if one is not currently linked to this ID.
         Boxed<bool> CreateAccount;
+
         // [optional] Custom unique identifier for the user, generated by the title.
         FString CustomId;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithCustomIDRequest() :
@@ -7908,19 +8203,25 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithEmailAddressRequest : public FPlayFabBaseModel
     {
-        
         // Email address for the account.
         FString Email;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // Password for the PlayFab account (6-100 characters)
         FString Password;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithEmailAddressRequest() :
@@ -7951,23 +8252,31 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithFacebookRequest : public FPlayFabBaseModel
     {
-        
         // Unique identifier from Facebook for the user.
         FString AccessToken;
+
         // [optional] Automatically create a PlayFab account if one is not currently linked to this ID.
         Boxed<bool> CreateAccount;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithFacebookRequest() :
@@ -8002,23 +8311,31 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithGameCenterRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Automatically create a PlayFab account if one is not currently linked to this ID.
         Boxed<bool> CreateAccount;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Unique Game Center player id.
         FString PlayerId;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithGameCenterRequest() :
@@ -8053,23 +8370,34 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithGoogleAccountRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Automatically create a PlayFab account if one is not currently linked to this ID.
         Boxed<bool> CreateAccount;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // [optional] OAuth 2.0 server authentication code obtained on the client by calling the getServerAuthCode() (https://developers.google.com/identity/sign-in/android/offline-access) Google client API.
+
+        /**
+         * [optional] OAuth 2.0 server authentication code obtained on the client by calling the getServerAuthCode()
+         * (https://developers.google.com/identity/sign-in/android/offline-access) Google client API.
+         */
         FString ServerAuthCode;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithGoogleAccountRequest() :
@@ -8104,27 +8432,37 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithIOSDeviceIDRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Automatically create a PlayFab account if one is not currently linked to this ID.
         Boxed<bool> CreateAccount;
+
         // [optional] Vendor-specific iOS identifier for the user's device.
         FString DeviceId;
+
         // [optional] Specific model of the user's device.
         FString DeviceModel;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Specific Operating System version for the user's device.
         FString OS;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithIOSDeviceIDRequest() :
@@ -8163,25 +8501,34 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithKongregateRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Token issued by Kongregate's client API for the user.
         FString AuthTicket;
+
         // [optional] Automatically create a PlayFab account if one is not currently linked to this ID.
         Boxed<bool> CreateAccount;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Numeric user ID assigned by Kongregate
         FString KongregateId;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithKongregateRequest() :
@@ -8218,18 +8565,24 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithPlayFabRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // Password for the PlayFab account (6-100 characters)
         FString Password;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
+
         // PlayFab username for the account.
         FString Username;
 
@@ -8261,23 +8614,34 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithSteamRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Automatically create a PlayFab account if one is not currently linked to this ID.
         Boxed<bool> CreateAccount;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // [optional] Authentication token for the user, returned as a byte array from Steam, and converted to a string (for example, the byte 0x08 should become "08").
+
+        /**
+         * [optional] Authentication token for the user, returned as a byte array from Steam, and converted to a string (for example, the byte
+         * 0x08 should become "08").
+         */
         FString SteamTicket;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithSteamRequest() :
@@ -8312,23 +8676,31 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithTwitchRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Token issued by Twitch's API for the user.
         FString AccessToken;
+
         // [optional] Automatically create a PlayFab account if one is not currently linked to this ID.
         Boxed<bool> CreateAccount;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithTwitchRequest() :
@@ -8363,19 +8735,25 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FLoginWithWindowsHelloRequest : public FPlayFabBaseModel
     {
-        
         // The signed response from the user for the Challenge.
         FString ChallengeSignature;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // SHA256 hash of the PublicKey generated by Windows Hello.
         FString PublicKeyHint;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FLoginWithWindowsHelloRequest() :
@@ -8406,24 +8784,30 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FMatchmakeRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Build version to match against. [Note: Required if LobbyId is not specified]
         FString BuildVersion;
+
         // [optional] Character to use for stats based matching. Leave null to use account stats.
         FString CharacterId;
+
         // [optional] Game mode to match make against. [Note: Required if LobbyId is not specified]
         FString GameMode;
+
         // [optional] Lobby identifier to match make against. This is used to select a specific Game Server Instance.
         FString LobbyId;
+
         // [optional] Region to match make against. [Note: Required if LobbyId is not specified]
         Boxed<Region> pfRegion;
+
         // [optional] Start a game session if one with an open slot is not found. Defaults to true.
         Boxed<bool> StartNewIfNoneFound;
+
         // [optional] Player statistic to use in finding a match. May be null for no stat-based matching.
         FString StatisticName;
+
         // [optional] Filter to include and/or exclude Game Server Instances associated with certain Tags
         TSharedPtr<FCollectionFilter> TagFilter;
 
@@ -8461,7 +8845,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum MatchmakeStatus
     {
         MatchmakeStatusComplete,
@@ -8475,24 +8859,29 @@ namespace ClientModels
     PLAYFAB_API MatchmakeStatus readMatchmakeStatusFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API MatchmakeStatus readMatchmakeStatusFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FMatchmakeResult : public FPlayFabBaseModel
     {
-        
         // [optional] timestamp for when the server will expire, if applicable
         FString Expires;
+
         // [optional] unique lobby identifier of the server matched
         FString LobbyID;
+
         // [optional] time in milliseconds the application is configured to wait on matchmaking results
         Boxed<int32> PollWaitTimeMS;
+
         // [optional] IPV4 address of the server
         FString ServerHostname;
+
         // [optional] IPV6 address of the server
         FString ServerIPV6Address;
+
         // [optional] port number to use for non-http communications with the server
         Boxed<int32> ServerPort;
+
         // [optional] result of match making process
         Boxed<MatchmakeStatus> Status;
+
         // [optional] server authorization ticket (used by RedeemMatchmakerTicket to validate user insertion into the game)
         FString Ticket;
 
@@ -8530,16 +8919,21 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FModifyUserVirtualCurrencyResult : public FPlayFabBaseModel
     {
-        
         // Balance of the virtual currency after modification.
         int32 Balance;
-        // Amount added or subtracted from the user's virtual currency. Maximum VC balance is Int32 (2,147,483,647). Any increase over this value will be discarded.
+
+        /**
+         * Amount added or subtracted from the user's virtual currency. Maximum VC balance is Int32 (2,147,483,647). Any increase
+         * over this value will be discarded.
+         */
         int32 BalanceChange;
+
         // [optional] User currency was subtracted from.
         FString PlayFabId;
+
         // [optional] Name of the virtual currency which was modified.
         FString VirtualCurrency;
 
@@ -8569,12 +8963,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FNameIdentifier : public FPlayFabBaseModel
     {
-        
         // [optional] undefined
         FString Id;
+
         // [optional] undefined
         FString Name;
 
@@ -8600,17 +8994,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FOpenTradeRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] Players who are allowed to accept the trade. If null, the trade may be accepted by any player. If empty, the trade may not be accepted by any player.
+        /**
+         * [optional] Players who are allowed to accept the trade. If null, the trade may be accepted by any player. If empty, the trade may
+         * not be accepted by any player.
+         */
         TArray<FString> AllowedPlayerIds;
         // [optional] Player inventory items offered for trade. If not set, the trade is effectively a gift request
         TArray<FString> OfferedInventoryInstanceIds;
         // [optional] Catalog items accepted for the trade. If not set, the trade is effectively a gift.
         TArray<FString> RequestedCatalogItemIds;
-
         FOpenTradeRequest() :
             FPlayFabBaseModel(),
             AllowedPlayerIds(),
@@ -8635,10 +9030,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FOpenTradeResponse : public FPlayFabBaseModel
     {
-        
         // [optional] The information about the trade that was just opened.
         TSharedPtr<FTradeInfo> Trade;
 
@@ -8662,16 +9056,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FPayForPurchaseRequest : public FPlayFabBaseModel
     {
-        
         // Currency to use to fund the purchase.
         FString Currency;
+
         // Purchase order identifier returned from StartPurchase.
         FString OrderId;
+
         // Payment provider to use to fund the purchase.
         FString ProviderName;
+
         // [optional] Payment provider transaction identifier. Required for Facebook Payments.
         FString ProviderTransactionId;
 
@@ -8701,7 +9097,7 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     enum TransactionStatus
     {
         TransactionStatusCreateCart,
@@ -8730,31 +9126,36 @@ namespace ClientModels
     PLAYFAB_API TransactionStatus readTransactionStatusFromValue(const TSharedPtr<FJsonValue>& value);
     PLAYFAB_API TransactionStatus readTransactionStatusFromValue(const FString& value);
 
-    
     struct PLAYFAB_API FPayForPurchaseResult : public FPlayFabBaseModel
     {
-        
         // Local credit applied to the transaction (provider specific).
         uint32 CreditApplied;
+
         // [optional] Purchase order identifier.
         FString OrderId;
+
         // [optional] Provider used for the transaction.
         FString ProviderData;
+
         // [optional] A token generated by the provider to authenticate the request (provider-specific).
         FString ProviderToken;
+
         // [optional] URL to the purchase provider page that details the purchase.
         FString PurchaseConfirmationPageURL;
+
         // [optional] Currency for the transaction, may be a virtual currency or real money.
         FString PurchaseCurrency;
+
         // Cost of the transaction.
         uint32 PurchasePrice;
+
         // [optional] Status of the transaction.
         Boxed<TransactionStatus> Status;
+
         // [optional] Virtual currencies granted by the transaction, if any.
         TMap<FString, int32> VCAmount;
         // [optional] Current virtual currency balances for the user.
         TMap<FString, int32> VirtualCurrency;
-
         FPayForPurchaseResult() :
             FPlayFabBaseModel(),
             CreditApplied(0),
@@ -8793,16 +9194,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FPaymentOption : public FPlayFabBaseModel
     {
-        
         // [optional] Specific currency to use to fund the purchase.
         FString Currency;
+
         // Amount of the specified currency needed for the purchase.
         uint32 Price;
+
         // [optional] Name of the purchase provider for this option.
         FString ProviderName;
+
         // Amount of existing credit the user has with the provider.
         uint32 StoreCredit;
 
@@ -8832,20 +9235,24 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FPurchaseItemRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Catalog version for the items to be purchased (defaults to most recent version.
         FString CatalogVersion;
+
         // [optional] Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
+
         // Unique identifier of the item to purchase.
         FString ItemId;
+
         // Price the client expects to pay for the item (in case a new catalog or store was uploaded, with new prices).
         int32 Price;
+
         // [optional] Store to buy this item through. If not set, prices default to those in the catalog.
         FString StoreId;
+
         // Virtual currency to use to purchase the item.
         FString VirtualCurrency;
 
@@ -8879,13 +9286,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FPurchaseItemResult : public FPlayFabBaseModel
     {
-        
         // [optional] Details for the items purchased.
         TArray<FItemInstance> Items;
-
         FPurchaseItemResult() :
             FPlayFabBaseModel(),
             Items()
@@ -8906,14 +9311,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRedeemCouponRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Catalog version of the coupon. If null, uses the default catalog
         FString CatalogVersion;
+
         // [optional] Optional identifier for the Character that should receive the item. If null, item is added to the player
         FString CharacterId;
+
         // Generated coupon code to redeem.
         FString CouponCode;
 
@@ -8941,13 +9347,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRedeemCouponResult : public FPlayFabBaseModel
     {
-        
         // [optional] Items granted to the player as a result of redeeming the coupon.
         TArray<FItemInstance> GrantedItems;
-
         FRedeemCouponResult() :
             FPlayFabBaseModel(),
             GrantedItems()
@@ -8968,14 +9372,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRegisterForIOSPushNotificationRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Message to display when confirming push notification.
         FString ConfirmationMessage;
+
         // Unique token generated by the Apple Push Notification service when the title registered to receive push notifications.
         FString DeviceToken;
+
         // [optional] If true, send a test push message immediately after sucessful registration. Defaults to false.
         Boxed<bool> SendPushNotificationConfirmation;
 
@@ -9003,11 +9408,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRegisterForIOSPushNotificationResult : public FPlayFabBaseModel
     {
-        
-
         FRegisterForIOSPushNotificationResult() :
             FPlayFabBaseModel()
             {}
@@ -9026,28 +9429,43 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRegisterPlayFabUserRequest : public FPlayFabBaseModel
     {
-        
         // [optional] An optional parameter for setting the display name for this title (3-25 characters).
         FString DisplayName;
+
         // [optional] User email address attached to their account
         FString Email;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Password for the PlayFab account (6-100 characters)
         FString Password;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
-        // [optional] An optional parameter that specifies whether both the username and email parameters are required. If true, both parameters are required; if false, the user must supply either the username or email parameter. The default value is true.
+
+        /**
+         * [optional] An optional parameter that specifies whether both the username and email parameters are required. If true, both
+         * parameters are required; if false, the user must supply either the username or email parameter. The default value is
+         * true.
+         */
         Boxed<bool> RequireBothUsernameAndEmail;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
+
         // [optional] PlayFab username for the account (3-20 characters)
         FString Username;
 
@@ -9089,16 +9507,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRegisterPlayFabUserResult : public FPlayFabBaseModel
     {
-        
         // [optional] PlayFab unique identifier for this newly created account.
         FString PlayFabId;
+
         // [optional] Unique token identifying the user and game at the server level, for the current session.
         FString SessionTicket;
+
         // [optional] Settings specific to this user.
         TSharedPtr<FUserSettings> SettingsForUser;
+
         // [optional] PlayFab unique user name.
         FString Username;
 
@@ -9128,24 +9548,33 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRegisterWithWindowsHelloRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Device name.
         FString DeviceName;
+
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Flags for which pieces of info to return for the user.
         TSharedPtr<FGetPlayerCombinedInfoRequestParams> InfoRequestParameters;
+
         // [optional] Flag to automatically login the player's title_player_account and return the associated entity token.
         Boxed<bool> LoginTitlePlayerAccountEntity;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
+
         // [optional] PublicKey generated by Windows Hello.
         FString PublicKey;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
+
         // [optional] Player's user name used by Windows Hello.
         FString UserName;
 
@@ -9183,11 +9612,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRemoveContactEmailRequest : public FPlayFabBaseModel
     {
-        
-
         FRemoveContactEmailRequest() :
             FPlayFabBaseModel()
             {}
@@ -9206,11 +9633,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRemoveContactEmailResult : public FPlayFabBaseModel
     {
-        
-
         FRemoveContactEmailResult() :
             FPlayFabBaseModel()
             {}
@@ -9229,10 +9654,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRemoveFriendRequest : public FPlayFabBaseModel
     {
-        
         // PlayFab identifier of the friend account which is to be removed.
         FString FriendPlayFabId;
 
@@ -9256,11 +9680,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRemoveFriendResult : public FPlayFabBaseModel
     {
-        
-
         FRemoveFriendResult() :
             FPlayFabBaseModel()
             {}
@@ -9279,10 +9701,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRemoveGenericIDRequest : public FPlayFabBaseModel
     {
-        
         // Generic service identifier to be removed from the player.
         FGenericServiceId GenericId;
 
@@ -9306,11 +9727,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRemoveGenericIDResult : public FPlayFabBaseModel
     {
-        
-
         FRemoveGenericIDResult() :
             FPlayFabBaseModel()
             {}
@@ -9329,10 +9748,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRemoveSharedGroupMembersRequest : public FPlayFabBaseModel
     {
-        
         // An array of unique PlayFab assigned ID of the user on whom the operation will be performed.
         TArray<FString> PlayFabIds;
         // Unique identifier for the shared group.
@@ -9360,11 +9778,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRemoveSharedGroupMembersResult : public FPlayFabBaseModel
     {
-        
-
         FRemoveSharedGroupMembersResult() :
             FPlayFabBaseModel()
             {}
@@ -9383,12 +9799,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FReportPlayerClientRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Optional additional comment by reporting player.
         FString Comment;
+
         // Unique PlayFab identifier of the reported player.
         FString ReporteeId;
 
@@ -9414,10 +9830,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FReportPlayerClientResult : public FPlayFabBaseModel
     {
-        
         // The number of remaining reports which may be filed today.
         int32 SubmissionsRemaining;
 
@@ -9441,10 +9856,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRestoreIOSPurchasesRequest : public FPlayFabBaseModel
     {
-        
         // Base64 encoded receipt data, passed back by the App Store as a result of a successful purchase.
         FString ReceiptData;
 
@@ -9468,11 +9882,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FRestoreIOSPurchasesResult : public FPlayFabBaseModel
     {
-        
-
         FRestoreIOSPurchasesResult() :
             FPlayFabBaseModel()
             {}
@@ -9491,15 +9903,19 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FSendAccountRecoveryEmailRequest : public FPlayFabBaseModel
     {
-        
         // User email address attached to their account
         FString Email;
+
         // [optional] The email template id of the account recovery email template to send.
         FString EmailTemplateId;
-        // Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a title has been selected.
+
+        /**
+         * Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+         * title has been selected.
+         */
         FString TitleId;
 
         FSendAccountRecoveryEmailRequest() :
@@ -9526,11 +9942,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FSendAccountRecoveryEmailResult : public FPlayFabBaseModel
     {
-        
-
         FSendAccountRecoveryEmailResult() :
             FPlayFabBaseModel()
             {}
@@ -9549,15 +9963,14 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FSetFriendTagsRequest : public FPlayFabBaseModel
     {
-        
         // PlayFab identifier of the friend account to which the tag(s) should be applied.
         FString FriendPlayFabId;
+
         // Array of tags to set on the friend account.
         TArray<FString> Tags;
-
         FSetFriendTagsRequest() :
             FPlayFabBaseModel(),
             FriendPlayFabId(),
@@ -9580,11 +9993,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FSetFriendTagsResult : public FPlayFabBaseModel
     {
-        
-
         FSetFriendTagsResult() :
             FPlayFabBaseModel()
             {}
@@ -9603,12 +10014,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FSetPlayerSecretRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
         FString EncryptedRequest;
+
         // [optional] Player secret that is used to verify API request signatures (Enterprise Only).
         FString PlayerSecret;
 
@@ -9634,11 +10045,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FSetPlayerSecretResult : public FPlayFabBaseModel
     {
-        
-
         FSetPlayerSecretResult() :
             FPlayFabBaseModel()
             {}
@@ -9657,20 +10066,24 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FStartGameRequest : public FPlayFabBaseModel
     {
-        
         // version information for the build of the game server which is to be started
         FString BuildVersion;
+
         // [optional] character to use for stats based matching. Leave null to use account stats
         FString CharacterId;
+
         // [optional] custom command line argument when starting game server process
         FString CustomCommandLineData;
+
         // the title-defined game mode this server is to be running (defaults to 0 if there is only one mode)
         FString GameMode;
+
         // the region to associate this server with for match filtering
         Region pfRegion;
+
         // [optional] player statistic for others to use in finding this game. May be null for no stat-based matching
         FString StatisticName;
 
@@ -9704,22 +10117,27 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FStartGameResult : public FPlayFabBaseModel
     {
-        
         // [optional] timestamp for when the server should expire, if applicable
         FString Expires;
+
         // [optional] unique identifier for the lobby of the server started
         FString LobbyID;
+
         // [optional] password required to log into the server
         FString Password;
+
         // [optional] server IPV4 address
         FString ServerHostname;
+
         // [optional] server IPV6 address
         FString ServerIPV6Address;
+
         // [optional] port on the server to be used for communication
         Boxed<int32> ServerPort;
+
         // [optional] unique identifier for the server
         FString Ticket;
 
@@ -9755,12 +10173,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FStartPurchaseRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Catalog version for the items to be purchased. Defaults to most recent catalog.
         FString CatalogVersion;
+
         // Array of items to purchase.
         TArray<FItemPurchaseRequest> Items;
         // [optional] Store through which to purchase items. If not set, prices will be pulled from the catalog itself.
@@ -9790,19 +10208,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FStartPurchaseResult : public FPlayFabBaseModel
     {
-        
         // [optional] Cart items to be purchased.
         TArray<FCartItem> Contents;
         // [optional] Purchase order identifier.
         FString OrderId;
+
         // [optional] Available methods by which the user can pay.
         TArray<FPaymentOption> PaymentOptions;
         // [optional] Current virtual currency totals for the user.
         TMap<FString, int32> VirtualCurrencyBalances;
-
         FStartPurchaseResult() :
             FPlayFabBaseModel(),
             Contents(),
@@ -9829,15 +10246,19 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FStatisticUpdate : public FPlayFabBaseModel
     {
-        
         // unique name of the statistic
         FString StatisticName;
+
         // statistic value for the player
         int32 Value;
-        // [optional] for updates to an existing statistic value for a player, the version of the statistic when it was loaded. Null when setting the statistic value for the first time.
+
+        /**
+         * [optional] for updates to an existing statistic value for a player, the version of the statistic when it was loaded. Null when
+         * setting the statistic value for the first time.
+         */
         Boxed<uint32> Version;
 
         FStatisticUpdate() :
@@ -9864,12 +10285,12 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FSubtractUserVirtualCurrencyRequest : public FPlayFabBaseModel
     {
-        
         // Amount to be subtracted from the user balance of the specified virtual currency.
         int32 Amount;
+
         // Name of the virtual currency which is to be decremented.
         FString VirtualCurrency;
 
@@ -9895,11 +10316,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkAndroidDeviceIDRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] Android device identifier for the user's device. If not specified, the most recently signed in Android Device ID will be used.
+        /**
+         * [optional] Android device identifier for the user's device. If not specified, the most recently signed in Android Device ID will be
+         * used.
+         */
         FString AndroidDeviceId;
 
         FUnlinkAndroidDeviceIDRequest() :
@@ -9922,11 +10345,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkAndroidDeviceIDResult : public FPlayFabBaseModel
     {
-        
-
         FUnlinkAndroidDeviceIDResult() :
             FPlayFabBaseModel()
             {}
@@ -9945,11 +10366,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkCustomIDRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] Custom unique identifier for the user, generated by the title. If not specified, the most recently signed in Custom ID will be used.
+        /**
+         * [optional] Custom unique identifier for the user, generated by the title. If not specified, the most recently signed in Custom ID
+         * will be used.
+         */
         FString CustomId;
 
         FUnlinkCustomIDRequest() :
@@ -9972,11 +10395,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkCustomIDResult : public FPlayFabBaseModel
     {
-        
-
         FUnlinkCustomIDResult() :
             FPlayFabBaseModel()
             {}
@@ -9995,11 +10416,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkFacebookAccountRequest : public FPlayFabBaseModel
     {
-        
-
         FUnlinkFacebookAccountRequest() :
             FPlayFabBaseModel()
             {}
@@ -10018,11 +10437,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkFacebookAccountResult : public FPlayFabBaseModel
     {
-        
-
         FUnlinkFacebookAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -10041,11 +10458,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkGameCenterAccountRequest : public FPlayFabBaseModel
     {
-        
-
         FUnlinkGameCenterAccountRequest() :
             FPlayFabBaseModel()
             {}
@@ -10064,11 +10479,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkGameCenterAccountResult : public FPlayFabBaseModel
     {
-        
-
         FUnlinkGameCenterAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -10087,11 +10500,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkGoogleAccountRequest : public FPlayFabBaseModel
     {
-        
-
         FUnlinkGoogleAccountRequest() :
             FPlayFabBaseModel()
             {}
@@ -10110,11 +10521,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkGoogleAccountResult : public FPlayFabBaseModel
     {
-        
-
         FUnlinkGoogleAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -10133,11 +10542,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkIOSDeviceIDRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] Vendor-specific iOS identifier for the user's device. If not specified, the most recently signed in iOS Device ID will be used.
+        /**
+         * [optional] Vendor-specific iOS identifier for the user's device. If not specified, the most recently signed in iOS Device ID will
+         * be used.
+         */
         FString DeviceId;
 
         FUnlinkIOSDeviceIDRequest() :
@@ -10160,11 +10571,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkIOSDeviceIDResult : public FPlayFabBaseModel
     {
-        
-
         FUnlinkIOSDeviceIDResult() :
             FPlayFabBaseModel()
             {}
@@ -10183,11 +10592,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkKongregateAccountRequest : public FPlayFabBaseModel
     {
-        
-
         FUnlinkKongregateAccountRequest() :
             FPlayFabBaseModel()
             {}
@@ -10206,11 +10613,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkKongregateAccountResult : public FPlayFabBaseModel
     {
-        
-
         FUnlinkKongregateAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -10229,11 +10634,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkSteamAccountRequest : public FPlayFabBaseModel
     {
-        
-
         FUnlinkSteamAccountRequest() :
             FPlayFabBaseModel()
             {}
@@ -10252,11 +10655,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkSteamAccountResult : public FPlayFabBaseModel
     {
-        
-
         FUnlinkSteamAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -10275,11 +10676,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkTwitchAccountRequest : public FPlayFabBaseModel
     {
-        
-
         FUnlinkTwitchAccountRequest() :
             FPlayFabBaseModel()
             {}
@@ -10298,11 +10697,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkTwitchAccountResult : public FPlayFabBaseModel
     {
-        
-
         FUnlinkTwitchAccountResult() :
             FPlayFabBaseModel()
             {}
@@ -10321,10 +10718,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkWindowsHelloAccountRequest : public FPlayFabBaseModel
     {
-        
         // SHA256 hash of the PublicKey generated by Windows Hello.
         FString PublicKeyHint;
 
@@ -10348,11 +10744,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlinkWindowsHelloAccountResponse : public FPlayFabBaseModel
     {
-        
-
         FUnlinkWindowsHelloAccountResponse() :
             FPlayFabBaseModel()
             {}
@@ -10371,17 +10765,25 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlockContainerInstanceRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] Specifies the catalog version that should be used to determine container contents.  If unspecified, uses catalog associated with the item instance.
+        /**
+         * [optional] Specifies the catalog version that should be used to determine container contents. If unspecified, uses catalog
+         * associated with the item instance.
+         */
         FString CatalogVersion;
+
         // [optional] Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
+
         // ItemInstanceId of the container to unlock.
         FString ContainerItemInstanceId;
-        // [optional] ItemInstanceId of the key that will be consumed by unlocking this container.  If the container requires a key, this parameter is required.
+
+        /**
+         * [optional] ItemInstanceId of the key that will be consumed by unlocking this container. If the container requires a key, this
+         * parameter is required.
+         */
         FString KeyItemInstanceId;
 
         FUnlockContainerInstanceRequest() :
@@ -10410,14 +10812,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlockContainerItemRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] Specifies the catalog version that should be used to determine container contents.  If unspecified, uses default/primary catalog.
+        /**
+         * [optional] Specifies the catalog version that should be used to determine container contents. If unspecified, uses default/primary
+         * catalog.
+         */
         FString CatalogVersion;
+
         // [optional] Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
+
         // Catalog ItemId of the container type to unlock.
         FString ContainerItemId;
 
@@ -10445,19 +10851,19 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUnlockContainerItemResult : public FPlayFabBaseModel
     {
-        
         // [optional] Items granted to the player as a result of unlocking the container.
         TArray<FItemInstance> GrantedItems;
         // [optional] Unique instance identifier of the container unlocked.
         FString UnlockedItemInstanceId;
+
         // [optional] Unique instance identifier of the key used to unlock the container, if applicable.
         FString UnlockedWithItemInstanceId;
+
         // [optional] Virtual currency granted to the player as a result of unlocking the container.
         TMap<FString, uint32> VirtualCurrency;
-
         FUnlockContainerItemResult() :
             FPlayFabBaseModel(),
             GrantedItems(),
@@ -10484,10 +10890,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateAvatarUrlRequest : public FPlayFabBaseModel
     {
-        
         // URL of the avatar image. If empty, it removes the existing avatar URL.
         FString ImageUrl;
 
@@ -10511,15 +10916,21 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateCharacterDataRequest : public FPlayFabBaseModel
     {
-        
         // Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
-        // [optional] Key-value pairs to be written to the custom data. Note that keys are trimmed of whitespace, are limited in size, and may not begin with a '!' character or be null.
+
+        /**
+         * [optional] Key-value pairs to be written to the custom data. Note that keys are trimmed of whitespace, are limited in size, and may
+         * not begin with a '!' character or be null.
+         */
         TMap<FString, FString> Data;
-        // [optional] Optional list of Data-keys to remove from UserData.  Some SDKs cannot insert null-values into Data due to language constraints.  Use this to delete the keys directly.
+        /**
+         * [optional] Optional list of Data-keys to remove from UserData. Some SDKs cannot insert null-values into Data due to language
+         * constraints. Use this to delete the keys directly.
+         */
         TArray<FString> KeysToRemove;
         // [optional] Permission to be applied to all user data keys written in this request. Defaults to "private" if not set.
         Boxed<UserDataPermission> Permission;
@@ -10550,11 +10961,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateCharacterDataResult : public FPlayFabBaseModel
     {
-        
-        // Indicates the current version of the data that has been set. This is incremented with every set call for that type of data (read-only, internal, etc). This version can be provided in Get calls to find updated data.
+        /**
+         * Indicates the current version of the data that has been set. This is incremented with every set call for that type of
+         * data (read-only, internal, etc). This version can be provided in Get calls to find updated data.
+         */
         uint32 DataVersion;
 
         FUpdateCharacterDataResult() :
@@ -10577,15 +10990,14 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateCharacterStatisticsRequest : public FPlayFabBaseModel
     {
-        
         // Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
+
         // [optional] Statistics to be updated with the provided values.
         TMap<FString, int32> CharacterStatistics;
-
         FUpdateCharacterStatisticsRequest() :
             FPlayFabBaseModel(),
             CharacterId(),
@@ -10608,11 +11020,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateCharacterStatisticsResult : public FPlayFabBaseModel
     {
-        
-
         FUpdateCharacterStatisticsResult() :
             FPlayFabBaseModel()
             {}
@@ -10631,13 +11041,11 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdatePlayerStatisticsRequest : public FPlayFabBaseModel
     {
-        
         // Statistics to be updated with the provided values
         TArray<FStatisticUpdate> Statistics;
-
         FUpdatePlayerStatisticsRequest() :
             FPlayFabBaseModel(),
             Statistics()
@@ -10658,11 +11066,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdatePlayerStatisticsResult : public FPlayFabBaseModel
     {
-        
-
         FUpdatePlayerStatisticsResult() :
             FPlayFabBaseModel()
             {}
@@ -10681,16 +11087,22 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateSharedGroupDataRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] Key-value pairs to be written to the custom data. Note that keys are trimmed of whitespace, are limited in size, and may not begin with a '!' character or be null.
+        /**
+         * [optional] Key-value pairs to be written to the custom data. Note that keys are trimmed of whitespace, are limited in size, and may
+         * not begin with a '!' character or be null.
+         */
         TMap<FString, FString> Data;
-        // [optional] Optional list of Data-keys to remove from UserData.  Some SDKs cannot insert null-values into Data due to language constraints.  Use this to delete the keys directly.
+        /**
+         * [optional] Optional list of Data-keys to remove from UserData. Some SDKs cannot insert null-values into Data due to language
+         * constraints. Use this to delete the keys directly.
+         */
         TArray<FString> KeysToRemove;
         // [optional] Permission to be applied to all user data keys in this request.
         Boxed<UserDataPermission> Permission;
+
         // Unique identifier for the shared group.
         FString SharedGroupId;
 
@@ -10720,11 +11132,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateSharedGroupDataResult : public FPlayFabBaseModel
     {
-        
-
         FUpdateSharedGroupDataResult() :
             FPlayFabBaseModel()
             {}
@@ -10743,15 +11153,23 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateUserDataRequest : public FPlayFabBaseModel
     {
-        
-        // [optional] Key-value pairs to be written to the custom data. Note that keys are trimmed of whitespace, are limited in size, and may not begin with a '!' character or be null.
+        /**
+         * [optional] Key-value pairs to be written to the custom data. Note that keys are trimmed of whitespace, are limited in size, and may
+         * not begin with a '!' character or be null.
+         */
         TMap<FString, FString> Data;
-        // [optional] Optional list of Data-keys to remove from UserData.  Some SDKs cannot insert null-values into Data due to language constraints.  Use this to delete the keys directly.
+        /**
+         * [optional] Optional list of Data-keys to remove from UserData. Some SDKs cannot insert null-values into Data due to language
+         * constraints. Use this to delete the keys directly.
+         */
         TArray<FString> KeysToRemove;
-        // [optional] Permission to be applied to all user data keys written in this request. Defaults to "private" if not set. This is used for requests by one player for information about another player; those requests will only return Public keys.
+        /**
+         * [optional] Permission to be applied to all user data keys written in this request. Defaults to "private" if not set. This is used
+         * for requests by one player for information about another player; those requests will only return Public keys.
+         */
         Boxed<UserDataPermission> Permission;
 
         FUpdateUserDataRequest() :
@@ -10778,11 +11196,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateUserDataResult : public FPlayFabBaseModel
     {
-        
-        // Indicates the current version of the data that has been set. This is incremented with every set call for that type of data (read-only, internal, etc). This version can be provided in Get calls to find updated data.
+        /**
+         * Indicates the current version of the data that has been set. This is incremented with every set call for that type of
+         * data (read-only, internal, etc). This version can be provided in Get calls to find updated data.
+         */
         uint32 DataVersion;
 
         FUpdateUserDataResult() :
@@ -10805,10 +11225,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateUserTitleDisplayNameRequest : public FPlayFabBaseModel
     {
-        
         // New title display name for the user - must be between 3 and 25 characters.
         FString DisplayName;
 
@@ -10832,10 +11251,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FUpdateUserTitleDisplayNameResult : public FPlayFabBaseModel
     {
-        
         // [optional] Current title display name for the user (this will be the original display name if the rename attempt failed).
         FString DisplayName;
 
@@ -10859,18 +11277,21 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FValidateAmazonReceiptRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Catalog version to use when granting receipt item. If null, defaults to primary catalog.
         FString CatalogVersion;
+
         // Currency used for the purchase.
         FString CurrencyCode;
+
         // Amount of the stated currency paid for the object.
         int32 PurchasePrice;
+
         // ReceiptId returned by the Amazon App Store in-app purchase API
         FString ReceiptId;
+
         // AmazonId of the user making the purchase as returned by the Amazon App Store in-app purchase API
         FString UserId;
 
@@ -10902,11 +11323,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FValidateAmazonReceiptResult : public FPlayFabBaseModel
     {
-        
-
         FValidateAmazonReceiptResult() :
             FPlayFabBaseModel()
             {}
@@ -10925,16 +11344,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FValidateGooglePlayPurchaseRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Currency used for the purchase.
         FString CurrencyCode;
+
         // [optional] Amount of the stated currency paid for the object.
         Boxed<uint32> PurchasePrice;
+
         // Original JSON string returned by the Google Play IAB API.
         FString ReceiptJson;
+
         // Signature returned by the Google Play IAB API.
         FString Signature;
 
@@ -10964,11 +11385,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FValidateGooglePlayPurchaseResult : public FPlayFabBaseModel
     {
-        
-
         FValidateGooglePlayPurchaseResult() :
             FPlayFabBaseModel()
             {}
@@ -10987,14 +11406,15 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FValidateIOSReceiptRequest : public FPlayFabBaseModel
     {
-        
         // Currency used for the purchase.
         FString CurrencyCode;
+
         // Amount of the stated currency paid for the object.
         int32 PurchasePrice;
+
         // Base64 encoded receipt data, passed back by the App Store as a result of a successful purchase.
         FString ReceiptData;
 
@@ -11022,11 +11442,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FValidateIOSReceiptResult : public FPlayFabBaseModel
     {
-        
-
         FValidateIOSReceiptResult() :
             FPlayFabBaseModel()
             {}
@@ -11045,16 +11463,18 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FValidateWindowsReceiptRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Catalog version to use when granting receipt item. If null, defaults to primary catalog.
         FString CatalogVersion;
+
         // Currency used for the purchase.
         FString CurrencyCode;
+
         // Amount of the stated currency paid for the object.
         uint32 PurchasePrice;
+
         // XML Receipt returned by the Windows App Store in-app purchase API
         FString Receipt;
 
@@ -11084,11 +11504,9 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FValidateWindowsReceiptResult : public FPlayFabBaseModel
     {
-        
-
         FValidateWindowsReceiptResult() :
             FPlayFabBaseModel()
             {}
@@ -11107,16 +11525,20 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FWriteClientCharacterEventRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Custom event properties. Each property consists of a name (string) and a value (JSON object).
         TMap<FString, FJsonKeeper> Body;
         // Unique PlayFab assigned ID for a specific character owned by a user
         FString CharacterId;
-        // The name of the event, within the namespace scoped to the title. The naming convention is up to the caller, but it commonly follows the subject_verb_object pattern (e.g. player_logged_in).
+
+        /**
+         * The name of the event, within the namespace scoped to the title. The naming convention is up to the caller, but it
+         * commonly follows the subject_verb_object pattern (e.g. player_logged_in).
+         */
         FString EventName;
+
         // [optional] The time (in UTC) associated with this event. The value dafaults to the current time.
         Boxed<FDateTime> Timestamp;
 
@@ -11146,14 +11568,17 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FWriteClientPlayerEventRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Custom data properties associated with the event. Each property consists of a name (string) and a value (JSON object).
         TMap<FString, FJsonKeeper> Body;
-        // The name of the event, within the namespace scoped to the title. The naming convention is up to the caller, but it commonly follows the subject_verb_object pattern (e.g. player_logged_in).
+        /**
+         * The name of the event, within the namespace scoped to the title. The naming convention is up to the caller, but it
+         * commonly follows the subject_verb_object pattern (e.g. player_logged_in).
+         */
         FString EventName;
+
         // [optional] The time (in UTC) associated with this event. The value dafaults to the current time.
         Boxed<FDateTime> Timestamp;
 
@@ -11181,11 +11606,13 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FWriteEventResponse : public FPlayFabBaseModel
     {
-        
-        // [optional] The unique identifier of the event. The values of this identifier consist of ASCII characters and are not constrained to any particular format.
+        /**
+         * [optional] The unique identifier of the event. The values of this identifier consist of ASCII characters and are not constrained to
+         * any particular format.
+         */
         FString EventId;
 
         FWriteEventResponse() :
@@ -11208,14 +11635,17 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
+
     struct PLAYFAB_API FWriteTitleEventRequest : public FPlayFabBaseModel
     {
-        
         // [optional] Custom event properties. Each property consists of a name (string) and a value (JSON object).
         TMap<FString, FJsonKeeper> Body;
-        // The name of the event, within the namespace scoped to the title. The naming convention is up to the caller, but it commonly follows the subject_verb_object pattern (e.g. player_logged_in).
+        /**
+         * The name of the event, within the namespace scoped to the title. The naming convention is up to the caller, but it
+         * commonly follows the subject_verb_object pattern (e.g. player_logged_in).
+         */
         FString EventName;
+
         // [optional] The time (in UTC) associated with this event. The value dafaults to the current time.
         Boxed<FDateTime> Timestamp;
 
@@ -11243,7 +11673,6 @@ namespace ClientModels
         void writeJSON(JsonWriter& writer) const override;
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
-    
 
 }
 }

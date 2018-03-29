@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FEmptyPlayFabDelegate OnSuccess; 
 
-    // Adds users to the set of those able to update both the shared data, as well as the set of users  in the group. Only users in the group can add new members. Shared Groups are designed for sharing data between a very  small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
+    // Adds users to the set of those able to update both the shared data, as well as the set of users in the group. Only users in the group can add new members. Shared Groups are designed for sharing data between a very small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Client|Shared Group Data")
         static UPFClientAddSharedGroupMembers* AddSharedGroupMembers(class APlayerController* PlayerController, const FBPClientAddSharedGroupMembersRequest& InAddSharedGroupMembersRequest);
 

@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPClientAcceptTradeResponseDelegate OnSuccess;
 
-    // Accepts an open trade (one that has not yet been accepted or cancelled), if the locally signed-in player is in the  allowed player list for the trade, or it is open to all players. If the call is successful, the offered and accepted items will be swapped  between the two players' inventories.
+    // Accepts an open trade (one that has not yet been accepted or cancelled), if the locally signed-in player is in the allowed player list for the trade, or it is open to all players. If the call is successful, the offered and accepted items will be swapped between the two players' inventories.
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Client|Trading")
         static UPFClientAcceptTrade* AcceptTrade(class APlayerController* PlayerController, const FBPClientAcceptTradeRequest& InAcceptTradeRequest);
 

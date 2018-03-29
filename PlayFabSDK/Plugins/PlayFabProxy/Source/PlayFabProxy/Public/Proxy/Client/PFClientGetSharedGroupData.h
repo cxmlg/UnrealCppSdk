@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPClientGetSharedGroupDataResultDelegate OnSuccess;
 
-    // Retrieves data stored in a shared group object, as well as the list of members in  the group. Non-members of the group may use this to retrieve group data, including membership, but they  will not receive data for keys marked as private. Shared Groups are designed for sharing data between a  very small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
+    // Retrieves data stored in a shared group object, as well as the list of members in the group. Non-members of the group may use this to retrieve group data, including membership, but they will not receive data for keys marked as private. Shared Groups are designed for sharing data between a very small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Client|Shared Group Data")
         static UPFClientGetSharedGroupData* GetSharedGroupData(class APlayerController* PlayerController, const FBPClientGetSharedGroupDataRequest& InGetSharedGroupDataRequest);
 

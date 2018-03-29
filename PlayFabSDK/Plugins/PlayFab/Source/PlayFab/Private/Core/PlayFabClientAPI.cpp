@@ -63,6 +63,11 @@ void UPlayFabClientAPI::MultiStepClientLogin(bool needsAttribution)
     }
 }
 
+void UPlayFabClientAPI::SetDevSecretKey(const FString& developerSecretKey)
+{
+    PlayFabSettings::developerSecretKey = developerSecretKey;
+}
+
 bool UPlayFabClientAPI::AcceptTrade(
     ClientModels::FAcceptTradeRequest& request,
     const FAcceptTradeDelegate& SuccessDelegate,
@@ -2076,11 +2081,9 @@ void UPlayFabClientAPI::OnLoginWithAndroidDeviceIDResult(FHttpRequestPtr HttpReq
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2108,11 +2111,9 @@ void UPlayFabClientAPI::OnLoginWithCustomIDResult(FHttpRequestPtr HttpRequest, F
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2140,11 +2141,9 @@ void UPlayFabClientAPI::OnLoginWithEmailAddressResult(FHttpRequestPtr HttpReques
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2172,11 +2171,9 @@ void UPlayFabClientAPI::OnLoginWithFacebookResult(FHttpRequestPtr HttpRequest, F
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2204,11 +2201,9 @@ void UPlayFabClientAPI::OnLoginWithGameCenterResult(FHttpRequestPtr HttpRequest,
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2236,11 +2231,9 @@ void UPlayFabClientAPI::OnLoginWithGoogleAccountResult(FHttpRequestPtr HttpReque
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2268,11 +2261,9 @@ void UPlayFabClientAPI::OnLoginWithIOSDeviceIDResult(FHttpRequestPtr HttpRequest
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2300,11 +2291,9 @@ void UPlayFabClientAPI::OnLoginWithKongregateResult(FHttpRequestPtr HttpRequest,
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2332,11 +2321,9 @@ void UPlayFabClientAPI::OnLoginWithPlayFabResult(FHttpRequestPtr HttpRequest, FH
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2364,11 +2351,9 @@ void UPlayFabClientAPI::OnLoginWithSteamResult(FHttpRequestPtr HttpRequest, FHtt
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2396,11 +2381,9 @@ void UPlayFabClientAPI::OnLoginWithTwitchResult(FHttpRequestPtr HttpRequest, FHt
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2428,11 +2411,9 @@ void UPlayFabClientAPI::OnLoginWithWindowsHelloResult(FHttpRequestPtr HttpReques
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2623,10 +2604,8 @@ void UPlayFabClientAPI::OnRegisterPlayFabUserResult(FHttpRequestPtr HttpRequest,
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
         if (outResult.SessionTicket.Len() > 0)
-        {
             PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }
@@ -2654,11 +2633,9 @@ void UPlayFabClientAPI::OnRegisterWithWindowsHelloResult(FHttpRequestPtr HttpReq
     FPlayFabError errorResult;
     if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
     {
-        if (outResult.SessionTicket.Len() > 0)
-        {
-            PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
-            MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
-        }
+        if (outResult.SessionTicket.Len() > 0) PlayFabSettings::clientSessionTicket = outResult.SessionTicket;
+        if (outResult.EntityToken.IsValid()) PlayFabSettings::entityToken = outResult.EntityToken->EntityToken;
+        MultiStepClientLogin(outResult.SettingsForUser->NeedsAttribution);
 
         SuccessDelegate.ExecuteIfBound(outResult);
     }

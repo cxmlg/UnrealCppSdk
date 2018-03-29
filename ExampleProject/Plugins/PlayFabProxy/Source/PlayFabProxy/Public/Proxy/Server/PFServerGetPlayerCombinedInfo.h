@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPServerGetPlayerCombinedInfoResultDelegate OnSuccess;
 
-    // Returns whatever info is requested in the response for the user. Note that PII (like email address, facebook id)             may be returned. All parameters default to false.
+    // Returns whatever info is requested in the response for the user. Note that PII (like email address, facebook id)       may be returned. All parameters default to false.
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Server|Player Data Management")
         static UPFServerGetPlayerCombinedInfo* GetPlayerCombinedInfo(class APlayerController* PlayerController, const FBPServerGetPlayerCombinedInfoRequest& InGetPlayerCombinedInfoRequest);
 

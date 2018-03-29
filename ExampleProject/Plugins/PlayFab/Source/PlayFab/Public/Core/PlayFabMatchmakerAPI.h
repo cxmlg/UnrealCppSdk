@@ -33,11 +33,11 @@ namespace PlayFab
          * This API allows the external match-making service to confirm that the user has a valid Session Ticket for the title, in order to securely enable match-making. The client passes the user's Session Ticket to the external match-making service, which then passes the Session Ticket in as the AuthorizationTicket in this call.
          */
         bool AuthUser(MatchmakerModels::FAuthUserRequest& request, const FAuthUserDelegate& SuccessDelegate = FAuthUserDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Informs the PlayFab game server hosting service that the indicated user has joined the Game Server Instance specified */
+        // Informs the PlayFab game server hosting service that the indicated user has joined the Game Server Instance specified
         bool PlayerJoined(MatchmakerModels::FPlayerJoinedRequest& request, const FPlayerJoinedDelegate& SuccessDelegate = FPlayerJoinedDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Informs the PlayFab game server hosting service that the indicated user has left the Game Server Instance specified */
+        // Informs the PlayFab game server hosting service that the indicated user has left the Game Server Instance specified
         bool PlayerLeft(MatchmakerModels::FPlayerLeftRequest& request, const FPlayerLeftDelegate& SuccessDelegate = FPlayerLeftDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Instructs the PlayFab game server hosting service to instantiate a new Game Server Instance */
+        // Instructs the PlayFab game server hosting service to instantiate a new Game Server Instance
         bool StartGame(MatchmakerModels::FStartGameRequest& request, const FStartGameDelegate& SuccessDelegate = FStartGameDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Retrieves the relevant details for a specified user, which the external match-making service can then use to compute

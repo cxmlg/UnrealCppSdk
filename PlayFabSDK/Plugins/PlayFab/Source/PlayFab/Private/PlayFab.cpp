@@ -13,6 +13,7 @@
 #include "Core/PlayFabMatchmakerAPI.h"
 #include "Core/PlayFabServerAPI.h"
 #include "Core/PlayFabClientAPI.h"
+#include "Core/PlayFabEntityAPI.h"
 
 DEFINE_LOG_CATEGORY(LogPlayFab);
 
@@ -36,11 +37,13 @@ class FPlayFabModule : public IPlayFabModuleInterface
     PlayFabMatchmakerPtr GetMatchmakerAPI() const override { return MatchmakerAPI; };
     PlayFabServerPtr GetServerAPI() const override { return ServerAPI; };
     PlayFabClientPtr GetClientAPI() const override { return ClientAPI; };
+    PlayFabEntityPtr GetEntityAPI() const override { return EntityAPI; };
 
     PlayFabAdminPtr AdminAPI;
     PlayFabMatchmakerPtr MatchmakerAPI;
     PlayFabServerPtr ServerAPI;
     PlayFabClientPtr ClientAPI;
+    PlayFabEntityPtr EntityAPI;
 };
 
 void FPlayFabModule::StartupModule()

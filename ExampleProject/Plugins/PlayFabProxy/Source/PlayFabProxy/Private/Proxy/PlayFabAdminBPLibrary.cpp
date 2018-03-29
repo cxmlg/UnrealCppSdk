@@ -8,4799 +8,4876 @@
 // AbortTaskInstanceRequest
 FBPAdminAbortTaskInstanceRequest UPFAdminProxyLibrary::MakeBPAdminAbortTaskInstanceRequest(
     FString InTaskInstanceId
-    )
+)
 {
     FBPAdminAbortTaskInstanceRequest Out = FBPAdminAbortTaskInstanceRequest();
     Out.Data.TaskInstanceId = InTaskInstanceId;
-	
+
     return Out;
 }
 
 // ActionsOnPlayersInSegmentTaskParameter
 FBPAdminActionsOnPlayersInSegmentTaskParameter UPFAdminProxyLibrary::MakeBPAdminActionsOnPlayersInSegmentTaskParameter(
     FString InActionId
-	, FString InSegmentId
-    )
+    , FString InSegmentId
+)
 {
     FBPAdminActionsOnPlayersInSegmentTaskParameter Out = FBPAdminActionsOnPlayersInSegmentTaskParameter();
     Out.Data.ActionId = InActionId;
-	Out.Data.SegmentId = InSegmentId;
-	
+    Out.Data.SegmentId = InSegmentId;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminActionsOnPlayersInSegmentTaskParameter(
     const FBPAdminActionsOnPlayersInSegmentTaskParameter& In
-	, FString& OutActionId
-	, FString& OutSegmentId
- )
+    , FString& OutActionId
+    , FString& OutSegmentId
+)
 {
     OutActionId = In.Data.ActionId;
-	OutSegmentId = In.Data.SegmentId;
-	
+    OutSegmentId = In.Data.SegmentId;
+
 }
 
 // ActionsOnPlayersInSegmentTaskSummary
 FBPAdminActionsOnPlayersInSegmentTaskSummary UPFAdminProxyLibrary::MakeBPAdminActionsOnPlayersInSegmentTaskSummary(
     FDateTime InCompletedAt
-	, FString InErrorMessage
-	, bool InErrorWasFatal
-	, float InEstimatedSecondsRemaining
-	, float InPercentComplete
-	, FString InScheduledByUserId
-	, FDateTime InStartedAt
-	, EBPAdminTaskInstanceStatus InStatus
-	, FBPAdminNameIdentifier InTaskIdentifier
-	, FString InTaskInstanceId
-	, int32 InTotalPlayersInSegment
-	, int32 InTotalPlayersProcessed
-    )
+    , FString InErrorMessage
+    , bool InErrorWasFatal
+    , float InEstimatedSecondsRemaining
+    , float InPercentComplete
+    , FString InScheduledByUserId
+    , FDateTime InStartedAt
+    , EBPAdminTaskInstanceStatus InStatus
+    , FBPAdminNameIdentifier InTaskIdentifier
+    , FString InTaskInstanceId
+    , int32 InTotalPlayersInSegment
+    , int32 InTotalPlayersProcessed
+)
 {
     FBPAdminActionsOnPlayersInSegmentTaskSummary Out = FBPAdminActionsOnPlayersInSegmentTaskSummary();
     Out.Data.CompletedAt = InCompletedAt;
-	Out.Data.ErrorMessage = InErrorMessage;
-	Out.Data.ErrorWasFatal = InErrorWasFatal;
-	Out.Data.EstimatedSecondsRemaining = InEstimatedSecondsRemaining;
-	Out.Data.PercentComplete = InPercentComplete;
-	Out.Data.ScheduledByUserId = InScheduledByUserId;
-	Out.Data.StartedAt = InStartedAt;
-	Out.Data.Status = static_cast<PlayFab::AdminModels::TaskInstanceStatus>(static_cast<uint8>(InStatus));
-	Out.Data.TaskIdentifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InTaskIdentifier.Data));
-	Out.Data.TaskInstanceId = InTaskInstanceId;
-	Out.Data.TotalPlayersInSegment = InTotalPlayersInSegment;
-	Out.Data.TotalPlayersProcessed = InTotalPlayersProcessed;
-	
+    Out.Data.ErrorMessage = InErrorMessage;
+    Out.Data.ErrorWasFatal = InErrorWasFatal;
+    Out.Data.EstimatedSecondsRemaining = InEstimatedSecondsRemaining;
+    Out.Data.PercentComplete = InPercentComplete;
+    Out.Data.ScheduledByUserId = InScheduledByUserId;
+    Out.Data.StartedAt = InStartedAt;
+    Out.Data.Status = static_cast<PlayFab::AdminModels::TaskInstanceStatus>(static_cast<uint8>(InStatus));
+    Out.Data.TaskIdentifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InTaskIdentifier.Data));
+    Out.Data.TaskInstanceId = InTaskInstanceId;
+    Out.Data.TotalPlayersInSegment = InTotalPlayersInSegment;
+    Out.Data.TotalPlayersProcessed = InTotalPlayersProcessed;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminActionsOnPlayersInSegmentTaskSummary(
     const FBPAdminActionsOnPlayersInSegmentTaskSummary& In
-	, FDateTime& OutCompletedAt
-	, FString& OutErrorMessage
-	, bool& OutErrorWasFatal
-	, float& OutEstimatedSecondsRemaining
-	, float& OutPercentComplete
-	, FString& OutScheduledByUserId
-	, FDateTime& OutStartedAt
-	, EBPAdminTaskInstanceStatus& OutStatus
-	, FBPAdminNameIdentifier& OutTaskIdentifier
-	, FString& OutTaskInstanceId
-	, int32& OutTotalPlayersInSegment
-	, int32& OutTotalPlayersProcessed
- )
+    , FDateTime& OutCompletedAt
+    , FString& OutErrorMessage
+    , bool& OutErrorWasFatal
+    , float& OutEstimatedSecondsRemaining
+    , float& OutPercentComplete
+    , FString& OutScheduledByUserId
+    , FDateTime& OutStartedAt
+    , EBPAdminTaskInstanceStatus& OutStatus
+    , FBPAdminNameIdentifier& OutTaskIdentifier
+    , FString& OutTaskInstanceId
+    , int32& OutTotalPlayersInSegment
+    , int32& OutTotalPlayersProcessed
+)
 {
     OutCompletedAt = In.Data.CompletedAt;
-	OutErrorMessage = In.Data.ErrorMessage;
-	OutErrorWasFatal = In.Data.ErrorWasFatal;
-	OutEstimatedSecondsRemaining = In.Data.EstimatedSecondsRemaining;
-	OutPercentComplete = In.Data.PercentComplete;
-	OutScheduledByUserId = In.Data.ScheduledByUserId;
-	OutStartedAt = In.Data.StartedAt;
-	if (In.Data.Status.notNull()) {OutStatus = static_cast<EBPAdminTaskInstanceStatus>(static_cast<uint8>(In.Data.Status.mValue));}
-	if (In.Data.TaskIdentifier.IsValid()) {OutTaskIdentifier.Data = *In.Data.TaskIdentifier;}
-	OutTaskInstanceId = In.Data.TaskInstanceId;
-	OutTotalPlayersInSegment = In.Data.TotalPlayersInSegment;
-	OutTotalPlayersProcessed = In.Data.TotalPlayersProcessed;
-	
+    OutErrorMessage = In.Data.ErrorMessage;
+    OutErrorWasFatal = In.Data.ErrorWasFatal;
+    OutEstimatedSecondsRemaining = In.Data.EstimatedSecondsRemaining;
+    OutPercentComplete = In.Data.PercentComplete;
+    OutScheduledByUserId = In.Data.ScheduledByUserId;
+    OutStartedAt = In.Data.StartedAt;
+    if (In.Data.Status.notNull()) { OutStatus = static_cast<EBPAdminTaskInstanceStatus>(static_cast<uint8>(In.Data.Status.mValue)); }
+    if (In.Data.TaskIdentifier.IsValid()) { OutTaskIdentifier.Data = *In.Data.TaskIdentifier; }
+    OutTaskInstanceId = In.Data.TaskInstanceId;
+    OutTotalPlayersInSegment = In.Data.TotalPlayersInSegment;
+    OutTotalPlayersProcessed = In.Data.TotalPlayersProcessed;
+
 }
 
 // AdCampaignAttribution
 FBPAdminAdCampaignAttribution UPFAdminProxyLibrary::MakeBPAdminAdCampaignAttribution(
     FDateTime InAttributedAt
-	, FString InCampaignId
-	, FString InPlatform
-    )
+    , FString InCampaignId
+    , FString InPlatform
+)
 {
     FBPAdminAdCampaignAttribution Out = FBPAdminAdCampaignAttribution();
     Out.Data.AttributedAt = InAttributedAt;
-	Out.Data.CampaignId = InCampaignId;
-	Out.Data.Platform = InPlatform;
-	
+    Out.Data.CampaignId = InCampaignId;
+    Out.Data.Platform = InPlatform;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminAdCampaignAttribution(
     const FBPAdminAdCampaignAttribution& In
-	, FDateTime& OutAttributedAt
-	, FString& OutCampaignId
-	, FString& OutPlatform
- )
+    , FDateTime& OutAttributedAt
+    , FString& OutCampaignId
+    , FString& OutPlatform
+)
 {
     OutAttributedAt = In.Data.AttributedAt;
-	OutCampaignId = In.Data.CampaignId;
-	OutPlatform = In.Data.Platform;
-	
+    OutCampaignId = In.Data.CampaignId;
+    OutPlatform = In.Data.Platform;
+
 }
 
 // AdCampaignAttributionModel
 FBPAdminAdCampaignAttributionModel UPFAdminProxyLibrary::MakeBPAdminAdCampaignAttributionModel(
     FDateTime InAttributedAt
-	, FString InCampaignId
-	, FString InPlatform
-    )
+    , FString InCampaignId
+    , FString InPlatform
+)
 {
     FBPAdminAdCampaignAttributionModel Out = FBPAdminAdCampaignAttributionModel();
     Out.Data.AttributedAt = InAttributedAt;
-	Out.Data.CampaignId = InCampaignId;
-	Out.Data.Platform = InPlatform;
-	
+    Out.Data.CampaignId = InCampaignId;
+    Out.Data.Platform = InPlatform;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminAdCampaignAttributionModel(
     const FBPAdminAdCampaignAttributionModel& In
-	, FDateTime& OutAttributedAt
-	, FString& OutCampaignId
-	, FString& OutPlatform
- )
+    , FDateTime& OutAttributedAt
+    , FString& OutCampaignId
+    , FString& OutPlatform
+)
 {
     OutAttributedAt = In.Data.AttributedAt;
-	OutCampaignId = In.Data.CampaignId;
-	OutPlatform = In.Data.Platform;
-	
+    OutCampaignId = In.Data.CampaignId;
+    OutPlatform = In.Data.Platform;
+
 }
 
 // AddNewsRequest
 FBPAdminAddNewsRequest UPFAdminProxyLibrary::MakeBPAdminAddNewsRequest(
     FString InBody
-	, FDateTime InTimestamp
-	, FString InTitle
-    )
+    , FDateTime InTimestamp
+    , FString InTitle
+)
 {
     FBPAdminAddNewsRequest Out = FBPAdminAddNewsRequest();
     Out.Data.Body = InBody;
-	Out.Data.Timestamp = InTimestamp;
-	Out.Data.Title = InTitle;
-	
+    Out.Data.Timestamp = InTimestamp;
+    Out.Data.Title = InTitle;
+
     return Out;
 }
 
 // AddNewsResult
 void UPFAdminProxyLibrary::BreakBPAdminAddNewsResult(
     const FBPAdminAddNewsResult& In
-	, FString& OutNewsId
- )
+    , FString& OutNewsId
+)
 {
     OutNewsId = In.Data.NewsId;
-	
+
 }
 
 // AddPlayerTagRequest
 FBPAdminAddPlayerTagRequest UPFAdminProxyLibrary::MakeBPAdminAddPlayerTagRequest(
     FString InPlayFabId
-	, FString InTagName
-    )
+    , FString InTagName
+)
 {
     FBPAdminAddPlayerTagRequest Out = FBPAdminAddPlayerTagRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.TagName = InTagName;
-	
+    Out.Data.TagName = InTagName;
+
     return Out;
 }
 
 // AddPlayerTagResult
 void UPFAdminProxyLibrary::BreakBPAdminAddPlayerTagResult(
     const FBPAdminAddPlayerTagResult& In
- )
+)
 {
-    
+
 }
 
 // AddServerBuildRequest
 FBPAdminAddServerBuildRequest UPFAdminProxyLibrary::MakeBPAdminAddServerBuildRequest(
     TArray<EBPAdminRegion> InActiveRegions
-	, FString InBuildId
-	, FString InCommandLineTemplate
-	, FString InComment
-	, FString InExecutablePath
-	, int32 InMaxGamesPerHost
-	, int32 InMinFreeGameSlots
-    )
+    , FString InBuildId
+    , FString InCommandLineTemplate
+    , FString InComment
+    , FString InExecutablePath
+    , int32 InMaxGamesPerHost
+    , int32 InMinFreeGameSlots
+)
 {
     FBPAdminAddServerBuildRequest Out = FBPAdminAddServerBuildRequest();
     for (const EBPAdminRegion& elem : InActiveRegions)
-	{
-		Out.Data.ActiveRegions.Add(static_cast<PlayFab::AdminModels::Region>(static_cast<uint8>(elem)));
-	}
-	Out.Data.BuildId = InBuildId;
-	Out.Data.CommandLineTemplate = InCommandLineTemplate;
-	Out.Data.Comment = InComment;
-	Out.Data.ExecutablePath = InExecutablePath;
-	Out.Data.MaxGamesPerHost = InMaxGamesPerHost;
-	Out.Data.MinFreeGameSlots = InMinFreeGameSlots;
-	
+    {
+        Out.Data.ActiveRegions.Add(static_cast<PlayFab::AdminModels::Region>(static_cast<uint8>(elem)));
+    }
+    Out.Data.BuildId = InBuildId;
+    Out.Data.CommandLineTemplate = InCommandLineTemplate;
+    Out.Data.Comment = InComment;
+    Out.Data.ExecutablePath = InExecutablePath;
+    Out.Data.MaxGamesPerHost = InMaxGamesPerHost;
+    Out.Data.MinFreeGameSlots = InMinFreeGameSlots;
+
     return Out;
 }
 
 // AddServerBuildResult
 void UPFAdminProxyLibrary::BreakBPAdminAddServerBuildResult(
     const FBPAdminAddServerBuildResult& In
-	, TArray<EBPAdminRegion>& OutActiveRegions
-	, FString& OutBuildId
-	, FString& OutCommandLineTemplate
-	, FString& OutComment
-	, FString& OutExecutablePath
-	, int32& OutMaxGamesPerHost
-	, int32& OutMinFreeGameSlots
-	, EBPAdminGameBuildStatus& OutStatus
-	, FDateTime& OutTimestamp
- )
+    , TArray<EBPAdminRegion>& OutActiveRegions
+    , FString& OutBuildId
+    , FString& OutCommandLineTemplate
+    , FString& OutComment
+    , FString& OutExecutablePath
+    , int32& OutMaxGamesPerHost
+    , int32& OutMinFreeGameSlots
+    , EBPAdminGameBuildStatus& OutStatus
+    , FDateTime& OutTimestamp
+)
 {
     for (const PlayFab::AdminModels::Region& elem : In.Data.ActiveRegions)
-	{
-		OutActiveRegions.Add(static_cast<EBPAdminRegion>(static_cast<uint8>(elem)));
-	}
-	OutBuildId = In.Data.BuildId;
-	OutCommandLineTemplate = In.Data.CommandLineTemplate;
-	OutComment = In.Data.Comment;
-	OutExecutablePath = In.Data.ExecutablePath;
-	OutMaxGamesPerHost = In.Data.MaxGamesPerHost;
-	OutMinFreeGameSlots = In.Data.MinFreeGameSlots;
-	if (In.Data.Status.notNull()) {OutStatus = static_cast<EBPAdminGameBuildStatus>(static_cast<uint8>(In.Data.Status.mValue));}
-	OutTimestamp = In.Data.Timestamp;
-	
+    {
+        OutActiveRegions.Add(static_cast<EBPAdminRegion>(static_cast<uint8>(elem)));
+    }
+    OutBuildId = In.Data.BuildId;
+    OutCommandLineTemplate = In.Data.CommandLineTemplate;
+    OutComment = In.Data.Comment;
+    OutExecutablePath = In.Data.ExecutablePath;
+    OutMaxGamesPerHost = In.Data.MaxGamesPerHost;
+    OutMinFreeGameSlots = In.Data.MinFreeGameSlots;
+    if (In.Data.Status.notNull()) { OutStatus = static_cast<EBPAdminGameBuildStatus>(static_cast<uint8>(In.Data.Status.mValue)); }
+    OutTimestamp = In.Data.Timestamp;
+
 }
 
 // AddUserVirtualCurrencyRequest
 FBPAdminAddUserVirtualCurrencyRequest UPFAdminProxyLibrary::MakeBPAdminAddUserVirtualCurrencyRequest(
     int32 InAmount
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-    )
+    , FString InPlayFabId
+    , FString InVirtualCurrency
+)
 {
     FBPAdminAddUserVirtualCurrencyRequest Out = FBPAdminAddUserVirtualCurrencyRequest();
     Out.Data.Amount = InAmount;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.VirtualCurrency = InVirtualCurrency;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.VirtualCurrency = InVirtualCurrency;
+
     return Out;
 }
 
 // AddVirtualCurrencyTypesRequest
 FBPAdminAddVirtualCurrencyTypesRequest UPFAdminProxyLibrary::MakeBPAdminAddVirtualCurrencyTypesRequest(
     TArray<FBPAdminVirtualCurrencyData> InVirtualCurrencies
-    )
+)
 {
     FBPAdminAddVirtualCurrencyTypesRequest Out = FBPAdminAddVirtualCurrencyTypesRequest();
     for (const FBPAdminVirtualCurrencyData& elem : InVirtualCurrencies)
-	{
-		Out.Data.VirtualCurrencies.Add(elem.Data);
-	}
-	
+    {
+        Out.Data.VirtualCurrencies.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // ApiCondition
 FBPAdminApiCondition UPFAdminProxyLibrary::MakeBPAdminApiCondition(
     EBPAdminConditionals InHasSignatureOrEncryption
-    )
+)
 {
     FBPAdminApiCondition Out = FBPAdminApiCondition();
     Out.Data.HasSignatureOrEncryption = static_cast<PlayFab::AdminModels::Conditionals>(static_cast<uint8>(InHasSignatureOrEncryption));
-	
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminApiCondition(
     const FBPAdminApiCondition& In
-	, EBPAdminConditionals& OutHasSignatureOrEncryption
- )
+    , EBPAdminConditionals& OutHasSignatureOrEncryption
+)
 {
-    if (In.Data.HasSignatureOrEncryption.notNull()) {OutHasSignatureOrEncryption = static_cast<EBPAdminConditionals>(static_cast<uint8>(In.Data.HasSignatureOrEncryption.mValue));}
-	
+    if (In.Data.HasSignatureOrEncryption.notNull()) { OutHasSignatureOrEncryption = static_cast<EBPAdminConditionals>(static_cast<uint8>(In.Data.HasSignatureOrEncryption.mValue)); }
+
 }
 
 // BanInfo
 FBPAdminBanInfo UPFAdminProxyLibrary::MakeBPAdminBanInfo(
     bool InActive
-	, FString InBanId
-	, FDateTime InCreated
-	, FDateTime InExpires
-	, FString InIPAddress
-	, FString InMACAddress
-	, FString InPlayFabId
-	, FString InReason
-    )
+    , FString InBanId
+    , FDateTime InCreated
+    , FDateTime InExpires
+    , FString InIPAddress
+    , FString InMACAddress
+    , FString InPlayFabId
+    , FString InReason
+)
 {
     FBPAdminBanInfo Out = FBPAdminBanInfo();
     Out.Data.Active = InActive;
-	Out.Data.BanId = InBanId;
-	Out.Data.Created = InCreated;
-	Out.Data.Expires = InExpires;
-	Out.Data.IPAddress = InIPAddress;
-	Out.Data.MACAddress = InMACAddress;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Reason = InReason;
-	
+    Out.Data.BanId = InBanId;
+    Out.Data.Created = InCreated;
+    Out.Data.Expires = InExpires;
+    Out.Data.IPAddress = InIPAddress;
+    Out.Data.MACAddress = InMACAddress;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Reason = InReason;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminBanInfo(
     const FBPAdminBanInfo& In
-	, bool& OutActive
-	, FString& OutBanId
-	, FDateTime& OutCreated
-	, FDateTime& OutExpires
-	, FString& OutIPAddress
-	, FString& OutMACAddress
-	, FString& OutPlayFabId
-	, FString& OutReason
- )
+    , bool& OutActive
+    , FString& OutBanId
+    , FDateTime& OutCreated
+    , FDateTime& OutExpires
+    , FString& OutIPAddress
+    , FString& OutMACAddress
+    , FString& OutPlayFabId
+    , FString& OutReason
+)
 {
     OutActive = In.Data.Active;
-	OutBanId = In.Data.BanId;
-	OutCreated = In.Data.Created;
-	OutExpires = In.Data.Expires;
-	OutIPAddress = In.Data.IPAddress;
-	OutMACAddress = In.Data.MACAddress;
-	OutPlayFabId = In.Data.PlayFabId;
-	OutReason = In.Data.Reason;
-	
+    OutBanId = In.Data.BanId;
+    OutCreated = In.Data.Created;
+    OutExpires = In.Data.Expires;
+    OutIPAddress = In.Data.IPAddress;
+    OutMACAddress = In.Data.MACAddress;
+    OutPlayFabId = In.Data.PlayFabId;
+    OutReason = In.Data.Reason;
+
 }
 
 // BanRequest
 FBPAdminBanRequest UPFAdminProxyLibrary::MakeBPAdminBanRequest(
     int32 InDurationInHours
-	, FString InIPAddress
-	, FString InMACAddress
-	, FString InPlayFabId
-	, FString InReason
-    )
+    , FString InIPAddress
+    , FString InMACAddress
+    , FString InPlayFabId
+    , FString InReason
+)
 {
     FBPAdminBanRequest Out = FBPAdminBanRequest();
     Out.Data.DurationInHours = InDurationInHours;
-	Out.Data.IPAddress = InIPAddress;
-	Out.Data.MACAddress = InMACAddress;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Reason = InReason;
-	
+    Out.Data.IPAddress = InIPAddress;
+    Out.Data.MACAddress = InMACAddress;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Reason = InReason;
+
     return Out;
 }
 
 // BanUsersRequest
 FBPAdminBanUsersRequest UPFAdminProxyLibrary::MakeBPAdminBanUsersRequest(
     TArray<FBPAdminBanRequest> InBans
-    )
+)
 {
     FBPAdminBanUsersRequest Out = FBPAdminBanUsersRequest();
     for (const FBPAdminBanRequest& elem : InBans)
-	{
-		Out.Data.Bans.Add(elem.Data);
-	}
-	
+    {
+        Out.Data.Bans.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // BanUsersResult
 void UPFAdminProxyLibrary::BreakBPAdminBanUsersResult(
     const FBPAdminBanUsersResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
- )
+    , TArray<FBPAdminBanInfo>& OutBanData
+)
 {
     for (const PlayFab::AdminModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPAdminBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPAdminBanInfo(elem));
+    }
+
 }
 
 // BlankResult
 void UPFAdminProxyLibrary::BreakBPAdminBlankResult(
     const FBPAdminBlankResult& In
- )
+)
 {
-    
+
 }
 
 // CatalogItem
 FBPAdminCatalogItem UPFAdminProxyLibrary::MakeBPAdminCatalogItem(
     FBPAdminCatalogItemBundleInfo InBundle
-	, bool InCanBecomeCharacter
-	, FString InCatalogVersion
-	, FBPAdminCatalogItemConsumableInfo InConsumable
-	, FBPAdminCatalogItemContainerInfo InContainer
-	, FString InCustomData
-	, FString InDescription
-	, FString InDisplayName
-	, int32 InInitialLimitedEditionCount
-	, bool InIsLimitedEdition
-	, bool InIsStackable
-	, bool InIsTradable
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemImageUrl
-	, TMap<FString, int32> InRealCurrencyPrices
-	, TArray<FString> InTags
-	, TMap<FString, int32> InVirtualCurrencyPrices
-    )
+    , bool InCanBecomeCharacter
+    , FString InCatalogVersion
+    , FBPAdminCatalogItemConsumableInfo InConsumable
+    , FBPAdminCatalogItemContainerInfo InContainer
+    , FString InCustomData
+    , FString InDescription
+    , FString InDisplayName
+    , int32 InInitialLimitedEditionCount
+    , bool InIsLimitedEdition
+    , bool InIsStackable
+    , bool InIsTradable
+    , FString InItemClass
+    , FString InItemId
+    , FString InItemImageUrl
+    , TMap<FString, int32> InRealCurrencyPrices
+    , TArray<FString> InTags
+    , TMap<FString, int32> InVirtualCurrencyPrices
+)
 {
     FBPAdminCatalogItem Out = FBPAdminCatalogItem();
     Out.Data.Bundle = MakeShareable(new PlayFab::AdminModels::FCatalogItemBundleInfo(InBundle.Data));
-	Out.Data.CanBecomeCharacter = InCanBecomeCharacter;
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.Consumable = MakeShareable(new PlayFab::AdminModels::FCatalogItemConsumableInfo(InConsumable.Data));
-	Out.Data.Container = MakeShareable(new PlayFab::AdminModels::FCatalogItemContainerInfo(InContainer.Data));
-	Out.Data.CustomData = InCustomData;
-	Out.Data.Description = InDescription;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.InitialLimitedEditionCount = InInitialLimitedEditionCount;
-	Out.Data.IsLimitedEdition = InIsLimitedEdition;
-	Out.Data.IsStackable = InIsStackable;
-	Out.Data.IsTradable = InIsTradable;
-	Out.Data.ItemClass = InItemClass;
-	Out.Data.ItemId = InItemId;
-	Out.Data.ItemImageUrl = InItemImageUrl;
-	for (auto& elem : InRealCurrencyPrices)
-	{
-		const int32 value = elem.Value;
-		Out.Data.RealCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
-	}
-	Out.Data.Tags = InTags;
-	for (auto& elem : InVirtualCurrencyPrices)
-	{
-		const int32 value = elem.Value;
-		Out.Data.VirtualCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
-	}
-	
+    Out.Data.CanBecomeCharacter = InCanBecomeCharacter;
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.Consumable = MakeShareable(new PlayFab::AdminModels::FCatalogItemConsumableInfo(InConsumable.Data));
+    Out.Data.Container = MakeShareable(new PlayFab::AdminModels::FCatalogItemContainerInfo(InContainer.Data));
+    Out.Data.CustomData = InCustomData;
+    Out.Data.Description = InDescription;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.InitialLimitedEditionCount = InInitialLimitedEditionCount;
+    Out.Data.IsLimitedEdition = InIsLimitedEdition;
+    Out.Data.IsStackable = InIsStackable;
+    Out.Data.IsTradable = InIsTradable;
+    Out.Data.ItemClass = InItemClass;
+    Out.Data.ItemId = InItemId;
+    Out.Data.ItemImageUrl = InItemImageUrl;
+    for (auto& elem : InRealCurrencyPrices)
+    {
+        const int32 value = elem.Value;
+        Out.Data.RealCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
+    }
+    Out.Data.Tags = InTags;
+    for (auto& elem : InVirtualCurrencyPrices)
+    {
+        const int32 value = elem.Value;
+        Out.Data.VirtualCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
+    }
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminCatalogItem(
     const FBPAdminCatalogItem& In
-	, FBPAdminCatalogItemBundleInfo& OutBundle
-	, bool& OutCanBecomeCharacter
-	, FString& OutCatalogVersion
-	, FBPAdminCatalogItemConsumableInfo& OutConsumable
-	, FBPAdminCatalogItemContainerInfo& OutContainer
-	, FString& OutCustomData
-	, FString& OutDescription
-	, FString& OutDisplayName
-	, int32& OutInitialLimitedEditionCount
-	, bool& OutIsLimitedEdition
-	, bool& OutIsStackable
-	, bool& OutIsTradable
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemImageUrl
-	, TMap<FString, int32>& OutRealCurrencyPrices
-	, TArray<FString>& OutTags
-	, TMap<FString, int32>& OutVirtualCurrencyPrices
- )
+    , FBPAdminCatalogItemBundleInfo& OutBundle
+    , bool& OutCanBecomeCharacter
+    , FString& OutCatalogVersion
+    , FBPAdminCatalogItemConsumableInfo& OutConsumable
+    , FBPAdminCatalogItemContainerInfo& OutContainer
+    , FString& OutCustomData
+    , FString& OutDescription
+    , FString& OutDisplayName
+    , int32& OutInitialLimitedEditionCount
+    , bool& OutIsLimitedEdition
+    , bool& OutIsStackable
+    , bool& OutIsTradable
+    , FString& OutItemClass
+    , FString& OutItemId
+    , FString& OutItemImageUrl
+    , TMap<FString, int32>& OutRealCurrencyPrices
+    , TArray<FString>& OutTags
+    , TMap<FString, int32>& OutVirtualCurrencyPrices
+)
 {
-    if (In.Data.Bundle.IsValid()) {OutBundle.Data = *In.Data.Bundle;}
-	OutCanBecomeCharacter = In.Data.CanBecomeCharacter;
-	OutCatalogVersion = In.Data.CatalogVersion;
-	if (In.Data.Consumable.IsValid()) {OutConsumable.Data = *In.Data.Consumable;}
-	if (In.Data.Container.IsValid()) {OutContainer.Data = *In.Data.Container;}
-	OutCustomData = In.Data.CustomData;
-	OutDescription = In.Data.Description;
-	OutDisplayName = In.Data.DisplayName;
-	OutInitialLimitedEditionCount = In.Data.InitialLimitedEditionCount;
-	OutIsLimitedEdition = In.Data.IsLimitedEdition;
-	OutIsStackable = In.Data.IsStackable;
-	OutIsTradable = In.Data.IsTradable;
-	OutItemClass = In.Data.ItemClass;
-	OutItemId = In.Data.ItemId;
-	OutItemImageUrl = In.Data.ItemImageUrl;
-	for (auto& elem : In.Data.RealCurrencyPrices)
-	{
-		const uint32 value = elem.Value;
-		OutRealCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
-	}
-	OutTags = In.Data.Tags;
-	for (auto& elem : In.Data.VirtualCurrencyPrices)
-	{
-		const uint32 value = elem.Value;
-		OutVirtualCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
-	}
-	
+    if (In.Data.Bundle.IsValid()) { OutBundle.Data = *In.Data.Bundle; }
+    OutCanBecomeCharacter = In.Data.CanBecomeCharacter;
+    OutCatalogVersion = In.Data.CatalogVersion;
+    if (In.Data.Consumable.IsValid()) { OutConsumable.Data = *In.Data.Consumable; }
+    if (In.Data.Container.IsValid()) { OutContainer.Data = *In.Data.Container; }
+    OutCustomData = In.Data.CustomData;
+    OutDescription = In.Data.Description;
+    OutDisplayName = In.Data.DisplayName;
+    OutInitialLimitedEditionCount = In.Data.InitialLimitedEditionCount;
+    OutIsLimitedEdition = In.Data.IsLimitedEdition;
+    OutIsStackable = In.Data.IsStackable;
+    OutIsTradable = In.Data.IsTradable;
+    OutItemClass = In.Data.ItemClass;
+    OutItemId = In.Data.ItemId;
+    OutItemImageUrl = In.Data.ItemImageUrl;
+    for (auto& elem : In.Data.RealCurrencyPrices)
+    {
+        const uint32 value = elem.Value;
+        OutRealCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
+    }
+    OutTags = In.Data.Tags;
+    for (auto& elem : In.Data.VirtualCurrencyPrices)
+    {
+        const uint32 value = elem.Value;
+        OutVirtualCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
+    }
+
 }
 
 // CatalogItemBundleInfo
 FBPAdminCatalogItemBundleInfo UPFAdminProxyLibrary::MakeBPAdminCatalogItemBundleInfo(
     TArray<FString> InBundledItems
-	, TArray<FString> InBundledResultTables
-	, TMap<FString, int32> InBundledVirtualCurrencies
-    )
+    , TArray<FString> InBundledResultTables
+    , TMap<FString, int32> InBundledVirtualCurrencies
+)
 {
     FBPAdminCatalogItemBundleInfo Out = FBPAdminCatalogItemBundleInfo();
     Out.Data.BundledItems = InBundledItems;
-	Out.Data.BundledResultTables = InBundledResultTables;
-	for (auto& elem : InBundledVirtualCurrencies)
-	{
-		const int32 value = elem.Value;
-		Out.Data.BundledVirtualCurrencies.Add(elem.Key, static_cast<uint32>(value));
-	}
-	
+    Out.Data.BundledResultTables = InBundledResultTables;
+    for (auto& elem : InBundledVirtualCurrencies)
+    {
+        const int32 value = elem.Value;
+        Out.Data.BundledVirtualCurrencies.Add(elem.Key, static_cast<uint32>(value));
+    }
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminCatalogItemBundleInfo(
     const FBPAdminCatalogItemBundleInfo& In
-	, TArray<FString>& OutBundledItems
-	, TArray<FString>& OutBundledResultTables
-	, TMap<FString, int32>& OutBundledVirtualCurrencies
- )
+    , TArray<FString>& OutBundledItems
+    , TArray<FString>& OutBundledResultTables
+    , TMap<FString, int32>& OutBundledVirtualCurrencies
+)
 {
     OutBundledItems = In.Data.BundledItems;
-	OutBundledResultTables = In.Data.BundledResultTables;
-	for (auto& elem : In.Data.BundledVirtualCurrencies)
-	{
-		const uint32 value = elem.Value;
-		OutBundledVirtualCurrencies.Add(elem.Key, static_cast<int32>(value));
-	}
-	
+    OutBundledResultTables = In.Data.BundledResultTables;
+    for (auto& elem : In.Data.BundledVirtualCurrencies)
+    {
+        const uint32 value = elem.Value;
+        OutBundledVirtualCurrencies.Add(elem.Key, static_cast<int32>(value));
+    }
+
 }
 
 // CatalogItemConsumableInfo
 FBPAdminCatalogItemConsumableInfo UPFAdminProxyLibrary::MakeBPAdminCatalogItemConsumableInfo(
     int32 InUsageCount
-	, int32 InUsagePeriod
-	, FString InUsagePeriodGroup
-    )
+    , int32 InUsagePeriod
+    , FString InUsagePeriodGroup
+)
 {
     FBPAdminCatalogItemConsumableInfo Out = FBPAdminCatalogItemConsumableInfo();
     Out.Data.UsageCount = InUsageCount;
-	Out.Data.UsagePeriod = InUsagePeriod;
-	Out.Data.UsagePeriodGroup = InUsagePeriodGroup;
-	
+    Out.Data.UsagePeriod = InUsagePeriod;
+    Out.Data.UsagePeriodGroup = InUsagePeriodGroup;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminCatalogItemConsumableInfo(
     const FBPAdminCatalogItemConsumableInfo& In
-	, int32& OutUsageCount
-	, int32& OutUsagePeriod
-	, FString& OutUsagePeriodGroup
- )
+    , int32& OutUsageCount
+    , int32& OutUsagePeriod
+    , FString& OutUsagePeriodGroup
+)
 {
     OutUsageCount = In.Data.UsageCount;
-	OutUsagePeriod = In.Data.UsagePeriod;
-	OutUsagePeriodGroup = In.Data.UsagePeriodGroup;
-	
+    OutUsagePeriod = In.Data.UsagePeriod;
+    OutUsagePeriodGroup = In.Data.UsagePeriodGroup;
+
 }
 
 // CatalogItemContainerInfo
 FBPAdminCatalogItemContainerInfo UPFAdminProxyLibrary::MakeBPAdminCatalogItemContainerInfo(
     TArray<FString> InItemContents
-	, FString InKeyItemId
-	, TArray<FString> InResultTableContents
-	, TMap<FString, int32> InVirtualCurrencyContents
-    )
+    , FString InKeyItemId
+    , TArray<FString> InResultTableContents
+    , TMap<FString, int32> InVirtualCurrencyContents
+)
 {
     FBPAdminCatalogItemContainerInfo Out = FBPAdminCatalogItemContainerInfo();
     Out.Data.ItemContents = InItemContents;
-	Out.Data.KeyItemId = InKeyItemId;
-	Out.Data.ResultTableContents = InResultTableContents;
-	for (auto& elem : InVirtualCurrencyContents)
-	{
-		const int32 value = elem.Value;
-		Out.Data.VirtualCurrencyContents.Add(elem.Key, static_cast<uint32>(value));
-	}
-	
+    Out.Data.KeyItemId = InKeyItemId;
+    Out.Data.ResultTableContents = InResultTableContents;
+    for (auto& elem : InVirtualCurrencyContents)
+    {
+        const int32 value = elem.Value;
+        Out.Data.VirtualCurrencyContents.Add(elem.Key, static_cast<uint32>(value));
+    }
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminCatalogItemContainerInfo(
     const FBPAdminCatalogItemContainerInfo& In
-	, TArray<FString>& OutItemContents
-	, FString& OutKeyItemId
-	, TArray<FString>& OutResultTableContents
-	, TMap<FString, int32>& OutVirtualCurrencyContents
- )
+    , TArray<FString>& OutItemContents
+    , FString& OutKeyItemId
+    , TArray<FString>& OutResultTableContents
+    , TMap<FString, int32>& OutVirtualCurrencyContents
+)
 {
     OutItemContents = In.Data.ItemContents;
-	OutKeyItemId = In.Data.KeyItemId;
-	OutResultTableContents = In.Data.ResultTableContents;
-	for (auto& elem : In.Data.VirtualCurrencyContents)
-	{
-		const uint32 value = elem.Value;
-		OutVirtualCurrencyContents.Add(elem.Key, static_cast<int32>(value));
-	}
-	
+    OutKeyItemId = In.Data.KeyItemId;
+    OutResultTableContents = In.Data.ResultTableContents;
+    for (auto& elem : In.Data.VirtualCurrencyContents)
+    {
+        const uint32 value = elem.Value;
+        OutVirtualCurrencyContents.Add(elem.Key, static_cast<int32>(value));
+    }
+
 }
 
 // CheckLimitedEditionItemAvailabilityRequest
 FBPAdminCheckLimitedEditionItemAvailabilityRequest UPFAdminProxyLibrary::MakeBPAdminCheckLimitedEditionItemAvailabilityRequest(
     FString InCatalogVersion
-	, FString InItemId
-    )
+    , FString InItemId
+)
 {
     FBPAdminCheckLimitedEditionItemAvailabilityRequest Out = FBPAdminCheckLimitedEditionItemAvailabilityRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.ItemId = InItemId;
-	
+    Out.Data.ItemId = InItemId;
+
     return Out;
 }
 
 // CheckLimitedEditionItemAvailabilityResult
 void UPFAdminProxyLibrary::BreakBPAdminCheckLimitedEditionItemAvailabilityResult(
     const FBPAdminCheckLimitedEditionItemAvailabilityResult& In
-	, int32& OutAmount
- )
+    , int32& OutAmount
+)
 {
     OutAmount = In.Data.Amount;
-	
+
 }
 
 // CloudScriptFile
 FBPAdminCloudScriptFile UPFAdminProxyLibrary::MakeBPAdminCloudScriptFile(
     FString InFileContents
-	, FString InFilename
-    )
+    , FString InFilename
+)
 {
     FBPAdminCloudScriptFile Out = FBPAdminCloudScriptFile();
     Out.Data.FileContents = InFileContents;
-	Out.Data.Filename = InFilename;
-	
+    Out.Data.Filename = InFilename;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminCloudScriptFile(
     const FBPAdminCloudScriptFile& In
-	, FString& OutFileContents
-	, FString& OutFilename
- )
+    , FString& OutFileContents
+    , FString& OutFilename
+)
 {
     OutFileContents = In.Data.FileContents;
-	OutFilename = In.Data.Filename;
-	
+    OutFilename = In.Data.Filename;
+
 }
 
 // CloudScriptTaskParameter
 FBPAdminCloudScriptTaskParameter UPFAdminProxyLibrary::MakeBPAdminCloudScriptTaskParameter(
     UPlayFabJsonValue* InArgument
-	, FString InFunctionName
-    )
+    , FString InFunctionName
+)
 {
     FBPAdminCloudScriptTaskParameter Out = FBPAdminCloudScriptTaskParameter();
     Out.Data.Argument = InArgument->GetRootValue();
-	Out.Data.FunctionName = InFunctionName;
-	
+    Out.Data.FunctionName = InFunctionName;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminCloudScriptTaskParameter(
     const FBPAdminCloudScriptTaskParameter& In
-	, UPlayFabJsonValue*& OutArgument
-	, FString& OutFunctionName
- )
+    , UPlayFabJsonValue*& OutArgument
+    , FString& OutFunctionName
+)
 {
-    UPlayFabJsonValue* val = NewObject<UPlayFabJsonValue>();
-	val->SetRootValue(In.Data.Argument.GetJsonValue());
-	OutArgument = val;
-	OutFunctionName = In.Data.FunctionName;
-	
+    UPlayFabJsonValue* ArgumentVal = NewObject<UPlayFabJsonValue>();
+    ArgumentVal->SetRootValue(In.Data.Argument.GetJsonValue());
+    OutArgument = ArgumentVal;
+    OutFunctionName = In.Data.FunctionName;
+
 }
 
 // CloudScriptTaskSummary
 FBPAdminCloudScriptTaskSummary UPFAdminProxyLibrary::MakeBPAdminCloudScriptTaskSummary(
     FDateTime InCompletedAt
-	, float InEstimatedSecondsRemaining
-	, float InPercentComplete
-	, FBPAdminExecuteCloudScriptResult InResult
-	, FString InScheduledByUserId
-	, FDateTime InStartedAt
-	, EBPAdminTaskInstanceStatus InStatus
-	, FBPAdminNameIdentifier InTaskIdentifier
-	, FString InTaskInstanceId
-    )
+    , float InEstimatedSecondsRemaining
+    , float InPercentComplete
+    , FBPAdminExecuteCloudScriptResult InResult
+    , FString InScheduledByUserId
+    , FDateTime InStartedAt
+    , EBPAdminTaskInstanceStatus InStatus
+    , FBPAdminNameIdentifier InTaskIdentifier
+    , FString InTaskInstanceId
+)
 {
     FBPAdminCloudScriptTaskSummary Out = FBPAdminCloudScriptTaskSummary();
     Out.Data.CompletedAt = InCompletedAt;
-	Out.Data.EstimatedSecondsRemaining = InEstimatedSecondsRemaining;
-	Out.Data.PercentComplete = InPercentComplete;
-	Out.Data.Result = MakeShareable(new PlayFab::AdminModels::FExecuteCloudScriptResult(InResult.Data));
-	Out.Data.ScheduledByUserId = InScheduledByUserId;
-	Out.Data.StartedAt = InStartedAt;
-	Out.Data.Status = static_cast<PlayFab::AdminModels::TaskInstanceStatus>(static_cast<uint8>(InStatus));
-	Out.Data.TaskIdentifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InTaskIdentifier.Data));
-	Out.Data.TaskInstanceId = InTaskInstanceId;
-	
+    Out.Data.EstimatedSecondsRemaining = InEstimatedSecondsRemaining;
+    Out.Data.PercentComplete = InPercentComplete;
+    Out.Data.Result = MakeShareable(new PlayFab::AdminModels::FExecuteCloudScriptResult(InResult.Data));
+    Out.Data.ScheduledByUserId = InScheduledByUserId;
+    Out.Data.StartedAt = InStartedAt;
+    Out.Data.Status = static_cast<PlayFab::AdminModels::TaskInstanceStatus>(static_cast<uint8>(InStatus));
+    Out.Data.TaskIdentifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InTaskIdentifier.Data));
+    Out.Data.TaskInstanceId = InTaskInstanceId;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminCloudScriptTaskSummary(
     const FBPAdminCloudScriptTaskSummary& In
-	, FDateTime& OutCompletedAt
-	, float& OutEstimatedSecondsRemaining
-	, float& OutPercentComplete
-	, FBPAdminExecuteCloudScriptResult& OutResult
-	, FString& OutScheduledByUserId
-	, FDateTime& OutStartedAt
-	, EBPAdminTaskInstanceStatus& OutStatus
-	, FBPAdminNameIdentifier& OutTaskIdentifier
-	, FString& OutTaskInstanceId
- )
+    , FDateTime& OutCompletedAt
+    , float& OutEstimatedSecondsRemaining
+    , float& OutPercentComplete
+    , FBPAdminExecuteCloudScriptResult& OutResult
+    , FString& OutScheduledByUserId
+    , FDateTime& OutStartedAt
+    , EBPAdminTaskInstanceStatus& OutStatus
+    , FBPAdminNameIdentifier& OutTaskIdentifier
+    , FString& OutTaskInstanceId
+)
 {
     OutCompletedAt = In.Data.CompletedAt;
-	OutEstimatedSecondsRemaining = In.Data.EstimatedSecondsRemaining;
-	OutPercentComplete = In.Data.PercentComplete;
-	if (In.Data.Result.IsValid()) {OutResult.Data = *In.Data.Result;}
-	OutScheduledByUserId = In.Data.ScheduledByUserId;
-	OutStartedAt = In.Data.StartedAt;
-	if (In.Data.Status.notNull()) {OutStatus = static_cast<EBPAdminTaskInstanceStatus>(static_cast<uint8>(In.Data.Status.mValue));}
-	if (In.Data.TaskIdentifier.IsValid()) {OutTaskIdentifier.Data = *In.Data.TaskIdentifier;}
-	OutTaskInstanceId = In.Data.TaskInstanceId;
-	
+    OutEstimatedSecondsRemaining = In.Data.EstimatedSecondsRemaining;
+    OutPercentComplete = In.Data.PercentComplete;
+    if (In.Data.Result.IsValid()) { OutResult.Data = *In.Data.Result; }
+    OutScheduledByUserId = In.Data.ScheduledByUserId;
+    OutStartedAt = In.Data.StartedAt;
+    if (In.Data.Status.notNull()) { OutStatus = static_cast<EBPAdminTaskInstanceStatus>(static_cast<uint8>(In.Data.Status.mValue)); }
+    if (In.Data.TaskIdentifier.IsValid()) { OutTaskIdentifier.Data = *In.Data.TaskIdentifier; }
+    OutTaskInstanceId = In.Data.TaskInstanceId;
+
 }
 
 // CloudScriptVersionStatus
 FBPAdminCloudScriptVersionStatus UPFAdminProxyLibrary::MakeBPAdminCloudScriptVersionStatus(
     int32 InLatestRevision
-	, int32 InPublishedRevision
-	, int32 InVersion
-    )
+    , int32 InPublishedRevision
+    , int32 InVersion
+)
 {
     FBPAdminCloudScriptVersionStatus Out = FBPAdminCloudScriptVersionStatus();
     Out.Data.LatestRevision = InLatestRevision;
-	Out.Data.PublishedRevision = InPublishedRevision;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.PublishedRevision = InPublishedRevision;
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminCloudScriptVersionStatus(
     const FBPAdminCloudScriptVersionStatus& In
-	, int32& OutLatestRevision
-	, int32& OutPublishedRevision
-	, int32& OutVersion
- )
+    , int32& OutLatestRevision
+    , int32& OutPublishedRevision
+    , int32& OutVersion
+)
 {
     OutLatestRevision = In.Data.LatestRevision;
-	OutPublishedRevision = In.Data.PublishedRevision;
-	OutVersion = In.Data.Version;
-	
+    OutPublishedRevision = In.Data.PublishedRevision;
+    OutVersion = In.Data.Version;
+
 }
 
 // ContactEmailInfo
 FBPAdminContactEmailInfo UPFAdminProxyLibrary::MakeBPAdminContactEmailInfo(
     FString InEmailAddress
-	, FString InName
-	, EBPAdminEmailVerificationStatus InVerificationStatus
-    )
+    , FString InName
+    , EBPAdminEmailVerificationStatus InVerificationStatus
+)
 {
     FBPAdminContactEmailInfo Out = FBPAdminContactEmailInfo();
     Out.Data.EmailAddress = InEmailAddress;
-	Out.Data.Name = InName;
-	Out.Data.VerificationStatus = static_cast<PlayFab::AdminModels::EmailVerificationStatus>(static_cast<uint8>(InVerificationStatus));
-	
+    Out.Data.Name = InName;
+    Out.Data.VerificationStatus = static_cast<PlayFab::AdminModels::EmailVerificationStatus>(static_cast<uint8>(InVerificationStatus));
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminContactEmailInfo(
     const FBPAdminContactEmailInfo& In
-	, FString& OutEmailAddress
-	, FString& OutName
-	, EBPAdminEmailVerificationStatus& OutVerificationStatus
- )
+    , FString& OutEmailAddress
+    , FString& OutName
+    , EBPAdminEmailVerificationStatus& OutVerificationStatus
+)
 {
     OutEmailAddress = In.Data.EmailAddress;
-	OutName = In.Data.Name;
-	if (In.Data.VerificationStatus.notNull()) {OutVerificationStatus = static_cast<EBPAdminEmailVerificationStatus>(static_cast<uint8>(In.Data.VerificationStatus.mValue));}
-	
+    OutName = In.Data.Name;
+    if (In.Data.VerificationStatus.notNull()) { OutVerificationStatus = static_cast<EBPAdminEmailVerificationStatus>(static_cast<uint8>(In.Data.VerificationStatus.mValue)); }
+
 }
 
 // ContactEmailInfoModel
 FBPAdminContactEmailInfoModel UPFAdminProxyLibrary::MakeBPAdminContactEmailInfoModel(
     FString InEmailAddress
-	, FString InName
-	, EBPAdminEmailVerificationStatus InVerificationStatus
-    )
+    , FString InName
+    , EBPAdminEmailVerificationStatus InVerificationStatus
+)
 {
     FBPAdminContactEmailInfoModel Out = FBPAdminContactEmailInfoModel();
     Out.Data.EmailAddress = InEmailAddress;
-	Out.Data.Name = InName;
-	Out.Data.VerificationStatus = static_cast<PlayFab::AdminModels::EmailVerificationStatus>(static_cast<uint8>(InVerificationStatus));
-	
+    Out.Data.Name = InName;
+    Out.Data.VerificationStatus = static_cast<PlayFab::AdminModels::EmailVerificationStatus>(static_cast<uint8>(InVerificationStatus));
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminContactEmailInfoModel(
     const FBPAdminContactEmailInfoModel& In
-	, FString& OutEmailAddress
-	, FString& OutName
-	, EBPAdminEmailVerificationStatus& OutVerificationStatus
- )
+    , FString& OutEmailAddress
+    , FString& OutName
+    , EBPAdminEmailVerificationStatus& OutVerificationStatus
+)
 {
     OutEmailAddress = In.Data.EmailAddress;
-	OutName = In.Data.Name;
-	if (In.Data.VerificationStatus.notNull()) {OutVerificationStatus = static_cast<EBPAdminEmailVerificationStatus>(static_cast<uint8>(In.Data.VerificationStatus.mValue));}
-	
+    OutName = In.Data.Name;
+    if (In.Data.VerificationStatus.notNull()) { OutVerificationStatus = static_cast<EBPAdminEmailVerificationStatus>(static_cast<uint8>(In.Data.VerificationStatus.mValue)); }
+
 }
 
 // ContentInfo
 FBPAdminContentInfo UPFAdminProxyLibrary::MakeBPAdminContentInfo(
     FString InKey
-	, FDateTime InLastModified
-	, int32 InSize
-    )
+    , FDateTime InLastModified
+    , int32 InSize
+)
 {
     FBPAdminContentInfo Out = FBPAdminContentInfo();
     Out.Data.Key = InKey;
-	Out.Data.LastModified = InLastModified;
-	Out.Data.Size = InSize;
-	
+    Out.Data.LastModified = InLastModified;
+    Out.Data.Size = InSize;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminContentInfo(
     const FBPAdminContentInfo& In
-	, FString& OutKey
-	, FDateTime& OutLastModified
-	, int32& OutSize
- )
+    , FString& OutKey
+    , FDateTime& OutLastModified
+    , int32& OutSize
+)
 {
     OutKey = In.Data.Key;
-	OutLastModified = In.Data.LastModified;
-	OutSize = In.Data.Size;
-	
+    OutLastModified = In.Data.LastModified;
+    OutSize = In.Data.Size;
+
 }
 
 // CreateActionsOnPlayerSegmentTaskRequest
 FBPAdminCreateActionsOnPlayerSegmentTaskRequest UPFAdminProxyLibrary::MakeBPAdminCreateActionsOnPlayerSegmentTaskRequest(
     FString InDescription
-	, bool InIsActive
-	, FString InName
-	, FBPAdminActionsOnPlayersInSegmentTaskParameter InParameter
-	, FString InSchedule
-    )
+    , bool InIsActive
+    , FString InName
+    , FBPAdminActionsOnPlayersInSegmentTaskParameter InParameter
+    , FString InSchedule
+)
 {
     FBPAdminCreateActionsOnPlayerSegmentTaskRequest Out = FBPAdminCreateActionsOnPlayerSegmentTaskRequest();
     Out.Data.Description = InDescription;
-	Out.Data.IsActive = InIsActive;
-	Out.Data.Name = InName;
-	Out.Data.Parameter = InParameter.Data;
-	Out.Data.Schedule = InSchedule;
-	
+    Out.Data.IsActive = InIsActive;
+    Out.Data.Name = InName;
+    Out.Data.Parameter = InParameter.Data;
+    Out.Data.Schedule = InSchedule;
+
     return Out;
 }
 
 // CreateCloudScriptTaskRequest
 FBPAdminCreateCloudScriptTaskRequest UPFAdminProxyLibrary::MakeBPAdminCreateCloudScriptTaskRequest(
     FString InDescription
-	, bool InIsActive
-	, FString InName
-	, FBPAdminCloudScriptTaskParameter InParameter
-	, FString InSchedule
-    )
+    , bool InIsActive
+    , FString InName
+    , FBPAdminCloudScriptTaskParameter InParameter
+    , FString InSchedule
+)
 {
     FBPAdminCreateCloudScriptTaskRequest Out = FBPAdminCreateCloudScriptTaskRequest();
     Out.Data.Description = InDescription;
-	Out.Data.IsActive = InIsActive;
-	Out.Data.Name = InName;
-	Out.Data.Parameter = InParameter.Data;
-	Out.Data.Schedule = InSchedule;
-	
+    Out.Data.IsActive = InIsActive;
+    Out.Data.Name = InName;
+    Out.Data.Parameter = InParameter.Data;
+    Out.Data.Schedule = InSchedule;
+
     return Out;
 }
 
 // CreatePlayerSharedSecretRequest
 FBPAdminCreatePlayerSharedSecretRequest UPFAdminProxyLibrary::MakeBPAdminCreatePlayerSharedSecretRequest(
     FString InFriendlyName
-    )
+)
 {
     FBPAdminCreatePlayerSharedSecretRequest Out = FBPAdminCreatePlayerSharedSecretRequest();
     Out.Data.FriendlyName = InFriendlyName;
-	
+
     return Out;
 }
 
 // CreatePlayerSharedSecretResult
 void UPFAdminProxyLibrary::BreakBPAdminCreatePlayerSharedSecretResult(
     const FBPAdminCreatePlayerSharedSecretResult& In
-	, FString& OutSecretKey
- )
+    , FString& OutSecretKey
+)
 {
     OutSecretKey = In.Data.SecretKey;
-	
+
 }
 
 // CreatePlayerStatisticDefinitionRequest
 FBPAdminCreatePlayerStatisticDefinitionRequest UPFAdminProxyLibrary::MakeBPAdminCreatePlayerStatisticDefinitionRequest(
     EBPAdminStatisticAggregationMethod InAggregationMethod
-	, FString InStatisticName
-	, EBPAdminStatisticResetIntervalOption InVersionChangeInterval
-    )
+    , FString InStatisticName
+    , EBPAdminStatisticResetIntervalOption InVersionChangeInterval
+)
 {
     FBPAdminCreatePlayerStatisticDefinitionRequest Out = FBPAdminCreatePlayerStatisticDefinitionRequest();
     Out.Data.AggregationMethod = static_cast<PlayFab::AdminModels::StatisticAggregationMethod>(static_cast<uint8>(InAggregationMethod));
-	Out.Data.StatisticName = InStatisticName;
-	Out.Data.VersionChangeInterval = static_cast<PlayFab::AdminModels::StatisticResetIntervalOption>(static_cast<uint8>(InVersionChangeInterval));
-	
+    Out.Data.StatisticName = InStatisticName;
+    Out.Data.VersionChangeInterval = static_cast<PlayFab::AdminModels::StatisticResetIntervalOption>(static_cast<uint8>(InVersionChangeInterval));
+
     return Out;
 }
 
 // CreatePlayerStatisticDefinitionResult
 void UPFAdminProxyLibrary::BreakBPAdminCreatePlayerStatisticDefinitionResult(
     const FBPAdminCreatePlayerStatisticDefinitionResult& In
-	, FBPAdminPlayerStatisticDefinition& OutStatistic
- )
+    , FBPAdminPlayerStatisticDefinition& OutStatistic
+)
 {
-    if (In.Data.Statistic.IsValid()) {OutStatistic.Data = *In.Data.Statistic;}
-	
+    if (In.Data.Statistic.IsValid()) { OutStatistic.Data = *In.Data.Statistic; }
+
 }
 
 // CreateTaskResult
 void UPFAdminProxyLibrary::BreakBPAdminCreateTaskResult(
     const FBPAdminCreateTaskResult& In
-	, FString& OutTaskId
- )
+    , FString& OutTaskId
+)
 {
     OutTaskId = In.Data.TaskId;
-	
+
 }
 
 // DeleteContentRequest
 FBPAdminDeleteContentRequest UPFAdminProxyLibrary::MakeBPAdminDeleteContentRequest(
     FString InKey
-    )
+)
 {
     FBPAdminDeleteContentRequest Out = FBPAdminDeleteContentRequest();
     Out.Data.Key = InKey;
-	
+
     return Out;
 }
 
 // DeletePlayerRequest
 FBPAdminDeletePlayerRequest UPFAdminProxyLibrary::MakeBPAdminDeletePlayerRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPAdminDeletePlayerRequest Out = FBPAdminDeletePlayerRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // DeletePlayerResult
 void UPFAdminProxyLibrary::BreakBPAdminDeletePlayerResult(
     const FBPAdminDeletePlayerResult& In
- )
+)
 {
-    
+
 }
 
 // DeletePlayerSharedSecretRequest
 FBPAdminDeletePlayerSharedSecretRequest UPFAdminProxyLibrary::MakeBPAdminDeletePlayerSharedSecretRequest(
     FString InSecretKey
-    )
+)
 {
     FBPAdminDeletePlayerSharedSecretRequest Out = FBPAdminDeletePlayerSharedSecretRequest();
     Out.Data.SecretKey = InSecretKey;
-	
+
     return Out;
 }
 
 // DeletePlayerSharedSecretResult
 void UPFAdminProxyLibrary::BreakBPAdminDeletePlayerSharedSecretResult(
     const FBPAdminDeletePlayerSharedSecretResult& In
- )
+)
 {
-    
+
 }
 
 // DeleteStoreRequest
 FBPAdminDeleteStoreRequest UPFAdminProxyLibrary::MakeBPAdminDeleteStoreRequest(
     FString InCatalogVersion
-	, FString InStoreId
-    )
+    , FString InStoreId
+)
 {
     FBPAdminDeleteStoreRequest Out = FBPAdminDeleteStoreRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.StoreId = InStoreId;
-	
+    Out.Data.StoreId = InStoreId;
+
     return Out;
 }
 
 // DeleteStoreResult
 void UPFAdminProxyLibrary::BreakBPAdminDeleteStoreResult(
     const FBPAdminDeleteStoreResult& In
- )
+)
 {
-    
+
 }
 
 // DeleteTaskRequest
 FBPAdminDeleteTaskRequest UPFAdminProxyLibrary::MakeBPAdminDeleteTaskRequest(
     FBPAdminNameIdentifier InIdentifier
-    )
+)
 {
     FBPAdminDeleteTaskRequest Out = FBPAdminDeleteTaskRequest();
     Out.Data.Identifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InIdentifier.Data));
-	
+
     return Out;
 }
 
 // DeleteTitleRequest
 FBPAdminDeleteTitleRequest UPFAdminProxyLibrary::MakeBPAdminDeleteTitleRequest(
-        )
+)
 {
     FBPAdminDeleteTitleRequest Out = FBPAdminDeleteTitleRequest();
-    
+
     return Out;
 }
 
 // DeleteTitleResult
 void UPFAdminProxyLibrary::BreakBPAdminDeleteTitleResult(
     const FBPAdminDeleteTitleResult& In
- )
+)
 {
-    
+
 }
 
 // DeleteUsersRequest
 FBPAdminDeleteUsersRequest UPFAdminProxyLibrary::MakeBPAdminDeleteUsersRequest(
     TArray<FString> InPlayFabIds
-    )
+)
 {
     FBPAdminDeleteUsersRequest Out = FBPAdminDeleteUsersRequest();
     Out.Data.PlayFabIds = InPlayFabIds;
-	
+
     return Out;
 }
 
 // DeleteUsersResult
 void UPFAdminProxyLibrary::BreakBPAdminDeleteUsersResult(
     const FBPAdminDeleteUsersResult& In
- )
+)
 {
-    
+
 }
 
 // EmptyResult
 void UPFAdminProxyLibrary::BreakBPAdminEmptyResult(
     const FBPAdminEmptyResult& In
- )
+)
 {
-    
+
 }
 
 // ExecuteCloudScriptResult
 void UPFAdminProxyLibrary::BreakBPAdminExecuteCloudScriptResult(
     const FBPAdminExecuteCloudScriptResult& In
-	, int32& OutAPIRequestsIssued
-	, FBPAdminScriptExecutionError& OutError
-	, float& OutExecutionTimeSeconds
-	, FString& OutFunctionName
-	, UPlayFabJsonValue*& OutFunctionResult
-	, bool& OutFunctionResultTooLarge
-	, int32& OutHttpRequestsIssued
-	, TArray<FBPAdminLogStatement>& OutLogs
-	, bool& OutLogsTooLarge
-	, int32& OutMemoryConsumedBytes
-	, float& OutProcessorTimeSeconds
-	, int32& OutRevision
- )
+    , int32& OutAPIRequestsIssued
+    , FBPAdminScriptExecutionError& OutError
+    , float& OutExecutionTimeSeconds
+    , FString& OutFunctionName
+    , UPlayFabJsonValue*& OutFunctionResult
+    , bool& OutFunctionResultTooLarge
+    , int32& OutHttpRequestsIssued
+    , TArray<FBPAdminLogStatement>& OutLogs
+    , bool& OutLogsTooLarge
+    , int32& OutMemoryConsumedBytes
+    , float& OutProcessorTimeSeconds
+    , int32& OutRevision
+)
 {
     OutAPIRequestsIssued = In.Data.APIRequestsIssued;
-	if (In.Data.Error.IsValid()) {OutError.Data = *In.Data.Error;}
-	OutExecutionTimeSeconds = In.Data.ExecutionTimeSeconds;
-	OutFunctionName = In.Data.FunctionName;
-	UPlayFabJsonValue* val = NewObject<UPlayFabJsonValue>();
-	val->SetRootValue(In.Data.FunctionResult.GetJsonValue());
-	OutFunctionResult = val;
-	OutFunctionResultTooLarge = In.Data.FunctionResultTooLarge;
-	OutHttpRequestsIssued = In.Data.HttpRequestsIssued;
-	for (const PlayFab::AdminModels::FLogStatement& elem : In.Data.Logs)
-	{
-		OutLogs.Add(FBPAdminLogStatement(elem));
-	}
-	OutLogsTooLarge = In.Data.LogsTooLarge;
-	OutMemoryConsumedBytes = In.Data.MemoryConsumedBytes;
-	OutProcessorTimeSeconds = In.Data.ProcessorTimeSeconds;
-	OutRevision = In.Data.Revision;
-	
+    if (In.Data.Error.IsValid()) { OutError.Data = *In.Data.Error; }
+    OutExecutionTimeSeconds = In.Data.ExecutionTimeSeconds;
+    OutFunctionName = In.Data.FunctionName;
+    UPlayFabJsonValue* FunctionResultVal = NewObject<UPlayFabJsonValue>();
+    FunctionResultVal->SetRootValue(In.Data.FunctionResult.GetJsonValue());
+    OutFunctionResult = FunctionResultVal;
+    OutFunctionResultTooLarge = In.Data.FunctionResultTooLarge;
+    OutHttpRequestsIssued = In.Data.HttpRequestsIssued;
+    for (const PlayFab::AdminModels::FLogStatement& elem : In.Data.Logs)
+    {
+        OutLogs.Add(FBPAdminLogStatement(elem));
+    }
+    OutLogsTooLarge = In.Data.LogsTooLarge;
+    OutMemoryConsumedBytes = In.Data.MemoryConsumedBytes;
+    OutProcessorTimeSeconds = In.Data.ProcessorTimeSeconds;
+    OutRevision = In.Data.Revision;
+
 }
 
 // GameModeInfo
 FBPAdminGameModeInfo UPFAdminProxyLibrary::MakeBPAdminGameModeInfo(
     FString InGamemode
-	, int32 InMaxPlayerCount
-	, int32 InMinPlayerCount
-	, bool InStartOpen
-    )
+    , int32 InMaxPlayerCount
+    , int32 InMinPlayerCount
+    , bool InStartOpen
+)
 {
     FBPAdminGameModeInfo Out = FBPAdminGameModeInfo();
     Out.Data.Gamemode = InGamemode;
-	Out.Data.MaxPlayerCount = InMaxPlayerCount;
-	Out.Data.MinPlayerCount = InMinPlayerCount;
-	Out.Data.StartOpen = InStartOpen;
-	
+    Out.Data.MaxPlayerCount = InMaxPlayerCount;
+    Out.Data.MinPlayerCount = InMinPlayerCount;
+    Out.Data.StartOpen = InStartOpen;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminGameModeInfo(
     const FBPAdminGameModeInfo& In
-	, FString& OutGamemode
-	, int32& OutMaxPlayerCount
-	, int32& OutMinPlayerCount
-	, bool& OutStartOpen
- )
+    , FString& OutGamemode
+    , int32& OutMaxPlayerCount
+    , int32& OutMinPlayerCount
+    , bool& OutStartOpen
+)
 {
     OutGamemode = In.Data.Gamemode;
-	OutMaxPlayerCount = In.Data.MaxPlayerCount;
-	OutMinPlayerCount = In.Data.MinPlayerCount;
-	OutStartOpen = In.Data.StartOpen;
-	
+    OutMaxPlayerCount = In.Data.MaxPlayerCount;
+    OutMinPlayerCount = In.Data.MinPlayerCount;
+    OutStartOpen = In.Data.StartOpen;
+
 }
 
 // GetActionsOnPlayersInSegmentTaskInstanceResult
 void UPFAdminProxyLibrary::BreakBPAdminGetActionsOnPlayersInSegmentTaskInstanceResult(
     const FBPAdminGetActionsOnPlayersInSegmentTaskInstanceResult& In
-	, FBPAdminActionsOnPlayersInSegmentTaskParameter& OutParameter
-	, FBPAdminActionsOnPlayersInSegmentTaskSummary& OutSummary
- )
+    , FBPAdminActionsOnPlayersInSegmentTaskParameter& OutParameter
+    , FBPAdminActionsOnPlayersInSegmentTaskSummary& OutSummary
+)
 {
-    if (In.Data.Parameter.IsValid()) {OutParameter.Data = *In.Data.Parameter;}
-	if (In.Data.Summary.IsValid()) {OutSummary.Data = *In.Data.Summary;}
-	
+    if (In.Data.Parameter.IsValid()) { OutParameter.Data = *In.Data.Parameter; }
+    if (In.Data.Summary.IsValid()) { OutSummary.Data = *In.Data.Summary; }
+
 }
 
 // GetAllSegmentsRequest
 FBPAdminGetAllSegmentsRequest UPFAdminProxyLibrary::MakeBPAdminGetAllSegmentsRequest(
-        )
+)
 {
     FBPAdminGetAllSegmentsRequest Out = FBPAdminGetAllSegmentsRequest();
-    
+
     return Out;
 }
 
 // GetAllSegmentsResult
 void UPFAdminProxyLibrary::BreakBPAdminGetAllSegmentsResult(
     const FBPAdminGetAllSegmentsResult& In
-	, TArray<FBPAdminGetSegmentResult>& OutSegments
- )
+    , TArray<FBPAdminGetSegmentResult>& OutSegments
+)
 {
     for (const PlayFab::AdminModels::FGetSegmentResult& elem : In.Data.Segments)
-	{
-		OutSegments.Add(FBPAdminGetSegmentResult(elem));
-	}
-	
+    {
+        OutSegments.Add(FBPAdminGetSegmentResult(elem));
+    }
+
 }
 
 // GetCatalogItemsRequest
 FBPAdminGetCatalogItemsRequest UPFAdminProxyLibrary::MakeBPAdminGetCatalogItemsRequest(
     FString InCatalogVersion
-    )
+)
 {
     FBPAdminGetCatalogItemsRequest Out = FBPAdminGetCatalogItemsRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	
+
     return Out;
 }
 
 // GetCatalogItemsResult
 void UPFAdminProxyLibrary::BreakBPAdminGetCatalogItemsResult(
     const FBPAdminGetCatalogItemsResult& In
-	, TArray<FBPAdminCatalogItem>& OutCatalog
- )
+    , TArray<FBPAdminCatalogItem>& OutCatalog
+)
 {
     for (const PlayFab::AdminModels::FCatalogItem& elem : In.Data.Catalog)
-	{
-		OutCatalog.Add(FBPAdminCatalogItem(elem));
-	}
-	
+    {
+        OutCatalog.Add(FBPAdminCatalogItem(elem));
+    }
+
 }
 
 // GetCloudScriptRevisionRequest
 FBPAdminGetCloudScriptRevisionRequest UPFAdminProxyLibrary::MakeBPAdminGetCloudScriptRevisionRequest(
     int32 InRevision
-	, int32 InVersion
-    )
+    , int32 InVersion
+)
 {
     FBPAdminGetCloudScriptRevisionRequest Out = FBPAdminGetCloudScriptRevisionRequest();
     Out.Data.Revision = InRevision;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 
 // GetCloudScriptRevisionResult
 void UPFAdminProxyLibrary::BreakBPAdminGetCloudScriptRevisionResult(
     const FBPAdminGetCloudScriptRevisionResult& In
-	, FDateTime& OutCreatedAt
-	, TArray<FBPAdminCloudScriptFile>& OutFiles
-	, bool& OutIsPublished
-	, int32& OutRevision
-	, int32& OutVersion
- )
+    , FDateTime& OutCreatedAt
+    , TArray<FBPAdminCloudScriptFile>& OutFiles
+    , bool& OutIsPublished
+    , int32& OutRevision
+    , int32& OutVersion
+)
 {
     OutCreatedAt = In.Data.CreatedAt;
-	for (const PlayFab::AdminModels::FCloudScriptFile& elem : In.Data.Files)
-	{
-		OutFiles.Add(FBPAdminCloudScriptFile(elem));
-	}
-	OutIsPublished = In.Data.IsPublished;
-	OutRevision = In.Data.Revision;
-	OutVersion = In.Data.Version;
-	
+    for (const PlayFab::AdminModels::FCloudScriptFile& elem : In.Data.Files)
+    {
+        OutFiles.Add(FBPAdminCloudScriptFile(elem));
+    }
+    OutIsPublished = In.Data.IsPublished;
+    OutRevision = In.Data.Revision;
+    OutVersion = In.Data.Version;
+
 }
 
 // GetCloudScriptTaskInstanceResult
 void UPFAdminProxyLibrary::BreakBPAdminGetCloudScriptTaskInstanceResult(
     const FBPAdminGetCloudScriptTaskInstanceResult& In
-	, FBPAdminCloudScriptTaskParameter& OutParameter
-	, FBPAdminCloudScriptTaskSummary& OutSummary
- )
+    , FBPAdminCloudScriptTaskParameter& OutParameter
+    , FBPAdminCloudScriptTaskSummary& OutSummary
+)
 {
-    if (In.Data.Parameter.IsValid()) {OutParameter.Data = *In.Data.Parameter;}
-	if (In.Data.Summary.IsValid()) {OutSummary.Data = *In.Data.Summary;}
-	
+    if (In.Data.Parameter.IsValid()) { OutParameter.Data = *In.Data.Parameter; }
+    if (In.Data.Summary.IsValid()) { OutSummary.Data = *In.Data.Summary; }
+
 }
 
 // GetCloudScriptVersionsRequest
 FBPAdminGetCloudScriptVersionsRequest UPFAdminProxyLibrary::MakeBPAdminGetCloudScriptVersionsRequest(
-        )
+)
 {
     FBPAdminGetCloudScriptVersionsRequest Out = FBPAdminGetCloudScriptVersionsRequest();
-    
+
     return Out;
 }
 
 // GetCloudScriptVersionsResult
 void UPFAdminProxyLibrary::BreakBPAdminGetCloudScriptVersionsResult(
     const FBPAdminGetCloudScriptVersionsResult& In
-	, TArray<FBPAdminCloudScriptVersionStatus>& OutVersions
- )
+    , TArray<FBPAdminCloudScriptVersionStatus>& OutVersions
+)
 {
     for (const PlayFab::AdminModels::FCloudScriptVersionStatus& elem : In.Data.Versions)
-	{
-		OutVersions.Add(FBPAdminCloudScriptVersionStatus(elem));
-	}
-	
+    {
+        OutVersions.Add(FBPAdminCloudScriptVersionStatus(elem));
+    }
+
 }
 
 // GetContentListRequest
 FBPAdminGetContentListRequest UPFAdminProxyLibrary::MakeBPAdminGetContentListRequest(
     FString InPrefix
-    )
+)
 {
     FBPAdminGetContentListRequest Out = FBPAdminGetContentListRequest();
     Out.Data.Prefix = InPrefix;
-	
+
     return Out;
 }
 
 // GetContentListResult
 void UPFAdminProxyLibrary::BreakBPAdminGetContentListResult(
     const FBPAdminGetContentListResult& In
-	, TArray<FBPAdminContentInfo>& OutContents
-	, int32& OutItemCount
-	, int32& OutTotalSize
- )
+    , TArray<FBPAdminContentInfo>& OutContents
+    , int32& OutItemCount
+    , int32& OutTotalSize
+)
 {
     for (const PlayFab::AdminModels::FContentInfo& elem : In.Data.Contents)
-	{
-		OutContents.Add(FBPAdminContentInfo(elem));
-	}
-	OutItemCount = In.Data.ItemCount;
-	OutTotalSize = In.Data.TotalSize;
-	
+    {
+        OutContents.Add(FBPAdminContentInfo(elem));
+    }
+    OutItemCount = In.Data.ItemCount;
+    OutTotalSize = In.Data.TotalSize;
+
 }
 
 // GetContentUploadUrlRequest
 FBPAdminGetContentUploadUrlRequest UPFAdminProxyLibrary::MakeBPAdminGetContentUploadUrlRequest(
     FString InContentType
-	, FString InKey
-    )
+    , FString InKey
+)
 {
     FBPAdminGetContentUploadUrlRequest Out = FBPAdminGetContentUploadUrlRequest();
     Out.Data.ContentType = InContentType;
-	Out.Data.Key = InKey;
-	
+    Out.Data.Key = InKey;
+
     return Out;
 }
 
 // GetContentUploadUrlResult
 void UPFAdminProxyLibrary::BreakBPAdminGetContentUploadUrlResult(
     const FBPAdminGetContentUploadUrlResult& In
-	, FString& OutURL
- )
+    , FString& OutURL
+)
 {
     OutURL = In.Data.URL;
-	
+
 }
 
 // GetDataReportRequest
 FBPAdminGetDataReportRequest UPFAdminProxyLibrary::MakeBPAdminGetDataReportRequest(
     int32 InDay
-	, int32 InMonth
-	, FString InReportName
-	, int32 InYear
-    )
+    , int32 InMonth
+    , FString InReportName
+    , int32 InYear
+)
 {
     FBPAdminGetDataReportRequest Out = FBPAdminGetDataReportRequest();
     Out.Data.Day = InDay;
-	Out.Data.Month = InMonth;
-	Out.Data.ReportName = InReportName;
-	Out.Data.Year = InYear;
-	
+    Out.Data.Month = InMonth;
+    Out.Data.ReportName = InReportName;
+    Out.Data.Year = InYear;
+
     return Out;
 }
 
 // GetDataReportResult
 void UPFAdminProxyLibrary::BreakBPAdminGetDataReportResult(
     const FBPAdminGetDataReportResult& In
-	, FString& OutDownloadUrl
- )
+    , FString& OutDownloadUrl
+)
 {
     OutDownloadUrl = In.Data.DownloadUrl;
-	
+
 }
 
 // GetMatchmakerGameInfoRequest
 FBPAdminGetMatchmakerGameInfoRequest UPFAdminProxyLibrary::MakeBPAdminGetMatchmakerGameInfoRequest(
     FString InLobbyId
-    )
+)
 {
     FBPAdminGetMatchmakerGameInfoRequest Out = FBPAdminGetMatchmakerGameInfoRequest();
     Out.Data.LobbyId = InLobbyId;
-	
+
     return Out;
 }
 
 // GetMatchmakerGameInfoResult
 void UPFAdminProxyLibrary::BreakBPAdminGetMatchmakerGameInfoResult(
     const FBPAdminGetMatchmakerGameInfoResult& In
-	, FString& OutBuildVersion
-	, FDateTime& OutEndTime
-	, FString& OutLobbyId
-	, FString& OutMode
-	, TArray<FString>& OutPlayers
-	, EBPAdminRegion& OutRegion
-	, FString& OutServerAddress
-	, int32& OutServerPort
-	, FDateTime& OutStartTime
- )
+    , FString& OutBuildVersion
+    , FDateTime& OutEndTime
+    , FString& OutLobbyId
+    , FString& OutMode
+    , TArray<FString>& OutPlayers
+    , EBPAdminRegion& OutRegion
+    , FString& OutServerAddress
+    , int32& OutServerPort
+    , FDateTime& OutStartTime
+)
 {
     OutBuildVersion = In.Data.BuildVersion;
-	OutEndTime = In.Data.EndTime;
-	OutLobbyId = In.Data.LobbyId;
-	OutMode = In.Data.Mode;
-	OutPlayers = In.Data.Players;
-	if (In.Data.pfRegion.notNull()) {OutRegion = static_cast<EBPAdminRegion>(static_cast<uint8>(In.Data.pfRegion.mValue));}
-	OutServerAddress = In.Data.ServerAddress;
-	OutServerPort = In.Data.ServerPort;
-	OutStartTime = In.Data.StartTime;
-	
+    OutEndTime = In.Data.EndTime;
+    OutLobbyId = In.Data.LobbyId;
+    OutMode = In.Data.Mode;
+    OutPlayers = In.Data.Players;
+    if (In.Data.pfRegion.notNull()) { OutRegion = static_cast<EBPAdminRegion>(static_cast<uint8>(In.Data.pfRegion.mValue)); }
+    OutServerAddress = In.Data.ServerAddress;
+    OutServerPort = In.Data.ServerPort;
+    OutStartTime = In.Data.StartTime;
+
 }
 
 // GetMatchmakerGameModesRequest
 FBPAdminGetMatchmakerGameModesRequest UPFAdminProxyLibrary::MakeBPAdminGetMatchmakerGameModesRequest(
     FString InBuildVersion
-    )
+)
 {
     FBPAdminGetMatchmakerGameModesRequest Out = FBPAdminGetMatchmakerGameModesRequest();
     Out.Data.BuildVersion = InBuildVersion;
-	
+
     return Out;
 }
 
 // GetMatchmakerGameModesResult
 void UPFAdminProxyLibrary::BreakBPAdminGetMatchmakerGameModesResult(
     const FBPAdminGetMatchmakerGameModesResult& In
-	, TArray<FBPAdminGameModeInfo>& OutGameModes
- )
+    , TArray<FBPAdminGameModeInfo>& OutGameModes
+)
 {
     for (const PlayFab::AdminModels::FGameModeInfo& elem : In.Data.GameModes)
-	{
-		OutGameModes.Add(FBPAdminGameModeInfo(elem));
-	}
-	
+    {
+        OutGameModes.Add(FBPAdminGameModeInfo(elem));
+    }
+
 }
 
 // GetPlayerIdFromAuthTokenRequest
 FBPAdminGetPlayerIdFromAuthTokenRequest UPFAdminProxyLibrary::MakeBPAdminGetPlayerIdFromAuthTokenRequest(
     FString InToken
-	, EBPAdminAuthTokenType InTokenType
-    )
+    , EBPAdminAuthTokenType InTokenType
+)
 {
     FBPAdminGetPlayerIdFromAuthTokenRequest Out = FBPAdminGetPlayerIdFromAuthTokenRequest();
     Out.Data.Token = InToken;
-	Out.Data.TokenType = static_cast<PlayFab::AdminModels::AuthTokenType>(static_cast<uint8>(InTokenType));
-	
+    Out.Data.TokenType = static_cast<PlayFab::AdminModels::AuthTokenType>(static_cast<uint8>(InTokenType));
+
     return Out;
 }
 
 // GetPlayerIdFromAuthTokenResult
 void UPFAdminProxyLibrary::BreakBPAdminGetPlayerIdFromAuthTokenResult(
     const FBPAdminGetPlayerIdFromAuthTokenResult& In
-	, FString& OutPlayFabId
- )
+    , FString& OutPlayFabId
+)
 {
     OutPlayFabId = In.Data.PlayFabId;
-	
+
 }
 
 // GetPlayerProfileRequest
 FBPAdminGetPlayerProfileRequest UPFAdminProxyLibrary::MakeBPAdminGetPlayerProfileRequest(
     FString InPlayFabId
-	, FBPAdminPlayerProfileViewConstraints InProfileConstraints
-    )
+    , FBPAdminPlayerProfileViewConstraints InProfileConstraints
+)
 {
     FBPAdminGetPlayerProfileRequest Out = FBPAdminGetPlayerProfileRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.ProfileConstraints = MakeShareable(new PlayFab::AdminModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
-	
+    Out.Data.ProfileConstraints = MakeShareable(new PlayFab::AdminModels::FPlayerProfileViewConstraints(InProfileConstraints.Data));
+
     return Out;
 }
 
 // GetPlayerProfileResult
 void UPFAdminProxyLibrary::BreakBPAdminGetPlayerProfileResult(
     const FBPAdminGetPlayerProfileResult& In
-	, FBPAdminPlayerProfileModel& OutPlayerProfile
- )
+    , FBPAdminPlayerProfileModel& OutPlayerProfile
+)
 {
-    if (In.Data.PlayerProfile.IsValid()) {OutPlayerProfile.Data = *In.Data.PlayerProfile;}
-	
+    if (In.Data.PlayerProfile.IsValid()) { OutPlayerProfile.Data = *In.Data.PlayerProfile; }
+
 }
 
 // GetPlayerSegmentsResult
 void UPFAdminProxyLibrary::BreakBPAdminGetPlayerSegmentsResult(
     const FBPAdminGetPlayerSegmentsResult& In
-	, TArray<FBPAdminGetSegmentResult>& OutSegments
- )
+    , TArray<FBPAdminGetSegmentResult>& OutSegments
+)
 {
     for (const PlayFab::AdminModels::FGetSegmentResult& elem : In.Data.Segments)
-	{
-		OutSegments.Add(FBPAdminGetSegmentResult(elem));
-	}
-	
+    {
+        OutSegments.Add(FBPAdminGetSegmentResult(elem));
+    }
+
 }
 
 // GetPlayerSharedSecretsRequest
 FBPAdminGetPlayerSharedSecretsRequest UPFAdminProxyLibrary::MakeBPAdminGetPlayerSharedSecretsRequest(
-        )
+)
 {
     FBPAdminGetPlayerSharedSecretsRequest Out = FBPAdminGetPlayerSharedSecretsRequest();
-    
+
     return Out;
 }
 
 // GetPlayerSharedSecretsResult
 void UPFAdminProxyLibrary::BreakBPAdminGetPlayerSharedSecretsResult(
     const FBPAdminGetPlayerSharedSecretsResult& In
-	, TArray<FBPAdminSharedSecret>& OutSharedSecrets
- )
+    , TArray<FBPAdminSharedSecret>& OutSharedSecrets
+)
 {
     for (const PlayFab::AdminModels::FSharedSecret& elem : In.Data.SharedSecrets)
-	{
-		OutSharedSecrets.Add(FBPAdminSharedSecret(elem));
-	}
-	
+    {
+        OutSharedSecrets.Add(FBPAdminSharedSecret(elem));
+    }
+
 }
 
 // GetPlayersInSegmentRequest
 FBPAdminGetPlayersInSegmentRequest UPFAdminProxyLibrary::MakeBPAdminGetPlayersInSegmentRequest(
     FString InContinuationToken
-	, int32 InMaxBatchSize
-	, int32 InSecondsToLive
-	, FString InSegmentId
-    )
+    , int32 InMaxBatchSize
+    , int32 InSecondsToLive
+    , FString InSegmentId
+)
 {
     FBPAdminGetPlayersInSegmentRequest Out = FBPAdminGetPlayersInSegmentRequest();
     Out.Data.ContinuationToken = InContinuationToken;
-	Out.Data.MaxBatchSize = InMaxBatchSize;
-	Out.Data.SecondsToLive = InSecondsToLive;
-	Out.Data.SegmentId = InSegmentId;
-	
+    Out.Data.MaxBatchSize = InMaxBatchSize;
+    Out.Data.SecondsToLive = InSecondsToLive;
+    Out.Data.SegmentId = InSegmentId;
+
     return Out;
 }
 
 // GetPlayersInSegmentResult
 void UPFAdminProxyLibrary::BreakBPAdminGetPlayersInSegmentResult(
     const FBPAdminGetPlayersInSegmentResult& In
-	, FString& OutContinuationToken
-	, TArray<FBPAdminPlayerProfile>& OutPlayerProfiles
-	, int32& OutProfilesInSegment
- )
+    , FString& OutContinuationToken
+    , TArray<FBPAdminPlayerProfile>& OutPlayerProfiles
+    , int32& OutProfilesInSegment
+)
 {
     OutContinuationToken = In.Data.ContinuationToken;
-	for (const PlayFab::AdminModels::FPlayerProfile& elem : In.Data.PlayerProfiles)
-	{
-		OutPlayerProfiles.Add(FBPAdminPlayerProfile(elem));
-	}
-	OutProfilesInSegment = In.Data.ProfilesInSegment;
-	
+    for (const PlayFab::AdminModels::FPlayerProfile& elem : In.Data.PlayerProfiles)
+    {
+        OutPlayerProfiles.Add(FBPAdminPlayerProfile(elem));
+    }
+    OutProfilesInSegment = In.Data.ProfilesInSegment;
+
 }
 
 // GetPlayersSegmentsRequest
 FBPAdminGetPlayersSegmentsRequest UPFAdminProxyLibrary::MakeBPAdminGetPlayersSegmentsRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPAdminGetPlayersSegmentsRequest Out = FBPAdminGetPlayersSegmentsRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // GetPlayerStatisticDefinitionsRequest
 FBPAdminGetPlayerStatisticDefinitionsRequest UPFAdminProxyLibrary::MakeBPAdminGetPlayerStatisticDefinitionsRequest(
-        )
+)
 {
     FBPAdminGetPlayerStatisticDefinitionsRequest Out = FBPAdminGetPlayerStatisticDefinitionsRequest();
-    
+
     return Out;
 }
 
 // GetPlayerStatisticDefinitionsResult
 void UPFAdminProxyLibrary::BreakBPAdminGetPlayerStatisticDefinitionsResult(
     const FBPAdminGetPlayerStatisticDefinitionsResult& In
-	, TArray<FBPAdminPlayerStatisticDefinition>& OutStatistics
- )
+    , TArray<FBPAdminPlayerStatisticDefinition>& OutStatistics
+)
 {
     for (const PlayFab::AdminModels::FPlayerStatisticDefinition& elem : In.Data.Statistics)
-	{
-		OutStatistics.Add(FBPAdminPlayerStatisticDefinition(elem));
-	}
-	
+    {
+        OutStatistics.Add(FBPAdminPlayerStatisticDefinition(elem));
+    }
+
 }
 
 // GetPlayerStatisticVersionsRequest
 FBPAdminGetPlayerStatisticVersionsRequest UPFAdminProxyLibrary::MakeBPAdminGetPlayerStatisticVersionsRequest(
     FString InStatisticName
-    )
+)
 {
     FBPAdminGetPlayerStatisticVersionsRequest Out = FBPAdminGetPlayerStatisticVersionsRequest();
     Out.Data.StatisticName = InStatisticName;
-	
+
     return Out;
 }
 
 // GetPlayerStatisticVersionsResult
 void UPFAdminProxyLibrary::BreakBPAdminGetPlayerStatisticVersionsResult(
     const FBPAdminGetPlayerStatisticVersionsResult& In
-	, TArray<FBPAdminPlayerStatisticVersion>& OutStatisticVersions
- )
+    , TArray<FBPAdminPlayerStatisticVersion>& OutStatisticVersions
+)
 {
     for (const PlayFab::AdminModels::FPlayerStatisticVersion& elem : In.Data.StatisticVersions)
-	{
-		OutStatisticVersions.Add(FBPAdminPlayerStatisticVersion(elem));
-	}
-	
+    {
+        OutStatisticVersions.Add(FBPAdminPlayerStatisticVersion(elem));
+    }
+
 }
 
 // GetPlayerTagsRequest
 FBPAdminGetPlayerTagsRequest UPFAdminProxyLibrary::MakeBPAdminGetPlayerTagsRequest(
     FString InNamespace
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPAdminGetPlayerTagsRequest Out = FBPAdminGetPlayerTagsRequest();
     Out.Data.Namespace = InNamespace;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GetPlayerTagsResult
 void UPFAdminProxyLibrary::BreakBPAdminGetPlayerTagsResult(
     const FBPAdminGetPlayerTagsResult& In
-	, FString& OutPlayFabId
-	, TArray<FString>& OutTags
- )
+    , FString& OutPlayFabId
+    , TArray<FString>& OutTags
+)
 {
     OutPlayFabId = In.Data.PlayFabId;
-	OutTags = In.Data.Tags;
-	
+    OutTags = In.Data.Tags;
+
 }
 
 // GetPolicyRequest
 FBPAdminGetPolicyRequest UPFAdminProxyLibrary::MakeBPAdminGetPolicyRequest(
     FString InPolicyName
-    )
+)
 {
     FBPAdminGetPolicyRequest Out = FBPAdminGetPolicyRequest();
     Out.Data.PolicyName = InPolicyName;
-	
+
     return Out;
 }
 
 // GetPolicyResponse
 void UPFAdminProxyLibrary::BreakBPAdminGetPolicyResponse(
     const FBPAdminGetPolicyResponse& In
-	, FString& OutPolicyName
-	, TArray<FBPAdminPermissionStatement>& OutStatements
- )
+    , FString& OutPolicyName
+    , TArray<FBPAdminPermissionStatement>& OutStatements
+)
 {
     OutPolicyName = In.Data.PolicyName;
-	for (const PlayFab::AdminModels::FPermissionStatement& elem : In.Data.Statements)
-	{
-		OutStatements.Add(FBPAdminPermissionStatement(elem));
-	}
-	
+    for (const PlayFab::AdminModels::FPermissionStatement& elem : In.Data.Statements)
+    {
+        OutStatements.Add(FBPAdminPermissionStatement(elem));
+    }
+
 }
 
 // GetPublisherDataRequest
 FBPAdminGetPublisherDataRequest UPFAdminProxyLibrary::MakeBPAdminGetPublisherDataRequest(
     TArray<FString> InKeys
-    )
+)
 {
     FBPAdminGetPublisherDataRequest Out = FBPAdminGetPublisherDataRequest();
     Out.Data.Keys = InKeys;
-	
+
     return Out;
 }
 
 // GetPublisherDataResult
 void UPFAdminProxyLibrary::BreakBPAdminGetPublisherDataResult(
     const FBPAdminGetPublisherDataResult& In
-	, TMap<FString, FString>& OutData
- )
+    , TMap<FString, FString>& OutData
+)
 {
     OutData = In.Data.Data;
-	
+
 }
 
 // GetRandomResultTablesRequest
 FBPAdminGetRandomResultTablesRequest UPFAdminProxyLibrary::MakeBPAdminGetRandomResultTablesRequest(
     FString InCatalogVersion
-    )
+)
 {
     FBPAdminGetRandomResultTablesRequest Out = FBPAdminGetRandomResultTablesRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminGetRandomResultTablesRequest(
     const FBPAdminGetRandomResultTablesRequest& In
-	, FString& OutCatalogVersion
- )
+    , FString& OutCatalogVersion
+)
 {
     OutCatalogVersion = In.Data.CatalogVersion;
-	
+
 }
 
 // GetRandomResultTablesResult
 void UPFAdminProxyLibrary::BreakBPAdminGetRandomResultTablesResult(
     const FBPAdminGetRandomResultTablesResult& In
-	, TMap<FString, FBPAdminRandomResultTableListing>& OutTables
- )
+    , TMap<FString, FBPAdminRandomResultTableListing>& OutTables
+)
 {
     for (auto& elem : In.Data.Tables)
-	{
-		const PlayFab::AdminModels::FRandomResultTableListing value = elem.Value;
-		OutTables.Add(elem.Key, FBPAdminRandomResultTableListing(value));
-	}
-	
+    {
+        const PlayFab::AdminModels::FRandomResultTableListing value = elem.Value;
+        OutTables.Add(elem.Key, FBPAdminRandomResultTableListing(value));
+    }
+
 }
 
 // GetSegmentResult
 void UPFAdminProxyLibrary::BreakBPAdminGetSegmentResult(
     const FBPAdminGetSegmentResult& In
-	, FString& OutABTestParent
-	, FString& OutId
-	, FString& OutName
- )
+    , FString& OutABTestParent
+    , FString& OutId
+    , FString& OutName
+)
 {
     OutABTestParent = In.Data.ABTestParent;
-	OutId = In.Data.Id;
-	OutName = In.Data.Name;
-	
+    OutId = In.Data.Id;
+    OutName = In.Data.Name;
+
 }
 
 // GetServerBuildInfoRequest
 FBPAdminGetServerBuildInfoRequest UPFAdminProxyLibrary::MakeBPAdminGetServerBuildInfoRequest(
     FString InBuildId
-    )
+)
 {
     FBPAdminGetServerBuildInfoRequest Out = FBPAdminGetServerBuildInfoRequest();
     Out.Data.BuildId = InBuildId;
-	
+
     return Out;
 }
 
 // GetServerBuildInfoResult
 void UPFAdminProxyLibrary::BreakBPAdminGetServerBuildInfoResult(
     const FBPAdminGetServerBuildInfoResult& In
-	, TArray<EBPAdminRegion>& OutActiveRegions
-	, FString& OutBuildId
-	, FString& OutComment
-	, FString& OutErrorMessage
-	, int32& OutMaxGamesPerHost
-	, int32& OutMinFreeGameSlots
-	, EBPAdminGameBuildStatus& OutStatus
-	, FDateTime& OutTimestamp
- )
+    , TArray<EBPAdminRegion>& OutActiveRegions
+    , FString& OutBuildId
+    , FString& OutComment
+    , FString& OutErrorMessage
+    , int32& OutMaxGamesPerHost
+    , int32& OutMinFreeGameSlots
+    , EBPAdminGameBuildStatus& OutStatus
+    , FDateTime& OutTimestamp
+)
 {
     for (const PlayFab::AdminModels::Region& elem : In.Data.ActiveRegions)
-	{
-		OutActiveRegions.Add(static_cast<EBPAdminRegion>(static_cast<uint8>(elem)));
-	}
-	OutBuildId = In.Data.BuildId;
-	OutComment = In.Data.Comment;
-	OutErrorMessage = In.Data.ErrorMessage;
-	OutMaxGamesPerHost = In.Data.MaxGamesPerHost;
-	OutMinFreeGameSlots = In.Data.MinFreeGameSlots;
-	if (In.Data.Status.notNull()) {OutStatus = static_cast<EBPAdminGameBuildStatus>(static_cast<uint8>(In.Data.Status.mValue));}
-	OutTimestamp = In.Data.Timestamp;
-	
+    {
+        OutActiveRegions.Add(static_cast<EBPAdminRegion>(static_cast<uint8>(elem)));
+    }
+    OutBuildId = In.Data.BuildId;
+    OutComment = In.Data.Comment;
+    OutErrorMessage = In.Data.ErrorMessage;
+    OutMaxGamesPerHost = In.Data.MaxGamesPerHost;
+    OutMinFreeGameSlots = In.Data.MinFreeGameSlots;
+    if (In.Data.Status.notNull()) { OutStatus = static_cast<EBPAdminGameBuildStatus>(static_cast<uint8>(In.Data.Status.mValue)); }
+    OutTimestamp = In.Data.Timestamp;
+
 }
 
 // GetServerBuildUploadURLRequest
 FBPAdminGetServerBuildUploadURLRequest UPFAdminProxyLibrary::MakeBPAdminGetServerBuildUploadURLRequest(
     FString InBuildId
-    )
+)
 {
     FBPAdminGetServerBuildUploadURLRequest Out = FBPAdminGetServerBuildUploadURLRequest();
     Out.Data.BuildId = InBuildId;
-	
+
     return Out;
 }
 
 // GetServerBuildUploadURLResult
 void UPFAdminProxyLibrary::BreakBPAdminGetServerBuildUploadURLResult(
     const FBPAdminGetServerBuildUploadURLResult& In
-	, FString& OutURL
- )
+    , FString& OutURL
+)
 {
     OutURL = In.Data.URL;
-	
+
 }
 
 // GetStoreItemsRequest
 FBPAdminGetStoreItemsRequest UPFAdminProxyLibrary::MakeBPAdminGetStoreItemsRequest(
     FString InCatalogVersion
-	, FString InStoreId
-    )
+    , FString InStoreId
+)
 {
     FBPAdminGetStoreItemsRequest Out = FBPAdminGetStoreItemsRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.StoreId = InStoreId;
-	
+    Out.Data.StoreId = InStoreId;
+
     return Out;
 }
 
 // GetStoreItemsResult
 void UPFAdminProxyLibrary::BreakBPAdminGetStoreItemsResult(
     const FBPAdminGetStoreItemsResult& In
-	, FString& OutCatalogVersion
-	, FBPAdminStoreMarketingModel& OutMarketingData
-	, EBPAdminSourceType& OutSource
-	, TArray<FBPAdminStoreItem>& OutStore
-	, FString& OutStoreId
- )
+    , FString& OutCatalogVersion
+    , FBPAdminStoreMarketingModel& OutMarketingData
+    , EBPAdminSourceType& OutSource
+    , TArray<FBPAdminStoreItem>& OutStore
+    , FString& OutStoreId
+)
 {
     OutCatalogVersion = In.Data.CatalogVersion;
-	if (In.Data.MarketingData.IsValid()) {OutMarketingData.Data = *In.Data.MarketingData;}
-	if (In.Data.Source.notNull()) {OutSource = static_cast<EBPAdminSourceType>(static_cast<uint8>(In.Data.Source.mValue));}
-	for (const PlayFab::AdminModels::FStoreItem& elem : In.Data.Store)
-	{
-		OutStore.Add(FBPAdminStoreItem(elem));
-	}
-	OutStoreId = In.Data.StoreId;
-	
+    if (In.Data.MarketingData.IsValid()) { OutMarketingData.Data = *In.Data.MarketingData; }
+    if (In.Data.Source.notNull()) { OutSource = static_cast<EBPAdminSourceType>(static_cast<uint8>(In.Data.Source.mValue)); }
+    for (const PlayFab::AdminModels::FStoreItem& elem : In.Data.Store)
+    {
+        OutStore.Add(FBPAdminStoreItem(elem));
+    }
+    OutStoreId = In.Data.StoreId;
+
 }
 
 // GetTaskInstanceRequest
 FBPAdminGetTaskInstanceRequest UPFAdminProxyLibrary::MakeBPAdminGetTaskInstanceRequest(
     FString InTaskInstanceId
-    )
+)
 {
     FBPAdminGetTaskInstanceRequest Out = FBPAdminGetTaskInstanceRequest();
     Out.Data.TaskInstanceId = InTaskInstanceId;
-	
+
     return Out;
 }
 
 // GetTaskInstancesRequest
 FBPAdminGetTaskInstancesRequest UPFAdminProxyLibrary::MakeBPAdminGetTaskInstancesRequest(
     FDateTime InStartedAtRangeFrom
-	, FDateTime InStartedAtRangeTo
-	, EBPAdminTaskInstanceStatus InStatusFilter
-	, FBPAdminNameIdentifier InTaskIdentifier
-    )
+    , FDateTime InStartedAtRangeTo
+    , EBPAdminTaskInstanceStatus InStatusFilter
+    , FBPAdminNameIdentifier InTaskIdentifier
+)
 {
     FBPAdminGetTaskInstancesRequest Out = FBPAdminGetTaskInstancesRequest();
     Out.Data.StartedAtRangeFrom = InStartedAtRangeFrom;
-	Out.Data.StartedAtRangeTo = InStartedAtRangeTo;
-	Out.Data.StatusFilter = static_cast<PlayFab::AdminModels::TaskInstanceStatus>(static_cast<uint8>(InStatusFilter));
-	Out.Data.TaskIdentifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InTaskIdentifier.Data));
-	
+    Out.Data.StartedAtRangeTo = InStartedAtRangeTo;
+    Out.Data.StatusFilter = static_cast<PlayFab::AdminModels::TaskInstanceStatus>(static_cast<uint8>(InStatusFilter));
+    Out.Data.TaskIdentifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InTaskIdentifier.Data));
+
     return Out;
 }
 
 // GetTaskInstancesResult
 void UPFAdminProxyLibrary::BreakBPAdminGetTaskInstancesResult(
     const FBPAdminGetTaskInstancesResult& In
-	, TArray<FBPAdminTaskInstanceBasicSummary>& OutSummaries
- )
+    , TArray<FBPAdminTaskInstanceBasicSummary>& OutSummaries
+)
 {
     for (const PlayFab::AdminModels::FTaskInstanceBasicSummary& elem : In.Data.Summaries)
-	{
-		OutSummaries.Add(FBPAdminTaskInstanceBasicSummary(elem));
-	}
-	
+    {
+        OutSummaries.Add(FBPAdminTaskInstanceBasicSummary(elem));
+    }
+
 }
 
 // GetTasksRequest
 FBPAdminGetTasksRequest UPFAdminProxyLibrary::MakeBPAdminGetTasksRequest(
     FBPAdminNameIdentifier InIdentifier
-    )
+)
 {
     FBPAdminGetTasksRequest Out = FBPAdminGetTasksRequest();
     Out.Data.Identifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InIdentifier.Data));
-	
+
     return Out;
 }
 
 // GetTasksResult
 void UPFAdminProxyLibrary::BreakBPAdminGetTasksResult(
     const FBPAdminGetTasksResult& In
-	, TArray<FBPAdminScheduledTask>& OutTasks
- )
+    , TArray<FBPAdminScheduledTask>& OutTasks
+)
 {
     for (const PlayFab::AdminModels::FScheduledTask& elem : In.Data.Tasks)
-	{
-		OutTasks.Add(FBPAdminScheduledTask(elem));
-	}
-	
+    {
+        OutTasks.Add(FBPAdminScheduledTask(elem));
+    }
+
 }
 
 // GetTitleDataRequest
 FBPAdminGetTitleDataRequest UPFAdminProxyLibrary::MakeBPAdminGetTitleDataRequest(
     TArray<FString> InKeys
-    )
+)
 {
     FBPAdminGetTitleDataRequest Out = FBPAdminGetTitleDataRequest();
     Out.Data.Keys = InKeys;
-	
+
     return Out;
 }
 
 // GetTitleDataResult
 void UPFAdminProxyLibrary::BreakBPAdminGetTitleDataResult(
     const FBPAdminGetTitleDataResult& In
-	, TMap<FString, FString>& OutData
- )
+    , TMap<FString, FString>& OutData
+)
 {
     OutData = In.Data.Data;
-	
+
 }
 
 // GetUserBansRequest
 FBPAdminGetUserBansRequest UPFAdminProxyLibrary::MakeBPAdminGetUserBansRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPAdminGetUserBansRequest Out = FBPAdminGetUserBansRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // GetUserBansResult
 void UPFAdminProxyLibrary::BreakBPAdminGetUserBansResult(
     const FBPAdminGetUserBansResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
- )
+    , TArray<FBPAdminBanInfo>& OutBanData
+)
 {
     for (const PlayFab::AdminModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPAdminBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPAdminBanInfo(elem));
+    }
+
 }
 
 // GetUserDataRequest
 FBPAdminGetUserDataRequest UPFAdminProxyLibrary::MakeBPAdminGetUserDataRequest(
     int32 InIfChangedFromDataVersion
-	, TArray<FString> InKeys
-	, FString InPlayFabId
-    )
+    , TArray<FString> InKeys
+    , FString InPlayFabId
+)
 {
     FBPAdminGetUserDataRequest Out = FBPAdminGetUserDataRequest();
     Out.Data.IfChangedFromDataVersion = InIfChangedFromDataVersion;
-	Out.Data.Keys = InKeys;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.Keys = InKeys;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // GetUserDataResult
 void UPFAdminProxyLibrary::BreakBPAdminGetUserDataResult(
     const FBPAdminGetUserDataResult& In
-	, TMap<FString, FBPAdminUserDataRecord>& OutData
-	, int32& OutDataVersion
-	, FString& OutPlayFabId
- )
+    , TMap<FString, FBPAdminUserDataRecord>& OutData
+    , int32& OutDataVersion
+    , FString& OutPlayFabId
+)
 {
     for (auto& elem : In.Data.Data)
-	{
-		const PlayFab::AdminModels::FUserDataRecord value = elem.Value;
-		OutData.Add(elem.Key, FBPAdminUserDataRecord(value));
-	}
-	OutDataVersion = In.Data.DataVersion;
-	OutPlayFabId = In.Data.PlayFabId;
-	
+    {
+        const PlayFab::AdminModels::FUserDataRecord value = elem.Value;
+        OutData.Add(elem.Key, FBPAdminUserDataRecord(value));
+    }
+    OutDataVersion = In.Data.DataVersion;
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // GetUserInventoryRequest
 FBPAdminGetUserInventoryRequest UPFAdminProxyLibrary::MakeBPAdminGetUserInventoryRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPAdminGetUserInventoryRequest Out = FBPAdminGetUserInventoryRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // GetUserInventoryResult
 void UPFAdminProxyLibrary::BreakBPAdminGetUserInventoryResult(
     const FBPAdminGetUserInventoryResult& In
-	, TArray<FBPAdminItemInstance>& OutInventory
-	, FString& OutPlayFabId
-	, TMap<FString, int32>& OutVirtualCurrency
-	, TMap<FString, FBPAdminVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
- )
+    , TArray<FBPAdminItemInstance>& OutInventory
+    , FString& OutPlayFabId
+    , TMap<FString, int32>& OutVirtualCurrency
+    , TMap<FString, FBPAdminVirtualCurrencyRechargeTime>& OutVirtualCurrencyRechargeTimes
+)
 {
     for (const PlayFab::AdminModels::FItemInstance& elem : In.Data.Inventory)
-	{
-		OutInventory.Add(FBPAdminItemInstance(elem));
-	}
-	OutPlayFabId = In.Data.PlayFabId;
-	OutVirtualCurrency = In.Data.VirtualCurrency;
-	for (auto& elem : In.Data.VirtualCurrencyRechargeTimes)
-	{
-		const PlayFab::AdminModels::FVirtualCurrencyRechargeTime value = elem.Value;
-		OutVirtualCurrencyRechargeTimes.Add(elem.Key, FBPAdminVirtualCurrencyRechargeTime(value));
-	}
-	
+    {
+        OutInventory.Add(FBPAdminItemInstance(elem));
+    }
+    OutPlayFabId = In.Data.PlayFabId;
+    OutVirtualCurrency = In.Data.VirtualCurrency;
+    for (auto& elem : In.Data.VirtualCurrencyRechargeTimes)
+    {
+        const PlayFab::AdminModels::FVirtualCurrencyRechargeTime value = elem.Value;
+        OutVirtualCurrencyRechargeTimes.Add(elem.Key, FBPAdminVirtualCurrencyRechargeTime(value));
+    }
+
 }
 
 // GrantedItemInstance
 FBPAdminGrantedItemInstance UPFAdminProxyLibrary::MakeBPAdminGrantedItemInstance(
     FString InAnnotation
-	, TArray<FString> InBundleContents
-	, FString InBundleParent
-	, FString InCatalogVersion
-	, FString InCharacterId
-	, TMap<FString, FString> InCustomData
-	, FString InDisplayName
-	, FDateTime InExpiration
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-	, FDateTime InPurchaseDate
-	, int32 InRemainingUses
-	, bool InResult
-	, FString InUnitCurrency
-	, int32 InUnitPrice
-	, int32 InUsesIncrementedBy
-    )
+    , TArray<FString> InBundleContents
+    , FString InBundleParent
+    , FString InCatalogVersion
+    , FString InCharacterId
+    , TMap<FString, FString> InCustomData
+    , FString InDisplayName
+    , FDateTime InExpiration
+    , FString InItemClass
+    , FString InItemId
+    , FString InItemInstanceId
+    , FString InPlayFabId
+    , FDateTime InPurchaseDate
+    , int32 InRemainingUses
+    , bool InResult
+    , FString InUnitCurrency
+    , int32 InUnitPrice
+    , int32 InUsesIncrementedBy
+)
 {
     FBPAdminGrantedItemInstance Out = FBPAdminGrantedItemInstance();
     Out.Data.Annotation = InAnnotation;
-	Out.Data.BundleContents = InBundleContents;
-	Out.Data.BundleParent = InBundleParent;
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.CustomData = InCustomData;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.Expiration = InExpiration;
-	Out.Data.ItemClass = InItemClass;
-	Out.Data.ItemId = InItemId;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.PurchaseDate = InPurchaseDate;
-	Out.Data.RemainingUses = InRemainingUses;
-	Out.Data.Result = InResult;
-	Out.Data.UnitCurrency = InUnitCurrency;
-	Out.Data.UnitPrice = InUnitPrice;
-	Out.Data.UsesIncrementedBy = InUsesIncrementedBy;
-	
+    Out.Data.BundleContents = InBundleContents;
+    Out.Data.BundleParent = InBundleParent;
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.CustomData = InCustomData;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.Expiration = InExpiration;
+    Out.Data.ItemClass = InItemClass;
+    Out.Data.ItemId = InItemId;
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.PurchaseDate = InPurchaseDate;
+    Out.Data.RemainingUses = InRemainingUses;
+    Out.Data.Result = InResult;
+    Out.Data.UnitCurrency = InUnitCurrency;
+    Out.Data.UnitPrice = InUnitPrice;
+    Out.Data.UsesIncrementedBy = InUsesIncrementedBy;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminGrantedItemInstance(
     const FBPAdminGrantedItemInstance& In
-	, FString& OutAnnotation
-	, TArray<FString>& OutBundleContents
-	, FString& OutBundleParent
-	, FString& OutCatalogVersion
-	, FString& OutCharacterId
-	, TMap<FString, FString>& OutCustomData
-	, FString& OutDisplayName
-	, FDateTime& OutExpiration
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemInstanceId
-	, FString& OutPlayFabId
-	, FDateTime& OutPurchaseDate
-	, int32& OutRemainingUses
-	, bool& OutResult
-	, FString& OutUnitCurrency
-	, int32& OutUnitPrice
-	, int32& OutUsesIncrementedBy
- )
+    , FString& OutAnnotation
+    , TArray<FString>& OutBundleContents
+    , FString& OutBundleParent
+    , FString& OutCatalogVersion
+    , FString& OutCharacterId
+    , TMap<FString, FString>& OutCustomData
+    , FString& OutDisplayName
+    , FDateTime& OutExpiration
+    , FString& OutItemClass
+    , FString& OutItemId
+    , FString& OutItemInstanceId
+    , FString& OutPlayFabId
+    , FDateTime& OutPurchaseDate
+    , int32& OutRemainingUses
+    , bool& OutResult
+    , FString& OutUnitCurrency
+    , int32& OutUnitPrice
+    , int32& OutUsesIncrementedBy
+)
 {
     OutAnnotation = In.Data.Annotation;
-	OutBundleContents = In.Data.BundleContents;
-	OutBundleParent = In.Data.BundleParent;
-	OutCatalogVersion = In.Data.CatalogVersion;
-	OutCharacterId = In.Data.CharacterId;
-	OutCustomData = In.Data.CustomData;
-	OutDisplayName = In.Data.DisplayName;
-	OutExpiration = In.Data.Expiration;
-	OutItemClass = In.Data.ItemClass;
-	OutItemId = In.Data.ItemId;
-	OutItemInstanceId = In.Data.ItemInstanceId;
-	OutPlayFabId = In.Data.PlayFabId;
-	OutPurchaseDate = In.Data.PurchaseDate;
-	OutRemainingUses = In.Data.RemainingUses;
-	OutResult = In.Data.Result;
-	OutUnitCurrency = In.Data.UnitCurrency;
-	OutUnitPrice = In.Data.UnitPrice;
-	OutUsesIncrementedBy = In.Data.UsesIncrementedBy;
-	
+    OutBundleContents = In.Data.BundleContents;
+    OutBundleParent = In.Data.BundleParent;
+    OutCatalogVersion = In.Data.CatalogVersion;
+    OutCharacterId = In.Data.CharacterId;
+    OutCustomData = In.Data.CustomData;
+    OutDisplayName = In.Data.DisplayName;
+    OutExpiration = In.Data.Expiration;
+    OutItemClass = In.Data.ItemClass;
+    OutItemId = In.Data.ItemId;
+    OutItemInstanceId = In.Data.ItemInstanceId;
+    OutPlayFabId = In.Data.PlayFabId;
+    OutPurchaseDate = In.Data.PurchaseDate;
+    OutRemainingUses = In.Data.RemainingUses;
+    OutResult = In.Data.Result;
+    OutUnitCurrency = In.Data.UnitCurrency;
+    OutUnitPrice = In.Data.UnitPrice;
+    OutUsesIncrementedBy = In.Data.UsesIncrementedBy;
+
 }
 
 // GrantItemsToUsersRequest
 FBPAdminGrantItemsToUsersRequest UPFAdminProxyLibrary::MakeBPAdminGrantItemsToUsersRequest(
     FString InCatalogVersion
-	, TArray<FBPAdminItemGrant> InItemGrants
-    )
+    , TArray<FBPAdminItemGrant> InItemGrants
+)
 {
     FBPAdminGrantItemsToUsersRequest Out = FBPAdminGrantItemsToUsersRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	for (const FBPAdminItemGrant& elem : InItemGrants)
-	{
-		Out.Data.ItemGrants.Add(elem.Data);
-	}
-	
+    for (const FBPAdminItemGrant& elem : InItemGrants)
+    {
+        Out.Data.ItemGrants.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // GrantItemsToUsersResult
 void UPFAdminProxyLibrary::BreakBPAdminGrantItemsToUsersResult(
     const FBPAdminGrantItemsToUsersResult& In
-	, TArray<FBPAdminGrantedItemInstance>& OutItemGrantResults
- )
+    , TArray<FBPAdminGrantedItemInstance>& OutItemGrantResults
+)
 {
     for (const PlayFab::AdminModels::FGrantedItemInstance& elem : In.Data.ItemGrantResults)
-	{
-		OutItemGrantResults.Add(FBPAdminGrantedItemInstance(elem));
-	}
-	
+    {
+        OutItemGrantResults.Add(FBPAdminGrantedItemInstance(elem));
+    }
+
 }
 
 // IncrementLimitedEditionItemAvailabilityRequest
 FBPAdminIncrementLimitedEditionItemAvailabilityRequest UPFAdminProxyLibrary::MakeBPAdminIncrementLimitedEditionItemAvailabilityRequest(
     int32 InAmount
-	, FString InCatalogVersion
-	, FString InItemId
-    )
+    , FString InCatalogVersion
+    , FString InItemId
+)
 {
     FBPAdminIncrementLimitedEditionItemAvailabilityRequest Out = FBPAdminIncrementLimitedEditionItemAvailabilityRequest();
     Out.Data.Amount = InAmount;
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.ItemId = InItemId;
-	
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.ItemId = InItemId;
+
     return Out;
 }
 
 // IncrementLimitedEditionItemAvailabilityResult
 void UPFAdminProxyLibrary::BreakBPAdminIncrementLimitedEditionItemAvailabilityResult(
     const FBPAdminIncrementLimitedEditionItemAvailabilityResult& In
- )
+)
 {
-    
+
 }
 
 // IncrementPlayerStatisticVersionRequest
 FBPAdminIncrementPlayerStatisticVersionRequest UPFAdminProxyLibrary::MakeBPAdminIncrementPlayerStatisticVersionRequest(
     FString InStatisticName
-    )
+)
 {
     FBPAdminIncrementPlayerStatisticVersionRequest Out = FBPAdminIncrementPlayerStatisticVersionRequest();
     Out.Data.StatisticName = InStatisticName;
-	
+
     return Out;
 }
 
 // IncrementPlayerStatisticVersionResult
 void UPFAdminProxyLibrary::BreakBPAdminIncrementPlayerStatisticVersionResult(
     const FBPAdminIncrementPlayerStatisticVersionResult& In
-	, FBPAdminPlayerStatisticVersion& OutStatisticVersion
- )
+    , FBPAdminPlayerStatisticVersion& OutStatisticVersion
+)
 {
-    if (In.Data.StatisticVersion.IsValid()) {OutStatisticVersion.Data = *In.Data.StatisticVersion;}
-	
+    if (In.Data.StatisticVersion.IsValid()) { OutStatisticVersion.Data = *In.Data.StatisticVersion; }
+
 }
 
 // ItemGrant
 FBPAdminItemGrant UPFAdminProxyLibrary::MakeBPAdminItemGrant(
     FString InAnnotation
-	, FString InCharacterId
-	, TMap<FString, FString> InData
-	, FString InItemId
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-    )
+    , FString InCharacterId
+    , TMap<FString, FString> InData
+    , FString InItemId
+    , TArray<FString> InKeysToRemove
+    , FString InPlayFabId
+)
 {
     FBPAdminItemGrant Out = FBPAdminItemGrant();
     Out.Data.Annotation = InAnnotation;
-	Out.Data.CharacterId = InCharacterId;
-	Out.Data.Data = InData;
-	Out.Data.ItemId = InItemId;
-	Out.Data.KeysToRemove = InKeysToRemove;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.Data = InData;
+    Out.Data.ItemId = InItemId;
+    Out.Data.KeysToRemove = InKeysToRemove;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminItemGrant(
     const FBPAdminItemGrant& In
-	, FString& OutAnnotation
-	, FString& OutCharacterId
-	, TMap<FString, FString>& OutData
-	, FString& OutItemId
-	, TArray<FString>& OutKeysToRemove
-	, FString& OutPlayFabId
- )
+    , FString& OutAnnotation
+    , FString& OutCharacterId
+    , TMap<FString, FString>& OutData
+    , FString& OutItemId
+    , TArray<FString>& OutKeysToRemove
+    , FString& OutPlayFabId
+)
 {
     OutAnnotation = In.Data.Annotation;
-	OutCharacterId = In.Data.CharacterId;
-	OutData = In.Data.Data;
-	OutItemId = In.Data.ItemId;
-	OutKeysToRemove = In.Data.KeysToRemove;
-	OutPlayFabId = In.Data.PlayFabId;
-	
+    OutCharacterId = In.Data.CharacterId;
+    OutData = In.Data.Data;
+    OutItemId = In.Data.ItemId;
+    OutKeysToRemove = In.Data.KeysToRemove;
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // ItemInstance
 FBPAdminItemInstance UPFAdminProxyLibrary::MakeBPAdminItemInstance(
     FString InAnnotation
-	, TArray<FString> InBundleContents
-	, FString InBundleParent
-	, FString InCatalogVersion
-	, TMap<FString, FString> InCustomData
-	, FString InDisplayName
-	, FDateTime InExpiration
-	, FString InItemClass
-	, FString InItemId
-	, FString InItemInstanceId
-	, FDateTime InPurchaseDate
-	, int32 InRemainingUses
-	, FString InUnitCurrency
-	, int32 InUnitPrice
-	, int32 InUsesIncrementedBy
-    )
+    , TArray<FString> InBundleContents
+    , FString InBundleParent
+    , FString InCatalogVersion
+    , TMap<FString, FString> InCustomData
+    , FString InDisplayName
+    , FDateTime InExpiration
+    , FString InItemClass
+    , FString InItemId
+    , FString InItemInstanceId
+    , FDateTime InPurchaseDate
+    , int32 InRemainingUses
+    , FString InUnitCurrency
+    , int32 InUnitPrice
+    , int32 InUsesIncrementedBy
+)
 {
     FBPAdminItemInstance Out = FBPAdminItemInstance();
     Out.Data.Annotation = InAnnotation;
-	Out.Data.BundleContents = InBundleContents;
-	Out.Data.BundleParent = InBundleParent;
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.CustomData = InCustomData;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.Expiration = InExpiration;
-	Out.Data.ItemClass = InItemClass;
-	Out.Data.ItemId = InItemId;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PurchaseDate = InPurchaseDate;
-	Out.Data.RemainingUses = InRemainingUses;
-	Out.Data.UnitCurrency = InUnitCurrency;
-	Out.Data.UnitPrice = InUnitPrice;
-	Out.Data.UsesIncrementedBy = InUsesIncrementedBy;
-	
+    Out.Data.BundleContents = InBundleContents;
+    Out.Data.BundleParent = InBundleParent;
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.CustomData = InCustomData;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.Expiration = InExpiration;
+    Out.Data.ItemClass = InItemClass;
+    Out.Data.ItemId = InItemId;
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PurchaseDate = InPurchaseDate;
+    Out.Data.RemainingUses = InRemainingUses;
+    Out.Data.UnitCurrency = InUnitCurrency;
+    Out.Data.UnitPrice = InUnitPrice;
+    Out.Data.UsesIncrementedBy = InUsesIncrementedBy;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminItemInstance(
     const FBPAdminItemInstance& In
-	, FString& OutAnnotation
-	, TArray<FString>& OutBundleContents
-	, FString& OutBundleParent
-	, FString& OutCatalogVersion
-	, TMap<FString, FString>& OutCustomData
-	, FString& OutDisplayName
-	, FDateTime& OutExpiration
-	, FString& OutItemClass
-	, FString& OutItemId
-	, FString& OutItemInstanceId
-	, FDateTime& OutPurchaseDate
-	, int32& OutRemainingUses
-	, FString& OutUnitCurrency
-	, int32& OutUnitPrice
-	, int32& OutUsesIncrementedBy
- )
+    , FString& OutAnnotation
+    , TArray<FString>& OutBundleContents
+    , FString& OutBundleParent
+    , FString& OutCatalogVersion
+    , TMap<FString, FString>& OutCustomData
+    , FString& OutDisplayName
+    , FDateTime& OutExpiration
+    , FString& OutItemClass
+    , FString& OutItemId
+    , FString& OutItemInstanceId
+    , FDateTime& OutPurchaseDate
+    , int32& OutRemainingUses
+    , FString& OutUnitCurrency
+    , int32& OutUnitPrice
+    , int32& OutUsesIncrementedBy
+)
 {
     OutAnnotation = In.Data.Annotation;
-	OutBundleContents = In.Data.BundleContents;
-	OutBundleParent = In.Data.BundleParent;
-	OutCatalogVersion = In.Data.CatalogVersion;
-	OutCustomData = In.Data.CustomData;
-	OutDisplayName = In.Data.DisplayName;
-	OutExpiration = In.Data.Expiration;
-	OutItemClass = In.Data.ItemClass;
-	OutItemId = In.Data.ItemId;
-	OutItemInstanceId = In.Data.ItemInstanceId;
-	OutPurchaseDate = In.Data.PurchaseDate;
-	OutRemainingUses = In.Data.RemainingUses;
-	OutUnitCurrency = In.Data.UnitCurrency;
-	OutUnitPrice = In.Data.UnitPrice;
-	OutUsesIncrementedBy = In.Data.UsesIncrementedBy;
-	
+    OutBundleContents = In.Data.BundleContents;
+    OutBundleParent = In.Data.BundleParent;
+    OutCatalogVersion = In.Data.CatalogVersion;
+    OutCustomData = In.Data.CustomData;
+    OutDisplayName = In.Data.DisplayName;
+    OutExpiration = In.Data.Expiration;
+    OutItemClass = In.Data.ItemClass;
+    OutItemId = In.Data.ItemId;
+    OutItemInstanceId = In.Data.ItemInstanceId;
+    OutPurchaseDate = In.Data.PurchaseDate;
+    OutRemainingUses = In.Data.RemainingUses;
+    OutUnitCurrency = In.Data.UnitCurrency;
+    OutUnitPrice = In.Data.UnitPrice;
+    OutUsesIncrementedBy = In.Data.UsesIncrementedBy;
+
 }
 
 // LinkedPlatformAccountModel
 FBPAdminLinkedPlatformAccountModel UPFAdminProxyLibrary::MakeBPAdminLinkedPlatformAccountModel(
     FString InEmail
-	, EBPAdminLoginIdentityProvider InPlatform
-	, FString InPlatformUserId
-	, FString InUsername
-    )
+    , EBPAdminLoginIdentityProvider InPlatform
+    , FString InPlatformUserId
+    , FString InUsername
+)
 {
     FBPAdminLinkedPlatformAccountModel Out = FBPAdminLinkedPlatformAccountModel();
     Out.Data.Email = InEmail;
-	Out.Data.Platform = static_cast<PlayFab::AdminModels::LoginIdentityProvider>(static_cast<uint8>(InPlatform));
-	Out.Data.PlatformUserId = InPlatformUserId;
-	Out.Data.Username = InUsername;
-	
+    Out.Data.Platform = static_cast<PlayFab::AdminModels::LoginIdentityProvider>(static_cast<uint8>(InPlatform));
+    Out.Data.PlatformUserId = InPlatformUserId;
+    Out.Data.Username = InUsername;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminLinkedPlatformAccountModel(
     const FBPAdminLinkedPlatformAccountModel& In
-	, FString& OutEmail
-	, EBPAdminLoginIdentityProvider& OutPlatform
-	, FString& OutPlatformUserId
-	, FString& OutUsername
- )
+    , FString& OutEmail
+    , EBPAdminLoginIdentityProvider& OutPlatform
+    , FString& OutPlatformUserId
+    , FString& OutUsername
+)
 {
     OutEmail = In.Data.Email;
-	if (In.Data.Platform.notNull()) {OutPlatform = static_cast<EBPAdminLoginIdentityProvider>(static_cast<uint8>(In.Data.Platform.mValue));}
-	OutPlatformUserId = In.Data.PlatformUserId;
-	OutUsername = In.Data.Username;
-	
+    if (In.Data.Platform.notNull()) { OutPlatform = static_cast<EBPAdminLoginIdentityProvider>(static_cast<uint8>(In.Data.Platform.mValue)); }
+    OutPlatformUserId = In.Data.PlatformUserId;
+    OutUsername = In.Data.Username;
+
 }
 
 // ListBuildsRequest
 FBPAdminListBuildsRequest UPFAdminProxyLibrary::MakeBPAdminListBuildsRequest(
-        )
+)
 {
     FBPAdminListBuildsRequest Out = FBPAdminListBuildsRequest();
-    
+
     return Out;
 }
 
 // ListBuildsResult
 void UPFAdminProxyLibrary::BreakBPAdminListBuildsResult(
     const FBPAdminListBuildsResult& In
-	, TArray<FBPAdminGetServerBuildInfoResult>& OutBuilds
- )
+    , TArray<FBPAdminGetServerBuildInfoResult>& OutBuilds
+)
 {
     for (const PlayFab::AdminModels::FGetServerBuildInfoResult& elem : In.Data.Builds)
-	{
-		OutBuilds.Add(FBPAdminGetServerBuildInfoResult(elem));
-	}
-	
+    {
+        OutBuilds.Add(FBPAdminGetServerBuildInfoResult(elem));
+    }
+
 }
 
 // ListVirtualCurrencyTypesRequest
 FBPAdminListVirtualCurrencyTypesRequest UPFAdminProxyLibrary::MakeBPAdminListVirtualCurrencyTypesRequest(
-        )
+)
 {
     FBPAdminListVirtualCurrencyTypesRequest Out = FBPAdminListVirtualCurrencyTypesRequest();
-    
+
     return Out;
 }
 
 // ListVirtualCurrencyTypesResult
 void UPFAdminProxyLibrary::BreakBPAdminListVirtualCurrencyTypesResult(
     const FBPAdminListVirtualCurrencyTypesResult& In
-	, TArray<FBPAdminVirtualCurrencyData>& OutVirtualCurrencies
- )
+    , TArray<FBPAdminVirtualCurrencyData>& OutVirtualCurrencies
+)
 {
     for (const PlayFab::AdminModels::FVirtualCurrencyData& elem : In.Data.VirtualCurrencies)
-	{
-		OutVirtualCurrencies.Add(FBPAdminVirtualCurrencyData(elem));
-	}
-	
+    {
+        OutVirtualCurrencies.Add(FBPAdminVirtualCurrencyData(elem));
+    }
+
 }
 
 // LocationModel
 FBPAdminLocationModel UPFAdminProxyLibrary::MakeBPAdminLocationModel(
     FString InCity
-	, EBPAdminContinentCode InContinentCode
-	, EBPAdminCountryCode InCountryCode
-	, float InLatitude
-	, float InLongitude
-    )
+    , EBPAdminContinentCode InContinentCode
+    , EBPAdminCountryCode InCountryCode
+    , float InLatitude
+    , float InLongitude
+)
 {
     FBPAdminLocationModel Out = FBPAdminLocationModel();
     Out.Data.City = InCity;
-	Out.Data.pfContinentCode = static_cast<PlayFab::AdminModels::ContinentCode>(static_cast<uint8>(InContinentCode));
-	Out.Data.pfCountryCode = static_cast<PlayFab::AdminModels::CountryCode>(static_cast<uint8>(InCountryCode));
-	Out.Data.Latitude = InLatitude;
-	Out.Data.Longitude = InLongitude;
-	
+    Out.Data.pfContinentCode = static_cast<PlayFab::AdminModels::ContinentCode>(static_cast<uint8>(InContinentCode));
+    Out.Data.pfCountryCode = static_cast<PlayFab::AdminModels::CountryCode>(static_cast<uint8>(InCountryCode));
+    Out.Data.Latitude = InLatitude;
+    Out.Data.Longitude = InLongitude;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminLocationModel(
     const FBPAdminLocationModel& In
-	, FString& OutCity
-	, EBPAdminContinentCode& OutContinentCode
-	, EBPAdminCountryCode& OutCountryCode
-	, float& OutLatitude
-	, float& OutLongitude
- )
+    , FString& OutCity
+    , EBPAdminContinentCode& OutContinentCode
+    , EBPAdminCountryCode& OutCountryCode
+    , float& OutLatitude
+    , float& OutLongitude
+)
 {
     OutCity = In.Data.City;
-	if (In.Data.pfContinentCode.notNull()) {OutContinentCode = static_cast<EBPAdminContinentCode>(static_cast<uint8>(In.Data.pfContinentCode.mValue));}
-	if (In.Data.pfCountryCode.notNull()) {OutCountryCode = static_cast<EBPAdminCountryCode>(static_cast<uint8>(In.Data.pfCountryCode.mValue));}
-	OutLatitude = In.Data.Latitude;
-	OutLongitude = In.Data.Longitude;
-	
+    if (In.Data.pfContinentCode.notNull()) { OutContinentCode = static_cast<EBPAdminContinentCode>(static_cast<uint8>(In.Data.pfContinentCode.mValue)); }
+    if (In.Data.pfCountryCode.notNull()) { OutCountryCode = static_cast<EBPAdminCountryCode>(static_cast<uint8>(In.Data.pfCountryCode.mValue)); }
+    OutLatitude = In.Data.Latitude;
+    OutLongitude = In.Data.Longitude;
+
 }
 
 // LogStatement
 FBPAdminLogStatement UPFAdminProxyLibrary::MakeBPAdminLogStatement(
     UPlayFabJsonValue* InData
-	, FString InLevel
-	, FString InMessage
-    )
+    , FString InLevel
+    , FString InMessage
+)
 {
     FBPAdminLogStatement Out = FBPAdminLogStatement();
     Out.Data.Data = InData->GetRootValue();
-	Out.Data.Level = InLevel;
-	Out.Data.Message = InMessage;
-	
+    Out.Data.Level = InLevel;
+    Out.Data.Message = InMessage;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminLogStatement(
     const FBPAdminLogStatement& In
-	, UPlayFabJsonValue*& OutData
-	, FString& OutLevel
-	, FString& OutMessage
- )
+    , UPlayFabJsonValue*& OutData
+    , FString& OutLevel
+    , FString& OutMessage
+)
 {
-    UPlayFabJsonValue* val = NewObject<UPlayFabJsonValue>();
-	val->SetRootValue(In.Data.Data.GetJsonValue());
-	OutData = val;
-	OutLevel = In.Data.Level;
-	OutMessage = In.Data.Message;
-	
+    UPlayFabJsonValue* DataVal = NewObject<UPlayFabJsonValue>();
+    DataVal->SetRootValue(In.Data.Data.GetJsonValue());
+    OutData = DataVal;
+    OutLevel = In.Data.Level;
+    OutMessage = In.Data.Message;
+
 }
 
 // LookupUserAccountInfoRequest
 FBPAdminLookupUserAccountInfoRequest UPFAdminProxyLibrary::MakeBPAdminLookupUserAccountInfoRequest(
     FString InEmail
-	, FString InPlayFabId
-	, FString InTitleDisplayName
-	, FString InUsername
-    )
+    , FString InPlayFabId
+    , FString InTitleDisplayName
+    , FString InUsername
+)
 {
     FBPAdminLookupUserAccountInfoRequest Out = FBPAdminLookupUserAccountInfoRequest();
     Out.Data.Email = InEmail;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.TitleDisplayName = InTitleDisplayName;
-	Out.Data.Username = InUsername;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.TitleDisplayName = InTitleDisplayName;
+    Out.Data.Username = InUsername;
+
     return Out;
 }
 
 // LookupUserAccountInfoResult
 void UPFAdminProxyLibrary::BreakBPAdminLookupUserAccountInfoResult(
     const FBPAdminLookupUserAccountInfoResult& In
-	, FBPAdminUserAccountInfo& OutUserInfo
- )
+    , FBPAdminUserAccountInfo& OutUserInfo
+)
 {
-    if (In.Data.UserInfo.IsValid()) {OutUserInfo.Data = *In.Data.UserInfo;}
-	
+    if (In.Data.UserInfo.IsValid()) { OutUserInfo.Data = *In.Data.UserInfo; }
+
 }
 
 // MembershipModel
 FBPAdminMembershipModel UPFAdminProxyLibrary::MakeBPAdminMembershipModel(
     bool InIsActive
-	, FDateTime InMembershipExpiration
-	, FString InMembershipId
-	, FDateTime InOverrideExpiration
-	, bool InOverrideIsSet
-	, TArray<FBPAdminSubscriptionModel> InSubscriptions
-    )
+    , FDateTime InMembershipExpiration
+    , FString InMembershipId
+    , FDateTime InOverrideExpiration
+    , bool InOverrideIsSet
+    , TArray<FBPAdminSubscriptionModel> InSubscriptions
+)
 {
     FBPAdminMembershipModel Out = FBPAdminMembershipModel();
     Out.Data.IsActive = InIsActive;
-	Out.Data.MembershipExpiration = InMembershipExpiration;
-	Out.Data.MembershipId = InMembershipId;
-	Out.Data.OverrideExpiration = InOverrideExpiration;
-	Out.Data.OverrideIsSet = InOverrideIsSet;
-	for (const FBPAdminSubscriptionModel& elem : InSubscriptions)
-	{
-		Out.Data.Subscriptions.Add(elem.Data);
-	}
-	
+    Out.Data.MembershipExpiration = InMembershipExpiration;
+    Out.Data.MembershipId = InMembershipId;
+    Out.Data.OverrideExpiration = InOverrideExpiration;
+    Out.Data.OverrideIsSet = InOverrideIsSet;
+    for (const FBPAdminSubscriptionModel& elem : InSubscriptions)
+    {
+        Out.Data.Subscriptions.Add(elem.Data);
+    }
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminMembershipModel(
     const FBPAdminMembershipModel& In
-	, bool& OutIsActive
-	, FDateTime& OutMembershipExpiration
-	, FString& OutMembershipId
-	, FDateTime& OutOverrideExpiration
-	, bool& OutOverrideIsSet
-	, TArray<FBPAdminSubscriptionModel>& OutSubscriptions
- )
+    , bool& OutIsActive
+    , FDateTime& OutMembershipExpiration
+    , FString& OutMembershipId
+    , FDateTime& OutOverrideExpiration
+    , bool& OutOverrideIsSet
+    , TArray<FBPAdminSubscriptionModel>& OutSubscriptions
+)
 {
     OutIsActive = In.Data.IsActive;
-	OutMembershipExpiration = In.Data.MembershipExpiration;
-	OutMembershipId = In.Data.MembershipId;
-	OutOverrideExpiration = In.Data.OverrideExpiration;
-	OutOverrideIsSet = In.Data.OverrideIsSet;
-	for (const PlayFab::AdminModels::FSubscriptionModel& elem : In.Data.Subscriptions)
-	{
-		OutSubscriptions.Add(FBPAdminSubscriptionModel(elem));
-	}
-	
+    OutMembershipExpiration = In.Data.MembershipExpiration;
+    OutMembershipId = In.Data.MembershipId;
+    OutOverrideExpiration = In.Data.OverrideExpiration;
+    OutOverrideIsSet = In.Data.OverrideIsSet;
+    for (const PlayFab::AdminModels::FSubscriptionModel& elem : In.Data.Subscriptions)
+    {
+        OutSubscriptions.Add(FBPAdminSubscriptionModel(elem));
+    }
+
 }
 
 // ModifyMatchmakerGameModesRequest
 FBPAdminModifyMatchmakerGameModesRequest UPFAdminProxyLibrary::MakeBPAdminModifyMatchmakerGameModesRequest(
     FString InBuildVersion
-	, TArray<FBPAdminGameModeInfo> InGameModes
-    )
+    , TArray<FBPAdminGameModeInfo> InGameModes
+)
 {
     FBPAdminModifyMatchmakerGameModesRequest Out = FBPAdminModifyMatchmakerGameModesRequest();
     Out.Data.BuildVersion = InBuildVersion;
-	for (const FBPAdminGameModeInfo& elem : InGameModes)
-	{
-		Out.Data.GameModes.Add(elem.Data);
-	}
-	
+    for (const FBPAdminGameModeInfo& elem : InGameModes)
+    {
+        Out.Data.GameModes.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // ModifyMatchmakerGameModesResult
 void UPFAdminProxyLibrary::BreakBPAdminModifyMatchmakerGameModesResult(
     const FBPAdminModifyMatchmakerGameModesResult& In
- )
+)
 {
-    
+
 }
 
 // ModifyServerBuildRequest
 FBPAdminModifyServerBuildRequest UPFAdminProxyLibrary::MakeBPAdminModifyServerBuildRequest(
     TArray<EBPAdminRegion> InActiveRegions
-	, FString InBuildId
-	, FString InCommandLineTemplate
-	, FString InComment
-	, FString InExecutablePath
-	, int32 InMaxGamesPerHost
-	, int32 InMinFreeGameSlots
-	, FDateTime InTimestamp
-    )
+    , FString InBuildId
+    , FString InCommandLineTemplate
+    , FString InComment
+    , FString InExecutablePath
+    , int32 InMaxGamesPerHost
+    , int32 InMinFreeGameSlots
+    , FDateTime InTimestamp
+)
 {
     FBPAdminModifyServerBuildRequest Out = FBPAdminModifyServerBuildRequest();
     for (const EBPAdminRegion& elem : InActiveRegions)
-	{
-		Out.Data.ActiveRegions.Add(static_cast<PlayFab::AdminModels::Region>(static_cast<uint8>(elem)));
-	}
-	Out.Data.BuildId = InBuildId;
-	Out.Data.CommandLineTemplate = InCommandLineTemplate;
-	Out.Data.Comment = InComment;
-	Out.Data.ExecutablePath = InExecutablePath;
-	Out.Data.MaxGamesPerHost = InMaxGamesPerHost;
-	Out.Data.MinFreeGameSlots = InMinFreeGameSlots;
-	Out.Data.Timestamp = InTimestamp;
-	
+    {
+        Out.Data.ActiveRegions.Add(static_cast<PlayFab::AdminModels::Region>(static_cast<uint8>(elem)));
+    }
+    Out.Data.BuildId = InBuildId;
+    Out.Data.CommandLineTemplate = InCommandLineTemplate;
+    Out.Data.Comment = InComment;
+    Out.Data.ExecutablePath = InExecutablePath;
+    Out.Data.MaxGamesPerHost = InMaxGamesPerHost;
+    Out.Data.MinFreeGameSlots = InMinFreeGameSlots;
+    Out.Data.Timestamp = InTimestamp;
+
     return Out;
 }
 
 // ModifyServerBuildResult
 void UPFAdminProxyLibrary::BreakBPAdminModifyServerBuildResult(
     const FBPAdminModifyServerBuildResult& In
-	, TArray<EBPAdminRegion>& OutActiveRegions
-	, FString& OutBuildId
-	, FString& OutCommandLineTemplate
-	, FString& OutComment
-	, FString& OutExecutablePath
-	, int32& OutMaxGamesPerHost
-	, int32& OutMinFreeGameSlots
-	, EBPAdminGameBuildStatus& OutStatus
-	, FDateTime& OutTimestamp
- )
+    , TArray<EBPAdminRegion>& OutActiveRegions
+    , FString& OutBuildId
+    , FString& OutCommandLineTemplate
+    , FString& OutComment
+    , FString& OutExecutablePath
+    , int32& OutMaxGamesPerHost
+    , int32& OutMinFreeGameSlots
+    , EBPAdminGameBuildStatus& OutStatus
+    , FDateTime& OutTimestamp
+)
 {
     for (const PlayFab::AdminModels::Region& elem : In.Data.ActiveRegions)
-	{
-		OutActiveRegions.Add(static_cast<EBPAdminRegion>(static_cast<uint8>(elem)));
-	}
-	OutBuildId = In.Data.BuildId;
-	OutCommandLineTemplate = In.Data.CommandLineTemplate;
-	OutComment = In.Data.Comment;
-	OutExecutablePath = In.Data.ExecutablePath;
-	OutMaxGamesPerHost = In.Data.MaxGamesPerHost;
-	OutMinFreeGameSlots = In.Data.MinFreeGameSlots;
-	if (In.Data.Status.notNull()) {OutStatus = static_cast<EBPAdminGameBuildStatus>(static_cast<uint8>(In.Data.Status.mValue));}
-	OutTimestamp = In.Data.Timestamp;
-	
+    {
+        OutActiveRegions.Add(static_cast<EBPAdminRegion>(static_cast<uint8>(elem)));
+    }
+    OutBuildId = In.Data.BuildId;
+    OutCommandLineTemplate = In.Data.CommandLineTemplate;
+    OutComment = In.Data.Comment;
+    OutExecutablePath = In.Data.ExecutablePath;
+    OutMaxGamesPerHost = In.Data.MaxGamesPerHost;
+    OutMinFreeGameSlots = In.Data.MinFreeGameSlots;
+    if (In.Data.Status.notNull()) { OutStatus = static_cast<EBPAdminGameBuildStatus>(static_cast<uint8>(In.Data.Status.mValue)); }
+    OutTimestamp = In.Data.Timestamp;
+
 }
 
 // ModifyUserVirtualCurrencyResult
 void UPFAdminProxyLibrary::BreakBPAdminModifyUserVirtualCurrencyResult(
     const FBPAdminModifyUserVirtualCurrencyResult& In
-	, int32& OutBalance
-	, int32& OutBalanceChange
-	, FString& OutPlayFabId
-	, FString& OutVirtualCurrency
- )
+    , int32& OutBalance
+    , int32& OutBalanceChange
+    , FString& OutPlayFabId
+    , FString& OutVirtualCurrency
+)
 {
     OutBalance = In.Data.Balance;
-	OutBalanceChange = In.Data.BalanceChange;
-	OutPlayFabId = In.Data.PlayFabId;
-	OutVirtualCurrency = In.Data.VirtualCurrency;
-	
+    OutBalanceChange = In.Data.BalanceChange;
+    OutPlayFabId = In.Data.PlayFabId;
+    OutVirtualCurrency = In.Data.VirtualCurrency;
+
 }
 
 // NameIdentifier
 FBPAdminNameIdentifier UPFAdminProxyLibrary::MakeBPAdminNameIdentifier(
     FString InId
-	, FString InName
-    )
+    , FString InName
+)
 {
     FBPAdminNameIdentifier Out = FBPAdminNameIdentifier();
     Out.Data.Id = InId;
-	Out.Data.Name = InName;
-	
+    Out.Data.Name = InName;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminNameIdentifier(
     const FBPAdminNameIdentifier& In
-	, FString& OutId
-	, FString& OutName
- )
+    , FString& OutId
+    , FString& OutName
+)
 {
     OutId = In.Data.Id;
-	OutName = In.Data.Name;
-	
+    OutName = In.Data.Name;
+
 }
 
 // PermissionStatement
 FBPAdminPermissionStatement UPFAdminProxyLibrary::MakeBPAdminPermissionStatement(
     FString InAction
-	, FBPAdminApiCondition InApiConditions
-	, FString InComment
-	, EBPAdminEffectType InEffect
-	, FString InPrincipal
-	, FString InResource
-    )
+    , FBPAdminApiCondition InApiConditions
+    , FString InComment
+    , EBPAdminEffectType InEffect
+    , FString InPrincipal
+    , FString InResource
+)
 {
     FBPAdminPermissionStatement Out = FBPAdminPermissionStatement();
     Out.Data.Action = InAction;
-	Out.Data.ApiConditions = MakeShareable(new PlayFab::AdminModels::FApiCondition(InApiConditions.Data));
-	Out.Data.Comment = InComment;
-	Out.Data.Effect = static_cast<PlayFab::AdminModels::EffectType>(static_cast<uint8>(InEffect));
-	Out.Data.Principal = InPrincipal;
-	Out.Data.Resource = InResource;
-	
+    Out.Data.ApiConditions = MakeShareable(new PlayFab::AdminModels::FApiCondition(InApiConditions.Data));
+    Out.Data.Comment = InComment;
+    Out.Data.Effect = static_cast<PlayFab::AdminModels::EffectType>(static_cast<uint8>(InEffect));
+    Out.Data.Principal = InPrincipal;
+    Out.Data.Resource = InResource;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPermissionStatement(
     const FBPAdminPermissionStatement& In
-	, FString& OutAction
-	, FBPAdminApiCondition& OutApiConditions
-	, FString& OutComment
-	, EBPAdminEffectType& OutEffect
-	, FString& OutPrincipal
-	, FString& OutResource
- )
+    , FString& OutAction
+    , FBPAdminApiCondition& OutApiConditions
+    , FString& OutComment
+    , EBPAdminEffectType& OutEffect
+    , FString& OutPrincipal
+    , FString& OutResource
+)
 {
     OutAction = In.Data.Action;
-	if (In.Data.ApiConditions.IsValid()) {OutApiConditions.Data = *In.Data.ApiConditions;}
-	OutComment = In.Data.Comment;
-	OutEffect = static_cast<EBPAdminEffectType>(static_cast<uint8>(In.Data.Effect));
-	OutPrincipal = In.Data.Principal;
-	OutResource = In.Data.Resource;
-	
+    if (In.Data.ApiConditions.IsValid()) { OutApiConditions.Data = *In.Data.ApiConditions; }
+    OutComment = In.Data.Comment;
+    OutEffect = static_cast<EBPAdminEffectType>(static_cast<uint8>(In.Data.Effect));
+    OutPrincipal = In.Data.Principal;
+    OutResource = In.Data.Resource;
+
 }
 
 // PlayerLinkedAccount
 FBPAdminPlayerLinkedAccount UPFAdminProxyLibrary::MakeBPAdminPlayerLinkedAccount(
     FString InEmail
-	, EBPAdminLoginIdentityProvider InPlatform
-	, FString InPlatformUserId
-	, FString InUsername
-    )
+    , EBPAdminLoginIdentityProvider InPlatform
+    , FString InPlatformUserId
+    , FString InUsername
+)
 {
     FBPAdminPlayerLinkedAccount Out = FBPAdminPlayerLinkedAccount();
     Out.Data.Email = InEmail;
-	Out.Data.Platform = static_cast<PlayFab::AdminModels::LoginIdentityProvider>(static_cast<uint8>(InPlatform));
-	Out.Data.PlatformUserId = InPlatformUserId;
-	Out.Data.Username = InUsername;
-	
+    Out.Data.Platform = static_cast<PlayFab::AdminModels::LoginIdentityProvider>(static_cast<uint8>(InPlatform));
+    Out.Data.PlatformUserId = InPlatformUserId;
+    Out.Data.Username = InUsername;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPlayerLinkedAccount(
     const FBPAdminPlayerLinkedAccount& In
-	, FString& OutEmail
-	, EBPAdminLoginIdentityProvider& OutPlatform
-	, FString& OutPlatformUserId
-	, FString& OutUsername
- )
+    , FString& OutEmail
+    , EBPAdminLoginIdentityProvider& OutPlatform
+    , FString& OutPlatformUserId
+    , FString& OutUsername
+)
 {
     OutEmail = In.Data.Email;
-	if (In.Data.Platform.notNull()) {OutPlatform = static_cast<EBPAdminLoginIdentityProvider>(static_cast<uint8>(In.Data.Platform.mValue));}
-	OutPlatformUserId = In.Data.PlatformUserId;
-	OutUsername = In.Data.Username;
-	
+    if (In.Data.Platform.notNull()) { OutPlatform = static_cast<EBPAdminLoginIdentityProvider>(static_cast<uint8>(In.Data.Platform.mValue)); }
+    OutPlatformUserId = In.Data.PlatformUserId;
+    OutUsername = In.Data.Username;
+
 }
 
 // PlayerLocation
 FBPAdminPlayerLocation UPFAdminProxyLibrary::MakeBPAdminPlayerLocation(
     FString InCity
-	, EBPAdminContinentCode InContinentCode
-	, EBPAdminCountryCode InCountryCode
-	, float InLatitude
-	, float InLongitude
-    )
+    , EBPAdminContinentCode InContinentCode
+    , EBPAdminCountryCode InCountryCode
+    , float InLatitude
+    , float InLongitude
+)
 {
     FBPAdminPlayerLocation Out = FBPAdminPlayerLocation();
     Out.Data.City = InCity;
-	Out.Data.pfContinentCode = static_cast<PlayFab::AdminModels::ContinentCode>(static_cast<uint8>(InContinentCode));
-	Out.Data.pfCountryCode = static_cast<PlayFab::AdminModels::CountryCode>(static_cast<uint8>(InCountryCode));
-	Out.Data.Latitude = InLatitude;
-	Out.Data.Longitude = InLongitude;
-	
+    Out.Data.pfContinentCode = static_cast<PlayFab::AdminModels::ContinentCode>(static_cast<uint8>(InContinentCode));
+    Out.Data.pfCountryCode = static_cast<PlayFab::AdminModels::CountryCode>(static_cast<uint8>(InCountryCode));
+    Out.Data.Latitude = InLatitude;
+    Out.Data.Longitude = InLongitude;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPlayerLocation(
     const FBPAdminPlayerLocation& In
-	, FString& OutCity
-	, EBPAdminContinentCode& OutContinentCode
-	, EBPAdminCountryCode& OutCountryCode
-	, float& OutLatitude
-	, float& OutLongitude
- )
+    , FString& OutCity
+    , EBPAdminContinentCode& OutContinentCode
+    , EBPAdminCountryCode& OutCountryCode
+    , float& OutLatitude
+    , float& OutLongitude
+)
 {
     OutCity = In.Data.City;
-	OutContinentCode = static_cast<EBPAdminContinentCode>(static_cast<uint8>(In.Data.pfContinentCode));
-	OutCountryCode = static_cast<EBPAdminCountryCode>(static_cast<uint8>(In.Data.pfCountryCode));
-	OutLatitude = In.Data.Latitude;
-	OutLongitude = In.Data.Longitude;
-	
+    OutContinentCode = static_cast<EBPAdminContinentCode>(static_cast<uint8>(In.Data.pfContinentCode));
+    OutCountryCode = static_cast<EBPAdminCountryCode>(static_cast<uint8>(In.Data.pfCountryCode));
+    OutLatitude = In.Data.Latitude;
+    OutLongitude = In.Data.Longitude;
+
 }
 
 // PlayerProfile
 FBPAdminPlayerProfile UPFAdminProxyLibrary::MakeBPAdminPlayerProfile(
     TArray<FBPAdminAdCampaignAttribution> InAdCampaignAttributions
-	, FString InAvatarUrl
-	, FDateTime InBannedUntil
-	, TArray<FBPAdminContactEmailInfo> InContactEmailAddresses
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InLastLogin
-	, TArray<FBPAdminPlayerLinkedAccount> InLinkedAccounts
-	, TMap<FString, FBPAdminPlayerLocation> InLocations
-	, EBPAdminLoginIdentityProvider InOrigination
-	, FString InPlayerId
-	, TArray<FBPAdminPlayerStatistic> InPlayerStatistics
-	, FString InPublisherId
-	, TArray<FBPAdminPushNotificationRegistration> InPushNotificationRegistrations
-	, TMap<FString, int32> InStatistics
-	, TArray<FString> InTags
-	, int32 InTotalValueToDateInUSD
-	, TMap<FString, int32> InValuesToDate
-	, TMap<FString, int32> InVirtualCurrencyBalances
-    )
+    , FString InAvatarUrl
+    , FDateTime InBannedUntil
+    , TArray<FBPAdminContactEmailInfo> InContactEmailAddresses
+    , FDateTime InCreated
+    , FString InDisplayName
+    , FDateTime InLastLogin
+    , TArray<FBPAdminPlayerLinkedAccount> InLinkedAccounts
+    , TMap<FString, FBPAdminPlayerLocation> InLocations
+    , EBPAdminLoginIdentityProvider InOrigination
+    , FString InPlayerId
+    , TArray<FBPAdminPlayerStatistic> InPlayerStatistics
+    , FString InPublisherId
+    , TArray<FBPAdminPushNotificationRegistration> InPushNotificationRegistrations
+    , TMap<FString, int32> InStatistics
+    , TArray<FString> InTags
+    , int32 InTotalValueToDateInUSD
+    , TMap<FString, int32> InValuesToDate
+    , TMap<FString, int32> InVirtualCurrencyBalances
+)
 {
     FBPAdminPlayerProfile Out = FBPAdminPlayerProfile();
     for (const FBPAdminAdCampaignAttribution& elem : InAdCampaignAttributions)
-	{
-		Out.Data.AdCampaignAttributions.Add(elem.Data);
-	}
-	Out.Data.AvatarUrl = InAvatarUrl;
-	Out.Data.BannedUntil = InBannedUntil;
-	for (const FBPAdminContactEmailInfo& elem : InContactEmailAddresses)
-	{
-		Out.Data.ContactEmailAddresses.Add(elem.Data);
-	}
-	Out.Data.Created = InCreated;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.LastLogin = InLastLogin;
-	for (const FBPAdminPlayerLinkedAccount& elem : InLinkedAccounts)
-	{
-		Out.Data.LinkedAccounts.Add(elem.Data);
-	}
-	for (auto& elem : InLocations)
-	{
-		const FBPAdminPlayerLocation value = elem.Value;
-		Out.Data.Locations.Add(elem.Key, value.Data);
-	}
-	Out.Data.Origination = static_cast<PlayFab::AdminModels::LoginIdentityProvider>(static_cast<uint8>(InOrigination));
-	Out.Data.PlayerId = InPlayerId;
-	for (const FBPAdminPlayerStatistic& elem : InPlayerStatistics)
-	{
-		Out.Data.PlayerStatistics.Add(elem.Data);
-	}
-	Out.Data.PublisherId = InPublisherId;
-	for (const FBPAdminPushNotificationRegistration& elem : InPushNotificationRegistrations)
-	{
-		Out.Data.PushNotificationRegistrations.Add(elem.Data);
-	}
-	Out.Data.Statistics = InStatistics;
-	Out.Data.Tags = InTags;
-	Out.Data.TotalValueToDateInUSD = InTotalValueToDateInUSD;
-	for (auto& elem : InValuesToDate)
-	{
-		const int32 value = elem.Value;
-		Out.Data.ValuesToDate.Add(elem.Key, static_cast<uint32>(value));
-	}
-	Out.Data.VirtualCurrencyBalances = InVirtualCurrencyBalances;
-	
+    {
+        Out.Data.AdCampaignAttributions.Add(elem.Data);
+    }
+    Out.Data.AvatarUrl = InAvatarUrl;
+    Out.Data.BannedUntil = InBannedUntil;
+    for (const FBPAdminContactEmailInfo& elem : InContactEmailAddresses)
+    {
+        Out.Data.ContactEmailAddresses.Add(elem.Data);
+    }
+    Out.Data.Created = InCreated;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.LastLogin = InLastLogin;
+    for (const FBPAdminPlayerLinkedAccount& elem : InLinkedAccounts)
+    {
+        Out.Data.LinkedAccounts.Add(elem.Data);
+    }
+    for (auto& elem : InLocations)
+    {
+        const FBPAdminPlayerLocation value = elem.Value;
+        Out.Data.Locations.Add(elem.Key, value.Data);
+    }
+    Out.Data.Origination = static_cast<PlayFab::AdminModels::LoginIdentityProvider>(static_cast<uint8>(InOrigination));
+    Out.Data.PlayerId = InPlayerId;
+    for (const FBPAdminPlayerStatistic& elem : InPlayerStatistics)
+    {
+        Out.Data.PlayerStatistics.Add(elem.Data);
+    }
+    Out.Data.PublisherId = InPublisherId;
+    for (const FBPAdminPushNotificationRegistration& elem : InPushNotificationRegistrations)
+    {
+        Out.Data.PushNotificationRegistrations.Add(elem.Data);
+    }
+    Out.Data.Statistics = InStatistics;
+    Out.Data.Tags = InTags;
+    Out.Data.TotalValueToDateInUSD = InTotalValueToDateInUSD;
+    for (auto& elem : InValuesToDate)
+    {
+        const int32 value = elem.Value;
+        Out.Data.ValuesToDate.Add(elem.Key, static_cast<uint32>(value));
+    }
+    Out.Data.VirtualCurrencyBalances = InVirtualCurrencyBalances;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPlayerProfile(
     const FBPAdminPlayerProfile& In
-	, TArray<FBPAdminAdCampaignAttribution>& OutAdCampaignAttributions
-	, FString& OutAvatarUrl
-	, FDateTime& OutBannedUntil
-	, TArray<FBPAdminContactEmailInfo>& OutContactEmailAddresses
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutLastLogin
-	, TArray<FBPAdminPlayerLinkedAccount>& OutLinkedAccounts
-	, TMap<FString, FBPAdminPlayerLocation>& OutLocations
-	, EBPAdminLoginIdentityProvider& OutOrigination
-	, FString& OutPlayerId
-	, TArray<FBPAdminPlayerStatistic>& OutPlayerStatistics
-	, FString& OutPublisherId
-	, TArray<FBPAdminPushNotificationRegistration>& OutPushNotificationRegistrations
-	, TMap<FString, int32>& OutStatistics
-	, TArray<FString>& OutTags
-	, int32& OutTotalValueToDateInUSD
-	, TMap<FString, int32>& OutValuesToDate
-	, TMap<FString, int32>& OutVirtualCurrencyBalances
- )
+    , TArray<FBPAdminAdCampaignAttribution>& OutAdCampaignAttributions
+    , FString& OutAvatarUrl
+    , FDateTime& OutBannedUntil
+    , TArray<FBPAdminContactEmailInfo>& OutContactEmailAddresses
+    , FDateTime& OutCreated
+    , FString& OutDisplayName
+    , FDateTime& OutLastLogin
+    , TArray<FBPAdminPlayerLinkedAccount>& OutLinkedAccounts
+    , TMap<FString, FBPAdminPlayerLocation>& OutLocations
+    , EBPAdminLoginIdentityProvider& OutOrigination
+    , FString& OutPlayerId
+    , TArray<FBPAdminPlayerStatistic>& OutPlayerStatistics
+    , FString& OutPublisherId
+    , TArray<FBPAdminPushNotificationRegistration>& OutPushNotificationRegistrations
+    , TMap<FString, int32>& OutStatistics
+    , TArray<FString>& OutTags
+    , int32& OutTotalValueToDateInUSD
+    , TMap<FString, int32>& OutValuesToDate
+    , TMap<FString, int32>& OutVirtualCurrencyBalances
+)
 {
     for (const PlayFab::AdminModels::FAdCampaignAttribution& elem : In.Data.AdCampaignAttributions)
-	{
-		OutAdCampaignAttributions.Add(FBPAdminAdCampaignAttribution(elem));
-	}
-	OutAvatarUrl = In.Data.AvatarUrl;
-	OutBannedUntil = In.Data.BannedUntil;
-	for (const PlayFab::AdminModels::FContactEmailInfo& elem : In.Data.ContactEmailAddresses)
-	{
-		OutContactEmailAddresses.Add(FBPAdminContactEmailInfo(elem));
-	}
-	OutCreated = In.Data.Created;
-	OutDisplayName = In.Data.DisplayName;
-	OutLastLogin = In.Data.LastLogin;
-	for (const PlayFab::AdminModels::FPlayerLinkedAccount& elem : In.Data.LinkedAccounts)
-	{
-		OutLinkedAccounts.Add(FBPAdminPlayerLinkedAccount(elem));
-	}
-	for (auto& elem : In.Data.Locations)
-	{
-		const PlayFab::AdminModels::FPlayerLocation value = elem.Value;
-		OutLocations.Add(elem.Key, FBPAdminPlayerLocation(value));
-	}
-	if (In.Data.Origination.notNull()) {OutOrigination = static_cast<EBPAdminLoginIdentityProvider>(static_cast<uint8>(In.Data.Origination.mValue));}
-	OutPlayerId = In.Data.PlayerId;
-	for (const PlayFab::AdminModels::FPlayerStatistic& elem : In.Data.PlayerStatistics)
-	{
-		OutPlayerStatistics.Add(FBPAdminPlayerStatistic(elem));
-	}
-	OutPublisherId = In.Data.PublisherId;
-	for (const PlayFab::AdminModels::FPushNotificationRegistration& elem : In.Data.PushNotificationRegistrations)
-	{
-		OutPushNotificationRegistrations.Add(FBPAdminPushNotificationRegistration(elem));
-	}
-	OutStatistics = In.Data.Statistics;
-	OutTags = In.Data.Tags;
-	OutTotalValueToDateInUSD = In.Data.TotalValueToDateInUSD;
-	for (auto& elem : In.Data.ValuesToDate)
-	{
-		const uint32 value = elem.Value;
-		OutValuesToDate.Add(elem.Key, static_cast<int32>(value));
-	}
-	OutVirtualCurrencyBalances = In.Data.VirtualCurrencyBalances;
-	
+    {
+        OutAdCampaignAttributions.Add(FBPAdminAdCampaignAttribution(elem));
+    }
+    OutAvatarUrl = In.Data.AvatarUrl;
+    OutBannedUntil = In.Data.BannedUntil;
+    for (const PlayFab::AdminModels::FContactEmailInfo& elem : In.Data.ContactEmailAddresses)
+    {
+        OutContactEmailAddresses.Add(FBPAdminContactEmailInfo(elem));
+    }
+    OutCreated = In.Data.Created;
+    OutDisplayName = In.Data.DisplayName;
+    OutLastLogin = In.Data.LastLogin;
+    for (const PlayFab::AdminModels::FPlayerLinkedAccount& elem : In.Data.LinkedAccounts)
+    {
+        OutLinkedAccounts.Add(FBPAdminPlayerLinkedAccount(elem));
+    }
+    for (auto& elem : In.Data.Locations)
+    {
+        const PlayFab::AdminModels::FPlayerLocation value = elem.Value;
+        OutLocations.Add(elem.Key, FBPAdminPlayerLocation(value));
+    }
+    if (In.Data.Origination.notNull()) { OutOrigination = static_cast<EBPAdminLoginIdentityProvider>(static_cast<uint8>(In.Data.Origination.mValue)); }
+    OutPlayerId = In.Data.PlayerId;
+    for (const PlayFab::AdminModels::FPlayerStatistic& elem : In.Data.PlayerStatistics)
+    {
+        OutPlayerStatistics.Add(FBPAdminPlayerStatistic(elem));
+    }
+    OutPublisherId = In.Data.PublisherId;
+    for (const PlayFab::AdminModels::FPushNotificationRegistration& elem : In.Data.PushNotificationRegistrations)
+    {
+        OutPushNotificationRegistrations.Add(FBPAdminPushNotificationRegistration(elem));
+    }
+    OutStatistics = In.Data.Statistics;
+    OutTags = In.Data.Tags;
+    OutTotalValueToDateInUSD = In.Data.TotalValueToDateInUSD;
+    for (auto& elem : In.Data.ValuesToDate)
+    {
+        const uint32 value = elem.Value;
+        OutValuesToDate.Add(elem.Key, static_cast<int32>(value));
+    }
+    OutVirtualCurrencyBalances = In.Data.VirtualCurrencyBalances;
+
 }
 
 // PlayerProfileModel
 FBPAdminPlayerProfileModel UPFAdminProxyLibrary::MakeBPAdminPlayerProfileModel(
     TArray<FBPAdminAdCampaignAttributionModel> InAdCampaignAttributions
-	, FString InAvatarUrl
-	, FDateTime InBannedUntil
-	, TArray<FBPAdminContactEmailInfoModel> InContactEmailAddresses
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InLastLogin
-	, TArray<FBPAdminLinkedPlatformAccountModel> InLinkedAccounts
-	, TArray<FBPAdminLocationModel> InLocations
-	, TArray<FBPAdminMembershipModel> InMemberships
-	, EBPAdminLoginIdentityProvider InOrigination
-	, FString InPlayerId
-	, FString InPublisherId
-	, TArray<FBPAdminPushNotificationRegistrationModel> InPushNotificationRegistrations
-	, TArray<FBPAdminStatisticModel> InStatistics
-	, TArray<FBPAdminTagModel> InTags
-	, int32 InTotalValueToDateInUSD
-	, TArray<FBPAdminValueToDateModel> InValuesToDate
-    )
+    , FString InAvatarUrl
+    , FDateTime InBannedUntil
+    , TArray<FBPAdminContactEmailInfoModel> InContactEmailAddresses
+    , FDateTime InCreated
+    , FString InDisplayName
+    , FDateTime InLastLogin
+    , TArray<FBPAdminLinkedPlatformAccountModel> InLinkedAccounts
+    , TArray<FBPAdminLocationModel> InLocations
+    , TArray<FBPAdminMembershipModel> InMemberships
+    , EBPAdminLoginIdentityProvider InOrigination
+    , FString InPlayerId
+    , FString InPublisherId
+    , TArray<FBPAdminPushNotificationRegistrationModel> InPushNotificationRegistrations
+    , TArray<FBPAdminStatisticModel> InStatistics
+    , TArray<FBPAdminTagModel> InTags
+    , int32 InTotalValueToDateInUSD
+    , TArray<FBPAdminValueToDateModel> InValuesToDate
+)
 {
     FBPAdminPlayerProfileModel Out = FBPAdminPlayerProfileModel();
     for (const FBPAdminAdCampaignAttributionModel& elem : InAdCampaignAttributions)
-	{
-		Out.Data.AdCampaignAttributions.Add(elem.Data);
-	}
-	Out.Data.AvatarUrl = InAvatarUrl;
-	Out.Data.BannedUntil = InBannedUntil;
-	for (const FBPAdminContactEmailInfoModel& elem : InContactEmailAddresses)
-	{
-		Out.Data.ContactEmailAddresses.Add(elem.Data);
-	}
-	Out.Data.Created = InCreated;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.LastLogin = InLastLogin;
-	for (const FBPAdminLinkedPlatformAccountModel& elem : InLinkedAccounts)
-	{
-		Out.Data.LinkedAccounts.Add(elem.Data);
-	}
-	for (const FBPAdminLocationModel& elem : InLocations)
-	{
-		Out.Data.Locations.Add(elem.Data);
-	}
-	for (const FBPAdminMembershipModel& elem : InMemberships)
-	{
-		Out.Data.Memberships.Add(elem.Data);
-	}
-	Out.Data.Origination = static_cast<PlayFab::AdminModels::LoginIdentityProvider>(static_cast<uint8>(InOrigination));
-	Out.Data.PlayerId = InPlayerId;
-	Out.Data.PublisherId = InPublisherId;
-	for (const FBPAdminPushNotificationRegistrationModel& elem : InPushNotificationRegistrations)
-	{
-		Out.Data.PushNotificationRegistrations.Add(elem.Data);
-	}
-	for (const FBPAdminStatisticModel& elem : InStatistics)
-	{
-		Out.Data.Statistics.Add(elem.Data);
-	}
-	for (const FBPAdminTagModel& elem : InTags)
-	{
-		Out.Data.Tags.Add(elem.Data);
-	}
-	Out.Data.TotalValueToDateInUSD = InTotalValueToDateInUSD;
-	for (const FBPAdminValueToDateModel& elem : InValuesToDate)
-	{
-		Out.Data.ValuesToDate.Add(elem.Data);
-	}
-	
+    {
+        Out.Data.AdCampaignAttributions.Add(elem.Data);
+    }
+    Out.Data.AvatarUrl = InAvatarUrl;
+    Out.Data.BannedUntil = InBannedUntil;
+    for (const FBPAdminContactEmailInfoModel& elem : InContactEmailAddresses)
+    {
+        Out.Data.ContactEmailAddresses.Add(elem.Data);
+    }
+    Out.Data.Created = InCreated;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.LastLogin = InLastLogin;
+    for (const FBPAdminLinkedPlatformAccountModel& elem : InLinkedAccounts)
+    {
+        Out.Data.LinkedAccounts.Add(elem.Data);
+    }
+    for (const FBPAdminLocationModel& elem : InLocations)
+    {
+        Out.Data.Locations.Add(elem.Data);
+    }
+    for (const FBPAdminMembershipModel& elem : InMemberships)
+    {
+        Out.Data.Memberships.Add(elem.Data);
+    }
+    Out.Data.Origination = static_cast<PlayFab::AdminModels::LoginIdentityProvider>(static_cast<uint8>(InOrigination));
+    Out.Data.PlayerId = InPlayerId;
+    Out.Data.PublisherId = InPublisherId;
+    for (const FBPAdminPushNotificationRegistrationModel& elem : InPushNotificationRegistrations)
+    {
+        Out.Data.PushNotificationRegistrations.Add(elem.Data);
+    }
+    for (const FBPAdminStatisticModel& elem : InStatistics)
+    {
+        Out.Data.Statistics.Add(elem.Data);
+    }
+    for (const FBPAdminTagModel& elem : InTags)
+    {
+        Out.Data.Tags.Add(elem.Data);
+    }
+    Out.Data.TotalValueToDateInUSD = InTotalValueToDateInUSD;
+    for (const FBPAdminValueToDateModel& elem : InValuesToDate)
+    {
+        Out.Data.ValuesToDate.Add(elem.Data);
+    }
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPlayerProfileModel(
     const FBPAdminPlayerProfileModel& In
-	, TArray<FBPAdminAdCampaignAttributionModel>& OutAdCampaignAttributions
-	, FString& OutAvatarUrl
-	, FDateTime& OutBannedUntil
-	, TArray<FBPAdminContactEmailInfoModel>& OutContactEmailAddresses
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutLastLogin
-	, TArray<FBPAdminLinkedPlatformAccountModel>& OutLinkedAccounts
-	, TArray<FBPAdminLocationModel>& OutLocations
-	, TArray<FBPAdminMembershipModel>& OutMemberships
-	, EBPAdminLoginIdentityProvider& OutOrigination
-	, FString& OutPlayerId
-	, FString& OutPublisherId
-	, TArray<FBPAdminPushNotificationRegistrationModel>& OutPushNotificationRegistrations
-	, TArray<FBPAdminStatisticModel>& OutStatistics
-	, TArray<FBPAdminTagModel>& OutTags
-	, int32& OutTotalValueToDateInUSD
-	, TArray<FBPAdminValueToDateModel>& OutValuesToDate
- )
+    , TArray<FBPAdminAdCampaignAttributionModel>& OutAdCampaignAttributions
+    , FString& OutAvatarUrl
+    , FDateTime& OutBannedUntil
+    , TArray<FBPAdminContactEmailInfoModel>& OutContactEmailAddresses
+    , FDateTime& OutCreated
+    , FString& OutDisplayName
+    , FDateTime& OutLastLogin
+    , TArray<FBPAdminLinkedPlatformAccountModel>& OutLinkedAccounts
+    , TArray<FBPAdminLocationModel>& OutLocations
+    , TArray<FBPAdminMembershipModel>& OutMemberships
+    , EBPAdminLoginIdentityProvider& OutOrigination
+    , FString& OutPlayerId
+    , FString& OutPublisherId
+    , TArray<FBPAdminPushNotificationRegistrationModel>& OutPushNotificationRegistrations
+    , TArray<FBPAdminStatisticModel>& OutStatistics
+    , TArray<FBPAdminTagModel>& OutTags
+    , int32& OutTotalValueToDateInUSD
+    , TArray<FBPAdminValueToDateModel>& OutValuesToDate
+)
 {
     for (const PlayFab::AdminModels::FAdCampaignAttributionModel& elem : In.Data.AdCampaignAttributions)
-	{
-		OutAdCampaignAttributions.Add(FBPAdminAdCampaignAttributionModel(elem));
-	}
-	OutAvatarUrl = In.Data.AvatarUrl;
-	OutBannedUntil = In.Data.BannedUntil;
-	for (const PlayFab::AdminModels::FContactEmailInfoModel& elem : In.Data.ContactEmailAddresses)
-	{
-		OutContactEmailAddresses.Add(FBPAdminContactEmailInfoModel(elem));
-	}
-	OutCreated = In.Data.Created;
-	OutDisplayName = In.Data.DisplayName;
-	OutLastLogin = In.Data.LastLogin;
-	for (const PlayFab::AdminModels::FLinkedPlatformAccountModel& elem : In.Data.LinkedAccounts)
-	{
-		OutLinkedAccounts.Add(FBPAdminLinkedPlatformAccountModel(elem));
-	}
-	for (const PlayFab::AdminModels::FLocationModel& elem : In.Data.Locations)
-	{
-		OutLocations.Add(FBPAdminLocationModel(elem));
-	}
-	for (const PlayFab::AdminModels::FMembershipModel& elem : In.Data.Memberships)
-	{
-		OutMemberships.Add(FBPAdminMembershipModel(elem));
-	}
-	if (In.Data.Origination.notNull()) {OutOrigination = static_cast<EBPAdminLoginIdentityProvider>(static_cast<uint8>(In.Data.Origination.mValue));}
-	OutPlayerId = In.Data.PlayerId;
-	OutPublisherId = In.Data.PublisherId;
-	for (const PlayFab::AdminModels::FPushNotificationRegistrationModel& elem : In.Data.PushNotificationRegistrations)
-	{
-		OutPushNotificationRegistrations.Add(FBPAdminPushNotificationRegistrationModel(elem));
-	}
-	for (const PlayFab::AdminModels::FStatisticModel& elem : In.Data.Statistics)
-	{
-		OutStatistics.Add(FBPAdminStatisticModel(elem));
-	}
-	for (const PlayFab::AdminModels::FTagModel& elem : In.Data.Tags)
-	{
-		OutTags.Add(FBPAdminTagModel(elem));
-	}
-	OutTotalValueToDateInUSD = In.Data.TotalValueToDateInUSD;
-	for (const PlayFab::AdminModels::FValueToDateModel& elem : In.Data.ValuesToDate)
-	{
-		OutValuesToDate.Add(FBPAdminValueToDateModel(elem));
-	}
-	
+    {
+        OutAdCampaignAttributions.Add(FBPAdminAdCampaignAttributionModel(elem));
+    }
+    OutAvatarUrl = In.Data.AvatarUrl;
+    OutBannedUntil = In.Data.BannedUntil;
+    for (const PlayFab::AdminModels::FContactEmailInfoModel& elem : In.Data.ContactEmailAddresses)
+    {
+        OutContactEmailAddresses.Add(FBPAdminContactEmailInfoModel(elem));
+    }
+    OutCreated = In.Data.Created;
+    OutDisplayName = In.Data.DisplayName;
+    OutLastLogin = In.Data.LastLogin;
+    for (const PlayFab::AdminModels::FLinkedPlatformAccountModel& elem : In.Data.LinkedAccounts)
+    {
+        OutLinkedAccounts.Add(FBPAdminLinkedPlatformAccountModel(elem));
+    }
+    for (const PlayFab::AdminModels::FLocationModel& elem : In.Data.Locations)
+    {
+        OutLocations.Add(FBPAdminLocationModel(elem));
+    }
+    for (const PlayFab::AdminModels::FMembershipModel& elem : In.Data.Memberships)
+    {
+        OutMemberships.Add(FBPAdminMembershipModel(elem));
+    }
+    if (In.Data.Origination.notNull()) { OutOrigination = static_cast<EBPAdminLoginIdentityProvider>(static_cast<uint8>(In.Data.Origination.mValue)); }
+    OutPlayerId = In.Data.PlayerId;
+    OutPublisherId = In.Data.PublisherId;
+    for (const PlayFab::AdminModels::FPushNotificationRegistrationModel& elem : In.Data.PushNotificationRegistrations)
+    {
+        OutPushNotificationRegistrations.Add(FBPAdminPushNotificationRegistrationModel(elem));
+    }
+    for (const PlayFab::AdminModels::FStatisticModel& elem : In.Data.Statistics)
+    {
+        OutStatistics.Add(FBPAdminStatisticModel(elem));
+    }
+    for (const PlayFab::AdminModels::FTagModel& elem : In.Data.Tags)
+    {
+        OutTags.Add(FBPAdminTagModel(elem));
+    }
+    OutTotalValueToDateInUSD = In.Data.TotalValueToDateInUSD;
+    for (const PlayFab::AdminModels::FValueToDateModel& elem : In.Data.ValuesToDate)
+    {
+        OutValuesToDate.Add(FBPAdminValueToDateModel(elem));
+    }
+
 }
 
 // PlayerProfileViewConstraints
 FBPAdminPlayerProfileViewConstraints UPFAdminProxyLibrary::MakeBPAdminPlayerProfileViewConstraints(
     bool InShowAvatarUrl
-	, bool InShowBannedUntil
-	, bool InShowCampaignAttributions
-	, bool InShowContactEmailAddresses
-	, bool InShowCreated
-	, bool InShowDisplayName
-	, bool InShowLastLogin
-	, bool InShowLinkedAccounts
-	, bool InShowLocations
-	, bool InShowMemberships
-	, bool InShowOrigination
-	, bool InShowPushNotificationRegistrations
-	, bool InShowStatistics
-	, bool InShowTags
-	, bool InShowTotalValueToDateInUsd
-	, bool InShowValuesToDate
-    )
+    , bool InShowBannedUntil
+    , bool InShowCampaignAttributions
+    , bool InShowContactEmailAddresses
+    , bool InShowCreated
+    , bool InShowDisplayName
+    , bool InShowLastLogin
+    , bool InShowLinkedAccounts
+    , bool InShowLocations
+    , bool InShowMemberships
+    , bool InShowOrigination
+    , bool InShowPushNotificationRegistrations
+    , bool InShowStatistics
+    , bool InShowTags
+    , bool InShowTotalValueToDateInUsd
+    , bool InShowValuesToDate
+)
 {
     FBPAdminPlayerProfileViewConstraints Out = FBPAdminPlayerProfileViewConstraints();
     Out.Data.ShowAvatarUrl = InShowAvatarUrl;
-	Out.Data.ShowBannedUntil = InShowBannedUntil;
-	Out.Data.ShowCampaignAttributions = InShowCampaignAttributions;
-	Out.Data.ShowContactEmailAddresses = InShowContactEmailAddresses;
-	Out.Data.ShowCreated = InShowCreated;
-	Out.Data.ShowDisplayName = InShowDisplayName;
-	Out.Data.ShowLastLogin = InShowLastLogin;
-	Out.Data.ShowLinkedAccounts = InShowLinkedAccounts;
-	Out.Data.ShowLocations = InShowLocations;
-	Out.Data.ShowMemberships = InShowMemberships;
-	Out.Data.ShowOrigination = InShowOrigination;
-	Out.Data.ShowPushNotificationRegistrations = InShowPushNotificationRegistrations;
-	Out.Data.ShowStatistics = InShowStatistics;
-	Out.Data.ShowTags = InShowTags;
-	Out.Data.ShowTotalValueToDateInUsd = InShowTotalValueToDateInUsd;
-	Out.Data.ShowValuesToDate = InShowValuesToDate;
-	
+    Out.Data.ShowBannedUntil = InShowBannedUntil;
+    Out.Data.ShowCampaignAttributions = InShowCampaignAttributions;
+    Out.Data.ShowContactEmailAddresses = InShowContactEmailAddresses;
+    Out.Data.ShowCreated = InShowCreated;
+    Out.Data.ShowDisplayName = InShowDisplayName;
+    Out.Data.ShowLastLogin = InShowLastLogin;
+    Out.Data.ShowLinkedAccounts = InShowLinkedAccounts;
+    Out.Data.ShowLocations = InShowLocations;
+    Out.Data.ShowMemberships = InShowMemberships;
+    Out.Data.ShowOrigination = InShowOrigination;
+    Out.Data.ShowPushNotificationRegistrations = InShowPushNotificationRegistrations;
+    Out.Data.ShowStatistics = InShowStatistics;
+    Out.Data.ShowTags = InShowTags;
+    Out.Data.ShowTotalValueToDateInUsd = InShowTotalValueToDateInUsd;
+    Out.Data.ShowValuesToDate = InShowValuesToDate;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPlayerProfileViewConstraints(
     const FBPAdminPlayerProfileViewConstraints& In
-	, bool& OutShowAvatarUrl
-	, bool& OutShowBannedUntil
-	, bool& OutShowCampaignAttributions
-	, bool& OutShowContactEmailAddresses
-	, bool& OutShowCreated
-	, bool& OutShowDisplayName
-	, bool& OutShowLastLogin
-	, bool& OutShowLinkedAccounts
-	, bool& OutShowLocations
-	, bool& OutShowMemberships
-	, bool& OutShowOrigination
-	, bool& OutShowPushNotificationRegistrations
-	, bool& OutShowStatistics
-	, bool& OutShowTags
-	, bool& OutShowTotalValueToDateInUsd
-	, bool& OutShowValuesToDate
- )
+    , bool& OutShowAvatarUrl
+    , bool& OutShowBannedUntil
+    , bool& OutShowCampaignAttributions
+    , bool& OutShowContactEmailAddresses
+    , bool& OutShowCreated
+    , bool& OutShowDisplayName
+    , bool& OutShowLastLogin
+    , bool& OutShowLinkedAccounts
+    , bool& OutShowLocations
+    , bool& OutShowMemberships
+    , bool& OutShowOrigination
+    , bool& OutShowPushNotificationRegistrations
+    , bool& OutShowStatistics
+    , bool& OutShowTags
+    , bool& OutShowTotalValueToDateInUsd
+    , bool& OutShowValuesToDate
+)
 {
     OutShowAvatarUrl = In.Data.ShowAvatarUrl;
-	OutShowBannedUntil = In.Data.ShowBannedUntil;
-	OutShowCampaignAttributions = In.Data.ShowCampaignAttributions;
-	OutShowContactEmailAddresses = In.Data.ShowContactEmailAddresses;
-	OutShowCreated = In.Data.ShowCreated;
-	OutShowDisplayName = In.Data.ShowDisplayName;
-	OutShowLastLogin = In.Data.ShowLastLogin;
-	OutShowLinkedAccounts = In.Data.ShowLinkedAccounts;
-	OutShowLocations = In.Data.ShowLocations;
-	OutShowMemberships = In.Data.ShowMemberships;
-	OutShowOrigination = In.Data.ShowOrigination;
-	OutShowPushNotificationRegistrations = In.Data.ShowPushNotificationRegistrations;
-	OutShowStatistics = In.Data.ShowStatistics;
-	OutShowTags = In.Data.ShowTags;
-	OutShowTotalValueToDateInUsd = In.Data.ShowTotalValueToDateInUsd;
-	OutShowValuesToDate = In.Data.ShowValuesToDate;
-	
+    OutShowBannedUntil = In.Data.ShowBannedUntil;
+    OutShowCampaignAttributions = In.Data.ShowCampaignAttributions;
+    OutShowContactEmailAddresses = In.Data.ShowContactEmailAddresses;
+    OutShowCreated = In.Data.ShowCreated;
+    OutShowDisplayName = In.Data.ShowDisplayName;
+    OutShowLastLogin = In.Data.ShowLastLogin;
+    OutShowLinkedAccounts = In.Data.ShowLinkedAccounts;
+    OutShowLocations = In.Data.ShowLocations;
+    OutShowMemberships = In.Data.ShowMemberships;
+    OutShowOrigination = In.Data.ShowOrigination;
+    OutShowPushNotificationRegistrations = In.Data.ShowPushNotificationRegistrations;
+    OutShowStatistics = In.Data.ShowStatistics;
+    OutShowTags = In.Data.ShowTags;
+    OutShowTotalValueToDateInUsd = In.Data.ShowTotalValueToDateInUsd;
+    OutShowValuesToDate = In.Data.ShowValuesToDate;
+
 }
 
 // PlayerStatistic
 FBPAdminPlayerStatistic UPFAdminProxyLibrary::MakeBPAdminPlayerStatistic(
     FString InId
-	, FString InName
-	, int32 InStatisticValue
-	, int32 InStatisticVersion
-    )
+    , FString InName
+    , int32 InStatisticValue
+    , int32 InStatisticVersion
+)
 {
     FBPAdminPlayerStatistic Out = FBPAdminPlayerStatistic();
     Out.Data.Id = InId;
-	Out.Data.Name = InName;
-	Out.Data.StatisticValue = InStatisticValue;
-	Out.Data.StatisticVersion = InStatisticVersion;
-	
+    Out.Data.Name = InName;
+    Out.Data.StatisticValue = InStatisticValue;
+    Out.Data.StatisticVersion = InStatisticVersion;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPlayerStatistic(
     const FBPAdminPlayerStatistic& In
-	, FString& OutId
-	, FString& OutName
-	, int32& OutStatisticValue
-	, int32& OutStatisticVersion
- )
+    , FString& OutId
+    , FString& OutName
+    , int32& OutStatisticValue
+    , int32& OutStatisticVersion
+)
 {
     OutId = In.Data.Id;
-	OutName = In.Data.Name;
-	OutStatisticValue = In.Data.StatisticValue;
-	OutStatisticVersion = In.Data.StatisticVersion;
-	
+    OutName = In.Data.Name;
+    OutStatisticValue = In.Data.StatisticValue;
+    OutStatisticVersion = In.Data.StatisticVersion;
+
 }
 
 // PlayerStatisticDefinition
 FBPAdminPlayerStatisticDefinition UPFAdminProxyLibrary::MakeBPAdminPlayerStatisticDefinition(
     EBPAdminStatisticAggregationMethod InAggregationMethod
-	, int32 InCurrentVersion
-	, FString InStatisticName
-	, EBPAdminStatisticResetIntervalOption InVersionChangeInterval
-    )
+    , int32 InCurrentVersion
+    , FString InStatisticName
+    , EBPAdminStatisticResetIntervalOption InVersionChangeInterval
+)
 {
     FBPAdminPlayerStatisticDefinition Out = FBPAdminPlayerStatisticDefinition();
     Out.Data.AggregationMethod = static_cast<PlayFab::AdminModels::StatisticAggregationMethod>(static_cast<uint8>(InAggregationMethod));
-	Out.Data.CurrentVersion = InCurrentVersion;
-	Out.Data.StatisticName = InStatisticName;
-	Out.Data.VersionChangeInterval = static_cast<PlayFab::AdminModels::StatisticResetIntervalOption>(static_cast<uint8>(InVersionChangeInterval));
-	
+    Out.Data.CurrentVersion = InCurrentVersion;
+    Out.Data.StatisticName = InStatisticName;
+    Out.Data.VersionChangeInterval = static_cast<PlayFab::AdminModels::StatisticResetIntervalOption>(static_cast<uint8>(InVersionChangeInterval));
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPlayerStatisticDefinition(
     const FBPAdminPlayerStatisticDefinition& In
-	, EBPAdminStatisticAggregationMethod& OutAggregationMethod
-	, int32& OutCurrentVersion
-	, FString& OutStatisticName
-	, EBPAdminStatisticResetIntervalOption& OutVersionChangeInterval
- )
+    , EBPAdminStatisticAggregationMethod& OutAggregationMethod
+    , int32& OutCurrentVersion
+    , FString& OutStatisticName
+    , EBPAdminStatisticResetIntervalOption& OutVersionChangeInterval
+)
 {
-    if (In.Data.AggregationMethod.notNull()) {OutAggregationMethod = static_cast<EBPAdminStatisticAggregationMethod>(static_cast<uint8>(In.Data.AggregationMethod.mValue));}
-	OutCurrentVersion = In.Data.CurrentVersion;
-	OutStatisticName = In.Data.StatisticName;
-	if (In.Data.VersionChangeInterval.notNull()) {OutVersionChangeInterval = static_cast<EBPAdminStatisticResetIntervalOption>(static_cast<uint8>(In.Data.VersionChangeInterval.mValue));}
-	
+    if (In.Data.AggregationMethod.notNull()) { OutAggregationMethod = static_cast<EBPAdminStatisticAggregationMethod>(static_cast<uint8>(In.Data.AggregationMethod.mValue)); }
+    OutCurrentVersion = In.Data.CurrentVersion;
+    OutStatisticName = In.Data.StatisticName;
+    if (In.Data.VersionChangeInterval.notNull()) { OutVersionChangeInterval = static_cast<EBPAdminStatisticResetIntervalOption>(static_cast<uint8>(In.Data.VersionChangeInterval.mValue)); }
+
 }
 
 // PlayerStatisticVersion
 FBPAdminPlayerStatisticVersion UPFAdminProxyLibrary::MakeBPAdminPlayerStatisticVersion(
     FDateTime InActivationTime
-	, FString InArchiveDownloadUrl
-	, FDateTime InDeactivationTime
-	, FDateTime InScheduledActivationTime
-	, FDateTime InScheduledDeactivationTime
-	, FString InStatisticName
-	, EBPAdminStatisticVersionStatus InStatus
-	, int32 InVersion
-    )
+    , FString InArchiveDownloadUrl
+    , FDateTime InDeactivationTime
+    , FDateTime InScheduledActivationTime
+    , FDateTime InScheduledDeactivationTime
+    , FString InStatisticName
+    , EBPAdminStatisticVersionStatus InStatus
+    , int32 InVersion
+)
 {
     FBPAdminPlayerStatisticVersion Out = FBPAdminPlayerStatisticVersion();
     Out.Data.ActivationTime = InActivationTime;
-	Out.Data.ArchiveDownloadUrl = InArchiveDownloadUrl;
-	Out.Data.DeactivationTime = InDeactivationTime;
-	Out.Data.ScheduledActivationTime = InScheduledActivationTime;
-	Out.Data.ScheduledDeactivationTime = InScheduledDeactivationTime;
-	Out.Data.StatisticName = InStatisticName;
-	Out.Data.Status = static_cast<PlayFab::AdminModels::StatisticVersionStatus>(static_cast<uint8>(InStatus));
-	Out.Data.Version = InVersion;
-	
+    Out.Data.ArchiveDownloadUrl = InArchiveDownloadUrl;
+    Out.Data.DeactivationTime = InDeactivationTime;
+    Out.Data.ScheduledActivationTime = InScheduledActivationTime;
+    Out.Data.ScheduledDeactivationTime = InScheduledDeactivationTime;
+    Out.Data.StatisticName = InStatisticName;
+    Out.Data.Status = static_cast<PlayFab::AdminModels::StatisticVersionStatus>(static_cast<uint8>(InStatus));
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPlayerStatisticVersion(
     const FBPAdminPlayerStatisticVersion& In
-	, FDateTime& OutActivationTime
-	, FString& OutArchiveDownloadUrl
-	, FDateTime& OutDeactivationTime
-	, FDateTime& OutScheduledActivationTime
-	, FDateTime& OutScheduledDeactivationTime
-	, FString& OutStatisticName
-	, EBPAdminStatisticVersionStatus& OutStatus
-	, int32& OutVersion
- )
+    , FDateTime& OutActivationTime
+    , FString& OutArchiveDownloadUrl
+    , FDateTime& OutDeactivationTime
+    , FDateTime& OutScheduledActivationTime
+    , FDateTime& OutScheduledDeactivationTime
+    , FString& OutStatisticName
+    , EBPAdminStatisticVersionStatus& OutStatus
+    , int32& OutVersion
+)
 {
     OutActivationTime = In.Data.ActivationTime;
-	OutArchiveDownloadUrl = In.Data.ArchiveDownloadUrl;
-	OutDeactivationTime = In.Data.DeactivationTime;
-	OutScheduledActivationTime = In.Data.ScheduledActivationTime;
-	OutScheduledDeactivationTime = In.Data.ScheduledDeactivationTime;
-	OutStatisticName = In.Data.StatisticName;
-	if (In.Data.Status.notNull()) {OutStatus = static_cast<EBPAdminStatisticVersionStatus>(static_cast<uint8>(In.Data.Status.mValue));}
-	OutVersion = In.Data.Version;
-	
+    OutArchiveDownloadUrl = In.Data.ArchiveDownloadUrl;
+    OutDeactivationTime = In.Data.DeactivationTime;
+    OutScheduledActivationTime = In.Data.ScheduledActivationTime;
+    OutScheduledDeactivationTime = In.Data.ScheduledDeactivationTime;
+    OutStatisticName = In.Data.StatisticName;
+    if (In.Data.Status.notNull()) { OutStatus = static_cast<EBPAdminStatisticVersionStatus>(static_cast<uint8>(In.Data.Status.mValue)); }
+    OutVersion = In.Data.Version;
+
 }
 
 // PushNotificationRegistration
 FBPAdminPushNotificationRegistration UPFAdminProxyLibrary::MakeBPAdminPushNotificationRegistration(
     FString InNotificationEndpointARN
-	, EBPAdminPushNotificationPlatform InPlatform
-    )
+    , EBPAdminPushNotificationPlatform InPlatform
+)
 {
     FBPAdminPushNotificationRegistration Out = FBPAdminPushNotificationRegistration();
     Out.Data.NotificationEndpointARN = InNotificationEndpointARN;
-	Out.Data.Platform = static_cast<PlayFab::AdminModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
-	
+    Out.Data.Platform = static_cast<PlayFab::AdminModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPushNotificationRegistration(
     const FBPAdminPushNotificationRegistration& In
-	, FString& OutNotificationEndpointARN
-	, EBPAdminPushNotificationPlatform& OutPlatform
- )
+    , FString& OutNotificationEndpointARN
+    , EBPAdminPushNotificationPlatform& OutPlatform
+)
 {
     OutNotificationEndpointARN = In.Data.NotificationEndpointARN;
-	if (In.Data.Platform.notNull()) {OutPlatform = static_cast<EBPAdminPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform.mValue));}
-	
+    if (In.Data.Platform.notNull()) { OutPlatform = static_cast<EBPAdminPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform.mValue)); }
+
 }
 
 // PushNotificationRegistrationModel
 FBPAdminPushNotificationRegistrationModel UPFAdminProxyLibrary::MakeBPAdminPushNotificationRegistrationModel(
     FString InNotificationEndpointARN
-	, EBPAdminPushNotificationPlatform InPlatform
-    )
+    , EBPAdminPushNotificationPlatform InPlatform
+)
 {
     FBPAdminPushNotificationRegistrationModel Out = FBPAdminPushNotificationRegistrationModel();
     Out.Data.NotificationEndpointARN = InNotificationEndpointARN;
-	Out.Data.Platform = static_cast<PlayFab::AdminModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
-	
+    Out.Data.Platform = static_cast<PlayFab::AdminModels::PushNotificationPlatform>(static_cast<uint8>(InPlatform));
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminPushNotificationRegistrationModel(
     const FBPAdminPushNotificationRegistrationModel& In
-	, FString& OutNotificationEndpointARN
-	, EBPAdminPushNotificationPlatform& OutPlatform
- )
+    , FString& OutNotificationEndpointARN
+    , EBPAdminPushNotificationPlatform& OutPlatform
+)
 {
     OutNotificationEndpointARN = In.Data.NotificationEndpointARN;
-	if (In.Data.Platform.notNull()) {OutPlatform = static_cast<EBPAdminPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform.mValue));}
-	
+    if (In.Data.Platform.notNull()) { OutPlatform = static_cast<EBPAdminPushNotificationPlatform>(static_cast<uint8>(In.Data.Platform.mValue)); }
+
 }
 
 // RandomResultTable
 void UPFAdminProxyLibrary::BreakBPAdminRandomResultTable(
     const FBPAdminRandomResultTable& In
-	, TArray<FBPAdminResultTableNode>& OutNodes
-	, FString& OutTableId
- )
+    , TArray<FBPAdminResultTableNode>& OutNodes
+    , FString& OutTableId
+)
 {
     for (const PlayFab::AdminModels::FResultTableNode& elem : In.Data.Nodes)
-	{
-		OutNodes.Add(FBPAdminResultTableNode(elem));
-	}
-	OutTableId = In.Data.TableId;
-	
+    {
+        OutNodes.Add(FBPAdminResultTableNode(elem));
+    }
+    OutTableId = In.Data.TableId;
+
 }
 
 // RandomResultTableListing
 void UPFAdminProxyLibrary::BreakBPAdminRandomResultTableListing(
     const FBPAdminRandomResultTableListing& In
-	, FString& OutCatalogVersion
-	, TArray<FBPAdminResultTableNode>& OutNodes
-	, FString& OutTableId
- )
+    , FString& OutCatalogVersion
+    , TArray<FBPAdminResultTableNode>& OutNodes
+    , FString& OutTableId
+)
 {
     OutCatalogVersion = In.Data.CatalogVersion;
-	for (const PlayFab::AdminModels::FResultTableNode& elem : In.Data.Nodes)
-	{
-		OutNodes.Add(FBPAdminResultTableNode(elem));
-	}
-	OutTableId = In.Data.TableId;
-	
+    for (const PlayFab::AdminModels::FResultTableNode& elem : In.Data.Nodes)
+    {
+        OutNodes.Add(FBPAdminResultTableNode(elem));
+    }
+    OutTableId = In.Data.TableId;
+
 }
 
 // RefundPurchaseRequest
 FBPAdminRefundPurchaseRequest UPFAdminProxyLibrary::MakeBPAdminRefundPurchaseRequest(
     FString InOrderId
-	, FString InPlayFabId
-	, FString InReason
-    )
+    , FString InPlayFabId
+    , FString InReason
+)
 {
     FBPAdminRefundPurchaseRequest Out = FBPAdminRefundPurchaseRequest();
     Out.Data.OrderId = InOrderId;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Reason = InReason;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Reason = InReason;
+
     return Out;
 }
 
 // RefundPurchaseResponse
 void UPFAdminProxyLibrary::BreakBPAdminRefundPurchaseResponse(
     const FBPAdminRefundPurchaseResponse& In
-	, FString& OutPurchaseStatus
- )
+    , FString& OutPurchaseStatus
+)
 {
     OutPurchaseStatus = In.Data.PurchaseStatus;
-	
+
 }
 
 // RemovePlayerTagRequest
 FBPAdminRemovePlayerTagRequest UPFAdminProxyLibrary::MakeBPAdminRemovePlayerTagRequest(
     FString InPlayFabId
-	, FString InTagName
-    )
+    , FString InTagName
+)
 {
     FBPAdminRemovePlayerTagRequest Out = FBPAdminRemovePlayerTagRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.TagName = InTagName;
-	
+    Out.Data.TagName = InTagName;
+
     return Out;
 }
 
 // RemovePlayerTagResult
 void UPFAdminProxyLibrary::BreakBPAdminRemovePlayerTagResult(
     const FBPAdminRemovePlayerTagResult& In
- )
+)
 {
-    
+
 }
 
 // RemoveServerBuildRequest
 FBPAdminRemoveServerBuildRequest UPFAdminProxyLibrary::MakeBPAdminRemoveServerBuildRequest(
     FString InBuildId
-    )
+)
 {
     FBPAdminRemoveServerBuildRequest Out = FBPAdminRemoveServerBuildRequest();
     Out.Data.BuildId = InBuildId;
-	
+
     return Out;
 }
 
 // RemoveServerBuildResult
 void UPFAdminProxyLibrary::BreakBPAdminRemoveServerBuildResult(
     const FBPAdminRemoveServerBuildResult& In
- )
+)
 {
-    
+
 }
 
 // RemoveVirtualCurrencyTypesRequest
 FBPAdminRemoveVirtualCurrencyTypesRequest UPFAdminProxyLibrary::MakeBPAdminRemoveVirtualCurrencyTypesRequest(
     TArray<FBPAdminVirtualCurrencyData> InVirtualCurrencies
-    )
+)
 {
     FBPAdminRemoveVirtualCurrencyTypesRequest Out = FBPAdminRemoveVirtualCurrencyTypesRequest();
     for (const FBPAdminVirtualCurrencyData& elem : InVirtualCurrencies)
-	{
-		Out.Data.VirtualCurrencies.Add(elem.Data);
-	}
-	
+    {
+        Out.Data.VirtualCurrencies.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // ResetCharacterStatisticsRequest
 FBPAdminResetCharacterStatisticsRequest UPFAdminProxyLibrary::MakeBPAdminResetCharacterStatisticsRequest(
     FString InCharacterId
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPAdminResetCharacterStatisticsRequest Out = FBPAdminResetCharacterStatisticsRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // ResetCharacterStatisticsResult
 void UPFAdminProxyLibrary::BreakBPAdminResetCharacterStatisticsResult(
     const FBPAdminResetCharacterStatisticsResult& In
- )
+)
 {
-    
+
 }
 
 // ResetPasswordRequest
 FBPAdminResetPasswordRequest UPFAdminProxyLibrary::MakeBPAdminResetPasswordRequest(
     FString InPassword
-	, FString InToken
-    )
+    , FString InToken
+)
 {
     FBPAdminResetPasswordRequest Out = FBPAdminResetPasswordRequest();
     Out.Data.Password = InPassword;
-	Out.Data.Token = InToken;
-	
+    Out.Data.Token = InToken;
+
     return Out;
 }
 
 // ResetPasswordResult
 void UPFAdminProxyLibrary::BreakBPAdminResetPasswordResult(
     const FBPAdminResetPasswordResult& In
- )
+)
 {
-    
+
 }
 
 // ResetUserStatisticsRequest
 FBPAdminResetUserStatisticsRequest UPFAdminProxyLibrary::MakeBPAdminResetUserStatisticsRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPAdminResetUserStatisticsRequest Out = FBPAdminResetUserStatisticsRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // ResetUserStatisticsResult
 void UPFAdminProxyLibrary::BreakBPAdminResetUserStatisticsResult(
     const FBPAdminResetUserStatisticsResult& In
- )
+)
 {
-    
+
 }
 
 // ResolvePurchaseDisputeRequest
 FBPAdminResolvePurchaseDisputeRequest UPFAdminProxyLibrary::MakeBPAdminResolvePurchaseDisputeRequest(
     FString InOrderId
-	, EBPAdminResolutionOutcome InOutcome
-	, FString InPlayFabId
-	, FString InReason
-    )
+    , EBPAdminResolutionOutcome InOutcome
+    , FString InPlayFabId
+    , FString InReason
+)
 {
     FBPAdminResolvePurchaseDisputeRequest Out = FBPAdminResolvePurchaseDisputeRequest();
     Out.Data.OrderId = InOrderId;
-	Out.Data.Outcome = static_cast<PlayFab::AdminModels::ResolutionOutcome>(static_cast<uint8>(InOutcome));
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.Reason = InReason;
-	
+    Out.Data.Outcome = static_cast<PlayFab::AdminModels::ResolutionOutcome>(static_cast<uint8>(InOutcome));
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.Reason = InReason;
+
     return Out;
 }
 
 // ResolvePurchaseDisputeResponse
 void UPFAdminProxyLibrary::BreakBPAdminResolvePurchaseDisputeResponse(
     const FBPAdminResolvePurchaseDisputeResponse& In
-	, FString& OutPurchaseStatus
- )
+    , FString& OutPurchaseStatus
+)
 {
     OutPurchaseStatus = In.Data.PurchaseStatus;
-	
+
 }
 
 // ResultTableNode
 void UPFAdminProxyLibrary::BreakBPAdminResultTableNode(
     const FBPAdminResultTableNode& In
-	, FString& OutResultItem
-	, EBPAdminResultTableNodeType& OutResultItemType
-	, int32& OutWeight
- )
+    , FString& OutResultItem
+    , EBPAdminResultTableNodeType& OutResultItemType
+    , int32& OutWeight
+)
 {
     OutResultItem = In.Data.ResultItem;
-	OutResultItemType = static_cast<EBPAdminResultTableNodeType>(static_cast<uint8>(In.Data.ResultItemType));
-	OutWeight = In.Data.Weight;
-	
+    OutResultItemType = static_cast<EBPAdminResultTableNodeType>(static_cast<uint8>(In.Data.ResultItemType));
+    OutWeight = In.Data.Weight;
+
 }
 
 // RevokeAllBansForUserRequest
 FBPAdminRevokeAllBansForUserRequest UPFAdminProxyLibrary::MakeBPAdminRevokeAllBansForUserRequest(
     FString InPlayFabId
-    )
+)
 {
     FBPAdminRevokeAllBansForUserRequest Out = FBPAdminRevokeAllBansForUserRequest();
     Out.Data.PlayFabId = InPlayFabId;
-	
+
     return Out;
 }
 
 // RevokeAllBansForUserResult
 void UPFAdminProxyLibrary::BreakBPAdminRevokeAllBansForUserResult(
     const FBPAdminRevokeAllBansForUserResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
- )
+    , TArray<FBPAdminBanInfo>& OutBanData
+)
 {
     for (const PlayFab::AdminModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPAdminBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPAdminBanInfo(elem));
+    }
+
 }
 
 // RevokeBansRequest
 FBPAdminRevokeBansRequest UPFAdminProxyLibrary::MakeBPAdminRevokeBansRequest(
     TArray<FString> InBanIds
-    )
+)
 {
     FBPAdminRevokeBansRequest Out = FBPAdminRevokeBansRequest();
     Out.Data.BanIds = InBanIds;
-	
+
     return Out;
 }
 
 // RevokeBansResult
 void UPFAdminProxyLibrary::BreakBPAdminRevokeBansResult(
     const FBPAdminRevokeBansResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
- )
+    , TArray<FBPAdminBanInfo>& OutBanData
+)
 {
     for (const PlayFab::AdminModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPAdminBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPAdminBanInfo(elem));
+    }
+
+}
+
+// RevokeInventoryItem
+FBPAdminRevokeInventoryItem UPFAdminProxyLibrary::MakeBPAdminRevokeInventoryItem(
+    FString InCharacterId
+    , FString InItemInstanceId
+    , FString InPlayFabId
+)
+{
+    FBPAdminRevokeInventoryItem Out = FBPAdminRevokeInventoryItem();
+    Out.Data.CharacterId = InCharacterId;
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+
+    return Out;
+}
+void UPFAdminProxyLibrary::BreakBPAdminRevokeInventoryItem(
+    const FBPAdminRevokeInventoryItem& In
+    , FString& OutCharacterId
+    , FString& OutItemInstanceId
+    , FString& OutPlayFabId
+)
+{
+    OutCharacterId = In.Data.CharacterId;
+    OutItemInstanceId = In.Data.ItemInstanceId;
+    OutPlayFabId = In.Data.PlayFabId;
+
 }
 
 // RevokeInventoryItemRequest
 FBPAdminRevokeInventoryItemRequest UPFAdminProxyLibrary::MakeBPAdminRevokeInventoryItemRequest(
     FString InCharacterId
-	, FString InItemInstanceId
-	, FString InPlayFabId
-    )
+    , FString InItemInstanceId
+    , FString InPlayFabId
+)
 {
     FBPAdminRevokeInventoryItemRequest Out = FBPAdminRevokeInventoryItemRequest();
     Out.Data.CharacterId = InCharacterId;
-	Out.Data.ItemInstanceId = InItemInstanceId;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.ItemInstanceId = InItemInstanceId;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
+}
+
+// RevokeInventoryItemsRequest
+FBPAdminRevokeInventoryItemsRequest UPFAdminProxyLibrary::MakeBPAdminRevokeInventoryItemsRequest(
+    TArray<FBPAdminRevokeInventoryItem> InItems
+)
+{
+    FBPAdminRevokeInventoryItemsRequest Out = FBPAdminRevokeInventoryItemsRequest();
+    for (const FBPAdminRevokeInventoryItem& elem : InItems)
+    {
+        Out.Data.Items.Add(elem.Data);
+    }
+
+    return Out;
+}
+
+// RevokeInventoryItemsResult
+void UPFAdminProxyLibrary::BreakBPAdminRevokeInventoryItemsResult(
+    const FBPAdminRevokeInventoryItemsResult& In
+    , TArray<FBPAdminRevokeItemError>& OutErrors
+)
+{
+    for (const PlayFab::AdminModels::FRevokeItemError& elem : In.Data.Errors)
+    {
+        OutErrors.Add(FBPAdminRevokeItemError(elem));
+    }
+
 }
 
 // RevokeInventoryResult
 void UPFAdminProxyLibrary::BreakBPAdminRevokeInventoryResult(
     const FBPAdminRevokeInventoryResult& In
- )
+)
 {
-    
+
+}
+
+// RevokeItemError
+FBPAdminRevokeItemError UPFAdminProxyLibrary::MakeBPAdminRevokeItemError(
+    FString InError
+    , FBPAdminRevokeInventoryItem InItem
+)
+{
+    FBPAdminRevokeItemError Out = FBPAdminRevokeItemError();
+    Out.Data.Error = InError;
+    Out.Data.Item = MakeShareable(new PlayFab::AdminModels::FRevokeInventoryItem(InItem.Data));
+
+    return Out;
+}
+void UPFAdminProxyLibrary::BreakBPAdminRevokeItemError(
+    const FBPAdminRevokeItemError& In
+    , FString& OutError
+    , FBPAdminRevokeInventoryItem& OutItem
+)
+{
+    OutError = In.Data.Error;
+    if (In.Data.Item.IsValid()) { OutItem.Data = *In.Data.Item; }
+
 }
 
 // RunTaskRequest
 FBPAdminRunTaskRequest UPFAdminProxyLibrary::MakeBPAdminRunTaskRequest(
     FBPAdminNameIdentifier InIdentifier
-    )
+)
 {
     FBPAdminRunTaskRequest Out = FBPAdminRunTaskRequest();
     Out.Data.Identifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InIdentifier.Data));
-	
+
     return Out;
 }
 
 // RunTaskResult
 void UPFAdminProxyLibrary::BreakBPAdminRunTaskResult(
     const FBPAdminRunTaskResult& In
-	, FString& OutTaskInstanceId
- )
+    , FString& OutTaskInstanceId
+)
 {
     OutTaskInstanceId = In.Data.TaskInstanceId;
-	
+
 }
 
 // ScheduledTask
 FBPAdminScheduledTask UPFAdminProxyLibrary::MakeBPAdminScheduledTask(
     FString InDescription
-	, bool InIsActive
-	, FDateTime InLastRunTime
-	, FString InName
-	, FDateTime InNextRunTime
-	, UPlayFabJsonValue* InParameter
-	, FString InSchedule
-	, FString InTaskId
-	, EBPAdminScheduledTaskType InType
-    )
+    , bool InIsActive
+    , FDateTime InLastRunTime
+    , FString InName
+    , FDateTime InNextRunTime
+    , UPlayFabJsonValue* InParameter
+    , FString InSchedule
+    , FString InTaskId
+    , EBPAdminScheduledTaskType InType
+)
 {
     FBPAdminScheduledTask Out = FBPAdminScheduledTask();
     Out.Data.Description = InDescription;
-	Out.Data.IsActive = InIsActive;
-	Out.Data.LastRunTime = InLastRunTime;
-	Out.Data.Name = InName;
-	Out.Data.NextRunTime = InNextRunTime;
-	Out.Data.Parameter = InParameter->GetRootValue();
-	Out.Data.Schedule = InSchedule;
-	Out.Data.TaskId = InTaskId;
-	Out.Data.Type = static_cast<PlayFab::AdminModels::ScheduledTaskType>(static_cast<uint8>(InType));
-	
+    Out.Data.IsActive = InIsActive;
+    Out.Data.LastRunTime = InLastRunTime;
+    Out.Data.Name = InName;
+    Out.Data.NextRunTime = InNextRunTime;
+    Out.Data.Parameter = InParameter->GetRootValue();
+    Out.Data.Schedule = InSchedule;
+    Out.Data.TaskId = InTaskId;
+    Out.Data.Type = static_cast<PlayFab::AdminModels::ScheduledTaskType>(static_cast<uint8>(InType));
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminScheduledTask(
     const FBPAdminScheduledTask& In
-	, FString& OutDescription
-	, bool& OutIsActive
-	, FDateTime& OutLastRunTime
-	, FString& OutName
-	, FDateTime& OutNextRunTime
-	, UPlayFabJsonValue*& OutParameter
-	, FString& OutSchedule
-	, FString& OutTaskId
-	, EBPAdminScheduledTaskType& OutType
- )
+    , FString& OutDescription
+    , bool& OutIsActive
+    , FDateTime& OutLastRunTime
+    , FString& OutName
+    , FDateTime& OutNextRunTime
+    , UPlayFabJsonValue*& OutParameter
+    , FString& OutSchedule
+    , FString& OutTaskId
+    , EBPAdminScheduledTaskType& OutType
+)
 {
     OutDescription = In.Data.Description;
-	OutIsActive = In.Data.IsActive;
-	OutLastRunTime = In.Data.LastRunTime;
-	OutName = In.Data.Name;
-	OutNextRunTime = In.Data.NextRunTime;
-	UPlayFabJsonValue* val = NewObject<UPlayFabJsonValue>();
-	val->SetRootValue(In.Data.Parameter.GetJsonValue());
-	OutParameter = val;
-	OutSchedule = In.Data.Schedule;
-	OutTaskId = In.Data.TaskId;
-	if (In.Data.Type.notNull()) {OutType = static_cast<EBPAdminScheduledTaskType>(static_cast<uint8>(In.Data.Type.mValue));}
-	
+    OutIsActive = In.Data.IsActive;
+    OutLastRunTime = In.Data.LastRunTime;
+    OutName = In.Data.Name;
+    OutNextRunTime = In.Data.NextRunTime;
+    UPlayFabJsonValue* ParameterVal = NewObject<UPlayFabJsonValue>();
+    ParameterVal->SetRootValue(In.Data.Parameter.GetJsonValue());
+    OutParameter = ParameterVal;
+    OutSchedule = In.Data.Schedule;
+    OutTaskId = In.Data.TaskId;
+    if (In.Data.Type.notNull()) { OutType = static_cast<EBPAdminScheduledTaskType>(static_cast<uint8>(In.Data.Type.mValue)); }
+
 }
 
 // ScriptExecutionError
 FBPAdminScriptExecutionError UPFAdminProxyLibrary::MakeBPAdminScriptExecutionError(
     FString InError
-	, FString InMessage
-	, FString InStackTrace
-    )
+    , FString InMessage
+    , FString InStackTrace
+)
 {
     FBPAdminScriptExecutionError Out = FBPAdminScriptExecutionError();
     Out.Data.Error = InError;
-	Out.Data.Message = InMessage;
-	Out.Data.StackTrace = InStackTrace;
-	
+    Out.Data.Message = InMessage;
+    Out.Data.StackTrace = InStackTrace;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminScriptExecutionError(
     const FBPAdminScriptExecutionError& In
-	, FString& OutError
-	, FString& OutMessage
-	, FString& OutStackTrace
- )
+    , FString& OutError
+    , FString& OutMessage
+    , FString& OutStackTrace
+)
 {
     OutError = In.Data.Error;
-	OutMessage = In.Data.Message;
-	OutStackTrace = In.Data.StackTrace;
-	
+    OutMessage = In.Data.Message;
+    OutStackTrace = In.Data.StackTrace;
+
 }
 
 // SendAccountRecoveryEmailRequest
 FBPAdminSendAccountRecoveryEmailRequest UPFAdminProxyLibrary::MakeBPAdminSendAccountRecoveryEmailRequest(
     FString InEmail
-	, FString InEmailTemplateId
-    )
+    , FString InEmailTemplateId
+)
 {
     FBPAdminSendAccountRecoveryEmailRequest Out = FBPAdminSendAccountRecoveryEmailRequest();
     Out.Data.Email = InEmail;
-	Out.Data.EmailTemplateId = InEmailTemplateId;
-	
+    Out.Data.EmailTemplateId = InEmailTemplateId;
+
     return Out;
 }
 
 // SendAccountRecoveryEmailResult
 void UPFAdminProxyLibrary::BreakBPAdminSendAccountRecoveryEmailResult(
     const FBPAdminSendAccountRecoveryEmailResult& In
- )
+)
 {
-    
+
 }
 
 // SetPlayerSecretRequest
 FBPAdminSetPlayerSecretRequest UPFAdminProxyLibrary::MakeBPAdminSetPlayerSecretRequest(
     FString InPlayerSecret
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPAdminSetPlayerSecretRequest Out = FBPAdminSetPlayerSecretRequest();
     Out.Data.PlayerSecret = InPlayerSecret;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // SetPlayerSecretResult
 void UPFAdminProxyLibrary::BreakBPAdminSetPlayerSecretResult(
     const FBPAdminSetPlayerSecretResult& In
- )
+)
 {
-    
+
 }
 
 // SetPublishedRevisionRequest
 FBPAdminSetPublishedRevisionRequest UPFAdminProxyLibrary::MakeBPAdminSetPublishedRevisionRequest(
     int32 InRevision
-	, int32 InVersion
-    )
+    , int32 InVersion
+)
 {
     FBPAdminSetPublishedRevisionRequest Out = FBPAdminSetPublishedRevisionRequest();
     Out.Data.Revision = InRevision;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 
 // SetPublishedRevisionResult
 void UPFAdminProxyLibrary::BreakBPAdminSetPublishedRevisionResult(
     const FBPAdminSetPublishedRevisionResult& In
- )
+)
 {
-    
+
 }
 
 // SetPublisherDataRequest
 FBPAdminSetPublisherDataRequest UPFAdminProxyLibrary::MakeBPAdminSetPublisherDataRequest(
     FString InKey
-	, FString InValue
-    )
+    , FString InValue
+)
 {
     FBPAdminSetPublisherDataRequest Out = FBPAdminSetPublisherDataRequest();
     Out.Data.Key = InKey;
-	Out.Data.Value = InValue;
-	
+    Out.Data.Value = InValue;
+
     return Out;
 }
 
 // SetPublisherDataResult
 void UPFAdminProxyLibrary::BreakBPAdminSetPublisherDataResult(
     const FBPAdminSetPublisherDataResult& In
- )
+)
 {
-    
+
 }
 
 // SetTitleDataRequest
 FBPAdminSetTitleDataRequest UPFAdminProxyLibrary::MakeBPAdminSetTitleDataRequest(
     FString InKey
-	, FString InValue
-    )
+    , FString InValue
+)
 {
     FBPAdminSetTitleDataRequest Out = FBPAdminSetTitleDataRequest();
     Out.Data.Key = InKey;
-	Out.Data.Value = InValue;
-	
+    Out.Data.Value = InValue;
+
     return Out;
 }
 
 // SetTitleDataResult
 void UPFAdminProxyLibrary::BreakBPAdminSetTitleDataResult(
     const FBPAdminSetTitleDataResult& In
- )
+)
 {
-    
+
 }
 
 // SetupPushNotificationRequest
 FBPAdminSetupPushNotificationRequest UPFAdminProxyLibrary::MakeBPAdminSetupPushNotificationRequest(
     FString InCredential
-	, FString InKey
-	, FString InName
-	, bool InOverwriteOldARN
-	, EBPAdminPushSetupPlatform InPlatform
-    )
+    , FString InKey
+    , FString InName
+    , bool InOverwriteOldARN
+    , EBPAdminPushSetupPlatform InPlatform
+)
 {
     FBPAdminSetupPushNotificationRequest Out = FBPAdminSetupPushNotificationRequest();
     Out.Data.Credential = InCredential;
-	Out.Data.Key = InKey;
-	Out.Data.Name = InName;
-	Out.Data.OverwriteOldARN = InOverwriteOldARN;
-	Out.Data.Platform = static_cast<PlayFab::AdminModels::PushSetupPlatform>(static_cast<uint8>(InPlatform));
-	
+    Out.Data.Key = InKey;
+    Out.Data.Name = InName;
+    Out.Data.OverwriteOldARN = InOverwriteOldARN;
+    Out.Data.Platform = static_cast<PlayFab::AdminModels::PushSetupPlatform>(static_cast<uint8>(InPlatform));
+
     return Out;
 }
 
 // SetupPushNotificationResult
 void UPFAdminProxyLibrary::BreakBPAdminSetupPushNotificationResult(
     const FBPAdminSetupPushNotificationResult& In
-	, FString& OutARN
- )
+    , FString& OutARN
+)
 {
     OutARN = In.Data.ARN;
-	
+
 }
 
 // SharedSecret
 FBPAdminSharedSecret UPFAdminProxyLibrary::MakeBPAdminSharedSecret(
     bool InDisabled
-	, FString InFriendlyName
-	, FString InSecretKey
-    )
+    , FString InFriendlyName
+    , FString InSecretKey
+)
 {
     FBPAdminSharedSecret Out = FBPAdminSharedSecret();
     Out.Data.Disabled = InDisabled;
-	Out.Data.FriendlyName = InFriendlyName;
-	Out.Data.SecretKey = InSecretKey;
-	
+    Out.Data.FriendlyName = InFriendlyName;
+    Out.Data.SecretKey = InSecretKey;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminSharedSecret(
     const FBPAdminSharedSecret& In
-	, bool& OutDisabled
-	, FString& OutFriendlyName
-	, FString& OutSecretKey
- )
+    , bool& OutDisabled
+    , FString& OutFriendlyName
+    , FString& OutSecretKey
+)
 {
     OutDisabled = In.Data.Disabled;
-	OutFriendlyName = In.Data.FriendlyName;
-	OutSecretKey = In.Data.SecretKey;
-	
+    OutFriendlyName = In.Data.FriendlyName;
+    OutSecretKey = In.Data.SecretKey;
+
 }
 
 // StatisticModel
 FBPAdminStatisticModel UPFAdminProxyLibrary::MakeBPAdminStatisticModel(
     FString InName
-	, int32 InValue
-	, int32 InVersion
-    )
+    , int32 InValue
+    , int32 InVersion
+)
 {
     FBPAdminStatisticModel Out = FBPAdminStatisticModel();
     Out.Data.Name = InName;
-	Out.Data.Value = InValue;
-	Out.Data.Version = InVersion;
-	
+    Out.Data.Value = InValue;
+    Out.Data.Version = InVersion;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminStatisticModel(
     const FBPAdminStatisticModel& In
-	, FString& OutName
-	, int32& OutValue
-	, int32& OutVersion
- )
+    , FString& OutName
+    , int32& OutValue
+    , int32& OutVersion
+)
 {
     OutName = In.Data.Name;
-	OutValue = In.Data.Value;
-	OutVersion = In.Data.Version;
-	
+    OutValue = In.Data.Value;
+    OutVersion = In.Data.Version;
+
 }
 
 // StoreItem
 FBPAdminStoreItem UPFAdminProxyLibrary::MakeBPAdminStoreItem(
     UPlayFabJsonValue* InCustomData
-	, int32 InDisplayPosition
-	, FString InItemId
-	, TMap<FString, int32> InRealCurrencyPrices
-	, TMap<FString, int32> InVirtualCurrencyPrices
-    )
+    , int32 InDisplayPosition
+    , FString InItemId
+    , TMap<FString, int32> InRealCurrencyPrices
+    , TMap<FString, int32> InVirtualCurrencyPrices
+)
 {
     FBPAdminStoreItem Out = FBPAdminStoreItem();
     Out.Data.CustomData = InCustomData->GetRootValue();
-	Out.Data.DisplayPosition = InDisplayPosition;
-	Out.Data.ItemId = InItemId;
-	for (auto& elem : InRealCurrencyPrices)
-	{
-		const int32 value = elem.Value;
-		Out.Data.RealCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
-	}
-	for (auto& elem : InVirtualCurrencyPrices)
-	{
-		const int32 value = elem.Value;
-		Out.Data.VirtualCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
-	}
-	
+    Out.Data.DisplayPosition = InDisplayPosition;
+    Out.Data.ItemId = InItemId;
+    for (auto& elem : InRealCurrencyPrices)
+    {
+        const int32 value = elem.Value;
+        Out.Data.RealCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
+    }
+    for (auto& elem : InVirtualCurrencyPrices)
+    {
+        const int32 value = elem.Value;
+        Out.Data.VirtualCurrencyPrices.Add(elem.Key, static_cast<uint32>(value));
+    }
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminStoreItem(
     const FBPAdminStoreItem& In
-	, UPlayFabJsonValue*& OutCustomData
-	, int32& OutDisplayPosition
-	, FString& OutItemId
-	, TMap<FString, int32>& OutRealCurrencyPrices
-	, TMap<FString, int32>& OutVirtualCurrencyPrices
- )
+    , UPlayFabJsonValue*& OutCustomData
+    , int32& OutDisplayPosition
+    , FString& OutItemId
+    , TMap<FString, int32>& OutRealCurrencyPrices
+    , TMap<FString, int32>& OutVirtualCurrencyPrices
+)
 {
-    UPlayFabJsonValue* val = NewObject<UPlayFabJsonValue>();
-	val->SetRootValue(In.Data.CustomData.GetJsonValue());
-	OutCustomData = val;
-	OutDisplayPosition = In.Data.DisplayPosition;
-	OutItemId = In.Data.ItemId;
-	for (auto& elem : In.Data.RealCurrencyPrices)
-	{
-		const uint32 value = elem.Value;
-		OutRealCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
-	}
-	for (auto& elem : In.Data.VirtualCurrencyPrices)
-	{
-		const uint32 value = elem.Value;
-		OutVirtualCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
-	}
-	
+    UPlayFabJsonValue* CustomDataVal = NewObject<UPlayFabJsonValue>();
+    CustomDataVal->SetRootValue(In.Data.CustomData.GetJsonValue());
+    OutCustomData = CustomDataVal;
+    OutDisplayPosition = In.Data.DisplayPosition;
+    OutItemId = In.Data.ItemId;
+    for (auto& elem : In.Data.RealCurrencyPrices)
+    {
+        const uint32 value = elem.Value;
+        OutRealCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
+    }
+    for (auto& elem : In.Data.VirtualCurrencyPrices)
+    {
+        const uint32 value = elem.Value;
+        OutVirtualCurrencyPrices.Add(elem.Key, static_cast<int32>(value));
+    }
+
 }
 
 // StoreMarketingModel
 FBPAdminStoreMarketingModel UPFAdminProxyLibrary::MakeBPAdminStoreMarketingModel(
     FString InDescription
-	, FString InDisplayName
-	, UPlayFabJsonValue* InMetadata
-    )
+    , FString InDisplayName
+    , UPlayFabJsonValue* InMetadata
+)
 {
     FBPAdminStoreMarketingModel Out = FBPAdminStoreMarketingModel();
     Out.Data.Description = InDescription;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.Metadata = InMetadata->GetRootValue();
-	
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.Metadata = InMetadata->GetRootValue();
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminStoreMarketingModel(
     const FBPAdminStoreMarketingModel& In
-	, FString& OutDescription
-	, FString& OutDisplayName
-	, UPlayFabJsonValue*& OutMetadata
- )
+    , FString& OutDescription
+    , FString& OutDisplayName
+    , UPlayFabJsonValue*& OutMetadata
+)
 {
     OutDescription = In.Data.Description;
-	OutDisplayName = In.Data.DisplayName;
-	UPlayFabJsonValue* val = NewObject<UPlayFabJsonValue>();
-	val->SetRootValue(In.Data.Metadata.GetJsonValue());
-	OutMetadata = val;
-	
+    OutDisplayName = In.Data.DisplayName;
+    UPlayFabJsonValue* MetadataVal = NewObject<UPlayFabJsonValue>();
+    MetadataVal->SetRootValue(In.Data.Metadata.GetJsonValue());
+    OutMetadata = MetadataVal;
+
 }
 
 // SubscriptionModel
 FBPAdminSubscriptionModel UPFAdminProxyLibrary::MakeBPAdminSubscriptionModel(
     FDateTime InExpiration
-	, FDateTime InInitialSubscriptionTime
-	, bool InIsActive
-	, EBPAdminSubscriptionProviderStatus InStatus
-	, FString InSubscriptionId
-	, FString InSubscriptionItemId
-	, FString InSubscriptionProvider
-    )
+    , FDateTime InInitialSubscriptionTime
+    , bool InIsActive
+    , EBPAdminSubscriptionProviderStatus InStatus
+    , FString InSubscriptionId
+    , FString InSubscriptionItemId
+    , FString InSubscriptionProvider
+)
 {
     FBPAdminSubscriptionModel Out = FBPAdminSubscriptionModel();
     Out.Data.Expiration = InExpiration;
-	Out.Data.InitialSubscriptionTime = InInitialSubscriptionTime;
-	Out.Data.IsActive = InIsActive;
-	Out.Data.Status = static_cast<PlayFab::AdminModels::SubscriptionProviderStatus>(static_cast<uint8>(InStatus));
-	Out.Data.SubscriptionId = InSubscriptionId;
-	Out.Data.SubscriptionItemId = InSubscriptionItemId;
-	Out.Data.SubscriptionProvider = InSubscriptionProvider;
-	
+    Out.Data.InitialSubscriptionTime = InInitialSubscriptionTime;
+    Out.Data.IsActive = InIsActive;
+    Out.Data.Status = static_cast<PlayFab::AdminModels::SubscriptionProviderStatus>(static_cast<uint8>(InStatus));
+    Out.Data.SubscriptionId = InSubscriptionId;
+    Out.Data.SubscriptionItemId = InSubscriptionItemId;
+    Out.Data.SubscriptionProvider = InSubscriptionProvider;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminSubscriptionModel(
     const FBPAdminSubscriptionModel& In
-	, FDateTime& OutExpiration
-	, FDateTime& OutInitialSubscriptionTime
-	, bool& OutIsActive
-	, EBPAdminSubscriptionProviderStatus& OutStatus
-	, FString& OutSubscriptionId
-	, FString& OutSubscriptionItemId
-	, FString& OutSubscriptionProvider
- )
+    , FDateTime& OutExpiration
+    , FDateTime& OutInitialSubscriptionTime
+    , bool& OutIsActive
+    , EBPAdminSubscriptionProviderStatus& OutStatus
+    , FString& OutSubscriptionId
+    , FString& OutSubscriptionItemId
+    , FString& OutSubscriptionProvider
+)
 {
     OutExpiration = In.Data.Expiration;
-	OutInitialSubscriptionTime = In.Data.InitialSubscriptionTime;
-	OutIsActive = In.Data.IsActive;
-	if (In.Data.Status.notNull()) {OutStatus = static_cast<EBPAdminSubscriptionProviderStatus>(static_cast<uint8>(In.Data.Status.mValue));}
-	OutSubscriptionId = In.Data.SubscriptionId;
-	OutSubscriptionItemId = In.Data.SubscriptionItemId;
-	OutSubscriptionProvider = In.Data.SubscriptionProvider;
-	
+    OutInitialSubscriptionTime = In.Data.InitialSubscriptionTime;
+    OutIsActive = In.Data.IsActive;
+    if (In.Data.Status.notNull()) { OutStatus = static_cast<EBPAdminSubscriptionProviderStatus>(static_cast<uint8>(In.Data.Status.mValue)); }
+    OutSubscriptionId = In.Data.SubscriptionId;
+    OutSubscriptionItemId = In.Data.SubscriptionItemId;
+    OutSubscriptionProvider = In.Data.SubscriptionProvider;
+
 }
 
 // SubtractUserVirtualCurrencyRequest
 FBPAdminSubtractUserVirtualCurrencyRequest UPFAdminProxyLibrary::MakeBPAdminSubtractUserVirtualCurrencyRequest(
     int32 InAmount
-	, FString InPlayFabId
-	, FString InVirtualCurrency
-    )
+    , FString InPlayFabId
+    , FString InVirtualCurrency
+)
 {
     FBPAdminSubtractUserVirtualCurrencyRequest Out = FBPAdminSubtractUserVirtualCurrencyRequest();
     Out.Data.Amount = InAmount;
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.VirtualCurrency = InVirtualCurrency;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.VirtualCurrency = InVirtualCurrency;
+
     return Out;
 }
 
 // TagModel
 FBPAdminTagModel UPFAdminProxyLibrary::MakeBPAdminTagModel(
     FString InTagValue
-    )
+)
 {
     FBPAdminTagModel Out = FBPAdminTagModel();
     Out.Data.TagValue = InTagValue;
-	
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminTagModel(
     const FBPAdminTagModel& In
-	, FString& OutTagValue
- )
+    , FString& OutTagValue
+)
 {
     OutTagValue = In.Data.TagValue;
-	
+
 }
 
 // TaskInstanceBasicSummary
 FBPAdminTaskInstanceBasicSummary UPFAdminProxyLibrary::MakeBPAdminTaskInstanceBasicSummary(
     FDateTime InCompletedAt
-	, float InEstimatedSecondsRemaining
-	, float InPercentComplete
-	, FString InScheduledByUserId
-	, FDateTime InStartedAt
-	, EBPAdminTaskInstanceStatus InStatus
-	, FBPAdminNameIdentifier InTaskIdentifier
-	, FString InTaskInstanceId
-	, EBPAdminScheduledTaskType InType
-    )
+    , float InEstimatedSecondsRemaining
+    , float InPercentComplete
+    , FString InScheduledByUserId
+    , FDateTime InStartedAt
+    , EBPAdminTaskInstanceStatus InStatus
+    , FBPAdminNameIdentifier InTaskIdentifier
+    , FString InTaskInstanceId
+    , EBPAdminScheduledTaskType InType
+)
 {
     FBPAdminTaskInstanceBasicSummary Out = FBPAdminTaskInstanceBasicSummary();
     Out.Data.CompletedAt = InCompletedAt;
-	Out.Data.EstimatedSecondsRemaining = InEstimatedSecondsRemaining;
-	Out.Data.PercentComplete = InPercentComplete;
-	Out.Data.ScheduledByUserId = InScheduledByUserId;
-	Out.Data.StartedAt = InStartedAt;
-	Out.Data.Status = static_cast<PlayFab::AdminModels::TaskInstanceStatus>(static_cast<uint8>(InStatus));
-	Out.Data.TaskIdentifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InTaskIdentifier.Data));
-	Out.Data.TaskInstanceId = InTaskInstanceId;
-	Out.Data.Type = static_cast<PlayFab::AdminModels::ScheduledTaskType>(static_cast<uint8>(InType));
-	
+    Out.Data.EstimatedSecondsRemaining = InEstimatedSecondsRemaining;
+    Out.Data.PercentComplete = InPercentComplete;
+    Out.Data.ScheduledByUserId = InScheduledByUserId;
+    Out.Data.StartedAt = InStartedAt;
+    Out.Data.Status = static_cast<PlayFab::AdminModels::TaskInstanceStatus>(static_cast<uint8>(InStatus));
+    Out.Data.TaskIdentifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InTaskIdentifier.Data));
+    Out.Data.TaskInstanceId = InTaskInstanceId;
+    Out.Data.Type = static_cast<PlayFab::AdminModels::ScheduledTaskType>(static_cast<uint8>(InType));
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminTaskInstanceBasicSummary(
     const FBPAdminTaskInstanceBasicSummary& In
-	, FDateTime& OutCompletedAt
-	, float& OutEstimatedSecondsRemaining
-	, float& OutPercentComplete
-	, FString& OutScheduledByUserId
-	, FDateTime& OutStartedAt
-	, EBPAdminTaskInstanceStatus& OutStatus
-	, FBPAdminNameIdentifier& OutTaskIdentifier
-	, FString& OutTaskInstanceId
-	, EBPAdminScheduledTaskType& OutType
- )
+    , FDateTime& OutCompletedAt
+    , float& OutEstimatedSecondsRemaining
+    , float& OutPercentComplete
+    , FString& OutScheduledByUserId
+    , FDateTime& OutStartedAt
+    , EBPAdminTaskInstanceStatus& OutStatus
+    , FBPAdminNameIdentifier& OutTaskIdentifier
+    , FString& OutTaskInstanceId
+    , EBPAdminScheduledTaskType& OutType
+)
 {
     OutCompletedAt = In.Data.CompletedAt;
-	OutEstimatedSecondsRemaining = In.Data.EstimatedSecondsRemaining;
-	OutPercentComplete = In.Data.PercentComplete;
-	OutScheduledByUserId = In.Data.ScheduledByUserId;
-	OutStartedAt = In.Data.StartedAt;
-	if (In.Data.Status.notNull()) {OutStatus = static_cast<EBPAdminTaskInstanceStatus>(static_cast<uint8>(In.Data.Status.mValue));}
-	if (In.Data.TaskIdentifier.IsValid()) {OutTaskIdentifier.Data = *In.Data.TaskIdentifier;}
-	OutTaskInstanceId = In.Data.TaskInstanceId;
-	if (In.Data.Type.notNull()) {OutType = static_cast<EBPAdminScheduledTaskType>(static_cast<uint8>(In.Data.Type.mValue));}
-	
+    OutEstimatedSecondsRemaining = In.Data.EstimatedSecondsRemaining;
+    OutPercentComplete = In.Data.PercentComplete;
+    OutScheduledByUserId = In.Data.ScheduledByUserId;
+    OutStartedAt = In.Data.StartedAt;
+    if (In.Data.Status.notNull()) { OutStatus = static_cast<EBPAdminTaskInstanceStatus>(static_cast<uint8>(In.Data.Status.mValue)); }
+    if (In.Data.TaskIdentifier.IsValid()) { OutTaskIdentifier.Data = *In.Data.TaskIdentifier; }
+    OutTaskInstanceId = In.Data.TaskInstanceId;
+    if (In.Data.Type.notNull()) { OutType = static_cast<EBPAdminScheduledTaskType>(static_cast<uint8>(In.Data.Type.mValue)); }
+
 }
 
 // UpdateBanRequest
 FBPAdminUpdateBanRequest UPFAdminProxyLibrary::MakeBPAdminUpdateBanRequest(
     bool InActive
-	, FString InBanId
-	, FDateTime InExpires
-	, FString InIPAddress
-	, FString InMACAddress
-	, bool InPermanent
-	, FString InReason
-    )
+    , FString InBanId
+    , FDateTime InExpires
+    , FString InIPAddress
+    , FString InMACAddress
+    , bool InPermanent
+    , FString InReason
+)
 {
     FBPAdminUpdateBanRequest Out = FBPAdminUpdateBanRequest();
     Out.Data.Active = InActive;
-	Out.Data.BanId = InBanId;
-	Out.Data.Expires = InExpires;
-	Out.Data.IPAddress = InIPAddress;
-	Out.Data.MACAddress = InMACAddress;
-	Out.Data.Permanent = InPermanent;
-	Out.Data.Reason = InReason;
-	
+    Out.Data.BanId = InBanId;
+    Out.Data.Expires = InExpires;
+    Out.Data.IPAddress = InIPAddress;
+    Out.Data.MACAddress = InMACAddress;
+    Out.Data.Permanent = InPermanent;
+    Out.Data.Reason = InReason;
+
     return Out;
 }
 
 // UpdateBansRequest
 FBPAdminUpdateBansRequest UPFAdminProxyLibrary::MakeBPAdminUpdateBansRequest(
     TArray<FBPAdminUpdateBanRequest> InBans
-    )
+)
 {
     FBPAdminUpdateBansRequest Out = FBPAdminUpdateBansRequest();
     for (const FBPAdminUpdateBanRequest& elem : InBans)
-	{
-		Out.Data.Bans.Add(elem.Data);
-	}
-	
+    {
+        Out.Data.Bans.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // UpdateBansResult
 void UPFAdminProxyLibrary::BreakBPAdminUpdateBansResult(
     const FBPAdminUpdateBansResult& In
-	, TArray<FBPAdminBanInfo>& OutBanData
- )
+    , TArray<FBPAdminBanInfo>& OutBanData
+)
 {
     for (const PlayFab::AdminModels::FBanInfo& elem : In.Data.BanData)
-	{
-		OutBanData.Add(FBPAdminBanInfo(elem));
-	}
-	
+    {
+        OutBanData.Add(FBPAdminBanInfo(elem));
+    }
+
 }
 
 // UpdateCatalogItemsRequest
 FBPAdminUpdateCatalogItemsRequest UPFAdminProxyLibrary::MakeBPAdminUpdateCatalogItemsRequest(
     TArray<FBPAdminCatalogItem> InCatalog
-	, FString InCatalogVersion
-	, bool InSetAsDefaultCatalog
-    )
+    , FString InCatalogVersion
+    , bool InSetAsDefaultCatalog
+)
 {
     FBPAdminUpdateCatalogItemsRequest Out = FBPAdminUpdateCatalogItemsRequest();
     for (const FBPAdminCatalogItem& elem : InCatalog)
-	{
-		Out.Data.Catalog.Add(elem.Data);
-	}
-	Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.SetAsDefaultCatalog = InSetAsDefaultCatalog;
-	
+    {
+        Out.Data.Catalog.Add(elem.Data);
+    }
+    Out.Data.CatalogVersion = InCatalogVersion;
+    Out.Data.SetAsDefaultCatalog = InSetAsDefaultCatalog;
+
     return Out;
 }
 
 // UpdateCatalogItemsResult
 void UPFAdminProxyLibrary::BreakBPAdminUpdateCatalogItemsResult(
     const FBPAdminUpdateCatalogItemsResult& In
- )
+)
 {
-    
+
 }
 
 // UpdateCloudScriptRequest
 FBPAdminUpdateCloudScriptRequest UPFAdminProxyLibrary::MakeBPAdminUpdateCloudScriptRequest(
     FString InDeveloperPlayFabId
-	, TArray<FBPAdminCloudScriptFile> InFiles
-	, bool InPublish
-    )
+    , TArray<FBPAdminCloudScriptFile> InFiles
+    , bool InPublish
+)
 {
     FBPAdminUpdateCloudScriptRequest Out = FBPAdminUpdateCloudScriptRequest();
     Out.Data.DeveloperPlayFabId = InDeveloperPlayFabId;
-	for (const FBPAdminCloudScriptFile& elem : InFiles)
-	{
-		Out.Data.Files.Add(elem.Data);
-	}
-	Out.Data.Publish = InPublish;
-	
+    for (const FBPAdminCloudScriptFile& elem : InFiles)
+    {
+        Out.Data.Files.Add(elem.Data);
+    }
+    Out.Data.Publish = InPublish;
+
     return Out;
 }
 
 // UpdateCloudScriptResult
 void UPFAdminProxyLibrary::BreakBPAdminUpdateCloudScriptResult(
     const FBPAdminUpdateCloudScriptResult& In
-	, int32& OutRevision
-	, int32& OutVersion
- )
+    , int32& OutRevision
+    , int32& OutVersion
+)
 {
     OutRevision = In.Data.Revision;
-	OutVersion = In.Data.Version;
-	
+    OutVersion = In.Data.Version;
+
 }
 
 // UpdatePlayerSharedSecretRequest
 FBPAdminUpdatePlayerSharedSecretRequest UPFAdminProxyLibrary::MakeBPAdminUpdatePlayerSharedSecretRequest(
     bool InDisabled
-	, FString InFriendlyName
-	, FString InSecretKey
-    )
+    , FString InFriendlyName
+    , FString InSecretKey
+)
 {
     FBPAdminUpdatePlayerSharedSecretRequest Out = FBPAdminUpdatePlayerSharedSecretRequest();
     Out.Data.Disabled = InDisabled;
-	Out.Data.FriendlyName = InFriendlyName;
-	Out.Data.SecretKey = InSecretKey;
-	
+    Out.Data.FriendlyName = InFriendlyName;
+    Out.Data.SecretKey = InSecretKey;
+
     return Out;
 }
 
 // UpdatePlayerSharedSecretResult
 void UPFAdminProxyLibrary::BreakBPAdminUpdatePlayerSharedSecretResult(
     const FBPAdminUpdatePlayerSharedSecretResult& In
- )
+)
 {
-    
+
 }
 
 // UpdatePlayerStatisticDefinitionRequest
 FBPAdminUpdatePlayerStatisticDefinitionRequest UPFAdminProxyLibrary::MakeBPAdminUpdatePlayerStatisticDefinitionRequest(
     EBPAdminStatisticAggregationMethod InAggregationMethod
-	, FString InStatisticName
-	, EBPAdminStatisticResetIntervalOption InVersionChangeInterval
-    )
+    , FString InStatisticName
+    , EBPAdminStatisticResetIntervalOption InVersionChangeInterval
+)
 {
     FBPAdminUpdatePlayerStatisticDefinitionRequest Out = FBPAdminUpdatePlayerStatisticDefinitionRequest();
     Out.Data.AggregationMethod = static_cast<PlayFab::AdminModels::StatisticAggregationMethod>(static_cast<uint8>(InAggregationMethod));
-	Out.Data.StatisticName = InStatisticName;
-	Out.Data.VersionChangeInterval = static_cast<PlayFab::AdminModels::StatisticResetIntervalOption>(static_cast<uint8>(InVersionChangeInterval));
-	
+    Out.Data.StatisticName = InStatisticName;
+    Out.Data.VersionChangeInterval = static_cast<PlayFab::AdminModels::StatisticResetIntervalOption>(static_cast<uint8>(InVersionChangeInterval));
+
     return Out;
 }
 
 // UpdatePlayerStatisticDefinitionResult
 void UPFAdminProxyLibrary::BreakBPAdminUpdatePlayerStatisticDefinitionResult(
     const FBPAdminUpdatePlayerStatisticDefinitionResult& In
-	, FBPAdminPlayerStatisticDefinition& OutStatistic
- )
+    , FBPAdminPlayerStatisticDefinition& OutStatistic
+)
 {
-    if (In.Data.Statistic.IsValid()) {OutStatistic.Data = *In.Data.Statistic;}
-	
+    if (In.Data.Statistic.IsValid()) { OutStatistic.Data = *In.Data.Statistic; }
+
 }
 
 // UpdatePolicyRequest
 FBPAdminUpdatePolicyRequest UPFAdminProxyLibrary::MakeBPAdminUpdatePolicyRequest(
     bool InOverwritePolicy
-	, FString InPolicyName
-	, TArray<FBPAdminPermissionStatement> InStatements
-    )
+    , FString InPolicyName
+    , TArray<FBPAdminPermissionStatement> InStatements
+)
 {
     FBPAdminUpdatePolicyRequest Out = FBPAdminUpdatePolicyRequest();
     Out.Data.OverwritePolicy = InOverwritePolicy;
-	Out.Data.PolicyName = InPolicyName;
-	for (const FBPAdminPermissionStatement& elem : InStatements)
-	{
-		Out.Data.Statements.Add(elem.Data);
-	}
-	
+    Out.Data.PolicyName = InPolicyName;
+    for (const FBPAdminPermissionStatement& elem : InStatements)
+    {
+        Out.Data.Statements.Add(elem.Data);
+    }
+
     return Out;
 }
 
 // UpdatePolicyResponse
 void UPFAdminProxyLibrary::BreakBPAdminUpdatePolicyResponse(
     const FBPAdminUpdatePolicyResponse& In
-	, FString& OutPolicyName
-	, TArray<FBPAdminPermissionStatement>& OutStatements
- )
+    , FString& OutPolicyName
+    , TArray<FBPAdminPermissionStatement>& OutStatements
+)
 {
     OutPolicyName = In.Data.PolicyName;
-	for (const PlayFab::AdminModels::FPermissionStatement& elem : In.Data.Statements)
-	{
-		OutStatements.Add(FBPAdminPermissionStatement(elem));
-	}
-	
+    for (const PlayFab::AdminModels::FPermissionStatement& elem : In.Data.Statements)
+    {
+        OutStatements.Add(FBPAdminPermissionStatement(elem));
+    }
+
 }
 
 // UpdateRandomResultTablesRequest
 FBPAdminUpdateRandomResultTablesRequest UPFAdminProxyLibrary::MakeBPAdminUpdateRandomResultTablesRequest(
     FString InCatalogVersion
-	, TArray<FBPAdminRandomResultTable> InTables
-    )
+    , TArray<FBPAdminRandomResultTable> InTables
+)
 {
     FBPAdminUpdateRandomResultTablesRequest Out = FBPAdminUpdateRandomResultTablesRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	for (const FBPAdminRandomResultTable& elem : InTables)
-	{
-		Out.Data.Tables.Add(elem.Data);
-	}
-	
+    for (const FBPAdminRandomResultTable& elem : InTables)
+    {
+        Out.Data.Tables.Add(elem.Data);
+    }
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUpdateRandomResultTablesRequest(
     const FBPAdminUpdateRandomResultTablesRequest& In
-	, FString& OutCatalogVersion
-	, TArray<FBPAdminRandomResultTable>& OutTables
- )
+    , FString& OutCatalogVersion
+    , TArray<FBPAdminRandomResultTable>& OutTables
+)
 {
     OutCatalogVersion = In.Data.CatalogVersion;
-	for (const PlayFab::AdminModels::FRandomResultTable& elem : In.Data.Tables)
-	{
-		OutTables.Add(FBPAdminRandomResultTable(elem));
-	}
-	
+    for (const PlayFab::AdminModels::FRandomResultTable& elem : In.Data.Tables)
+    {
+        OutTables.Add(FBPAdminRandomResultTable(elem));
+    }
+
 }
 
 // UpdateRandomResultTablesResult
 void UPFAdminProxyLibrary::BreakBPAdminUpdateRandomResultTablesResult(
     const FBPAdminUpdateRandomResultTablesResult& In
- )
+)
 {
-    
+
 }
 
 // UpdateStoreItemsRequest
 FBPAdminUpdateStoreItemsRequest UPFAdminProxyLibrary::MakeBPAdminUpdateStoreItemsRequest(
     FString InCatalogVersion
-	, FBPAdminStoreMarketingModel InMarketingData
-	, TArray<FBPAdminStoreItem> InStore
-	, FString InStoreId
-    )
+    , FBPAdminStoreMarketingModel InMarketingData
+    , TArray<FBPAdminStoreItem> InStore
+    , FString InStoreId
+)
 {
     FBPAdminUpdateStoreItemsRequest Out = FBPAdminUpdateStoreItemsRequest();
     Out.Data.CatalogVersion = InCatalogVersion;
-	Out.Data.MarketingData = MakeShareable(new PlayFab::AdminModels::FStoreMarketingModel(InMarketingData.Data));
-	for (const FBPAdminStoreItem& elem : InStore)
-	{
-		Out.Data.Store.Add(elem.Data);
-	}
-	Out.Data.StoreId = InStoreId;
-	
+    Out.Data.MarketingData = MakeShareable(new PlayFab::AdminModels::FStoreMarketingModel(InMarketingData.Data));
+    for (const FBPAdminStoreItem& elem : InStore)
+    {
+        Out.Data.Store.Add(elem.Data);
+    }
+    Out.Data.StoreId = InStoreId;
+
     return Out;
 }
 
 // UpdateStoreItemsResult
 void UPFAdminProxyLibrary::BreakBPAdminUpdateStoreItemsResult(
     const FBPAdminUpdateStoreItemsResult& In
- )
+)
 {
-    
+
 }
 
 // UpdateTaskRequest
 FBPAdminUpdateTaskRequest UPFAdminProxyLibrary::MakeBPAdminUpdateTaskRequest(
     FString InDescription
-	, FBPAdminNameIdentifier InIdentifier
-	, bool InIsActive
-	, FString InName
-	, UPlayFabJsonValue* InParameter
-	, FString InSchedule
-	, EBPAdminScheduledTaskType InType
-    )
+    , FBPAdminNameIdentifier InIdentifier
+    , bool InIsActive
+    , FString InName
+    , UPlayFabJsonValue* InParameter
+    , FString InSchedule
+    , EBPAdminScheduledTaskType InType
+)
 {
     FBPAdminUpdateTaskRequest Out = FBPAdminUpdateTaskRequest();
     Out.Data.Description = InDescription;
-	Out.Data.Identifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InIdentifier.Data));
-	Out.Data.IsActive = InIsActive;
-	Out.Data.Name = InName;
-	Out.Data.Parameter = InParameter->GetRootValue();
-	Out.Data.Schedule = InSchedule;
-	Out.Data.Type = static_cast<PlayFab::AdminModels::ScheduledTaskType>(static_cast<uint8>(InType));
-	
+    Out.Data.Identifier = MakeShareable(new PlayFab::AdminModels::FNameIdentifier(InIdentifier.Data));
+    Out.Data.IsActive = InIsActive;
+    Out.Data.Name = InName;
+    Out.Data.Parameter = InParameter->GetRootValue();
+    Out.Data.Schedule = InSchedule;
+    Out.Data.Type = static_cast<PlayFab::AdminModels::ScheduledTaskType>(static_cast<uint8>(InType));
+
     return Out;
 }
 
 // UpdateUserDataRequest
 FBPAdminUpdateUserDataRequest UPFAdminProxyLibrary::MakeBPAdminUpdateUserDataRequest(
     TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, EBPAdminUserDataPermission InPermission
-	, FString InPlayFabId
-    )
+    , TArray<FString> InKeysToRemove
+    , EBPAdminUserDataPermission InPermission
+    , FString InPlayFabId
+)
 {
     FBPAdminUpdateUserDataRequest Out = FBPAdminUpdateUserDataRequest();
     Out.Data.Data = InData;
-	Out.Data.KeysToRemove = InKeysToRemove;
-	Out.Data.Permission = static_cast<PlayFab::AdminModels::UserDataPermission>(static_cast<uint8>(InPermission));
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.KeysToRemove = InKeysToRemove;
+    Out.Data.Permission = static_cast<PlayFab::AdminModels::UserDataPermission>(static_cast<uint8>(InPermission));
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UpdateUserDataResult
 void UPFAdminProxyLibrary::BreakBPAdminUpdateUserDataResult(
     const FBPAdminUpdateUserDataResult& In
-	, int32& OutDataVersion
- )
+    , int32& OutDataVersion
+)
 {
     OutDataVersion = In.Data.DataVersion;
-	
+
 }
 
 // UpdateUserInternalDataRequest
 FBPAdminUpdateUserInternalDataRequest UPFAdminProxyLibrary::MakeBPAdminUpdateUserInternalDataRequest(
     TMap<FString, FString> InData
-	, TArray<FString> InKeysToRemove
-	, FString InPlayFabId
-    )
+    , TArray<FString> InKeysToRemove
+    , FString InPlayFabId
+)
 {
     FBPAdminUpdateUserInternalDataRequest Out = FBPAdminUpdateUserInternalDataRequest();
     Out.Data.Data = InData;
-	Out.Data.KeysToRemove = InKeysToRemove;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.KeysToRemove = InKeysToRemove;
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UpdateUserTitleDisplayNameRequest
 FBPAdminUpdateUserTitleDisplayNameRequest UPFAdminProxyLibrary::MakeBPAdminUpdateUserTitleDisplayNameRequest(
     FString InDisplayName
-	, FString InPlayFabId
-    )
+    , FString InPlayFabId
+)
 {
     FBPAdminUpdateUserTitleDisplayNameRequest Out = FBPAdminUpdateUserTitleDisplayNameRequest();
     Out.Data.DisplayName = InDisplayName;
-	Out.Data.PlayFabId = InPlayFabId;
-	
+    Out.Data.PlayFabId = InPlayFabId;
+
     return Out;
 }
 
 // UpdateUserTitleDisplayNameResult
 void UPFAdminProxyLibrary::BreakBPAdminUpdateUserTitleDisplayNameResult(
     const FBPAdminUpdateUserTitleDisplayNameResult& In
-	, FString& OutDisplayName
- )
+    , FString& OutDisplayName
+)
 {
     OutDisplayName = In.Data.DisplayName;
-	
+
 }
 
 // UserAccountInfo
 FBPAdminUserAccountInfo UPFAdminProxyLibrary::MakeBPAdminUserAccountInfo(
     FBPAdminUserAndroidDeviceInfo InAndroidDeviceInfo
-	, FDateTime InCreated
-	, FBPAdminUserCustomIdInfo InCustomIdInfo
-	, FBPAdminUserFacebookInfo InFacebookInfo
-	, FBPAdminUserGameCenterInfo InGameCenterInfo
-	, FBPAdminUserGoogleInfo InGoogleInfo
-	, FBPAdminUserIosDeviceInfo InIosDeviceInfo
-	, FBPAdminUserKongregateInfo InKongregateInfo
-	, FString InPlayFabId
-	, FBPAdminUserPrivateAccountInfo InPrivateInfo
-	, FBPAdminUserPsnInfo InPsnInfo
-	, FBPAdminUserSteamInfo InSteamInfo
-	, FBPAdminUserTitleInfo InTitleInfo
-	, FBPAdminUserTwitchInfo InTwitchInfo
-	, FString InUsername
-	, FBPAdminUserXboxInfo InXboxInfo
-    )
+    , FDateTime InCreated
+    , FBPAdminUserCustomIdInfo InCustomIdInfo
+    , FBPAdminUserFacebookInfo InFacebookInfo
+    , FBPAdminUserGameCenterInfo InGameCenterInfo
+    , FBPAdminUserGoogleInfo InGoogleInfo
+    , FBPAdminUserIosDeviceInfo InIosDeviceInfo
+    , FBPAdminUserKongregateInfo InKongregateInfo
+    , FString InPlayFabId
+    , FBPAdminUserPrivateAccountInfo InPrivateInfo
+    , FBPAdminUserPsnInfo InPsnInfo
+    , FBPAdminUserSteamInfo InSteamInfo
+    , FBPAdminUserTitleInfo InTitleInfo
+    , FBPAdminUserTwitchInfo InTwitchInfo
+    , FString InUsername
+    , FBPAdminUserXboxInfo InXboxInfo
+)
 {
     FBPAdminUserAccountInfo Out = FBPAdminUserAccountInfo();
     Out.Data.AndroidDeviceInfo = MakeShareable(new PlayFab::AdminModels::FUserAndroidDeviceInfo(InAndroidDeviceInfo.Data));
-	Out.Data.Created = InCreated;
-	Out.Data.CustomIdInfo = MakeShareable(new PlayFab::AdminModels::FUserCustomIdInfo(InCustomIdInfo.Data));
-	Out.Data.FacebookInfo = MakeShareable(new PlayFab::AdminModels::FUserFacebookInfo(InFacebookInfo.Data));
-	Out.Data.GameCenterInfo = MakeShareable(new PlayFab::AdminModels::FUserGameCenterInfo(InGameCenterInfo.Data));
-	Out.Data.GoogleInfo = MakeShareable(new PlayFab::AdminModels::FUserGoogleInfo(InGoogleInfo.Data));
-	Out.Data.IosDeviceInfo = MakeShareable(new PlayFab::AdminModels::FUserIosDeviceInfo(InIosDeviceInfo.Data));
-	Out.Data.KongregateInfo = MakeShareable(new PlayFab::AdminModels::FUserKongregateInfo(InKongregateInfo.Data));
-	Out.Data.PlayFabId = InPlayFabId;
-	Out.Data.PrivateInfo = MakeShareable(new PlayFab::AdminModels::FUserPrivateAccountInfo(InPrivateInfo.Data));
-	Out.Data.PsnInfo = MakeShareable(new PlayFab::AdminModels::FUserPsnInfo(InPsnInfo.Data));
-	Out.Data.SteamInfo = MakeShareable(new PlayFab::AdminModels::FUserSteamInfo(InSteamInfo.Data));
-	Out.Data.TitleInfo = MakeShareable(new PlayFab::AdminModels::FUserTitleInfo(InTitleInfo.Data));
-	Out.Data.TwitchInfo = MakeShareable(new PlayFab::AdminModels::FUserTwitchInfo(InTwitchInfo.Data));
-	Out.Data.Username = InUsername;
-	Out.Data.XboxInfo = MakeShareable(new PlayFab::AdminModels::FUserXboxInfo(InXboxInfo.Data));
-	
+    Out.Data.Created = InCreated;
+    Out.Data.CustomIdInfo = MakeShareable(new PlayFab::AdminModels::FUserCustomIdInfo(InCustomIdInfo.Data));
+    Out.Data.FacebookInfo = MakeShareable(new PlayFab::AdminModels::FUserFacebookInfo(InFacebookInfo.Data));
+    Out.Data.GameCenterInfo = MakeShareable(new PlayFab::AdminModels::FUserGameCenterInfo(InGameCenterInfo.Data));
+    Out.Data.GoogleInfo = MakeShareable(new PlayFab::AdminModels::FUserGoogleInfo(InGoogleInfo.Data));
+    Out.Data.IosDeviceInfo = MakeShareable(new PlayFab::AdminModels::FUserIosDeviceInfo(InIosDeviceInfo.Data));
+    Out.Data.KongregateInfo = MakeShareable(new PlayFab::AdminModels::FUserKongregateInfo(InKongregateInfo.Data));
+    Out.Data.PlayFabId = InPlayFabId;
+    Out.Data.PrivateInfo = MakeShareable(new PlayFab::AdminModels::FUserPrivateAccountInfo(InPrivateInfo.Data));
+    Out.Data.PsnInfo = MakeShareable(new PlayFab::AdminModels::FUserPsnInfo(InPsnInfo.Data));
+    Out.Data.SteamInfo = MakeShareable(new PlayFab::AdminModels::FUserSteamInfo(InSteamInfo.Data));
+    Out.Data.TitleInfo = MakeShareable(new PlayFab::AdminModels::FUserTitleInfo(InTitleInfo.Data));
+    Out.Data.TwitchInfo = MakeShareable(new PlayFab::AdminModels::FUserTwitchInfo(InTwitchInfo.Data));
+    Out.Data.Username = InUsername;
+    Out.Data.XboxInfo = MakeShareable(new PlayFab::AdminModels::FUserXboxInfo(InXboxInfo.Data));
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserAccountInfo(
     const FBPAdminUserAccountInfo& In
-	, FBPAdminUserAndroidDeviceInfo& OutAndroidDeviceInfo
-	, FDateTime& OutCreated
-	, FBPAdminUserCustomIdInfo& OutCustomIdInfo
-	, FBPAdminUserFacebookInfo& OutFacebookInfo
-	, FBPAdminUserGameCenterInfo& OutGameCenterInfo
-	, FBPAdminUserGoogleInfo& OutGoogleInfo
-	, FBPAdminUserIosDeviceInfo& OutIosDeviceInfo
-	, FBPAdminUserKongregateInfo& OutKongregateInfo
-	, FString& OutPlayFabId
-	, FBPAdminUserPrivateAccountInfo& OutPrivateInfo
-	, FBPAdminUserPsnInfo& OutPsnInfo
-	, FBPAdminUserSteamInfo& OutSteamInfo
-	, FBPAdminUserTitleInfo& OutTitleInfo
-	, FBPAdminUserTwitchInfo& OutTwitchInfo
-	, FString& OutUsername
-	, FBPAdminUserXboxInfo& OutXboxInfo
- )
+    , FBPAdminUserAndroidDeviceInfo& OutAndroidDeviceInfo
+    , FDateTime& OutCreated
+    , FBPAdminUserCustomIdInfo& OutCustomIdInfo
+    , FBPAdminUserFacebookInfo& OutFacebookInfo
+    , FBPAdminUserGameCenterInfo& OutGameCenterInfo
+    , FBPAdminUserGoogleInfo& OutGoogleInfo
+    , FBPAdminUserIosDeviceInfo& OutIosDeviceInfo
+    , FBPAdminUserKongregateInfo& OutKongregateInfo
+    , FString& OutPlayFabId
+    , FBPAdminUserPrivateAccountInfo& OutPrivateInfo
+    , FBPAdminUserPsnInfo& OutPsnInfo
+    , FBPAdminUserSteamInfo& OutSteamInfo
+    , FBPAdminUserTitleInfo& OutTitleInfo
+    , FBPAdminUserTwitchInfo& OutTwitchInfo
+    , FString& OutUsername
+    , FBPAdminUserXboxInfo& OutXboxInfo
+)
 {
-    if (In.Data.AndroidDeviceInfo.IsValid()) {OutAndroidDeviceInfo.Data = *In.Data.AndroidDeviceInfo;}
-	OutCreated = In.Data.Created;
-	if (In.Data.CustomIdInfo.IsValid()) {OutCustomIdInfo.Data = *In.Data.CustomIdInfo;}
-	if (In.Data.FacebookInfo.IsValid()) {OutFacebookInfo.Data = *In.Data.FacebookInfo;}
-	if (In.Data.GameCenterInfo.IsValid()) {OutGameCenterInfo.Data = *In.Data.GameCenterInfo;}
-	if (In.Data.GoogleInfo.IsValid()) {OutGoogleInfo.Data = *In.Data.GoogleInfo;}
-	if (In.Data.IosDeviceInfo.IsValid()) {OutIosDeviceInfo.Data = *In.Data.IosDeviceInfo;}
-	if (In.Data.KongregateInfo.IsValid()) {OutKongregateInfo.Data = *In.Data.KongregateInfo;}
-	OutPlayFabId = In.Data.PlayFabId;
-	if (In.Data.PrivateInfo.IsValid()) {OutPrivateInfo.Data = *In.Data.PrivateInfo;}
-	if (In.Data.PsnInfo.IsValid()) {OutPsnInfo.Data = *In.Data.PsnInfo;}
-	if (In.Data.SteamInfo.IsValid()) {OutSteamInfo.Data = *In.Data.SteamInfo;}
-	if (In.Data.TitleInfo.IsValid()) {OutTitleInfo.Data = *In.Data.TitleInfo;}
-	if (In.Data.TwitchInfo.IsValid()) {OutTwitchInfo.Data = *In.Data.TwitchInfo;}
-	OutUsername = In.Data.Username;
-	if (In.Data.XboxInfo.IsValid()) {OutXboxInfo.Data = *In.Data.XboxInfo;}
-	
+    if (In.Data.AndroidDeviceInfo.IsValid()) { OutAndroidDeviceInfo.Data = *In.Data.AndroidDeviceInfo; }
+    OutCreated = In.Data.Created;
+    if (In.Data.CustomIdInfo.IsValid()) { OutCustomIdInfo.Data = *In.Data.CustomIdInfo; }
+    if (In.Data.FacebookInfo.IsValid()) { OutFacebookInfo.Data = *In.Data.FacebookInfo; }
+    if (In.Data.GameCenterInfo.IsValid()) { OutGameCenterInfo.Data = *In.Data.GameCenterInfo; }
+    if (In.Data.GoogleInfo.IsValid()) { OutGoogleInfo.Data = *In.Data.GoogleInfo; }
+    if (In.Data.IosDeviceInfo.IsValid()) { OutIosDeviceInfo.Data = *In.Data.IosDeviceInfo; }
+    if (In.Data.KongregateInfo.IsValid()) { OutKongregateInfo.Data = *In.Data.KongregateInfo; }
+    OutPlayFabId = In.Data.PlayFabId;
+    if (In.Data.PrivateInfo.IsValid()) { OutPrivateInfo.Data = *In.Data.PrivateInfo; }
+    if (In.Data.PsnInfo.IsValid()) { OutPsnInfo.Data = *In.Data.PsnInfo; }
+    if (In.Data.SteamInfo.IsValid()) { OutSteamInfo.Data = *In.Data.SteamInfo; }
+    if (In.Data.TitleInfo.IsValid()) { OutTitleInfo.Data = *In.Data.TitleInfo; }
+    if (In.Data.TwitchInfo.IsValid()) { OutTwitchInfo.Data = *In.Data.TwitchInfo; }
+    OutUsername = In.Data.Username;
+    if (In.Data.XboxInfo.IsValid()) { OutXboxInfo.Data = *In.Data.XboxInfo; }
+
 }
 
 // UserAndroidDeviceInfo
 FBPAdminUserAndroidDeviceInfo UPFAdminProxyLibrary::MakeBPAdminUserAndroidDeviceInfo(
     FString InAndroidDeviceId
-    )
+)
 {
     FBPAdminUserAndroidDeviceInfo Out = FBPAdminUserAndroidDeviceInfo();
     Out.Data.AndroidDeviceId = InAndroidDeviceId;
-	
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserAndroidDeviceInfo(
     const FBPAdminUserAndroidDeviceInfo& In
-	, FString& OutAndroidDeviceId
- )
+    , FString& OutAndroidDeviceId
+)
 {
     OutAndroidDeviceId = In.Data.AndroidDeviceId;
-	
+
 }
 
 // UserCustomIdInfo
 FBPAdminUserCustomIdInfo UPFAdminProxyLibrary::MakeBPAdminUserCustomIdInfo(
     FString InCustomId
-    )
+)
 {
     FBPAdminUserCustomIdInfo Out = FBPAdminUserCustomIdInfo();
     Out.Data.CustomId = InCustomId;
-	
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserCustomIdInfo(
     const FBPAdminUserCustomIdInfo& In
-	, FString& OutCustomId
- )
+    , FString& OutCustomId
+)
 {
     OutCustomId = In.Data.CustomId;
-	
+
 }
 
 // UserDataRecord
 FBPAdminUserDataRecord UPFAdminProxyLibrary::MakeBPAdminUserDataRecord(
     FDateTime InLastUpdated
-	, EBPAdminUserDataPermission InPermission
-	, FString InValue
-    )
+    , EBPAdminUserDataPermission InPermission
+    , FString InValue
+)
 {
     FBPAdminUserDataRecord Out = FBPAdminUserDataRecord();
     Out.Data.LastUpdated = InLastUpdated;
-	Out.Data.Permission = static_cast<PlayFab::AdminModels::UserDataPermission>(static_cast<uint8>(InPermission));
-	Out.Data.Value = InValue;
-	
+    Out.Data.Permission = static_cast<PlayFab::AdminModels::UserDataPermission>(static_cast<uint8>(InPermission));
+    Out.Data.Value = InValue;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserDataRecord(
     const FBPAdminUserDataRecord& In
-	, FDateTime& OutLastUpdated
-	, EBPAdminUserDataPermission& OutPermission
-	, FString& OutValue
- )
+    , FDateTime& OutLastUpdated
+    , EBPAdminUserDataPermission& OutPermission
+    , FString& OutValue
+)
 {
     OutLastUpdated = In.Data.LastUpdated;
-	if (In.Data.Permission.notNull()) {OutPermission = static_cast<EBPAdminUserDataPermission>(static_cast<uint8>(In.Data.Permission.mValue));}
-	OutValue = In.Data.Value;
-	
+    if (In.Data.Permission.notNull()) { OutPermission = static_cast<EBPAdminUserDataPermission>(static_cast<uint8>(In.Data.Permission.mValue)); }
+    OutValue = In.Data.Value;
+
 }
 
 // UserFacebookInfo
 FBPAdminUserFacebookInfo UPFAdminProxyLibrary::MakeBPAdminUserFacebookInfo(
     FString InFacebookId
-	, FString InFullName
-    )
+    , FString InFullName
+)
 {
     FBPAdminUserFacebookInfo Out = FBPAdminUserFacebookInfo();
     Out.Data.FacebookId = InFacebookId;
-	Out.Data.FullName = InFullName;
-	
+    Out.Data.FullName = InFullName;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserFacebookInfo(
     const FBPAdminUserFacebookInfo& In
-	, FString& OutFacebookId
-	, FString& OutFullName
- )
+    , FString& OutFacebookId
+    , FString& OutFullName
+)
 {
     OutFacebookId = In.Data.FacebookId;
-	OutFullName = In.Data.FullName;
-	
+    OutFullName = In.Data.FullName;
+
 }
 
 // UserGameCenterInfo
 FBPAdminUserGameCenterInfo UPFAdminProxyLibrary::MakeBPAdminUserGameCenterInfo(
     FString InGameCenterId
-    )
+)
 {
     FBPAdminUserGameCenterInfo Out = FBPAdminUserGameCenterInfo();
     Out.Data.GameCenterId = InGameCenterId;
-	
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserGameCenterInfo(
     const FBPAdminUserGameCenterInfo& In
-	, FString& OutGameCenterId
- )
+    , FString& OutGameCenterId
+)
 {
     OutGameCenterId = In.Data.GameCenterId;
-	
+
 }
 
 // UserGoogleInfo
 FBPAdminUserGoogleInfo UPFAdminProxyLibrary::MakeBPAdminUserGoogleInfo(
     FString InGoogleEmail
-	, FString InGoogleGender
-	, FString InGoogleId
-	, FString InGoogleLocale
-    )
+    , FString InGoogleGender
+    , FString InGoogleId
+    , FString InGoogleLocale
+)
 {
     FBPAdminUserGoogleInfo Out = FBPAdminUserGoogleInfo();
     Out.Data.GoogleEmail = InGoogleEmail;
-	Out.Data.GoogleGender = InGoogleGender;
-	Out.Data.GoogleId = InGoogleId;
-	Out.Data.GoogleLocale = InGoogleLocale;
-	
+    Out.Data.GoogleGender = InGoogleGender;
+    Out.Data.GoogleId = InGoogleId;
+    Out.Data.GoogleLocale = InGoogleLocale;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserGoogleInfo(
     const FBPAdminUserGoogleInfo& In
-	, FString& OutGoogleEmail
-	, FString& OutGoogleGender
-	, FString& OutGoogleId
-	, FString& OutGoogleLocale
- )
+    , FString& OutGoogleEmail
+    , FString& OutGoogleGender
+    , FString& OutGoogleId
+    , FString& OutGoogleLocale
+)
 {
     OutGoogleEmail = In.Data.GoogleEmail;
-	OutGoogleGender = In.Data.GoogleGender;
-	OutGoogleId = In.Data.GoogleId;
-	OutGoogleLocale = In.Data.GoogleLocale;
-	
+    OutGoogleGender = In.Data.GoogleGender;
+    OutGoogleId = In.Data.GoogleId;
+    OutGoogleLocale = In.Data.GoogleLocale;
+
 }
 
 // UserIosDeviceInfo
 FBPAdminUserIosDeviceInfo UPFAdminProxyLibrary::MakeBPAdminUserIosDeviceInfo(
     FString InIosDeviceId
-    )
+)
 {
     FBPAdminUserIosDeviceInfo Out = FBPAdminUserIosDeviceInfo();
     Out.Data.IosDeviceId = InIosDeviceId;
-	
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserIosDeviceInfo(
     const FBPAdminUserIosDeviceInfo& In
-	, FString& OutIosDeviceId
- )
+    , FString& OutIosDeviceId
+)
 {
     OutIosDeviceId = In.Data.IosDeviceId;
-	
+
 }
 
 // UserKongregateInfo
 FBPAdminUserKongregateInfo UPFAdminProxyLibrary::MakeBPAdminUserKongregateInfo(
     FString InKongregateId
-	, FString InKongregateName
-    )
+    , FString InKongregateName
+)
 {
     FBPAdminUserKongregateInfo Out = FBPAdminUserKongregateInfo();
     Out.Data.KongregateId = InKongregateId;
-	Out.Data.KongregateName = InKongregateName;
-	
+    Out.Data.KongregateName = InKongregateName;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserKongregateInfo(
     const FBPAdminUserKongregateInfo& In
-	, FString& OutKongregateId
-	, FString& OutKongregateName
- )
+    , FString& OutKongregateId
+    , FString& OutKongregateName
+)
 {
     OutKongregateId = In.Data.KongregateId;
-	OutKongregateName = In.Data.KongregateName;
-	
+    OutKongregateName = In.Data.KongregateName;
+
 }
 
 // UserPrivateAccountInfo
 FBPAdminUserPrivateAccountInfo UPFAdminProxyLibrary::MakeBPAdminUserPrivateAccountInfo(
     FString InEmail
-    )
+)
 {
     FBPAdminUserPrivateAccountInfo Out = FBPAdminUserPrivateAccountInfo();
     Out.Data.Email = InEmail;
-	
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserPrivateAccountInfo(
     const FBPAdminUserPrivateAccountInfo& In
-	, FString& OutEmail
- )
+    , FString& OutEmail
+)
 {
     OutEmail = In.Data.Email;
-	
+
 }
 
 // UserPsnInfo
 FBPAdminUserPsnInfo UPFAdminProxyLibrary::MakeBPAdminUserPsnInfo(
     FString InPsnAccountId
-	, FString InPsnOnlineId
-    )
+    , FString InPsnOnlineId
+)
 {
     FBPAdminUserPsnInfo Out = FBPAdminUserPsnInfo();
     Out.Data.PsnAccountId = InPsnAccountId;
-	Out.Data.PsnOnlineId = InPsnOnlineId;
-	
+    Out.Data.PsnOnlineId = InPsnOnlineId;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserPsnInfo(
     const FBPAdminUserPsnInfo& In
-	, FString& OutPsnAccountId
-	, FString& OutPsnOnlineId
- )
+    , FString& OutPsnAccountId
+    , FString& OutPsnOnlineId
+)
 {
     OutPsnAccountId = In.Data.PsnAccountId;
-	OutPsnOnlineId = In.Data.PsnOnlineId;
-	
+    OutPsnOnlineId = In.Data.PsnOnlineId;
+
 }
 
 // UserSteamInfo
 FBPAdminUserSteamInfo UPFAdminProxyLibrary::MakeBPAdminUserSteamInfo(
     EBPAdminTitleActivationStatus InSteamActivationStatus
-	, FString InSteamCountry
-	, EBPAdminCurrency InSteamCurrency
-	, FString InSteamId
-    )
+    , FString InSteamCountry
+    , EBPAdminCurrency InSteamCurrency
+    , FString InSteamId
+)
 {
     FBPAdminUserSteamInfo Out = FBPAdminUserSteamInfo();
     Out.Data.SteamActivationStatus = static_cast<PlayFab::AdminModels::TitleActivationStatus>(static_cast<uint8>(InSteamActivationStatus));
-	Out.Data.SteamCountry = InSteamCountry;
-	Out.Data.SteamCurrency = static_cast<PlayFab::AdminModels::Currency>(static_cast<uint8>(InSteamCurrency));
-	Out.Data.SteamId = InSteamId;
-	
+    Out.Data.SteamCountry = InSteamCountry;
+    Out.Data.SteamCurrency = static_cast<PlayFab::AdminModels::Currency>(static_cast<uint8>(InSteamCurrency));
+    Out.Data.SteamId = InSteamId;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserSteamInfo(
     const FBPAdminUserSteamInfo& In
-	, EBPAdminTitleActivationStatus& OutSteamActivationStatus
-	, FString& OutSteamCountry
-	, EBPAdminCurrency& OutSteamCurrency
-	, FString& OutSteamId
- )
+    , EBPAdminTitleActivationStatus& OutSteamActivationStatus
+    , FString& OutSteamCountry
+    , EBPAdminCurrency& OutSteamCurrency
+    , FString& OutSteamId
+)
 {
-    if (In.Data.SteamActivationStatus.notNull()) {OutSteamActivationStatus = static_cast<EBPAdminTitleActivationStatus>(static_cast<uint8>(In.Data.SteamActivationStatus.mValue));}
-	OutSteamCountry = In.Data.SteamCountry;
-	if (In.Data.SteamCurrency.notNull()) {OutSteamCurrency = static_cast<EBPAdminCurrency>(static_cast<uint8>(In.Data.SteamCurrency.mValue));}
-	OutSteamId = In.Data.SteamId;
-	
+    if (In.Data.SteamActivationStatus.notNull()) { OutSteamActivationStatus = static_cast<EBPAdminTitleActivationStatus>(static_cast<uint8>(In.Data.SteamActivationStatus.mValue)); }
+    OutSteamCountry = In.Data.SteamCountry;
+    if (In.Data.SteamCurrency.notNull()) { OutSteamCurrency = static_cast<EBPAdminCurrency>(static_cast<uint8>(In.Data.SteamCurrency.mValue)); }
+    OutSteamId = In.Data.SteamId;
+
 }
 
 // UserTitleInfo
 FBPAdminUserTitleInfo UPFAdminProxyLibrary::MakeBPAdminUserTitleInfo(
     FString InAvatarUrl
-	, FDateTime InCreated
-	, FString InDisplayName
-	, FDateTime InFirstLogin
-	, bool InisBanned
-	, FDateTime InLastLogin
-	, EBPAdminUserOrigination InOrigination
-    )
+    , FDateTime InCreated
+    , FString InDisplayName
+    , FDateTime InFirstLogin
+    , bool InisBanned
+    , FDateTime InLastLogin
+    , EBPAdminUserOrigination InOrigination
+)
 {
     FBPAdminUserTitleInfo Out = FBPAdminUserTitleInfo();
     Out.Data.AvatarUrl = InAvatarUrl;
-	Out.Data.Created = InCreated;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.FirstLogin = InFirstLogin;
-	Out.Data.isBanned = InisBanned;
-	Out.Data.LastLogin = InLastLogin;
-	Out.Data.Origination = static_cast<PlayFab::AdminModels::UserOrigination>(static_cast<uint8>(InOrigination));
-	
+    Out.Data.Created = InCreated;
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.FirstLogin = InFirstLogin;
+    Out.Data.isBanned = InisBanned;
+    Out.Data.LastLogin = InLastLogin;
+    Out.Data.Origination = static_cast<PlayFab::AdminModels::UserOrigination>(static_cast<uint8>(InOrigination));
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserTitleInfo(
     const FBPAdminUserTitleInfo& In
-	, FString& OutAvatarUrl
-	, FDateTime& OutCreated
-	, FString& OutDisplayName
-	, FDateTime& OutFirstLogin
-	, bool& OutisBanned
-	, FDateTime& OutLastLogin
-	, EBPAdminUserOrigination& OutOrigination
- )
+    , FString& OutAvatarUrl
+    , FDateTime& OutCreated
+    , FString& OutDisplayName
+    , FDateTime& OutFirstLogin
+    , bool& OutisBanned
+    , FDateTime& OutLastLogin
+    , EBPAdminUserOrigination& OutOrigination
+)
 {
     OutAvatarUrl = In.Data.AvatarUrl;
-	OutCreated = In.Data.Created;
-	OutDisplayName = In.Data.DisplayName;
-	OutFirstLogin = In.Data.FirstLogin;
-	OutisBanned = In.Data.isBanned;
-	OutLastLogin = In.Data.LastLogin;
-	if (In.Data.Origination.notNull()) {OutOrigination = static_cast<EBPAdminUserOrigination>(static_cast<uint8>(In.Data.Origination.mValue));}
-	
+    OutCreated = In.Data.Created;
+    OutDisplayName = In.Data.DisplayName;
+    OutFirstLogin = In.Data.FirstLogin;
+    OutisBanned = In.Data.isBanned;
+    OutLastLogin = In.Data.LastLogin;
+    if (In.Data.Origination.notNull()) { OutOrigination = static_cast<EBPAdminUserOrigination>(static_cast<uint8>(In.Data.Origination.mValue)); }
+
 }
 
 // UserTwitchInfo
 FBPAdminUserTwitchInfo UPFAdminProxyLibrary::MakeBPAdminUserTwitchInfo(
     FString InTwitchId
-	, FString InTwitchUserName
-    )
+    , FString InTwitchUserName
+)
 {
     FBPAdminUserTwitchInfo Out = FBPAdminUserTwitchInfo();
     Out.Data.TwitchId = InTwitchId;
-	Out.Data.TwitchUserName = InTwitchUserName;
-	
+    Out.Data.TwitchUserName = InTwitchUserName;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserTwitchInfo(
     const FBPAdminUserTwitchInfo& In
-	, FString& OutTwitchId
-	, FString& OutTwitchUserName
- )
+    , FString& OutTwitchId
+    , FString& OutTwitchUserName
+)
 {
     OutTwitchId = In.Data.TwitchId;
-	OutTwitchUserName = In.Data.TwitchUserName;
-	
+    OutTwitchUserName = In.Data.TwitchUserName;
+
 }
 
 // UserXboxInfo
 FBPAdminUserXboxInfo UPFAdminProxyLibrary::MakeBPAdminUserXboxInfo(
     FString InXboxUserId
-    )
+)
 {
     FBPAdminUserXboxInfo Out = FBPAdminUserXboxInfo();
     Out.Data.XboxUserId = InXboxUserId;
-	
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminUserXboxInfo(
     const FBPAdminUserXboxInfo& In
-	, FString& OutXboxUserId
- )
+    , FString& OutXboxUserId
+)
 {
     OutXboxUserId = In.Data.XboxUserId;
-	
+
 }
 
 // ValueToDateModel
 FBPAdminValueToDateModel UPFAdminProxyLibrary::MakeBPAdminValueToDateModel(
     FString InCurrency
-	, int32 InTotalValue
-	, FString InTotalValueAsDecimal
-    )
+    , int32 InTotalValue
+    , FString InTotalValueAsDecimal
+)
 {
     FBPAdminValueToDateModel Out = FBPAdminValueToDateModel();
     Out.Data.Currency = InCurrency;
-	Out.Data.TotalValue = InTotalValue;
-	Out.Data.TotalValueAsDecimal = InTotalValueAsDecimal;
-	
+    Out.Data.TotalValue = InTotalValue;
+    Out.Data.TotalValueAsDecimal = InTotalValueAsDecimal;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminValueToDateModel(
     const FBPAdminValueToDateModel& In
-	, FString& OutCurrency
-	, int32& OutTotalValue
-	, FString& OutTotalValueAsDecimal
- )
+    , FString& OutCurrency
+    , int32& OutTotalValue
+    , FString& OutTotalValueAsDecimal
+)
 {
     OutCurrency = In.Data.Currency;
-	OutTotalValue = In.Data.TotalValue;
-	OutTotalValueAsDecimal = In.Data.TotalValueAsDecimal;
-	
+    OutTotalValue = In.Data.TotalValue;
+    OutTotalValueAsDecimal = In.Data.TotalValueAsDecimal;
+
 }
 
 // VirtualCurrencyData
 FBPAdminVirtualCurrencyData UPFAdminProxyLibrary::MakeBPAdminVirtualCurrencyData(
     FString InCurrencyCode
-	, FString InDisplayName
-	, int32 InInitialDeposit
-	, int32 InRechargeMax
-	, int32 InRechargeRate
-    )
+    , FString InDisplayName
+    , int32 InInitialDeposit
+    , int32 InRechargeMax
+    , int32 InRechargeRate
+)
 {
     FBPAdminVirtualCurrencyData Out = FBPAdminVirtualCurrencyData();
     Out.Data.CurrencyCode = InCurrencyCode;
-	Out.Data.DisplayName = InDisplayName;
-	Out.Data.InitialDeposit = InInitialDeposit;
-	Out.Data.RechargeMax = InRechargeMax;
-	Out.Data.RechargeRate = InRechargeRate;
-	
+    Out.Data.DisplayName = InDisplayName;
+    Out.Data.InitialDeposit = InInitialDeposit;
+    Out.Data.RechargeMax = InRechargeMax;
+    Out.Data.RechargeRate = InRechargeRate;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminVirtualCurrencyData(
     const FBPAdminVirtualCurrencyData& In
-	, FString& OutCurrencyCode
-	, FString& OutDisplayName
-	, int32& OutInitialDeposit
-	, int32& OutRechargeMax
-	, int32& OutRechargeRate
- )
+    , FString& OutCurrencyCode
+    , FString& OutDisplayName
+    , int32& OutInitialDeposit
+    , int32& OutRechargeMax
+    , int32& OutRechargeRate
+)
 {
     OutCurrencyCode = In.Data.CurrencyCode;
-	OutDisplayName = In.Data.DisplayName;
-	OutInitialDeposit = In.Data.InitialDeposit;
-	OutRechargeMax = In.Data.RechargeMax;
-	OutRechargeRate = In.Data.RechargeRate;
-	
+    OutDisplayName = In.Data.DisplayName;
+    OutInitialDeposit = In.Data.InitialDeposit;
+    OutRechargeMax = In.Data.RechargeMax;
+    OutRechargeRate = In.Data.RechargeRate;
+
 }
 
 // VirtualCurrencyRechargeTime
 FBPAdminVirtualCurrencyRechargeTime UPFAdminProxyLibrary::MakeBPAdminVirtualCurrencyRechargeTime(
     int32 InRechargeMax
-	, FDateTime InRechargeTime
-	, int32 InSecondsToRecharge
-    )
+    , FDateTime InRechargeTime
+    , int32 InSecondsToRecharge
+)
 {
     FBPAdminVirtualCurrencyRechargeTime Out = FBPAdminVirtualCurrencyRechargeTime();
     Out.Data.RechargeMax = InRechargeMax;
-	Out.Data.RechargeTime = InRechargeTime;
-	Out.Data.SecondsToRecharge = InSecondsToRecharge;
-	
+    Out.Data.RechargeTime = InRechargeTime;
+    Out.Data.SecondsToRecharge = InSecondsToRecharge;
+
     return Out;
 }
 void UPFAdminProxyLibrary::BreakBPAdminVirtualCurrencyRechargeTime(
     const FBPAdminVirtualCurrencyRechargeTime& In
-	, int32& OutRechargeMax
-	, FDateTime& OutRechargeTime
-	, int32& OutSecondsToRecharge
- )
+    , int32& OutRechargeMax
+    , FDateTime& OutRechargeTime
+    , int32& OutSecondsToRecharge
+)
 {
     OutRechargeMax = In.Data.RechargeMax;
-	OutRechargeTime = In.Data.RechargeTime;
-	OutSecondsToRecharge = In.Data.SecondsToRecharge;
-	
+    OutRechargeTime = In.Data.RechargeTime;
+    OutSecondsToRecharge = In.Data.SecondsToRecharge;
+
 }
 

@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPClientPurchaseItemResultDelegate OnSuccess;
 
-    // Buys a single item with virtual currency. You must specify both the virtual currency to use to purchase,  as well as what the client believes the price to be. This lets the server fail the purchase if the price has changed.
+    // Buys a single item with virtual currency. You must specify both the virtual currency to use to purchase, as well as what the client believes the price to be. This lets the server fail the purchase if the price has changed.
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Client|Player Item Management")
         static UPFClientPurchaseItem* PurchaseItem(class APlayerController* PlayerController, const FBPClientPurchaseItemRequest& InPurchaseItemRequest);
 

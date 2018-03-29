@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPServerRedeemCouponResultDelegate OnSuccess;
 
-    // Adds the virtual goods associated with the coupon to the user's inventory. Coupons can be generated  via the Economy->Catalogs tab in the PlayFab Game Manager.
+    // Adds the virtual goods associated with the coupon to the user's inventory. Coupons can be generated via the Economy->Catalogs tab in the PlayFab Game Manager.
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Server|Player Item Management")
         static UPFServerRedeemCoupon* RedeemCoupon(class APlayerController* PlayerController, const FBPServerRedeemCouponRequest& InRedeemCouponRequest);
 

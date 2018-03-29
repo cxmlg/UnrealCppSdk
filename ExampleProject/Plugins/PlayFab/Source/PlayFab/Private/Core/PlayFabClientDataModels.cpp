@@ -3478,8 +3478,92 @@ bool PlayFab::ClientModels::FEmptyResult::readFromValue(const TSharedPtr<FJsonOb
     return HasSucceeded;
 }
 
+void PlayFab::ClientModels::writeEntityTypesEnumJSON(EntityTypes enumVal, JsonWriter& writer)
+{
+    switch (enumVal)
+    {
+
+    case EntityTypestitle: writer->WriteValue(TEXT("title")); break;
+    case EntityTypesmaster_player_account: writer->WriteValue(TEXT("master_player_account")); break;
+    case EntityTypestitle_player_account: writer->WriteValue(TEXT("title_player_account")); break;
+    case EntityTypescharacter: writer->WriteValue(TEXT("character")); break;
+    case EntityTypesgroup: writer->WriteValue(TEXT("group")); break;
+    }
+}
+
+ClientModels::EntityTypes PlayFab::ClientModels::readEntityTypesFromValue(const TSharedPtr<FJsonValue>& value)
+{
+    return readEntityTypesFromValue(value.IsValid() ? value->AsString() : "");
+}
+
+ClientModels::EntityTypes PlayFab::ClientModels::readEntityTypesFromValue(const FString& value)
+{
+    static TMap<FString, EntityTypes> _EntityTypesMap;
+    if (_EntityTypesMap.Num() == 0)
+    {
+        // Auto-generate the map on the first use
+        _EntityTypesMap.Add(TEXT("title"), EntityTypestitle);
+        _EntityTypesMap.Add(TEXT("master_player_account"), EntityTypesmaster_player_account);
+        _EntityTypesMap.Add(TEXT("title_player_account"), EntityTypestitle_player_account);
+        _EntityTypesMap.Add(TEXT("character"), EntityTypescharacter);
+        _EntityTypesMap.Add(TEXT("group"), EntityTypesgroup);
+
+    }
+
+    if (!value.IsEmpty())
+    {
+        auto output = _EntityTypesMap.Find(value);
+        if (output != nullptr)
+            return *output;
+    }
+
+    return EntityTypestitle; // Basically critical fail
+}
+
+PlayFab::ClientModels::FEntityKey::~FEntityKey()
+{
+
+}
+
+void PlayFab::ClientModels::FEntityKey::writeJSON(JsonWriter& writer) const
+{
+    writer->WriteObjectStart();
+
+    writer->WriteIdentifierPrefix(TEXT("Id")); writer->WriteValue(Id);
+
+    if (Type.notNull()) { writer->WriteIdentifierPrefix(TEXT("Type")); writeEntityTypesEnumJSON(Type, writer); }
+
+    if (TypeString.IsEmpty() == false) { writer->WriteIdentifierPrefix(TEXT("TypeString")); writer->WriteValue(TypeString); }
+
+    writer->WriteObjectEnd();
+}
+
+bool PlayFab::ClientModels::FEntityKey::readFromValue(const TSharedPtr<FJsonObject>& obj)
+{
+    bool HasSucceeded = true;
+
+    const TSharedPtr<FJsonValue> IdValue = obj->TryGetField(TEXT("Id"));
+    if (IdValue.IsValid() && !IdValue->IsNull())
+    {
+        FString TmpValue;
+        if (IdValue->TryGetString(TmpValue)) { Id = TmpValue; }
+    }
+
+    Type = readEntityTypesFromValue(obj->TryGetField(TEXT("Type")));
+
+    const TSharedPtr<FJsonValue> TypeStringValue = obj->TryGetField(TEXT("TypeString"));
+    if (TypeStringValue.IsValid() && !TypeStringValue->IsNull())
+    {
+        FString TmpValue;
+        if (TypeStringValue->TryGetString(TmpValue)) { TypeString = TmpValue; }
+    }
+
+    return HasSucceeded;
+}
+
 PlayFab::ClientModels::FEntityTokenResponse::~FEntityTokenResponse()
 {
+    //if (Entity != nullptr) delete Entity;
 
 }
 
@@ -3487,11 +3571,9 @@ void PlayFab::ClientModels::FEntityTokenResponse::writeJSON(JsonWriter& writer) 
 {
     writer->WriteObjectStart();
 
-    if (EntityId.IsEmpty() == false) { writer->WriteIdentifierPrefix(TEXT("EntityId")); writer->WriteValue(EntityId); }
+    if (Entity.IsValid()) { writer->WriteIdentifierPrefix(TEXT("Entity")); Entity->writeJSON(writer); }
 
     if (EntityToken.IsEmpty() == false) { writer->WriteIdentifierPrefix(TEXT("EntityToken")); writer->WriteValue(EntityToken); }
-
-    if (EntityType.IsEmpty() == false) { writer->WriteIdentifierPrefix(TEXT("EntityType")); writer->WriteValue(EntityType); }
 
     if (TokenExpiration.notNull()) { writer->WriteIdentifierPrefix(TEXT("TokenExpiration")); writeDatetime(TokenExpiration, writer); }
 
@@ -3502,11 +3584,10 @@ bool PlayFab::ClientModels::FEntityTokenResponse::readFromValue(const TSharedPtr
 {
     bool HasSucceeded = true;
 
-    const TSharedPtr<FJsonValue> EntityIdValue = obj->TryGetField(TEXT("EntityId"));
-    if (EntityIdValue.IsValid() && !EntityIdValue->IsNull())
+    const TSharedPtr<FJsonValue> EntityValue = obj->TryGetField(TEXT("Entity"));
+    if (EntityValue.IsValid() && !EntityValue->IsNull())
     {
-        FString TmpValue;
-        if (EntityIdValue->TryGetString(TmpValue)) { EntityId = TmpValue; }
+        Entity = MakeShareable(new FEntityKey(EntityValue->AsObject()));
     }
 
     const TSharedPtr<FJsonValue> EntityTokenValue = obj->TryGetField(TEXT("EntityToken"));
@@ -3514,13 +3595,6 @@ bool PlayFab::ClientModels::FEntityTokenResponse::readFromValue(const TSharedPtr
     {
         FString TmpValue;
         if (EntityTokenValue->TryGetString(TmpValue)) { EntityToken = TmpValue; }
-    }
-
-    const TSharedPtr<FJsonValue> EntityTypeValue = obj->TryGetField(TEXT("EntityType"));
-    if (EntityTypeValue.IsValid() && !EntityTypeValue->IsNull())
-    {
-        FString TmpValue;
-        if (EntityTypeValue->TryGetString(TmpValue)) { EntityType = TmpValue; }
     }
 
     const TSharedPtr<FJsonValue> TokenExpirationValue = obj->TryGetField(TEXT("TokenExpiration"));

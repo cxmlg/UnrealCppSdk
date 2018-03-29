@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPClientUpdateCharacterDataResultDelegate OnSuccess;
 
-    // Creates and updates the title-specific custom data for the user's character which is readable  and writable by the client
+    // Creates and updates the title-specific custom data for the user's character which is readable and writable by the client
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Client|Character Data")
         static UPFClientUpdateCharacterData* UpdateCharacterData(class APlayerController* PlayerController, const FBPClientUpdateCharacterDataRequest& InUpdateCharacterDataRequest);
 

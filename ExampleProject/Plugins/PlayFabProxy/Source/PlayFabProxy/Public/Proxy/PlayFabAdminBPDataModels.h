@@ -6,7 +6,6 @@
 #include "Core/PlayFabAdminDataModels.h"
 #include "PlayFabAdminBPDataModels.generated.h"
 
-
 USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFAdminProxyLibrary.MakeBPAdminAbortTaskInstanceRequest"))
 struct FBPAdminAbortTaskInstanceRequest
 {
@@ -2280,6 +2279,16 @@ public:
     PlayFab::AdminModels::FRevokeBansResult Data;
 };
 
+USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFAdminProxyLibrary.MakeBPAdminRevokeInventoryItem", HasNativeBreak = "PlayFabProxy.PFAdminProxyLibrary.BreakBPAdminRevokeInventoryItem"))
+struct FBPAdminRevokeInventoryItem
+{
+    GENERATED_BODY()
+public:
+    FBPAdminRevokeInventoryItem() {};
+    FBPAdminRevokeInventoryItem(PlayFab::AdminModels::FRevokeInventoryItem InData) : Data(InData) {};
+    PlayFab::AdminModels::FRevokeInventoryItem Data;
+};
+
 USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFAdminProxyLibrary.MakeBPAdminRevokeInventoryItemRequest"))
 struct FBPAdminRevokeInventoryItemRequest
 {
@@ -2290,6 +2299,26 @@ public:
     PlayFab::AdminModels::FRevokeInventoryItemRequest Data;
 };
 
+USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFAdminProxyLibrary.MakeBPAdminRevokeInventoryItemsRequest"))
+struct FBPAdminRevokeInventoryItemsRequest
+{
+    GENERATED_BODY()
+public:
+    FBPAdminRevokeInventoryItemsRequest() {};
+    FBPAdminRevokeInventoryItemsRequest(PlayFab::AdminModels::FRevokeInventoryItemsRequest InData) : Data(InData) {};
+    PlayFab::AdminModels::FRevokeInventoryItemsRequest Data;
+};
+
+USTRUCT(BlueprintType, meta = (HasNativeBreak = "PlayFabProxy.PFAdminProxyLibrary.BreakBPAdminRevokeInventoryItemsResult"))
+struct FBPAdminRevokeInventoryItemsResult
+{
+    GENERATED_BODY()
+public:
+    FBPAdminRevokeInventoryItemsResult() {};
+    FBPAdminRevokeInventoryItemsResult(PlayFab::AdminModels::FRevokeInventoryItemsResult InData) : Data(InData) {};
+    PlayFab::AdminModels::FRevokeInventoryItemsResult Data;
+};
+
 USTRUCT(BlueprintType, meta = (HasNativeBreak = "PlayFabProxy.PFAdminProxyLibrary.BreakBPAdminRevokeInventoryResult"))
 struct FBPAdminRevokeInventoryResult
 {
@@ -2298,6 +2327,16 @@ public:
     FBPAdminRevokeInventoryResult() {};
     FBPAdminRevokeInventoryResult(PlayFab::AdminModels::FRevokeInventoryResult InData) : Data(InData) {};
     PlayFab::AdminModels::FRevokeInventoryResult Data;
+};
+
+USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFAdminProxyLibrary.MakeBPAdminRevokeItemError", HasNativeBreak = "PlayFabProxy.PFAdminProxyLibrary.BreakBPAdminRevokeItemError"))
+struct FBPAdminRevokeItemError
+{
+    GENERATED_BODY()
+public:
+    FBPAdminRevokeItemError() {};
+    FBPAdminRevokeItemError(PlayFab::AdminModels::FRevokeItemError InData) : Data(InData) {};
+    PlayFab::AdminModels::FRevokeItemError Data;
 };
 
 USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFAdminProxyLibrary.MakeBPAdminRunTaskRequest"))
@@ -3140,6 +3179,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPAdminResolvePurchaseDisputeRespon
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPAdminResultTableNodeDelegate, const FBPAdminResultTableNode&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPAdminRevokeAllBansForUserResultDelegate, const FBPAdminRevokeAllBansForUserResult&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPAdminRevokeBansResultDelegate, const FBPAdminRevokeBansResult&, Result);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPAdminRevokeInventoryItemsResultDelegate, const FBPAdminRevokeInventoryItemsResult&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPAdminRevokeInventoryResultDelegate, const FBPAdminRevokeInventoryResult&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPAdminRunTaskResultDelegate, const FBPAdminRunTaskResult&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPAdminSendAccountRecoveryEmailResultDelegate, const FBPAdminSendAccountRecoveryEmailResult&, Result);

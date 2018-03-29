@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPClientConfirmPurchaseResultDelegate OnSuccess;
 
-    // Confirms with the payment provider that the purchase was approved (if applicable) and adjusts inventory and  virtual currency balances as appropriate
+    // Confirms with the payment provider that the purchase was approved (if applicable) and adjusts inventory and virtual currency balances as appropriate
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Client|Player Item Management")
         static UPFClientConfirmPurchase* ConfirmPurchase(class APlayerController* PlayerController, const FBPClientConfirmPurchaseRequest& InConfirmPurchaseRequest);
 

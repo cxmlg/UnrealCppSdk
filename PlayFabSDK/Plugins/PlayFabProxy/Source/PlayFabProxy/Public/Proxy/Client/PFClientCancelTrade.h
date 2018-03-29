@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
         FBPClientCancelTradeResponseDelegate OnSuccess;
 
-    // Cancels an open trade (one that has not yet been accepted or cancelled). Note that only the player who created the trade  can cancel it via this API call, to prevent griefing of the trade system (cancelling trades in order to prevent other players from accepting  them, for trades that can be claimed by more than one player).
+    // Cancels an open trade (one that has not yet been accepted or cancelled). Note that only the player who created the trade can cancel it via this API call, to prevent griefing of the trade system (cancelling trades in order to prevent other players from accepting them, for trades that can be claimed by more than one player).
     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"), Category = "PlayFab|Client|Trading")
         static UPFClientCancelTrade* CancelTrade(class APlayerController* PlayerController, const FBPClientCancelTradeRequest& InCancelTradeRequest);
 

@@ -6,7 +6,6 @@
 #include "Core/PlayFabServerDataModels.h"
 #include "PlayFabServerBPDataModels.generated.h"
 
-
 USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFServerProxyLibrary.MakeBPServerAdCampaignAttribution", HasNativeBreak = "PlayFabProxy.PFServerProxyLibrary.BreakBPServerAdCampaignAttribution"))
 struct FBPServerAdCampaignAttribution
 {
@@ -2247,6 +2246,16 @@ public:
     PlayFab::ServerModels::FRevokeBansResult Data;
 };
 
+USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFServerProxyLibrary.MakeBPServerRevokeInventoryItem", HasNativeBreak = "PlayFabProxy.PFServerProxyLibrary.BreakBPServerRevokeInventoryItem"))
+struct FBPServerRevokeInventoryItem
+{
+    GENERATED_BODY()
+public:
+    FBPServerRevokeInventoryItem() {};
+    FBPServerRevokeInventoryItem(PlayFab::ServerModels::FRevokeInventoryItem InData) : Data(InData) {};
+    PlayFab::ServerModels::FRevokeInventoryItem Data;
+};
+
 USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFServerProxyLibrary.MakeBPServerRevokeInventoryItemRequest"))
 struct FBPServerRevokeInventoryItemRequest
 {
@@ -2257,6 +2266,26 @@ public:
     PlayFab::ServerModels::FRevokeInventoryItemRequest Data;
 };
 
+USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFServerProxyLibrary.MakeBPServerRevokeInventoryItemsRequest"))
+struct FBPServerRevokeInventoryItemsRequest
+{
+    GENERATED_BODY()
+public:
+    FBPServerRevokeInventoryItemsRequest() {};
+    FBPServerRevokeInventoryItemsRequest(PlayFab::ServerModels::FRevokeInventoryItemsRequest InData) : Data(InData) {};
+    PlayFab::ServerModels::FRevokeInventoryItemsRequest Data;
+};
+
+USTRUCT(BlueprintType, meta = (HasNativeBreak = "PlayFabProxy.PFServerProxyLibrary.BreakBPServerRevokeInventoryItemsResult"))
+struct FBPServerRevokeInventoryItemsResult
+{
+    GENERATED_BODY()
+public:
+    FBPServerRevokeInventoryItemsResult() {};
+    FBPServerRevokeInventoryItemsResult(PlayFab::ServerModels::FRevokeInventoryItemsResult InData) : Data(InData) {};
+    PlayFab::ServerModels::FRevokeInventoryItemsResult Data;
+};
+
 USTRUCT(BlueprintType, meta = (HasNativeBreak = "PlayFabProxy.PFServerProxyLibrary.BreakBPServerRevokeInventoryResult"))
 struct FBPServerRevokeInventoryResult
 {
@@ -2265,6 +2294,16 @@ public:
     FBPServerRevokeInventoryResult() {};
     FBPServerRevokeInventoryResult(PlayFab::ServerModels::FRevokeInventoryResult InData) : Data(InData) {};
     PlayFab::ServerModels::FRevokeInventoryResult Data;
+};
+
+USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFServerProxyLibrary.MakeBPServerRevokeItemError", HasNativeBreak = "PlayFabProxy.PFServerProxyLibrary.BreakBPServerRevokeItemError"))
+struct FBPServerRevokeItemError
+{
+    GENERATED_BODY()
+public:
+    FBPServerRevokeItemError() {};
+    FBPServerRevokeItemError(PlayFab::ServerModels::FRevokeItemError InData) : Data(InData) {};
+    PlayFab::ServerModels::FRevokeItemError Data;
 };
 
 USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFServerProxyLibrary.MakeBPServerScriptExecutionError", HasNativeBreak = "PlayFabProxy.PFServerProxyLibrary.BreakBPServerScriptExecutionError"))
@@ -3102,6 +3141,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPServerReportPlayerServerResultDel
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPServerResultTableNodeDelegate, const FBPServerResultTableNode&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPServerRevokeAllBansForUserResultDelegate, const FBPServerRevokeAllBansForUserResult&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPServerRevokeBansResultDelegate, const FBPServerRevokeBansResult&, Result);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPServerRevokeInventoryItemsResultDelegate, const FBPServerRevokeInventoryItemsResult&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPServerRevokeInventoryResultDelegate, const FBPServerRevokeInventoryResult&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPServerSendCustomAccountRecoveryEmailResultDelegate, const FBPServerSendCustomAccountRecoveryEmailResult&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPServerSendEmailFromTemplateResultDelegate, const FBPServerSendEmailFromTemplateResult&, Result);

@@ -12,12 +12,14 @@ namespace PlayFab
     class UPlayFabMatchmakerAPI;
     class UPlayFabServerAPI;
     class UPlayFabClientAPI;
+    class UPlayFabEntityAPI;
 }
 
 typedef TSharedPtr<class PlayFab::UPlayFabAdminAPI> PlayFabAdminPtr;
 typedef TSharedPtr<class PlayFab::UPlayFabMatchmakerAPI> PlayFabMatchmakerPtr;
 typedef TSharedPtr<class PlayFab::UPlayFabServerAPI> PlayFabServerPtr;
 typedef TSharedPtr<class PlayFab::UPlayFabClientAPI> PlayFabClientPtr;
+typedef TSharedPtr<class PlayFab::UPlayFabEntityAPI> PlayFabEntityPtr;
 
 /**
 * The public interface to this module.  In most cases, this interface is only public to sibling modules
@@ -53,4 +55,5 @@ public:
     virtual PlayFabMatchmakerPtr GetMatchmakerAPI() const = 0;
     virtual PlayFabServerPtr GetServerAPI() const = 0;
     virtual PlayFabClientPtr GetClientAPI() const = 0;
+    virtual PlayFabEntityPtr GetEntityAPI() const = 0;
 };

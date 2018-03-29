@@ -158,12 +158,13 @@ namespace PlayFab
         bool AdvertIdSuccessful();
         bool IsClientLoggedIn() const;
         void MultiStepClientLogin(bool needsAttribution);
+        void SetDevSecretKey(const FString& developerSecretKey);
 
         // ------------ Generated API calls
         /**
          * Accepts an open trade (one that has not yet been accepted or cancelled), if the locally signed-in player is in the
          * allowed player list for the trade, or it is open to all players. If the call is successful, the offered and accepted
-         * items will be swapped  between the two players' inventories.
+         * items will be swapped between the two players' inventories.
          */
         bool AcceptTrade(ClientModels::FAcceptTradeRequest& request, const FAcceptTradeDelegate& SuccessDelegate = FAcceptTradeDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -183,9 +184,9 @@ namespace PlayFab
          */
         bool AddOrUpdateContactEmail(ClientModels::FAddOrUpdateContactEmailRequest& request, const FAddOrUpdateContactEmailDelegate& SuccessDelegate = FAddOrUpdateContactEmailDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Adds users to the set of those able to update both the shared data, as well as the set of users  in the group. Only
-         * users in the group can add new members. Shared Groups are designed for sharing data between a very  small number of
-         * players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
+         * Adds users to the set of those able to update both the shared data, as well as the set of users in the group. Only users
+         * in the group can add new members. Shared Groups are designed for sharing data between a very small number of players,
+         * please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
          */
         bool AddSharedGroupMembers(ClientModels::FAddSharedGroupMembersRequest& request, const FAddSharedGroupMembersDelegate& SuccessDelegate = FAddSharedGroupMembersDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -200,39 +201,39 @@ namespace PlayFab
         bool AddUserVirtualCurrency(ClientModels::FAddUserVirtualCurrencyRequest& request, const FAddUserVirtualCurrencyDelegate& SuccessDelegate = FAddUserVirtualCurrencyDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Registers the Android device to receive push notifications
-         * More information can be found on configuring your game for the Google Cloud Messaging service in the Google developer documentation, here:  http://developer.android.com/google/gcm/client.html.  The steps to configure and send Push Notifications is described in the PlayFab tutorials, here:  https://api.playfab.com/docs/pushCrashCourse/.
+         * More information can be found on configuring your game for the Google Cloud Messaging service in the Google developer documentation, here: http://developer.android.com/google/gcm/client.html. The steps to configure and send Push Notifications is described in the PlayFab tutorials, here: https://api.playfab.com/docs/pushCrashCourse/.
          */
         bool AndroidDevicePushNotificationRegistration(ClientModels::FAndroidDevicePushNotificationRegistrationRequest& request, const FAndroidDevicePushNotificationRegistrationDelegate& SuccessDelegate = FAndroidDevicePushNotificationRegistrationDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Attributes an install for advertisment.
-         * If you have an ad attribution partner enabled, this will post an install to their service  to track the device. It uses the given device id to match based on clicks on ads.
+         * If you have an ad attribution partner enabled, this will post an install to their service to track the device. It uses the given device id to match based on clicks on ads.
          */
         bool AttributeInstall(ClientModels::FAttributeInstallRequest& request, const FAttributeInstallDelegate& SuccessDelegate = FAttributeInstallDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Cancels an open trade (one that has not yet been accepted or cancelled). Note that only the player who created the trade
          * can cancel it via this API call, to prevent griefing of the trade system (cancelling trades in order to prevent other
-         * players from accepting  them, for trades that can be claimed by more than one player).
+         * players from accepting them, for trades that can be claimed by more than one player).
          */
         bool CancelTrade(ClientModels::FCancelTradeRequest& request, const FCancelTradeDelegate& SuccessDelegate = FCancelTradeDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Confirms with the payment provider that the purchase was approved (if applicable) and adjusts inventory and  virtual
+         * Confirms with the payment provider that the purchase was approved (if applicable) and adjusts inventory and virtual
          * currency balances as appropriate
-         * The final step in the purchasing process, this API finalizes the purchase with the payment provider, where applicable, adding virtual goods to the player inventory (including random drop table resolution and recursive addition of bundled items) and adjusting virtual currency balances for funds used or added. Note that this is a pull operation, and should be polled regularly when a purchase is in progress. Please note that the processing time for inventory grants and purchases increases fractionally the more items are  in the inventory, and the more items are in the grant/purchase operation.
+         * The final step in the purchasing process, this API finalizes the purchase with the payment provider, where applicable, adding virtual goods to the player inventory (including random drop table resolution and recursive addition of bundled items) and adjusting virtual currency balances for funds used or added. Note that this is a pull operation, and should be polled regularly when a purchase is in progress. Please note that the processing time for inventory grants and purchases increases fractionally the more items are in the inventory, and the more items are in the grant/purchase operation.
          */
         bool ConfirmPurchase(ClientModels::FConfirmPurchaseRequest& request, const FConfirmPurchaseDelegate& SuccessDelegate = FConfirmPurchaseDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Consume uses of a consumable item. When all uses are consumed, it will be removed from the player's inventory. */
+        // Consume uses of a consumable item. When all uses are consumed, it will be removed from the player's inventory.
         bool ConsumeItem(ClientModels::FConsumeItemRequest& request, const FConsumeItemDelegate& SuccessDelegate = FConsumeItemDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Requests the creation of a shared group object, containing key/value pairs which may be updated by  all members of the
-         * group. Upon creation, the current user will be the only member of the group. Shared Groups are designed  for sharing
-         * data between a very small number of players, please see our guide:
+         * Requests the creation of a shared group object, containing key/value pairs which may be updated by all members of the
+         * group. Upon creation, the current user will be the only member of the group. Shared Groups are designed for sharing data
+         * between a very small number of players, please see our guide:
          * https://api.playfab.com/docs/tutorials/landing-players/shared-groups
-         * If SharedGroupId is specified, the service will attempt to create a group with that identifier, and will  return an error if it is already in use. If no SharedGroupId is specified, a random identifier will be assigned.
+         * If SharedGroupId is specified, the service will attempt to create a group with that identifier, and will return an error if it is already in use. If no SharedGroupId is specified, a random identifier will be assigned.
          */
         bool CreateSharedGroup(ClientModels::FCreateSharedGroupRequest& request, const FCreateSharedGroupDelegate& SuccessDelegate = FCreateSharedGroupDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Executes a CloudScript function, with the 'currentPlayerId' set to the PlayFab ID of the authenticated player. */
+        // Executes a CloudScript function, with the 'currentPlayerId' set to the PlayFab ID of the authenticated player.
         bool ExecuteCloudScript(ClientModels::FExecuteCloudScriptRequest& request, const FExecuteCloudScriptDelegate& SuccessDelegate = FExecuteCloudScriptDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves the user's PlayFab account details */
+        // Retrieves the user's PlayFab account details
         bool GetAccountInfo(ClientModels::FGetAccountInfoRequest& request, const FGetAccountInfoDelegate& SuccessDelegate = FGetAccountInfoDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Lists all of the characters that belong to a specific user. CharacterIds are not globally unique; characterId must be
@@ -240,11 +241,11 @@ namespace PlayFab
          * Returns a list of every character that currently belongs to a user.
          */
         bool GetAllUsersCharacters(ClientModels::FListUsersCharactersRequest& request, const FGetAllUsersCharactersDelegate& SuccessDelegate = FGetAllUsersCharactersDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves the specified version of the title's catalog of virtual goods, including all defined properties */
+        // Retrieves the specified version of the title's catalog of virtual goods, including all defined properties
         bool GetCatalogItems(ClientModels::FGetCatalogItemsRequest& request, const FGetCatalogItemsDelegate& SuccessDelegate = FGetCatalogItemsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Retrieves the title-specific custom data for the character which is readable and writable by the client
-         * Data is stored as JSON key-value pairs. If the Keys parameter is provided, the data object returned will only contain the data specific to the indicated Keys. Otherwise, the full  set of custom character data will be returned.
+         * Data is stored as JSON key-value pairs. If the Keys parameter is provided, the data object returned will only contain the data specific to the indicated Keys. Otherwise, the full set of custom character data will be returned.
          */
         bool GetCharacterData(ClientModels::FGetCharacterDataRequest& request, const FGetCharacterDataDelegate& SuccessDelegate = FGetCharacterDataDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -252,26 +253,25 @@ namespace PlayFab
          * All items currently in the character inventory will be returned, irrespective of how they were acquired (via purchasing, grants, coupons, etc.). Items that are expired, fully consumed, or are no longer valid are not considered to be in the user's current inventory, and so will not be not included. Also returns their virtual currency balances.
          */
         bool GetCharacterInventory(ClientModels::FGetCharacterInventoryRequest& request, const FGetCharacterInventoryDelegate& SuccessDelegate = FGetCharacterInventoryDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves a list of ranked characters for the given statistic, starting from the indicated point in the leaderboard */
+        // Retrieves a list of ranked characters for the given statistic, starting from the indicated point in the leaderboard
         bool GetCharacterLeaderboard(ClientModels::FGetCharacterLeaderboardRequest& request, const FGetCharacterLeaderboardDelegate& SuccessDelegate = FGetCharacterLeaderboardDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Retrieves the title-specific custom data for the character which can only be read by the client
-         * Data is stored as JSON key-value pairs. If the Keys parameter is provided, the data object returned will only contain the data specific to the indicated Keys. Otherwise, the full  set of custom character data will be returned.
+         * Data is stored as JSON key-value pairs. If the Keys parameter is provided, the data object returned will only contain the data specific to the indicated Keys. Otherwise, the full set of custom character data will be returned.
          */
         bool GetCharacterReadOnlyData(ClientModels::FGetCharacterDataRequest& request, const FGetCharacterReadOnlyDataDelegate& SuccessDelegate = FGetCharacterReadOnlyDataDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves the details of all title-specific statistics for the user */
+        // Retrieves the details of all title-specific statistics for the user
         bool GetCharacterStatistics(ClientModels::FGetCharacterStatisticsRequest& request, const FGetCharacterStatisticsDelegate& SuccessDelegate = FGetCharacterStatisticsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * This API retrieves a pre-signed URL for accessing a content file for the title. A subsequent  HTTP GET to the returned
-         * URL will attempt to download the content. A HEAD query to the returned URL will attempt to  retrieve the metadata of the
-         * content. Note that a successful result does not guarantee the existence of this content -  if it has not been uploaded,
+         * This API retrieves a pre-signed URL for accessing a content file for the title. A subsequent HTTP GET to the returned
+         * URL will attempt to download the content. A HEAD query to the returned URL will attempt to retrieve the metadata of the
+         * content. Note that a successful result does not guarantee the existence of this content - if it has not been uploaded,
          * the query to retrieve the data will fail. See this post for more information:
-         * https://community.playfab.com/hc/en-us/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service.
-         * Also, please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN rates
-         * apply.
+         * https://community.playfab.com/hc/en-us/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service. Also,
+         * please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN rates apply.
          */
         bool GetContentDownloadUrl(ClientModels::FGetContentDownloadUrlRequest& request, const FGetContentDownloadUrlDelegate& SuccessDelegate = FGetContentDownloadUrlDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Get details about all current running game servers matching the given parameters. */
+        // Get details about all current running game servers matching the given parameters.
         bool GetCurrentGames(ClientModels::FCurrentGamesRequest& request, const FGetCurrentGamesDelegate& SuccessDelegate = FGetCurrentGamesDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Retrieves a list of ranked friends of the current player for the given statistic, starting from the indicated point in
@@ -288,18 +288,18 @@ namespace PlayFab
          * linked accounts (Facebook, Steam) are also included. You may optionally exclude some linked services' friends.
          */
         bool GetFriendsList(ClientModels::FGetFriendsListRequest& request, const FGetFriendsListDelegate& SuccessDelegate = FGetFriendsListDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Get details about the regions hosting game servers matching the given parameters. */
+        // Get details about the regions hosting game servers matching the given parameters.
         bool GetGameServerRegions(ClientModels::FGameServerRegionsRequest& request, const FGetGameServerRegionsDelegate& SuccessDelegate = FGetGameServerRegionsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves a list of ranked users for the given statistic, starting from the indicated point in the leaderboard */
+        // Retrieves a list of ranked users for the given statistic, starting from the indicated point in the leaderboard
         bool GetLeaderboard(ClientModels::FGetLeaderboardRequest& request, const FGetLeaderboardDelegate& SuccessDelegate = FGetLeaderboardDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves a list of ranked characters for the given statistic, centered on the requested Character ID */
+        // Retrieves a list of ranked characters for the given statistic, centered on the requested Character ID
         bool GetLeaderboardAroundCharacter(ClientModels::FGetLeaderboardAroundCharacterRequest& request, const FGetLeaderboardAroundCharacterDelegate& SuccessDelegate = FGetLeaderboardAroundCharacterDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Retrieves a list of ranked users for the given statistic, centered on the requested player. If PlayFabId is empty or
          * null will return currently logged in user.
          */
         bool GetLeaderboardAroundPlayer(ClientModels::FGetLeaderboardAroundPlayerRequest& request, const FGetLeaderboardAroundPlayerDelegate& SuccessDelegate = FGetLeaderboardAroundPlayerDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves a list of all of the user's characters for the given statistic. */
+        // Retrieves a list of all of the user's characters for the given statistic.
         bool GetLeaderboardForUserCharacters(ClientModels::FGetLeaderboardForUsersCharactersRequest& request, const FGetLeaderboardForUserCharactersDelegate& SuccessDelegate = FGetLeaderboardForUserCharactersDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * For payments flows where the provider requires playfab (the fulfiller) to initiate the transaction, but the client
@@ -312,14 +312,14 @@ namespace PlayFab
          * https://api.playfab.com/docs/using-photon-with-playfab/ for more details.
          */
         bool GetPhotonAuthenticationToken(ClientModels::FGetPhotonAuthenticationTokenRequest& request, const FGetPhotonAuthenticationTokenDelegate& SuccessDelegate = FGetPhotonAuthenticationTokenDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves all of the user's different kinds of info. */
+        // Retrieves all of the user's different kinds of info.
         bool GetPlayerCombinedInfo(ClientModels::FGetPlayerCombinedInfoRequest& request, const FGetPlayerCombinedInfoDelegate& SuccessDelegate = FGetPlayerCombinedInfoDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Retrieves the player's profile
          * This API allows for access to details regarding a user in the PlayFab service, usually for purposes of customer support. Note that data returned may be Personally Identifying Information (PII), such as email address, and so care should be taken in how this data is stored and managed. Since this call will always return the relevant information for users who have accessed the title, the recommendation is to not store this data locally.
          */
         bool GetPlayerProfile(ClientModels::FGetPlayerProfileRequest& request, const FGetPlayerProfileDelegate& SuccessDelegate = FGetPlayerProfileDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** List all segments that a player currently belongs to at this moment in time. */
+        // List all segments that a player currently belongs to at this moment in time.
 
         bool GetPlayerSegments(const FGetPlayerSegmentsDelegate& SuccessDelegate = FGetPlayerSegmentsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -327,16 +327,16 @@ namespace PlayFab
          * player.
          */
         bool GetPlayerStatistics(ClientModels::FGetPlayerStatisticsRequest& request, const FGetPlayerStatisticsDelegate& SuccessDelegate = FGetPlayerStatisticsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves the information on the available versions of the specified statistic. */
+        // Retrieves the information on the available versions of the specified statistic.
         bool GetPlayerStatisticVersions(ClientModels::FGetPlayerStatisticVersionsRequest& request, const FGetPlayerStatisticVersionsDelegate& SuccessDelegate = FGetPlayerStatisticVersionsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Get all tags with a given Namespace (optional) from a player profile.
          * This API will return a list of canonical tags which includes both namespace and tag's name. If namespace is not provided, the result is a list of all canonical tags. TagName can be used for segmentation and Namespace is limited to 128 characters.
          */
         bool GetPlayerTags(ClientModels::FGetPlayerTagsRequest& request, const FGetPlayerTagsDelegate& SuccessDelegate = FGetPlayerTagsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Gets all trades the player has either opened or accepted, optionally filtered by trade status. */
+        // Gets all trades the player has either opened or accepted, optionally filtered by trade status.
         bool GetPlayerTrades(ClientModels::FGetPlayerTradesRequest& request, const FGetPlayerTradesDelegate& SuccessDelegate = FGetPlayerTradesDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves the unique PlayFab identifiers for the given set of Facebook identifiers. */
+        // Retrieves the unique PlayFab identifiers for the given set of Facebook identifiers.
         bool GetPlayFabIDsFromFacebookIDs(ClientModels::FGetPlayFabIDsFromFacebookIDsRequest& request, const FGetPlayFabIDsFromFacebookIDsDelegate& SuccessDelegate = FGetPlayFabIDsFromFacebookIDsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Retrieves the unique PlayFab identifiers for the given set of Game Center identifiers (referenced in the Game Center
@@ -361,7 +361,7 @@ namespace PlayFab
          */
         bool GetPlayFabIDsFromKongregateIDs(ClientModels::FGetPlayFabIDsFromKongregateIDsRequest& request, const FGetPlayFabIDsFromKongregateIDsDelegate& SuccessDelegate = FGetPlayFabIDsFromKongregateIDsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Retrieves the unique PlayFab identifiers for the given set of Steam identifiers. The Steam identifiers  are the profile
+         * Retrieves the unique PlayFab identifiers for the given set of Steam identifiers. The Steam identifiers are the profile
          * IDs for the user accounts, available as SteamId in the Steamworks Community API calls.
          */
         bool GetPlayFabIDsFromSteamIDs(ClientModels::FGetPlayFabIDsFromSteamIDsRequest& request, const FGetPlayFabIDsFromSteamIDsDelegate& SuccessDelegate = FGetPlayFabIDsFromSteamIDsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
@@ -373,7 +373,7 @@ namespace PlayFab
         bool GetPlayFabIDsFromTwitchIDs(ClientModels::FGetPlayFabIDsFromTwitchIDsRequest& request, const FGetPlayFabIDsFromTwitchIDsDelegate& SuccessDelegate = FGetPlayFabIDsFromTwitchIDsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Retrieves the key-value store of custom publisher settings
-         * This API is designed to return publisher-specific values which can be read, but not written to, by the client. This data is shared across all titles assigned to a particular publisher, and can be used for cross-game coordination. Only titles assigned to a publisher can use this API.  For more information email devrel@playfab.com. Note that there may up to a minute delay in between updating title data and this API call returning the newest value.
+         * This API is designed to return publisher-specific values which can be read, but not written to, by the client. This data is shared across all titles assigned to a particular publisher, and can be used for cross-game coordination. Only titles assigned to a publisher can use this API. For more information email devrel@playfab.com. Note that there may up to a minute delay in between updating title data and this API call returning the newest value.
          */
         bool GetPublisherData(ClientModels::FGetPublisherDataRequest& request, const FGetPublisherDataDelegate& SuccessDelegate = FGetPublisherDataDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -382,9 +382,9 @@ namespace PlayFab
          */
         bool GetPurchase(ClientModels::FGetPurchaseRequest& request, const FGetPurchaseDelegate& SuccessDelegate = FGetPurchaseDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Retrieves data stored in a shared group object, as well as the list of members in  the group. Non-members of the group
-         * may use this to retrieve group data, including membership, but they  will not receive data for keys marked as private.
-         * Shared Groups are designed for sharing data between a  very small number of players, please see our guide:
+         * Retrieves data stored in a shared group object, as well as the list of members in the group. Non-members of the group
+         * may use this to retrieve group data, including membership, but they will not receive data for keys marked as private.
+         * Shared Groups are designed for sharing data between a very small number of players, please see our guide:
          * https://api.playfab.com/docs/tutorials/landing-players/shared-groups
          */
         bool GetSharedGroupData(ClientModels::FGetSharedGroupDataRequest& request, const FGetSharedGroupDataDelegate& SuccessDelegate = FGetSharedGroupDataDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
@@ -404,21 +404,21 @@ namespace PlayFab
          * This API is designed to return title specific values which can be read, but not written to, by the client. For example, a developer could choose to store values which modify the user experience, such as enemy spawn rates, weapon strengths, movement speeds, etc. This allows a developer to update the title without the need to create, test, and ship a new build. Note that there may up to a minute delay in between updating title data and this API call returning the newest value.
          */
         bool GetTitleData(ClientModels::FGetTitleDataRequest& request, const FGetTitleDataDelegate& SuccessDelegate = FGetTitleDataDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves the title news feed, as configured in the developer portal */
+        // Retrieves the title news feed, as configured in the developer portal
         bool GetTitleNews(ClientModels::FGetTitleNewsRequest& request, const FGetTitleNewsDelegate& SuccessDelegate = FGetTitleNewsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Returns the title's base 64 encoded RSA CSP blob.
          * An RSA CSP blob to be used to encrypt the payload of account creation requests when that API requires a signature header. For example if Client/LoginWithCustomId requires signature headers but the player does not have an account yet follow these steps: 1) Call Client/GetTitlePublicKey with one of the title's shared secrets. 2) Convert the Base64 encoded CSP blob to a byte array and create an RSA signing object. 3) Encrypt the UTF8 encoded JSON body of the registration request and place the Base64 encoded result into the EncryptedRequest and with the TitleId field, all other fields can be left empty when performing the API request. 4) Client receives authentication token as normal. Future requests to LoginWithCustomId will require the X-PlayFab-Signature header.
          */
         bool GetTitlePublicKey(ClientModels::FGetTitlePublicKeyRequest& request, const FGetTitlePublicKeyDelegate& SuccessDelegate = FGetTitlePublicKeyDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Gets the current status of an existing trade. */
+        // Gets the current status of an existing trade.
         bool GetTradeStatus(ClientModels::FGetTradeStatusRequest& request, const FGetTradeStatusDelegate& SuccessDelegate = FGetTradeStatusDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Retrieves the title-specific custom data for the user which is readable and writable by the client
          * Data is stored as JSON key-value pairs. Every time the data is updated via any source, the version counter is incremented. If the Version parameter is provided, then this call will only return data if the current version on the system is greater than the value provided. If the Keys parameter is provided, the data object returned will only contain the data specific to the indicated Keys. Otherwise, the full set of custom user data will be returned.
          */
         bool GetUserData(ClientModels::FGetUserDataRequest& request, const FGetUserDataDelegate& SuccessDelegate = FGetUserDataDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Retrieves the user's current inventory of virtual goods */
+        // Retrieves the user's current inventory of virtual goods
 
         bool GetUserInventory(const FGetUserInventoryDelegate& SuccessDelegate = FGetUserInventoryDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -444,35 +444,35 @@ namespace PlayFab
         /**
          * Grants the specified character type to the user. CharacterIds are not globally unique; characterId must be evaluated
          * with the parent PlayFabId to guarantee uniqueness.
-         * Grants a character to the user of the type specified by the item ID. The user must  already have an instance of this item in their inventory in order to allow character creation. This item can come from a purchase or grant, which must be done before calling to create the character.
+         * Grants a character to the user of the type specified by the item ID. The user must already have an instance of this item in their inventory in order to allow character creation. This item can come from a purchase or grant, which must be done before calling to create the character.
          */
         bool GrantCharacterToUser(ClientModels::FGrantCharacterToUserRequest& request, const FGrantCharacterToUserDelegate& SuccessDelegate = FGrantCharacterToUserDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Links the Android device identifier to the user's PlayFab account */
+        // Links the Android device identifier to the user's PlayFab account
         bool LinkAndroidDeviceID(ClientModels::FLinkAndroidDeviceIDRequest& request, const FLinkAndroidDeviceIDDelegate& SuccessDelegate = FLinkAndroidDeviceIDDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Links the custom identifier, generated by the title, to the user's PlayFab account */
+        // Links the custom identifier, generated by the title, to the user's PlayFab account
         bool LinkCustomID(ClientModels::FLinkCustomIDRequest& request, const FLinkCustomIDDelegate& SuccessDelegate = FLinkCustomIDDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Links the Facebook account associated with the provided Facebook access token to the user's PlayFab account
          * Facebook sign-in is accomplished using the Facebook User Access Token. More information on the Token can be found in the Facebook developer documentation (https://developers.facebook.com/docs/facebook-login/access-tokens/). In Unity, for example, the Token is available as AccessToken in the Facebook SDK ScriptableObject FB. Note that titles should never re-use the same Facebook applications between PlayFab Title IDs, as Facebook provides unique user IDs per application and doing so can result in issues with the Facebook ID for the user in their PlayFab account information. If you must re-use an application in a new PlayFab Title ID, please be sure to first unlink all accounts from Facebook, or delete all users in the first Title ID.
          */
         bool LinkFacebookAccount(ClientModels::FLinkFacebookAccountRequest& request, const FLinkFacebookAccountDelegate& SuccessDelegate = FLinkFacebookAccountDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Links the Game Center account associated with the provided Game Center ID to the user's PlayFab account */
+        // Links the Game Center account associated with the provided Game Center ID to the user's PlayFab account
         bool LinkGameCenterAccount(ClientModels::FLinkGameCenterAccountRequest& request, const FLinkGameCenterAccountDelegate& SuccessDelegate = FLinkGameCenterAccountDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Links the currently signed-in user account to their Google account, using their Google account credentials
          * Google sign-in is accomplished by obtaining a Google OAuth 2.0 credential using the Google sign-in for Android APIs on the device and passing it to this API.
          */
         bool LinkGoogleAccount(ClientModels::FLinkGoogleAccountRequest& request, const FLinkGoogleAccountDelegate& SuccessDelegate = FLinkGoogleAccountDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Links the vendor-specific iOS device identifier to the user's PlayFab account */
+        // Links the vendor-specific iOS device identifier to the user's PlayFab account
         bool LinkIOSDeviceID(ClientModels::FLinkIOSDeviceIDRequest& request, const FLinkIOSDeviceIDDelegate& SuccessDelegate = FLinkIOSDeviceIDDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Links the Kongregate identifier to the user's PlayFab account */
+        // Links the Kongregate identifier to the user's PlayFab account
         bool LinkKongregate(ClientModels::FLinkKongregateAccountRequest& request, const FLinkKongregateDelegate& SuccessDelegate = FLinkKongregateDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Links the Steam account associated with the provided Steam authentication ticket to the user's PlayFab account
          * Steam authentication is accomplished with the Steam Session Ticket. More information on the Ticket can be found in the Steamworks SDK, here: https://partner.steamgames.com/documentation/auth (requires sign-in). NOTE: For Steam authentication to work, the title must be configured with the Steam Application ID and Publisher Key in the PlayFab Game Manager (under Properties). Information on creating a Publisher Key (referred to as the Secret Key in PlayFab) for your title can be found here: https://partner.steamgames.com/documentation/webapi#publisherkey.
          */
         bool LinkSteamAccount(ClientModels::FLinkSteamAccountRequest& request, const FLinkSteamAccountDelegate& SuccessDelegate = FLinkSteamAccountDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Links the Twitch account associated with the token to the user's PlayFab account. */
+        // Links the Twitch account associated with the token to the user's PlayFab account.
         bool LinkTwitch(ClientModels::FLinkTwitchAccountRequest& request, const FLinkTwitchDelegate& SuccessDelegate = FLinkTwitchDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Link Windows Hello authentication to the current PlayFab Account
@@ -482,7 +482,7 @@ namespace PlayFab
         /**
          * Signs the user in using the Android device identifier, returning a session identifier that can subsequently be used for
          * API calls which require an authenticated user
-         * On Android devices, the recommendation is to use the Settings.Secure.ANDROID_ID as the AndroidDeviceId, as described in this blog post (http://android-developers.blogspot.com/2011/03/identifying-app-installations.html). More information on this identifier can be found in the Android documentation (http://developer.android.com/reference/android/provider/Settings.Secure.html). If this is the first time a user has signed in with the Android device and CreateAccount is set to true, a new PlayFab account will be created and linked to the Android device ID. In this case, no email or username will be associated with the PlayFab account. Otherwise, if no PlayFab account is linked to the Android device, an error indicating this will be returned, so that the title can guide the user through creation of a PlayFab account. Please note that while multiple devices of this type can be linked to a single  user account, only the one most recently used to login (or most recently linked) will be reflected in the user's account information.  We will be updating to show all linked devices in a future release.
+         * On Android devices, the recommendation is to use the Settings.Secure.ANDROID_ID as the AndroidDeviceId, as described in this blog post (http://android-developers.blogspot.com/2011/03/identifying-app-installations.html). More information on this identifier can be found in the Android documentation (http://developer.android.com/reference/android/provider/Settings.Secure.html). If this is the first time a user has signed in with the Android device and CreateAccount is set to true, a new PlayFab account will be created and linked to the Android device ID. In this case, no email or username will be associated with the PlayFab account. Otherwise, if no PlayFab account is linked to the Android device, an error indicating this will be returned, so that the title can guide the user through creation of a PlayFab account. Please note that while multiple devices of this type can be linked to a single user account, only the one most recently used to login (or most recently linked) will be reflected in the user's account information. We will be updating to show all linked devices in a future release.
          */
         bool LoginWithAndroidDeviceID(ClientModels::FLoginWithAndroidDeviceIDRequest& request, const FLoginWithAndroidDeviceIDDelegate& SuccessDelegate = FLoginWithAndroidDeviceIDDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -513,24 +513,24 @@ namespace PlayFab
         bool LoginWithGameCenter(ClientModels::FLoginWithGameCenterRequest& request, const FLoginWithGameCenterDelegate& SuccessDelegate = FLoginWithGameCenterDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Signs the user in using their Google account credentials
-         * Google sign-in is accomplished by obtaining a Google OAuth 2.0 credential using the Google sign-in for Android APIs on the device and passing it to this API. If this is the first time a user has signed in with the Google account and CreateAccount is set to true, a new PlayFab account will be created and linked to the Google account. Otherwise, if no PlayFab account is linked to the Google account, an error indicating this will be returned, so that the title can guide the user through creation of a PlayFab account. The current (recommended) method for obtaining a Google account credential in an Android application is to call GoogleSignInAccount.getServerAuthCode() and send the auth code as the ServerAuthCode parameter of this API.  Before doing this, you must create an OAuth 2.0 web application client ID in the Google API Console and configure its client ID and secret in the PlayFab Game Manager Google Add-on  for your title. This method does not require prompting of the user for additional Google account permissions, resulting in a user experience with the least possible friction. For more information about obtaining the server auth code, see https://developers.google.com/identity/sign-in/android/offline-access. The previous (deprecated) method was to obtain an OAuth access token by calling GetAccessToken() on the client and passing it as the AccessToken parameter to this API. for the with the Google OAuth 2.0 Access Token. More information on this change can be  found in the Google developer documentation (https://android-developers.googleblog.com/2016/01/play-games-permissions-are-changing-in.html).
+         * Google sign-in is accomplished by obtaining a Google OAuth 2.0 credential using the Google sign-in for Android APIs on the device and passing it to this API. If this is the first time a user has signed in with the Google account and CreateAccount is set to true, a new PlayFab account will be created and linked to the Google account. Otherwise, if no PlayFab account is linked to the Google account, an error indicating this will be returned, so that the title can guide the user through creation of a PlayFab account. The current (recommended) method for obtaining a Google account credential in an Android application is to call GoogleSignInAccount.getServerAuthCode() and send the auth code as the ServerAuthCode parameter of this API. Before doing this, you must create an OAuth 2.0 web application client ID in the Google API Console and configure its client ID and secret in the PlayFab Game Manager Google Add-on for your title. This method does not require prompting of the user for additional Google account permissions, resulting in a user experience with the least possible friction. For more information about obtaining the server auth code, see https://developers.google.com/identity/sign-in/android/offline-access. The previous (deprecated) method was to obtain an OAuth access token by calling GetAccessToken() on the client and passing it as the AccessToken parameter to this API. for the with the Google OAuth 2.0 Access Token. More information on this change can be found in the Google developer documentation (https://android-developers.googleblog.com/2016/01/play-games-permissions-are-changing-in.html).
          */
         bool LoginWithGoogleAccount(ClientModels::FLoginWithGoogleAccountRequest& request, const FLoginWithGoogleAccountDelegate& SuccessDelegate = FLoginWithGoogleAccountDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Signs the user in using the vendor-specific iOS device identifier, returning a session identifier that can subsequently
          * be used for API calls which require an authenticated user
-         * On iOS devices, the identifierForVendor  (https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor) must be used as the DeviceId, as the UIDevice uniqueIdentifier has been deprecated as of iOS 5, and use of the advertisingIdentifier for this purpose will result in failure of Apple's certification process. If this is the first time a user has signed in with the iOS device and CreateAccount is set to true, a new PlayFab account will be created and linked to the vendor-specific iOS device ID. In this case, no email or username will be associated with the PlayFab account. Otherwise, if no PlayFab account is linked to the iOS device, an error indicating this will be returned, so that the title can guide the user through creation of a PlayFab account. Please  note that while multiple devices of this type can be linked to a single user account, only the one most recently used to login (or  most recently linked) will be reflected in the user's account information. We will be updating to show all linked devices in a future  release.
+         * On iOS devices, the identifierForVendor (https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor) must be used as the DeviceId, as the UIDevice uniqueIdentifier has been deprecated as of iOS 5, and use of the advertisingIdentifier for this purpose will result in failure of Apple's certification process. If this is the first time a user has signed in with the iOS device and CreateAccount is set to true, a new PlayFab account will be created and linked to the vendor-specific iOS device ID. In this case, no email or username will be associated with the PlayFab account. Otherwise, if no PlayFab account is linked to the iOS device, an error indicating this will be returned, so that the title can guide the user through creation of a PlayFab account. Please note that while multiple devices of this type can be linked to a single user account, only the one most recently used to login (or most recently linked) will be reflected in the user's account information. We will be updating to show all linked devices in a future release.
          */
         bool LoginWithIOSDeviceID(ClientModels::FLoginWithIOSDeviceIDRequest& request, const FLoginWithIOSDeviceIDDelegate& SuccessDelegate = FLoginWithIOSDeviceIDDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Signs the user in using a Kongregate player account.
-         * More details regarding Kongregate and their game authentication system can be found at  http://developers.kongregate.com/docs/virtual-goods/authentication. Developers must provide the Kongregate user ID and auth token that are generated using the Kongregate client library. PlayFab will combine these identifiers with the title's unique Kongregate app ID to log the player into the Kongregate system. If CreateAccount is set to true and there is not already a user matched to this Kongregate ID, then PlayFab will create a new account for this user and link the ID. In this case, no email or username will be associated with the PlayFab account. If there is already a different PlayFab user linked with this account, then an error will be returned.
+         * More details regarding Kongregate and their game authentication system can be found at http://developers.kongregate.com/docs/virtual-goods/authentication. Developers must provide the Kongregate user ID and auth token that are generated using the Kongregate client library. PlayFab will combine these identifiers with the title's unique Kongregate app ID to log the player into the Kongregate system. If CreateAccount is set to true and there is not already a user matched to this Kongregate ID, then PlayFab will create a new account for this user and link the ID. In this case, no email or username will be associated with the PlayFab account. If there is already a different PlayFab user linked with this account, then an error will be returned.
          */
         bool LoginWithKongregate(ClientModels::FLoginWithKongregateRequest& request, const FLoginWithKongregateDelegate& SuccessDelegate = FLoginWithKongregateDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Signs the user into the PlayFab account, returning a session identifier that can subsequently be used for API calls
-         * which require an authenticated user. Unlike most other login API calls, LoginWithPlayFab does not permit the  creation
-         * of new accounts via the CreateAccountFlag. Username/Password credentials may be used to create accounts via
+         * which require an authenticated user. Unlike most other login API calls, LoginWithPlayFab does not permit the creation of
+         * new accounts via the CreateAccountFlag. Username/Password credentials may be used to create accounts via
          * RegisterPlayFabUser, or added to existing accounts using AddUsernamePassword.
          * Username and password lengths are provided for information purposes. The server will validate that data passed in conforms to the field definition and report errors appropriately. It is recommended that developers not perform this validation locally, so that future updates to the username or password do not require client updates.
          */
@@ -538,12 +538,12 @@ namespace PlayFab
         /**
          * Signs the user in using a Steam authentication ticket, returning a session identifier that can subsequently be used for
          * API calls which require an authenticated user
-         * Steam sign-in is accomplished with the Steam Session Ticket. More information on the Ticket can be  found in the Steamworks SDK, here: https://partner.steamgames.com/documentation/auth (requires sign-in). NOTE: For Steam authentication  to work, the title must be configured with the Steam Application ID and Web API Key in the PlayFab Game Manager (under Steam in the  Add-ons Marketplace). You can obtain a Web API Key from the Permissions page of any Group associated with your App ID in the Steamworks  site. If this is the first time a user has signed in with the Steam account and CreateAccount is set to true, a new PlayFab account  will be created and linked to the provided account's Steam ID. In this case, no email or username will be associated with the PlayFab  account. Otherwise, if no PlayFab account is linked to the Steam account, an error indicating this will be returned, so that the title  can guide the user through creation of a PlayFab account.
+         * Steam sign-in is accomplished with the Steam Session Ticket. More information on the Ticket can be found in the Steamworks SDK, here: https://partner.steamgames.com/documentation/auth (requires sign-in). NOTE: For Steam authentication to work, the title must be configured with the Steam Application ID and Web API Key in the PlayFab Game Manager (under Steam in the Add-ons Marketplace). You can obtain a Web API Key from the Permissions page of any Group associated with your App ID in the Steamworks site. If this is the first time a user has signed in with the Steam account and CreateAccount is set to true, a new PlayFab account will be created and linked to the provided account's Steam ID. In this case, no email or username will be associated with the PlayFab account. Otherwise, if no PlayFab account is linked to the Steam account, an error indicating this will be returned, so that the title can guide the user through creation of a PlayFab account.
          */
         bool LoginWithSteam(ClientModels::FLoginWithSteamRequest& request, const FLoginWithSteamDelegate& SuccessDelegate = FLoginWithSteamDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Signs the user in using a Twitch access token.
-         * More details regarding Twitch and their authentication system can be found at  https://github.com/justintv/Twitch-API/blob/master/authentication.md. Developers must provide the Twitch access token that is generated using one of the Twitch authentication flows. PlayFab will use the title's unique Twitch Client ID to authenticate the token and log in to the PlayFab system. If CreateAccount is set to true and there is not already a user matched to the Twitch username that generated the token, then PlayFab will create a new account for this user and link the ID. In this case, no email or username will be associated with the PlayFab account. If there is already a different PlayFab user linked with this account, then an error will be returned.
+         * More details regarding Twitch and their authentication system can be found at https://github.com/justintv/Twitch-API/blob/master/authentication.md. Developers must provide the Twitch access token that is generated using one of the Twitch authentication flows. PlayFab will use the title's unique Twitch Client ID to authenticate the token and log in to the PlayFab system. If CreateAccount is set to true and there is not already a user matched to the Twitch username that generated the token, then PlayFab will create a new account for this user and link the ID. In this case, no email or username will be associated with the PlayFab account. If there is already a different PlayFab user linked with this account, then an error will be returned.
          */
         bool LoginWithTwitch(ClientModels::FLoginWithTwitchRequest& request, const FLoginWithTwitchDelegate& SuccessDelegate = FLoginWithTwitchDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -563,7 +563,7 @@ namespace PlayFab
          * GameNotFound.
          */
         bool Matchmake(ClientModels::FMatchmakeRequest& request, const FMatchmakeDelegate& SuccessDelegate = FMatchmakeDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Opens a new outstanding trade. Note that a given item instance may only be in one open trade at a time. */
+        // Opens a new outstanding trade. Note that a given item instance may only be in one open trade at a time.
         bool OpenTrade(ClientModels::FOpenTradeRequest& request, const FOpenTradeDelegate& SuccessDelegate = FOpenTradeDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Selects a payment option for purchase order created via StartPurchase
@@ -571,20 +571,20 @@ namespace PlayFab
          */
         bool PayForPurchase(ClientModels::FPayForPurchaseRequest& request, const FPayForPurchaseDelegate& SuccessDelegate = FPayForPurchaseDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Buys a single item with virtual currency. You must specify both the virtual currency to use to purchase,  as well as
-         * what the client believes the price to be. This lets the server fail the purchase if the price has changed.
-         * Please note that the processing time for inventory grants and purchases increases fractionally  the more items are in the inventory, and the more items are in the grant/purchase operation (with each item in a bundle being a distinct add).
+         * Buys a single item with virtual currency. You must specify both the virtual currency to use to purchase, as well as what
+         * the client believes the price to be. This lets the server fail the purchase if the price has changed.
+         * Please note that the processing time for inventory grants and purchases increases fractionally the more items are in the inventory, and the more items are in the grant/purchase operation (with each item in a bundle being a distinct add).
          */
         bool PurchaseItem(ClientModels::FPurchaseItemRequest& request, const FPurchaseItemDelegate& SuccessDelegate = FPurchaseItemDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Adds the virtual goods associated with the coupon to the user's inventory. Coupons can be generated  via the
+         * Adds the virtual goods associated with the coupon to the user's inventory. Coupons can be generated via the
          * Economy->Catalogs tab in the PlayFab Game Manager.
          * Coupon codes can be created for any item, or set of items, in the catalog for the title. This operation causes the coupon to be consumed, and the specific items to be awarded to the user. Attempting to re-use an already consumed code, or a code which has not yet been created in the service, will result in an error.
          */
         bool RedeemCoupon(ClientModels::FRedeemCouponRequest& request, const FRedeemCouponDelegate& SuccessDelegate = FRedeemCouponDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Registers the iOS device to receive push notifications
-         * More information can be found on configuring your game for the Apple Push Notification service in the  Apple documentation, here:  https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9.  The steps to configure and send Push Notifications is described in the PlayFab tutorials, here:  https://api.playfab.com/docs/pushCrashCourse/.
+         * More information can be found on configuring your game for the Apple Push Notification service in the Apple documentation, here: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9. The steps to configure and send Push Notifications is described in the PlayFab tutorials, here: https://api.playfab.com/docs/pushCrashCourse/.
          */
         bool RegisterForIOSPushNotification(ClientModels::FRegisterForIOSPushNotificationRequest& request, const FRegisterForIOSPushNotificationDelegate& SuccessDelegate = FRegisterForIOSPushNotificationDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -593,7 +593,7 @@ namespace PlayFab
          */
         bool RegisterPlayFabUser(ClientModels::FRegisterPlayFabUserRequest& request, const FRegisterPlayFabUserDelegate& SuccessDelegate = FRegisterPlayFabUserDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Registers a new PlayFab user account using Windows Hello authentication, returning a session ticket  that can
+         * Registers a new PlayFab user account using Windows Hello authentication, returning a session ticket that can
          * subsequently be used for API calls which require an authenticated user
          * PublicKey must be generated using the Windows Hello Passport service.
          */
@@ -604,14 +604,14 @@ namespace PlayFab
          */
 
         bool RemoveContactEmail(const FRemoveContactEmailDelegate& SuccessDelegate = FRemoveContactEmailDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Removes a specified user from the friend list of the local user */
+        // Removes a specified user from the friend list of the local user
         bool RemoveFriend(ClientModels::FRemoveFriendRequest& request, const FRemoveFriendDelegate& SuccessDelegate = FRemoveFriendDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Removes the specified generic service identifier from the player's PlayFab account. */
+        // Removes the specified generic service identifier from the player's PlayFab account.
         bool RemoveGenericID(ClientModels::FRemoveGenericIDRequest& request, const FRemoveGenericIDDelegate& SuccessDelegate = FRemoveGenericIDDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Removes users from the set of those able to update the shared data and the set of users  in the group. Only users in the
-         * group can remove members. If as a result of the call, zero users remain with  access, the group and its associated data
-         * will be deleted. Shared Groups are designed for sharing data between  a very small number of players, please see our
+         * Removes users from the set of those able to update the shared data and the set of users in the group. Only users in the
+         * group can remove members. If as a result of the call, zero users remain with access, the group and its associated data
+         * will be deleted. Shared Groups are designed for sharing data between a very small number of players, please see our
          * guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
          */
         bool RemoveSharedGroupMembers(ClientModels::FRemoveSharedGroupMembersRequest& request, const FRemoveSharedGroupMembersDelegate& SuccessDelegate = FRemoveSharedGroupMembersDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
@@ -628,7 +628,7 @@ namespace PlayFab
         bool ReportPlayer(ClientModels::FReportPlayerClientRequest& request, const FReportPlayerDelegate& SuccessDelegate = FReportPlayerDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Restores all in-app purchases based on the given restore receipt
-         * The title should obtain a refresh receipt via restoreCompletedTransactions in the SKPaymentQueue  of the Apple StoreKit and pass that in to this call. The resultant receipt contains new receipt instances for all non-consumable  goods previously purchased by the user. This API call iterates through every purchase in the receipt and restores the items if  they still exist in the catalog and can be validated.
+         * The title should obtain a refresh receipt via restoreCompletedTransactions in the SKPaymentQueue of the Apple StoreKit and pass that in to this call. The resultant receipt contains new receipt instances for all non-consumable goods previously purchased by the user. This API call iterates through every purchase in the receipt and restores the items if they still exist in the catalog and can be validated.
          */
         bool RestoreIOSPurchases(ClientModels::FRestoreIOSPurchasesRequest& request, const FRestoreIOSPurchasesDelegate& SuccessDelegate = FRestoreIOSPurchasesDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -640,7 +640,7 @@ namespace PlayFab
         bool SendAccountRecoveryEmail(ClientModels::FSendAccountRecoveryEmailRequest& request, const FSendAccountRecoveryEmailDelegate& SuccessDelegate = FSendAccountRecoveryEmailDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Updates the tag list for a specified user in the friend list of the local user
-         * This operation is not additive. It will completely replace the tag list for the specified user.  Please note that only users in the PlayFab friends list can be assigned tags. Attempting to set a tag on a friend only included  in the friends list from a social site integration (such as Facebook or Steam) will return the AccountNotFound error.
+         * This operation is not additive. It will completely replace the tag list for the specified user. Please note that only users in the PlayFab friends list can be assigned tags. Attempting to set a tag on a friend only included in the friends list from a social site integration (such as Facebook or Steam) will return the AccountNotFound error.
          */
         bool SetFriendTags(ClientModels::FSetFriendTagsRequest& request, const FSetFriendTagsDelegate& SuccessDelegate = FSetFriendTagsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -665,14 +665,14 @@ namespace PlayFab
          * This API must be enabled for use as an option in the game manager website. It is disabled by default.
          */
         bool SubtractUserVirtualCurrency(ClientModels::FSubtractUserVirtualCurrencyRequest& request, const FSubtractUserVirtualCurrencyDelegate& SuccessDelegate = FSubtractUserVirtualCurrencyDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Unlinks the related Android device identifier from the user's PlayFab account */
+        // Unlinks the related Android device identifier from the user's PlayFab account
         bool UnlinkAndroidDeviceID(ClientModels::FUnlinkAndroidDeviceIDRequest& request, const FUnlinkAndroidDeviceIDDelegate& SuccessDelegate = FUnlinkAndroidDeviceIDDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Unlinks the related custom identifier from the user's PlayFab account */
+        // Unlinks the related custom identifier from the user's PlayFab account
         bool UnlinkCustomID(ClientModels::FUnlinkCustomIDRequest& request, const FUnlinkCustomIDDelegate& SuccessDelegate = FUnlinkCustomIDDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Unlinks the related Facebook account from the user's PlayFab account */
+        // Unlinks the related Facebook account from the user's PlayFab account
 
         bool UnlinkFacebookAccount(const FUnlinkFacebookAccountDelegate& SuccessDelegate = FUnlinkFacebookAccountDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Unlinks the related Game Center account from the user's PlayFab account */
+        // Unlinks the related Game Center account from the user's PlayFab account
 
         bool UnlinkGameCenterAccount(const FUnlinkGameCenterAccountDelegate& SuccessDelegate = FUnlinkGameCenterAccountDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -681,15 +681,15 @@ namespace PlayFab
          */
 
         bool UnlinkGoogleAccount(const FUnlinkGoogleAccountDelegate& SuccessDelegate = FUnlinkGoogleAccountDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Unlinks the related iOS device identifier from the user's PlayFab account */
+        // Unlinks the related iOS device identifier from the user's PlayFab account
         bool UnlinkIOSDeviceID(ClientModels::FUnlinkIOSDeviceIDRequest& request, const FUnlinkIOSDeviceIDDelegate& SuccessDelegate = FUnlinkIOSDeviceIDDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Unlinks the related Kongregate identifier from the user's PlayFab account */
+        // Unlinks the related Kongregate identifier from the user's PlayFab account
 
         bool UnlinkKongregate(const FUnlinkKongregateDelegate& SuccessDelegate = FUnlinkKongregateDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Unlinks the related Steam account from the user's PlayFab account */
+        // Unlinks the related Steam account from the user's PlayFab account
 
         bool UnlinkSteamAccount(const FUnlinkSteamAccountDelegate& SuccessDelegate = FUnlinkSteamAccountDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Unlinks the related Twitch account from the user's PlayFab account. */
+        // Unlinks the related Twitch account from the user's PlayFab account.
 
         bool UnlinkTwitch(const FUnlinkTwitchDelegate& SuccessDelegate = FUnlinkTwitchDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
@@ -711,30 +711,29 @@ namespace PlayFab
          * Specify the type of container to open and optionally the catalogVersion for the container to open
          */
         bool UnlockContainerItem(ClientModels::FUnlockContainerItemRequest& request, const FUnlockContainerItemDelegate& SuccessDelegate = FUnlockContainerItemDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
-        /** Update the avatar URL of the player */
+        // Update the avatar URL of the player
         bool UpdateAvatarUrl(ClientModels::FUpdateAvatarUrlRequest& request, const FUpdateAvatarUrlDelegate& SuccessDelegate = FUpdateAvatarUrlDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
-         * Creates and updates the title-specific custom data for the user's character which is readable  and writable by the
-         * client
-         * This function performs an additive update of the arbitrary strings containing the custom data for the character. In updating the custom data object, keys which already  exist in the object will have their values overwritten, while keys with null values will be removed.  New keys will be added, with the given values. No other key-value pairs will be changed apart from  those specified in the call.
+         * Creates and updates the title-specific custom data for the user's character which is readable and writable by the client
+         * This function performs an additive update of the arbitrary strings containing the custom data for the character. In updating the custom data object, keys which already exist in the object will have their values overwritten, while keys with null values will be removed. New keys will be added, with the given values. No other key-value pairs will be changed apart from those specified in the call.
          */
         bool UpdateCharacterData(ClientModels::FUpdateCharacterDataRequest& request, const FUpdateCharacterDataDelegate& SuccessDelegate = FUpdateCharacterDataDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Updates the values of the specified title-specific statistics for the specific character. By default, clients are not
          * permitted to update statistics. Developers may override this setting in the Game Manager > Settings > API Features.
-         * Enable this option with the 'Allow Client to Post Player Statistics' option in PlayFab GameManager for your title. However, this is not best practice, as this data will no longer be safely controlled by the server. This operation is additive.  Character Statistics not currently defined will be added, while those already defined will be updated with the given values. All other user statistics will remain unchanged.  Character statistics are used by the character-leaderboard apis, and accessible for custom game-logic.
+         * Enable this option with the 'Allow Client to Post Player Statistics' option in PlayFab GameManager for your title. However, this is not best practice, as this data will no longer be safely controlled by the server. This operation is additive. Character Statistics not currently defined will be added, while those already defined will be updated with the given values. All other user statistics will remain unchanged. Character statistics are used by the character-leaderboard apis, and accessible for custom game-logic.
          */
         bool UpdateCharacterStatistics(ClientModels::FUpdateCharacterStatisticsRequest& request, const FUpdateCharacterStatisticsDelegate& SuccessDelegate = FUpdateCharacterStatisticsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Updates the values of the specified title-specific statistics for the user. By default, clients are not permitted to
          * update statistics. Developers may override this setting in the Game Manager > Settings > API Features.
-         * Enable this option with the 'Allow Client to Post Player Statistics' option in PlayFab GameManager for your title. However, this is not best practice, as this data will no longer be safely controlled by the server. This operation is additive.  Statistics not currently defined will be added, while those already defined will be updated with the given values. All other user statistics will remain unchanged.  Note that if the statistic is intended to have a reset period, the UpdatePlayerStatisticDefinition API call can be used to define that reset period. Once a statistic has been versioned (reset), the now-previous version can still be written to for up a short, pre-defined period (currently 10 seconds), using the Version parameter in this call.
+         * Enable this option with the 'Allow Client to Post Player Statistics' option in PlayFab GameManager for your title. However, this is not best practice, as this data will no longer be safely controlled by the server. This operation is additive. Statistics not currently defined will be added, while those already defined will be updated with the given values. All other user statistics will remain unchanged. Note that if the statistic is intended to have a reset period, the UpdatePlayerStatisticDefinition API call can be used to define that reset period. Once a statistic has been versioned (reset), the now-previous version can still be written to for up a short, pre-defined period (currently 10 seconds), using the Version parameter in this call.
          */
         bool UpdatePlayerStatistics(ClientModels::FUpdatePlayerStatisticsRequest& request, const FUpdatePlayerStatisticsDelegate& SuccessDelegate = FUpdatePlayerStatisticsDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
          * Adds, updates, and removes data keys for a shared group object. If the permission is set to Public, all fields updated
          * or added in this call will be readable by users not in the group. By default, data permissions are set to Private.
-         * Regardless of the permission setting, only members of the group can update the data. Shared Groups are designed  for
+         * Regardless of the permission setting, only members of the group can update the data. Shared Groups are designed for
          * sharing data between a very small number of players, please see our guide:
          * https://api.playfab.com/docs/tutorials/landing-players/shared-groups
          * Note that in the case of multiple calls to write to the same shared group data keys, the last write received by the PlayFab service will determine the value available to subsequent read operations. For scenarios requiring coordination of data updates, it is recommended that titles make use of user data with read permission set to public, or a combination of user data and shared group data.
