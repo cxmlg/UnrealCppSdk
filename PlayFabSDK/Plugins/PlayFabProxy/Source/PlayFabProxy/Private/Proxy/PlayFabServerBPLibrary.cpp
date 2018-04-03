@@ -817,6 +817,33 @@ void UPFServerProxyLibrary::BreakBPServerEmptyResult(
 
 }
 
+// EntityKey
+FBPServerEntityKey UPFServerProxyLibrary::MakeBPServerEntityKey(
+    FString InId
+    , EBPServerEntityTypes InType
+    , FString InTypeString
+)
+{
+    FBPServerEntityKey Out = FBPServerEntityKey();
+    Out.Data.Id = InId;
+    Out.Data.Type = static_cast<PlayFab::ServerModels::EntityTypes>(static_cast<uint8>(InType));
+    Out.Data.TypeString = InTypeString;
+
+    return Out;
+}
+void UPFServerProxyLibrary::BreakBPServerEntityKey(
+    const FBPServerEntityKey& In
+    , FString& OutId
+    , EBPServerEntityTypes& OutType
+    , FString& OutTypeString
+)
+{
+    OutId = In.Data.Id;
+    if (In.Data.Type.notNull()) { OutType = static_cast<EBPServerEntityTypes>(static_cast<uint8>(In.Data.Type.mValue)); }
+    OutTypeString = In.Data.TypeString;
+
+}
+
 // EvaluateRandomResultTableRequest
 FBPServerEvaluateRandomResultTableRequest UPFServerProxyLibrary::MakeBPServerEvaluateRandomResultTableRequest(
     FString InCatalogVersion
@@ -4764,6 +4791,7 @@ FBPServerUserTitleInfo UPFServerProxyLibrary::MakeBPServerUserTitleInfo(
     , bool InisBanned
     , FDateTime InLastLogin
     , EBPServerUserOrigination InOrigination
+    , FBPServerEntityKey InTitlePlayerAccount
 )
 {
     FBPServerUserTitleInfo Out = FBPServerUserTitleInfo();
@@ -4774,6 +4802,7 @@ FBPServerUserTitleInfo UPFServerProxyLibrary::MakeBPServerUserTitleInfo(
     Out.Data.isBanned = InisBanned;
     Out.Data.LastLogin = InLastLogin;
     Out.Data.Origination = static_cast<PlayFab::ServerModels::UserOrigination>(static_cast<uint8>(InOrigination));
+    Out.Data.TitlePlayerAccount = MakeShareable(new PlayFab::ServerModels::FEntityKey(InTitlePlayerAccount.Data));
 
     return Out;
 }
@@ -4786,6 +4815,7 @@ void UPFServerProxyLibrary::BreakBPServerUserTitleInfo(
     , bool& OutisBanned
     , FDateTime& OutLastLogin
     , EBPServerUserOrigination& OutOrigination
+    , FBPServerEntityKey& OutTitlePlayerAccount
 )
 {
     OutAvatarUrl = In.Data.AvatarUrl;
@@ -4795,6 +4825,7 @@ void UPFServerProxyLibrary::BreakBPServerUserTitleInfo(
     OutisBanned = In.Data.isBanned;
     OutLastLogin = In.Data.LastLogin;
     if (In.Data.Origination.notNull()) { OutOrigination = static_cast<EBPServerUserOrigination>(static_cast<uint8>(In.Data.Origination.mValue)); }
+    if (In.Data.TitlePlayerAccount.IsValid()) { OutTitlePlayerAccount.Data = *In.Data.TitlePlayerAccount; }
 
 }
 

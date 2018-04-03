@@ -2921,6 +2921,7 @@ public:
             , bool InisBanned
             , FDateTime InLastLogin
             , EBPClientUserOrigination InOrigination
+            , FBPClientEntityKey InTitlePlayerAccount
         );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Client", meta = (NativeBreakFunc))
         static void BreakBPClientUserTitleInfo(
@@ -2932,6 +2933,7 @@ public:
             , bool& OutisBanned
             , FDateTime& OutLastLogin
             , EBPClientUserOrigination& OutOrigination
+            , FBPClientEntityKey& OutTitlePlayerAccount
 );
 
     // UserTwitchInfo

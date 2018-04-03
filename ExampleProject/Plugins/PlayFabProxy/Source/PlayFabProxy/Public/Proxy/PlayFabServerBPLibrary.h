@@ -447,6 +447,21 @@ public:
             const FBPServerEmptyResult& In
 );
 
+    // EntityKey
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
+        static FBPServerEntityKey MakeBPServerEntityKey(
+            FString InId
+            , EBPServerEntityTypes InType
+            , FString InTypeString
+        );
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
+        static void BreakBPServerEntityKey(
+            const FBPServerEntityKey& In
+            , FString& OutId
+            , EBPServerEntityTypes& OutType
+            , FString& OutTypeString
+);
+
     // EvaluateRandomResultTableRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeMakeFunc))
         static FBPServerEvaluateRandomResultTableRequest MakeBPServerEvaluateRandomResultTableRequest(
@@ -2550,6 +2565,7 @@ public:
             , bool InisBanned
             , FDateTime InLastLogin
             , EBPServerUserOrigination InOrigination
+            , FBPServerEntityKey InTitlePlayerAccount
         );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Server", meta = (NativeBreakFunc))
         static void BreakBPServerUserTitleInfo(
@@ -2561,6 +2577,7 @@ public:
             , bool& OutisBanned
             , FDateTime& OutLastLogin
             , EBPServerUserOrigination& OutOrigination
+            , FBPServerEntityKey& OutTitlePlayerAccount
 );
 
     // UserTwitchInfo

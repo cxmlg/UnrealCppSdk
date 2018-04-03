@@ -1059,6 +1059,33 @@ void UPFAdminProxyLibrary::BreakBPAdminEmptyResult(
 
 }
 
+// EntityKey
+FBPAdminEntityKey UPFAdminProxyLibrary::MakeBPAdminEntityKey(
+    FString InId
+    , EBPAdminEntityTypes InType
+    , FString InTypeString
+)
+{
+    FBPAdminEntityKey Out = FBPAdminEntityKey();
+    Out.Data.Id = InId;
+    Out.Data.Type = static_cast<PlayFab::AdminModels::EntityTypes>(static_cast<uint8>(InType));
+    Out.Data.TypeString = InTypeString;
+
+    return Out;
+}
+void UPFAdminProxyLibrary::BreakBPAdminEntityKey(
+    const FBPAdminEntityKey& In
+    , FString& OutId
+    , EBPAdminEntityTypes& OutType
+    , FString& OutTypeString
+)
+{
+    OutId = In.Data.Id;
+    if (In.Data.Type.notNull()) { OutType = static_cast<EBPAdminEntityTypes>(static_cast<uint8>(In.Data.Type.mValue)); }
+    OutTypeString = In.Data.TypeString;
+
+}
+
 // ExecuteCloudScriptResult
 void UPFAdminProxyLibrary::BreakBPAdminExecuteCloudScriptResult(
     const FBPAdminExecuteCloudScriptResult& In
@@ -4716,6 +4743,7 @@ FBPAdminUserTitleInfo UPFAdminProxyLibrary::MakeBPAdminUserTitleInfo(
     , bool InisBanned
     , FDateTime InLastLogin
     , EBPAdminUserOrigination InOrigination
+    , FBPAdminEntityKey InTitlePlayerAccount
 )
 {
     FBPAdminUserTitleInfo Out = FBPAdminUserTitleInfo();
@@ -4726,6 +4754,7 @@ FBPAdminUserTitleInfo UPFAdminProxyLibrary::MakeBPAdminUserTitleInfo(
     Out.Data.isBanned = InisBanned;
     Out.Data.LastLogin = InLastLogin;
     Out.Data.Origination = static_cast<PlayFab::AdminModels::UserOrigination>(static_cast<uint8>(InOrigination));
+    Out.Data.TitlePlayerAccount = MakeShareable(new PlayFab::AdminModels::FEntityKey(InTitlePlayerAccount.Data));
 
     return Out;
 }
@@ -4738,6 +4767,7 @@ void UPFAdminProxyLibrary::BreakBPAdminUserTitleInfo(
     , bool& OutisBanned
     , FDateTime& OutLastLogin
     , EBPAdminUserOrigination& OutOrigination
+    , FBPAdminEntityKey& OutTitlePlayerAccount
 )
 {
     OutAvatarUrl = In.Data.AvatarUrl;
@@ -4747,6 +4777,7 @@ void UPFAdminProxyLibrary::BreakBPAdminUserTitleInfo(
     OutisBanned = In.Data.isBanned;
     OutLastLogin = In.Data.LastLogin;
     if (In.Data.Origination.notNull()) { OutOrigination = static_cast<EBPAdminUserOrigination>(static_cast<uint8>(In.Data.Origination.mValue)); }
+    if (In.Data.TitlePlayerAccount.IsValid()) { OutTitlePlayerAccount.Data = *In.Data.TitlePlayerAccount; }
 
 }
 

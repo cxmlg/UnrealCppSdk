@@ -5386,6 +5386,7 @@ FBPClientUserTitleInfo UPFClientProxyLibrary::MakeBPClientUserTitleInfo(
     , bool InisBanned
     , FDateTime InLastLogin
     , EBPClientUserOrigination InOrigination
+    , FBPClientEntityKey InTitlePlayerAccount
 )
 {
     FBPClientUserTitleInfo Out = FBPClientUserTitleInfo();
@@ -5396,6 +5397,7 @@ FBPClientUserTitleInfo UPFClientProxyLibrary::MakeBPClientUserTitleInfo(
     Out.Data.isBanned = InisBanned;
     Out.Data.LastLogin = InLastLogin;
     Out.Data.Origination = static_cast<PlayFab::ClientModels::UserOrigination>(static_cast<uint8>(InOrigination));
+    Out.Data.TitlePlayerAccount = MakeShareable(new PlayFab::ClientModels::FEntityKey(InTitlePlayerAccount.Data));
 
     return Out;
 }
@@ -5408,6 +5410,7 @@ void UPFClientProxyLibrary::BreakBPClientUserTitleInfo(
     , bool& OutisBanned
     , FDateTime& OutLastLogin
     , EBPClientUserOrigination& OutOrigination
+    , FBPClientEntityKey& OutTitlePlayerAccount
 )
 {
     OutAvatarUrl = In.Data.AvatarUrl;
@@ -5417,6 +5420,7 @@ void UPFClientProxyLibrary::BreakBPClientUserTitleInfo(
     OutisBanned = In.Data.isBanned;
     OutLastLogin = In.Data.LastLogin;
     if (In.Data.Origination.notNull()) { OutOrigination = static_cast<EBPClientUserOrigination>(static_cast<uint8>(In.Data.Origination.mValue)); }
+    if (In.Data.TitlePlayerAccount.IsValid()) { OutTitlePlayerAccount.Data = *In.Data.TitlePlayerAccount; }
 
 }
 

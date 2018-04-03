@@ -1283,8 +1283,92 @@ ServerModels::UserOrigination PlayFab::ServerModels::readUserOriginationFromValu
     return UserOriginationOrganic; // Basically critical fail
 }
 
+void PlayFab::ServerModels::writeEntityTypesEnumJSON(EntityTypes enumVal, JsonWriter& writer)
+{
+    switch (enumVal)
+    {
+
+    case EntityTypestitle: writer->WriteValue(TEXT("title")); break;
+    case EntityTypesmaster_player_account: writer->WriteValue(TEXT("master_player_account")); break;
+    case EntityTypestitle_player_account: writer->WriteValue(TEXT("title_player_account")); break;
+    case EntityTypescharacter: writer->WriteValue(TEXT("character")); break;
+    case EntityTypesgroup: writer->WriteValue(TEXT("group")); break;
+    }
+}
+
+ServerModels::EntityTypes PlayFab::ServerModels::readEntityTypesFromValue(const TSharedPtr<FJsonValue>& value)
+{
+    return readEntityTypesFromValue(value.IsValid() ? value->AsString() : "");
+}
+
+ServerModels::EntityTypes PlayFab::ServerModels::readEntityTypesFromValue(const FString& value)
+{
+    static TMap<FString, EntityTypes> _EntityTypesMap;
+    if (_EntityTypesMap.Num() == 0)
+    {
+        // Auto-generate the map on the first use
+        _EntityTypesMap.Add(TEXT("title"), EntityTypestitle);
+        _EntityTypesMap.Add(TEXT("master_player_account"), EntityTypesmaster_player_account);
+        _EntityTypesMap.Add(TEXT("title_player_account"), EntityTypestitle_player_account);
+        _EntityTypesMap.Add(TEXT("character"), EntityTypescharacter);
+        _EntityTypesMap.Add(TEXT("group"), EntityTypesgroup);
+
+    }
+
+    if (!value.IsEmpty())
+    {
+        auto output = _EntityTypesMap.Find(value);
+        if (output != nullptr)
+            return *output;
+    }
+
+    return EntityTypestitle; // Basically critical fail
+}
+
+PlayFab::ServerModels::FEntityKey::~FEntityKey()
+{
+
+}
+
+void PlayFab::ServerModels::FEntityKey::writeJSON(JsonWriter& writer) const
+{
+    writer->WriteObjectStart();
+
+    writer->WriteIdentifierPrefix(TEXT("Id")); writer->WriteValue(Id);
+
+    if (Type.notNull()) { writer->WriteIdentifierPrefix(TEXT("Type")); writeEntityTypesEnumJSON(Type, writer); }
+
+    if (TypeString.IsEmpty() == false) { writer->WriteIdentifierPrefix(TEXT("TypeString")); writer->WriteValue(TypeString); }
+
+    writer->WriteObjectEnd();
+}
+
+bool PlayFab::ServerModels::FEntityKey::readFromValue(const TSharedPtr<FJsonObject>& obj)
+{
+    bool HasSucceeded = true;
+
+    const TSharedPtr<FJsonValue> IdValue = obj->TryGetField(TEXT("Id"));
+    if (IdValue.IsValid() && !IdValue->IsNull())
+    {
+        FString TmpValue;
+        if (IdValue->TryGetString(TmpValue)) { Id = TmpValue; }
+    }
+
+    Type = readEntityTypesFromValue(obj->TryGetField(TEXT("Type")));
+
+    const TSharedPtr<FJsonValue> TypeStringValue = obj->TryGetField(TEXT("TypeString"));
+    if (TypeStringValue.IsValid() && !TypeStringValue->IsNull())
+    {
+        FString TmpValue;
+        if (TypeStringValue->TryGetString(TmpValue)) { TypeString = TmpValue; }
+    }
+
+    return HasSucceeded;
+}
+
 PlayFab::ServerModels::FUserTitleInfo::~FUserTitleInfo()
 {
+    //if (TitlePlayerAccount != nullptr) delete TitlePlayerAccount;
 
 }
 
@@ -1305,6 +1389,8 @@ void PlayFab::ServerModels::FUserTitleInfo::writeJSON(JsonWriter& writer) const
     if (LastLogin.notNull()) { writer->WriteIdentifierPrefix(TEXT("LastLogin")); writeDatetime(LastLogin, writer); }
 
     if (Origination.notNull()) { writer->WriteIdentifierPrefix(TEXT("Origination")); writeUserOriginationEnumJSON(Origination, writer); }
+
+    if (TitlePlayerAccount.IsValid()) { writer->WriteIdentifierPrefix(TEXT("TitlePlayerAccount")); TitlePlayerAccount->writeJSON(writer); }
 
     writer->WriteObjectEnd();
 }
@@ -1350,6 +1436,12 @@ bool PlayFab::ServerModels::FUserTitleInfo::readFromValue(const TSharedPtr<FJson
 
 
     Origination = readUserOriginationFromValue(obj->TryGetField(TEXT("Origination")));
+
+    const TSharedPtr<FJsonValue> TitlePlayerAccountValue = obj->TryGetField(TEXT("TitlePlayerAccount"));
+    if (TitlePlayerAccountValue.IsValid() && !TitlePlayerAccountValue->IsNull())
+    {
+        TitlePlayerAccount = MakeShareable(new FEntityKey(TitlePlayerAccountValue->AsObject()));
+    }
 
     return HasSucceeded;
 }

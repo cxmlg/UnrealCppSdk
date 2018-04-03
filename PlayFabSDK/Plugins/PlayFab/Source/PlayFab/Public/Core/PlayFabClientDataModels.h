@@ -3684,6 +3684,9 @@ namespace ClientModels
         // [optional] source by which the user first joined the game, if known
         Boxed<UserOrigination> Origination;
 
+        // [optional] Title player account entity for this user
+        TSharedPtr<FEntityKey> TitlePlayerAccount;
+
         FUserTitleInfo() :
             FPlayFabBaseModel(),
             AvatarUrl(),
@@ -3692,7 +3695,8 @@ namespace ClientModels
             FirstLogin(),
             isBanned(),
             LastLogin(),
-            Origination()
+            Origination(),
+            TitlePlayerAccount(nullptr)
             {}
 
         FUserTitleInfo(const FUserTitleInfo& src) :
@@ -3703,7 +3707,8 @@ namespace ClientModels
             FirstLogin(src.FirstLogin),
             isBanned(src.isBanned),
             LastLogin(src.LastLogin),
-            Origination(src.Origination)
+            Origination(src.Origination),
+            TitlePlayerAccount(src.TitlePlayerAccount.IsValid() ? MakeShareable(new FEntityKey(*src.TitlePlayerAccount)) : nullptr)
             {}
 
         FUserTitleInfo(const TSharedPtr<FJsonObject>& obj) : FUserTitleInfo()

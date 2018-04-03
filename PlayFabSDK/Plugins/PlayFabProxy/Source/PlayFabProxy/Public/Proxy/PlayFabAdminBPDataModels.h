@@ -988,6 +988,26 @@ public:
     PlayFab::AdminModels::FEmptyResult Data;
 };
 
+USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFAdminProxyLibrary.MakeBPAdminEntityKey", HasNativeBreak = "PlayFabProxy.PFAdminProxyLibrary.BreakBPAdminEntityKey"))
+struct FBPAdminEntityKey
+{
+    GENERATED_BODY()
+public:
+    FBPAdminEntityKey() {};
+    FBPAdminEntityKey(PlayFab::AdminModels::FEntityKey InData) : Data(InData) {};
+    PlayFab::AdminModels::FEntityKey Data;
+};
+
+UENUM(BlueprintType)
+enum class EBPAdminEntityTypes : uint8
+{
+    EntityTypes_title UMETA(DisplayName = "title"),
+    EntityTypes_master_player_account UMETA(DisplayName = "master_player_account"),
+    EntityTypes_title_player_account UMETA(DisplayName = "title_player_account"),
+    EntityTypes_character UMETA(DisplayName = "character"),
+    EntityTypes_group UMETA(DisplayName = "group")
+};
+
 USTRUCT(BlueprintType, meta = (HasNativeBreak = "PlayFabProxy.PFAdminProxyLibrary.BreakBPAdminExecuteCloudScriptResult"))
 struct FBPAdminExecuteCloudScriptResult
 {

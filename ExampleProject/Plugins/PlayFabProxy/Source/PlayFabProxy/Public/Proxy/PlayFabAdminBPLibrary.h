@@ -583,6 +583,21 @@ public:
             const FBPAdminEmptyResult& In
 );
 
+    // EntityKey
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeMakeFunc))
+        static FBPAdminEntityKey MakeBPAdminEntityKey(
+            FString InId
+            , EBPAdminEntityTypes InType
+            , FString InTypeString
+        );
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
+        static void BreakBPAdminEntityKey(
+            const FBPAdminEntityKey& In
+            , FString& OutId
+            , EBPAdminEntityTypes& OutType
+            , FString& OutTypeString
+);
+
     // ExecuteCloudScriptResult
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
         static void BreakBPAdminExecuteCloudScriptResult(
@@ -2530,6 +2545,7 @@ public:
             , bool InisBanned
             , FDateTime InLastLogin
             , EBPAdminUserOrigination InOrigination
+            , FBPAdminEntityKey InTitlePlayerAccount
         );
     UFUNCTION(BlueprintPure, Category = "PlayFab|Admin", meta = (NativeBreakFunc))
         static void BreakBPAdminUserTitleInfo(
@@ -2541,6 +2557,7 @@ public:
             , bool& OutisBanned
             , FDateTime& OutLastLogin
             , EBPAdminUserOrigination& OutOrigination
+            , FBPAdminEntityKey& OutTitlePlayerAccount
 );
 
     // UserTwitchInfo

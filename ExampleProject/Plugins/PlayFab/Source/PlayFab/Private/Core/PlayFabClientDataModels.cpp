@@ -5543,6 +5543,7 @@ ClientModels::UserOrigination PlayFab::ClientModels::readUserOriginationFromValu
 
 PlayFab::ClientModels::FUserTitleInfo::~FUserTitleInfo()
 {
+    //if (TitlePlayerAccount != nullptr) delete TitlePlayerAccount;
 
 }
 
@@ -5563,6 +5564,8 @@ void PlayFab::ClientModels::FUserTitleInfo::writeJSON(JsonWriter& writer) const
     if (LastLogin.notNull()) { writer->WriteIdentifierPrefix(TEXT("LastLogin")); writeDatetime(LastLogin, writer); }
 
     if (Origination.notNull()) { writer->WriteIdentifierPrefix(TEXT("Origination")); writeUserOriginationEnumJSON(Origination, writer); }
+
+    if (TitlePlayerAccount.IsValid()) { writer->WriteIdentifierPrefix(TEXT("TitlePlayerAccount")); TitlePlayerAccount->writeJSON(writer); }
 
     writer->WriteObjectEnd();
 }
@@ -5608,6 +5611,12 @@ bool PlayFab::ClientModels::FUserTitleInfo::readFromValue(const TSharedPtr<FJson
 
 
     Origination = readUserOriginationFromValue(obj->TryGetField(TEXT("Origination")));
+
+    const TSharedPtr<FJsonValue> TitlePlayerAccountValue = obj->TryGetField(TEXT("TitlePlayerAccount"));
+    if (TitlePlayerAccountValue.IsValid() && !TitlePlayerAccountValue->IsNull())
+    {
+        TitlePlayerAccount = MakeShareable(new FEntityKey(TitlePlayerAccountValue->AsObject()));
+    }
 
     return HasSucceeded;
 }

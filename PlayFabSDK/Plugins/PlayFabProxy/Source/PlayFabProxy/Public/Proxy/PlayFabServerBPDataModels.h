@@ -855,6 +855,26 @@ public:
     PlayFab::ServerModels::FEmptyResult Data;
 };
 
+USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFServerProxyLibrary.MakeBPServerEntityKey", HasNativeBreak = "PlayFabProxy.PFServerProxyLibrary.BreakBPServerEntityKey"))
+struct FBPServerEntityKey
+{
+    GENERATED_BODY()
+public:
+    FBPServerEntityKey() {};
+    FBPServerEntityKey(PlayFab::ServerModels::FEntityKey InData) : Data(InData) {};
+    PlayFab::ServerModels::FEntityKey Data;
+};
+
+UENUM(BlueprintType)
+enum class EBPServerEntityTypes : uint8
+{
+    EntityTypes_title UMETA(DisplayName = "title"),
+    EntityTypes_master_player_account UMETA(DisplayName = "master_player_account"),
+    EntityTypes_title_player_account UMETA(DisplayName = "title_player_account"),
+    EntityTypes_character UMETA(DisplayName = "character"),
+    EntityTypes_group UMETA(DisplayName = "group")
+};
+
 USTRUCT(BlueprintType, meta = (HasNativeBreak = "PlayFabProxy.PFServerProxyLibrary.BreakBPServerEvaluateRandomResultTableRequest"))
 struct FBPServerEvaluateRandomResultTableRequest
 {

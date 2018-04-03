@@ -2699,6 +2699,55 @@ namespace AdminModels
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
 
+    enum EntityTypes
+    {
+        EntityTypestitle,
+        EntityTypesmaster_player_account,
+        EntityTypestitle_player_account,
+        EntityTypescharacter,
+        EntityTypesgroup
+    };
+
+    PLAYFAB_API void writeEntityTypesEnumJSON(EntityTypes enumVal, JsonWriter& writer);
+    PLAYFAB_API EntityTypes readEntityTypesFromValue(const TSharedPtr<FJsonValue>& value);
+    PLAYFAB_API EntityTypes readEntityTypesFromValue(const FString& value);
+
+    struct PLAYFAB_API FEntityKey : public FPlayFabBaseModel
+    {
+        // Entity profile ID.
+        FString Id;
+
+        // [optional] Entity type. Optional to be used but one of EntityType or EntityTypeString must be set.
+        Boxed<EntityTypes> Type;
+
+        // [optional] Entity type. Optional to be used but one of EntityType or EntityTypeString must be set.
+        FString TypeString;
+
+        FEntityKey() :
+            FPlayFabBaseModel(),
+            Id(),
+            Type(),
+            TypeString()
+            {}
+
+        FEntityKey(const FEntityKey& src) :
+            FPlayFabBaseModel(),
+            Id(src.Id),
+            Type(src.Type),
+            TypeString(src.TypeString)
+            {}
+
+        FEntityKey(const TSharedPtr<FJsonObject>& obj) : FEntityKey()
+        {
+            readFromValue(obj);
+        }
+
+        ~FEntityKey();
+
+        void writeJSON(JsonWriter& writer) const override;
+        bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
+    };
+
     struct PLAYFAB_API FGameModeInfo : public FPlayFabBaseModel
     {
         // specific game mode type
@@ -6992,6 +7041,9 @@ namespace AdminModels
         // [optional] source by which the user first joined the game, if known
         Boxed<UserOrigination> Origination;
 
+        // [optional] Title player account entity for this user
+        TSharedPtr<FEntityKey> TitlePlayerAccount;
+
         FUserTitleInfo() :
             FPlayFabBaseModel(),
             AvatarUrl(),
@@ -7000,7 +7052,8 @@ namespace AdminModels
             FirstLogin(),
             isBanned(),
             LastLogin(),
-            Origination()
+            Origination(),
+            TitlePlayerAccount(nullptr)
             {}
 
         FUserTitleInfo(const FUserTitleInfo& src) :
@@ -7011,7 +7064,8 @@ namespace AdminModels
             FirstLogin(src.FirstLogin),
             isBanned(src.isBanned),
             LastLogin(src.LastLogin),
-            Origination(src.Origination)
+            Origination(src.Origination),
+            TitlePlayerAccount(src.TitlePlayerAccount.IsValid() ? MakeShareable(new FEntityKey(*src.TitlePlayerAccount)) : nullptr)
             {}
 
         FUserTitleInfo(const TSharedPtr<FJsonObject>& obj) : FUserTitleInfo()
