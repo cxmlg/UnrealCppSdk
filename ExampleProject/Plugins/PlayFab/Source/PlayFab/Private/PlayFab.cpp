@@ -54,7 +54,7 @@ void FPlayFabModule::StartupModule()
 
     // create the API
     ClientAPI = MakeShareable(new PlayFab::UPlayFabClientAPI());
-    // EntityAPI = MakeShareable(new PlayFab::UPlayFabEntityAPI());
+    EntityAPI = MakeShareable(new PlayFab::UPlayFabEntityAPI());
 
 #if WITH_SERVER_CODE
     ServerAPI = MakeShareable(new PlayFab::UPlayFabServerAPI());
