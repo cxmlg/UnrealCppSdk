@@ -3874,12 +3874,14 @@ FBPClientRegisterPlayFabUserRequest UPFClientProxyLibrary::MakeBPClientRegisterP
 // RegisterPlayFabUserResult
 void UPFClientProxyLibrary::BreakBPClientRegisterPlayFabUserResult(
     const FBPClientRegisterPlayFabUserResult& In
+    , FBPClientEntityTokenResponse& OutEntityToken
     , FString& OutPlayFabId
     , FString& OutSessionTicket
     , FBPClientUserSettings& OutSettingsForUser
     , FString& OutUsername
 )
 {
+    if (In.Data.EntityToken.IsValid()) { OutEntityToken.Data = *In.Data.EntityToken; }
     OutPlayFabId = In.Data.PlayFabId;
     OutSessionTicket = In.Data.SessionTicket;
     if (In.Data.SettingsForUser.IsValid()) { OutSettingsForUser.Data = *In.Data.SettingsForUser; }

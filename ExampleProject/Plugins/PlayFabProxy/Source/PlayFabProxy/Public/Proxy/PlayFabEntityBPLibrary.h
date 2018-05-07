@@ -305,6 +305,20 @@ public:
             , FBPEntityEntityProfileBody& OutProfile
 );
 
+    // GetEntityProfilesRequest
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Entity", meta = (NativeMakeFunc))
+        static FBPEntityGetEntityProfilesRequest MakeBPEntityGetEntityProfilesRequest(
+            bool InDataAsObject
+            , TArray<FBPEntityEntityKey> InEntities
+        );
+
+    // GetEntityProfilesResponse
+    UFUNCTION(BlueprintPure, Category = "PlayFab|Entity", meta = (NativeBreakFunc))
+        static void BreakBPEntityGetEntityProfilesResponse(
+            const FBPEntityGetEntityProfilesResponse& In
+            , TArray<FBPEntityEntityProfileBody>& OutProfiles
+);
+
     // GetEntityTokenRequest
     UFUNCTION(BlueprintPure, Category = "PlayFab|Entity", meta = (NativeMakeFunc))
         static FBPEntityGetEntityTokenRequest MakeBPEntityGetEntityTokenRequest(

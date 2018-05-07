@@ -313,6 +313,26 @@ public:
     PlayFab::EntityModels::FGetEntityProfileResponse Data;
 };
 
+USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFEntityProxyLibrary.MakeBPEntityGetEntityProfilesRequest"))
+struct FBPEntityGetEntityProfilesRequest
+{
+    GENERATED_BODY()
+public:
+    FBPEntityGetEntityProfilesRequest() {};
+    FBPEntityGetEntityProfilesRequest(PlayFab::EntityModels::FGetEntityProfilesRequest InData) : Data(InData) {};
+    PlayFab::EntityModels::FGetEntityProfilesRequest Data;
+};
+
+USTRUCT(BlueprintType, meta = (HasNativeBreak = "PlayFabProxy.PFEntityProxyLibrary.BreakBPEntityGetEntityProfilesResponse"))
+struct FBPEntityGetEntityProfilesResponse
+{
+    GENERATED_BODY()
+public:
+    FBPEntityGetEntityProfilesResponse() {};
+    FBPEntityGetEntityProfilesResponse(PlayFab::EntityModels::FGetEntityProfilesResponse InData) : Data(InData) {};
+    PlayFab::EntityModels::FGetEntityProfilesResponse Data;
+};
+
 USTRUCT(BlueprintType, meta = (HasNativeMake = "PlayFabProxy.PFEntityProxyLibrary.MakeBPEntityGetEntityTokenRequest"))
 struct FBPEntityGetEntityTokenRequest
 {
@@ -850,6 +870,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPEntityDeleteFilesResponseDelegate
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPEntityEmptyResultDelegate, const FBPEntityEmptyResult&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPEntityFinalizeFileUploadsResponseDelegate, const FBPEntityFinalizeFileUploadsResponse&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPEntityGetEntityProfileResponseDelegate, const FBPEntityGetEntityProfileResponse&, Result);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPEntityGetEntityProfilesResponseDelegate, const FBPEntityGetEntityProfilesResponse&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPEntityGetEntityTokenResponseDelegate, const FBPEntityGetEntityTokenResponse&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPEntityGetFilesResponseDelegate, const FBPEntityGetFilesResponse&, Result);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBPEntityGetGlobalPolicyResponseDelegate, const FBPEntityGetGlobalPolicyResponse&, Result);

@@ -13462,6 +13462,7 @@ bool PlayFab::ClientModels::FRegisterPlayFabUserRequest::readFromValue(const TSh
 
 PlayFab::ClientModels::FRegisterPlayFabUserResult::~FRegisterPlayFabUserResult()
 {
+    //if (EntityToken != nullptr) delete EntityToken;
     //if (SettingsForUser != nullptr) delete SettingsForUser;
 
 }
@@ -13469,6 +13470,8 @@ PlayFab::ClientModels::FRegisterPlayFabUserResult::~FRegisterPlayFabUserResult()
 void PlayFab::ClientModels::FRegisterPlayFabUserResult::writeJSON(JsonWriter& writer) const
 {
     writer->WriteObjectStart();
+
+    if (EntityToken.IsValid()) { writer->WriteIdentifierPrefix(TEXT("EntityToken")); EntityToken->writeJSON(writer); }
 
     if (PlayFabId.IsEmpty() == false) { writer->WriteIdentifierPrefix(TEXT("PlayFabId")); writer->WriteValue(PlayFabId); }
 
@@ -13484,6 +13487,12 @@ void PlayFab::ClientModels::FRegisterPlayFabUserResult::writeJSON(JsonWriter& wr
 bool PlayFab::ClientModels::FRegisterPlayFabUserResult::readFromValue(const TSharedPtr<FJsonObject>& obj)
 {
     bool HasSucceeded = true;
+
+    const TSharedPtr<FJsonValue> EntityTokenValue = obj->TryGetField(TEXT("EntityToken"));
+    if (EntityTokenValue.IsValid() && !EntityTokenValue->IsNull())
+    {
+        EntityToken = MakeShareable(new FEntityTokenResponse(EntityTokenValue->AsObject()));
+    }
 
     const TSharedPtr<FJsonValue> PlayFabIdValue = obj->TryGetField(TEXT("PlayFabId"));
     if (PlayFabIdValue.IsValid() && !PlayFabIdValue->IsNull())

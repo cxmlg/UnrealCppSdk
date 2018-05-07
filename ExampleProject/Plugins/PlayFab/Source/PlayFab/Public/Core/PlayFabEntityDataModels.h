@@ -1125,6 +1125,64 @@ namespace EntityModels
         bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
     };
 
+    struct PLAYFAB_API FGetEntityProfilesRequest : public FPlayFabBaseModel
+    {
+        /**
+         * [optional] Determines whether the objects will be returned as an escaped JSON string or as a un-escaped JSON object. Default is
+         * JSON string.
+         */
+        Boxed<bool> DataAsObject;
+
+        // Entity keys of the profiles to load. Must be between 1 and 25
+        TArray<FEntityKey> Entities;
+        FGetEntityProfilesRequest() :
+            FPlayFabBaseModel(),
+            DataAsObject(),
+            Entities()
+            {}
+
+        FGetEntityProfilesRequest(const FGetEntityProfilesRequest& src) :
+            FPlayFabBaseModel(),
+            DataAsObject(src.DataAsObject),
+            Entities(src.Entities)
+            {}
+
+        FGetEntityProfilesRequest(const TSharedPtr<FJsonObject>& obj) : FGetEntityProfilesRequest()
+        {
+            readFromValue(obj);
+        }
+
+        ~FGetEntityProfilesRequest();
+
+        void writeJSON(JsonWriter& writer) const override;
+        bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
+    };
+
+    struct PLAYFAB_API FGetEntityProfilesResponse : public FPlayFabBaseModel
+    {
+        // [optional] Entity profiles
+        TArray<FEntityProfileBody> Profiles;
+        FGetEntityProfilesResponse() :
+            FPlayFabBaseModel(),
+            Profiles()
+            {}
+
+        FGetEntityProfilesResponse(const FGetEntityProfilesResponse& src) :
+            FPlayFabBaseModel(),
+            Profiles(src.Profiles)
+            {}
+
+        FGetEntityProfilesResponse(const TSharedPtr<FJsonObject>& obj) : FGetEntityProfilesResponse()
+        {
+            readFromValue(obj);
+        }
+
+        ~FGetEntityProfilesResponse();
+
+        void writeJSON(JsonWriter& writer) const override;
+        bool readFromValue(const TSharedPtr<FJsonObject>& obj) override;
+    };
+
     struct PLAYFAB_API FGetEntityTokenRequest : public FPlayFabBaseModel
     {
         // [optional] The entity to perform this action on.

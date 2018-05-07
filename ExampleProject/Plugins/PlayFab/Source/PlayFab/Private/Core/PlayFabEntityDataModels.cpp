@@ -1478,6 +1478,84 @@ bool PlayFab::EntityModels::FGetEntityProfileResponse::readFromValue(const TShar
     return HasSucceeded;
 }
 
+PlayFab::EntityModels::FGetEntityProfilesRequest::~FGetEntityProfilesRequest()
+{
+
+}
+
+void PlayFab::EntityModels::FGetEntityProfilesRequest::writeJSON(JsonWriter& writer) const
+{
+    writer->WriteObjectStart();
+
+    if (DataAsObject.notNull()) { writer->WriteIdentifierPrefix(TEXT("DataAsObject")); writer->WriteValue(DataAsObject); }
+
+    writer->WriteArrayStart(TEXT("Entities"));
+    for (const FEntityKey& item : Entities)
+        item.writeJSON(writer);
+    writer->WriteArrayEnd();
+
+
+    writer->WriteObjectEnd();
+}
+
+bool PlayFab::EntityModels::FGetEntityProfilesRequest::readFromValue(const TSharedPtr<FJsonObject>& obj)
+{
+    bool HasSucceeded = true;
+
+    const TSharedPtr<FJsonValue> DataAsObjectValue = obj->TryGetField(TEXT("DataAsObject"));
+    if (DataAsObjectValue.IsValid() && !DataAsObjectValue->IsNull())
+    {
+        bool TmpValue;
+        if (DataAsObjectValue->TryGetBool(TmpValue)) { DataAsObject = TmpValue; }
+    }
+
+    const TArray<TSharedPtr<FJsonValue>>&EntitiesArray = FPlayFabJsonHelpers::ReadArray(obj, TEXT("Entities"));
+    for (int32 Idx = 0; Idx < EntitiesArray.Num(); Idx++)
+    {
+        TSharedPtr<FJsonValue> CurrentItem = EntitiesArray[Idx];
+        Entities.Add(FEntityKey(CurrentItem->AsObject()));
+    }
+
+
+    return HasSucceeded;
+}
+
+PlayFab::EntityModels::FGetEntityProfilesResponse::~FGetEntityProfilesResponse()
+{
+
+}
+
+void PlayFab::EntityModels::FGetEntityProfilesResponse::writeJSON(JsonWriter& writer) const
+{
+    writer->WriteObjectStart();
+
+    if (Profiles.Num() != 0)
+    {
+        writer->WriteArrayStart(TEXT("Profiles"));
+        for (const FEntityProfileBody& item : Profiles)
+            item.writeJSON(writer);
+        writer->WriteArrayEnd();
+    }
+
+
+    writer->WriteObjectEnd();
+}
+
+bool PlayFab::EntityModels::FGetEntityProfilesResponse::readFromValue(const TSharedPtr<FJsonObject>& obj)
+{
+    bool HasSucceeded = true;
+
+    const TArray<TSharedPtr<FJsonValue>>&ProfilesArray = FPlayFabJsonHelpers::ReadArray(obj, TEXT("Profiles"));
+    for (int32 Idx = 0; Idx < ProfilesArray.Num(); Idx++)
+    {
+        TSharedPtr<FJsonValue> CurrentItem = ProfilesArray[Idx];
+        Profiles.Add(FEntityProfileBody(CurrentItem->AsObject()));
+    }
+
+
+    return HasSucceeded;
+}
+
 PlayFab::EntityModels::FGetEntityTokenRequest::~FGetEntityTokenRequest()
 {
     //if (Entity != nullptr) delete Entity;

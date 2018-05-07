@@ -9515,6 +9515,12 @@ namespace ClientModels
 
     struct PLAYFAB_API FRegisterPlayFabUserResult : public FPlayFabBaseModel
     {
+        /**
+         * [optional] If LoginTitlePlayerAccountEntity flag is set on the login request the title_player_account will also be logged in and
+         * returned.
+         */
+        TSharedPtr<FEntityTokenResponse> EntityToken;
+
         // [optional] PlayFab unique identifier for this newly created account.
         FString PlayFabId;
 
@@ -9529,6 +9535,7 @@ namespace ClientModels
 
         FRegisterPlayFabUserResult() :
             FPlayFabBaseModel(),
+            EntityToken(nullptr),
             PlayFabId(),
             SessionTicket(),
             SettingsForUser(nullptr),
@@ -9537,6 +9544,7 @@ namespace ClientModels
 
         FRegisterPlayFabUserResult(const FRegisterPlayFabUserResult& src) :
             FPlayFabBaseModel(),
+            EntityToken(src.EntityToken.IsValid() ? MakeShareable(new FEntityTokenResponse(*src.EntityToken)) : nullptr),
             PlayFabId(src.PlayFabId),
             SessionTicket(src.SessionTicket),
             SettingsForUser(src.SettingsForUser.IsValid() ? MakeShareable(new FUserSettings(*src.SettingsForUser)) : nullptr),

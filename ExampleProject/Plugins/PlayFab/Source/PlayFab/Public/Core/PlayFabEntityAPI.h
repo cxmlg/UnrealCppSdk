@@ -32,6 +32,7 @@ namespace PlayFab
         DECLARE_DELEGATE_OneParam(FGetGroupDelegate, const EntityModels::FGetGroupResponse&);
         DECLARE_DELEGATE_OneParam(FGetObjectsDelegate, const EntityModels::FGetObjectsResponse&);
         DECLARE_DELEGATE_OneParam(FGetProfileDelegate, const EntityModels::FGetEntityProfileResponse&);
+        DECLARE_DELEGATE_OneParam(FGetProfilesDelegate, const EntityModels::FGetEntityProfilesResponse&);
         DECLARE_DELEGATE_OneParam(FInitiateFileUploadsDelegate, const EntityModels::FInitiateFileUploadsResponse&);
         DECLARE_DELEGATE_OneParam(FInviteToGroupDelegate, const EntityModels::FInviteToGroupResponse&);
         DECLARE_DELEGATE_OneParam(FIsMemberDelegate, const EntityModels::FIsMemberResponse&);
@@ -158,6 +159,11 @@ namespace PlayFab
          */
         bool GetProfile(EntityModels::FGetEntityProfileRequest& request, const FGetProfileDelegate& SuccessDelegate = FGetProfileDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
         /**
+         * Retrieves the entity's profile.
+         * Given a set of entity types and entity identifiers will retrieve all readable profiles properties for the caller. Profiles that the caller is not allowed to read will silently not be included in the results.
+         */
+        bool GetProfiles(EntityModels::FGetEntityProfilesRequest& request, const FGetProfilesDelegate& SuccessDelegate = FGetProfilesDelegate(), const FPlayFabErrorDelegate& ErrorDelegate = FPlayFabErrorDelegate());
+        /**
          * Initiates file uploads to an entity's profile.
          * Returns URLs that may be used to upload the files for a profile 5 minutes. After using the upload calls FinalizeFileUploads must be called to move the file status from pending to live.
          */
@@ -269,6 +275,7 @@ namespace PlayFab
         void OnGetGroupResult(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FGetGroupDelegate SuccessDelegate, FPlayFabErrorDelegate ErrorDelegate);
         void OnGetObjectsResult(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FGetObjectsDelegate SuccessDelegate, FPlayFabErrorDelegate ErrorDelegate);
         void OnGetProfileResult(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FGetProfileDelegate SuccessDelegate, FPlayFabErrorDelegate ErrorDelegate);
+        void OnGetProfilesResult(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FGetProfilesDelegate SuccessDelegate, FPlayFabErrorDelegate ErrorDelegate);
         void OnInitiateFileUploadsResult(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FInitiateFileUploadsDelegate SuccessDelegate, FPlayFabErrorDelegate ErrorDelegate);
         void OnInviteToGroupResult(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FInviteToGroupDelegate SuccessDelegate, FPlayFabErrorDelegate ErrorDelegate);
         void OnIsMemberResult(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FIsMemberDelegate SuccessDelegate, FPlayFabErrorDelegate ErrorDelegate);

@@ -570,6 +570,35 @@ void UPFEntityProxyLibrary::BreakBPEntityGetEntityProfileResponse(
 
 }
 
+// GetEntityProfilesRequest
+FBPEntityGetEntityProfilesRequest UPFEntityProxyLibrary::MakeBPEntityGetEntityProfilesRequest(
+    bool InDataAsObject
+    , TArray<FBPEntityEntityKey> InEntities
+)
+{
+    FBPEntityGetEntityProfilesRequest Out = FBPEntityGetEntityProfilesRequest();
+    Out.Data.DataAsObject = InDataAsObject;
+    for (const FBPEntityEntityKey& elem : InEntities)
+    {
+        Out.Data.Entities.Add(elem.Data);
+    }
+
+    return Out;
+}
+
+// GetEntityProfilesResponse
+void UPFEntityProxyLibrary::BreakBPEntityGetEntityProfilesResponse(
+    const FBPEntityGetEntityProfilesResponse& In
+    , TArray<FBPEntityEntityProfileBody>& OutProfiles
+)
+{
+    for (const PlayFab::EntityModels::FEntityProfileBody& elem : In.Data.Profiles)
+    {
+        OutProfiles.Add(FBPEntityEntityProfileBody(elem));
+    }
+
+}
+
 // GetEntityTokenRequest
 FBPEntityGetEntityTokenRequest UPFEntityProxyLibrary::MakeBPEntityGetEntityTokenRequest(
     FBPEntityEntityKey InEntity

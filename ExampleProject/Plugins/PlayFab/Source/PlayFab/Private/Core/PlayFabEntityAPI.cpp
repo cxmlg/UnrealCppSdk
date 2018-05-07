@@ -552,6 +552,33 @@ void UPlayFabEntityAPI::OnGetProfileResult(FHttpRequestPtr HttpRequest, FHttpRes
     }
 }
 
+bool UPlayFabEntityAPI::GetProfiles(
+    EntityModels::FGetEntityProfilesRequest& request,
+    const FGetProfilesDelegate& SuccessDelegate,
+    const FPlayFabErrorDelegate& ErrorDelegate)
+{
+    if (PlayFabSettings::entityToken.Len() == 0) {
+        UE_LOG(LogPlayFab, Error, TEXT("You must call GetEntityToken API Method before calling this function."));
+    }
+    auto HttpRequest = PlayFabRequestHandler::SendRequest(PlayFabSettings::getURL(TEXT("/Profile/GetProfiles")), request.toJSONString(), TEXT("X-EntityToken"), PlayFabSettings::entityToken);
+    HttpRequest->OnProcessRequestComplete().BindRaw(this, &UPlayFabEntityAPI::OnGetProfilesResult, SuccessDelegate, ErrorDelegate);
+    return HttpRequest->ProcessRequest();
+}
+
+void UPlayFabEntityAPI::OnGetProfilesResult(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FGetProfilesDelegate SuccessDelegate, FPlayFabErrorDelegate ErrorDelegate)
+{
+    EntityModels::FGetEntityProfilesResponse outResult;
+    FPlayFabError errorResult;
+    if (PlayFabRequestHandler::DecodeRequest(HttpRequest, HttpResponse, bSucceeded, outResult, errorResult))
+    {
+        SuccessDelegate.ExecuteIfBound(outResult);
+    }
+    else
+    {
+        ErrorDelegate.ExecuteIfBound(errorResult);
+    }
+}
+
 bool UPlayFabEntityAPI::InitiateFileUploads(
     EntityModels::FInitiateFileUploadsRequest& request,
     const FInitiateFileUploadsDelegate& SuccessDelegate,

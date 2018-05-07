@@ -2067,6 +2067,7 @@ public:
     UFUNCTION(BlueprintPure, Category = "PlayFab|Client", meta = (NativeBreakFunc))
         static void BreakBPClientRegisterPlayFabUserResult(
             const FBPClientRegisterPlayFabUserResult& In
+            , FBPClientEntityTokenResponse& OutEntityToken
             , FString& OutPlayFabId
             , FString& OutSessionTicket
             , FBPClientUserSettings& OutSettingsForUser
